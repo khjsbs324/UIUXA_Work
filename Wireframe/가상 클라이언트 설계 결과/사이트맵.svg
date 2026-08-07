@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1780" viewBox="0 0 1800 1780" role="img" aria-labelledby="title desc">
+  <title id="title">스밈(SEUMIM) 사이트맵</title>
+  <desc id="desc">브랜드, 하드웨어, AI 데이터 케어, 오프라인 센터, 혜택 및 회원/예외 영역을 1차부터 3차 깊이로 표현한 사이트맵</desc>
+  <defs>
+    <style>
+      text { font-family: "Noto Sans KR", "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif; fill: #173B35; }
+      .title { font-size: 34px; font-weight: 800; }
+      .subtitle { font-size: 16px; fill: #5B6F69; }
+      .section { font-size: 17px; font-weight: 800; }
+      .node-title { font-size: 15px; font-weight: 700; }
+      .node-sub { font-size: 12px; fill: #5B6F69; }
+      .primary-text { fill: #FFFFFF; }
+      .small { font-size: 12px; }
+      .journey { font-size: 14px; font-weight: 700; }
+      .line { fill: none; stroke: #78A89B; stroke-width: 2; marker-end: url(#arrow); }
+      .line-dashed { fill: none; stroke: #9A7A36; stroke-width: 2; stroke-dasharray: 7 5; marker-end: url(#arrowGold); }
+      .trunk { fill: none; stroke: #B5C8C2; stroke-width: 2; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#78A89B"/>
+    </marker>
+    <marker id="arrowGold" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#9A7A36"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#173B35" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect width="1800" height="1780" fill="#F7FAF9"/>
+  <text x="70" y="70" class="title">스밈(SEUMIM) 통합 플랫폼 사이트맵</text>
+  <text x="70" y="102" class="subtitle">HW 구매 → 자세 데이터 → AI 미니멀 케어 → 오프라인 진단 | 최대 3단계 깊이</text>
+
+  <!-- Legend -->
+  <g transform="translate(1120 47)">
+    <rect x="0" y="0" width="20" height="20" rx="5" fill="#173B35"/><text x="28" y="15" class="small">1차/GNB</text>
+    <rect x="120" y="0" width="20" height="20" rx="5" fill="#EAF5F1" stroke="#78A89B"/><text x="148" y="15" class="small">공통</text>
+    <rect x="220" y="0" width="20" height="20" rx="5" fill="#EEF1FF" stroke="#7E8ED1"/><text x="248" y="15" class="small">회원</text>
+    <rect x="320" y="0" width="20" height="20" rx="5" fill="#FFF4DE" stroke="#D6A84C" stroke-dasharray="4 3"/><text x="348" y="15" class="small">가정</text>
+    <rect x="420" y="0" width="20" height="20" rx="5" fill="#FDECEC" stroke="#D47B7B" stroke-dasharray="4 3"/><text x="448" y="15" class="small">예외</text>
+  </g>
+
+  <!-- Home -->
+  <g filter="url(#shadow)">
+    <rect x="700" y="130" width="400" height="70" rx="16" fill="#173B35"/>
+    <text x="900" y="161" text-anchor="middle" class="node-title primary-text">홈 · 공통</text>
+    <text x="900" y="185" text-anchor="middle" class="small primary-text">브랜드 메시지 · 3중 선순환 · 전역 CTA</text>
+  </g>
+  <path d="M900 200 V240 H190 V270 M900 240 H1610 V270" class="trunk"/>
+
+  <!-- Column 1: Brand -->
+  <g>
+    <rect x="40" y="270" width="300" height="70" rx="14" fill="#173B35"/>
+    <text x="190" y="300" text-anchor="middle" class="node-title primary-text">브랜드 스토리 · 1차</text>
+    <text x="190" y="323" text-anchor="middle" class="small primary-text">문제 인식 → 기술 신뢰</text>
+    <path d="M190 340 V370" class="line"/>
+    <rect x="40" y="380" width="300" height="62" rx="12" fill="#EAF5F1" stroke="#78A89B"/>
+    <text x="190" y="407" text-anchor="middle" class="node-title">Effort-Free 웰니스 가치</text><text x="190" y="428" text-anchor="middle" class="node-sub">2차 · 공통</text>
+    <rect x="40" y="458" width="300" height="62" rx="12" fill="#EAF5F1" stroke="#78A89B"/>
+    <text x="190" y="485" text-anchor="middle" class="node-title">직장인 자세 통계</text><text x="190" y="506" text-anchor="middle" class="node-sub">2차 · 82.3% / 25.8% / 40.4%</text>
+    <rect x="40" y="536" width="300" height="62" rx="12" fill="#EAF5F1" stroke="#78A89B"/>
+    <text x="190" y="563" text-anchor="middle" class="node-title">3대 원천 기술</text><text x="190" y="584" text-anchor="middle" class="node-sub">2차 · 공통</text>
+    <path d="M190 598 V628" class="line"/>
+    <rect x="52" y="638" width="276" height="54" rx="10" fill="#FFFFFF" stroke="#78A89B"/>
+    <text x="190" y="662" text-anchor="middle" class="node-title">유연 전도성 센서 섬유</text><text x="190" y="681" text-anchor="middle" class="node-sub">3차 · 세탁 가능</text>
+    <rect x="52" y="704" width="276" height="54" rx="10" fill="#FFFFFF" stroke="#78A89B"/>
+    <text x="190" y="728" text-anchor="middle" class="node-title">시차 필터링 알고리즘</text><text x="190" y="747" text-anchor="middle" class="node-sub">3차 · 오작동 스트레스 감소</text>
+    <rect x="52" y="770" width="276" height="54" rx="10" fill="#FFFFFF" stroke="#78A89B"/>
+    <text x="190" y="794" text-anchor="middle" class="node-title">지렛대 원리 탄성 복원</text><text x="190" y="813" text-anchor="middle" class="node-sub">3차 · 자연스러운 펴짐</text>
+  </g>
+
+  <!-- Column 2: Hardware -->
+  <g>
+    <rect x="370" y="270" width="300" height="70" rx="14" fill="#173B35"/>
+    <text x="520" y="300" text-anchor="middle" class="node-title primary-text">3대 시그니처 HW · 1차</text>
+    <text x="520" y="323" text-anchor="middle" class="small primary-text">비교 → 사이즈 → 체험</text>
+    <path d="M520 340 V370" class="line"/>
+    <rect x="370" y="380" width="300" height="62" rx="12" fill="#EAF5F1" stroke="#78A89B"/>
+    <text x="520" y="407" text-anchor="middle" class="node-title">어깨 &amp; 거북목 밴드</text><text x="520" y="428" text-anchor="middle" class="node-sub">2차 · 0.1mm 시크릿 핏</text>
+    <rect x="370" y="458" width="300" height="62" rx="12" fill="#EAF5F1" stroke="#78A89B"/>
+    <text x="520" y="485" text-anchor="middle" class="node-title">척추 정렬 가디건 조끼</text><text x="520" y="506" text-anchor="middle" class="node-sub">2차 · 탄성 프레임</text>
+    <rect x="370" y="536" width="300" height="62" rx="12" fill="#EAF5F1" stroke="#78A89B"/>
+    <text x="520" y="563" text-anchor="middle" class="node-title">골반 수평 에어셀 벨트</text><text x="520" y="584" text-anchor="middle" class="node-sub">2차 · 다리 꼬기 물리 넛지</text>
+    <rect x="370" y="614" width="300" height="62" rx="12" fill="#EAF5F1" stroke="#78A89B"/>
+    <text x="520" y="641" text-anchor="middle" class="node-title">사이즈 매칭 가이드</text><text x="520" y="662" text-anchor="middle" class="node-sub">2차 · 공통 단일 페이지</text>
+    <path d="M520 676 V706" class="line"/>
+    <rect x="382" y="716" width="276" height="62" rx="10" fill="#FFFFFF" stroke="#78A89B"/>
+    <text x="520" y="743" text-anchor="middle" class="node-title">의류 규격 기반 추천</text><text x="520" y="764" text-anchor="middle" class="node-sub">3차 · 상의 95/100 등 매칭</text>
+  </g>
+
+  <!-- Column 3: AI -->
+  <g>
+    <rect x="700" y="270" width="300" height="70" rx="14" fill="#173B35"/>
+    <text x="850" y="300" text-anchor="middle" class="node-title primary-text">AI 데이터 케어 · 1차</text>
+    <text x="850" y="323" text-anchor="middle" class="small primary-text">공개 소개 + 회원 데이터</text>
+    <path d="M850 340 V370" class="line"/>
+    <rect x="700" y="380" width="300" height="62" rx="12" fill="#EAF5F1" stroke="#78A89B"/>
+    <text x="850" y="407" text-anchor="middle" class="node-title">AI 케어 소개</text><text x="850" y="428" text-anchor="middle" class="node-sub">2차 · 공통</text>
+    <path d="M850 442 V462" class="line"/>
+    <rect x="712" y="472" width="276" height="62" rx="10" fill="#FFFFFF" stroke="#78A89B"/>
+    <text x="850" y="499" text-anchor="middle" class="node-title">HW→데이터→AI→센터</text><text x="850" y="520" text-anchor="middle" class="node-sub">3차 · 선순환 인포그래픽</text>
+    <rect x="700" y="550" width="300" height="62" rx="12" fill="#EEF1FF" stroke="#7E8ED1"/>
+    <text x="850" y="577" text-anchor="middle" class="node-title">실시간 자세 대시보드</text><text x="850" y="598" text-anchor="middle" class="node-sub">2차 · 회원 · 0~100 원형 게이지</text>
+    <path d="M850 612 V632" class="line"/>
+    <rect x="712" y="642" width="276" height="54" rx="10" fill="#F8F9FF" stroke="#7E8ED1"/>
+    <text x="850" y="666" text-anchor="middle" class="node-title">자세 점수 상세</text><text x="850" y="685" text-anchor="middle" class="node-sub">3차 · 회원</text>
+    <rect x="700" y="712" width="300" height="62" rx="12" fill="#EEF1FF" stroke="#7E8ED1"/>
+    <text x="850" y="739" text-anchor="middle" class="node-title">스마트워치 퀵-글랜스</text><text x="850" y="760" text-anchor="middle" class="node-sub">2차 · 회원 · 링 UI</text>
+    <rect x="700" y="790" width="300" height="62" rx="12" fill="#EEF1FF" stroke="#7E8ED1"/>
+    <text x="850" y="817" text-anchor="middle" class="node-title">10초 릴렉스 루틴</text><text x="850" y="838" text-anchor="middle" class="node-sub">2차 · 회원</text>
+  </g>
+
+  <!-- Column 4: Center -->
+  <g>
+    <rect x="1030" y="270" width="300" height="70" rx="14" fill="#173B35"/>
+    <text x="1180" y="300" text-anchor="middle" class="node-title primary-text">오프라인 동행센터 · 1차</text>
+    <text x="1180" y="323" text-anchor="middle" class="small primary-text">검색 → 상세 → 예약</text>
+    <path d="M1180 340 V370" class="line"/>
+    <rect x="1030" y="380" width="300" height="62" rx="12" fill="#EAF5F1" stroke="#78A89B"/>
+    <text x="1180" y="407" text-anchor="middle" class="node-title">위치 기반 센터 찾기</text><text x="1180" y="428" text-anchor="middle" class="node-sub">2차 · 지도/전국 제휴 지점</text>
+    <path d="M1180 442 V462" class="line"/>
+    <rect x="1042" y="472" width="276" height="54" rx="10" fill="#FFFFFF" stroke="#78A89B"/>
+    <text x="1180" y="496" text-anchor="middle" class="node-title">센터 상세</text><text x="1180" y="515" text-anchor="middle" class="node-sub">3차 · 지점/체험 정보</text>
+    <path d="M1180 526 V556" class="line"/>
+    <rect x="1030" y="566" width="300" height="62" rx="12" fill="#EAF5F1" stroke="#78A89B"/>
+    <text x="1180" y="593" text-anchor="middle" class="node-title">무료 체형 진단 예약</text><text x="1180" y="614" text-anchor="middle" class="node-sub">2차 · 4단계 이내</text>
+    <path d="M1180 628 V658" class="line"/>
+    <rect x="1042" y="668" width="276" height="54" rx="10" fill="#FFFFFF" stroke="#78A89B"/>
+    <text x="1180" y="692" text-anchor="middle" class="node-title">예약 완료</text><text x="1180" y="711" text-anchor="middle" class="node-sub">3차 · 요약/방문 안내</text>
+  </g>
+
+  <!-- Column 5: Offer -->
+  <g>
+    <rect x="1360" y="270" width="300" height="70" rx="14" fill="#173B35"/>
+    <text x="1510" y="300" text-anchor="middle" class="node-title primary-text">혜택 &amp; 30일 체험 · 1차</text>
+    <text x="1510" y="323" text-anchor="middle" class="small primary-text">신뢰 → 의문 해소 → 전환</text>
+    <path d="M1510 340 V370" class="line"/>
+    <rect x="1360" y="380" width="300" height="62" rx="12" fill="#EAF5F1" stroke="#78A89B"/>
+    <text x="1510" y="407" text-anchor="middle" class="node-title">직장인/테크 유저 후기</text><text x="1510" y="428" text-anchor="middle" class="node-sub">2차 · 실사용 찐후기</text>
+    <rect x="1360" y="458" width="300" height="62" rx="12" fill="#EAF5F1" stroke="#78A89B"/>
+    <text x="1510" y="485" text-anchor="middle" class="node-title">FAQ</text><text x="1510" y="506" text-anchor="middle" class="node-sub">2차 · 제품/AI/센터/체험</text>
+    <rect x="1360" y="536" width="300" height="62" rx="12" fill="#EAF5F1" stroke="#78A89B"/>
+    <text x="1510" y="563" text-anchor="middle" class="node-title">30일 무료 체험 신청</text><text x="1510" y="584" text-anchor="middle" class="node-sub">2차 · 전역 Floating CTA</text>
+    <path d="M1510 598 V628" class="line"/>
+    <rect x="1372" y="638" width="276" height="54" rx="10" fill="#FFFFFF" stroke="#78A89B"/>
+    <text x="1510" y="662" text-anchor="middle" class="node-title">신청 완료</text><text x="1510" y="681" text-anchor="middle" class="node-sub">3차 · 요약/후속 안내</text>
+  </g>
+
+  <!-- Member area -->
+  <rect x="40" y="920" width="1040" height="270" rx="18" fill="#FFFBF2" stroke="#D6A84C" stroke-width="2" stroke-dasharray="8 6"/>
+  <text x="70" y="958" class="section">회원 상태별 영역 · 가정</text>
+  <text x="70" y="982" class="node-sub">입력에 인증/마이페이지 명세가 없어 회원 데이터 접근에 필요한 최소 구조로만 제안</text>
+  <rect x="80" y="1020" width="240" height="70" rx="12" fill="#FFF4DE" stroke="#D6A84C" stroke-dasharray="5 4"/>
+  <text x="200" y="1050" text-anchor="middle" class="node-title">로그인</text><text x="200" y="1073" text-anchor="middle" class="node-sub">1차 · 비회원 · 가정</text>
+  <path d="M320 1055 H400" class="line-dashed"/>
+  <rect x="410" y="1020" width="240" height="70" rx="12" fill="#FFF4DE" stroke="#D6A84C" stroke-dasharray="5 4"/>
+  <text x="530" y="1050" text-anchor="middle" class="node-title">마이페이지</text><text x="530" y="1073" text-anchor="middle" class="node-sub">1차 · 회원 · 가정</text>
+  <path d="M650 1055 H715 V1025" class="line-dashed"/>
+  <path d="M650 1055 H715 V1125" class="line-dashed"/>
+  <rect x="730" y="997" width="300" height="64" rx="12" fill="#FFF4DE" stroke="#D6A84C" stroke-dasharray="5 4"/>
+  <text x="880" y="1024" text-anchor="middle" class="node-title">내 데이터 케어</text><text x="880" y="1045" text-anchor="middle" class="node-sub">2차 · 대시보드/루틴 연결</text>
+  <rect x="730" y="1093" width="300" height="64" rx="12" fill="#FFF4DE" stroke="#D6A84C" stroke-dasharray="5 4"/>
+  <text x="880" y="1120" text-anchor="middle" class="node-title">신청·예약 내역</text><text x="880" y="1141" text-anchor="middle" class="node-sub">2차 · 센터/30일 체험 연결</text>
+
+  <!-- Exception area -->
+  <rect x="1110" y="920" width="550" height="270" rx="18" fill="#FFF8F8" stroke="#D47B7B" stroke-width="2" stroke-dasharray="8 6"/>
+  <text x="1140" y="958" class="section">예외/상태 영역 · 가정</text>
+  <rect x="1140" y="990" width="490" height="54" rx="10" fill="#FDECEC" stroke="#D47B7B" stroke-dasharray="5 4"/>
+  <text x="1385" y="1015" text-anchor="middle" class="node-title">404 페이지 없음</text><text x="1385" y="1034" text-anchor="middle" class="node-sub">홈/GNB로 복구</text>
+  <rect x="1140" y="1056" width="490" height="54" rx="10" fill="#FDECEC" stroke="#D47B7B" stroke-dasharray="5 4"/>
+  <text x="1385" y="1081" text-anchor="middle" class="node-title">센터 결과 없음 / 위치 권한 거부</text><text x="1385" y="1100" text-anchor="middle" class="node-sub">지역 직접 검색/재시도</text>
+  <rect x="1140" y="1122" width="490" height="54" rx="10" fill="#FDECEC" stroke="#D47B7B" stroke-dasharray="5 4"/>
+  <text x="1385" y="1147" text-anchor="middle" class="node-title">세션 만료 / 접근 권한 없음</text><text x="1385" y="1166" text-anchor="middle" class="node-sub">로그인/공개 소개로 복구</text>
+
+  <!-- Journeys -->
+  <rect x="40" y="1240" width="1620" height="430" rx="18" fill="#FFFFFF" stroke="#D7E2DE" stroke-width="2"/>
+  <text x="70" y="1285" class="section">주요 사용자 여정 및 교차 연결</text>
+
+  <text x="70" y="1335" class="journey">1. 문제 인식 → 제품 체험</text>
+  <g transform="translate(330 1305)">
+    <rect x="0" y="0" width="180" height="48" rx="10" fill="#EAF5F1" stroke="#78A89B"/><text x="90" y="30" text-anchor="middle" class="small">직장인 자세 통계</text>
+    <path d="M180 24 H220" class="line"/>
+    <rect x="230" y="0" width="180" height="48" rx="10" fill="#EAF5F1" stroke="#78A89B"/><text x="320" y="30" text-anchor="middle" class="small">3대 원천 기술</text>
+    <path d="M410 24 H450" class="line"/>
+    <rect x="460" y="0" width="180" height="48" rx="10" fill="#EAF5F1" stroke="#78A89B"/><text x="550" y="30" text-anchor="middle" class="small">제품 상세</text>
+    <path d="M640 24 H680" class="line"/>
+    <rect x="690" y="0" width="180" height="48" rx="10" fill="#EAF5F1" stroke="#78A89B"/><text x="780" y="30" text-anchor="middle" class="small">사이즈 추천</text>
+    <path d="M870 24 H910" class="line"/>
+    <rect x="920" y="0" width="220" height="48" rx="10" fill="#EAF5F1" stroke="#78A89B"/><text x="1030" y="30" text-anchor="middle" class="small">30일 체험 신청/완료</text>
+  </g>
+
+  <text x="70" y="1415" class="journey">2. 데이터 케어 이해 → 회원 사용</text>
+  <g transform="translate(330 1385)">
+    <rect x="0" y="0" width="200" height="48" rx="10" fill="#EAF5F1" stroke="#78A89B"/><text x="100" y="30" text-anchor="middle" class="small">AI 케어 소개/선순환</text>
+    <path d="M200 24 H250" class="line-dashed"/>
+    <rect x="260" y="0" width="170" height="48" rx="10" fill="#FFF4DE" stroke="#D6A84C" stroke-dasharray="5 4"/><text x="345" y="30" text-anchor="middle" class="small">로그인 · 가정</text>
+    <path d="M430 24 H480" class="line"/>
+    <rect x="490" y="0" width="240" height="48" rx="10" fill="#EEF1FF" stroke="#7E8ED1"/><text x="610" y="30" text-anchor="middle" class="small">실시간 자세 대시보드</text>
+    <path d="M730 24 H780" class="line"/>
+    <rect x="790" y="0" width="210" height="48" rx="10" fill="#EEF1FF" stroke="#7E8ED1"/><text x="895" y="30" text-anchor="middle" class="small">10초 릴렉스 루틴</text>
+  </g>
+
+  <text x="70" y="1495" class="journey">3. 오프라인 무료 체험</text>
+  <g transform="translate(330 1465)">
+    <rect x="0" y="0" width="180" height="48" rx="10" fill="#EAF5F1" stroke="#78A89B"/><text x="90" y="30" text-anchor="middle" class="small">센터 찾기</text>
+    <path d="M180 24 H230" class="line"/>
+    <rect x="240" y="0" width="180" height="48" rx="10" fill="#EAF5F1" stroke="#78A89B"/><text x="330" y="30" text-anchor="middle" class="small">센터 상세</text>
+    <path d="M420 24 H470" class="line"/>
+    <rect x="480" y="0" width="220" height="48" rx="10" fill="#EAF5F1" stroke="#78A89B"/><text x="590" y="30" text-anchor="middle" class="small">4단계 이내 예약</text>
+    <path d="M700 24 H750" class="line"/>
+    <rect x="760" y="0" width="180" height="48" rx="10" fill="#EAF5F1" stroke="#78A89B"/><text x="850" y="30" text-anchor="middle" class="small">예약 완료</text>
+  </g>
+
+  <text x="70" y="1575" class="journey">4. 예외 복구</text>
+  <g transform="translate(330 1545)">
+    <rect x="0" y="0" width="250" height="48" rx="10" fill="#FDECEC" stroke="#D47B7B" stroke-dasharray="5 4"/><text x="125" y="30" text-anchor="middle" class="small">검색 실패/위치 권한 거부</text>
+    <path d="M250 24 H300" class="line-dashed"/>
+    <rect x="310" y="0" width="210" height="48" rx="10" fill="#EAF5F1" stroke="#78A89B"/><text x="415" y="30" text-anchor="middle" class="small">지역 직접 검색</text>
+    <rect x="620" y="0" width="230" height="48" rx="10" fill="#FDECEC" stroke="#D47B7B" stroke-dasharray="5 4"/><text x="735" y="30" text-anchor="middle" class="small">세션 만료/권한 없음</text>
+    <path d="M850 24 H900" class="line-dashed"/>
+    <rect x="910" y="0" width="210" height="48" rx="10" fill="#FFF4DE" stroke="#D6A84C" stroke-dasharray="5 4"/><text x="1015" y="30" text-anchor="middle" class="small">로그인 후 원위치</text>
+  </g>
+
+  <text x="70" y="1730" class="subtitle">점선 테두리 = 입력 문서에 없는 최소 보완 가정 · 제품 상세 간 공통 사이즈 가이드는 단일 페이지로 재사용 · 결제/주문 페이지는 미확정</text>
+</svg>
