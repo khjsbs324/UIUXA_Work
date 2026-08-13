@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" width="1000" height="680" style="background-color: #0f172a; font-family: system-ui, -apple-system, sans-serif;">
+  <defs>
+    <linearGradient id="flowStart" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d97706" />
+      <stop offset="100%" stop-color="#b45309" />
+    </linearGradient>
+    <linearGradient id="flowStep" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#334155" />
+    </linearGradient>
+    <linearGradient id="flowEnd" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#6d28d9" />
+    </linearGradient>
+    <filter id="shadowFlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <text x="500" y="45" text-anchor="middle" fill="#f8fafc" font-size="22" font-weight="bold">[사단(士團)] 정시우 클라이언트 최적 병합 서비스 흐름도 (Service Flowchart)</text>
+  
+  <rect x="50" y="80" width="240" height="50" rx="25" fill="url(#flowStart)" filter="url(#shadowFlow)"/>
+  <text x="170" y="110" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">1. 놋쇠 마패 3D 용기 접속</text>
+
+  <path d="M 170 130 L 170 180" stroke="#64748b" stroke-width="2" fill="none"/>
+
+  <rect x="50" y="180" width="240" height="50" rx="8" fill="url(#flowStep)" stroke="#d97706" stroke-width="1.5" filter="url(#shadowFlow)"/>
+  <text x="170" y="202" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold">2. 360도 3D 용기 각인</text>
+  <text x="170" y="219" text-anchor="middle" fill="#94a3b8" font-size="11">훈민정음 서체 &amp; 문구 투영</text>
+
+  <path d="M 170 230 L 170 280" stroke="#64748b" stroke-width="2" fill="none"/>
+
+  <rect x="50" y="280" width="240" height="50" rx="8" fill="url(#flowStep)" stroke="#d97706" stroke-width="1.5" filter="url(#shadowFlow)"/>
+  <text x="170" y="302" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold">3. VIP 멤버십 혜택 선택</text>
+  <text x="170" y="319" text-anchor="middle" fill="#94a3b8" font-size="11">1·2·3마패 등급별 디스커버리 팩</text>
+
+  <path d="M 170 330 L 170 380" stroke="#64748b" stroke-width="2" fill="none"/>
+
+  <rect x="50" y="380" width="240" height="50" rx="8" fill="url(#flowStep)" stroke="#d97706" stroke-width="1.5" filter="url(#shadowFlow)"/>
+  <text x="170" y="402" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold">4. 백꾸 놋쇠 참(Charm) 조합</text>
+
+  <path d="M 170 430 L 170 480" stroke="#64748b" stroke-width="2" fill="none"/>
+
+  <rect x="50" y="480" width="240" height="50" rx="8" fill="url(#flowStep)" stroke="#d97706" stroke-width="1.5" filter="url(#shadowFlow)"/>
+  <text x="170" y="502" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold">5. 화해 비건 성분 안전성 검증</text>
+
+  <path d="M 290 505 L 420 505" stroke="#8b5cf6" stroke-width="2" fill="none"/>
+
+  <rect x="420" y="480" width="280" height="50" rx="25" fill="url(#flowEnd)" filter="url(#shadowFlow)"/>
+  <text x="560" y="502" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">6. 주문 결제 &amp; VIP QR 보증서</text>
+  <text x="560" y="519" text-anchor="middle" fill="#ddd6fe" font-size="11">공병 회수 및 카트리지 정기 배송</text>
+</svg>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" width="1000" height="650" style="background-color: #0f172a; font-family: system-ui, -apple-system, sans-serif;">
+  <defs>
+    <linearGradient id="rootGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <linearGradient id="nodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#334155" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <text x="500" y="45" text-anchor="middle" fill="#f8fafc" font-size="22" font-weight="bold">[사단(士團)] 박지안 클라이언트 최적 병합 사이트맵 (IA)</text>
+  
+  <rect x="320" y="70" width="360" height="55" rx="10" fill="url(#rootGrad)" filter="url(#shadow)"/>
+  <text x="500" y="95" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="bold">사단(士團) 조향 수강 클래스 &amp; 팝업 예약 자사몰</text>
+  <text x="500" y="115" text-anchor="middle" fill="#a7f3d0" font-size="12">박지안 PM (5개 시안 최적 병합)</text>
+
+  <path d="M 500 125 L 500 160" stroke="#64748b" stroke-width="2" fill="none"/>
+  <path d="M 110 160 L 890 160" stroke="#64748b" stroke-width="2" fill="none"/>
+  
+  <path d="M 110 160 L 110 190" stroke="#10b981" stroke-width="2" fill="none"/>
+  <path d="M 305 160 L 305 190" stroke="#10b981" stroke-width="2" fill="none"/>
+  <path d="M 500 160 L 500 190" stroke="#10b981" stroke-width="2" fill="none"/>
+  <path d="M 695 160 L 695 190" stroke="#10b981" stroke-width="2" fill="none"/>
+  <path d="M 890 160 L 890 190" stroke="#10b981" stroke-width="2" fill="none"/>
+
+  <g transform="translate(20, 190)">
+    <rect x="0" y="0" width="180" height="45" rx="6" fill="url(#nodeGrad)" stroke="#10b981" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="90" y="27" text-anchor="middle" fill="#34d399" font-size="13" font-weight="bold">1.0 Eosa Pass Booking</text>
+  </g>
+
+  <g transform="translate(215, 190)">
+    <rect x="0" y="0" width="180" height="45" rx="6" fill="url(#nodeGrad)" stroke="#10b981" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="90" y="27" text-anchor="middle" fill="#34d399" font-size="13" font-weight="bold">2.0 Scent Masterclass</text>
+  </g>
+
+  <g transform="translate(410, 190)">
+    <rect x="0" y="0" width="180" height="45" rx="6" fill="url(#nodeGrad)" stroke="#10b981" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="90" y="27" text-anchor="middle" fill="#34d399" font-size="13" font-weight="bold">3.0 QR Digital Pass</text>
+  </g>
+
+  <g transform="translate(605, 190)">
+    <rect x="0" y="0" width="180" height="45" rx="6" fill="url(#nodeGrad)" stroke="#10b981" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="90" y="27" text-anchor="middle" fill="#34d399" font-size="13" font-weight="bold">4.0 Welcome Kit</text>
+  </g>
+
+  <g transform="translate(800, 190)">
+    <rect x="0" y="0" width="180" height="45" rx="6" fill="url(#nodeGrad)" stroke="#10b981" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="90" y="27" text-anchor="middle" fill="#34d399" font-size="13" font-weight="bold">5.0 Safety &amp; Heritage</text>
+  </g>
+</svg>

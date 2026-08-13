@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[박지안 PM] 성수/경복궁 팝업 사전예약 &amp; 조향 클래스 9개 섹션 풀 롱 스크롤 와이어프레임</title>
+    <style>
+        /* [박지안 PM: 9개 독립 섹션 세로 롱 스크롤 & 3열 카드 전면 배제 다채로운 그리드 인터페이스] */
+        :root {
+            --bg-page: #f8fafc;
+            --bg-card: #ffffff;
+            --bg-dark: #0f172a;
+            --border-dark: #334155;
+            --border-gray: #cbd5e1;
+            --accent-green: #10b981;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Pretendard', system-ui, sans-serif; }
+        body { background-color: var(--bg-page); color: var(--text-dark); line-height: 1.6; padding: 30px; }
+
+        /* SEC-01: GNB 헤더 & 모바일 스티키 바 (상단) */
+        header.sec-header { background: var(--bg-card); border: 2px solid var(--bg-dark); border-radius: 12px; padding: 20px 30px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+        
+        nav.sticky-nav { background: var(--bg-dark); color: #fff; padding: 14px 20px; border-radius: 8px; display: flex; justify-content: space-between; font-weight: 800; font-size: 13px; position: sticky; top: 15px; z-index: 500; margin-bottom: 35px; }
+        nav.sticky-nav a { color: #cbd5e1; text-decoration: none; padding: 6px 12px; border-radius: 4px; }
+        nav.sticky-nav a.active { color: #fff; background: var(--accent-green); }
+
+        /* 9개 대형 독립 섹션 블록 (세로로 길게 연결) */
+        section.section-container { background: var(--bg-card); border: 2px solid var(--bg-dark); border-radius: 12px; padding: 40px; margin-bottom: 45px; }
+        .sec-num { font-size: 12px; font-weight: bold; color: var(--accent-green); text-transform: uppercase; letter-spacing: 1px; }
+        .sec-h2 { font-size: 24px; font-weight: 900; margin: 4px 0 10px; }
+        .sec-desc { font-size: 13px; color: var(--text-muted); margin-bottom: 30px; border-bottom: 2px solid var(--bg-page); padding-bottom: 12px; }
+
+        /* 3열 카드가 없는 다채로운 그리드 구도들 */
+
+        /* SEC-02: 성수 vs 경복궁 팝업 2대 지점 70:30 비대칭 대조 카드 */
+        .branch-7030-grid { display: grid; grid-template-columns: 2.2fr 1fr; gap: 25px; align-items: stretch; }
+        .branch-main-box { background: var(--bg-dark); color: #fff; padding: 30px; border-radius: 10px; }
+        .branch-side-box { background: #f1f5f9; border: 2px solid var(--border-dark); padding: 30px; border-radius: 10px; display: flex; flex-direction: column; justify-content: space-between; }
+
+        /* ★ SEC-03: 메인 제품 전시 쇼케이스 - [수평 2열 스플릿 & 스텝 바 구도] (3열 전면 배제!) */
+        .showcase-2col-split { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .showcase-card-big { background: #f1f5f9; border: 2px solid var(--bg-dark); padding: 30px; border-radius: 10px; }
+        .showcase-img-lg { background: #cbd5e1; height: 220px; border: 1px dashed var(--border-dark); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 900; margin-bottom: 18px; text-align: center; }
+
+        /* SEC-04: 실시간 타임슬롯 예매 MATRIX (4열 쿼터 그리드) */
+        .timeslot-4col { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 15px; }
+        .time-item { background: #0f172a; color: #fff; border: 1px solid var(--border-dark); padding: 16px; border-radius: 8px; text-align: center; cursor: pointer; }
+        .time-item.selected { background: var(--accent-green); border-color: var(--accent-green); }
+
+        /* SEC-05: 모바일 QR 어사 패스 실시간 발급기 (스마트폰 뷰어) */
+        .mobile-pass-wrapper { display: grid; grid-template-columns: 1fr 340px; gap: 30px; align-items: center; background: #f1f5f9; padding: 30px; border-radius: 10px; border: 1px solid var(--border-dark); }
+        .phone-mockup { background: var(--bg-dark); color: #fff; padding: 25px 20px; border-radius: 24px; text-align: center; }
+
+        /* SEC-06: 1:1 아티잔 조향 커리큘럼 (수직 아코디언 타임라인 구도) */
+        .curriculum-timeline { display: flex; flex-direction: column; gap: 15px; }
+        .timeline-step { background: #f1f5f9; border-left: 5px solid var(--accent-green); padding: 20px; border-radius: 0 8px 8px 0; font-weight: bold; }
+
+        /* SEC-07: 화해 비건 성분 검증표 (1열 풀폭 테이블 구도) */
+        .v-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        .v-table th, .v-table td { border: 1px solid var(--border-gray); padding: 12px; text-align: left; font-size: 13px; }
+        .v-table th { background: #f1f5f9; font-weight: bold; }
+
+        /* SEC-08: 웰컴 키트 사은 혜택 안내 (50:50 대형 분할) */
+        .welcome-split { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+        /* BUTTONS */
+        .btn-green-dark { background: var(--bg-dark); color: #fff; border: none; padding: 14px 28px; font-weight: 900; cursor: pointer; border-radius: 6px; width: 100%; font-size: 14px; }
+        .btn-green-accent { background: var(--accent-green); color: #fff; border: none; padding: 14px 28px; font-weight: 900; cursor: pointer; border-radius: 6px; width: 100%; font-size: 14px; }
+
+        footer { background: var(--bg-dark); color: #94a3b8; padding: 40px; border-radius: 12px; text-align: center; font-size: 12px; }
+    </style>
+</head>
+<body>
+
+    <!-- SEC-01: GNB 상단 헤더 -->
+    <header class="sec-header">
+        <div style="display:flex; align-items:center; gap:12px;">
+            <div style="background:var(--bg-dark); color:#fff; padding:8px 14px; font-weight:900; border-radius:6px;">士團</div>
+            <div>
+                <h1 style="font-size:20px; font-weight:900;">사단(SADAN) 아티잔 조향 아틀리에</h1>
+                <div style="font-size:12px; color:var(--text-muted);">박지안 PM - 9개 독립 섹션 풀 롱 스크롤 와이어프레임</div>
+            </div>
+        </div>
+        <div style="display:flex; gap:10px;">
+            <button class="btn-green-dark" style="width:auto; padding:8px 16px;">예약 조회 (어사 패스)</button>
+        </div>
+    </header>
+
+    <!-- STICKY NAV -->
+    <nav class="sticky-nav">
+        <a href="#sec02" class="active">02. 팝업 2대 지점</a>
+        <a href="#sec03">03. 메인 제품 쇼케이스</a>
+        <a href="#sec04">04. 실시간 예매 스튜디오</a>
+        <a href="#sec05">05. 모바일 QR 어사 패스</a>
+        <a href="#sec06">06. 1:1 수강 커리큘럼</a>
+        <a href="#sec07">07. 화해 비건 성분 검증</a>
+        <a href="#sec08">08. 웰컴 디스커버리 사은 팩</a>
+        <a href="#sec09">09. CS Center 푸터</a>
+    </nav>
+
+    <!-- SEC-02: 팝업 2대 지점 (70:30 비대칭 구도) -->
+    <section id="sec02" class="section-container">
+        <div class="sec-num">SECTION 02</div>
+        <div class="sec-h2">성수 팝업 갤러리 &amp; 경복궁 시향존 2대 지점 선택</div>
+        <div class="sec-desc">오프라인 아틀리에 시향존 타임슬롯 사전 예약</div>
+
+        <div class="branch-7030-grid">
+            <div class="branch-main-box">
+                <span style="background:var(--accent-green); padding:3px 8px; border-radius:4px; font-size:11px; font-weight:bold;">메인 추천 지점</span>
+                <h3 style="font-size:22px; font-weight:900; margin:10px 0;">1. 성수 팝업 갤러리 아틀리에</h3>
+                <div style="background:#334155; height:200px; border-radius:6px; border:1px dashed #64748b; margin:15px 0; display:flex; align-items:center; justify-content:center; font-weight:900; text-align:center;">
+                    [ 성수 팝업 공간 3D 투어 비디오 회색 박스 영역 ]<br>
+                    아티잔 장인 직속 1:1 디렉팅 세션 진행
+                </div>
+                <button class="btn-green-accent">성수점 타임슬롯 예매하기</button>
+            </div>
+
+            <div class="branch-side-box">
+                <div>
+                    <span style="background:#64748b; color:#fff; padding:3px 8px; border-radius:4px; font-size:11px; font-weight:bold;">헤리티지 지점</span>
+                    <h3 style="font-size:18px; font-weight:900; margin:10px 0;">2. 경복궁 시향존</h3>
+                    <p style="font-size:12px; color:var(--text-muted);">무형문화재 놋쇠 주조 아카이브 전시 &amp; 고궁 시향체험</p>
+                </div>
+                <button class="btn-green-dark" style="margin-top:15px;">경복궁점 예매하기</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ★ SEC-03: 메인 제품 전시 쇼케이스 - [수평 2열 스플릿 구도] (3열 카드 전면 배제!) -->
+    <section id="sec03" class="section-container" style="border:3px solid var(--bg-dark);">
+        <div class="sec-num">SECTION 03</div>
+        <div class="sec-h2">★ 메인 제품 전시 쇼케이스 (수평 2열 스플릿 구도)</div>
+        <div class="sec-desc">박지안 PM 대표 실물 제품: 아티잔 조향 수강 팩 &amp; 팝업 사전예약 패키지</div>
+
+        <div class="showcase-2col-split">
+            <!-- 좌측 메인 제품 1 -->
+            <div class="showcase-card-big">
+                <div class="showcase-img-lg">
+                    [ MAIN PRODUCT 1 ]<br>
+                    아티잔 장인 1:1 조향 수강 클래스 팩<br>
+                    + 놋쇠 마패 3D 용기 50ml 포함
+                </div>
+                <h3 style="font-size:18px; font-weight:900; margin-bottom:6px;">1. 아티잔 장인 1:1 조향 수강 클래스 팩</h3>
+                <p style="font-size:12px; color:var(--text-muted); margin-bottom:15px;">무형문화재 장인에게 직접 배우는 나만의 향 조율 및 각인 놋쇠 용기 수강 세트</p>
+                <button class="btn-green-dark">수강 클래스 팩 예매</button>
+            </div>
+
+            <!-- 우측 메인 제품 2 -->
+            <div class="showcase-card-big">
+                <div class="showcase-img-lg">
+                    [ MAIN PRODUCT 2 ]<br>
+                    팝업 스토어 타임슬롯 사전예약 패스<br>
+                    + 웰컴 시향 디스커버리 팩 사은 세트
+                </div>
+                <h3 style="font-size:18px; font-weight:900; margin-bottom:6px;">2. 팝업 타임슬롯 사전예약 1-Click 패스</h3>
+                <p style="font-size:12px; color:var(--text-muted); margin-bottom:15px;">대기 없이 즉시 입장하는 모바일 어사 패스 &amp; 현장 수령 웰컴 키트</p>
+                <button class="btn-green-accent">타임슬롯 선택하기</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-04: 실시간 타임슬롯 예매 MATRIX (4열 그리드 구도) -->
+    <section id="sec04" class="section-container">
+        <div class="sec-num">SECTION 04</div>
+        <div class="sec-h2">🎟️ 실시간 타임슬롯 선택 스튜디오 (성수점)</div>
+        <div class="sec-desc">시간대별 잔여 티켓 실시간 카운터 및 1-Click 예매</div>
+
+        <div class="timeslot-4col">
+            <div class="time-item" style="opacity:0.4;">
+                <div style="font-weight:900;">12:00 - 13:00</div>
+                <div style="font-size:11px; color:#ef4444;">[매진 / Sold Out]</div>
+            </div>
+            <div class="time-item selected">
+                <div style="font-weight:900;">14:00 - 15:00</div>
+                <div style="font-size:11px; color:#34d399;">[잔여 8석 - 예매 가능]</div>
+            </div>
+            <div class="time-item">
+                <div style="font-weight:900;">16:00 - 17:00</div>
+                <div style="font-size:11px; color:#fbbf24;">[잔여 3석 - 마감임박]</div>
+            </div>
+            <div class="time-item">
+                <div style="font-weight:900;">18:00 - 19:00</div>
+                <div style="font-size:11px; color:#34d399;">[잔여 12석 - 예매 가능]</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-05: 모바일 QR 어사 패스 실시간 발급기 -->
+    <section id="sec05" class="section-container">
+        <div class="sec-num">SECTION 05</div>
+        <div class="sec-h2">📱 모바일 QR 어사 패스 (디지털 입출입증)</div>
+        <div class="sec-desc">카카오 알림톡으로 전송되는 실시간 모바일 출입증</div>
+
+        <div class="mobile-pass-wrapper">
+            <div>
+                <h3 style="font-size:20px; font-weight:900; margin-bottom:10px;">스마트폰 모바일 출입증 발급</h3>
+                <p style="font-size:13px; color:var(--text-muted); margin-bottom:20px;">타임슬롯 예매 완료 시 사용자의 휴대폰으로 카카오 알림톡 QR 어사 패스가 즉시 발급됩니다.</p>
+                <button class="btn-green-dark" style="width:auto; padding:12px 24px;">내 모바일 QR 티켓 발급받기</button>
+            </div>
+            <div class="phone-mockup">
+                <div style="font-size:11px; color:#94a3b8;">SADAN MOBILE PASS</div>
+                <div style="font-size:15px; font-weight:900; margin:6px 0;">성수점 [14:00] 입장 패스</div>
+                <div style="background:#fff; color:#000; height:150px; border-radius:8px; display:flex; flex-direction:column; align-items:center; justify-content:center; font-weight:900; margin:15px 0;">
+                    [ QR CODE MATRIX ]<br>
+                    <span style="font-size:10px; color:#64748b;">SADAN-PASS-8809</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-06: 1:1 아티잔 조향 커리큘럼 (수직 타임라인 구도) -->
+    <section id="sec06" class="section-container">
+        <div class="sec-num">SECTION 06</div>
+        <div class="sec-h2">🎓 아티잔 장인 1:1 조향 수강 커리큘럼</div>
+        <div class="sec-desc">수제 향수 제작 3단계 타임라인</div>
+
+        <div class="curriculum-timeline">
+            <div class="timeline-step">STEP 1: 퍼스널 향 노트 조율 (Top, Middle, Base 아코드 선택)</div>
+            <div class="timeline-step">STEP 2: 무형문화재 놋쇠 마패 용기 음각 서체 각인 체험</div>
+            <div class="timeline-step">STEP 3: 나만의 시그니처 커스텀 향수 완성 및 웰컴 키트 수령</div>
+        </div>
+    </section>
+
+    <!-- SEC-07: 화해 비건 성분 검증표 -->
+    <section id="sec07" class="section-container">
+        <div class="sec-num">SECTION 07</div>
+        <div class="sec-h2">🌿 화해 100% 비건 인증 성분 &amp; IFRA 안전성 데이터</div>
+        <div class="sec-desc">안심 조향 클래스를 위한 피부 안심 데이터</div>
+
+        <table class="v-table">
+            <tr>
+                <th>향료 성분명</th>
+                <th>화해 비건 인증</th>
+                <th>알레르기 안전 검증</th>
+            </tr>
+            <tr>
+                <td>조선 백송 핀테르펜</td>
+                <td>100% 비건 인증 완료</td>
+                <td>IFRA 기준 통과 (0.00% 유해)</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- SEC-08: 웰컴 키트 사은 혜택 안내 (50:50 대형 분할) -->
+    <section id="sec08" class="section-container">
+        <div class="sec-num">SECTION 08</div>
+        <div class="sec-h2">🎁 사전예약자 전용 웰컴 디스커버리 사은 키트</div>
+        <div class="sec-desc">현장 팝업 방문 시 제공되는 사은 구성</div>
+
+        <div class="welcome-split">
+            <div style="background:#f1f5f9; padding:20px; border-radius:8px; border:1px solid var(--border-dark);">
+                <div style="font-weight:900;">1. 웰컴 시향 디스커버리 팩 (3종)</div>
+                <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">사단 시그니처 향 3종 미니 샘플 세트</div>
+            </div>
+            <div style="background:#f1f5f9; padding:20px; border-radius:8px; border:1px solid var(--border-dark);">
+                <div style="font-weight:900;">2. 무형문화재 놋쇠 메시지 엽서</div>
+                <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">소장용 놋쇠 음각 메시지 엽서 카드</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-09: 푸터 -->
+    <footer id="sec09">
+        사단(士團) 조향 수강 아틀리에 | PM 박지안 | 9개 독립 섹션 풀 롱 스크롤 &amp; 3열 카드 배제 다채로운 그리드 명세 | CS Center 1588-0000
+    </footer>
+
+</body>
+</html>

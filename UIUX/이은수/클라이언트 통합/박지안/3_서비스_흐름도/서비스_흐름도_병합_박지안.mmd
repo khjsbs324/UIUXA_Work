@@ -1,0 +1,10 @@
+flowchart TD
+    Start([방문자 랜딩 페이지 진입]) --> SelectBranch[성수/경복궁 지점 선택 & 타임슬롯 예매]
+    
+    SelectBranch --> SelectClass[아티잔 장인 1:1 조향 수강 팩 선택]
+    SelectClass --> QRPass[카카오 알림톡 모바일 QR 입출입증 발급]
+    
+    QRPass --> SafetyCheck[화해 비건 성분표 & 알레르기 필터 확인]
+    SafetyCheck --> WelcomeKit[현장 팝업 수령 웰컴 디스커버리 키트 연동]
+    
+    WelcomeKit --> Checkout([주문 결제 & 모바일 어사 패스 예약 완료])
