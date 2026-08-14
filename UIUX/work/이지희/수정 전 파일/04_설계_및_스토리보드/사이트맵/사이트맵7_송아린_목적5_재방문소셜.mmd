@@ -1,0 +1,73 @@
+flowchart TD
+    classDef main fill:#EC4899,stroke:#BE185D,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef sub fill:#831843,stroke:#500724,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef drawer fill:#FDF2F8,stroke:#831843,stroke-width:2px,color:#831843,font-weight:bold;
+    classDef common fill:#F8F9FA,stroke:#831843,stroke-width:1px,color:#831843;
+    classDef member fill:#FFF3E0,stroke:#E65100,stroke-width:1.5px,color:#E65100,stroke-dasharray: 5 5;
+    classDef exception fill:#FFEBEE,stroke:#C62828,stroke-width:1.5px,color:#C62828,stroke-dasharray: 3 3;
+
+    Root["WICKETA Mixology Challenge (가상클라이언트7 송아린)"]
+    M1["1. Home (숏폼 메인 믹솔로지 PG-01)"]
+    M2["2. Challenge Upload (영상 응모 PG-33)"]
+    M3["3. Social Gallery (투표 & 하트 랭킹 PG-03)"]
+    M4["4. Re-Order Drawer (1-Click 재주문 PG-04)"]
+
+    Root --> M1
+    Root --> M2
+    Root --> M3
+    Root --> M4
+
+    M1_1["GNB Sticky Header"]
+    M1_2["Hero Reels Video"]
+    M1_3["Short-Form Grid"]
+    M1_4["Footer Brand Story"]
+
+    M1 --> M1_1
+    M1 --> M1_2
+    M1 --> M1_3
+    M1 --> M1_4
+
+    M2_1["Reels Challenge Lookbook"]
+    M2_2["Heart Ranking Vote"]
+    M2_1_1["1초 레시피 시청"]
+    M2_2_1["소셜 공유 & 좋아요"]
+
+    M2 --> M2_1
+    M2 --> M2_2
+    M2_1 --> M2_1_1
+    M2_2 --> M2_2_1
+
+    M3_1["3D 아로마 휠 차트"]
+    M3_2["180s Challenge Timer"]
+    M3_3["3D 이니셜 각인 미리보기"]
+
+    M3 --> M3_1
+    M3 --> M3_2
+    M3 --> M3_3
+
+    M4_1["3초 Cart Drawer (Aside)"]
+    M4_2["카카오 1초 기프팅"]
+
+    M4 --> M4_1
+    M4 --> M4_2
+
+    MEM1["[회원] 크리에이터 랭킹 & 마이페이지 (PG-M01)"]
+    GUEST1["[비회원] 카카오 1초 로그인"]
+
+    Root --> MEM1
+    Root --> GUEST1
+
+    EXP1["[예외] 404 Not Found (EXP-01)"]
+    EXP2["[예외] 스타터 팩 품절 모달 (EXP-02)"]
+    EXP3["[예외] 결제 오류 복원 (EXP-03)"]
+
+    Root --> EXP1
+    Root --> EXP2
+    Root --> EXP3
+
+    class Root main;
+    class M1,M2,M3,M4 sub;
+    class M4_1 drawer;
+    class M1_1,M1_2,M1_3,M1_4,M2_1,M2_2,M2_1_1,M2_2_1,M3_1,M3_2,M3_3,M4_2 common;
+    class MEM1,GUEST1 member;
+    class EXP1,EXP2,EXP3 exception;

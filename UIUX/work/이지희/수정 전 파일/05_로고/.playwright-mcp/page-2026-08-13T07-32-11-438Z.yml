@@ -1,0 +1,144 @@
+- generic [ref=f68e4]:
+  - banner:
+    - link "콘텐츠로 건너뛰기":
+      - /url: "#"
+    - generic [ref=f68e15]:
+      - generic [ref=f68e17]:
+        - generic [ref=f68e18]:
+          - combobox "검색" [ref=f68e20]: abstract breath continuous line modern logo mark
+          - generic [ref=f68e21]:
+            - button "검색 입력 삭제" [ref=f68e24] [cursor=pointer]
+            - generic "이미지 업로드" [ref=f68e30]:
+              - button "Pinterest 렌즈" [ref=f68e31] [cursor=pointer]
+        - button "모든 핀 드롭다운" [ref=f68e38] [cursor=pointer]:
+          - generic [ref=f68e40]:
+            - generic [ref=f68e41]: 모든 핀
+            - img "드롭다운" [ref=f68e43]
+      - link "내 프로필" [ref=f68e49] [cursor=pointer]:
+        - /url: /victoryjhl/
+        - img [ref=f68e56]:
+          - generic [ref=f68e57]: 이
+      - button "계정" [ref=f68e61] [cursor=pointer]
+  - navigation [ref=f68e66]:
+    - generic [ref=f68e68]:
+      - generic [ref=f68e69]:
+        - generic "홈" [ref=f68e73]:
+          - link "홈" [ref=f68e74] [cursor=pointer]:
+            - /url: /
+        - generic "홈" [ref=f68e81]:
+          - link "홈" [ref=f68e82] [cursor=pointer]:
+            - /url: /
+        - generic "내 보드" [ref=f68e89]:
+          - link "내 보드" [ref=f68e90] [cursor=pointer]:
+            - /url: /victoryjhl/
+        - generic "만들기" [ref=f68e97]:
+          - button "만들기" [ref=f68e98] [cursor=pointer]
+        - generic "업데이트" [ref=f68e107]:
+          - button "업데이트" [ref=f68e108] [cursor=pointer]
+        - generic "메시지" [ref=f68e117]:
+          - button "메시지" [ref=f68e118] [cursor=pointer]
+      - generic "설정 및 지원" [ref=f68e126]:
+        - button "설정 및 지원" [ref=f68e127] [cursor=pointer]
+  - main [ref=f68e132]:
+    - generic [ref=f68e134]:
+      - heading "검색 결과 페이지" [level=1] [ref=f68e136]
+      - region "필터 및 세분화 검색" [ref=f68e140]:
+        - button "필터 표시" [ref=f68e149] [cursor=pointer]
+      - generic [ref=f68e160]:
+        - generic [ref=f68e161]: abstract breath continuous line modern logo mark 검색 결과를 추가로 불러오는 중
+        - list [ref=f68e166]:
+          - listitem [ref=f68e167]:
+            - button [ref=f68e169] [cursor=pointer]:
+              - group "핀 카드" [ref=f68e172]:
+                - generic [ref=f68e174]:
+                  - link "Get a modern logo designed to grow with your brand 핀 페이지" [ref=f68e176]:
+                    - /url: /pin/251146116757105992/
+                    - 'img "포함된 내용: Get a modern logo designed to grow with your brand" [ref=f68e186]'
+                  - generic [ref=f68e191]:
+                    - heading [level=2] [ref=f68e197]:
+                      - link "Get a modern logo designed to grow with your brand 핀 페이지" [ref=f68e199]:
+                        - /url: /pin/251146116757105992/
+                        - text: Get a modern logo designed to grow with your brand
+                    - generic "추가 작업" [ref=f68e202]:
+                      - button "추가 작업" [ref=f68e203]
+          - listitem [ref=f68e208]:
+            - button [ref=f68e210] [cursor=pointer]:
+              - group "핀 카드" [ref=f68e213]:
+                - generic [ref=f68e215]:
+                  - link "제목 없음 핀 페이지" [ref=f68e217]:
+                    - /url: /pin/68749288593/
+                    - img "포함된 이미지:" [ref=f68e227]
+                  - generic "추가 작업" [ref=f68e236]:
+                    - button "추가 작업" [ref=f68e237]
+          - listitem [ref=f68e242]:
+            - button [ref=f68e244] [cursor=pointer]:
+              - group "핀 카드" [ref=f68e247]:
+                - generic [ref=f68e249]:
+                  - link "제목 없음 핀 페이지" [ref=f68e251]:
+                    - /url: /pin/11399805458838584/
+                    - img "포함된 이미지:" [ref=f68e261]
+                  - generic "추가 작업" [ref=f68e270]:
+                    - button "추가 작업" [ref=f68e271]
+          - listitem [ref=f68e276]:
+            - button [ref=f68e278] [cursor=pointer]:
+              - group "핀 카드" [ref=f68e281]:
+                - generic [ref=f68e283]:
+                  - 'link "Abstract Logo: edited: 9780993581205: Amazon.com: Books 핀 페이지" [ref=f68e285]':
+                    - /url: /pin/25403185394300325/
+                    - img "포함된 이미지:" [ref=f68e295]
+                  - generic [ref=f68e300]:
+                    - link "Amazon" [ref=f68e304]:
+                      - /url: /amazon/
+                      - generic "Amazon" [ref=f68e311]
+                    - generic "추가 작업" [ref=f68e314]:
+                      - button "추가 작업" [ref=f68e315]
+          - listitem [ref=f68e320]:
+            - button [ref=f68e322] [cursor=pointer]:
+              - group "핀 카드" [ref=f68e325]:
+                - generic [ref=f68e327]:
+                  - link "제목 없음 핀 페이지" [ref=f68e329]:
+                    - /url: /pin/109423465941056117/
+                    - img "포함된 이미지:" [ref=f68e339]
+                  - generic "추가 작업" [ref=f68e348]:
+                    - button "추가 작업" [ref=f68e349]
+          - listitem [ref=f68e354]:
+            - button [ref=f68e356] [cursor=pointer]:
+              - group "핀 카드" [ref=f68e359]:
+                - generic [ref=f68e361]:
+                  - link "제목 없음 핀 페이지" [ref=f68e363]:
+                    - /url: /pin/869617009292023130/
+                    - img "포함된 이미지:" [ref=f68e373]
+                  - generic "추가 작업" [ref=f68e382]:
+                    - button "추가 작업" [ref=f68e383]
+          - listitem [ref=f68e388]:
+            - button [ref=f68e390] [cursor=pointer]:
+              - group "핀 카드" [ref=f68e393]:
+                - generic [ref=f68e395]:
+                  - link "제목 없음 핀 페이지" [ref=f68e397]:
+                    - /url: /pin/384072674485560607/
+                    - img "포함된 이미지:" [ref=f68e407]
+                  - generic "추가 작업" [ref=f68e416]:
+                    - button "추가 작업" [ref=f68e417]
+          - listitem [ref=f68e422]:
+            - button [ref=f68e424] [cursor=pointer]:
+              - group "핀 카드" [ref=f68e427]:
+                - generic [ref=f68e429]:
+                  - link "Embrace Simplicity - The Art of Breathing 핀 페이지" [ref=f68e431]:
+                    - /url: /pin/27021666510289233/
+                    - 'img "포함된 이미지: Embrace Simplicity - The Art of Breathing" [ref=f68e441]'
+                  - generic [ref=f68e446]:
+                    - heading [level=2] [ref=f68e452]:
+                      - link "Embrace Simplicity - The Art of Breathing 핀 페이지" [ref=f68e454]:
+                        - /url: /pin/27021666510289233/
+                        - text: Embrace Simplicity - The Art of Breathing
+                    - generic "추가 작업" [ref=f68e457]:
+                      - button "추가 작업" [ref=f68e458]
+          - listitem [ref=f68e463]:
+            - button [ref=f68e465] [cursor=pointer]:
+              - group "핀 카드" [ref=f68e468]:
+                - generic [ref=f68e470]:
+                  - link "제목 없음 핀 페이지" [ref=f68e472]:
+                    - /url: /pin/137782069846462621/
+                    - img "포함된 이미지:" [ref=f68e482]
+                  - generic "추가 작업" [ref=f68e491]:
+                    - button "추가 작업" [ref=f68e492]

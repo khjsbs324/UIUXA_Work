@@ -1,0 +1,87 @@
+flowchart TD
+    classDef main fill:#2A1810,stroke:#1A0F0A,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef sub fill:#4A3228,stroke:#2A1810,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef drawer fill:#FDFBF7,stroke:#4A3228,stroke-width:2px,color:#2A1810,font-weight:bold;
+    classDef common fill:#F8F9FA,stroke:#2A1810,stroke-width:1px,color:#2A1810;
+    classDef member fill:#FFF3E0,stroke:#E65100,stroke-width:1.5px,color:#E65100,stroke-dasharray: 5 5;
+    classDef exception fill:#FFEBEE,stroke:#C62828,stroke-width:1.5px,color:#C62828,stroke-dasharray: 3 3;
+
+    Root["WICKETA Hotel VIP Gift (가상클라이언트05 임태경)"]
+    M1["1. Home VIP 선물 메인 (PG-01)"]
+    M2["2. Custom Studio 3D 우드각인 (PG-02)"]
+    M3["3. VIP Gift Showcase 스위트룸 선물관 (PG-03)"]
+    M4["4. Gift Drawer VIP 결제 (PG-04 Aside Layer)"]
+
+    Root --> M1
+    Root --> M2
+    Root --> M3
+    Root --> M4
+
+    M1_1["Hero Section (스위트룸 고객을 위한 웰컴 기프트 세트)"]
+    M1_2["3D Wood Gift Box Preview (3D 렌더러)"]
+    M1_3["In-Room Sleep Tea Bundle (수면 티 4종 세트)"]
+    M1_4["Hospitality Certification Checklist (호텔 전용 보증서)"]
+
+    M1 --> M1_1
+    M1 --> M1_2
+    M1 --> M1_3
+    M1 --> M1_4
+
+    M2_1["실시간 3D 우드박스 로고 각인기 (PG-31)"]
+    M2_2["딥 월넛 / 내추럴 오크 원목 재질 스위처"]
+
+    M2 --> M2_1
+    M2 --> M2_2
+
+    M2_1_1["호텔 영문 로고 음각 시뮬레이션"]
+    M2_1_2["친환경 식물성 오일 마감 스펙 안내"]
+
+    M2_1 --> M2_1_1
+    M2_1 --> M2_1_2
+
+    M2_2_1["360도 회전 우드 패키지 뷰어"]
+    M2_2_2["도자기 티스푼 & 거치대 세트 뷰어"]
+
+    M2_2 --> M2_2_1
+    M2_2 --> M2_2_2
+
+    M3_1["스위트룸 전용 수면 티 4종 번들 빌더 (PG-32)"]
+    M3_2["호텔 총지배인 모바일 웰컴 레터 작성 폼 (PG-33)"]
+    M3_3["1-Click 호텔 객실 배송 연동"]
+
+    M3 --> M3_1
+    M3 --> M3_2
+    M3 --> M3_3
+
+    M3_1_1["무카페인 카모마일 & 라벤더 블렌딩 팩"]
+    M3_2_1["고급 린넨 페이퍼 텍스처 웰컴 레터"]
+
+    M3_1 --> M3_1_1
+    M3_2 --> M3_2_1
+
+    M4_1["3초 슬라이드아웃 Gift Cart Drawer (선물 주문서)"]
+    M4_2["Virtual Scroll 위치 보존 (탐색 스크롤 100% 복원)"]
+
+    M4 --> M4_1
+    M4 --> M4_2
+
+    MEM1["[회원 영역] 저장된 호텔 각인 디자인 (PG-M01 마이페이지)"]
+    GUEST1["[비회원 영역] 감성 모바일 웰컴 레터 발급 (가정)"]
+
+    M4 -.-> MEM1
+    M4 -.-> GUEST1
+
+    EXP1["[EXP-01] 404 Page Not Found (메인 안내 - 가정)"]
+    EXP2["[EXP-02] 우드 박스 품절 안내 모달 (가정)"]
+    EXP3["[EXP-03] 각인 글자수 초과 에러 모달 (가정)"]
+
+    Root -.-> EXP1
+    M2_1 -.-> EXP2
+    M2_1 -.-> EXP3
+
+    class Root,M1 main;
+    class M2,M3 sub;
+    class M4,M4_1,M4_2 drawer;
+    class M1_1,M1_2,M1_3,M1_4,M2_1,M2_2,M2_1_1,M2_1_2,M2_2_1,M2_2_2,M3_1,M3_2,M3_3,M3_1_1,M3_2_1 common;
+    class MEM1,GUEST1 member;
+    class EXP1,EXP2,EXP3 exception;

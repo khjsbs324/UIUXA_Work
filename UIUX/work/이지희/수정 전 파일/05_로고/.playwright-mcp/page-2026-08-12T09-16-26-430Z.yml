@@ -1,0 +1,126 @@
+- generic [ref=f49e4]:
+  - banner:
+    - link "콘텐츠로 건너뛰기":
+      - /url: "#"
+    - generic [ref=f49e15]:
+      - generic [ref=f49e18]:
+        - generic:
+          - img "검색 아이콘"
+        - combobox "검색" [ref=f49e20]
+        - generic "이미지 업로드" [ref=f49e23]:
+          - button "Pinterest 렌즈" [ref=f49e24] [cursor=pointer]
+      - link "내 프로필" [ref=f49e33] [cursor=pointer]:
+        - /url: /victoryjhl/
+        - img [ref=f49e40]:
+          - generic [ref=f49e41]: 이
+      - button "계정" [ref=f49e45] [cursor=pointer]
+  - navigation [ref=f49e50]:
+    - generic [ref=f49e52]:
+      - generic [ref=f49e53]:
+        - generic "홈" [ref=f49e57]:
+          - link "홈" [ref=f49e58] [cursor=pointer]:
+            - /url: /
+        - generic "홈" [ref=f49e65]:
+          - link "홈" [ref=f49e66] [cursor=pointer]:
+            - /url: /
+        - generic "내 보드" [ref=f49e73]:
+          - link "내 보드" [ref=f49e74] [cursor=pointer]:
+            - /url: /victoryjhl/
+        - generic "만들기" [ref=f49e81]:
+          - button "만들기" [ref=f49e82] [cursor=pointer]
+      - generic "설정 및 지원" [ref=f49e98]:
+        - button "설정 및 지원" [ref=f49e99] [cursor=pointer]
+  - main [ref=f49e104]:
+    - generic [ref=f49e113]:
+      - button "뒤로" [ref=f49e115] [cursor=pointer]
+      - generic [ref=f49e124]:
+        - generic [ref=f49e125]: 관련 상품 결과를 불러오는 중
+        - list [ref=f49e130]:
+          - listitem [ref=f49e131]:
+            - group "Closeup content container" [ref=f49e138]:
+              - generic [ref=f49e143]:
+                - region "핀 이미지 및 탐색할 항목" [ref=f49e146]:
+                  - link "사이트 방문" [ref=f49e160] [cursor=pointer]:
+                    - /url: https://www.instagram.com/p/B2MLa3FnnAG/?utm_source=Pinterest&utm_medium=organic
+                - generic [ref=f49e165]:
+                  - list [ref=f49e169]:
+                    - generic [ref=f49e170]:
+                      - listitem [ref=f49e172]:
+                        - generic "반응" [ref=f49e175]:
+                          - button "반응" [ref=f49e176] [cursor=pointer]
+                        - generic [ref=f49e181]: "0"
+                      - listitem [ref=f49e183]:
+                        - generic "댓글" [ref=f49e186]:
+                          - button "댓글" [ref=f49e187] [cursor=pointer]
+                      - listitem [ref=f49e193]:
+                        - generic "공유" [ref=f49e197]:
+                          - button "이 핀 공유" [ref=f49e200] [cursor=pointer]
+                      - listitem [ref=f49e206]:
+                        - generic "추가 작업" [ref=f49e211]:
+                          - button "추가 작업" [ref=f49e214] [cursor=pointer]
+                  - generic [ref=f49e223]:
+                    - generic [ref=f49e232]:
+                      - link [ref=f49e234] [cursor=pointer]:
+                        - /url: /sunnysocialdesign/
+                        - img "Sunny Social Design | Brand & Web Design for Small Businesses 아바타 링크" [ref=f49e241]
+                      - link [ref=f49e245] [cursor=pointer]:
+                        - /url: /sunnysocialdesign/
+                        - heading "Sunny Social Design | Brand & Web Design for Small Businesses" [level=2] [ref=f49e246]
+                    - generic [ref=f49e249]:
+                      - link "사이트 방문" [ref=f49e259] [cursor=pointer]:
+                        - /url: https://www.instagram.com/p/B2MLa3FnnAG/?utm_source=Pinterest&utm_medium=organic
+                      - generic [ref=f49e263]:
+                        - heading "설명" [level=4] [ref=f49e264]
+                        - generic [ref=f49e268]:
+                          - text: Be the literal face of your brand! (It’s not as nerve wracking as it sounds. You’ll probably have some flowers and stuff around you.) Portrait logos are an easy and unique way to set yourself apart. Inquire within to receive a quote! ....
+                          - link "#portrait" [ref=f49e270] [cursor=pointer]:
+                            - /url: /search/pins/?q=portrait
+                          - link "#botanicalillustration" [ref=f49e272] [cursor=pointer]:
+                            - /url: /search/pins/?q=botanicalillustration
+                          - link "#monoline" [ref=f49e274] [cursor=pointer]:
+                            - /url: /search/pins/?q=monoline
+                          - link "#handdrawn" [ref=f49e276] [cursor=pointer]:
+                            - /url: /search/pins/?q=handdrawn
+                          - link "#branding" [ref=f49e278] [cursor=pointer]:
+                            - /url: /search/pins/?q=branding
+                          - link "#logo" [ref=f49e280] [cursor=pointer]:
+                            - /url: /search/pins/?q=logo
+                          - link "#brandstrategy" [ref=f49e282] [cursor=pointer]:
+                            - /url: /search/pins/?q=brandstrategy
+                          - link "#brandstrategist" [ref=f49e284] [cursor=pointer]:
+                            - /url: /search/pins/?q=brandstrategist
+                          - link "#aromatherapy" [ref=f49e286] [cursor=pointer]:
+                            - /url: /search/pins/?q=aromatherapy
+                          - link "#logodesigner" [ref=f49e288] [cursor=pointer]:
+                            - /url: /search/pins/?q=logodesigner
+                          - link "#logodesign" [ref=f49e290] [cursor=pointer]:
+                            - /url: /search/pins/?q=logodesign
+                          - link "#floral" [ref=f49e292] [cursor=pointer]:
+                            - /url: /search/pins/?q=floral
+                          - link "#tulips" [ref=f49e294] [cursor=pointer]:
+                            - /url: /search/pins/?q=tulips
+                          - link "#melbourneart" [ref=f49e296] [cursor=pointer]:
+                            - /url: /search/pins/?q=melbourneart
+                          - link "#instaart" [ref=f49e298] [cursor=pointer]:
+                            - /url: /search/pins/?q=instaart
+                          - link "#badge" [ref=f49e300] [cursor=pointer]:
+                            - /url: /search/pins/?q=badge
+                          - link "#logobadge" [ref=f49e302] [cursor=pointer]:
+                            - /url: /search/pins/?q=logobadge
+                          - link "#illustration" [ref=f49e304] [cursor=pointer]:
+                            - /url: /search/pins/?q=illustration
+                          - link "#bossbabe" [ref=f49e306] [cursor=pointer]:
+                            - /url: /search/pins/?q=bossbabe
+                          - link "#businesswoman" [ref=f49e308] [cursor=pointer]:
+                            - /url: /search/pins/?q=businesswoman
+                          - link "#womeninbusiness" [ref=f49e310] [cursor=pointer]:
+                            - /url: /search/pins/?q=womeninbusiness
+                          - link "#Regr" [ref=f49e312] [cursor=pointer]:
+                            - /url: /search/pins/?q=Regr
+                        - button "더 보기" [ref=f49e314] [cursor=pointer]
+          - listitem [ref=f49e317]
+          - listitem [ref=f49e321]
+          - listitem [ref=f49e325]
+          - listitem [ref=f49e329]
+          - listitem [ref=f49e333]
+          - listitem [ref=f49e337]

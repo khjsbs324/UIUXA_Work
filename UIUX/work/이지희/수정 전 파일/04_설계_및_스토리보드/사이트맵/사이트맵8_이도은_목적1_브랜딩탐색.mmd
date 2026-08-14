@@ -1,0 +1,87 @@
+flowchart TD
+    classDef main fill:#252B36,stroke:#11151C,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef sub fill:#5E6977,stroke:#252B36,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef drawer fill:#EAE6DC,stroke:#5E6977,stroke-width:2px,color:#252B36,font-weight:bold;
+    classDef common fill:#F4F1EA,stroke:#252B36,stroke-width:1px,color:#252B36;
+    classDef member fill:#FFF3E0,stroke:#E65100,stroke-width:1.5px,color:#E65100,stroke-dasharray: 5 5;
+    classDef exception fill:#FFEBEE,stroke:#C62828,stroke-width:1.5px,color:#C62828,stroke-dasharray: 3 3;
+
+    Root["WICKETA Secret Sanctuary (가상클라이언트8 이도은)"]
+    M1["1. Home 비밀 안식처 메인 (PG-01)"]
+    M2["2. Secret Garden 비밀 정원 (PG-02)"]
+    M3["3. Mind Diagnosis 감정 진단 (PG-03)"]
+    M4["4. Cart Drawer 결제 Drawer (PG-04 Aside Layer)"]
+
+    Root --> M1
+    Root --> M2
+    Root --> M3
+    Root --> M4
+
+    M1_1["Hero Section (My Own Surreal Sanctuary)"]
+    M1_2["Editorial Sanctuary Story (50% 여백 0.5px 그리드)"]
+    M1_3["Dreamcore Water Lookbook (파스텔 수색 룩북)"]
+    M1_4["Zero Screen-Fatigue Fact (눈 피로 제로 검증표)"]
+
+    M1 --> M1_1
+    M1 --> M1_2
+    M1 --> M1_3
+    M1 --> M1_4
+
+    M2_1["소프트 드림코어 수색 갤러리 (PG-32)"]
+    M2_2["글래스모피즘 아포테케리 카드 아카이브"]
+
+    M2 --> M2_1
+    M2 --> M2_2
+
+    M2_1_1["1초 찬물 융해 3D 파스텔 모션"]
+    M2_1_2["안개 그라데이션 감성 아트웍"]
+
+    M2_1 --> M2_1_1
+    M2_1 --> M2_1_2
+
+    M2_2_1["1.5:2.5 비대칭 카드 인터랙션"]
+    M2_2_2["무카페인 식물성 성분 상세표"]
+
+    M2_2 --> M2_2_1
+    M2_2 --> M2_2_2
+
+    M3_1["오늘 하루 어땠나요? 3단계 감정 퀴즈 (PG-31)"]
+    M3_2["프라이빗 감정 안식 파우치 쇼케이스 (PG-33)"]
+    M3_3["첫 안식 체험키트 사전 신청 혜택"]
+
+    M3 --> M3_1
+    M3 --> M3_2
+    M3 --> M3_3
+
+    M3_1_1["1:1 맞춤 힐링 티 처방 리포트"]
+    M3_3_1["안식 웰컴 바우처 자동 발급 신청 폼"]
+
+    M3_1 --> M3_1_1
+    M3_3 --> M3_3_1
+
+    M4_1["슬라이드아웃 Cart Drawer (1-Page 처방전 주문서)"]
+    M4_2["Virtual Scroll 위치 보존 (탐색 스크롤 100% 복원)"]
+
+    M4 --> M4_1
+    M4 --> M4_2
+
+    MEM1["[회원 영역] 감정 진단 기록 & 파우치 주문 (PG-M01 마이페이지)"]
+    GUEST1["[비회원 영역] 카카오 1초 간편 로그인 (가정)"]
+
+    M4 -.-> MEM1
+    M4 -.-> GUEST1
+
+    EXP1["[EXP-01] 404 Page Not Found (메인 안식처 안내 - 가정)"]
+    EXP2["[EXP-02] 안식 체험키트 품절 안내 모달 (재입고 알림 - 가정)"]
+    EXP3["[EXP-03] 결제 네트워크 오류 안내 (Cart Drawer 임시 저장 - 가정)"]
+
+    Root -.-> EXP1
+    M3_3 -.-> EXP2
+    M4_1 -.-> EXP3
+
+    class Root,M1 main;
+    class M2,M3 sub;
+    class M4,M4_1,M4_2 drawer;
+    class M1_1,M1_2,M1_3,M1_4,M2_1,M2_2,M2_1_1,M2_1_2,M2_2_1,M2_2_2,M3_1,M3_2,M3_3,M3_1_1,M3_3_1 common;
+    class MEM1,GUEST1 member;
+    class EXP1,EXP2,EXP3 exception;

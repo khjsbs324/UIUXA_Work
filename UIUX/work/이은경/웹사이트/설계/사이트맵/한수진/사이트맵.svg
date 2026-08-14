@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="100%" height="100%">
+  <rect width="1440" height="900" fill="#FAF9F6"/>
+  
+  <!-- Header Title Bar -->
+  <rect width="1440" height="70" fill="#3b5998"/>
+  <text x="30" y="44" font-family="'Pretendard', sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF">🗺️ 소피 (SOAPHE) 사이트맵 &amp; 계층적 정보 구조 다이어그램 (Depth 1~3)</text>
+  <text x="1200" y="44" font-family="'Pretendard', sans-serif" font-size="14" fill="#FFFFFF" opacity="0.9">사전예약 35% 할인 세트</text>
+
+  <!-- Level 1: HOME Node -->
+  <rect x="570" y="100" width="300" height="55" rx="8" fill="#222222" stroke="#000" stroke-width="2"/>
+  <text x="605" y="134" font-family="'Pretendard', sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF">HOME (PAGE-100 메인페이지)</text>
+
+  <!-- Level 2 Connecting Trunk -->
+  <line x1="720" y1="155" x2="720" y2="210" stroke="#3b5998" stroke-width="3"/>
+  <line x1="120" y1="210" x2="1320" y2="210" stroke="#3b5998" stroke-width="3"/>
+
+  <!-- Level 2 Branch Lines -->
+  <line x1="120" y1="210" x2="120" y2="250" stroke="#3b5998" stroke-width="2"/>
+  <line x1="270" y1="210" x2="270" y2="250" stroke="#3b5998" stroke-width="2"/>
+  <line x1="420" y1="210" x2="420" y2="250" stroke="#3b5998" stroke-width="2"/>
+  <line x1="570" y1="210" x2="570" y2="250" stroke="#3b5998" stroke-width="2"/>
+  <line x1="720" y1="210" x2="720" y2="250" stroke="#3b5998" stroke-width="2"/>
+  <line x1="870" y1="210" x2="870" y2="250" stroke="#3b5998" stroke-width="2"/>
+  <line x1="1020" y1="210" x2="1020" y2="250" stroke="#3b5998" stroke-width="2"/>
+  <line x1="1170" y1="210" x2="1170" y2="250" stroke="#3b5998" stroke-width="2"/>
+  <line x1="1320" y1="210" x2="1320" y2="250" stroke="#3b5998" stroke-width="2"/>
+
+  <!-- Level 2 Section Nodes -->
+  <rect x="50" y="250" width="140" height="60" rx="6" fill="#FFFFFF" stroke="#3b5998" stroke-width="2"/>
+  <text x="62" y="278" font-family="'Pretendard', sans-serif" font-size="13" font-weight="bold" fill="#333">1.0.1 히어로</text>
+  <text x="62" y="296" font-family="'Pretendard', sans-serif" font-size="11" fill="#777">3D 조형 모션</text>
+
+  <rect x="200" y="250" width="140" height="60" rx="6" fill="#FFFFFF" stroke="#3b5998" stroke-width="2"/>
+  <text x="212" y="278" font-family="'Pretendard', sans-serif" font-size="13" font-weight="bold" fill="#333">1.0.2 위생비교</text>
+  <text x="212" y="296" font-family="'Pretendard', sans-serif" font-size="11" fill="#777">찌꺼기 ↔ 물빠짐</text>
+
+  <rect x="350" y="250" width="140" height="60" rx="6" fill="#FFFFFF" stroke="#3b5998" stroke-width="2"/>
+  <text x="362" y="278" font-family="'Pretendard', sans-serif" font-size="13" font-weight="bold" fill="#333">1.0.3 주력세트</text>
+  <text x="362" y="296" font-family="'Pretendard', sans-serif" font-size="11" fill="#777">트레이+비누3종</text>
+
+  <rect x="500" y="250" width="140" height="60" rx="6" fill="#FFFFFF" stroke="#3b5998" stroke-width="2"/>
+  <text x="512" y="278" font-family="'Pretendard', sans-serif" font-size="13" font-weight="bold" fill="#333">1.0.4 트레이 룩북</text>
+  <text x="512" y="296" font-family="'Pretendard', sans-serif" font-size="11" fill="#777">세면대 ↔ 데스크</text>
+
+  <rect x="650" y="250" width="140" height="60" rx="6" fill="#FFFFFF" stroke="#3b5998" stroke-width="2"/>
+  <text x="662" y="278" font-family="'Pretendard', sans-serif" font-size="13" font-weight="bold" fill="#333">1.0.5 향 가이드</text>
+  <text x="662" y="296" font-family="'Pretendard', sans-serif" font-size="11" fill="#777">Top/Mid/Base</text>
+
+  <rect x="800" y="250" width="140" height="60" rx="6" fill="#FFFFFF" stroke="#3b5998" stroke-width="2"/>
+  <text x="812" y="278" font-family="'Pretendard', sans-serif" font-size="13" font-weight="bold" fill="#333">1.0.6 각인 서비스</text>
+  <text x="812" y="296" font-family="'Pretendard', sans-serif" font-size="11" fill="#777">이니셜 각인</text>
+
+  <rect x="950" y="250" width="140" height="60" rx="6" fill="#FFFFFF" stroke="#3b5998" stroke-width="2"/>
+  <text x="962" y="278" font-family="'Pretendard', sans-serif" font-size="13" font-weight="bold" fill="#333">1.0.7 공간 갤러리</text>
+  <text x="962" y="296" font-family="'Pretendard', sans-serif" font-size="11" fill="#777">2030 인증샷</text>
+
+  <rect x="1100" y="250" width="140" height="60" rx="6" fill="#3b5998"/>
+  <text x="1112" y="278" font-family="'Pretendard', sans-serif" font-size="13" font-weight="bold" fill="#FFF">1.0.8 사전예약</text>
+  <text x="1112" y="296" font-family="'Pretendard', sans-serif" font-size="11" fill="#EEE">35% 할인 폼</text>
+
+  <rect x="1250" y="250" width="140" height="60" rx="6" fill="#FFFFFF" stroke="#3b5998" stroke-width="2"/>
+  <text x="1262" y="278" font-family="'Pretendard', sans-serif" font-size="13" font-weight="bold" fill="#333">1.0.9 FAQ</text>
+  <text x="1262" y="296" font-family="'Pretendard', sans-serif" font-size="11" fill="#777">아코디언 토글</text>
+
+  <!-- Level 3 Modals -->
+  <line x1="1170" y1="310" x2="1170" y2="370" stroke="#E74C3C" stroke-width="3"/>
+  <rect x="1050" y="370" width="240" height="65" rx="8" fill="#E74C3C"/>
+  <text x="1068" y="398" font-family="'Pretendard', sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">OVL-01. 사전예약 완료 모달</text>
+  <text x="1068" y="420" font-family="'Pretendard', sans-serif" font-size="12" fill="#FFFFFF" opacity="0.9">티켓 (SPH-2026-0812) &amp; 카톡 알림</text>
+
+  <!-- Summary Box -->
+  <rect x="50" y="480" width="1340" height="370" rx="10" fill="#FFFFFF" stroke="#E0DED8" stroke-width="2"/>
+  <text x="80" y="520" font-family="'Pretendard', sans-serif" font-size="18" font-weight="bold" fill="#3b5998">📋 전역 내비게이션 &amp; 섹션 명세 요약표</text>
+  <line x1="80" y1="535" x2="1360" y2="535" stroke="#EEEEEE" stroke-width="1.5"/>
+
+  <text x="80" y="570" font-family="'Pretendard', sans-serif" font-size="14" font-weight="bold" fill="#333">• GNB Header:</text>
+  <text x="200" y="570" font-family="'Pretendard', sans-serif" font-size="13" fill="#555">SOAPHE 브랜드 로고 | 브랜드 스토리 | 오브제 트레이 | 비누 라인업 | 향 가이드 | [사전예약 35% Primary CTA]</text>
+
+  <text x="80" y="610" font-family="'Pretendard', sans-serif" font-size="14" font-weight="bold" fill="#333">• 메인 바디 10대 영역:</text>
+  <text x="200" y="610" font-family="'Pretendard', sans-serif" font-size="13" fill="#555">히어로 3D 조형 모션 뷰어 ➔ 위생 비교 카드 ➔ 비누+오브제 트레이 세트 360도 뷰어 ➔ 공간 변신 2단 탭 ➔ 3종 향 스펙트럼 ➔ 사전예약 폼</text>
+
+  <text x="80" y="650" font-family="'Pretendard', sans-serif" font-size="14" font-weight="bold" fill="#333">• 팝업 레이어:</text>
+  <text x="200" y="650" font-family="'Pretendard', sans-serif" font-size="13" fill="#555">OVL-01 사전예약 완료 확정 모달 | OVL-02 카카오톡 선물하기 출시 알림 신청 팝업</text>
+
+  <text x="80" y="690" font-family="'Pretendard', sans-serif" font-size="14" font-weight="bold" fill="#333">• 반응형 기준:</text>
+  <text x="200" y="690" font-family="'Pretendard', sans-serif" font-size="13" fill="#555">Desktop (1440px): 2컬럼 레이아웃 | Tablet (768px): 1.5컬럼 그리드 | Mobile (390px): 1컬럼 스택 &amp; Sticky CTA</text>
+</svg>

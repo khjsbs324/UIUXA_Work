@@ -1,0 +1,87 @@
+- generic [active] [ref=f23e1]:
+  - generic:
+    - generic:
+      - link "주요 콘텐츠로 이동" [ref=f23e2] [cursor=pointer]
+      - link "연속 스크롤 사용 중지" [ref=f23e3] [cursor=pointer]:
+        - /url: "#"
+      - link "접근성 도움말" [ref=f23e4] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=ko
+  - generic [ref=f23e9]:
+    - search [ref=f23e10]:
+      - generic [ref=f23e13]:
+        - link [ref=f23e14] [cursor=pointer]:
+          - /url: https://www.google.com/webhp?hl=ko&ictx=0&sa=X&ved=0ahUKEwjLgaf335qWAxVAm1YBHfuzAlYQpYkNCAs
+          - img "Google 홈으로 이동" [ref=f23e15]
+        - generic [ref=f23e20]:
+          - combobox "검색" [ref=f23e23]: site:pinterest.com/pin "logo mark" butterfly monoline organic botanical site:pinterest.com/pin "logo mark" butterfly monoline organic botanical
+          - generic [ref=f23e24]:
+            - button "지우기" [ref=f23e26] [cursor=pointer]
+            - generic [ref=f23e31]:
+              - button "입력 도구" [ref=f23e32] [cursor=pointer]
+              - button "음성 검색" [ref=f23e36] [cursor=pointer]
+              - button "이미지로 검색" [ref=f23e39] [cursor=pointer]
+        - button "검색" [ref=f23e42] [cursor=pointer]
+    - generic [ref=f23e47]:
+      - button "설정" [ref=f23e49] [cursor=pointer]
+      - generic [ref=f23e55]:
+        - button "Google 앱" [ref=f23e57] [cursor=pointer]
+        - link "로그인" [ref=f23e62] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=ko&passive=true&continue=https://www.google.com/search%3Fq%3Dsite:pinterest.com/pin%2B%2522logo%2Bmark%2522%2Bbutterfly%2Bmonoline%2Borganic%2Bbotanical%26udm%3D2%26sei%3DJDl8apaWBeDQ2roPzb60yQ0&ec=futura_srp_og_si_72236_p
+  - generic [ref=f23e64]:
+    - navigation [ref=f23e69]:
+      - generic [ref=f23e70]:
+        - list [ref=f23e71]:
+          - listitem [ref=f23e72]:
+            - link "AI 모드" [ref=f23e75] [cursor=pointer]:
+              - /url: /search?q=site:pinterest.com/pin+logo+mark+butterfly+monoline+organic+botanical&sca_esv=5ba224cdfcc4b8dc&udm=50&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA70DBExgkDFCpIGAUraPZqPrvfy_wMZAgbGcIKp78cQI6KjYMg1EkDaRUgnrNfDpNPpLIxIR-DSUO_XpEupvDPQB9AOSsscKeMazOtvg4bkSo2rIHMhQ7mRgdJlGFXiblZrlE28NnyZlYVFKqZ3SzDK6e6d_BItkBGYjJH6j12bF6unLfNQ&aep=1&ntc=1&cs=0&sa=X&ved=2ahUKEwjLgaf335qWAxVAm1YBHfuzAlYQ2J8OegQIChAD
+          - listitem [ref=f23e79]:
+            - link "전체" [ref=f23e80] [cursor=pointer]:
+              - /url: /search?sca_esv=5ba224cdfcc4b8dc&q=site:pinterest.com/pin+logo+mark+butterfly+monoline+organic+botanical&source=lnms&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA70DBExgkDFCpIGAUraPZqPrvfy_wMZAgbGcIKp78cQI6KjYMg1EkDaRUgnrNfDpNPpLIxIR-DSUO_XpEupvDPQB9AOSsscKeMazOtvg4bkSo2rIHMhQ7mRgdJlGFXiblZrlE28NnyZlYVFKqZ3SzDK6e6d_BItkBGYjJH6j12bF6unLfNQ&sa=X&ved=2ahUKEwjLgaf335qWAxVAm1YBHfuzAlYQ0pQJegQIDBAB
+          - listitem [ref=f23e83]:
+            - link "이미지" [disabled] [ref=f23e84]
+          - listitem [ref=f23e87]:
+            - link "쇼핑" [ref=f23e88] [cursor=pointer]:
+              - /url: /search?sca_esv=5ba224cdfcc4b8dc&udm=28&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA70DBExgkDFCpIGAUraPZqPrvfy_wMZAgbGcIKp78cQI6KjYMg1EkDaRUgnrNfDpNPpLIxIR-DSUO_XpEupvDPQB9AOSsscKeMazOtvg4bkSo2rIHMhQ7mRgdJlGFXiblZrlE28NnyZlYVFKqZ3SzDK6e6d_BItkBGYjJH6j12bF6unLfNQ&q=site:pinterest.com/pin+logo+mark+butterfly+monoline+organic+botanical&ved=1t:220175&ictx=111
+          - listitem [ref=f23e91]:
+            - link "뉴스" [ref=f23e92] [cursor=pointer]:
+              - /url: /search?sca_esv=5ba224cdfcc4b8dc&q=site:pinterest.com/pin+logo+mark+butterfly+monoline+organic+botanical&tbm=nws&source=lnms&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA70DBExgkDFCpIGAUraPZqPrvfy_wMZAgbGcIKp78cQI6KjYMg1EkDaRUgnrNfDpNPpLIxIR-DSUO_XpEupvDPQB9AOSsscKeMazOtvg4bkSo2rIHMhQ7mRgdJlGFXiblZrlE28NnyZlYVFKqZ3SzDK6e6d_BItkBGYjJH6j12bF6unLfNQ&sa=X&ved=2ahUKEwjLgaf335qWAxVAm1YBHfuzAlYQ0pQJegQIDxAB
+          - listitem [ref=f23e95]:
+            - link "짧은 동영상" [ref=f23e96] [cursor=pointer]:
+              - /url: /search?sca_esv=5ba224cdfcc4b8dc&udm=39&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA70DBExgkDFCpIGAUraPZqPrvfy_wMZAgbGcIKp78cQI6KjYMg1EkDaRUgnrNfDpNPpLIxIR-DSUO_XpEupvDPQB9AOSsscKeMazOtvg4bkSo2rIHMhQ7mRgdJlGFXiblZrlE28NnyZlYVFKqZ3SzDK6e6d_BItkBGYjJH6j12bF6unLfNQ&q=site:pinterest.com/pin+logo+mark+butterfly+monoline+organic+botanical&sa=X&ved=2ahUKEwjLgaf335qWAxVAm1YBHfuzAlYQs6gLegQICxAB
+          - listitem [ref=f23e99]:
+            - link "웹" [ref=f23e100] [cursor=pointer]:
+              - /url: /search?sca_esv=5ba224cdfcc4b8dc&udm=web&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA70DBExgkDFCpIGAUraPZqPrvfy_wMZAgbGcIKp78cQI6KjYMg1EkDaRUgnrNfDpNPpLIxIR-DSUO_XpEupvDPQB9AOSsscKeMazOtvg4bkSo2rIHMhQ7mRgdJlGFXiblZrlE28NnyZlYVFKqZ3SzDK6e6d_BItkBGYjJH6j12bF6unLfNQ&q=site:pinterest.com/pin+logo+mark+butterfly+monoline+organic+botanical&sa=X&ved=2ahUKEwjLgaf335qWAxVAm1YBHfuzAlYQs6gLegQIDhAB
+          - listitem [ref=f23e103]:
+            - button [ref=f23e104] [cursor=pointer]:
+              - generic "필터 더보기" [ref=f23e105]: 더보기
+        - button "도구" [ref=f23e112] [cursor=pointer]
+    - heading "검색결과" [level=1] [ref=f23e119]
+    - main [ref=f23e121]:
+      - generic [ref=f23e130]:
+        - heading "이 주제에 관해 '이미지' 필터가 적용된 검색 결과가 없는 것 같습니다" [level=2] [ref=f23e132]
+        - link [ref=f23e133] [cursor=pointer]:
+          - /url: /search?q=site:pinterest.com/pin+logo+mark+butterfly+monoline+organic+botanical&sca_esv=5ba224cdfcc4b8dc&sa=X&ved=2ahUKEwjLgaf335qWAxVAm1YBHfuzAlYQqZsEegQIEhAB
+          - generic "site:pinterest.com/pin logo mark butterfly monoline organic botanical에 관한 모든 결과를 보려면 전체 탭 결과 페이지로 이동하세요." [ref=f23e134]: 모든 검색결과 보기
+      - navigation
+    - contentinfo [ref=f23e139]:
+      - heading "바닥글 링크" [level=1] [ref=f23e140]
+      - generic [ref=f23e143]:
+        - generic [ref=f23e145]:
+          - text: 대한민국
+          - generic [ref=f23e147]:
+            - button "월평동 대전광역시 서구 - IP 주소 기반" [ref=f23e149] [cursor=pointer]:
+              - generic [ref=f23e150]: 월평동 대전광역시 서구
+              - generic [ref=f23e152]:
+                - text: "-"
+                - generic [ref=f23e153]: IP 주소 기반
+            - text: "-"
+            - button "위치 업데이트" [ref=f23e155] [cursor=pointer]
+        - generic [ref=f23e158]:
+          - link "도움말" [ref=f23e159] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=ko&fg=1
+          - link "의견 보내기" [ref=f23e160] [cursor=pointer]:
+            - /url: "#"
+          - link "개인정보처리방침" [ref=f23e161] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=ko&fg=1
+          - link "약관" [ref=f23e162] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=ko&fg=1

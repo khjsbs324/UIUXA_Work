@@ -1,0 +1,93 @@
+- generic [ref=f82e4]:
+  - banner:
+    - link "콘텐츠로 건너뛰기":
+      - /url: "#"
+    - generic [ref=f82e15]:
+      - generic [ref=f82e18]:
+        - generic:
+          - img "검색 아이콘"
+        - combobox "검색" [ref=f82e20]
+        - generic "이미지 업로드" [ref=f82e23]:
+          - button "Pinterest 렌즈" [ref=f82e24] [cursor=pointer]
+      - link "내 프로필" [ref=f82e33] [cursor=pointer]:
+        - /url: /victoryjhl/
+        - img [ref=f82e40]:
+          - generic [ref=f82e41]: 이
+      - button "계정" [ref=f82e45] [cursor=pointer]
+  - navigation [ref=f82e50]:
+    - generic [ref=f82e52]:
+      - generic [ref=f82e53]:
+        - generic "홈" [ref=f82e57]:
+          - link "홈" [ref=f82e58] [cursor=pointer]:
+            - /url: /
+        - generic "홈" [ref=f82e65]:
+          - link "홈" [ref=f82e66] [cursor=pointer]:
+            - /url: /
+        - generic "내 보드" [ref=f82e73]:
+          - link "내 보드" [ref=f82e74] [cursor=pointer]:
+            - /url: /victoryjhl/
+        - generic "만들기" [ref=f82e81]:
+          - button "만들기" [ref=f82e82] [cursor=pointer]
+        - generic "업데이트" [ref=f82e91]:
+          - button "업데이트" [ref=f82e92] [cursor=pointer]
+        - generic "메시지" [ref=f82e101]:
+          - button "메시지" [ref=f82e102] [cursor=pointer]
+      - generic "설정 및 지원" [ref=f82e110]:
+        - button "설정 및 지원" [ref=f82e111] [cursor=pointer]
+  - main [ref=f82e116]:
+    - generic [ref=f82e125]:
+      - button "뒤로" [ref=f82e127] [cursor=pointer]
+      - generic [ref=f82e136]:
+        - generic [ref=f82e137]: 관련 상품 결과를 불러오는 중
+        - list [ref=f82e142]:
+          - listitem [ref=f82e143]:
+            - group "Closeup content container" [ref=f82e150]:
+              - generic [ref=f82e155]:
+                - region "핀 이미지 및 탐색할 항목" [ref=f82e158]:
+                  - link "사이트 방문" [ref=f82e172] [cursor=pointer]:
+                    - /url: https://www.madhousebrands.com/projects?utm_source=Pinterest&utm_medium=organic
+                - generic [ref=f82e177]:
+                  - generic [ref=f82e180]:
+                    - list [ref=f82e181]:
+                      - generic [ref=f82e182]:
+                        - listitem [ref=f82e184]:
+                          - generic "반응" [ref=f82e187]:
+                            - button "반응" [ref=f82e188] [cursor=pointer]
+                          - generic [ref=f82e193]: "0"
+                        - listitem [ref=f82e195]:
+                          - generic "댓글" [ref=f82e198]:
+                            - button "댓글" [ref=f82e199] [cursor=pointer]
+                        - listitem [ref=f82e205]:
+                          - generic "공유" [ref=f82e209]:
+                            - button "이 핀 공유" [ref=f82e212] [cursor=pointer]
+                        - listitem [ref=f82e218]:
+                          - generic "추가 작업" [ref=f82e223]:
+                            - button "추가 작업" [ref=f82e226] [cursor=pointer]
+                    - generic [ref=f82e236]:
+                      - 'button "저장할 보드 선택: 프로필" [ref=f82e239] [cursor=pointer]':
+                        - generic "프로필" [ref=f82e242]
+                      - button "저장" [ref=f82e248] [cursor=pointer]
+                  - generic [ref=f82e256]:
+                    - generic [ref=f82e265]:
+                      - link [ref=f82e267] [cursor=pointer]:
+                        - /url: /madhousebrands/
+                        - img "Madhouse. 아바타 링크" [ref=f82e274]
+                      - link [ref=f82e278] [cursor=pointer]:
+                        - /url: /madhousebrands/
+                        - heading "Madhouse." [level=2] [ref=f82e279]
+                    - generic [ref=f82e282]:
+                      - generic [ref=f82e284]:
+                        - link [ref=f82e291] [cursor=pointer]:
+                          - /url: https://www.madhousebrands.com/projects?utm_source=Pinterest&utm_medium=organic
+                          - heading "Modern Symmetric Floral Logo Design for Law Firm" [level=1] [ref=f82e292]
+                        - link "사이트 방문" [ref=f82e300] [cursor=pointer]:
+                          - /url: https://www.madhousebrands.com/projects?utm_source=Pinterest&utm_medium=organic
+                      - generic [ref=f82e304]:
+                        - heading "설명" [level=4] [ref=f82e305]
+                        - generic [ref=f82e306]: Femminine logo design, Monoline symbol logo, Abstract flower logo, leaf logo, brandmark logo design
+          - listitem [ref=f82e311]
+          - listitem [ref=f82e315]
+          - listitem [ref=f82e319]
+          - listitem [ref=f82e323]
+          - listitem [ref=f82e327]
+          - listitem [ref=f82e331]

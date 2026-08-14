@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+  <title id="title">VC-002 기반 서비스-흐름도</title>
+  <desc id="desc">기록 방식 선택에서 디지털 일정의 시간 흐름 확인과 조건부 상기 설정까지의 서비스 흐름</desc>
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="7" stdDeviation="10" flood-color="#101828" flood-opacity=".12"/></filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#7C8BA1"/></marker>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#D97706"/></marker>
+    <style>
+      .title{font:700 42px 'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;fill:#172B4D}
+      .subtitle{font:400 18px 'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;fill:#667085}
+      .id{font:700 13px 'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;letter-spacing:.4px}
+      .name{font:700 20px 'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;fill:#172B4D}
+      .small{font:500 13px 'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;fill:#667085}
+      .decision{font:700 16px 'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;fill:#6D4C00;text-anchor:middle}
+      .label{font:700 13px 'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;fill:#475467}
+      .line{fill:none;stroke:#7C8BA1;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}
+      .lineOrange{fill:none;stroke:#D97706;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrowOrange)}
+      .lineDash{fill:none;stroke:#7C8BA1;stroke-width:2.5;stroke-dasharray:8 7;stroke-linecap:round;marker-end:url(#arrow)}
+    </style>
+  </defs>
+
+  <rect width="1920" height="1080" fill="#F7F8FC"/>
+  <circle cx="1800" cy="30" r="245" fill="#E9F2FF" opacity=".75"/>
+  <circle cx="80" cy="1040" r="230" fill="#FFF3D8" opacity=".7"/>
+  <text x="80" y="72" class="title">VC-002 기반 서비스-흐름도</text>
+  <text x="80" y="108" class="subtitle">기록 방식 선택 → 디지털 일정 확인 → 중요 일정 판단 → 조건부 상기 설정</text>
+
+  <!-- main horizontal flow -->
+  <path class="line" d="M190 205 H245"/>
+  <path class="line" d="M475 205 H535"/>
+  <path class="line" d="M685 205 H775"/>
+  <path class="line" d="M995 205 H1045"/>
+  <path class="line" d="M1265 205 H1315"/>
+  <path class="line" d="M1535 205 H1585"/>
+
+  <!-- start -->
+  <ellipse cx="130" cy="205" rx="60" ry="38" fill="#172B4D"/>
+  <text x="130" y="211" class="id" fill="#FFFFFF" text-anchor="middle">START</text>
+
+  <!-- home -->
+  <g filter="url(#shadow)"><rect x="245" y="155" width="230" height="100" rx="18" fill="#FFFFFF" stroke="#4C7FE5" stroke-width="3"/>
+    <text x="270" y="187" class="id" fill="#3565C5">PAGE-001</text><text x="270" y="221" class="name">홈</text><text x="270" y="242" class="small">목적·다음 선택 이해</text></g>
+
+  <!-- decision 1 -->
+  <path d="M610 135 L685 205 L610 275 L535 205 Z" fill="#FFF8E7" stroke="#E6A23C" stroke-width="3"/>
+  <text x="610" y="196" class="decision"><tspan x="610">바로 디지털</tspan><tspan x="610" dy="21">기록으로?</tspan></text>
+  <text x="718" y="190" class="label">예</text>
+
+  <!-- digital -->
+  <g filter="url(#shadow)"><rect x="775" y="155" width="220" height="100" rx="18" fill="#EAF2FF" stroke="#4C7FE5" stroke-width="3"/>
+    <text x="800" y="187" class="id" fill="#3565C5">PAGE-004</text><text x="800" y="221" class="name">디지털 기록</text><text x="800" y="242" class="small">핵심 경험 이해</text></g>
+  <g filter="url(#shadow)"><rect x="1045" y="155" width="220" height="100" rx="18" fill="#EAF2FF" stroke="#4C7FE5" stroke-width="3"/>
+    <text x="1070" y="187" class="id" fill="#3565C5">PAGE-005</text><text x="1070" y="221" class="name">일정 관리</text><text x="1070" y="242" class="small">오늘·향후 일정 진입</text></g>
+  <g filter="url(#shadow)"><rect x="1315" y="155" width="220" height="100" rx="18" fill="#EAF2FF" stroke="#4C7FE5" stroke-width="3"/>
+    <text x="1340" y="187" class="id" fill="#3565C5">PAGE-006</text><text x="1340" y="221" class="name">시간 흐름</text><text x="1340" y="242" class="small">개요·세부 확인</text></g>
+
+  <!-- important decision -->
+  <path d="M1680 125 L1775 205 L1680 285 L1585 205 Z" fill="#FFF8E7" stroke="#E6A23C" stroke-width="3"/>
+  <text x="1680" y="196" class="decision"><tspan x="1680">중요한</tspan><tspan x="1680" dy="21">일정인가?</tspan></text>
+
+  <!-- selection support branch -->
+  <path class="line" d="M610 275 V350 H465 V395"/>
+  <text x="622" y="322" class="label">아니요 / 비교 필요</text>
+  <g filter="url(#shadow)"><rect x="350" y="395" width="230" height="100" rx="18" fill="#FFFFFF" stroke="#7A6FD0" stroke-width="3"/>
+    <text x="375" y="427" class="id" fill="#5D50B7">PAGE-002</text><text x="375" y="461" class="name">기록 방식</text><text x="375" y="482" class="small">Digital/Analog 비교</text></g>
+  <path class="line" d="M580 445 H650"/>
+  <g filter="url(#shadow)"><rect x="650" y="395" width="250" height="100" rx="18" fill="#FFFFFF" stroke="#7A6FD0" stroke-width="3"/>
+    <text x="675" y="427" class="id" fill="#5D50B7">PAGE-003 · 선택</text><text x="675" y="461" class="name">기록 스타일 찾기</text><text x="675" y="482" class="small">자기 적합성 판단</text></g>
+  <path d="M1025 375 L1100 445 L1025 515 L950 445 Z" fill="#FFF8E7" stroke="#E6A23C" stroke-width="3"/>
+  <text x="1025" y="436" class="decision"><tspan x="1025">디지털 방식이</tspan><tspan x="1025" dy="21">적합한가?</tspan></text>
+  <path class="line" d="M900 445 H950"/>
+  <path class="line" d="M1025 375 V320 H885 V255"/>
+  <text x="920" y="310" class="label">예</text>
+  <path class="lineDash" d="M1100 445 H1195"/>
+  <rect x="1195" y="407" width="210" height="76" rx="38" fill="#F2F4F7" stroke="#98A2B3" stroke-width="2"/>
+  <text x="1300" y="438" class="id" fill="#475467" text-anchor="middle">ALTERNATIVE</text><text x="1300" y="464" class="small" text-anchor="middle">아날로그 안내 / 종료</text>
+  <text x="1128" y="431" class="label">아니요</text>
+
+  <!-- important schedule branch -->
+  <path class="lineOrange" d="M1680 285 V300 H1530 V430"/>
+  <text x="1588" y="291" class="label">예</text>
+  <g filter="url(#shadow)"><rect x="1385" y="430" width="290" height="104" rx="18" fill="#FFF9EB" stroke="#E6A23C" stroke-width="3" stroke-dasharray="9 6"/>
+    <text x="1412" y="463" class="id" fill="#B76E00">PAGE-007 · CONDITIONAL</text><text x="1412" y="498" class="name">중요 일정 상기</text><text x="1412" y="520" class="small">상기 필요 여부 확인</text></g>
+  <path class="lineOrange" d="M1530 534 V590"/>
+  <path d="M1530 590 L1620 660 L1530 730 L1440 660 Z" fill="#FFF8E7" stroke="#E6A23C" stroke-width="3"/>
+  <text x="1530" y="651" class="decision"><tspan x="1530">상기가</tspan><tspan x="1530" dy="21">필요한가?</tspan></text>
+
+  <!-- no important / no reminder -->
+  <path class="lineDash" d="M1775 205 H1840 V350 H1740"/>
+  <rect x="1630" y="315" width="220" height="76" rx="38" fill="#F2F4F7" stroke="#98A2B3" stroke-width="2"/>
+  <text x="1740" y="346" class="id" fill="#475467" text-anchor="middle">CONTINUE / END</text><text x="1740" y="372" class="small" text-anchor="middle">일정 탐색 계속 또는 종료</text>
+  <text x="1800" y="188" class="label">아니요</text>
+  <path class="lineDash" d="M1620 660 H1760"/>
+  <text x="1650" y="646" class="label">아니요</text>
+  <rect x="1760" y="622" width="115" height="76" rx="38" fill="#F2F4F7" stroke="#98A2B3" stroke-width="2"/>
+  <text x="1818" y="654" class="id" fill="#475467" text-anchor="middle">RETURN</text><text x="1818" y="679" class="small" text-anchor="middle">시간 흐름</text>
+
+  <!-- reminder config -->
+  <path class="lineOrange" d="M1530 730 V780 H1245"/>
+  <text x="1544" y="763" class="label">예</text>
+  <g filter="url(#shadow)"><rect x="980" y="740" width="265" height="112" rx="18" fill="#FFFFFF" stroke="#E6A23C" stroke-width="3"/>
+    <text x="1006" y="773" class="id" fill="#B76E00">FUNCTION-006</text><text x="1006" y="806" class="name">상기 조건 입력</text><text x="1006" y="830" class="small">시점·빈도·채널·끄기</text></g>
+  <path class="lineOrange" d="M980 796 H900"/>
+  <path d="M810 726 L900 796 L810 866 L720 796 Z" fill="#FFF8E7" stroke="#E6A23C" stroke-width="3"/>
+  <text x="810" y="787" class="decision"><tspan x="810">조건이</tspan><tspan x="810" dy="21">유효한가?</tspan></text>
+  <path class="lineOrange" d="M720 796 H615"/>
+  <text x="655" y="782" class="label">예</text>
+  <g filter="url(#shadow)"><rect x="365" y="744" width="250" height="104" rx="18" fill="#EAF7EF" stroke="#55A679" stroke-width="3"/>
+    <text x="390" y="777" class="id" fill="#28754B">SAVE CONFIRM</text><text x="390" y="811" class="name">저장 확인</text><text x="390" y="833" class="small">일정 관리로 복귀</text></g>
+  <path class="lineDash" d="M810 866 V925 H1110 V852"/>
+  <text x="830" y="913" class="label">아니요 · 오류 안내 후 수정</text>
+
+  <!-- support link -->
+  <g filter="url(#shadow)"><rect x="70" y="744" width="230" height="104" rx="18" fill="#EEF8F2" stroke="#55A679" stroke-width="3"/>
+    <text x="95" y="777" class="id" fill="#28754B">PAGE-011 · SUPPORT</text><text x="95" y="811" class="name">도움말·제공 범위</text><text x="95" y="833" class="small">제한·검증 상태</text></g>
+  <text x="70" y="725" class="label">필요 시 보조 접근</text>
+
+  <!-- footer -->
+  <rect x="70" y="980" width="1780" height="66" rx="18" fill="#FFFFFF" stroke="#D0D5DD"/>
+  <text x="98" y="1021" class="small">정상 흐름 1 · 선택 지원 1 · 조건부 상기 1 · 오류/취소/HOLD 처리 포함 · 외부 일정 연동 미포함</text>
+  <text x="1820" y="1021" class="small" text-anchor="end">USER_REVIEW_PENDING</text>
+</svg>

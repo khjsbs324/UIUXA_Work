@@ -1,0 +1,312 @@
+- generic [active] [ref=f107e1]:
+  - generic:
+    - generic:
+      - link "주요 콘텐츠로 이동" [ref=f107e2] [cursor=pointer]
+      - link "접근성 도움말" [ref=f107e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=ko
+  - generic [ref=f107e8]:
+    - search [ref=f107e9]:
+      - generic [ref=f107e12]:
+        - link [ref=f107e13] [cursor=pointer]:
+          - /url: https://www.google.com/webhp?hl=ko&ictx=0&sa=X&ved=0ahUKEwjourvR4ZqWAxUAsVYBHTzQOLEQpYkNCAo
+          - img "Google 홈으로 이동" [ref=f107e14]
+        - generic [ref=f107e19]:
+          - combobox "검색" [ref=f107e22]: site:pinterest.com/pin "minimalist vector logo mark" "white background" black monoline butterfly OR botanical site:pinterest.com/pin "minimalist vector logo mark" "white background" black monoline butterfly OR botanical
+          - generic [ref=f107e23]:
+            - button "지우기" [ref=f107e25] [cursor=pointer]
+            - generic [ref=f107e30]:
+              - button "입력 도구" [ref=f107e31] [cursor=pointer]
+              - button "음성 검색" [ref=f107e35] [cursor=pointer]
+              - button "이미지로 검색" [ref=f107e38] [cursor=pointer]
+        - button "검색" [ref=f107e41] [cursor=pointer]
+    - generic [ref=f107e46]:
+      - button "설정" [ref=f107e48] [cursor=pointer]
+      - button "공유" [ref=f107e54] [cursor=pointer]
+      - generic [ref=f107e60]:
+        - button "Google 앱" [ref=f107e62] [cursor=pointer]
+        - link "로그인" [ref=f107e67] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=ko&passive=true&continue=https://www.google.com/search%3Fq%3Dsite:pinterest.com/pin%2B%2522minimalist%2Bvector%2Blogo%2Bmark%2522%2B%2522white%2Bbackground%2522%2Bblack%2Bmonoline%2Bbutterfly%2BOR%2Bbotanical&ec=futura_srp_og_si_72236_p
+  - generic [ref=f107e69]:
+    - navigation [ref=f107e75]:
+      - generic [ref=f107e81]:
+        - list [ref=f107e82]:
+          - listitem [ref=f107e83]:
+            - link "AI 모드" [ref=f107e86] [cursor=pointer]:
+              - /url: /search?q=site:pinterest.com/pin+minimalist+vector+logo+mark+white+background+black+monoline+butterfly+OR+botanical&sca_esv=5ba224cdfcc4b8dc&udm=50&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA70DBExgkDFCpIGAUraPZqPpSs1EXRrKCiKydXz2VHg4BZ43F9-MfAqyB18ZvchEiEA2_q_O9bSJyISG5IdrJU6cdES6lLC2aGnoaRVRxqPkvYvl1TBL7cuXeIdYuACjlrdhZQY--K-WTmz9sefNM1mZCEHIRQCyzCyVXFjaaNP3haRMJag&aep=1&ntc=1&cs=0&sa=X&ved=2ahUKEwjourvR4ZqWAxUAsVYBHTzQOLEQ2J8OegQIEBAD
+          - listitem [ref=f107e90]:
+            - link "전체" [disabled] [ref=f107e91]
+          - listitem [ref=f107e94]:
+            - link "이미지" [ref=f107e95] [cursor=pointer]:
+              - /url: /search?sca_esv=5ba224cdfcc4b8dc&udm=2&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA70DBExgkDFCpIGAUraPZqPpSs1EXRrKCiKydXz2VHg4BZ43F9-MfAqyB18ZvchEiEA2_q_O9bSJyISG5IdrJU6cdES6lLC2aGnoaRVRxqPkvYvl1TBL7cuXeIdYuACjlrdhZQY--K-WTmz9sefNM1mZCEHIRQCyzCyVXFjaaNP3haRMJag&q=site:pinterest.com/pin+minimalist+vector+logo+mark+white+background+black+monoline+butterfly+OR+botanical&sa=X&ved=2ahUKEwjourvR4ZqWAxUAsVYBHTzQOLEQtKgLegQIFhAB
+          - listitem [ref=f107e98]:
+            - link "쇼핑" [ref=f107e99] [cursor=pointer]:
+              - /url: /search?sca_esv=5ba224cdfcc4b8dc&udm=28&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA70DBExgkDFCpIGAUraPZqPpSs1EXRrKCiKydXz2VHg4BZ43F9-MfAqyB18ZvchEiEA2_q_O9bSJyISG5IdrJU6cdES6lLC2aGnoaRVRxqPkvYvl1TBL7cuXeIdYuACjlrdhZQY--K-WTmz9sefNM1mZCEHIRQCyzCyVXFjaaNP3haRMJag&q=site:pinterest.com/pin+minimalist+vector+logo+mark+white+background+black+monoline+butterfly+OR+botanical&ved=1t:220175&ictx=111
+          - listitem [ref=f107e102]:
+            - link "동영상" [ref=f107e103] [cursor=pointer]:
+              - /url: /search?sca_esv=5ba224cdfcc4b8dc&udm=7&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA70DBExgkDFCpIGAUraPZqPpSs1EXRrKCiKydXz2VHg4BZ43F9-MfAqyB18ZvchEiEA2_q_O9bSJyISG5IdrJU6cdES6lLC2aGnoaRVRxqPkvYvl1TBL7cuXeIdYuACjlrdhZQY--K-WTmz9sefNM1mZCEHIRQCyzCyVXFjaaNP3haRMJag&q=site:pinterest.com/pin+minimalist+vector+logo+mark+white+background+black+monoline+butterfly+OR+botanical&sa=X&ved=2ahUKEwjourvR4ZqWAxUAsVYBHTzQOLEQtKgLegQIFBAB
+          - listitem [ref=f107e106]:
+            - link "짧은 동영상" [ref=f107e107] [cursor=pointer]:
+              - /url: /search?sca_esv=5ba224cdfcc4b8dc&udm=39&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA70DBExgkDFCpIGAUraPZqPpSs1EXRrKCiKydXz2VHg4BZ43F9-MfAqyB18ZvchEiEA2_q_O9bSJyISG5IdrJU6cdES6lLC2aGnoaRVRxqPkvYvl1TBL7cuXeIdYuACjlrdhZQY--K-WTmz9sefNM1mZCEHIRQCyzCyVXFjaaNP3haRMJag&q=site:pinterest.com/pin+minimalist+vector+logo+mark+white+background+black+monoline+butterfly+OR+botanical&sa=X&ved=2ahUKEwjourvR4ZqWAxUAsVYBHTzQOLEQs6gLegQIEhAB
+          - listitem [ref=f107e110]:
+            - link "뉴스" [ref=f107e111] [cursor=pointer]:
+              - /url: /search?sca_esv=5ba224cdfcc4b8dc&q=site:pinterest.com/pin+minimalist+vector+logo+mark+white+background+black+monoline+butterfly+OR+botanical&tbm=nws&source=lnms&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA70DBExgkDFCpIGAUraPZqPpSs1EXRrKCiKydXz2VHg4BZ43F9-MfAqyB18ZvchEiEA2_q_O9bSJyISG5IdrJU6cdES6lLC2aGnoaRVRxqPkvYvl1TBL7cuXeIdYuACjlrdhZQY--K-WTmz9sefNM1mZCEHIRQCyzCyVXFjaaNP3haRMJag&sa=X&ved=2ahUKEwjourvR4ZqWAxUAsVYBHTzQOLEQ0pQJegQIExAB
+          - listitem [ref=f107e114]:
+            - button [ref=f107e115] [cursor=pointer]:
+              - generic "필터 더보기" [ref=f107e116]: 더보기
+        - button "도구" [ref=f107e123] [cursor=pointer]
+    - heading "검색결과" [level=1] [ref=f107e130]
+    - main [ref=f107e136]:
+      - generic [ref=f107e137]:
+        - generic [ref=f107e141]:
+          - heading "site:pinterest.com/pin \"minimalist vector logo mark\" \"white background\" black monoline butterfly OR botanical에 대한 검색결과가 없습니다." [level=2] [ref=f107e142]
+          - link "site:pinterest.com/pin minimalist vector logo mark white background black monoline butterfly OR botanical" [ref=f107e143] [cursor=pointer]:
+            - /url: /search?sca_esv=5ba224cdfcc4b8dc&q=site:pinterest.com/pin+minimalist+vector+logo+mark+white+background+black+monoline+butterfly+OR+botanical&sa=X&ved=2ahUKEwjourvR4ZqWAxUAsVYBHTzQOLEQgwN6BAgPEAE
+          - text: "(따옴표 없음)에 대한 검색결과:"
+        - generic [ref=f107e146]:
+          - generic [ref=f107e150]:
+            - heading "이미지" [level=2] [ref=f107e154]
+            - generic [ref=f107e158]:
+              - generic [ref=f107e162] [cursor=pointer]:
+                - link "Luna Moth Art, Boho Witch Illustration, Small Minimal Tattoo ... Pinterest" [ref=f107e163]:
+                  - /url: https://www.pinterest.com/pin/707276316462691488/
+                - button [ref=f107e165]:
+                  - img "Luna Moth Art, Boho Witch Illustration, Small Minimal Tattoo ..." [ref=f107e167]
+                - generic [ref=f107e169]:
+                  - generic [ref=f107e170]: Luna Moth Art, Boho Witch Illustration, Small Minimal Tattoo ...
+                  - generic [ref=f107e172]:
+                    - generic [ref=f107e173]: Pinterest
+                    - button "검색결과에 관한 정보" [ref=f107e182]
+              - generic [ref=f107e190] [cursor=pointer]:
+                - link "Letter C with butterfly silhouette. Monarch wing butterfly ... Pinterest" [ref=f107e191]:
+                  - /url: https://www.pinterest.com/pin/letter-c-with-butterfly-silhouette-monarch-wing-butterfly-logo-template-isolated-on-white-background-cal--612700724286238958/
+                - button [ref=f107e193]:
+                  - img "Letter C with butterfly silhouette. Monarch wing butterfly ..." [ref=f107e195]
+                - generic [ref=f107e197]:
+                  - generic [ref=f107e198]: Letter C with butterfly silhouette. Monarch wing butterfly ...
+                  - generic [ref=f107e200]:
+                    - generic [ref=f107e201]: Pinterest
+                    - button "검색결과에 관한 정보" [ref=f107e210]
+              - generic [ref=f107e218] [cursor=pointer]:
+                - link "Letter C with butterfly silhouette. Monarch wing butterfly ... Pinterest" [ref=f107e219]:
+                  - /url: https://www.pinterest.com/pin/letter-c-with-butterfly-silhouette-monarch-wing-butterfly-logo-template-isolated-on-white-background-cal--612700724286238958/
+                - button [ref=f107e221]:
+                  - img "Letter C with butterfly silhouette. Monarch wing butterfly ..." [ref=f107e223]
+                - generic [ref=f107e225]:
+                  - generic [ref=f107e226]: Letter C with butterfly silhouette. Monarch wing butterfly ...
+                  - generic [ref=f107e228]:
+                    - generic [ref=f107e229]: Pinterest
+                    - button "검색결과에 관한 정보" [ref=f107e238]
+              - generic [ref=f107e246] [cursor=pointer]:
+                - link "Letter C with butterfly silhouette. Monarch wing butterfly ... Pinterest" [ref=f107e247]:
+                  - /url: https://www.pinterest.com/pin/letter-c-with-butterfly-silhouette-monarch-wing-butterfly-logo-template-isolated-on-white-background-cal--612700724286238958/
+                - button [ref=f107e249]:
+                  - img "Letter C with butterfly silhouette. Monarch wing butterfly ..." [ref=f107e251]
+                - generic [ref=f107e253]:
+                  - generic [ref=f107e254]: Letter C with butterfly silhouette. Monarch wing butterfly ...
+                  - generic [ref=f107e256]:
+                    - generic [ref=f107e257]: Pinterest
+                    - button "검색결과에 관한 정보" [ref=f107e266]
+              - generic [ref=f107e274] [cursor=pointer]:
+                - link "Moth mono-line design | Premium Vector ru.pinterest.com" [ref=f107e275]:
+                  - /url: https://ru.pinterest.com/pin/519110294560809034/
+                - button [ref=f107e277]:
+                  - img "Moth mono-line design | Premium Vector" [ref=f107e279]
+                - generic [ref=f107e281]:
+                  - generic [ref=f107e282]: Moth mono-line design | Premium Vector
+                  - generic [ref=f107e284]:
+                    - generic [ref=f107e285]: ru.pinterest.com
+                    - button "검색결과에 관한 정보" [ref=f107e294]
+              - generic [ref=f107e302] [cursor=pointer]:
+                - link "Letter C with butterfly silhouette. Monarch wing butterfly ... Pinterest" [ref=f107e303]:
+                  - /url: https://www.pinterest.com/pin/letter-c-with-butterfly-silhouette-monarch-wing-butterfly-logo-template-isolated-on-white-background-cal--612700724286238958/
+                - button [ref=f107e305]:
+                  - img "Letter C with butterfly silhouette. Monarch wing butterfly ..." [ref=f107e307]
+                - generic [ref=f107e309]:
+                  - generic [ref=f107e310]: Letter C with butterfly silhouette. Monarch wing butterfly ...
+                  - generic [ref=f107e312]:
+                    - generic [ref=f107e313]: Pinterest
+                    - button "검색결과에 관한 정보" [ref=f107e322]
+            - button "이미지 더보기" [ref=f107e328] [cursor=pointer]:
+              - separator [ref=f107e329]
+          - generic [ref=f107e337]:
+            - heading "Web results" [level=2] [ref=f107e338]
+            - generic [ref=f107e339]:
+              - generic [ref=f107e342]:
+                - link "Butterfly logo simple and elegant monoline and colorful Pinterest · viegoza 3년 전" [ref=f107e344] [cursor=pointer]:
+                  - /url: https://co.pinterest.com/pin/426786502203322714/
+                  - heading "Butterfly logo simple and elegant monoline and colorful" [level=3] [ref=f107e345]
+                  - generic [ref=f107e351]:
+                    - generic [ref=f107e352]: Pinterest · viegoza
+                    - generic [ref=f107e354]: 3년 전
+                - button "검색결과에 관한 정보" [ref=f107e358] [cursor=pointer]
+              - generic [ref=f107e365]:
+                - emphasis [ref=f107e366]: Download this premium vector of Butterfly logo simple and elegant monoline
+                - text: and colorful. Discover more than 171 million professional graphic ...
+              - link [ref=f107e369] [cursor=pointer]:
+                - /url: https://co.pinterest.com/pin/426786502203322714/
+                - 'img "site:pinterest.com/pin minimalist vector logo mark white background black monoline butterfly OR botanical(출처: co.pinterest.com)" [ref=f107e371]'
+              - generic [ref=f107e372]: "누락된 검색어: mark ‎white ‎background ‎black"
+          - generic [ref=f107e377]:
+            - generic [ref=f107e380]:
+              - link "Butterfly logo simple and elegant monoline and colorful Pinterest · violetacaceresc 3년 전" [ref=f107e382] [cursor=pointer]:
+                - /url: https://ar.pinterest.com/pin/604186106278697883/
+                - heading "Butterfly logo simple and elegant monoline and colorful" [level=3] [ref=f107e383]
+                - generic [ref=f107e389]:
+                  - generic [ref=f107e390]: Pinterest · violetacaceresc
+                  - generic [ref=f107e392]: 3년 전
+              - button "검색결과에 관한 정보" [ref=f107e396] [cursor=pointer]
+            - generic [ref=f107e403]:
+              - text: Beauty Flying Butterfly Logo with
+              - emphasis [ref=f107e404]: simple minimalist line art monoline style
+              - text: . Usable for Business and Branding Logos. Flat Vector Logo Design ...
+            - generic [ref=f107e405]: "누락된 검색어: mark ‎white ‎background ‎black"
+          - generic [ref=f107e410]:
+            - generic [ref=f107e413]:
+              - link "Vektor Stok Beauty Butterfly Stamp Logo Minimalist Line (Tanpa ... Pinterest https://id.pinterest.com › pin › vektor-stok-beauty-butte..." [ref=f107e415] [cursor=pointer]:
+                - /url: https://id.pinterest.com/pin/vektor-stok-beauty-butterfly-stamp-logo-minimalist-line-tanpa-royalti-2095136473--1054475700224627857/
+                - heading "Vektor Stok Beauty Butterfly Stamp Logo Minimalist Line (Tanpa ..." [level=3] [ref=f107e416]
+                - generic [ref=f107e422]:
+                  - generic [ref=f107e423]: Pinterest
+                  - generic [ref=f107e425]: https://id.pinterest.com › pin › vektor-stok-beauty-butte...
+              - button "검색결과에 관한 정보" [ref=f107e429] [cursor=pointer]
+            - generic [ref=f107e436]:
+              - text: Add a touch of elegance to your brand with this
+              - emphasis [ref=f107e437]: minimalist beauty butterfly stamp logo
+              - text: . Perfect for a wide range of businesses, this monoline style design ...
+          - generic [ref=f107e441]:
+            - generic [ref=f107e444]:
+              - link "Mandala Logo Creator - Logos - 4 Pinterest · kyunggeunl 9년 전" [ref=f107e446] [cursor=pointer]:
+                - /url: https://kr.pinterest.com/pin/472385448405704472/
+                - heading "Mandala Logo Creator - Logos - 4" [level=3] [ref=f107e447]
+                - generic [ref=f107e453]:
+                  - generic [ref=f107e454]: Pinterest · kyunggeunl
+                  - generic [ref=f107e456]: 9년 전
+              - button "검색결과에 관한 정보" [ref=f107e460] [cursor=pointer]
+            - generic [ref=f107e467]:
+              - text: This delicate collection of geometric branding
+              - emphasis [ref=f107e468]: marks
+              - text: and
+              - emphasis [ref=f107e469]: logos
+              - text: includes over 40 design elements. It's super easy and fun to design stunning ...
+          - generic [ref=f107e473]:
+            - generic [ref=f107e476]:
+              - link "Butterfly Logo Design Icon Vector Pinterest · america_quigo 6년 전" [ref=f107e478] [cursor=pointer]:
+                - /url: https://es.pinterest.com/pin/776167317022595099/
+                - heading "Butterfly Logo Design Icon Vector" [level=3] [ref=f107e479]
+                - generic [ref=f107e485]:
+                  - generic [ref=f107e486]: Pinterest · america_quigo
+                  - generic [ref=f107e488]: 6년 전
+              - button "검색결과에 관한 정보" [ref=f107e492] [cursor=pointer]
+            - generic [ref=f107e499]:
+              - emphasis [ref=f107e500]: Download this Butterfly Logo Design Icon Vector
+              - text: ", Logo Icons, Butterfly Icons, Design PNG clipart image with transparent background for free."
+            - link [ref=f107e503] [cursor=pointer]:
+              - /url: https://es.pinterest.com/pin/776167317022595099/
+              - 'img "site:pinterest.com/pin minimalist vector logo mark white background black monoline butterfly OR botanical(출처: es.pinterest.com)" [ref=f107e505]'
+            - generic [ref=f107e506]: "누락된 검색어: mark ‎white ‎black"
+          - generic [ref=f107e511]:
+            - generic [ref=f107e514]:
+              - link "Letter C with butterfly silhouette. Monarch wing ... Pinterest · greatvector1 7년 전" [ref=f107e516] [cursor=pointer]:
+                - /url: https://www.pinterest.com/pin/letter-c-with-butterfly-silhouette-monarch-wing-butterfly-logo-template-isolated-on-white-background-cal--612700724286238958/
+                - heading "Letter C with butterfly silhouette. Monarch wing ..." [level=3] [ref=f107e517]
+                - generic [ref=f107e523]:
+                  - generic [ref=f107e524]: Pinterest · greatvector1
+                  - generic [ref=f107e526]: 7년 전
+              - button "검색결과에 관한 정보" [ref=f107e530] [cursor=pointer]
+            - generic [ref=f107e537]:
+              - text: Letter C with butterfly silhouette.
+              - emphasis [ref=f107e538]: Monarch wing butterfly logo template
+              - text: isolated on white background. Calligraphic hand drawn lettering design.
+            - link [ref=f107e541] [cursor=pointer]:
+              - /url: https://www.pinterest.com/pin/letter-c-with-butterfly-silhouette-monarch-wing-butterfly-logo-template-isolated-on-white-background-cal--612700724286238958/
+              - 'img "site:pinterest.com/pin minimalist vector logo mark white background black monoline butterfly OR botanical(출처: www.pinterest.com)" [ref=f107e543]'
+          - generic [ref=f107e547]:
+            - generic [ref=f107e550]:
+              - link "Hand Drawn Monoline Line Art Leaves Doodle Pinterest https://in.pinterest.com › pin › hand-drawn-monoline-li..." [ref=f107e552] [cursor=pointer]:
+                - /url: https://in.pinterest.com/pin/hand-drawn-monoline-line-art-leaves-doodle-botanical-flower-illustration--22729173114165230/
+                - heading "Hand Drawn Monoline Line Art Leaves Doodle" [level=3] [ref=f107e553]
+                - generic [ref=f107e559]:
+                  - generic [ref=f107e560]: Pinterest
+                  - generic [ref=f107e562]: https://in.pinterest.com › pin › hand-drawn-monoline-li...
+              - button "검색결과에 관한 정보" [ref=f107e566] [cursor=pointer]
+            - generic [ref=f107e573]:
+              - emphasis [ref=f107e574]: Explore this cute and colorful hand-drawn monoline line art
+              - text: of leaves and flowers, perfect for autumn and spring decorations. This doodle art clipart is ...
+            - link [ref=f107e577] [cursor=pointer]:
+              - /url: https://in.pinterest.com/pin/hand-drawn-monoline-line-art-leaves-doodle-botanical-flower-illustration--22729173114165230/
+              - 'img "site:pinterest.com/pin minimalist vector logo mark white background black monoline butterfly OR botanical(출처: in.pinterest.com)" [ref=f107e579]'
+          - generic [ref=f107e583]:
+            - generic [ref=f107e586]:
+              - link "Floral And Flower Vector Element Design Botanical Doodle ... Pinterest · rachelpiker 4년 전" [ref=f107e588] [cursor=pointer]:
+                - /url: https://in.pinterest.com/pin/hand-drawn-botanical-vector-png-images--34128909667963129/
+                - heading "Floral And Flower Vector Element Design Botanical Doodle ..." [level=3] [ref=f107e589]
+                - generic [ref=f107e595]:
+                  - generic [ref=f107e596]: Pinterest · rachelpiker
+                  - generic [ref=f107e598]: 4년 전
+              - button "검색결과에 관한 정보" [ref=f107e602] [cursor=pointer]
+            - generic [ref=f107e609]:
+              - emphasis [ref=f107e610]: Download free PNG or vector files
+              - text: of Hand Drawn Botanical Vector, Flower and Flower Vector Design Elements in Doodle Hand Drawn Style, ...
+            - link [ref=f107e613] [cursor=pointer]:
+              - /url: https://in.pinterest.com/pin/hand-drawn-botanical-vector-png-images--34128909667963129/
+              - 'img "site:pinterest.com/pin minimalist vector logo mark white background black monoline butterfly OR botanical(출처: in.pinterest.com)" [ref=f107e615]'
+          - generic [ref=f107e619]:
+            - generic [ref=f107e622]:
+              - link "30 Best Leaves Logo Designs You Should Check Pinterest https://www.pinterest.com › pin › 30-best-leaves-logo-d..." [ref=f107e624] [cursor=pointer]:
+                - /url: https://www.pinterest.com/pin/30-best-leaves-logo-designs-for-branding--128493395622024366/
+                - heading "30 Best Leaves Logo Designs You Should Check" [level=3] [ref=f107e625]
+                - generic [ref=f107e631]:
+                  - generic [ref=f107e632]: Pinterest
+                  - generic [ref=f107e634]: https://www.pinterest.com › pin › 30-best-leaves-logo-d...
+              - button "검색결과에 관한 정보" [ref=f107e638] [cursor=pointer]
+            - generic [ref=f107e645]:
+              - text: There is a subtle magic in the falling of old leaves. Check out some of the
+              - emphasis [ref=f107e646]: best leaves logo designs
+              - text: we have curated to inspire your projects!
+            - link [ref=f107e649] [cursor=pointer]:
+              - /url: https://www.pinterest.com/pin/30-best-leaves-logo-designs-for-branding--128493395622024366/
+              - 'img "site:pinterest.com/pin minimalist vector logo mark white background black monoline butterfly OR botanical(출처: www.pinterest.com)" [ref=f107e651]'
+      - navigation [ref=f107e654]:
+        - heading "페이지 탐색" [level=1] [ref=f107e655]
+        - text: "1"
+        - link "Page 2" [ref=f107e658] [cursor=pointer]:
+          - /url: /search?q=site:pinterest.com/pin+minimalist+vector+logo+mark+white+background+black+monoline+butterfly+OR+botanical&sca_esv=5ba224cdfcc4b8dc&ei=7Tp8aqiQMIDi2roPvKDjiQs&start=10&sa=N&sstk=AU9db-CNecoNrRwQAFJFTPepcGa-qcwVqTfCxOsx-Ek-BLEZWGJTQs6C1FzC8kIJn5FzMaGuh6BCSSz2qE9KVuRmJz4FFoXTtCH3-A&ved=2ahUKEwjourvR4ZqWAxUAsVYBHTzQOLEQ8tMDegQIJxAE
+          - text: "2"
+        - link "Page 3" [ref=f107e660] [cursor=pointer]:
+          - /url: /search?q=site:pinterest.com/pin+minimalist+vector+logo+mark+white+background+black+monoline+butterfly+OR+botanical&sca_esv=5ba224cdfcc4b8dc&ei=7Tp8aqiQMIDi2roPvKDjiQs&start=20&sa=N&sstk=AU9db-CNecoNrRwQAFJFTPepcGa-qcwVqTfCxOsx-Ek-BLEZWGJTQs6C1FzC8kIJn5FzMaGuh6BCSSz2qE9KVuRmJz4FFoXTtCH3-A&ved=2ahUKEwjourvR4ZqWAxUAsVYBHTzQOLEQ8tMDegQIJxAG
+          - text: "3"
+        - link "Page 4" [ref=f107e662] [cursor=pointer]:
+          - /url: /search?q=site:pinterest.com/pin+minimalist+vector+logo+mark+white+background+black+monoline+butterfly+OR+botanical&sca_esv=5ba224cdfcc4b8dc&ei=7Tp8aqiQMIDi2roPvKDjiQs&start=30&sa=N&sstk=AU9db-CNecoNrRwQAFJFTPepcGa-qcwVqTfCxOsx-Ek-BLEZWGJTQs6C1FzC8kIJn5FzMaGuh6BCSSz2qE9KVuRmJz4FFoXTtCH3-A&ved=2ahUKEwjourvR4ZqWAxUAsVYBHTzQOLEQ8tMDegQIJxAI
+          - text: "4"
+        - link "Page 5" [ref=f107e664] [cursor=pointer]:
+          - /url: /search?q=site:pinterest.com/pin+minimalist+vector+logo+mark+white+background+black+monoline+butterfly+OR+botanical&sca_esv=5ba224cdfcc4b8dc&ei=7Tp8aqiQMIDi2roPvKDjiQs&start=40&sa=N&sstk=AU9db-CNecoNrRwQAFJFTPepcGa-qcwVqTfCxOsx-Ek-BLEZWGJTQs6C1FzC8kIJn5FzMaGuh6BCSSz2qE9KVuRmJz4FFoXTtCH3-A&ved=2ahUKEwjourvR4ZqWAxUAsVYBHTzQOLEQ8tMDegQIJxAK
+          - text: "5"
+        - link "Page 6" [ref=f107e666] [cursor=pointer]:
+          - /url: /search?q=site:pinterest.com/pin+minimalist+vector+logo+mark+white+background+black+monoline+butterfly+OR+botanical&sca_esv=5ba224cdfcc4b8dc&ei=7Tp8aqiQMIDi2roPvKDjiQs&start=50&sa=N&sstk=AU9db-CNecoNrRwQAFJFTPepcGa-qcwVqTfCxOsx-Ek-BLEZWGJTQs6C1FzC8kIJn5FzMaGuh6BCSSz2qE9KVuRmJz4FFoXTtCH3-A&ved=2ahUKEwjourvR4ZqWAxUAsVYBHTzQOLEQ8tMDegQIJxAM
+          - text: "6"
+        - heading [level=2] [ref=f107e668]:
+          - link "다음" [ref=f107e669] [cursor=pointer]:
+            - /url: /search?q=site:pinterest.com/pin+minimalist+vector+logo+mark+white+background+black+monoline+butterfly+OR+botanical&sca_esv=5ba224cdfcc4b8dc&ei=7Tp8aqiQMIDi2roPvKDjiQs&start=10&sa=N&sstk=AU9db-CNecoNrRwQAFJFTPepcGa-qcwVqTfCxOsx-Ek-BLEZWGJTQs6C1FzC8kIJn5FzMaGuh6BCSSz2qE9KVuRmJz4FFoXTtCH3-A&ved=2ahUKEwjourvR4ZqWAxUAsVYBHTzQOLEQ8NMDegQIJxAO
+      - navigation
+    - contentinfo [ref=f107e672]:
+      - heading "바닥글 링크" [level=1] [ref=f107e673]
+      - generic [ref=f107e677]:
+        - generic [ref=f107e679]:
+          - text: 대한민국
+          - generic [ref=f107e681]:
+            - button "월평동 대전광역시 서구 - 이전 활동 기준" [ref=f107e683] [cursor=pointer]:
+              - generic [ref=f107e684]: 월평동 대전광역시 서구
+              - generic [ref=f107e686]:
+                - text: "-"
+                - generic [ref=f107e687]: 이전 활동 기준
+            - text: "-"
+            - button "위치 업데이트" [ref=f107e689] [cursor=pointer]
+        - generic [ref=f107e692]:
+          - link "도움말" [ref=f107e693] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=ko&fg=1
+          - link "의견 보내기" [ref=f107e694] [cursor=pointer]:
+            - /url: "#"
+          - link "개인정보처리방침" [ref=f107e695] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=ko&fg=1
+          - link "약관" [ref=f107e696] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=ko&fg=1

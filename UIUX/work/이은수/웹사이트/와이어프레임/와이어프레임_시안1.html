@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사단(士團) — 조선 암행어사 마패 헤리티지 향수 브랜드 최종 마스터 와이어프레임</title>
+    <style>
+        :root {
+            --bg-white: #ffffff;
+            --bg-light: #f8fafc;
+            --bg-gray-100: #f1f5f9;
+            --bg-gray-200: #e2e8f0;
+            --bg-gray-300: #cbd5e1;
+            --bg-dark: #0f172a;
+            --bg-dark-card: #1e293b;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --text-light: #f8fafc;
+            --border-subtle: #e2e8f0;
+            --border-mid: #cbd5e1;
+            --border-dark: #334155;
+            --accent-brass: #b45309;
+            --accent-brass-light: #fef3c7;
+            --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif;
+            --font-mono: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+            --font-serif: 'ChosunIlbo_myungjo', 'Batang', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-sans);
+        }
+
+        body {
+            background-color: var(--bg-white);
+            color: var(--text-primary);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* Container Utilities */
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .container-narrow {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            padding: 4px 12px;
+            background: var(--bg-gray-100);
+            border-radius: 20px;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 900;
+            letter-spacing: -0.8px;
+            line-height: 1.3;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .section-desc {
+            font-size: 16px;
+            color: var(--text-secondary);
+            max-width: 720px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Buttons & Badges */
+        .btn-primary {
+            background: var(--bg-dark);
+            color: #ffffff;
+            padding: 15px 32px;
+            border-radius: 6px;
+            font-weight: 800;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+            border: none;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            padding: 14px 28px;
+            border-radius: 6px;
+            font-weight: 800;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+            border: 1.5px solid var(--border-mid);
+            letter-spacing: 0.5px;
+            cursor: pointer;
+        }
+
+        .pill-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 800;
+            background: var(--bg-gray-200);
+            color: var(--text-secondary);
+        }
+
+        /* ==========================================================================
+           SEC-01: GNB & Utility Bar
+           ========================================================================== */
+        .top-utility-bar {
+            background: var(--bg-dark);
+            color: #ffffff;
+            font-size: 12px;
+            padding: 9px 0;
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        header.gnb-header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-subtle);
+            z-index: 1000;
+            padding: 16px 0;
+        }
+
+        .gnb-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .gnb-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .gnb-logo-mark {
+            background: var(--bg-dark);
+            color: #ffffff;
+            width: 36px;
+            height: 36px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .gnb-logo-text {
+            font-size: 18px;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+        }
+
+        .gnb-logo-sub {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--text-muted);
+            margin-left: 2px;
+        }
+
+        /* Floating Capsule Nav */
+        .capsule-nav {
+            display: flex;
+            gap: 6px;
+            background: var(--bg-gray-100);
+            padding: 5px;
+            border-radius: 30px;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .capsule-pill {
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-secondary);
+            transition: all 0.2s ease;
+        }
+
+        .capsule-pill:hover, .capsule-pill.active {
+            background: var(--bg-dark);
+            color: #ffffff;
+        }
+
+        .gnb-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .gnb-btn-icon {
+            background: var(--bg-gray-100);
+            border: 1px solid var(--border-subtle);
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--text-primary);
+            cursor: pointer;
+        }
+
+        /* ==========================================================================
+           SEC-02: Cinematic Hero Stage
+           ========================================================================== */
+        .hero-section {
+            padding: 100px 0 90px;
+            text-align: center;
+            background: radial-gradient(circle at 50% 25%, #f1f5f9 0%, #ffffff 75%);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .hero-badge-group {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--bg-gray-200);
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 800;
+            color: var(--text-secondary);
+            margin-bottom: 26px;
+        }
+
+        .hero-title {
+            font-size: 54px;
+            font-weight: 900;
+            letter-spacing: -1.8px;
+            line-height: 1.22;
+            margin-bottom: 24px;
+            color: var(--text-primary);
+        }
+
+        .hero-subtitle {
+            font-size: 19px;
+            color: var(--text-secondary);
+            max-width: 780px;
+            margin: 0 auto 38px;
+            line-height: 1.75;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 55px;
+        }
+
+        .hero-canvas-frame {
+            max-width: 1060px;
+            margin: 0 auto;
+            height: 400px;
+            background: var(--bg-gray-200);
+            border: 1.5px dashed var(--border-mid);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            padding: 30px;
+            position: relative;
+        }
+
+        .canvas-tag {
+            position: absolute;
+            top: 20px;
+            left: 24px;
+            font-size: 11px;
+            font-weight: 800;
+            background: var(--bg-white);
+            padding: 4px 10px;
+            border-radius: 4px;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-subtle);
+        }
+
+        /* ==========================================================================
+           SEC-03: AI & 3-Axis Pipette Interactive Olfactive Lab
+           ========================================================================== */
+        .mixing-section {
+            padding: 100px 0;
+            background: var(--bg-white);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .mixing-workbench {
+            background: var(--bg-light);
+            border: 1px solid var(--border-mid);
+            border-radius: 14px;
+            padding: 45px;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.03);
+        }
+
+        .ai-diagnosis-banner {
+            background: var(--bg-white);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 35px;
+        }
+
+        .ai-status-text {
+            font-size: 14px;
+            font-weight: 800;
+            color: var(--text-primary);
+        }
+
+        .ai-tags-row {
+            display: flex;
+            gap: 8px;
+        }
+
+        .ai-tag-pill {
+            background: var(--bg-gray-100);
+            border: 1px solid var(--border-subtle);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--text-secondary);
+        }
+
+        .mixing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 35px;
+        }
+
+        .mixing-channel-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            padding: 28px 22px;
+            text-align: center;
+            position: relative;
+        }
+
+        .channel-tag {
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .channel-name {
+            font-size: 18px;
+            font-weight: 900;
+            margin-bottom: 6px;
+        }
+
+        .channel-sub {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .channel-gauge-val {
+            font-size: 34px;
+            font-weight: 900;
+            font-family: var(--font-mono);
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .channel-slider-track {
+            height: 10px;
+            background: var(--bg-gray-200);
+            border-radius: 5px;
+            position: relative;
+            margin-bottom: 16px;
+        }
+
+        .channel-slider-fill {
+            height: 100%;
+            background: var(--bg-dark);
+            border-radius: 5px;
+        }
+
+        .channel-notes-badge {
+            display: inline-block;
+            background: var(--bg-gray-100);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--text-secondary);
+        }
+
+        .mixing-result-bar {
+            background: var(--bg-dark);
+            color: #ffffff;
+            border-radius: 10px;
+            padding: 24px 34px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .mixing-status-left {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+        }
+
+        .status-metric {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .status-metric span:first-child {
+            font-size: 11px;
+            color: #94a3b8;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .status-metric span:last-child {
+            font-size: 17px;
+            font-weight: 900;
+            font-family: var(--font-mono);
+        }
+
+        /* ==========================================================================
+           SEC-04: 24H Timeline & TPO Layering Wheel
+           ========================================================================== */
+        .timeline-section {
+            padding: 100px 0;
+            background: var(--bg-light);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .timeline-workbench {
+            background: var(--bg-white);
+            border: 1px solid var(--border-mid);
+            border-radius: 14px;
+            padding: 45px;
+        }
+
+        .time-tabs-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 35px;
+        }
+
+        .time-tab {
+            background: var(--bg-light);
+            border: 1.5px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 18px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .time-tab.active {
+            border-color: var(--bg-dark);
+            background: var(--bg-dark);
+            color: #ffffff;
+        }
+
+        .time-val {
+            font-size: 22px;
+            font-weight: 900;
+            font-family: var(--font-mono);
+            margin-bottom: 4px;
+        }
+
+        .time-name {
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .timeline-focus-card {
+            background: var(--bg-light);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            padding: 35px;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .timeline-img-holder {
+            height: 280px;
+            background: var(--bg-gray-200);
+            border: 1.5px dashed var(--border-mid);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: var(--text-muted);
+            text-align: center;
+            padding: 20px;
+        }
+
+        .recipe-ratio-box {
+            background: var(--bg-white);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .ratio-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .ratio-row:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ==========================================================================
+           SEC-05: 3D Bespoke Engraving Atelier
+           ========================================================================== */
+        .engraving-section {
+            padding: 100px 0;
+            background: var(--bg-white);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .engraving-stage {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .bottle-3d-stage {
+            height: 480px;
+            background: var(--bg-gray-200);
+            border: 2px dashed var(--border-mid);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: var(--text-secondary);
+            text-align: center;
+            padding: 30px;
+            position: relative;
+        }
+
+        .rotate-indicator {
+            position: absolute;
+            bottom: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 800;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-subtle);
+        }
+
+        .engraving-panel {
+            background: var(--bg-light);
+            border: 1px solid var(--border-mid);
+            border-radius: 12px;
+            padding: 40px;
+        }
+
+        .engraving-form-group {
+            margin-bottom: 22px;
+        }
+
+        .engraving-label {
+            display: block;
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .engraving-input-mock {
+            width: 100%;
+            background: var(--bg-white);
+            border: 1.5px solid var(--border-mid);
+            padding: 14px 18px;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 800;
+            font-family: var(--font-serif);
+            color: var(--text-primary);
+        }
+
+        .font-selector-row {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .font-pill {
+            flex: 1;
+            padding: 10px;
+            text-align: center;
+            border: 1px solid var(--border-mid);
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 800;
+            background: var(--bg-white);
+            cursor: pointer;
+        }
+
+        .font-pill.active {
+            background: var(--bg-dark);
+            color: #ffffff;
+            border-color: var(--bg-dark);
+        }
+
+        /* ==========================================================================
+           SEC-06: Master Product Showcase
+           ========================================================================== */
+        .showcase-section {
+            padding: 100px 0;
+            background: var(--bg-light);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .showcase-card {
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            overflow: hidden;
+            background: var(--bg-white);
+            transition: box-shadow 0.2s ease;
+        }
+
+        .showcase-img-holder {
+            height: 270px;
+            background: var(--bg-gray-100);
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 800;
+            color: var(--text-muted);
+            text-align: center;
+            padding: 20px;
+        }
+
+        .showcase-body {
+            padding: 28px;
+            text-align: center;
+        }
+
+        .showcase-badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 800;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .showcase-name {
+            font-size: 20px;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+
+        .showcase-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 18px;
+            line-height: 1.6;
+        }
+
+        .showcase-price {
+            font-size: 22px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            font-family: var(--font-mono);
+        }
+
+        /* All-Day 15ml Kit Wide Banner */
+        .all-day-kit-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-mid);
+            border-radius: 12px;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .kit-img-holder {
+            height: 240px;
+            background: var(--bg-gray-200);
+            border: 1.5px dashed var(--border-mid);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: var(--text-muted);
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* ==========================================================================
+           SEC-07: Offline Space & Masterclass Booking
+           ========================================================================== */
+        .booking-section {
+            padding: 100px 0;
+            background: var(--bg-white);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .locations-split {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 30px;
+            margin-bottom: 45px;
+        }
+
+        .location-card {
+            background: var(--bg-light);
+            border: 1px solid var(--border-mid);
+            border-radius: 12px;
+            padding: 35px;
+        }
+
+        .location-visual {
+            height: 200px;
+            background: var(--bg-gray-200);
+            border: 1px dashed var(--border-mid);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: var(--text-muted);
+            margin: 18px 0;
+            text-align: center;
+        }
+
+        .timeslot-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .time-box {
+            background: var(--bg-white);
+            border: 1px solid var(--border-mid);
+            padding: 14px 10px;
+            text-align: center;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .time-box.active {
+            background: var(--bg-dark);
+            color: #ffffff;
+            border-color: var(--bg-dark);
+        }
+
+        .time-box.disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        /* Mobile Pass Bar */
+        .mobile-pass-card {
+            background: var(--bg-light);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            padding: 24px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* ==========================================================================
+           SEC-08: Secret Cipher & Discovery Subscription
+           ========================================================================== */
+        .cipher-section {
+            padding: 100px 0;
+            background: var(--bg-dark);
+            color: #ffffff;
+            border-bottom: 1px solid var(--border-dark);
+        }
+
+        .cipher-card {
+            background: var(--bg-dark-card);
+            border: 1px solid var(--border-dark);
+            border-radius: 14px;
+            padding: 55px;
+            text-align: center;
+            max-width: 860px;
+            margin: 0 auto;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        .cipher-seal {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            border: 2px solid #94a3b8;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .cipher-hash-title {
+            font-size: 34px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            font-family: var(--font-mono);
+            margin-bottom: 12px;
+        }
+
+        .cipher-formula-summary {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 16px 28px;
+            border-radius: 6px;
+            font-size: 13px;
+            color: #cbd5e1;
+            display: inline-flex;
+            gap: 24px;
+            margin-bottom: 32px;
+            font-family: var(--font-mono);
+        }
+
+        /* ==========================================================================
+           SEC-09: Universal Herbarium, Safety & Footer
+           ========================================================================== */
+        .safety-section {
+            padding: 90px 0;
+            background: var(--bg-white);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .v-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            font-size: 13px;
+        }
+
+        .v-table th, .v-table td {
+            border: 1px solid var(--border-subtle);
+            padding: 14px 18px;
+            text-align: left;
+        }
+
+        .v-table th {
+            background: var(--bg-gray-100);
+            font-weight: 800;
+        }
+
+        footer.master-footer {
+            padding: 70px 0 50px;
+            background: var(--bg-dark);
+            color: #94a3b8;
+            font-size: 13px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            font-size: 20px;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .footer-col-title {
+            font-size: 14px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 16px;
+        }
+
+        .footer-links-list {
+            list-style: none;
+        }
+
+        .footer-links-list li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links-list a {
+            color: #94a3b8;
+            text-decoration: none;
+        }
+
+        .footer-links-list a:hover {
+            color: #ffffff;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-dark);
+            padding-top: 30px;
+            text-align: center;
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        /* Floating Quick Action */
+        .floating-cart-badge {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--bg-dark);
+            color: #ffffff;
+            padding: 14px 26px;
+            border-radius: 40px;
+            font-weight: 800;
+            font-size: 13px;
+            border: 2px solid #ffffff;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SEC-01: Global Utility Bar & Sticky Capsule GNB -->
+    <div class="top-utility-bar">
+        🏛️ SADAN MASTERPIECE — 조선 암행어사 마패 헤리티지 아티잔 조향 연구소 통합 공식 웹사이트
+    </div>
+
+    <header class="gnb-header">
+        <div class="container gnb-inner">
+            <a href="#" class="gnb-logo">
+                <div class="gnb-logo-mark">士</div>
+                <div>
+                    <span class="gnb-logo-text">SADAN</span>
+                    <span class="gnb-logo-sub">HERITAGE ATELIER</span>
+                </div>
+            </a>
+
+            <!-- 10개 클라이언트 통합 캡슐형 GNB -->
+            <nav class="capsule-nav">
+                <a href="#lab" class="capsule-pill active">조향 캔버스</a>
+                <a href="#timeline" class="capsule-pill">24H 타임라인</a>
+                <a href="#engraving" class="capsule-pill">3D 각인</a>
+                <a href="#showcase" class="capsule-pill">마스터 컬렉션</a>
+                <a href="#booking" class="capsule-pill">플래그십 &amp; 클래스</a>
+                <a href="#cipher" class="capsule-pill">비밀 첩보 증서</a>
+            </nav>
+
+            <div class="gnb-actions">
+                <button class="gnb-btn-icon">Cipher 조회</button>
+                <div class="gnb-btn-icon" style="background:var(--bg-dark); color:#ffffff;">🛒 Bag (1)</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SEC-02: Cinematic Hero Stage -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-badge-group">
+                <span>조선 암행어사 마패 헤리티지</span>
+                <span>·</span>
+                <span>BESPOKE ARTISAN PERFUMERY</span>
+            </div>
+            <h1 class="hero-title">
+                마패가 열리면,<br>세상에 단 하나뿐인 서사의 향이 피어오른다
+            </h1>
+            <p class="hero-subtitle">
+                1·2·3마패 등급별 조선 자생 천연 원료와 현대 아티잔 조향학의 완벽한 결합.<br>
+                나만의 고유한 향을 직접 배합하고 실시간 3D 놋쇠 마패 용기에 이름을 새겨 완성하세요.
+            </p>
+            <div class="hero-cta-group">
+                <a href="#lab" class="btn-primary">나만의 맞춤 조향 시작하기 &gt;</a>
+                <a href="#showcase" class="btn-secondary">마스터 컬렉션 3D 뷰어</a>
+                <a href="#booking" class="btn-secondary">북촌/성수 클래스 예약</a>
+            </div>
+
+            <!-- 4K 시네마틱 앰비언트 비주얼 프레임 -->
+            <div class="hero-canvas-frame">
+                <div class="canvas-tag">HERITAGE CINEMATIC CANVAS</div>
+                <div style="font-size:20px; font-weight:900; color:#334155; margin-bottom:8px;">[ 4K 풀스크린 마패 조향 아틀리에 시네마틱 프레임 ]</div>
+                <div style="font-size:14px; color:#64748b;">수제 놋쇠 마패의 중후한 질감과 오대산 백단향 · 지리산 솔잎이 피어오르는 오리엔탈 미학 연출</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-03: AI & 3-Axis Pipette Interactive Olfactive Lab -->
+    <section id="lab" class="mixing-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">01. INTERACTIVE OLFACTIVE LAB</span>
+                <h2 class="section-title">AI 취향 진단 &amp; 실시간 3축 맞춤 조향 캔버스</h2>
+                <p class="section-desc">
+                    AI 알고리즘이 분석한 취향 데이터를 기반으로 베이스, 포인트, 올데이 3가지 축의 피펫 비율을 1% 단위로 조율합니다.
+                </p>
+            </div>
+
+            <div class="mixing-workbench">
+                <!-- AI 진단 상태 배너 -->
+                <div class="ai-diagnosis-banner">
+                    <div class="ai-status-text">🤖 AI 추천 포뮬러 : [고요한 비 온 뒤 숲속의 고궁 서재 무드]</div>
+                    <div class="ai-tags-row">
+                        <span class="ai-tag-pill">#우디인센스</span>
+                        <span class="ai-tag-pill">#차분한집중</span>
+                        <span class="ai-tag-pill">#비건100%</span>
+                        <span class="ai-tag-pill">#지속력8.5H</span>
+                    </div>
+                </div>
+
+                <!-- 3채널 인터랙티브 피펫 슬라이더 -->
+                <div class="mixing-grid">
+                    <!-- Channel 1: Base Note -->
+                    <div class="mixing-channel-card">
+                        <div class="channel-tag">BASE NOTE</div>
+                        <div class="channel-name">1마패 · 오대산 백단향</div>
+                        <div class="channel-sub">차분하고 묵직한 일상용 베이스 향조</div>
+                        <div class="channel-gauge-val">40 %</div>
+                        <div class="channel-slider-track">
+                            <div class="channel-slider-fill" style="width: 40%;"></div>
+                        </div>
+                        <div class="channel-notes-badge">백단 · 편백 · 스톤 이끼</div>
+                    </div>
+
+                    <!-- Channel 2: Point Note -->
+                    <div class="mixing-channel-card">
+                        <div class="channel-tag">POINT NOTE</div>
+                        <div class="channel-name">2마패 · 지리산 솔잎 &amp; 유자</div>
+                        <div class="channel-sub">기분 전환을 돕는 싱그러운 포인트 향조</div>
+                        <div class="channel-gauge-val">35 %</div>
+                        <div class="channel-slider-track">
+                            <div class="channel-slider-fill" style="width: 35%;"></div>
+                        </div>
+                        <div class="channel-notes-badge">솔잎 · 완도 유자 · 들국화</div>
+                    </div>
+
+                    <!-- Channel 3: All-Day Note -->
+                    <div class="mixing-channel-card">
+                        <div class="channel-tag">ALL-DAY NOTE</div>
+                        <div class="channel-name">3마패 · 침향 &amp; 어사 묵향</div>
+                        <div class="channel-sub">하루 종일 깊은 잔향을 남기는 프리미엄 향조</div>
+                        <div class="channel-gauge-val">25 %</div>
+                        <div class="channel-slider-track">
+                            <div class="channel-slider-fill" style="width: 25%;"></div>
+                        </div>
+                        <div class="channel-notes-badge">침향 · 전통 묵향 · 훈민정음 향</div>
+                    </div>
+                </div>
+
+                <!-- 블렌딩 결과 바 -->
+                <div class="mixing-result-bar">
+                    <div class="mixing-status-left">
+                        <div class="status-metric">
+                            <span>TOTAL RATIO</span>
+                            <span>100% (완전 균형)</span>
+                        </div>
+                        <div class="status-metric">
+                            <span>ESTIMATED LONGEVITY</span>
+                            <span>8.5 HOURS (오드퍼퓸)</span>
+                        </div>
+                        <div class="status-metric">
+                            <span>FORMULA CIPHER</span>
+                            <span>SADAN-8809-A3</span>
+                        </div>
+                    </div>
+                    <a href="#engraving" class="btn-primary" style="background:#ffffff; color:var(--text-primary);">
+                        이 레시피로 3D 각인 진행하기 &gt;
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-04: 24H Timeline & TPO Curated Layering -->
+    <section id="timeline" class="timeline-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">02. 24H LIFE SCENARIO</span>
+                <h2 class="section-title">시간과 공간을 잇는 24H TPO 향수 레이어링</h2>
+                <p class="section-desc">
+                    새벽의 고요함부터 한밤의 묵향까지, 시간대별 무드에 최적화된 아티잔 레이어링 솔루션을 제안합니다.
+                </p>
+            </div>
+
+            <div class="timeline-workbench">
+                <!-- 4대 시간대 탭 -->
+                <div class="time-tabs-row">
+                    <div class="time-tab">
+                        <div class="time-val">07:00</div>
+                        <div class="time-name">새벽 안개 (Dawn Mist)</div>
+                    </div>
+                    <div class="time-tab active">
+                        <div class="time-val">13:00</div>
+                        <div class="time-name">정오의 햇살 (High Noon)</div>
+                    </div>
+                    <div class="time-tab">
+                        <div class="time-val">18:30</div>
+                        <div class="time-name">노을빛 서재 (Sunset Amber)</div>
+                    </div>
+                    <div class="time-tab">
+                        <div class="time-val">23:00</div>
+                        <div class="time-name">깊은 밤 묵향 (Midnight Ink)</div>
+                    </div>
+                </div>
+
+                <!-- 선택된 시간대 포커스 카드 -->
+                <div class="timeline-focus-card">
+                    <div class="timeline-img-holder">
+                        <div style="font-size:16px; font-weight:900; color:#334155; margin-bottom:6px;">[ 13:00 정오 비즈니스 씬 비주얼 ]</div>
+                        <div style="font-size:12px; color:#64748b;">밝고 명료한 지리산 솔잎 &amp; 완도 유자의 시트러스 아로마</div>
+                    </div>
+                    <div>
+                        <span class="pill-badge" style="margin-bottom:10px;">RECOMMENDED TPO LAYER</span>
+                        <h3 style="font-size:24px; font-weight:900; margin-bottom:10px;">맑은 영감과 활력을 주는 정오의 포뮬러</h3>
+                        <p style="font-size:14px; color:var(--text-secondary); line-height:1.7;">
+                            오후의 나른함을 깨우고 집중력을 고양시키는 최적의 배합 비율입니다. 손목 안쪽과 목덜미에 2:1 비율로 분사하여 입체적인 향의 잔향을 형성합니다.
+                        </p>
+
+                        <div class="recipe-ratio-box">
+                            <div class="ratio-row">
+                                <span>2마패 지리산 솔잎 유자 (상체 분사)</span>
+                                <span style="font-family:var(--font-mono);">2 SPRAYS (60%)</span>
+                            </div>
+                            <div class="ratio-row">
+                                <span>1마패 오대산 백단향 (하체 레이어링)</span>
+                                <span style="font-family:var(--font-mono);">1 SPRAY (40%)</span>
+                            </div>
+                        </div>
+
+                        <button class="btn-primary" style="width:100%;">이 시간대 레이어 세트 담기 (15ml × 2)</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-05: 3D Bespoke Engraving Atelier -->
+    <section id="engraving" class="engraving-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">03. 3D CUSTOM ENGRAVING</span>
+                <h2 class="section-title">3D 실시간 회전 뷰 &amp; 놋쇠 마패 각인 아틀리에</h2>
+                <p class="section-desc">
+                    수제 놋쇠 마패 캡에 나만의 문구와 가문/개인 인장을 전통 음각 기법으로 새겨 영구 소장 가치를 부여합니다.
+                </p>
+            </div>
+
+            <div class="engraving-stage">
+                <!-- 3D 보틀 시뮬레이터 -->
+                <div class="bottle-3d-stage">
+                    <div style="font-size:22px; font-weight:900; color:#334155; margin-bottom:10px;">[ 360° 3D 놋쇠 마패 보틀 인터랙션 ]</div>
+                    <div style="font-size:14px; color:#64748b; margin-bottom:20px;">마우스 드래그로 보틀을 360도 회전하며 각인 위치를 실시간 확인하세요.</div>
+                    
+                    <div style="background:#ffffff; border:1px solid var(--border-mid); padding:12px 24px; border-radius:6px; font-family:var(--font-serif); font-size:18px; font-weight:900; color:var(--accent-brass);">
+                        [ 음각 시뮬레이션: "청렴한 바람, 사단" ]
+                    </div>
+                    <div class="rotate-indicator">🔄 360° ROTATE READY</div>
+                </div>
+
+                <!-- 각인 옵션 패널 -->
+                <div class="engraving-panel">
+                    <div class="engraving-form-group">
+                        <label class="engraving-label">1. 각인 문구 입력 (최대 한글 12자 / 영문 24자)</label>
+                        <input type="text" class="engraving-input-mock" value="청렴한 바람, 사단 (士團)" />
+                    </div>
+
+                    <div class="engraving-form-group">
+                        <label class="engraving-label">2. 전통 서체 선택</label>
+                        <div class="font-selector-row">
+                            <div class="font-pill active">조선 훈민정음체</div>
+                            <div class="font-pill">어사 궁서체</div>
+                            <div class="font-pill">모던 헤리티지 산스</div>
+                        </div>
+                    </div>
+
+                    <div class="engraving-form-group">
+                        <label class="engraving-label">3. 마패 문양 인장 선택</label>
+                        <div class="font-selector-row">
+                            <div class="font-pill active">1마패 (단봉)</div>
+                            <div class="font-pill">2마패 (쌍봉)</div>
+                            <div class="font-pill">3마패 (삼봉)</div>
+                        </div>
+                    </div>
+
+                    <div style="border-top:1px solid var(--border-subtle); padding-top:20px; margin-top:24px;">
+                        <div style="display:flex; justify-content:space-between; margin-bottom:16px; font-size:14px; font-weight:800;">
+                            <span>각인 및 놋쇠 주조 공임</span>
+                            <span style="color:#059669;">무료 프로모션 적용 중</span>
+                        </div>
+                        <button class="btn-primary" style="width:100%;">각인 확정 및 쇼케이스 담기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-06: Master Product Showcase -->
+    <section id="showcase" class="showcase-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">04. MASTER COLLECTION</span>
+                <h2 class="section-title">사단 마스터 향수 컬렉션</h2>
+                <p class="section-desc">
+                    조선 팔도의 최고급 천연 원료로 빚어낸 3대 헤리티지 본품 라인업과 올데이 포터블 키트를 만나보세요.
+                </p>
+            </div>
+
+            <!-- 3대 본품 컬렉션 그리드 -->
+            <div class="showcase-grid">
+                <!-- Product 1 -->
+                <div class="showcase-card">
+                    <div class="showcase-img-holder">
+                        [ 1마패 50ml 본품 3D 렌더링 ]<br>
+                        오대산 백단향 &amp; 놋쇠 마패 캡
+                    </div>
+                    <div class="showcase-body">
+                        <span class="showcase-badge">1-MAPAE SIGNATURE</span>
+                        <h3 class="showcase-name">1마패 · 오대산 백단향</h3>
+                        <p class="showcase-desc">단정하고 그윽한 편백과 스톤 이끼의 묵직한 오리엔탈 우디 아코드</p>
+                        <div class="showcase-price">₩ 148,000 <span style="font-size:13px; color:var(--text-muted); font-weight:normal;">/ 50ml</span></div>
+                        <button class="btn-primary" style="width:100%;">상세보기 &amp; 조향 커스텀</button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="showcase-card">
+                    <div class="showcase-img-holder">
+                        [ 2마패 50ml 본품 3D 렌더링 ]<br>
+                        지리산 솔잎 유자 &amp; 황동 마패 캡
+                    </div>
+                    <div class="showcase-body">
+                        <span class="showcase-badge">2-MAPAE SIGNATURE</span>
+                        <h3 class="showcase-name">2마패 · 지리산 솔잎 유자</h3>
+                        <p class="showcase-desc">맑은 숲의 솔내음과 완도 햇유자의 생생한 청량감을 담은 시트러스 우디</p>
+                        <div class="showcase-price">₩ 168,000 <span style="font-size:13px; color:var(--text-muted); font-weight:normal;">/ 50ml</span></div>
+                        <button class="btn-primary" style="width:100%;">상세보기 &amp; 조향 커스텀</button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="showcase-card">
+                    <div class="showcase-img-holder">
+                        [ 3마패 50ml 본품 3D 렌더링 ]<br>
+                        궁중 침향 묵향 &amp; 흑금 마패 캡
+                    </div>
+                    <div class="showcase-body">
+                        <span class="showcase-badge">3-MAPAE MASTERPIECE</span>
+                        <h3 class="showcase-name">3마패 · 궁중 침향 묵향</h3>
+                        <p class="showcase-desc">천년의 시간을 품은 최고급 침향과 선비의 벼루에서 피어나는 깊은 인센스</p>
+                        <div class="showcase-price">₩ 218,000 <span style="font-size:13px; color:var(--text-muted); font-weight:normal;">/ 50ml</span></div>
+                        <button class="btn-primary" style="width:100%;">상세보기 &amp; 조향 커스텀</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- All-Day 15ml Kit Wide Banner -->
+            <div class="all-day-kit-card">
+                <div class="kit-img-holder">
+                    [ 15ml × 3 ALL-DAY KIT ]<br>
+                    휴대용 놋쇠 케이스 &amp; 가죽 파우치 포함
+                </div>
+                <div>
+                    <span class="pill-badge" style="margin-bottom:10px;">PORTABLE TRAVEL COLLECTION</span>
+                    <h3 style="font-size:26px; font-weight:900; margin-bottom:12px;">사단 24H 올데이 15ml 트래블 키트</h3>
+                    <p style="font-size:14px; color:var(--text-secondary); line-height:1.7; margin-bottom:20px;">
+                        새벽, 정오, 한밤의 시그니처 3종을 15ml 포터블 보틀에 담았습니다. 언제 어디서나 시간과 무드에 맞추어 향을 레이어링할 수 있는 완전체 패키지입니다.
+                    </p>
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <div style="font-size:24px; font-weight:900; font-family:var(--font-mono);">₩ 112,000</div>
+                        <button class="btn-primary">트래블 키트 바로 구매</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-07: Offline Space & Masterclass Booking -->
+    <section id="booking" class="booking-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">05. ATELIER &amp; MASTERCLASS</span>
+                <h2 class="section-title">북촌 한옥 플래그십 &amp; 성수 팝업 아틀리에 예약</h2>
+                <p class="section-desc">
+                    국가공인 무형문화재 장인과 1:1로 함께하는 나만의 프라이빗 조향 클래스와 시향존 타임슬롯을 사전 예약하세요.
+                </p>
+            </div>
+
+            <div class="locations-split">
+                <!-- Location 1: 북촌 한옥 플래그십 -->
+                <div class="location-card">
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <h3 style="font-size:20px; font-weight:900;">🏛️ 북촌 한옥 플래그십 스토어</h3>
+                        <span class="pill-badge">1:1 장인 조향</span>
+                    </div>
+                    <div class="location-visual">
+                        [ 북촌 한옥 고택 조향실 3D 투어 뷰 ]<br>
+                        한옥 대청마루 시향 및 수제 주조 체험
+                    </div>
+                    <p style="font-size:13px; color:var(--text-secondary); margin-bottom:15px;">
+                        위치: 서울 종로구 북촌로 12길 (안국역 2번 출구)<br>
+                        프로그램: 1:1 아티잔 장인 조향 수강 + 마패 용기 음각 각인 (90분)
+                    </p>
+                    
+                    <div style="font-size:12px; font-weight:800; color:var(--text-muted); margin-bottom:8px;">타임슬롯 선택:</div>
+                    <div class="timeslot-grid">
+                        <div class="time-box disabled">11:00 (마감)</div>
+                        <div class="time-box active">14:00 (잔여 2)</div>
+                        <div class="time-box">16:30 (잔여 4)</div>
+                        <div class="time-box">19:00 (잔여 1)</div>
+                    </div>
+                    <button class="btn-primary" style="width:100%; margin-top:10px;">북촌 클래스 예약 확정</button>
+                </div>
+
+                <!-- Location 2: 성수 팝업 갤러리 -->
+                <div class="location-card">
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <h3 style="font-size:20px; font-weight:900;">🎪 성수 어사 출두 팝업 갤러리</h3>
+                        <span class="pill-badge">익스피리언스</span>
+                    </div>
+                    <div class="location-visual">
+                        [ 성수 팝업 갤러리 미디어아트 뷰 ]<br>
+                        3D 놋쇠 주조 아카이브 &amp; 웰컴 디스커버리 존
+                    </div>
+                    <p style="font-size:13px; color:var(--text-secondary); margin-bottom:15px;">
+                        위치: 서울 성동구 연무장길 45 (성수역 3번 출구)<br>
+                        프로그램: 팝업 스토어 프리패스 + 웰컴 시향 5종 키트 현장 수령
+                    </p>
+
+                    <div style="font-size:12px; font-weight:800; color:var(--text-muted); margin-bottom:8px;">타임슬롯 선택:</div>
+                    <div class="timeslot-grid">
+                        <div class="time-box">13:00</div>
+                        <div class="time-box active">15:00</div>
+                        <div class="time-box">17:00</div>
+                        <div class="time-box">19:00</div>
+                    </div>
+                    <button class="btn-secondary" style="width:100%; margin-top:10px;">성수 팝업 모바일 패스 발급</button>
+                </div>
+            </div>
+
+            <!-- 모바일 QR 어사 패스 발급 바 -->
+            <div class="mobile-pass-card">
+                <div>
+                    <h4 style="font-size:16px; font-weight:900; margin-bottom:4px;">📱 모바일 QR 어사 패스 실시간 발급 연동</h4>
+                    <p style="font-size:13px; color:var(--text-secondary);">예약 완료 시 카카오 알림톡으로 모바일 출입 QR 코드와 오프라인 웰컴 바우처가 즉시 전송됩니다.</p>
+                </div>
+                <button class="btn-primary" style="padding:10px 20px; font-size:13px;">발급 안내 확인</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-08: Secret Cipher & Discovery Subscription -->
+    <section id="cipher" class="cipher-section">
+        <div class="container">
+            <div class="cipher-card">
+                <div class="cipher-seal">密</div>
+                <div style="font-size:12px; font-weight:800; letter-spacing:2px; color:#94a3b8; margin-bottom:8px;">OFFICIAL HERITAGE CERTIFICATE</div>
+                <h2 class="cipher-hash-title">암행어사 비밀 첩보 인증서 (Secret Cipher)</h2>
+                <p style="font-size:15px; color:#cbd5e1; max-width:650px; margin:0 auto 24px; line-height:1.7;">
+                    고객님께서 직접 배합하신 맞춤 포뮬러는 고유 암호화 해시코드로 사단 아카이브에 영구 보존되며, 평생 동일한 레시피로 재주문 및 리필이 가능합니다.
+                </p>
+
+                <div class="cipher-formula-summary">
+                    <span>CIPHER CODE: #SADAN-8809-B2</span>
+                    <span>·</span>
+                    <span>BASE 40%</span>
+                    <span>·</span>
+                    <span>POINT 35%</span>
+                    <span>·</span>
+                    <span>ALL-DAY 25%</span>
+                </div>
+
+                <div style="display:flex; justify-content:center; gap:16px;">
+                    <a href="#lab" class="btn-primary" style="background:#ffffff; color:var(--text-primary);">디지털 인증서 내려받기</a>
+                    <button class="btn-secondary" style="border-color:#475569; color:#ffffff;">비밀 레시피 아카이브 조회</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-09: Safety Verification, CS & Universal Footer -->
+    <section class="safety-section">
+        <div class="container">
+            <div class="section-header" style="margin-bottom:30px;">
+                <span class="section-tag">06. SAFETY &amp; SUSTAINABILITY</span>
+                <h2 class="section-title" style="font-size:26px;">화해 100% 비건 인증 &amp; IFRA 안전성 데이터</h2>
+            </div>
+
+            <table class="v-table">
+                <thead>
+                    <tr>
+                        <th>원료명 (Botanical Source)</th>
+                        <th>원산지</th>
+                        <th>화해 20가지 주의성분</th>
+                        <th>IFRA 국제안전인증</th>
+                        <th>비건 인증 여부</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>오대산 백단향 (Sandalwood)</td>
+                        <td>강원도 평창</td>
+                        <td>0개 (완전 배제)</td>
+                        <td>적합 승인 완료 (Grade 1)</td>
+                        <td>100% 비건 인증</td>
+                    </tr>
+                    <tr>
+                        <td>지리산 솔잎 &amp; 완도 유자</td>
+                        <td>전남 완도 / 전북 남원</td>
+                        <td>0개 (완전 배제)</td>
+                        <td>적합 승인 완료 (Grade 1)</td>
+                        <td>100% 비건 인증</td>
+                    </tr>
+                    <tr>
+                        <td>조선 궁중 침향 &amp; 묵향</td>
+                        <td>사단 전용 헤리티지 아틀리에</td>
+                        <td>0개 (완전 배제)</td>
+                        <td>적합 승인 완료 (Grade 1)</td>
+                        <td>100% 비건 인증</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Master Footer -->
+    <footer class="master-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">士團 (SADAN)</div>
+                    <p style="line-height:1.7; margin-bottom:16px;">
+                        조선 암행어사 마패 헤리티지 아티잔 조향 연구소.<br>
+                        잊혀진 전통 원료와 놋쇠 주조 기술을 현대적인 향의 언어로 복원합니다.
+                    </p>
+                    <div style="font-size:12px; color:#64748b;">
+                        무형문화재 주조 제43호 협업 브랜드
+                    </div>
+                </div>
+
+                <div>
+                    <div class="footer-col-title">컬렉션 &amp; 아틀리에</div>
+                    <ul class="footer-links-list">
+                        <li><a href="#lab">맞춤 조향 캔버스</a></li>
+                        <li><a href="#timeline">24H TPO 레이어링</a></li>
+                        <li><a href="#engraving">3D 놋쇠 각인</a></li>
+                        <li><a href="#showcase">마스터 에디션</a></li>
+                        <li><a href="#showcase">15ml 트래블 키트</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="footer-col-title">오프라인 스페이스</div>
+                    <ul class="footer-links-list">
+                        <li><a href="#booking">북촌 한옥 플래그십</a></li>
+                        <li><a href="#booking">성수 팝업 갤러리</a></li>
+                        <li><a href="#booking">1:1 장인 조향 수강</a></li>
+                        <li><a href="#cipher">비밀 첩보 아카이브</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="footer-col-title">고객 케어 센터</div>
+                    <div style="font-size:20px; font-weight:900; color:#ffffff; margin-bottom:6px; font-family:var(--font-mono);">
+                        1644-8809
+                    </div>
+                    <p style="font-size:12px; line-height:1.6; margin-bottom:14px;">
+                        평일 10:00 - 18:00 (점심 12:30 - 13:30)<br>
+                        주말 및 공휴일 휴무 / 카카오톡 @사단향수
+                    </p>
+                    <button class="btn-secondary" style="border-color:#475569; color:#ffffff; padding:8px 16px; font-size:12px;">
+                        1:1 실시간 조향 상담
+                    </button>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 SADAN HERITAGE PERFUMERY CORP. ALL RIGHTS RESERVED.</p>
+                <p style="margin-top:6px;">사업자등록번호: 102-88-09090 | 통신판매업신고: 제2026-서울종로-0128호 | 대표이사: 사단 헤리티지 마스터</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 플로팅 카트/견적 뱃지 -->
+    <div class="floating-cart-badge">
+        <span>🛒 SADAN-8809 맞춤 포뮬러 담김</span>
+        <span style="font-family:var(--font-mono); font-weight:900;">(1)</span>
+    </div>
+
+</body>
+</html>

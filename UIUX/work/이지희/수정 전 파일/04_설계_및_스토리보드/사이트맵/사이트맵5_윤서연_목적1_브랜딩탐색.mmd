@@ -1,0 +1,87 @@
+flowchart TD
+    classDef main fill:#2B2625,stroke:#1A1615,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef sub fill:#5D4E4A,stroke:#2B2625,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef drawer fill:#F5EFEB,stroke:#5D4E4A,stroke-width:2px,color:#2B2625,font-weight:bold;
+    classDef common fill:#FAF7F5,stroke:#2B2625,stroke-width:1px,color:#2B2625;
+    classDef member fill:#FFF3E0,stroke:#E65100,stroke-width:1.5px,color:#E65100,stroke-dasharray: 5 5;
+    classDef exception fill:#FFEBEE,stroke:#C62828,stroke-width:1.5px,color:#C62828,stroke-dasharray: 3 3;
+
+    Root["WICKETA x 29SELECT (가상클라이언트03 윤서연)"]
+    M1["1. Home 기획전 메인 (PG-01)"]
+    M2["2. Editorial Magazine 매거진 (PG-02)"]
+    M3["3. 29SELECT Special 단독상점 (PG-03)"]
+    M4["4. Cart Drawer 콜라보 결제 (PG-04 Aside Layer)"]
+
+    Root --> M1
+    Root --> M2
+    Root --> M3
+    Root --> M4
+
+    M1_1["Hero Section (29SELECT 단독 에디토리얼 쇼케이스)"]
+    M1_2["MD's Curator Note (수석 MD 감성 에세이)"]
+    M1_3["Editorial Fashion Lookbook (감성 룩북 화보)"]
+    M1_4["Clean Sugar-Free Fact (성분 투명성 검증표)"]
+
+    M1 --> M1_1
+    M1 --> M1_2
+    M1 --> M1_3
+    M1 --> M1_4
+
+    M2_1["29SELECT 에디토리얼 매거진 그리드 (PG-31)"]
+    M2_2["MD 픽 4종 시그니처 테이스팅 스토리"]
+
+    M2 --> M2_1
+    M2 --> M2_2
+
+    M2_1_1["라이프스타일 컷 & 감성 보더 레이아웃"]
+    M2_1_2["디자이너 인터뷰 & 영감의 원천"]
+
+    M2_1 --> M2_1_1
+    M2_1 --> M2_1_2
+
+    M2_2_1["29SELECT 단독 콜라보 굿즈 매칭"]
+    M2_2_2["단독 기획전 팩 1-Click 담기"]
+
+    M2_2 --> M2_2_1
+    M2_2 --> M2_2_2
+
+    M3_1["29SELECT 한정판 기프트 세트 (PG-32)"]
+    M3_2["콜라보 틴케이스 & 글래스 머들러 화보"]
+    M3_3["단독 15% 할인 웰컴 바우처 발급 (PG-33)"]
+
+    M3 --> M3_1
+    M3 --> M3_2
+    M3 --> M3_3
+
+    M3_1_1["선물용 친환경 패키지 스펙 안내"]
+    M3_2_1["단독 콜라보 각인 디자인 뷰어"]
+
+    M3_1 --> M3_1_1
+    M3_2 --> M3_2_1
+
+    M4_1["슬라이드아웃 Cart Drawer (콜라보 주문서)"]
+    M4_2["Virtual Scroll 위치 보존 (탐색 스크롤 100% 복원)"]
+
+    M4 --> M4_1
+    M4 --> M4_2
+
+    MEM1["[회원 영역] 단독 쿠폰함 & 주문 관리 (PG-M01 마이페이지)"]
+    GUEST1["[비회원 영역] 29SELECT 15% 바우처 발급 (가정)"]
+
+    M4 -.-> MEM1
+    M4 -.-> GUEST1
+
+    EXP1["[EXP-01] 404 Page Not Found (메인 안내 - 가정)"]
+    EXP2["[EXP-02] 콜라보 한정 팩 품절 안내 모달 (가정)"]
+    EXP3["[EXP-03] 결제 오류 장바구니 복원 안내 (가정)"]
+
+    Root -.-> EXP1
+    M3_1 -.-> EXP2
+    M4_1 -.-> EXP3
+
+    class Root,M1 main;
+    class M2,M3 sub;
+    class M4,M4_1,M4_2 drawer;
+    class M1_1,M1_2,M1_3,M1_4,M2_1,M2_2,M2_1_1,M2_1_2,M2_2_1,M2_2_2,M3_1,M3_2,M3_3,M3_1_1,M3_2_1 common;
+    class MEM1,GUEST1 member;
+    class EXP1,EXP2,EXP3 exception;

@@ -1,0 +1,73 @@
+flowchart TD
+    classDef main fill:#2A1810,stroke:#1A0F0A,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef sub fill:#4A3228,stroke:#2A1810,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef drawer fill:#FDFBF7,stroke:#4A3228,stroke-width:2px,color:#2A1810,font-weight:bold;
+    classDef common fill:#F8F9FA,stroke:#2A1810,stroke-width:1px,color:#2A1810;
+    classDef member fill:#FFF3E0,stroke:#E65100,stroke-width:1.5px,color:#E65100,stroke-dasharray: 5 5;
+    classDef exception fill:#FFEBEE,stroke:#C62828,stroke-width:1.5px,color:#C62828,stroke-dasharray: 3 3;
+
+    Root["WICKETA x Le Serein Hotel (가상클라이언트5 임태경)"]
+    M1["1. Home 메인 안식처 (PG-01)"]
+    M2["2. In-Room Tea Archive (PG-02)"]
+    M3["3. Guest Fatigue Lab (PG-03)"]
+    M4["4. Spa Voucher Drawer (PG-04)"]
+
+    Root --> M1
+    Root --> M2
+    Root --> M3
+    Root --> M4
+
+    M1_1["GNB Sticky Header"]
+    M1_2["Hero In-Room Visual"]
+    M1_3["Fatigue Slider"]
+    M1_4["Footer Hotel Story"]
+
+    M1 --> M1_1
+    M1 --> M1_2
+    M1 --> M1_3
+    M1 --> M1_4
+
+    M2_1["In-Room Sleep Tea 3종"]
+    M2_2["Aroma Wheel Radar"]
+    M2_1_1["0g당 무카페인 성적서"]
+    M2_2_1["3D 수색 퍼짐 뷰어"]
+
+    M2 --> M2_1
+    M2 --> M2_2
+    M2_1 --> M2_1_1
+    M2_2 --> M2_2_1
+
+    M3_1["1초 피로/시차 진단 퀴즈"]
+    M3_2["180초 Ambient sound 타이머"]
+    M3_3["3D 로고 각인 미리보기"]
+
+    M3 --> M3_1
+    M3 --> M3_2
+    M3 --> M3_3
+
+    M4_1["3초 Cart Drawer (Aside)"]
+    M4_2["스파 15% 할인 쿠폰 자동발급"]
+
+    M4 --> M4_1
+    M4 --> M4_2
+
+    MEM1["[회원] 스파 쿠폰함 & 마이페이지 (PG-M01)"]
+    GUEST1["[비회원] 객실 인증 로그인"]
+
+    Root --> MEM1
+    Root --> GUEST1
+
+    EXP1["[예외] 404 Not Found (EXP-01)"]
+    EXP2["[예외] 인룸 팩 품절 모달 (EXP-02)"]
+    EXP3["[예외] 결제 오류 복원 (EXP-03)"]
+
+    Root --> EXP1
+    Root --> EXP2
+    Root --> EXP3
+
+    class Root main;
+    class M1,M2,M3,M4 sub;
+    class M4_1 drawer;
+    class M1_1,M1_2,M1_3,M1_4,M2_1,M2_2,M2_1_1,M2_2_1,M3_1,M3_2,M3_3,M4_2 common;
+    class MEM1,GUEST1 member;
+    class EXP1,EXP2,EXP3 exception;

@@ -1,0 +1,83 @@
+- generic [ref=f31e4]:
+  - banner:
+    - link "콘텐츠로 건너뛰기":
+      - /url: "#"
+    - generic [ref=f31e15]:
+      - generic [ref=f31e18]:
+        - generic:
+          - img "검색 아이콘"
+        - combobox "검색" [ref=f31e20]
+        - generic "이미지 업로드" [ref=f31e23]:
+          - button "Pinterest 렌즈" [ref=f31e24] [cursor=pointer]
+      - link "내 프로필" [ref=f31e33] [cursor=pointer]:
+        - /url: /victoryjhl/
+        - img [ref=f31e40]:
+          - generic [ref=f31e41]: 이
+      - button "계정" [ref=f31e45] [cursor=pointer]
+  - navigation [ref=f31e50]:
+    - generic [ref=f31e52]:
+      - generic [ref=f31e53]:
+        - generic "홈" [ref=f31e57]:
+          - link "홈" [ref=f31e58] [cursor=pointer]:
+            - /url: /
+        - generic "홈" [ref=f31e65]:
+          - link "홈" [ref=f31e66] [cursor=pointer]:
+            - /url: /
+        - generic "내 보드" [ref=f31e73]:
+          - link "내 보드" [ref=f31e74] [cursor=pointer]:
+            - /url: /victoryjhl/
+        - generic "만들기" [ref=f31e81]:
+          - button "만들기" [ref=f31e82] [cursor=pointer]
+      - generic "설정 및 지원" [ref=f31e98]:
+        - button "설정 및 지원" [ref=f31e99] [cursor=pointer]
+  - main [ref=f31e104]:
+    - generic [ref=f31e113]:
+      - button "뒤로" [ref=f31e115] [cursor=pointer]
+      - generic [ref=f31e125]:
+        - generic:
+          - generic:
+            - generic:
+              - list:
+                - listitem [ref=f31e126]:
+                  - group "Closeup content container" [ref=f31e133]:
+                    - generic [ref=f31e138]:
+                      - region "핀 이미지 및 탐색할 항목" [ref=f31e141]
+                      - generic [ref=f31e152]:
+                        - generic [ref=f31e155]:
+                          - list [ref=f31e156]:
+                            - generic [ref=f31e157]:
+                              - listitem [ref=f31e159]:
+                                - generic "반응" [ref=f31e162]:
+                                  - button "반응" [ref=f31e163] [cursor=pointer]
+                                - generic [ref=f31e168]: "1"
+                              - listitem [ref=f31e170]:
+                                - generic "댓글" [ref=f31e173]:
+                                  - button "댓글" [ref=f31e174] [cursor=pointer]
+                              - listitem [ref=f31e180]:
+                                - generic "공유" [ref=f31e184]:
+                                  - button "이 핀 공유" [ref=f31e187] [cursor=pointer]
+                              - listitem [ref=f31e193]:
+                                - generic "추가 작업" [ref=f31e198]:
+                                  - button "추가 작업" [ref=f31e201] [cursor=pointer]
+                          - generic [ref=f31e211]:
+                            - 'button "저장할 보드 선택: ..." [ref=f31e214] [cursor=pointer]':
+                              - generic "..." [ref=f31e217]
+                            - button "저장" [ref=f31e223] [cursor=pointer]
+                        - generic [ref=f31e231]:
+                          - generic [ref=f31e240]:
+                            - link [ref=f31e242] [cursor=pointer]:
+                              - /url: /wayfarerdesign/
+                              - img "Wayfarer Design Studio | Brand, Packaging + Shopify Design 아바타 링크" [ref=f31e249]
+                            - link [ref=f31e253] [cursor=pointer]:
+                              - /url: /wayfarerdesign/
+                              - heading "Wayfarer Design Studio | Brand, Packaging + Shopify Design" [level=2] [ref=f31e254]
+                          - generic [ref=f31e257]:
+                            - generic [ref=f31e259]:
+                              - link [ref=f31e266] [cursor=pointer]:
+                                - /url: https://www.wayfarerdesignstudio.com/blog/?categ=portfolio&utm_source=Pinterest&utm_medium=Pinterest+Pins&utm_campaign=Portfolio+Pins&utm_id=Pinterest
+                                - heading "Modern, High-Quality Branding for Wellness Business Core Essence by Wayfarer Design Studio" [level=1] [ref=f31e267]
+                              - link "사이트 방문" [ref=f31e275] [cursor=pointer]:
+                                - /url: https://www.wayfarerdesignstudio.com/blog/?categ=portfolio&utm_source=Pinterest&utm_medium=Pinterest+Pins&utm_campaign=Portfolio+Pins&utm_id=Pinterest
+                            - generic [ref=f31e279]:
+                              - heading "설명" [level=4] [ref=f31e280]
+                              - generic [ref=f31e281]: Modern, High-Quality Branding for Wellness Business Core Essence by Wayfarer Design Studio. There’s no one-size-fits-all solution when it comes to building a memorable brand. That’s why we create custom packages for every client to help you confidently take that next big step in your business. Ready to weave confidence and purpose into your brand? Apply to work with us by visiting the link in our bio!

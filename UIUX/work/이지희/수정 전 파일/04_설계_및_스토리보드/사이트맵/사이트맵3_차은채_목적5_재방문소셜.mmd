@@ -1,0 +1,87 @@
+flowchart TD
+    classDef main fill:#2A2D34,stroke:#1C1E24,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef sub fill:#5C6B73,stroke:#2A2D34,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef drawer fill:#E9F1F7,stroke:#5C6B73,stroke-width:2px,color:#2A2D34,font-weight:bold;
+    classDef common fill:#F7F9FB,stroke:#2A2D34,stroke-width:1px,color:#2A2D34;
+    classDef member fill:#FFF3E0,stroke:#E65100,stroke-width:1.5px,color:#E65100,stroke-dasharray: 5 5;
+    classDef exception fill:#FFEBEE,stroke:#C62828,stroke-width:1.5px,color:#C62828,stroke-dasharray: 3 3;
+
+    Root["WICKETA Sanctuary Social Challenge (가상클라이언트3 차은채)"]
+    M1["1. Home 쇼케이스 메인 (PG-01)"]
+    M2["2. Social Challenge Grid (PG-02)"]
+    M3["3. Notification Center (PG-03)"]
+    M4["4. Quick Cart Drawer 결제 (PG-04 Aside Layer)"]
+
+    Root --> M1
+    Root --> M2
+    Root --> M3
+    Root --> M4
+
+    M1_1["Hero Section (비밀 안식처 숏폼 믹솔로지 챌린지)"]
+    M1_2["15-Sec Short-form Carousel (15초 루핑 릴스)"]
+    M1_3["Mood Mixology Ranking (감정 힐링 믹솔로지 랭킹)"]
+    M1_4["Challenge Fact Checklist (우수작 100% 페이백 표기)"]
+
+    M1 --> M1_1
+    M1 --> M1_2
+    M1 --> M1_3
+    M1 --> M1_4
+
+    M2_1["숏폼 레시피 영상 상세 (PG-31)"]
+    M2_2["소셜 믹솔로지 챌린지 응모 폼 (PG-32)"]
+
+    M2 --> M2_1
+    M2 --> M2_2
+
+    M2_1_1["15초 힐링 티타임 ASMR 루핑 비디오"]
+    M2_1_2["사용된 믹솔로지 티 팩 1-Click 담기"]
+
+    M2_1 --> M2_1_1
+    M2_1 --> M2_1_2
+
+    M2_2_1["SNS 레시피 영상 링크 제출 폼"]
+    M2_2_2["100% 페이백 쿠폰 즉시 자동발급"]
+
+    M2_2 --> M2_2_1
+    M2_2 --> M2_2_2
+
+    M3_1["카카오 신제품 알림톡 1초 신청 (PG-33)"]
+    M3_2["비밀 안식처 오프라인 팝업 로드맵"]
+    M3_3["안개 룸 시향 타임슬롯 알림"]
+
+    M3 --> M3_1
+    M3 --> M3_2
+    M3 --> M3_3
+
+    M3_1_1["카카오 알림톡 1초 신청 모달"]
+    M3_2_1["차기 시즌 에디션 티저 영상"]
+
+    M3_1 --> M3_1_1
+    M3_2 --> M3_2_1
+
+    M4_1["3초 슬라이드아웃 Quick Cart Drawer (스타터 팩)"]
+    M4_2["Virtual Scroll 위치 보존 (탐색 스크롤 100% 복원)"]
+
+    M4 --> M4_1
+    M4 --> M4_2
+
+    MEM1["[회원 영역] 챌린지 응모 현황 (PG-M01 마이페이지)"]
+    GUEST1["[비회원 영역] 카카오 알림톡 1초 신청 (가정)"]
+
+    M4 -.-> MEM1
+    M4 -.-> GUEST1
+
+    EXP1["[EXP-01] 404 Page Not Found (메인 안식처 안내 - 가정)"]
+    EXP2["[EXP-02] 챌린지 기간 마감 안내 모달 (알림 신청 - 가정)"]
+    EXP3["[EXP-03] 결제 네트워크 오류 안내 (Cart Drawer 임시 저장 - 가정)"]
+
+    Root -.-> EXP1
+    M3_1 -.-> EXP2
+    M4_1 -.-> EXP3
+
+    class Root,M1 main;
+    class M2,M3 sub;
+    class M4,M4_1,M4_2 drawer;
+    class M1_1,M1_2,M1_3,M1_4,M2_1,M2_2,M2_1_1,M2_1_2,M2_2_1,M2_2_2,M3_1,M3_2,M3_3,M3_1_1,M3_2_1 common;
+    class MEM1,GUEST1 member;
+    class EXP1,EXP2,EXP3 exception;

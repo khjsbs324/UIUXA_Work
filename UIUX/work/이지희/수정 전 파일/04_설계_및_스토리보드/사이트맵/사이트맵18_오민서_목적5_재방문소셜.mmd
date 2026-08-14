@@ -1,0 +1,47 @@
+flowchart TD
+    classDef main fill:#BE123C,stroke:#9F1239,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef sub fill:#334155,stroke:#0F172A,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef drawer fill:#FFF1F2,stroke:#334155,stroke-width:2px,color:#0F172A,font-weight:bold;
+    classDef common fill:#F8F9FA,stroke:#0F172A,stroke-width:1px,color:#0F172A;
+
+    Root["WICKETA 30대 웰니스 강사 클린 전해질 안식처 (가상클라이언트18 오민서)"]
+    M1["1. Home (수련 후 이너뷰티 메인 PG-01)"]
+    M2["2. Clean Electrolyte Lab (전해질 팩 PG-02)"]
+    M3["3. Visual Aroma Radar (3D 아로마 휠 PG-03)"]
+    M4["4. Fast Order Drawer (3초 Cart Drawer PG-04)"]
+
+    Root --> M1
+    Root --> M2
+    Root --> M3
+    Root --> M4
+
+    M1_1["GNB Sticky Header"]
+    M1_2["Hero Visual"]
+    M1_3["Footer Story"]
+
+    M1 --> M1_1
+    M1 --> M1_2
+    M1 --> M1_3
+
+    M2_1["0g당 검증 성적서"]
+    M2_2["3D 수색 뷰어"]
+
+    M2 --> M2_1
+    M2 --> M2_2
+
+    M3_1["180s 타이머"]
+    M3_2["3D 각인 미리보기"]
+
+    M3 --> M3_1
+    M3 --> M3_2
+
+    M4_1["3초 Cart Drawer (Aside)"]
+    M4_2["카카오 1초 결제"]
+
+    M4 --> M4_1
+    M4 --> M4_2
+
+    class Root main;
+    class M1,M2,M3,M4 sub;
+    class M4_1 drawer;
+    class M1_1,M1_2,M1_3,M2_1,M2_2,M3_1,M3_2,M4_2 common;

@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1020" width="100%" height="100%">
+  <rect width="1440" height="1020" fill="#FAF9F6"/>
+  
+  <!-- Master Title Bar -->
+  <rect width="1440" height="70" fill="#2d6a4f"/>
+  <text x="30" y="44" font-family="'Pretendard', sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF">🖥️ SOAPHE 웰니스 메인페이지 종합 와이어프레임 설계 보드 [SCR-100 / SCR-200]</text>
+  <text x="1200" y="44" font-family="'Pretendard', sans-serif" font-size="14" fill="#FFFFFF" opacity="0.9">사전예약 30% 할인</text>
+
+  <!-- Left Column: GNB & Section List -->
+  <rect x="30" y="90" width="280" height="880" rx="8" fill="#FFFFFF" stroke="#E0DED8" stroke-width="1.5"/>
+  <text x="50" y="125" font-family="'Pretendard', sans-serif" font-size="16" font-weight="bold" fill="#2d6a4f">🗺️ GNB &amp; 세션 구조 목록</text>
+  <line x1="50" y1="135" x2="290" y2="135" stroke="#EEEEEE"/>
+
+  <rect x="50" y="150" width="240" height="50" rx="4" fill="#F8F8F8" stroke="#DDD"/>
+  <text x="60" y="172" font-family="'Pretendard', sans-serif" font-size="12" font-weight="bold" fill="#333">00. GNB Sticky Header</text>
+  <text x="60" y="190" font-family="'Pretendard', sans-serif" font-size="11" fill="#777">로고 | 메뉴 | 사전예약 CTA</text>
+
+  <rect x="50" y="210" width="240" height="50" rx="4" fill="#F8F8F8" stroke="#DDD"/>
+  <text x="60" y="232" font-family="'Pretendard', sans-serif" font-size="12" font-weight="bold" fill="#333">01. Hero Banner</text>
+  <text x="60" y="250" font-family="'Pretendard', sans-serif" font-size="11" fill="#777">3D 조형 모션 뷰어</text>
+
+  <rect x="50" y="270" width="240" height="50" rx="4" fill="#F8F8F8" stroke="#DDD"/>
+  <text x="60" y="292" font-family="'Pretendard', sans-serif" font-size="12" font-weight="bold" fill="#333">02. Pain Point vs Solution</text>
+  <text x="60" y="310" font-family="'Pretendard', sans-serif" font-size="11" fill="#777">찌꺼기 ↔ 물 빠짐 대조</text>
+
+  <rect x="50" y="330" width="240" height="50" rx="4" fill="#F8F8F8" stroke="#DDD"/>
+  <text x="60" y="352" font-family="'Pretendard', sans-serif" font-size="12" font-weight="bold" fill="#333">03. Flagship Set Spotlight</text>
+  <text x="60" y="370" font-family="'Pretendard', sans-serif" font-size="11" fill="#777">오브제 트레이+비누 3종</text>
+
+  <rect x="50" y="390" width="240" height="50" rx="4" fill="#F8F8F8" stroke="#DDD"/>
+  <text x="60" y="412" font-family="'Pretendard', sans-serif" font-size="12" font-weight="bold" fill="#333">04. Lifestyle Tray Gallery</text>
+  <text x="60" y="430" font-family="'Pretendard', sans-serif" font-size="11" fill="#777">세면대 ↔ 데스크 변신</text>
+
+  <rect x="50" y="450" width="240" height="50" rx="4" fill="#F8F8F8" stroke="#DDD"/>
+  <text x="60" y="472" font-family="'Pretendard', sans-serif" font-size="12" font-weight="bold" fill="#333">05. Fragrance Guide</text>
+  <text x="60" y="490" font-family="'Pretendard', sans-serif" font-size="11" fill="#777">3종 향 노트 스펙트럼</text>
+
+  <rect x="50" y="510" width="240" height="50" rx="4" fill="#F8F8F8" stroke="#DDD"/>
+  <text x="60" y="532" font-family="'Pretendard', sans-serif" font-size="12" font-weight="bold" fill="#333">06. Gifting &amp; Engraving</text>
+  <text x="60" y="550" font-family="'Pretendard', sans-serif" font-size="11" fill="#777">보자기 포장 &amp; 이니셜 각인</text>
+
+  <rect x="50" y="570" width="240" height="50" rx="4" fill="#2d6a4f"/>
+  <text x="60" y="592" font-family="'Pretendard', sans-serif" font-size="12" font-weight="bold" fill="#FFF">08. Pre-Order Form</text>
+  <text x="60" y="610" font-family="'Pretendard', sans-serif" font-size="11" fill="#EEE">35% 할인 사전예약 폼</text>
+
+  <!-- Center Column: 10 Body UI Section Cards -->
+  <rect x="330" y="90" width="780" height="880" rx="8" fill="#FFFFFF" stroke="#E0DED8" stroke-width="1.5"/>
+  <text x="350" y="125" font-family="'Pretendard', sans-serif" font-size="16" font-weight="bold" fill="#2d6a4f">🎨 메인페이지 10대 바디 영역 UI 카드 카탈로그</text>
+  <line x1="350" y1="135" x2="1090" y2="135" stroke="#EEEEEE"/>
+
+  <!-- Card 01 Hero Banner -->
+  <rect x="350" y="150" width="235" height="150" rx="6" fill="#F9F8F6" stroke="#DDD"/>
+  <text x="360" y="172" font-family="'Pretendard', sans-serif" font-size="12" font-weight="bold" fill="#333">SEC-01. Hero Banner</text>
+  <rect x="360" y="180" width="215" height="80" rx="4" fill="#EAE6DF"/>
+  <text x="375" y="225" font-family="'Pretendard', sans-serif" font-size="11" fill="#555">[3D 조형 모션 뷰어]</text>
+  <rect x="360" y="268" width="215" height="24" rx="4" fill="#2d6a4f"/>
+  <text x="400" y="284" font-family="'Pretendard', sans-serif" font-size="11" font-weight="bold" fill="#FFF">사전예약 신청하기</text>
+
+  <!-- Card 02 Pain Point -->
+  <rect x="600" y="150" width="235" height="150" rx="6" fill="#FFFFFF" stroke="#DDD"/>
+  <text x="610" y="172" font-family="'Pretendard', sans-serif" font-size="12" font-weight="bold" fill="#333">SEC-02. Pain Point vs Solution</text>
+  <rect x="610" y="180" width="105" height="110" rx="4" fill="#F5F5F5"/>
+  <text x="615" y="210" font-family="'Pretendard', sans-serif" font-size="10" fill="#888">기존 받침대</text>
+  <text x="615" y="230" font-family="'Pretendard', sans-serif" font-size="10" fill="#E74C3C">물고임 / 찌꺼기</text>
+
+  <rect x="725" y="180" width="105" height="110" rx="4" fill="#F0F5F0" stroke="#2d6a4f"/>
+  <text x="730" y="210" font-family="'Pretendard', sans-serif" font-size="10" font-weight="bold" fill="#2d6a4f">SOAPHE 트레이</text>
+  <text x="730" y="230" font-family="'Pretendard', sans-serif" font-size="10" fill="#27AE60">100% 물 빠짐</text>
+
+  <!-- Card 03 Flagship Set -->
+  <rect x="850" y="150" width="235" height="150" rx="6" fill="#FFFFFF" stroke="#DDD"/>
+  <text x="860" y="172" font-family="'Pretendard', sans-serif" font-size="12" font-weight="bold" fill="#333">SEC-03. Flagship Set</text>
+  <rect x="860" y="180" width="215" height="110" rx="4" fill="#FAF5EF"/>
+  <text x="880" y="225" font-family="'Pretendard', sans-serif" font-size="11" fill="#444">[트레이 1EA + 비누 3종]</text>
+  <text x="880" y="245" font-family="'Pretendard', sans-serif" font-size="10" fill="#888">360도 회전 자성 뷰어</text>
+
+  <!-- Card 04 Lifestyle Tray -->
+  <rect x="350" y="320" width="235" height="150" rx="6" fill="#FFFFFF" stroke="#DDD"/>
+  <text x="360" y="342" font-family="'Pretendard', sans-serif" font-size="12" font-weight="bold" fill="#333">SEC-04. Lifestyle Tray</text>
+  <rect x="360" y="350" width="100" height="24" rx="12" fill="#2d6a4f"/>
+  <text x="375" y="366" font-family="'Pretendard', sans-serif" font-size="10" fill="#FFF">세면대 뷰</text>
+  <rect x="465" y="350" width="110" height="24" rx="12" fill="#EAEAEA"/>
+  <text x="480" y="366" font-family="'Pretendard', sans-serif" font-size="10" fill="#666">데스크 보관 뷰</text>
+  <rect x="360" y="380" width="215" height="80" rx="4" fill="#F4F4F4"/>
+  <text x="380" y="420" font-family="'Pretendard', sans-serif" font-size="10" fill="#666">주얼리/명함 보관 변신 화보</text>
+
+  <!-- Card 05 Scent Mapping -->
+  <rect x="600" y="320" width="235" height="150" rx="6" fill="#FFFFFF" stroke="#DDD"/>
+  <text x="610" y="342" font-family="'Pretendard', sans-serif" font-size="12" font-weight="bold" fill="#333">SEC-05. Scent Mapping</text>
+  <text x="610" y="370" font-family="'Pretendard', sans-serif" font-size="11" fill="#333">포근함 | 맑은 우디 | 파스텔 퓨어</text>
+  <rect x="610" y="385" width="215" height="75" rx="4" fill="#FAF8F5"/>
+  <text x="620" y="410" font-family="'Pretendard', sans-serif" font-size="10" fill="#666">Top: 핑크 페퍼 | Mid: 앰버</text>
+  <text x="620" y="430" font-family="'Pretendard', sans-serif" font-size="10" fill="#666">향 강도: ★★★★☆</text>
+
+  <!-- Card 06 Pre-Order Form -->
+  <rect x="850" y="320" width="235" height="150" rx="6" fill="#FAF9F6" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="860" y="342" font-family="'Pretendard', sans-serif" font-size="12" font-weight="bold" fill="#2d6a4f">SEC-08. Pre-Order Form</text>
+  <rect x="860" y="355" width="215" height="24" rx="4" fill="#FFF" stroke="#BBB"/>
+  <text x="870" y="371" font-family="'Pretendard', sans-serif" font-size="10" fill="#888">성함 입력란</text>
+  <rect x="860" y="385" width="215" height="24" rx="4" fill="#FFF" stroke="#BBB"/>
+  <text x="870" y="401" font-family="'Pretendard', sans-serif" font-size="10" fill="#888">연락처 입력란</text>
+  <rect x="860" y="415" width="215" height="28" rx="4" fill="#2d6a4f"/>
+  <text x="910" y="433" font-family="'Pretendard', sans-serif" font-size="11" font-weight="bold" fill="#FFF">35% 사전예약 신청하기</text>
+
+  <!-- Right Column: Modals & Global Standards -->
+  <rect x="1130" y="90" width="280" height="880" rx="8" fill="#FFFFFF" stroke="#E0DED8" stroke-width="1.5"/>
+  <text x="1150" y="125" font-family="'Pretendard', sans-serif" font-size="16" font-weight="bold" fill="#E74C3C">📱 팝업 모달 &amp; 글로벌 표준</text>
+  <line x1="1150" y1="135" x2="1390" y2="135" stroke="#EEEEEE"/>
+
+  <rect x="1150" y="150" width="240" height="180" rx="8" fill="#FFF" stroke="#E74C3C" stroke-width="2"/>
+  <rect x="1160" y="160" width="60" height="20" rx="4" fill="#E74C3C"/>
+  <text x="1168" y="174" font-family="'Pretendard', sans-serif" font-size="10" font-weight="bold" fill="#FFF">OVL-01</text>
+  <text x="1160" y="200" font-family="'Pretendard', sans-serif" font-size="13" font-weight="bold" fill="#E74C3C">사전예약 완료 모달</text>
+  <text x="1160" y="225" font-family="'Pretendard', sans-serif" font-size="11" fill="#444">예약 티켓: SPH-2026-0901</text>
+  <text x="1160" y="245" font-family="'Pretendard', sans-serif" font-size="11" fill="#444">사전예약 30% 할인 확정</text>
+  <rect x="1160" y="265" width="220" height="28" rx="4" fill="#2d6a4f"/>
+  <text x="1190" y="283" font-family="'Pretendard', sans-serif" font-size="10" font-weight="bold" fill="#FFF">카카오톡 선물 알림 신청</text>
+
+  <rect x="1150" y="350" width="240" height="250" rx="8" fill="#FAF8F5" stroke="#DDD"/>
+  <text x="1165" y="380" font-family="'Pretendard', sans-serif" font-size="13" font-weight="bold" fill="#333">GLOBAL. 반응형 기준</text>
+  <text x="1165" y="405" font-family="'Pretendard', sans-serif" font-size="11" fill="#666">• Desktop: 1440px (2컬럼)</text>
+  <text x="1165" y="425" font-family="'Pretendard', sans-serif" font-size="11" fill="#666">• Tablet: 768px (1.5컬럼)</text>
+  <text x="1165" y="445" font-family="'Pretendard', sans-serif" font-size="11" fill="#666">• Mobile: 390px (1컬럼 &amp; Sticky)</text>
+  <line x1="1165" y1="465" x2="1375" y2="465" stroke="#DDD"/>
+  <text x="1165" y="490" font-family="'Pretendard', sans-serif" font-size="13" font-weight="bold" fill="#333">GLOBAL. 웹 접근성</text>
+  <text x="1165" y="515" font-family="'Pretendard', sans-serif" font-size="11" fill="#666">• 명도 대비 4.5:1 이상</text>
+  <text x="1165" y="535" font-family="'Pretendard', sans-serif" font-size="11" fill="#666">• 키보드 포커스 탐색 지원</text>
+  <text x="1165" y="555" font-family="'Pretendard', sans-serif" font-size="11" fill="#666">• alt 대체 텍스트 표기</text>
+</svg>

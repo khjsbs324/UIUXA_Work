@@ -1,0 +1,203 @@
+- generic [ref=f106e4]:
+  - banner:
+    - link "콘텐츠로 건너뛰기":
+      - /url: "#"
+    - generic [ref=f106e15]:
+      - generic [ref=f106e17]:
+        - generic [ref=f106e18]:
+          - combobox "검색" [ref=f106e20]: interlocking organic loop tea logo mark
+          - generic [ref=f106e21]:
+            - button "검색 입력 삭제" [ref=f106e24] [cursor=pointer]
+            - generic "이미지 업로드" [ref=f106e30]:
+              - button "Pinterest 렌즈" [ref=f106e31] [cursor=pointer]
+        - button "모든 핀 드롭다운" [ref=f106e38] [cursor=pointer]:
+          - generic [ref=f106e40]:
+            - generic [ref=f106e41]: 모든 핀
+            - img "드롭다운" [ref=f106e43]
+      - link "내 프로필" [ref=f106e49] [cursor=pointer]:
+        - /url: /victoryjhl/
+        - img [ref=f106e56]:
+          - generic [ref=f106e57]: 이
+      - button "계정" [ref=f106e61] [cursor=pointer]
+  - navigation [ref=f106e66]:
+    - generic [ref=f106e68]:
+      - generic [ref=f106e69]:
+        - generic "홈" [ref=f106e73]:
+          - link "홈" [ref=f106e74] [cursor=pointer]:
+            - /url: /
+        - generic "홈" [ref=f106e81]:
+          - link "홈" [ref=f106e82] [cursor=pointer]:
+            - /url: /
+        - generic "내 보드" [ref=f106e89]:
+          - link "내 보드" [ref=f106e90] [cursor=pointer]:
+            - /url: /victoryjhl/
+        - generic "만들기" [ref=f106e97]:
+          - button "만들기" [ref=f106e98] [cursor=pointer]
+      - generic "설정 및 지원" [ref=f106e114]:
+        - button "설정 및 지원" [ref=f106e115] [cursor=pointer]
+  - main [ref=f106e120]:
+    - generic [ref=f106e122]:
+      - heading "검색 결과 페이지" [level=1] [ref=f106e124]
+      - region "필터 및 세분화 검색" [ref=f106e128]:
+        - button "필터 표시" [ref=f106e137] [cursor=pointer]
+      - generic [ref=f106e148]:
+        - generic [ref=f106e149]: interlocking organic loop tea logo mark 검색 결과를 추가로 불러오는 중
+        - list [ref=f106e154]:
+          - listitem [ref=f106e155]:
+            - button [ref=f106e157] [cursor=pointer]:
+              - group "핀 카드" [ref=f106e160]:
+                - generic [ref=f106e162]:
+                  - link "Tea Loop logo with teacup design 핀 페이지" [ref=f106e164]:
+                    - /url: /pin/439523244909228562/
+                    - 'img "포함된 이미지: Tea Loop logo with teacup design" [ref=f106e174]'
+                  - generic [ref=f106e179]:
+                    - heading [level=2] [ref=f106e185]:
+                      - link "Tea Loop logo with teacup design 핀 페이지" [ref=f106e187]:
+                        - /url: /pin/439523244909228562/
+                        - text: Tea Loop logo with teacup design
+                    - generic "추가 작업" [ref=f106e190]:
+                      - button "추가 작업" [ref=f106e191]
+          - listitem [ref=f106e196]:
+            - button [ref=f106e198] [cursor=pointer]:
+              - group "핀 카드" [ref=f106e201]:
+                - generic [ref=f106e203]:
+                  - link "제목 없음 핀 페이지" [ref=f106e205]:
+                    - /url: /pin/356347389288225463/
+                    - img "포함된 이미지:" [ref=f106e215]
+                  - generic "추가 작업" [ref=f106e224]:
+                    - button "추가 작업" [ref=f106e225]
+          - listitem [ref=f106e230]:
+            - button [ref=f106e232] [cursor=pointer]:
+              - group "핀 카드" [ref=f106e235]:
+                - generic [ref=f106e237]:
+                  - link "Organic Tea 핀 페이지" [ref=f106e239]:
+                    - /url: /pin/685321268341229668/
+                    - img "포함된 이미지:" [ref=f106e249]
+                  - generic "추가 작업" [ref=f106e258]:
+                    - button "추가 작업" [ref=f106e259]
+          - listitem [ref=f106e264]:
+            - button [ref=f106e266] [cursor=pointer]:
+              - group "핀 카드" [ref=f106e269]:
+                - generic [ref=f106e271]:
+                  - link "Download Free Vectors, Images, Photos &amp; Videos | Vecteezy 핀 페이지" [ref=f106e273]:
+                    - /url: /pin/162129655328076543/
+                    - 'img "포함된 이미지: Download Free Vectors, Images, Photos & Videos | Vecteezy" [ref=f106e283]'
+                  - generic [ref=f106e288]:
+                    - generic [ref=f106e289]:
+                      - heading [level=2] [ref=f106e294]:
+                        - link "Download Free Vectors, Images, Photos &amp; Videos | Vecteezy 핀 페이지" [ref=f106e296]:
+                          - /url: /pin/162129655328076543/
+                          - text: Download Free Vectors, Images, Photos & Videos | Vecteezy
+                      - link "Vecteezy" [ref=f106e299]:
+                        - /url: /vecteezy/
+                        - generic "Vecteezy" [ref=f106e306]
+                    - generic "추가 작업" [ref=f106e309]:
+                      - button "추가 작업" [ref=f106e310]
+          - listitem [ref=f106e315]:
+            - button [ref=f106e317] [cursor=pointer]:
+              - group "핀 카드" [ref=f106e320]:
+                - generic [ref=f106e322]:
+                  - 'link "🌿 Where creativity meets excellence! 🌿 At Webvizion, we had the pleasure of designing L&#39;TEA’s logo and complete branding, blending elegance with simplicity. The result? A brand identity that stands out and resonates with premium tea lovers. Your brand deserves designs that tell your unique story. Let us craft an unforgettable identity for your business! 💬 Ready to elevate your brand? Reach out now! #LogoDesign #BrandingSolutions #WebvizionDubai #CreativeAgency #BrandingMatters #TeaBrand #... 핀 페이지" [ref=f106e324]':
+                    - /url: /pin/90705379991350159/
+                    - img "포함된 이미지:" [ref=f106e334]
+                  - generic "추가 작업" [ref=f106e343]:
+                    - button "추가 작업" [ref=f106e344]
+          - listitem [ref=f106e349]:
+            - button [ref=f106e351] [cursor=pointer]:
+              - group "핀 카드" [ref=f106e354]:
+                - generic [ref=f106e356]:
+                  - link "Logo design for a Organic Tea Brand. 핀 페이지" [ref=f106e358]:
+                    - /url: /pin/166844361178889877/
+                    - img "포함된 이미지:" [ref=f106e368]
+                  - generic "추가 작업" [ref=f106e377]:
+                    - button "추가 작업" [ref=f106e378]
+          - listitem [ref=f106e383]:
+            - button [ref=f106e385] [cursor=pointer]:
+              - group "핀 카드" [ref=f106e388]:
+                - generic [ref=f106e390]:
+                  - link "Tea logo concept. 핀 페이지" [ref=f106e392]:
+                    - /url: /pin/69665125478076193/
+                    - img "포함된 이미지:" [ref=f106e402]
+                  - generic "추가 작업" [ref=f106e411]:
+                    - button "추가 작업" [ref=f106e412]
+          - listitem [ref=f106e417]:
+            - button [ref=f106e419] [cursor=pointer]:
+              - group "핀 카드" [ref=f106e423]:
+                - generic [ref=f106e425]:
+                  - link [ref=f106e427]:
+                    - /url: /pin/464996730300847653/
+                    - generic [ref=f106e434]:
+                      - img "Logo design-Minimal & Simple" [ref=f106e438]
+                      - img "Logo design-Minimal & Simple" [ref=f106e442]
+                  - generic [ref=f106e445]:
+                    - generic [ref=f106e448]:
+                      - button "Logo design-Minimal & Simple" [ref=f106e450]
+                      - button "Logo design-Minimal & Simple" [ref=f106e453]
+                    - generic [ref=f106e456]:
+                      - heading [level=2] [ref=f106e462]:
+                        - link "Logo design-Minimal & Simple" [ref=f106e464]:
+                          - /url: /pin/464996730300847653/
+                      - generic "추가 작업" [ref=f106e467]:
+                        - button "추가 작업" [ref=f106e468]
+          - listitem [ref=f106e473]:
+            - button [ref=f106e475] [cursor=pointer]:
+              - group "핀 카드" [ref=f106e478]:
+                - generic [ref=f106e480]:
+                  - 'link "Elegant, Modern, Business Logo Design for InfiniTeas by YY | Design #11040172 핀 페이지" [ref=f106e482]':
+                    - /url: /pin/85075880451842031/
+                    - 'img "포함된 이미지: Elegant, Modern, Business Logo Design for InfiniTeas by YY | Design #11040172" [ref=f106e492]'
+                  - generic [ref=f106e497]:
+                    - heading [level=2] [ref=f106e503]:
+                      - 'link "Elegant, Modern, Business Logo Design for InfiniTeas by YY | Design #11040172 핀 페이지" [ref=f106e505]':
+                        - /url: /pin/85075880451842031/
+                        - text: "Elegant, Modern, Business Logo Design for InfiniTeas by YY | Design #11040172"
+                    - generic "추가 작업" [ref=f106e508]:
+                      - button "추가 작업" [ref=f106e509]
+          - listitem [ref=f106e514]:
+            - button [ref=f106e516] [cursor=pointer]:
+              - group "핀 카드" [ref=f106e519]:
+                - generic [ref=f106e521]:
+                  - link "Vector cup of Tea and tree Leaves for Cafe or Farm Product Label Eco Logo Organic plant 핀 페이지" [ref=f106e523]:
+                    - /url: /pin/4925880835722922/
+                    - 'img "포함된 내용: Vector cup of Tea and tree Leaves for Cafe or Farm Product Label Eco Logo Organic plant design. Round international tea day emblem linear style. Vintage abstract icon for natural products design" [ref=f106e533]'
+                  - generic [ref=f106e538]:
+                    - heading [level=2] [ref=f106e544]:
+                      - link "Vector cup of Tea and tree Leaves for Cafe or Farm Product Label Eco Logo Organic plant 핀 페이지" [ref=f106e546]:
+                        - /url: /pin/4925880835722922/
+                        - text: Vector cup of Tea and tree Leaves for Cafe or Farm Product Label Eco Logo Organic plant
+                    - generic "추가 작업" [ref=f106e549]:
+                      - button "추가 작업" [ref=f106e550]
+          - listitem [ref=f106e555]:
+            - button [ref=f106e557] [cursor=pointer]:
+              - group "핀 카드" [ref=f106e560]:
+                - generic [ref=f106e562]:
+                  - link "Vector tea green leaves. Lines for Farm Product Label Eco Logo Organic plant design. Rou 핀 페이지" [ref=f106e564]:
+                    - /url: /pin/258534834856560338/
+                    - 'img "포함된 내용: Vector tea green leaves. Lines for Farm Product Label Eco Logo Organic plant design. Round Bauer emblem linear style. Vintage abstract icon for natural products design cosmetics, ecological health" [ref=f106e574]'
+                  - generic [ref=f106e579]:
+                    - heading [level=2] [ref=f106e585]:
+                      - link "Vector tea green leaves. Lines for Farm Product Label Eco Logo Organic plant design. Rou 핀 페이지" [ref=f106e587]:
+                        - /url: /pin/258534834856560338/
+                        - text: Vector tea green leaves. Lines for Farm Product Label Eco Logo Organic plant design. Rou
+                    - generic "추가 작업" [ref=f106e590]:
+                      - button "추가 작업" [ref=f106e591]
+          - listitem [ref=f106e596]:
+            - button [ref=f106e598] [cursor=pointer]:
+              - group "핀 카드" [ref=f106e601]:
+                - generic [ref=f106e603]:
+                  - link "Organic Tree for Chinese Tea Brand Logo 핀 페이지" [ref=f106e605]:
+                    - /url: /pin/4605001118836983680/
+                    - 'img "포함된 이미지: Organic Tree for Chinese Tea Brand Logo" [ref=f106e615]'
+                  - generic [ref=f106e620]:
+                    - generic [ref=f106e622]:
+                      - generic [ref=f106e624]:
+                        - img "쇼핑 가능한 핀 표시기" [ref=f106e626]
+                        - heading [level=2] [ref=f106e629]:
+                          - link "Organic Tree for Chinese Tea Brand Logo 핀 페이지" [ref=f106e631]:
+                            - /url: /pin/4605001118836983680/
+                            - text: Organic Tree for Chinese Tea Brand Logo
+                      - link "Organic Tree for Chinese Tea Brand Logo 핀 페이지" [ref=f106e633]:
+                        - /url: /pin/4605001118836983680/
+                        - generic "Scalebranding" [ref=f106e637]
+                    - generic "추가 작업" [ref=f106e640]:
+                      - button "추가 작업" [ref=f106e641]

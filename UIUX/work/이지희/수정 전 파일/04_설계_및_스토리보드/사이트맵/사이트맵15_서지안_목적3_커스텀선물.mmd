@@ -1,0 +1,87 @@
+flowchart TD
+    classDef main fill:#1F2937,stroke:#111827,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef sub fill:#374151,stroke:#1F2937,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef drawer fill:#E5E7EB,stroke:#374151,stroke-width:2px,color:#1F2937,font-weight:bold;
+    classDef common fill:#F9FAFB,stroke:#1F2937,stroke-width:1px,color:#1F2937;
+    classDef member fill:#FFF3E0,stroke:#E65100,stroke-width:1.5px,color:#E65100,stroke-dasharray: 5 5;
+    classDef exception fill:#FFEBEE,stroke:#C62828,stroke-width:1.5px,color:#C62828,stroke-dasharray: 3 3;
+
+    Root["WICKETA Dads' Highball Gift (가상클라이언트12 서지안)"]
+    M1["1. Home 육퇴 선물 메인 (PG-01)"]
+    M2["2. Custom Studio 3D 글래스각인 (PG-02)"]
+    M3["3. Gift Showcase 육퇴선물관 (PG-03)"]
+    M4["4. Gift Drawer 육퇴 결제 (PG-04 Aside Layer)"]
+
+    Root --> M1
+    Root --> M2
+    Root --> M3
+    Root --> M4
+
+    M1_1["Hero Section (육아 동지를 위한 0kcal 논알콜 하이볼 선물)"]
+    M1_2["3D Double-Wall Glass Preview (3D 렌더러)"]
+    M1_3["Zero Sugar Highball Bundle (4종 선물 세트)"]
+    M1_4["Zero Hangover Checklist (숙취 제로 보증서)"]
+
+    M1 --> M1_1
+    M1 --> M1_2
+    M1 --> M1_3
+    M1 --> M1_4
+
+    M2_1["실시간 3D 더블월 글래스 레이저 각인기 (PG-31)"]
+    M2_2["투명 글래스 / 매트 스모크 글래스 스위처"]
+
+    M2 --> M2_1
+    M2 --> M2_2
+
+    M2_1_1["육퇴 응원 문구 3종 폰트 시뮬레이션"]
+    M2_1_2["식기세척기 사용 가능한 고내구성 각인"]
+
+    M2_1 --> M2_1_1
+    M2_1 --> M2_1_2
+
+    M2_2_1["360도 회전 결로 방지 글래스 뷰어"]
+    M2_2_2["스테인리스 롱 머들러 세트 뷰어"]
+
+    M2_2 --> M2_2_1
+    M2_2 --> M2_2_2
+
+    M3_1["4종 논알콜 스틱 맞춤 수량 번들 빌더 (PG-32)"]
+    M3_2["위트 있는 육퇴 모바일 축하 카드 작성 폼 (PG-33)"]
+    M3_3["1-Click 카카오 선물하기 연동"]
+
+    M3 --> M3_1
+    M3 --> M3_2
+    M3 --> M3_3
+
+    M3_1_1["스모키 얼그레이 + 진저 레몬 조합표"]
+    M3_2_1["모바일 육퇴 축하 카드 템플릿"]
+
+    M3_1 --> M3_1_1
+    M3_2 --> M3_2_1
+
+    M4_1["3초 슬라이드아웃 Gift Cart Drawer (선물 주문서)"]
+    M4_2["Virtual Scroll 위치 보존 (탐색 스크롤 100% 복원)"]
+
+    M4 --> M4_1
+    M4 --> M4_2
+
+    MEM1["[회원 영역] 저장된 각인 디자인 (PG-M01 마이페이지)"]
+    GUEST1["[비회원 영역] 모바일 응원 카드 발급 (가정)"]
+
+    M4 -.-> MEM1
+    M4 -.-> GUEST1
+
+    EXP1["[EXP-01] 404 Page Not Found (메인 안내 - 가정)"]
+    EXP2["[EXP-02] 하이볼 글래스 품절 안내 모달 (가정)"]
+    EXP3["[EXP-03] 각인 글자수 초과 에러 모달 (가정)"]
+
+    Root -.-> EXP1
+    M2_1 -.-> EXP2
+    M2_1 -.-> EXP3
+
+    class Root,M1 main;
+    class M2,M3 sub;
+    class M4,M4_1,M4_2 drawer;
+    class M1_1,M1_2,M1_3,M1_4,M2_1,M2_2,M2_1_1,M2_1_2,M2_2_1,M2_2_2,M3_1,M3_2,M3_3,M3_1_1,M3_2_1 common;
+    class MEM1,GUEST1 member;
+    class EXP1,EXP2,EXP3 exception;

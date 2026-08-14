@@ -1,0 +1,43 @@
+flowchart TD
+    classDef main fill:#2B0548,stroke:#7C3AED,stroke-width:2px,color:#0F172A,font-weight:bold;
+    classDef track fill:#F8FAFC,stroke:#7C3AED,stroke-width:1.5px,color:#0F172A,font-weight:bold;
+    classDef action fill:#FFFFFF,stroke:#334155,stroke-width:1px,color:#0F172A;
+    classDef drawer fill:#EFF6FF,stroke:#2563EB,stroke-width:2px,color:#1E40AF,font-weight:bold;
+
+    Start(["🚀 진입: WICKETA 송지효 (목적 5 [재방문/소셜 모드])"])
+    Hero["PG-01: Hero Section<br>⭐ 1순위 킬러: 100% 비건 인증 & 틴케이스 업사이클링 3D DIY"]
+    
+    Start --> Hero
+
+    subgraph T1["크리에이터 릴스 그리드 트랙"]
+        N1["PG-02: 인터랙티브 스위처"]
+        N2{"REQ-01: 3D 모션 실행?"}
+        N3["1.0초 수색 Canvas 렌더링"]
+        N1 --> N2
+        N2 -- YES --> N3
+    end
+
+    subgraph T2["100% 페이백 챌린지 트랙"]
+        N4["PG-03: 180초 타이머"]
+        N5["REQ-03: 앰비언트 Sound 재생"]
+        N4 --> N5
+    end
+
+    subgraph T3["카카오 커뮤니티 초대 트랙"]
+        N6["PG-31: 3D 이니셜 각인"]
+        N7["PG-04: 3초 Cart Drawer (Aside)"]
+        N8["REQ-05: 1-Click Fast Checkout"]
+        N6 --> N7 --> N8
+    end
+
+    Hero --> T1
+    T1 --> T2
+    T2 --> T3
+
+    End(["🏁 완료: 결제 완료 & 스크롤 위치 100% 복원"])
+    T3 --> End
+
+    class Start,End main;
+    class Hero,N1,N4,N6 track;
+    class N2,N3,N5 action;
+    class N7,N8 drawer;

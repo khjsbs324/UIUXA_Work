@@ -1,0 +1,9 @@
+flowchart TD
+  A[W11-HOME Precision Ritual] --> B[W11-DIAG 감정·상황 진단]
+  B --> C[W11-MIX 믹솔로지 탐색]
+  C --> D[W11-RITUAL 리추얼 실행]
+  D --> E[W11-BUILD 번들·구독 설계]
+  E --> F[W11-COMM 기록·커뮤니티]
+  F --> G[W11-DONE 저장·완료]
+  B -->|진단 건너뛰기| C
+  E -->|선택 오류| E

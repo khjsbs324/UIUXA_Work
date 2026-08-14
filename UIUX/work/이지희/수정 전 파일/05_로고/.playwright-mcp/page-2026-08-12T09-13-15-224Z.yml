@@ -1,0 +1,98 @@
+- generic [active] [ref=f26e1]:
+  - generic:
+    - generic:
+      - link "주요 콘텐츠로 이동" [ref=f26e2] [cursor=pointer]
+      - link "접근성 도움말" [ref=f26e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=ko
+  - generic [ref=f26e8]:
+    - search [ref=f26e9]:
+      - generic [ref=f26e12]:
+        - link [ref=f26e13] [cursor=pointer]:
+          - /url: https://www.google.com/webhp?hl=ko&ictx=0&sa=X&ved=0ahUKEwi0trD635qWAxWmslYBHfNSGXQQpYkNCAo
+          - img "Google 홈으로 이동" [ref=f26e14]
+        - generic [ref=f26e19]:
+          - combobox "검색" [ref=f26e22]: site:pinterest.com/pin "logo mark" butterfly monoline organic botanical site:pinterest.com/pin "logo mark" butterfly monoline organic botanical
+          - generic [ref=f26e23]:
+            - button "지우기" [ref=f26e25] [cursor=pointer]
+            - generic [ref=f26e30]:
+              - button "입력 도구" [ref=f26e31] [cursor=pointer]
+              - button "음성 검색" [ref=f26e35] [cursor=pointer]
+              - button "이미지로 검색" [ref=f26e38] [cursor=pointer]
+        - button "검색" [ref=f26e41] [cursor=pointer]
+    - generic [ref=f26e46]:
+      - button "설정" [ref=f26e48] [cursor=pointer]
+      - button "공유" [ref=f26e54] [cursor=pointer]
+      - generic [ref=f26e60]:
+        - button "Google 앱" [ref=f26e62] [cursor=pointer]
+        - link "로그인" [ref=f26e67] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=ko&passive=true&continue=https://www.google.com/search%3Fq%3Dsite:pinterest.com/pin%2B%2522logo%2Bmark%2522%2Bbutterfly%2Bmonoline%2Borganic%2Bbotanical&ec=futura_srp_og_si_72236_p
+  - generic [ref=f26e69]:
+    - navigation [ref=f26e75]:
+      - generic [ref=f26e81]:
+        - list [ref=f26e82]:
+          - listitem [ref=f26e83]:
+            - link "AI 모드" [ref=f26e86] [cursor=pointer]:
+              - /url: /search?q=site:pinterest.com/pin+%22logo+mark%22+butterfly+monoline+organic+botanical&sca_esv=5ba224cdfcc4b8dc&udm=50&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA70DBExgkDFCpIGAUraPZqPpSs1EXRrKCiKydXz2VHg4BZ43F9-MfAqyB18ZvchEiEA2_q_O9bSJyISG5IdrJU6cdES6lLC2aGnoaRVRxqPkvYvl1TBL7cuXeIdYuACjlrdhZQY--K-WTmz9sefNM1mZCEHIRQCyzCyVXFjaaNP3haRMJag&aep=1&ntc=1&cs=0&sa=X&ved=2ahUKEwi0trD635qWAxWmslYBHfNSGXQQ2J8OegQIEBAD
+          - listitem [ref=f26e90]:
+            - link "전체" [disabled] [ref=f26e91]
+          - listitem [ref=f26e94]:
+            - link "이미지" [ref=f26e95] [cursor=pointer]:
+              - /url: /search?sca_esv=5ba224cdfcc4b8dc&udm=2&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA70DBExgkDFCpIGAUraPZqPpSs1EXRrKCiKydXz2VHg4BZ43F9-MfAqyB18ZvchEiEA2_q_O9bSJyISG5IdrJU6cdES6lLC2aGnoaRVRxqPkvYvl1TBL7cuXeIdYuACjlrdhZQY--K-WTmz9sefNM1mZCEHIRQCyzCyVXFjaaNP3haRMJag&q=site:pinterest.com/pin+%22logo+mark%22+butterfly+monoline+organic+botanical&sa=X&ved=2ahUKEwi0trD635qWAxWmslYBHfNSGXQQtKgLegQIEhAB
+          - listitem [ref=f26e98]:
+            - link "쇼핑" [ref=f26e99] [cursor=pointer]:
+              - /url: /search?sca_esv=5ba224cdfcc4b8dc&udm=28&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA70DBExgkDFCpIGAUraPZqPpSs1EXRrKCiKydXz2VHg4BZ43F9-MfAqyB18ZvchEiEA2_q_O9bSJyISG5IdrJU6cdES6lLC2aGnoaRVRxqPkvYvl1TBL7cuXeIdYuACjlrdhZQY--K-WTmz9sefNM1mZCEHIRQCyzCyVXFjaaNP3haRMJag&q=site:pinterest.com/pin+%22logo+mark%22+butterfly+monoline+organic+botanical&ved=1t:220175&ictx=111
+          - listitem [ref=f26e102]:
+            - link "동영상" [ref=f26e103] [cursor=pointer]:
+              - /url: /search?sca_esv=5ba224cdfcc4b8dc&udm=7&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA70DBExgkDFCpIGAUraPZqPpSs1EXRrKCiKydXz2VHg4BZ43F9-MfAqyB18ZvchEiEA2_q_O9bSJyISG5IdrJU6cdES6lLC2aGnoaRVRxqPkvYvl1TBL7cuXeIdYuACjlrdhZQY--K-WTmz9sefNM1mZCEHIRQCyzCyVXFjaaNP3haRMJag&q=site:pinterest.com/pin+%22logo+mark%22+butterfly+monoline+organic+botanical&sa=X&ved=2ahUKEwi0trD635qWAxWmslYBHfNSGXQQtKgLegQIFBAB
+          - listitem [ref=f26e106]:
+            - link "짧은 동영상" [ref=f26e107] [cursor=pointer]:
+              - /url: /search?sca_esv=5ba224cdfcc4b8dc&udm=39&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA70DBExgkDFCpIGAUraPZqPpSs1EXRrKCiKydXz2VHg4BZ43F9-MfAqyB18ZvchEiEA2_q_O9bSJyISG5IdrJU6cdES6lLC2aGnoaRVRxqPkvYvl1TBL7cuXeIdYuACjlrdhZQY--K-WTmz9sefNM1mZCEHIRQCyzCyVXFjaaNP3haRMJag&q=site:pinterest.com/pin+%22logo+mark%22+butterfly+monoline+organic+botanical&sa=X&ved=2ahUKEwi0trD635qWAxWmslYBHfNSGXQQs6gLegQIFRAB
+          - listitem [ref=f26e110]:
+            - link "뉴스" [ref=f26e111] [cursor=pointer]:
+              - /url: /search?sca_esv=5ba224cdfcc4b8dc&q=site:pinterest.com/pin+%22logo+mark%22+butterfly+monoline+organic+botanical&tbm=nws&source=lnms&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA70DBExgkDFCpIGAUraPZqPpSs1EXRrKCiKydXz2VHg4BZ43F9-MfAqyB18ZvchEiEA2_q_O9bSJyISG5IdrJU6cdES6lLC2aGnoaRVRxqPkvYvl1TBL7cuXeIdYuACjlrdhZQY--K-WTmz9sefNM1mZCEHIRQCyzCyVXFjaaNP3haRMJag&sa=X&ved=2ahUKEwi0trD635qWAxWmslYBHfNSGXQQ0pQJegQIExAB
+          - listitem [ref=f26e114]:
+            - button [ref=f26e115] [cursor=pointer]:
+              - generic "필터 더보기" [ref=f26e116]: 더보기
+        - button "도구" [ref=f26e123] [cursor=pointer]
+    - heading "검색결과" [level=1] [ref=f26e130]
+    - main [ref=f26e136]:
+      - generic [ref=f26e143]:
+        - heading "Web results" [level=2] [ref=f26e144]
+        - generic [ref=f26e145]:
+          - generic [ref=f26e148]:
+            - link "Modern, High-Quality Branding for Wellness Business ... Pinterest · patetefelix 1년 전" [ref=f26e150] [cursor=pointer]:
+              - /url: https://es.pinterest.com/pin/520447300709627876/
+              - heading "Modern, High-Quality Branding for Wellness Business ..." [level=3] [ref=f26e151]
+              - generic [ref=f26e157]:
+                - generic [ref=f26e158]: Pinterest · patetefelix
+                - generic [ref=f26e160]: 1년 전
+            - button "검색결과에 관한 정보" [ref=f26e164] [cursor=pointer]
+          - generic [ref=f26e171]:
+            - emphasis [ref=f26e172]: Monoline logo mark
+            - text: icon design. Minimal simple brand submark. Line drawing representing water, waves, the moon, sun and sky. Oval shape logo ...
+      - generic:
+        - generic:
+          - navigation
+      - navigation
+    - contentinfo [ref=f26e173]:
+      - heading "바닥글 링크" [level=1] [ref=f26e174]
+      - generic [ref=f26e178]:
+        - generic [ref=f26e180]:
+          - text: 대한민국
+          - generic [ref=f26e182]:
+            - button "월평동 대전광역시 서구 - IP 주소 기반" [ref=f26e184] [cursor=pointer]:
+              - generic [ref=f26e185]: 월평동 대전광역시 서구
+              - generic [ref=f26e187]:
+                - text: "-"
+                - generic [ref=f26e188]: IP 주소 기반
+            - text: "-"
+            - button "위치 업데이트" [ref=f26e190] [cursor=pointer]
+        - generic [ref=f26e193]:
+          - link "도움말" [ref=f26e194] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=ko&fg=1
+          - link "의견 보내기" [ref=f26e195] [cursor=pointer]:
+            - /url: "#"
+          - link "개인정보처리방침" [ref=f26e196] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=ko&fg=1
+          - link "약관" [ref=f26e197] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=ko&fg=1

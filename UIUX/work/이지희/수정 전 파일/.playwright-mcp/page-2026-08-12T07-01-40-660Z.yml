@@ -1,0 +1,179 @@
+- generic [ref=f71e4]:
+  - banner:
+    - link "콘텐츠로 건너뛰기":
+      - /url: "#"
+    - generic [ref=f71e15]:
+      - generic [ref=f71e17]:
+        - generic [ref=f71e18]:
+          - combobox "검색" [ref=f71e20]: minimalist emblem logo line art black white
+          - generic [ref=f71e21]:
+            - button "검색 입력 삭제" [ref=f71e24] [cursor=pointer]
+            - generic "이미지 업로드" [ref=f71e30]:
+              - button "Pinterest 렌즈" [ref=f71e31] [cursor=pointer]
+        - button "모든 핀 드롭다운" [ref=f71e38] [cursor=pointer]:
+          - generic [ref=f71e40]:
+            - generic [ref=f71e41]: 모든 핀
+            - img "드롭다운" [ref=f71e43]
+      - link "내 프로필" [ref=f71e49] [cursor=pointer]:
+        - /url: /victoryjhl/
+        - img [ref=f71e56]:
+          - generic [ref=f71e57]: 이
+      - button "계정" [ref=f71e61] [cursor=pointer]
+  - navigation [ref=f71e66]:
+    - generic [ref=f71e68]:
+      - generic [ref=f71e69]:
+        - generic "홈" [ref=f71e73]:
+          - link "홈" [ref=f71e74] [cursor=pointer]:
+            - /url: /
+        - generic "홈" [ref=f71e81]:
+          - link "홈" [ref=f71e82] [cursor=pointer]:
+            - /url: /
+        - generic "내 보드" [ref=f71e89]:
+          - link "내 보드" [ref=f71e90] [cursor=pointer]:
+            - /url: /victoryjhl/
+        - generic "만들기" [ref=f71e97]:
+          - button "만들기" [ref=f71e98] [cursor=pointer]
+        - generic "업데이트" [ref=f71e107]:
+          - button "업데이트" [ref=f71e108] [cursor=pointer]
+        - generic "메시지" [ref=f71e117]:
+          - button "메시지" [ref=f71e118] [cursor=pointer]
+      - generic "설정 및 지원" [ref=f71e126]:
+        - button "설정 및 지원" [ref=f71e127] [cursor=pointer]
+  - main [ref=f71e132]:
+    - generic [ref=f71e134]:
+      - heading "검색 결과 페이지" [level=1] [ref=f71e136]
+      - region "필터 및 세분화 검색" [ref=f71e140]:
+        - button "필터 표시" [ref=f71e149] [cursor=pointer]
+      - generic [ref=f71e160]:
+        - generic [ref=f71e161]: minimalist emblem logo line art black white 검색 결과를 추가로 불러오는 중
+        - list [ref=f71e166]:
+          - listitem [ref=f71e167]:
+            - button [ref=f71e169] [cursor=pointer]:
+              - group "핀 카드" [ref=f71e171]:
+                - generic [ref=f71e173]:
+                  - link "【空想ロゴ】DONUT SHOP モグモグ 핀 페이지" [ref=f71e175]:
+                    - /url: /pin/1688918606207885/
+                    - 'img "포함된 이미지: 【空想ロゴ】DONUT SHOP モグモグ" [ref=f71e185]'
+                  - generic [ref=f71e190]:
+                    - heading [level=2] [ref=f71e196]:
+                      - link "【空想ロゴ】DONUT SHOP モグモグ 핀 페이지" [ref=f71e198]:
+                        - /url: /pin/1688918606207885/
+                        - text: 【空想ロゴ】DONUT SHOP モグモグ
+                    - generic "추가 작업" [ref=f71e201]:
+                      - button "추가 작업" [ref=f71e202]
+          - listitem [ref=f71e207]:
+            - button [ref=f71e209] [cursor=pointer]:
+              - group "핀 카드" [ref=f71e211]:
+                - generic [ref=f71e213]:
+                  - link "Minimalist Line Art Logo Collection | Elegant Brand Identity Inspiration 핀 페이지" [ref=f71e215]:
+                    - /url: /pin/23432860626241317/
+                    - 'img "포함된 이미지: Minimalist Line Art Logo Collection | Elegant Brand Identity Inspiration" [ref=f71e225]'
+                  - generic [ref=f71e230]:
+                    - heading [level=2] [ref=f71e236]:
+                      - link "Minimalist Line Art Logo Collection | Elegant Brand Identity Inspiration 핀 페이지" [ref=f71e238]:
+                        - /url: /pin/23432860626241317/
+                        - text: Minimalist Line Art Logo Collection | Elegant Brand Identity Inspiration
+                    - generic "추가 작업" [ref=f71e241]:
+                      - button "추가 작업" [ref=f71e242]
+          - listitem [ref=f71e247]:
+            - button [ref=f71e249] [cursor=pointer]:
+              - group "핀 카드" [ref=f71e251]:
+                - generic [ref=f71e253]:
+                  - link "Pin de COQUO en Pins by you | Logos de heladerias, Diseño de marca, Diseño de 핀 페이지" [ref=f71e255]:
+                    - /url: /pin/11188699075695228/
+                    - 'img "포함된 이미지: Pin de COQUO en Pins by you | Logos de heladerias, Diseño de marca, Diseño de" [ref=f71e265]'
+                  - generic [ref=f71e270]:
+                    - heading [level=2] [ref=f71e276]:
+                      - link "Pin de COQUO en Pins by you | Logos de heladerias, Diseño de marca, Diseño de 핀 페이지" [ref=f71e278]:
+                        - /url: /pin/11188699075695228/
+                        - text: Pin de COQUO en Pins by you | Logos de heladerias, Diseño de marca, Diseño de
+                    - generic "추가 작업" [ref=f71e281]:
+                      - button "추가 작업" [ref=f71e282]
+          - listitem [ref=f71e287]:
+            - button [ref=f71e289] [cursor=pointer]:
+              - group "핀 카드" [ref=f71e291]:
+                - generic [ref=f71e293]:
+                  - 'link "Inst: DANILA.SHERST 핀 페이지" [ref=f71e295]':
+                    - /url: /pin/6403624466594719/
+                    - 'img "포함된 이미지: Inst: DANILA.SHERST" [ref=f71e305]'
+                  - generic [ref=f71e310]:
+                    - heading [level=2] [ref=f71e316]:
+                      - 'link "Inst: DANILA.SHERST 핀 페이지" [ref=f71e318]':
+                        - /url: /pin/6403624466594719/
+                        - text: "Inst: DANILA.SHERST"
+                    - generic "추가 작업" [ref=f71e321]:
+                      - button "추가 작업" [ref=f71e322]
+          - listitem [ref=f71e327]:
+            - button [ref=f71e329] [cursor=pointer]:
+              - group "핀 카드" [ref=f71e331]:
+                - generic [ref=f71e333]:
+                  - link "brightly cute line art minimalist restaurant logo branding design 핀 페이지" [ref=f71e335]:
+                    - /url: /pin/327496204173194792/
+                    - 'img "포함된 이미지: brightly cute line art minimalist restaurant logo branding design" [ref=f71e345]'
+                  - generic [ref=f71e350]:
+                    - heading [level=2] [ref=f71e356]:
+                      - link "brightly cute line art minimalist restaurant logo branding design 핀 페이지" [ref=f71e358]:
+                        - /url: /pin/327496204173194792/
+                        - text: brightly cute line art minimalist restaurant logo branding design
+                    - generic "추가 작업" [ref=f71e361]:
+                      - button "추가 작업" [ref=f71e362]
+          - listitem [ref=f71e367]:
+            - button [ref=f71e369] [cursor=pointer]:
+              - group "핀 카드" [ref=f71e371]:
+                - generic [ref=f71e373]:
+                  - link "제목 없음 핀 페이지" [ref=f71e375]:
+                    - /url: /pin/1759287349255237/
+                    - img "포함된 이미지:" [ref=f71e385]
+                  - generic "추가 작업" [ref=f71e394]:
+                    - button "추가 작업" [ref=f71e395]
+          - listitem [ref=f71e400]:
+            - button [ref=f71e402] [cursor=pointer]:
+              - group "핀 카드" [ref=f71e404]:
+                - generic [ref=f71e406]:
+                  - link "제목 없음 핀 페이지" [ref=f71e408]:
+                    - /url: /pin/563018699737530/
+                    - img "포함된 이미지:" [ref=f71e418]
+                  - generic "추가 작업" [ref=f71e427]:
+                    - button "추가 작업" [ref=f71e428]
+          - listitem [ref=f71e433]:
+            - button [ref=f71e435] [cursor=pointer]:
+              - group "핀 카드" [ref=f71e437]:
+                - generic [ref=f71e439]:
+                  - link "Taiga Cafe Logo Design — Bear Mascot Badge Emblem 핀 페이지" [ref=f71e441]:
+                    - /url: /pin/1113655814137196239/
+                    - 'img "포함된 이미지: Taiga Cafe Logo Design — Bear Mascot Badge Emblem" [ref=f71e451]'
+                  - generic [ref=f71e456]:
+                    - heading [level=2] [ref=f71e462]:
+                      - link "Taiga Cafe Logo Design — Bear Mascot Badge Emblem 핀 페이지" [ref=f71e464]:
+                        - /url: /pin/1113655814137196239/
+                        - text: Taiga Cafe Logo Design — Bear Mascot Badge Emblem
+                    - generic "추가 작업" [ref=f71e467]:
+                      - button "추가 작업" [ref=f71e468]
+          - listitem [ref=f71e473]:
+            - button [ref=f71e475] [cursor=pointer]:
+              - group "핀 카드" [ref=f71e477]:
+                - generic [ref=f71e479]:
+                  - link "Minimalist Logo Design Concepts with Fiverr Logo Maker 핀 페이지" [ref=f71e481]:
+                    - /url: /pin/120471358776400981/
+                    - 'img "포함된 이미지: Minimalist Logo Design Concepts with Fiverr Logo Maker" [ref=f71e491]'
+                  - generic [ref=f71e496]:
+                    - heading [level=2] [ref=f71e502]:
+                      - link "Minimalist Logo Design Concepts with Fiverr Logo Maker 핀 페이지" [ref=f71e504]:
+                        - /url: /pin/120471358776400981/
+                        - text: Minimalist Logo Design Concepts with Fiverr Logo Maker
+                    - generic "추가 작업" [ref=f71e507]:
+                      - button "추가 작업" [ref=f71e508]
+          - listitem [ref=f71e513]:
+            - button [ref=f71e515] [cursor=pointer]:
+              - group "핀 카드" [ref=f71e517]:
+                - generic [ref=f71e519]:
+                  - 'link "Mountdesign: I will create flat minimalist logo 핀 페이지" [ref=f71e521]':
+                    - /url: /pin/377598750032761417/
+                    - 'img "포함된 내용: Ultimate Logo Design Ideas. Creative logo concepts. Modern logo inspiration. Distinctive branding styles. Minimalist logo designs. Bold typography concepts. Vibrant color palettes. Vintage logo inspiration. Custom logo graphics." [ref=f71e531]'
+                  - generic [ref=f71e536]:
+                    - heading [level=2] [ref=f71e542]:
+                      - 'link "Mountdesign: I will create flat minimalist logo 핀 페이지" [ref=f71e544]':
+                        - /url: /pin/377598750032761417/
+                        - text: "Mountdesign: I will create flat minimalist logo"
+                    - generic "추가 작업" [ref=f71e547]:
+                      - button "추가 작업" [ref=f71e548]

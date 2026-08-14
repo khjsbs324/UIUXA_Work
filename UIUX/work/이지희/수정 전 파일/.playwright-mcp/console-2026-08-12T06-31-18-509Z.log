@@ -1,0 +1,30 @@
+[    1793ms] [ERROR] Unexpected hydration error Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings. 
+    at Suspense (<anonymous>)
+    at m (https://s.pinimg.com/webapp/www/search/[scope].ko_KR-16e67dd42539eb56.mjs:111:74889)
+    at oX (https://s.pinimg.com/webapp/www/_client.ko_KR-9095807dcca45894.mjs:236:11397)
+    at rw (https://s.pinimg.com/webapp/www/_client.ko_KR-9095807dcca45894.mjs:236:17808)
+    at rC (https://s.pinimg.com/webapp/www/_client.ko_KR-9095807dcca45894.mjs:236:21174)
+    at iF (https://s.pinimg.com/webapp/www/_client.ko_KR-9095807dcca45894.mjs:273:88732)
+    at reduxProvider (https://s.pinimg.com/webapp/www/_client.ko_KR-9095807dcca45894.mjs:277:162602)
+    at https://s.pinimg.com/webapp/www/_client.ko_KR-9095807dcca45894.mjs:277:145985
+    at pB (https://s.pinimg.com/webapp/www/_client.ko_KR-9095807dcca45894.mjs:277:114840)
+    at pH (https://s.pinimg.com/webapp/www/_client.ko_KR-9095807dcca45894.mjs:277:114918)
+    at pS (https://s.pinimg.com/webapp/www/_client.ko_KR-9095807dcca45894.mjs:277:111644)
+    at v (https://s.pinimg.com/webapp/6434.ko_KR-50f1b25674562bea.mjs:1:14404)
+    at u (https://s.pinimg.com/webapp/www/search/[scope].ko_KR-16e67dd42539eb56.mjs:79:53388)
+    at e.exports (https://s.pinimg.com/webapp/vendor-react-c7a0a1d6d76cab14.mjs:9:69109)
+    at o (https://s.pinimg.com/webapp/27125-dcd1e778e180db81.mjs:1:40735)
+    at h (https://s.pinimg.com/webapp/www/search/[scope].ko_KR-16e67dd42539eb56.mjs:79:21631)
+    at pA (https://s.pinimg.com/webapp/www/_client.ko_KR-9095807dcca45894.mjs:277:112251)
+    at tF (https://s.pinimg.com/webapp/vendor-react-c7a0a1d6d76cab14.mjs:14:6486)
+    at tN (https://s.pinimg.com/webapp/vendor-react-c7a0a1d6d76cab14.mjs:14:4430)
+    at https://s.pinimg.com/webapp/vendor-react-c7a0a1d6d76cab14.mjs:14:12631
+    at t5 (https://s.pinimg.com/webapp/vendor-react-c7a0a1d6d76cab14.mjs:14:13641)
+    at tJ (https://s.pinimg.com/webapp/vendor-react-c7a0a1d6d76cab14.mjs:14:9012)
+    at Suspense (<anonymous>) @ https://s.pinimg.com/webapp/www/_client.ko_KR-9095807dcca45894.mjs:276
+[    1968ms] [WARNING] [GSI_LOGGER]: Your client application uses one of the Google One Tap prompt UI status methods that may stop functioning when FedCM becomes mandatory. Refer to the migration guide to update your code accordingly and opt-in to FedCM to test your changes. Learn more: https://developers.google.com/identity/gsi/web/guides/fedcm-migration?s=dc#display_moment and https://developers.google.com/identity/gsi/web/guides/fedcm-migration?s=dc#skipped_moment @ https://accounts.google.com/gsi/client?hl=ko:86
+[    2054ms] [ERROR] Not signed in with the identity provider. @ https://kr.pinterest.com/search/pins/?q=butterfly%20ribbon%20minimalist%20logo%20mark:0
+[    2393ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://kr.pinterest.com/secure/unauth_user_data/:0
+[   12946ms] [ERROR] [GSI_LOGGER]: FedCM get() rejects with AbortError: signal is aborted without reason @ https://accounts.google.com/gsi/client?hl=ko:87
+[   16563ms] [ERROR] Prompt dismissed. API exponential cool down not triggered. @ https://kr.pinterest.com/search/pins/?q=butterfly%20ribbon%20minimalist%20logo%20mark:0
+[   16563ms] [ERROR] [GSI_LOGGER]: FedCM get() rejects with NetworkError: Error retrieving a token. @ https://accounts.google.com/gsi/client?hl=ko:87

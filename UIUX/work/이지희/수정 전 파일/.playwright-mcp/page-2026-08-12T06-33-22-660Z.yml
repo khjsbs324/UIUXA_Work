@@ -1,0 +1,172 @@
+- generic [ref=f47e4]:
+  - banner:
+    - link "콘텐츠로 건너뛰기":
+      - /url: "#"
+    - generic [ref=f47e15]:
+      - generic [ref=f47e17]:
+        - generic [ref=f47e18]:
+          - combobox "검색" [ref=f47e20]: botanical emblem logo mark monoline
+          - generic [ref=f47e21]:
+            - button "검색 입력 삭제" [ref=f47e24] [cursor=pointer]
+            - generic "이미지 업로드" [ref=f47e30]:
+              - button "Pinterest 렌즈" [ref=f47e31] [cursor=pointer]
+        - button "모든 핀 드롭다운" [ref=f47e38] [cursor=pointer]:
+          - generic [ref=f47e40]:
+            - generic [ref=f47e41]: 모든 핀
+            - img "드롭다운" [ref=f47e43]
+      - link "내 프로필" [ref=f47e49] [cursor=pointer]:
+        - /url: /victoryjhl/
+        - img [ref=f47e56]:
+          - generic [ref=f47e57]: 이
+      - button "계정" [ref=f47e61] [cursor=pointer]
+  - navigation [ref=f47e66]:
+    - generic [ref=f47e68]:
+      - generic [ref=f47e69]:
+        - generic "홈" [ref=f47e73]:
+          - link "홈" [ref=f47e74] [cursor=pointer]:
+            - /url: /
+        - generic "홈" [ref=f47e81]:
+          - link "홈" [ref=f47e82] [cursor=pointer]:
+            - /url: /
+        - generic "내 보드" [ref=f47e89]:
+          - link "내 보드" [ref=f47e90] [cursor=pointer]:
+            - /url: /victoryjhl/
+        - generic "만들기" [ref=f47e97]:
+          - button "만들기" [ref=f47e98] [cursor=pointer]
+        - generic "업데이트" [ref=f47e107]:
+          - button "업데이트" [ref=f47e108] [cursor=pointer]
+        - generic "메시지" [ref=f47e117]:
+          - button "메시지" [ref=f47e118] [cursor=pointer]
+      - generic "설정 및 지원" [ref=f47e126]:
+        - button "설정 및 지원" [ref=f47e127] [cursor=pointer]
+  - generic:
+    - complementary "꼬리말 부동 버튼"
+  - main [ref=f47e132]:
+    - generic [ref=f47e134]:
+      - heading "검색 결과 페이지" [level=1] [ref=f47e136]
+      - region "필터 및 세분화 검색" [ref=f47e140]:
+        - button "필터 표시" [ref=f47e149] [cursor=pointer]
+      - generic [ref=f47e160]:
+        - generic [ref=f47e161]: botanical emblem logo mark monoline 검색 결과를 추가로 불러오는 중
+        - list [ref=f47e166]:
+          - listitem [ref=f47e167]:
+            - button [ref=f47e169] [cursor=pointer]:
+              - group "핀 카드" [ref=f47e171]:
+                - generic [ref=f47e173]:
+                  - link "All Posts • Instagram 핀 페이지" [ref=f47e175]:
+                    - /url: /pin/914862422363900/
+                    - img "포함된 이미지:" [ref=f47e185]
+                  - generic "추가 작업" [ref=f47e194]:
+                    - button "추가 작업" [ref=f47e195]
+          - listitem [ref=f47e200]:
+            - button [ref=f47e202] [cursor=pointer]:
+              - group "핀 카드" [ref=f47e204]:
+                - generic [ref=f47e206]:
+                  - link "제목 없음 핀 페이지" [ref=f47e208]:
+                    - /url: /pin/53972895530860033/
+                    - img "포함된 이미지:" [ref=f47e218]
+                  - generic "추가 작업" [ref=f47e227]:
+                    - button "추가 작업" [ref=f47e228]
+          - listitem [ref=f47e233]:
+            - button [ref=f47e235] [cursor=pointer]:
+              - group "핀 카드" [ref=f47e237]:
+                - generic [ref=f47e239]:
+                  - link "제목 없음 핀 페이지" [ref=f47e241]:
+                    - /url: /pin/17873729767105098/
+                    - img "포함된 이미지:" [ref=f47e251]
+                  - generic "추가 작업" [ref=f47e260]:
+                    - button "추가 작업" [ref=f47e261]
+          - listitem [ref=f47e266]:
+            - button [ref=f47e268] [cursor=pointer]:
+              - group "핀 카드" [ref=f47e270]:
+                - generic [ref=f47e272]:
+                  - link "Beige Minimal Flower Shop Logo Instagram Post - Templates by Canva 핀 페이지" [ref=f47e274]:
+                    - /url: /pin/10766486606671716/
+                    - 'img "포함된 이미지: Beige Minimal Flower Shop Logo Instagram Post - Templates by Canva" [ref=f47e284]'
+                  - generic [ref=f47e289]:
+                    - generic [ref=f47e290]:
+                      - heading [level=2] [ref=f47e295]:
+                        - link "Beige Minimal Flower Shop Logo Instagram Post - Templates by Canva 핀 페이지" [ref=f47e297]:
+                          - /url: /pin/10766486606671716/
+                          - text: Beige Minimal Flower Shop Logo Instagram Post - Templates by Canva
+                      - link "Canva" [ref=f47e300]:
+                        - /url: /canva/
+                        - generic "Canva" [ref=f47e307]
+                    - generic "추가 작업" [ref=f47e310]:
+                      - button "추가 작업" [ref=f47e311]
+          - listitem [ref=f47e316]:
+            - button [ref=f47e318] [cursor=pointer]:
+              - group "핀 카드" [ref=f47e320]:
+                - generic [ref=f47e322]:
+                  - link "제목 없음 핀 페이지" [ref=f47e324]:
+                    - /url: /pin/985231165071445/
+                    - img "포함된 이미지:" [ref=f47e334]
+                  - generic "추가 작업" [ref=f47e343]:
+                    - button "추가 작업" [ref=f47e344]
+          - listitem [ref=f47e349]:
+            - button [ref=f47e351] [cursor=pointer]:
+              - group "핀 카드" [ref=f47e353]:
+                - generic [ref=f47e355]:
+                  - link "I will create 3 minimalist and modern logos for businesses 핀 페이지" [ref=f47e357]:
+                    - /url: /pin/22518066881116337/
+                    - 'img "포함된 이미지: I will create 3 minimalist and modern logos for businesses" [ref=f47e367]'
+                  - generic [ref=f47e372]:
+                    - heading [level=2] [ref=f47e378]:
+                      - link "I will create 3 minimalist and modern logos for businesses 핀 페이지" [ref=f47e380]:
+                        - /url: /pin/22518066881116337/
+                        - text: I will create 3 minimalist and modern logos for businesses
+                    - generic "추가 작업" [ref=f47e383]:
+                      - button "추가 작업" [ref=f47e384]
+          - listitem [ref=f47e389]:
+            - button [ref=f47e391] [cursor=pointer]:
+              - group "핀 카드" [ref=f47e393]:
+                - generic [ref=f47e395]:
+                  - link "제목 없음 핀 페이지" [ref=f47e397]:
+                    - /url: /pin/68750230720/
+                    - img "포함된 이미지:" [ref=f47e407]
+                  - generic "추가 작업" [ref=f47e416]:
+                    - button "추가 작업" [ref=f47e417]
+          - listitem [ref=f47e422]:
+            - button [ref=f47e424] [cursor=pointer]:
+              - group "핀 카드" [ref=f47e426]:
+                - generic [ref=f47e428]:
+                  - link "Image de marque pour Botanica Alma 핀 페이지" [ref=f47e430]:
+                    - /url: /pin/13651605116276837/
+                    - 'img "포함된 이미지: Image de marque pour Botanica Alma" [ref=f47e440]'
+                  - generic [ref=f47e445]:
+                    - heading [level=2] [ref=f47e451]:
+                      - link "Image de marque pour Botanica Alma 핀 페이지" [ref=f47e453]:
+                        - /url: /pin/13651605116276837/
+                        - text: Image de marque pour Botanica Alma
+                    - generic "추가 작업" [ref=f47e456]:
+                      - button "추가 작업" [ref=f47e457]
+          - listitem [ref=f47e462]:
+            - button [ref=f47e464] [cursor=pointer]:
+              - group "핀 카드" [ref=f47e466]:
+                - generic [ref=f47e468]:
+                  - link "Workshop Calendar | Join Our Creative Workshops Today — MADE Studio &amp; Shop 핀 페이지" [ref=f47e470]:
+                    - /url: /pin/2181499817621678/
+                    - 'img "포함된 이미지: Workshop Calendar | Join Our Creative Workshops Today — MADE Studio & Shop" [ref=f47e480]'
+                  - generic [ref=f47e485]:
+                    - heading [level=2] [ref=f47e491]:
+                      - link "Workshop Calendar | Join Our Creative Workshops Today — MADE Studio &amp; Shop 핀 페이지" [ref=f47e493]:
+                        - /url: /pin/2181499817621678/
+                        - text: Workshop Calendar | Join Our Creative Workshops Today — MADE Studio & Shop
+                    - generic "추가 작업" [ref=f47e496]:
+                      - button "추가 작업" [ref=f47e497]
+          - listitem [ref=f47e502]:
+            - button [ref=f47e504] [cursor=pointer]:
+              - group "핀 카드" [ref=f47e506]:
+                - generic [ref=f47e508]:
+                  - link "leaf ecology logo line art vector simple minimalist illustration template icon graphic design 핀 페이지" [ref=f47e510]:
+                    - /url: /pin/6333255722761359/
+                    - 'img "포함된 이미지: leaf ecology logo line art vector simple minimalist illustration template icon graphic design" [ref=f47e520]'
+                  - generic [ref=f47e525]:
+                    - heading [level=2] [ref=f47e531]:
+                      - link "leaf ecology logo line art vector simple minimalist illustration template icon graphic design 핀 페이지" [ref=f47e533]:
+                        - /url: /pin/6333255722761359/
+                        - text: leaf ecology logo line art vector simple minimalist illustration template icon graphic design
+                    - generic "추가 작업" [ref=f47e536]:
+                      - button "추가 작업" [ref=f47e537]
+  - generic:
+    - contentinfo "꼬리말"

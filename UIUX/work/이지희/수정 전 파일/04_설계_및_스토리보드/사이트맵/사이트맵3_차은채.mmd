@@ -1,0 +1,73 @@
+flowchart TD
+    classDef main fill:#5C5470,stroke:#352F44,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef sub fill:#B9B4C7,stroke:#5C5470,stroke-width:2px,color:#1C2541,font-weight:bold;
+    classDef drawer fill:#E0F7FA,stroke:#5C5470,stroke-width:2px,color:#1C2541,font-weight:bold;
+    classDef common fill:#F8F9FA,stroke:#1C2541,stroke-width:1px,color:#1C2541;
+    classDef member fill:#FFF3E0,stroke:#E65100,stroke-width:1.5px,color:#E65100,stroke-dasharray: 5 5;
+    classDef exception fill:#FFEBEE,stroke:#C62828,stroke-width:1.5px,color:#C62828,stroke-dasharray: 3 3;
+
+    Root["WICKETA D2C Sanctuary (가상클라이언트3 차은채)"]
+    M1["1. Home 메인 안식처 (PG-01)"]
+    M2["2. Mixology Lab 큐레이션 (PG-02)"]
+    M3["3. Custom Sanctuary DIY (PG-03)"]
+    M4["4. Cart Drawer 결제 Drawer (PG-04 Aside Layer)"]
+
+    Root --> M1
+    Root --> M2
+    Root --> M3
+    Root --> M4
+
+    M1_1["Hero Section (Drink Me, Escape Reality)"]
+    M1_2["Emotional Quiz Section (3단계 감정 진단 퀴즈)"]
+    M1_3["3D Initial Engraving Preview (3D 각인 미리보기)"]
+    M1_4["Welcome Kit Pre-Order (웰컴 키트 응모 폼)"]
+
+    M1 --> M1_1
+    M1 --> M1_2
+    M1 --> M1_3
+    M1 --> M1_4
+
+    M2_1["감정 다이얼 레시피 상세 (Emotional Mixology Recipe)"]
+    M2_2["비주얼 아로마 휠 아카이브 (Visual Aroma Wheel Archive)"]
+
+    M2 --> M2_1
+    M2 --> M2_2
+
+    M2_1_1["3분 파스텔 수색 변환 캔버스"]
+    M2_1_2["앰비언트 Sound 플레이어"]
+
+    M2_1 --> M2_1_1
+    M2_1 --> M2_1_2
+
+    M3_1["라이브 3D 이니셜 각인 시뮬레이터 (3D Engrave Builder)"]
+    M3_2["8대 페르소나 맞춤 추천 팩 룩북 (Persona Lookbook)"]
+
+    M3 --> M3_1
+    M3 --> M3_2
+
+    M4_1["슬라이드아웃 Cart Drawer (1-Page 처방전 주문서)"]
+    M4_2["Virtual Scroll 위치 보존 (탐색 스크롤 100% 복원)"]
+
+    M4 --> M4_1
+    M4 --> M4_2
+
+    MEM1["[회원 영역] 저장 결제수단 1-Click 연동 (PG-M01 마이페이지)"]
+    GUEST1["[비회원 영역] 웰컴 체험키트 응모 (할인 쿠폰 - 가정)"]
+
+    M4 -.-> MEM1
+    M4 -.-> GUEST1
+
+    EXP1["[EXP-01] 404 Page Not Found (메인 안식처 안내 - 가정)"]
+    EXP2["[EXP-02] 각인 옵션 적용 오류 모달 (재시도 안내 - 가정)"]
+    EXP3["[EXP-03] 결제 네트워크 오류 안내 (Cart Drawer 임시 저장 - 가정)"]
+
+    Root -.-> EXP1
+    M3_1 -.-> EXP2
+    M4_1 -.-> EXP3
+
+    class Root,M1 main;
+    class M2,M3 sub;
+    class M4,M4_1,M4_2 drawer;
+    class M1_1,M1_2,M1_3,M1_4,M2_1,M2_2,M2_1_1,M2_1_2,M3_1,M3_2 common;
+    class MEM1,GUEST1 member;
+    class EXP1,EXP2,EXP3 exception;

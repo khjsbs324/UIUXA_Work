@@ -1,0 +1,155 @@
+- generic [ref=f225e4]:
+  - banner:
+    - link "콘텐츠로 건너뛰기":
+      - /url: "#"
+    - generic [ref=f225e15]:
+      - generic [ref=f225e17]:
+        - generic [ref=f225e18]:
+          - combobox "검색" [ref=f225e20]: botanical arch interlocking minimalist logo mark
+          - generic [ref=f225e21]:
+            - button "검색 입력 삭제" [ref=f225e24] [cursor=pointer]
+            - generic "이미지 업로드" [ref=f225e30]:
+              - button "Pinterest 렌즈" [ref=f225e31] [cursor=pointer]
+        - button "모든 핀 드롭다운" [ref=f225e38] [cursor=pointer]:
+          - generic [ref=f225e40]:
+            - generic [ref=f225e41]: 모든 핀
+            - img "드롭다운" [ref=f225e43]
+      - link "내 프로필" [ref=f225e49] [cursor=pointer]:
+        - /url: /victoryjhl/
+        - img [ref=f225e56]:
+          - generic [ref=f225e57]: 이
+      - button "계정" [ref=f225e61] [cursor=pointer]
+  - navigation [ref=f225e66]:
+    - generic [ref=f225e68]:
+      - generic [ref=f225e69]:
+        - generic "홈" [ref=f225e73]:
+          - link "홈" [ref=f225e74] [cursor=pointer]:
+            - /url: /
+        - generic "홈" [ref=f225e81]:
+          - link "홈" [ref=f225e82] [cursor=pointer]:
+            - /url: /
+        - generic "내 보드" [ref=f225e89]:
+          - link "내 보드" [ref=f225e90] [cursor=pointer]:
+            - /url: /victoryjhl/
+        - generic "만들기" [ref=f225e97]:
+          - button "만들기" [ref=f225e98] [cursor=pointer]
+      - generic "설정 및 지원" [ref=f225e114]:
+        - button "설정 및 지원" [ref=f225e115] [cursor=pointer]
+  - main [ref=f225e120]:
+    - generic [ref=f225e122]:
+      - heading "검색 결과 페이지" [level=1] [ref=f225e124]
+      - region "필터 및 세분화 검색" [ref=f225e128]:
+        - button "필터 표시" [ref=f225e137] [cursor=pointer]
+      - generic [ref=f225e148]:
+        - generic [ref=f225e149]: botanical arch interlocking minimalist logo mark 검색 결과를 추가로 불러오는 중
+        - list [ref=f225e154]:
+          - listitem [ref=f225e155]:
+            - button [ref=f225e157] [cursor=pointer]:
+              - group "핀 카드" [ref=f225e159]:
+                - generic [ref=f225e161]:
+                  - link "plantilla de logotipo de arcos rústicos, concepto de monograma en estilo lineal moderno con arco. boho, marcos florales bohemios. 핀 페이지" [ref=f225e163]:
+                    - /url: /pin/33003009764874128/
+                    - 'img "포함된 이미지: plantilla de logotipo de arcos rústicos, concepto de monograma en estilo lineal moderno con arco. boho, marcos florales bohemios." [ref=f225e173]'
+                  - generic [ref=f225e178]:
+                    - heading [level=2] [ref=f225e184]:
+                      - link "plantilla de logotipo de arcos rústicos, concepto de monograma en estilo lineal moderno con arco. boho, marcos florales bohemios. 핀 페이지" [ref=f225e186]:
+                        - /url: /pin/33003009764874128/
+                        - text: plantilla de logotipo de arcos rústicos, concepto de monograma en estilo lineal moderno con arco. boho, marcos florales bohemios.
+                    - generic "추가 작업" [ref=f225e189]:
+                      - button "추가 작업" [ref=f225e190]
+          - listitem [ref=f225e195]:
+            - button [ref=f225e197] [cursor=pointer]:
+              - group "핀 카드" [ref=f225e199]:
+                - generic [ref=f225e201]:
+                  - link "제목 없음 핀 페이지" [ref=f225e203]:
+                    - /url: /pin/4785143352361128/
+                    - img "포함된 이미지:" [ref=f225e213]
+                  - generic "추가 작업" [ref=f225e222]:
+                    - button "추가 작업" [ref=f225e223]
+          - listitem [ref=f225e228]:
+            - button [ref=f225e230] [cursor=pointer]:
+              - group "핀 카드" [ref=f225e232]:
+                - generic [ref=f225e234]:
+                  - link "All Posts • Instagram 핀 페이지" [ref=f225e236]:
+                    - /url: /pin/914862422363900/
+                    - img "포함된 이미지:" [ref=f225e246]
+                  - generic "추가 작업" [ref=f225e255]:
+                    - button "추가 작업" [ref=f225e256]
+          - listitem [ref=f225e261]:
+            - button [ref=f225e263] [cursor=pointer]:
+              - group "핀 카드" [ref=f225e265]:
+                - generic [ref=f225e267]:
+                  - link "제목 없음 핀 페이지" [ref=f225e269]:
+                    - /url: /pin/4644405860084647/
+                    - img "포함된 이미지:" [ref=f225e279]
+                  - generic "추가 작업" [ref=f225e288]:
+                    - button "추가 작업" [ref=f225e289]
+          - listitem [ref=f225e294]:
+            - button [ref=f225e296] [cursor=pointer]:
+              - group "핀 카드" [ref=f225e298]:
+                - generic [ref=f225e300]:
+                  - link "Flora Integrative Health Brand Mark Symbol 핀 페이지" [ref=f225e302]:
+                    - /url: /pin/4785143352518819/
+                    - 'img "포함된 이미지: Flora Integrative Health Brand Mark Symbol" [ref=f225e312]'
+                  - generic [ref=f225e317]:
+                    - heading [level=2] [ref=f225e323]:
+                      - link "Flora Integrative Health Brand Mark Symbol 핀 페이지" [ref=f225e325]:
+                        - /url: /pin/4785143352518819/
+                        - text: Flora Integrative Health Brand Mark Symbol
+                    - generic "추가 작업" [ref=f225e328]:
+                      - button "추가 작업" [ref=f225e329]
+          - listitem [ref=f225e334]:
+            - button [ref=f225e336] [cursor=pointer]:
+              - group "핀 카드" [ref=f225e338]:
+                - generic [ref=f225e340]:
+                  - link "Six Twelve | Wyndsor | Design Consultant 핀 페이지" [ref=f225e342]:
+                    - /url: /pin/32369691067029470/
+                    - 'img "포함된 이미지: Six Twelve | Wyndsor | Design Consultant" [ref=f225e352]'
+                  - generic [ref=f225e357]:
+                    - heading [level=2] [ref=f225e363]:
+                      - link "Six Twelve | Wyndsor | Design Consultant 핀 페이지" [ref=f225e365]:
+                        - /url: /pin/32369691067029470/
+                        - text: Six Twelve | Wyndsor | Design Consultant
+                    - generic "추가 작업" [ref=f225e368]:
+                      - button "추가 작업" [ref=f225e369]
+          - listitem [ref=f225e374]:
+            - button [ref=f225e376] [cursor=pointer]:
+              - group "핀 카드" [ref=f225e378]:
+                - generic [ref=f225e380]:
+                  - link "Arches and windows abstract logo set with palm leaf and moon design templates in trendy linear minimal style. Stock Vector | Adobe Stock 핀 페이지" [ref=f225e382]:
+                    - /url: /pin/394487248634815156/
+                    - 'img "포함된 이미지: Arches and windows abstract logo set with palm leaf and moon design templates in trendy linear minimal style. Stock Vector | Adobe Stock" [ref=f225e392]'
+                  - generic [ref=f225e397]:
+                    - heading [level=2] [ref=f225e403]:
+                      - link "Arches and windows abstract logo set with palm leaf and moon design templates in trendy linear minimal style. Stock Vector | Adobe Stock 핀 페이지" [ref=f225e405]:
+                        - /url: /pin/394487248634815156/
+                        - text: Arches and windows abstract logo set with palm leaf and moon design templates in trendy linear minimal style. Stock Vector | Adobe Stock
+                    - generic "추가 작업" [ref=f225e408]:
+                      - button "추가 작업" [ref=f225e409]
+          - listitem [ref=f225e414]:
+            - button [ref=f225e416] [cursor=pointer]:
+              - group "핀 카드" [ref=f225e418]:
+                - generic [ref=f225e420]:
+                  - link "Dlaczego nie projektuję samego logo? Kiedyś to robiłam. Ale dzisiaj wiem, że to zbyt mało, żeby stworzyć markę, która działa na co dzień. Czy wiesz, że we współczesnej komunikacji marki logo pojawia się najrzadziej? 💡 Co widzisz najczęściej w komunikacji? ➡️Kolory, które natychmiast kojarzysz z marką. ➡️Grafiki i ikony, które wyróżniają styl. ➡️Typografię, która od razu nadaje charakter. ➡️Spójny układ i język wizualny. Gdy widzisz posty marek z brandingiem, wiesz od razu, kto za nimi st... 핀 페이지" [ref=f225e422]:
+                    - /url: /pin/774124931493490/
+                    - img "포함된 이미지:" [ref=f225e432]
+                  - generic "추가 작업" [ref=f225e441]:
+                    - button "추가 작업" [ref=f225e442]
+          - listitem [ref=f225e447]:
+            - button [ref=f225e449] [cursor=pointer]:
+              - group "핀 카드" [ref=f225e451]:
+                - generic [ref=f225e453]:
+                  - link "제목 없음 핀 페이지" [ref=f225e455]:
+                    - /url: /pin/4925880836495874/
+                    - img "포함된 이미지:" [ref=f225e465]
+                  - generic "추가 작업" [ref=f225e474]:
+                    - button "추가 작업" [ref=f225e475]
+          - listitem [ref=f225e480]:
+            - button [ref=f225e482] [cursor=pointer]:
+              - group "핀 카드" [ref=f225e484]:
+                - generic [ref=f225e486]:
+                  - link "제목 없음 핀 페이지" [ref=f225e488]:
+                    - /url: /pin/15973773674673041/
+                    - img "포함된 이미지:" [ref=f225e498]
+                  - generic "추가 작업" [ref=f225e507]:
+                    - button "추가 작업" [ref=f225e508]

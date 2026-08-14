@@ -1,0 +1,159 @@
+- generic [active] [ref=f44e1]:
+  - generic:
+    - generic:
+      - link "주요 콘텐츠로 이동" [ref=f44e2] [cursor=pointer]
+      - link "접근성 도움말" [ref=f44e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=ko
+  - generic [ref=f44e8]:
+    - search [ref=f44e9]:
+      - generic [ref=f44e12]:
+        - link [ref=f44e13] [cursor=pointer]:
+          - /url: https://www.google.com/webhp?hl=ko&ictx=0&sa=X&ved=0ahUKEwj97KjP4JqWAxVsklYBHeeQHjIQpYkNCAo
+          - img "Google 홈으로 이동" [ref=f44e14]
+        - generic [ref=f44e19]:
+          - combobox "검색" [ref=f44e22]: site:pinterest.com/pin "logo mark" wellness organic monoline white background site:pinterest.com/pin "logo mark" wellness organic monoline white background
+          - generic [ref=f44e23]:
+            - button "지우기" [ref=f44e25] [cursor=pointer]
+            - generic [ref=f44e30]:
+              - button "입력 도구" [ref=f44e31] [cursor=pointer]
+              - button "음성 검색" [ref=f44e35] [cursor=pointer]
+              - button "이미지로 검색" [ref=f44e38] [cursor=pointer]
+        - button "검색" [ref=f44e41] [cursor=pointer]
+    - generic [ref=f44e46]:
+      - button "설정" [ref=f44e48] [cursor=pointer]
+      - button "공유" [ref=f44e54] [cursor=pointer]
+      - generic [ref=f44e60]:
+        - button "Google 앱" [ref=f44e62] [cursor=pointer]
+        - link "로그인" [ref=f44e67] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=ko&passive=true&continue=https://www.google.com/search%3Fq%3Dsite:pinterest.com/pin%2B%2522logo%2Bmark%2522%2Bwellness%2Borganic%2Bmonoline%2Bwhite%2Bbackground&ec=futura_srp_og_si_72236_p
+  - generic [ref=f44e69]:
+    - navigation [ref=f44e75]:
+      - generic [ref=f44e81]:
+        - list [ref=f44e82]:
+          - listitem [ref=f44e83]:
+            - link "AI 모드" [ref=f44e86] [cursor=pointer]:
+              - /url: /search?q=site:pinterest.com/pin+%22logo+mark%22+wellness+organic+monoline+white+background&sca_esv=5ba224cdfcc4b8dc&udm=50&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA70DBExgkDFCpIGAUraPZqPpSs1EXRrKCiKydXz2VHg4BZ43F9-MfAqyB18ZvchEiEA2_q_O9bSJyISG5IdrJU6cdES6lLC2aGnoaRVRxqPkvYvl1TBL7cuXeIdYuACjlrdhZQY--K-WTmz9sefNM1mZCEHIRQCyzCyVXFjaaNP3haRMJag&aep=1&ntc=1&cs=0&sa=X&ved=2ahUKEwj97KjP4JqWAxVsklYBHeeQHjIQ2J8OegQIEhAD
+          - listitem [ref=f44e90]:
+            - link "전체" [disabled] [ref=f44e91]
+          - listitem [ref=f44e94]:
+            - link "이미지" [ref=f44e95] [cursor=pointer]:
+              - /url: /search?sca_esv=5ba224cdfcc4b8dc&udm=2&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA70DBExgkDFCpIGAUraPZqPpSs1EXRrKCiKydXz2VHg4BZ43F9-MfAqyB18ZvchEiEA2_q_O9bSJyISG5IdrJU6cdES6lLC2aGnoaRVRxqPkvYvl1TBL7cuXeIdYuACjlrdhZQY--K-WTmz9sefNM1mZCEHIRQCyzCyVXFjaaNP3haRMJag&q=site:pinterest.com/pin+%22logo+mark%22+wellness+organic+monoline+white+background&sa=X&ved=2ahUKEwj97KjP4JqWAxVsklYBHeeQHjIQtKgLegQIFxAB
+          - listitem [ref=f44e98]:
+            - link "쇼핑" [ref=f44e99] [cursor=pointer]:
+              - /url: /search?sca_esv=5ba224cdfcc4b8dc&udm=28&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA70DBExgkDFCpIGAUraPZqPpSs1EXRrKCiKydXz2VHg4BZ43F9-MfAqyB18ZvchEiEA2_q_O9bSJyISG5IdrJU6cdES6lLC2aGnoaRVRxqPkvYvl1TBL7cuXeIdYuACjlrdhZQY--K-WTmz9sefNM1mZCEHIRQCyzCyVXFjaaNP3haRMJag&q=site:pinterest.com/pin+%22logo+mark%22+wellness+organic+monoline+white+background&ved=1t:220175&ictx=111
+          - listitem [ref=f44e102]:
+            - link "동영상" [ref=f44e103] [cursor=pointer]:
+              - /url: /search?sca_esv=5ba224cdfcc4b8dc&udm=7&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA70DBExgkDFCpIGAUraPZqPpSs1EXRrKCiKydXz2VHg4BZ43F9-MfAqyB18ZvchEiEA2_q_O9bSJyISG5IdrJU6cdES6lLC2aGnoaRVRxqPkvYvl1TBL7cuXeIdYuACjlrdhZQY--K-WTmz9sefNM1mZCEHIRQCyzCyVXFjaaNP3haRMJag&q=site:pinterest.com/pin+%22logo+mark%22+wellness+organic+monoline+white+background&sa=X&ved=2ahUKEwj97KjP4JqWAxVsklYBHeeQHjIQtKgLegQIFRAB
+          - listitem [ref=f44e106]:
+            - link "짧은 동영상" [ref=f44e107] [cursor=pointer]:
+              - /url: /search?sca_esv=5ba224cdfcc4b8dc&udm=39&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA70DBExgkDFCpIGAUraPZqPpSs1EXRrKCiKydXz2VHg4BZ43F9-MfAqyB18ZvchEiEA2_q_O9bSJyISG5IdrJU6cdES6lLC2aGnoaRVRxqPkvYvl1TBL7cuXeIdYuACjlrdhZQY--K-WTmz9sefNM1mZCEHIRQCyzCyVXFjaaNP3haRMJag&q=site:pinterest.com/pin+%22logo+mark%22+wellness+organic+monoline+white+background&sa=X&ved=2ahUKEwj97KjP4JqWAxVsklYBHeeQHjIQs6gLegQIFBAB
+          - listitem [ref=f44e110]:
+            - link "뉴스" [ref=f44e111] [cursor=pointer]:
+              - /url: /search?sca_esv=5ba224cdfcc4b8dc&q=site:pinterest.com/pin+%22logo+mark%22+wellness+organic+monoline+white+background&tbm=nws&source=lnms&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA70DBExgkDFCpIGAUraPZqPpSs1EXRrKCiKydXz2VHg4BZ43F9-MfAqyB18ZvchEiEA2_q_O9bSJyISG5IdrJU6cdES6lLC2aGnoaRVRxqPkvYvl1TBL7cuXeIdYuACjlrdhZQY--K-WTmz9sefNM1mZCEHIRQCyzCyVXFjaaNP3haRMJag&sa=X&ved=2ahUKEwj97KjP4JqWAxVsklYBHeeQHjIQ0pQJegQIGBAB
+          - listitem [ref=f44e114]:
+            - button [ref=f44e115] [cursor=pointer]:
+              - generic "필터 더보기" [ref=f44e116]: 더보기
+        - button "도구" [ref=f44e123] [cursor=pointer]
+    - heading "검색결과" [level=1] [ref=f44e130]
+    - main [ref=f44e136]:
+      - generic [ref=f44e140]:
+        - generic [ref=f44e143]:
+          - heading "Web results" [level=2] [ref=f44e144]
+          - generic [ref=f44e145]:
+            - generic [ref=f44e148]:
+              - link "Submark Logo Design for Minimal Wellness Brand Identity Pinterest · szagnes2002 2년 전" [ref=f44e150] [cursor=pointer]:
+                - /url: https://ca.pinterest.com/pin/minimal-wellness-submark-logo-design-water-waves-moon-sun-sky--6473993210168895/
+                - heading "Submark Logo Design for Minimal Wellness Brand Identity" [level=3] [ref=f44e151]
+                - generic [ref=f44e157]:
+                  - generic [ref=f44e158]: Pinterest · szagnes2002
+                  - generic [ref=f44e160]: 2년 전
+              - button "검색결과에 관한 정보" [ref=f44e164] [cursor=pointer]
+            - generic [ref=f44e171]:
+              - text: Discover a
+              - emphasis [ref=f44e172]: monoline logo mark
+              - text: representing water, waves, the moon, sun, and sky. This minimal and simple submark is perfect for a
+              - emphasis [ref=f44e173]: wellness
+              - text: ...
+        - generic [ref=f44e177]:
+          - generic [ref=f44e180]:
+            - link "Illustrative Logo Design Pinterest https://www.pinterest.com › pin" [ref=f44e182] [cursor=pointer]:
+              - /url: https://www.pinterest.com/pin/108156828540767723/
+              - heading "Illustrative Logo Design" [level=3] [ref=f44e183]
+              - generic [ref=f44e189]:
+                - generic [ref=f44e190]: Pinterest
+                - generic [ref=f44e192]: https://www.pinterest.com › pin
+            - button "검색결과에 관한 정보" [ref=f44e196] [cursor=pointer]
+          - generic [ref=f44e202]:
+            - generic [ref=f44e203]: 2020. 6. 17. —
+            - generic [ref=f44e204]:
+              - emphasis [ref=f44e205]: Organic
+              - text: Logo · Elegant Logo ·
+              - emphasis [ref=f44e206]: Logo Mark
+              - text: · Line Design · Logo Inspiration · Identity Design.
+        - generic [ref=f44e210]:
+          - generic [ref=f44e213]:
+            - link "Click the link to get your unique minimalist logo designed today! Pinterest https://in.pinterest.com › pin" [ref=f44e215] [cursor=pointer]:
+              - /url: https://in.pinterest.com/pin/50735933299420192/
+              - heading "Click the link to get your unique minimalist logo designed today!" [level=3] [ref=f44e216]
+              - generic [ref=f44e222]:
+                - generic [ref=f44e223]: Pinterest
+                - generic [ref=f44e225]: https://in.pinterest.com › pin
+            - button "검색결과에 관한 정보" [ref=f44e229] [cursor=pointer]
+          - generic [ref=f44e236]:
+            - text: Related interests. Branding Inspiration Ideas · Airthletic Logo On Black
+            - emphasis [ref=f44e237]: Background
+            - text: · Black And
+            - emphasis [ref=f44e238]: White
+            - text: Logo ...
+            - emphasis [ref=f44e239]: Logo mark
+            - text: . More about this Pin. 284. Saves. 3.
+        - generic [ref=f44e243]:
+          - generic [ref=f44e246]:
+            - link "sea wave line art minimalist logo vector illustration design Pinterest · s030821 4년 전" [ref=f44e248] [cursor=pointer]:
+              - /url: https://in.pinterest.com/pin/sea-wave-minimalist-logo-vector-design--5136987066598066/
+              - heading "sea wave line art minimalist logo vector illustration design" [level=3] [ref=f44e249]
+              - generic [ref=f44e255]:
+                - generic [ref=f44e256]: Pinterest · s030821
+                - generic [ref=f44e258]: 4년 전
+            - button "검색결과에 관한 정보" [ref=f44e262] [cursor=pointer]
+          - generic [ref=f44e269]:
+            - text: Design of ocean waves line art style isolated
+            - emphasis [ref=f44e270]: white
+            - text: and black
+            - emphasis [ref=f44e271]: background
+            - text: ...
+            - emphasis [ref=f44e272]: Logo Mark
+            - text: · Home Logo · Creative Logo · Personal Planner · Logo ...
+      - generic [ref=f44e274]:
+        - generic [ref=f44e275]:
+          - heading "필터링된 결과 알림" [level=2] [ref=f44e276]
+          - paragraph [ref=f44e278]:
+            - generic [ref=f44e279]:
+              - text: 관련성이 가장 높은 결과를 표시하기 위해 이미 표시된 4개와 매우 유사한 일부 항목을 생략했습니다. 원하시면
+              - link "생략된 결과를 포함하여 다시 검색" [ref=f44e280] [cursor=pointer]:
+                - /url: /search?q=site:pinterest.com/pin+%22logo+mark%22+wellness+organic+monoline+white+background&sca_esv=5ba224cdfcc4b8dc&filter=0
+              - text: 하실 수 있습니다.
+        - navigation
+      - navigation
+    - contentinfo [ref=f44e281]:
+      - heading "바닥글 링크" [level=1] [ref=f44e282]
+      - generic [ref=f44e286]:
+        - generic [ref=f44e288]:
+          - text: 대한민국
+          - generic [ref=f44e290]:
+            - button "월평동 대전광역시 서구 - 이전 활동 기준" [ref=f44e292] [cursor=pointer]:
+              - generic [ref=f44e293]: 월평동 대전광역시 서구
+              - generic [ref=f44e295]:
+                - text: "-"
+                - generic [ref=f44e296]: 이전 활동 기준
+            - text: "-"
+            - button "위치 업데이트" [ref=f44e298] [cursor=pointer]
+        - generic [ref=f44e301]:
+          - link "도움말" [ref=f44e302] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=ko&fg=1
+          - link "의견 보내기" [ref=f44e303] [cursor=pointer]:
+            - /url: "#"
+          - link "개인정보처리방침" [ref=f44e304] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=ko&fg=1
+          - link "약관" [ref=f44e305] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=ko&fg=1

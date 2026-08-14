@@ -1,0 +1,73 @@
+flowchart TD
+    classDef main fill:#332C39,stroke:#1C1825,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef sub fill:#6B5B95,stroke:#332C39,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef drawer fill:#E0F7FA,stroke:#6B5B95,stroke-width:2px,color:#1C2541,font-weight:bold;
+    classDef common fill:#F8F9FA,stroke:#1C2541,stroke-width:1px,color:#1C2541;
+    classDef member fill:#FFF3E0,stroke:#E65100,stroke-width:1.5px,color:#E65100,stroke-dasharray: 5 5;
+    classDef exception fill:#FFEBEE,stroke:#C62828,stroke-width:1.5px,color:#C62828,stroke-dasharray: 3 3;
+
+    Root["WICKETA x 29SELECT Showcase (가상클라이언트5 윤서연)"]
+    M1["1. Home 쇼케이스 메인 (PG-01)"]
+    M2["2. Editorial Showcase 매거진 (PG-02)"]
+    M3["3. 29SELECT Exclusive 단독관 (PG-03)"]
+    M4["4. Cart Drawer 결제 Drawer (PG-04 Aside Layer)"]
+
+    Root --> M1
+    Root --> M2
+    Root --> M3
+    Root --> M4
+
+    M1_1["Hero Section (29SELECT Exclusive : WICKETA Escape Reality)"]
+    M1_2["Editorial Brand Story (0.5px 미세선 브랜드 에세이)"]
+    M1_3["29SELECT Exclusive Gift Pack (한정판 파우치 3D 뷰어)"]
+    M1_4["29SELECT Member 15% Coupon (15% 쿠폰 바우처)"]
+
+    M1 --> M1_1
+    M1 --> M1_2
+    M1 --> M1_3
+    M1 --> M1_4
+
+    M2_1["29SELECT 회원 맞춤 감정 진단 퀴즈 (Member Quiz)"]
+    M2_2["29SELECT 대표 에디터 5인 힐링 화보 리뷰 (Editor Review)"]
+
+    M2 --> M2_1
+    M2 --> M2_2
+
+    M2_2_1["에디터 5인 오피스/홈 화보 모달"]
+    M2_2_2["에디터 시량 리포트"]
+
+    M2_2 --> M2_2_1
+    M2_2 --> M2_2_2
+
+    M3_1["15% 쿠폰 자동 직연동 바우처 (Coupon Voucher)"]
+    M3_2["수색 그래디언트 아트 3D 시뮬레이션 (3D Canvas)"]
+
+    M3 --> M3_1
+    M3 --> M3_2
+
+    M4_1["29SELECT 계정 직연동 1-Click 사전 예약 (1-Page 주문서)"]
+    M4_2["Virtual Scroll 위치 보존 (탐색 스크롤 100% 복원)"]
+
+    M4 --> M4_1
+    M4 --> M4_2
+
+    MEM1["[회원 영역] 29SELECT 계정 연동 및 예약 내역 (PG-M01)"]
+    GUEST1["[비회원 영역] 간편 예약 (가입 시 15% 쿠폰 지급 - 가정)"]
+
+    M4 -.-> MEM1
+    M4 -.-> GUEST1
+
+    EXP1["[EXP-01] 404 Page Not Found (쇼케이스 메인 안내 - 가정)"]
+    EXP2["[EXP-02] 쿠폰 연동 오류 안내 모달 (재연동 안내 - 가정)"]
+    EXP3["[EXP-03] 결제 네트워크 오류 안내 (Cart Drawer 임시 저장 - 가정)"]
+
+    Root -.-> EXP1
+    M3_1 -.-> EXP2
+    M4_1 -.-> EXP3
+
+    class Root,M1 main;
+    class M2,M3 sub;
+    class M4,M4_1,M4_2 drawer;
+    class M1_1,M1_2,M1_3,M1_4,M2_1,M2_2,M2_2_1,M2_2_2,M3_1,M3_2 common;
+    class MEM1,GUEST1 member;
+    class EXP1,EXP2,EXP3 exception;

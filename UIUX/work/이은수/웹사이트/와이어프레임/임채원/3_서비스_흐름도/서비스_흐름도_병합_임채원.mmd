@@ -1,0 +1,50 @@
+flowchart TD
+    Start(["사용자 유입 (메인 페이지 접속)"]) --> AuthCheck{"방문 페르소나 및 목적 판별"}
+    
+    %% 4대 진입 경로
+    AuthCheck -->|경로 A: 시간축 탐색| TrackA["1. 24H Timeline Slider<br>(새벽/정오/황혼/심야 슬라이더 조작)"]
+    AuthCheck -->|경로 B: 상황 큐레이션| TrackB["2. TPO Scenario Wheel<br>(오피스/산책/다이닝 휠 회전)"]
+    AuthCheck -->|경로 C: 올데이 킷 직결| TrackC["3. All-Day Portable Kit<br>(15ml 3종 가죽 세트 쇼케이스)"]
+    AuthCheck -->|경로 D: 체험 희망 고객| TrackD["4. TPO Tasting Kit 신청<br>(24H 5종 샘플 & 100% 바우처)"]
+
+    %% 탐색 및 인터랙션 단계
+    TrackA --> ScentCard["시간대별 추천 마패 향 카드 도출"]
+    TrackB --> LayerCheck{"듀얼 레이어링 적용 여부"}
+    
+    LayerCheck -->|단품 선택| ScentCard
+    LayerCheck -->|2종 조합 선택| SafeCheck{"향조 조화도 & 펌핑 검증"}
+    
+    SafeCheck -->|비율 불균형/과다분사| SafeWarning["⚠️ 황금 비율 가이드 자동 보정"] --> ScentCard
+    SafeCheck -->|조화로움 검증 통과| ScentCard
+
+    %% 구매 옵션 및 커스텀 분기
+    ScentCard --> BuyType{"구매 방식 선택"}
+    TrackC --> BuyType
+
+    BuyType -->|단품 / 번들 일반 구매| OptCheck{"각인 및 패키징 커스텀"}
+    BuyType -->|하루 루틴 정기 구독| SubScheduler["5. Daily Smart Refill Scheduler<br>(루틴 시간표 & 3개월 배송 설정)"]
+    
+    OptCheck -->|가죽 스트랩 각인| EngraveInput["이니셜 입력 & 3D 검수"]
+    OptCheck -->|기본 패키지| CartStep["Slide Cart Drawer 담기"]
+    
+    EngraveInput --> TextFilter{"글자수(25자) & 비속어 필터"}
+    TextFilter -->|오류/초과| EngraveError["❌ 경고 팝업 & 수정"] --> EngraveInput
+    TextFilter -->|통과| CartStep
+
+    SubScheduler --> CartStep
+    TrackD --> CartStep
+
+    %% 장바구니 및 할인 판별
+    CartStep --> VoucherCheck{"테이스팅 100% 바우처 보유 여부"}
+    VoucherCheck -->|바우처 코드 적용| Discount["25,000원 100% 즉시 차감"] --> PayChoice
+    VoucherCheck -->|미보유/일반 결제| PayChoice{"결제 수단 선택"}
+
+    %% 결제 및 예외
+    PayChoice -->|간편결제 / 카드| PayEngine["결제 승인 엔진"]
+    PayEngine --> PaySuccess{"승인 결과"}
+    
+    PaySuccess -->|결제 실패/잔액부족| FailRecovery["🔄 세션 복구 & 다른 수단 유도"] --> PayChoice
+    PaySuccess -->|승인 완료| OrderDone(["주문 완료 & 카카오 알림톡 발송"])
+
+    %% 사후 리텐션 루프
+    OrderDone --> RoutineLoop["알림톡 루틴 코칭 & 3개월 자동 리필 순환"]

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "SCR-100",
+    "name": "메인페이지",
+    "purpose": "SOAPHE 웰니스 비누 + 오브제형 트레이 세트 사전펀딩 유도",
+    "entryConditions": "URL 접속 또는 로고 클릭",
+    "sections": [
+      "Hero",
+      "Compare",
+      "FlagshipSet",
+      "LifestyleTray",
+      "EmotionQuiz",
+      "FundingForm"
+    ],
+    "actions": [
+      "퀴즈 진행",
+      "맞춤 결과 확인",
+      "사전 펀딩 제출"
+    ],
+    "states": [
+      "Default",
+      "Loading",
+      "Error",
+      "Success"
+    ],
+    "nextScreens": [
+      "SCR-200"
+    ]
+  },
+  {
+    "id": "SCR-200",
+    "name": "맞춤 결과 모달",
+    "purpose": "1:1 맞춤 향 & 오브제 트레이 세트 추천",
+    "entryConditions": "퀴즈 완료",
+    "sections": [
+      "RecommendationTicket"
+    ],
+    "actions": [
+      "사전 펀딩 바로가기",
+      "닫기"
+    ],
+    "states": [
+      "Default",
+      "Success"
+    ],
+    "nextScreens": [
+      "SCR-100"
+    ]
+  }
+]

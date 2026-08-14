@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+  <title id="title">VC-002 기반 사이트-흐름도</title>
+  <desc id="desc">사이트맵 12개 페이지의 계층 이동과 주요 교차 연결</desc>
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="7" stdDeviation="10" flood-color="#101828" flood-opacity=".12"/></filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#7C8BA1"/></marker>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#3565C5"/></marker>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#D97706"/></marker>
+    <style>
+      .title{font:700 42px 'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;fill:#172B4D}
+      .subtitle{font:400 18px 'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;fill:#667085}
+      .id{font:700 13px 'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;letter-spacing:.4px}
+      .name{font:700 20px 'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;fill:#172B4D}
+      .small{font:500 13px 'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;fill:#667085}
+      .legend{font:600 14px 'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;fill:#475467}
+      .primary{fill:none;stroke:#7C8BA1;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}
+      .core{fill:none;stroke:#3565C5;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrowBlue)}
+      .cross{fill:none;stroke:#7A6FD0;stroke-width:2.5;stroke-dasharray:8 7;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}
+      .conditional{fill:none;stroke:#D97706;stroke-width:3;stroke-dasharray:8 7;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrowOrange)}
+    </style>
+  </defs>
+  <rect width="1920" height="1080" fill="#F7F8FC"/>
+  <circle cx="1800" cy="35" r="245" fill="#E9F2FF" opacity=".72"/>
+  <circle cx="70" cy="1040" r="230" fill="#EEF8F2" opacity=".75"/>
+  <text x="80" y="72" class="title">VC-002 기반 사이트-흐름도</text>
+  <text x="80" y="108" class="subtitle">12개 Page의 진입·하위 이동·조건부 이동·Cross Link</text>
+
+  <!-- primary home fan-out -->
+  <path class="primary" d="M960 244 V286 H255 V342"/>
+  <path class="core" d="M960 286 H710 V342"/>
+  <path class="primary" d="M960 286 H1185 V342"/>
+  <path class="primary" d="M960 286 H1655 V342"/>
+
+  <!-- children -->
+  <path class="primary" d="M255 438 V520"/>
+  <path class="core" d="M710 438 V520"/>
+  <path class="primary" d="M1185 438 V480 H1000 V520"/>
+  <path class="primary" d="M1185 480 H1265 V520"/>
+  <path class="primary" d="M1185 480 H1530 V520"/>
+  <path class="core" d="M710 616 V680 H600 V720"/>
+  <path class="conditional" d="M710 680 H820 V720"/>
+
+  <!-- cross links -->
+  <path class="cross" d="M430 568 H500 V390 H535"/>
+  <text x="446" y="548" class="small">Digital 적합 시</text>
+  <path class="conditional" d="M700 768 H820"/>
+  <text x="718" y="753" class="small">상기 필요 시</text>
+  <path class="cross" d="M930 390 H970 V840 H1510 V616"/>
+  <text x="990" y="862" class="small">제공 범위·조건 확인</text>
+  <path class="cross" d="M1655 438 V890 H255 V438"/>
+  <text x="1420" y="910" class="small">브랜드 원칙 → 기록 방식 비교</text>
+
+  <!-- home -->
+  <g filter="url(#shadow)"><rect x="760" y="150" width="400" height="94" rx="20" fill="#172B4D"/>
+    <text x="790" y="183" class="id" fill="#A9C7FF">PAGE-001 · HOME</text><text x="790" y="218" class="name" fill="#FFFFFF">시작 화면</text></g>
+
+  <!-- 1 depth -->
+  <g filter="url(#shadow)"><rect x="85" y="342" width="340" height="96" rx="18" fill="#FFFFFF" stroke="#7A6FD0" stroke-width="3"/>
+    <text x="112" y="374" class="id" fill="#5D50B7">PAGE-002 · 1DEPTH</text><text x="112" y="409" class="name">기록 방식</text></g>
+  <g filter="url(#shadow)"><rect x="535" y="342" width="350" height="96" rx="18" fill="#EAF2FF" stroke="#4C7FE5" stroke-width="3"/>
+    <text x="562" y="374" class="id" fill="#3565C5">PAGE-004 · 1DEPTH</text><text x="562" y="409" class="name">디지털 기록</text></g>
+  <g filter="url(#shadow)"><rect x="1010" y="342" width="350" height="96" rx="18" fill="#EEF8F2" stroke="#55A679" stroke-width="3"/>
+    <text x="1037" y="374" class="id" fill="#28754B">PAGE-008 · 1DEPTH</text><text x="1037" y="409" class="name">기록 가이드</text></g>
+  <g filter="url(#shadow)"><rect x="1480" y="342" width="350" height="96" rx="18" fill="#F0EDFF" stroke="#7A6FD0" stroke-width="3"/>
+    <text x="1507" y="374" class="id" fill="#5D50B7">PAGE-012 · 1DEPTH</text><text x="1507" y="409" class="name">브랜드 소개</text></g>
+
+  <!-- 2 depth -->
+  <g filter="url(#shadow)"><rect x="80" y="520" width="350" height="96" rx="18" fill="#FFFFFF" stroke="#A69EE8" stroke-width="2"/>
+    <text x="107" y="552" class="id" fill="#5D50B7">PAGE-003 · 2DEPTH</text><text x="107" y="587" class="name">기록 스타일 찾기</text></g>
+  <g filter="url(#shadow)"><rect x="535" y="520" width="350" height="96" rx="18" fill="#EAF2FF" stroke="#4C7FE5" stroke-width="3"/>
+    <text x="562" y="552" class="id" fill="#3565C5">PAGE-005 · 2DEPTH</text><text x="562" y="587" class="name">일정 관리</text></g>
+  <g filter="url(#shadow)"><rect x="890" y="520" width="220" height="96" rx="18" fill="#EEF8F2" stroke="#8BC4A3" stroke-width="2"/>
+    <text x="915" y="552" class="id" fill="#28754B">PAGE-009</text><text x="915" y="587" class="name">디지털 기록 시작</text></g>
+  <g filter="url(#shadow)"><rect x="1145" y="520" width="240" height="96" rx="18" fill="#EEF8F2" stroke="#8BC4A3" stroke-width="2"/>
+    <text x="1170" y="552" class="id" fill="#28754B">PAGE-010</text><text x="1170" y="587" class="name">선택·비교 가이드</text></g>
+  <g filter="url(#shadow)"><rect x="1410" y="520" width="240" height="96" rx="18" fill="#EEF8F2" stroke="#8BC4A3" stroke-width="2"/>
+    <text x="1435" y="552" class="id" fill="#28754B">PAGE-011</text><text x="1435" y="587" class="name">도움말·제공 범위</text></g>
+
+  <!-- 3 depth -->
+  <g filter="url(#shadow)"><rect x="460" y="720" width="240" height="96" rx="18" fill="#FFFFFF" stroke="#4C7FE5" stroke-width="3"/>
+    <text x="487" y="752" class="id" fill="#3565C5">PAGE-006 · 3DEPTH</text><text x="487" y="787" class="name">시간 흐름</text></g>
+  <g filter="url(#shadow)"><rect x="820" y="720" width="280" height="96" rx="18" fill="#FFF9EB" stroke="#E6A23C" stroke-width="3" stroke-dasharray="8 6"/>
+    <text x="847" y="752" class="id" fill="#B76E00">PAGE-007 · CONDITIONAL</text><text x="847" y="787" class="name">중요 일정 상기</text></g>
+
+  <!-- legend -->
+  <rect x="80" y="958" width="1760" height="78" rx="18" fill="#FFFFFF" stroke="#D0D5DD"/>
+  <line x1="110" y1="997" x2="165" y2="997" class="core"/><text x="180" y="1002" class="legend">핵심 이동</text>
+  <line x1="320" y1="997" x2="375" y2="997" class="primary"/><text x="390" y="1002" class="legend">계층 이동</text>
+  <line x1="520" y1="997" x2="575" y2="997" class="cross"/><text x="590" y="1002" class="legend">Cross Link</text>
+  <line x1="735" y1="997" x2="790" y2="997" class="conditional"/><text x="805" y="1002" class="legend">조건부 이동</text>
+  <text x="1810" y="1002" class="small" text-anchor="end">USER_REVIEW_PENDING</text>
+</svg>

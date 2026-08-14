@@ -1,0 +1,100 @@
+- generic [active] [ref=f135e1]:
+  - generic:
+    - generic:
+      - link "주요 콘텐츠로 이동" [ref=f135e2] [cursor=pointer]
+      - link "접근성 도움말" [ref=f135e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=ko
+  - generic [ref=f135e8]:
+    - search [ref=f135e9]:
+      - generic [ref=f135e12]:
+        - link [ref=f135e13] [cursor=pointer]:
+          - /url: https://www.google.com/webhp?hl=ko&ictx=0&sa=X&ved=0ahUKEwiYieih45qWAxWxs1YBHfVPDRwQpYkNCAo
+          - img "Google 홈으로 이동" [ref=f135e14]
+        - generic [ref=f135e19]:
+          - combobox "검색" [ref=f135e22]: site:pinterest.com/pin "monoline logo mark" "black and white" butterfly OR botanical OR organic site:pinterest.com/pin "monoline logo mark" "black and white" butterfly OR botanical OR organic
+          - generic [ref=f135e23]:
+            - button "지우기" [ref=f135e25] [cursor=pointer]
+            - generic [ref=f135e30]:
+              - button "입력 도구" [ref=f135e31] [cursor=pointer]
+              - button "음성 검색" [ref=f135e35] [cursor=pointer]
+              - button "이미지로 검색" [ref=f135e38] [cursor=pointer]
+        - button "검색" [ref=f135e41] [cursor=pointer]
+    - generic [ref=f135e46]:
+      - button "설정" [ref=f135e48] [cursor=pointer]
+      - button "공유" [ref=f135e54] [cursor=pointer]
+      - generic [ref=f135e60]:
+        - button "Google 앱" [ref=f135e62] [cursor=pointer]
+        - link "로그인" [ref=f135e67] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=ko&passive=true&continue=https://www.google.com/search%3Fq%3Dsite:pinterest.com/pin%2B%2522monoline%2Blogo%2Bmark%2522%2B%2522black%2Band%2Bwhite%2522%2Bbutterfly%2BOR%2Bbotanical%2BOR%2Borganic&ec=futura_srp_og_si_72236_p
+  - generic [ref=f135e69]:
+    - navigation [ref=f135e75]:
+      - generic [ref=f135e81]:
+        - list [ref=f135e82]:
+          - listitem [ref=f135e83]:
+            - link "AI 모드" [ref=f135e86] [cursor=pointer]:
+              - /url: /search?q=site:pinterest.com/pin+%22monoline+logo+mark%22+%22black+and+white%22+butterfly+OR+botanical+OR+organic&sca_esv=1a87055de532744c&udm=50&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA7x3ZDrzG9CGSPZ4zI2S4lLj6BitkpM31E1HosXg1VqDabVtm4jDvfM69t6TNf6ZGl8BH-JEMWzNLONESz1h82nnZBIQ4zQvp5Sw4B_a2K4YW0s8L7c5IGu7mZlpGjDLswwXPecJXPYH1PKGMwjwgX0Y-mdlOrhRxtX9f2Bi9xc04gari0Q&aep=1&ntc=1&cs=0&sa=X&ved=2ahUKEwiYieih45qWAxWxs1YBHfVPDRwQ2J8OegQIEBAD
+          - listitem [ref=f135e90]:
+            - link "전체" [disabled] [ref=f135e91]
+          - listitem [ref=f135e94]:
+            - link "이미지" [ref=f135e95] [cursor=pointer]:
+              - /url: /search?sca_esv=1a87055de532744c&udm=2&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA7x3ZDrzG9CGSPZ4zI2S4lLj6BitkpM31E1HosXg1VqDabVtm4jDvfM69t6TNf6ZGl8BH-JEMWzNLONESz1h82nnZBIQ4zQvp5Sw4B_a2K4YW0s8L7c5IGu7mZlpGjDLswwXPecJXPYH1PKGMwjwgX0Y-mdlOrhRxtX9f2Bi9xc04gari0Q&q=site:pinterest.com/pin+%22monoline+logo+mark%22+%22black+and+white%22+butterfly+OR+botanical+OR+organic&sa=X&ved=2ahUKEwiYieih45qWAxWxs1YBHfVPDRwQtKgLegQIFBAB
+          - listitem [ref=f135e98]:
+            - link "동영상" [ref=f135e99] [cursor=pointer]:
+              - /url: /search?sca_esv=1a87055de532744c&udm=7&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA7x3ZDrzG9CGSPZ4zI2S4lLj6BitkpM31E1HosXg1VqDabVtm4jDvfM69t6TNf6ZGl8BH-JEMWzNLONESz1h82nnZBIQ4zQvp5Sw4B_a2K4YW0s8L7c5IGu7mZlpGjDLswwXPecJXPYH1PKGMwjwgX0Y-mdlOrhRxtX9f2Bi9xc04gari0Q&q=site:pinterest.com/pin+%22monoline+logo+mark%22+%22black+and+white%22+butterfly+OR+botanical+OR+organic&sa=X&ved=2ahUKEwiYieih45qWAxWxs1YBHfVPDRwQtKgLegQIExAB
+          - listitem [ref=f135e102]:
+            - link "쇼핑" [ref=f135e103] [cursor=pointer]:
+              - /url: /search?sca_esv=1a87055de532744c&udm=28&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA7x3ZDrzG9CGSPZ4zI2S4lLj6BitkpM31E1HosXg1VqDabVtm4jDvfM69t6TNf6ZGl8BH-JEMWzNLONESz1h82nnZBIQ4zQvp5Sw4B_a2K4YW0s8L7c5IGu7mZlpGjDLswwXPecJXPYH1PKGMwjwgX0Y-mdlOrhRxtX9f2Bi9xc04gari0Q&q=site:pinterest.com/pin+%22monoline+logo+mark%22+%22black+and+white%22+butterfly+OR+botanical+OR+organic&ved=1t:220175&ictx=111
+          - listitem [ref=f135e106]:
+            - link "짧은 동영상" [ref=f135e107] [cursor=pointer]:
+              - /url: /search?sca_esv=1a87055de532744c&udm=39&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA7x3ZDrzG9CGSPZ4zI2S4lLj6BitkpM31E1HosXg1VqDabVtm4jDvfM69t6TNf6ZGl8BH-JEMWzNLONESz1h82nnZBIQ4zQvp5Sw4B_a2K4YW0s8L7c5IGu7mZlpGjDLswwXPecJXPYH1PKGMwjwgX0Y-mdlOrhRxtX9f2Bi9xc04gari0Q&q=site:pinterest.com/pin+%22monoline+logo+mark%22+%22black+and+white%22+butterfly+OR+botanical+OR+organic&sa=X&ved=2ahUKEwiYieih45qWAxWxs1YBHfVPDRwQs6gLegQIEhAB
+          - listitem [ref=f135e110]:
+            - link "뉴스" [ref=f135e111] [cursor=pointer]:
+              - /url: /search?sca_esv=1a87055de532744c&q=site:pinterest.com/pin+%22monoline+logo+mark%22+%22black+and+white%22+butterfly+OR+botanical+OR+organic&tbm=nws&source=lnms&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA7x3ZDrzG9CGSPZ4zI2S4lLj6BitkpM31E1HosXg1VqDabVtm4jDvfM69t6TNf6ZGl8BH-JEMWzNLONESz1h82nnZBIQ4zQvp5Sw4B_a2K4YW0s8L7c5IGu7mZlpGjDLswwXPecJXPYH1PKGMwjwgX0Y-mdlOrhRxtX9f2Bi9xc04gari0Q&sa=X&ved=2ahUKEwiYieih45qWAxWxs1YBHfVPDRwQ0pQJegQIFRAB
+          - listitem [ref=f135e114]:
+            - button [ref=f135e115] [cursor=pointer]:
+              - generic "필터 더보기" [ref=f135e116]: 더보기
+        - button "도구" [ref=f135e123] [cursor=pointer]
+    - heading "검색결과" [level=1] [ref=f135e130]
+    - main [ref=f135e136]:
+      - generic [ref=f135e143]:
+        - heading "Web results" [level=2] [ref=f135e144]
+        - generic [ref=f135e145]:
+          - generic [ref=f135e148]:
+            - link "Modern, High-Quality Branding for Wellness Business ... Pinterest · patetefelix 1년 전" [ref=f135e150] [cursor=pointer]:
+              - /url: https://es.pinterest.com/pin/520447300709627876/
+              - heading "Modern, High-Quality Branding for Wellness Business ..." [level=3] [ref=f135e151]
+              - generic [ref=f135e157]:
+                - generic [ref=f135e158]: Pinterest · patetefelix
+                - generic [ref=f135e160]: 1년 전
+            - button "검색결과에 관한 정보" [ref=f135e164] [cursor=pointer]
+          - generic [ref=f135e171]:
+            - emphasis [ref=f135e172]: Monoline logo mark
+            - text: icon design. Minimal simple brand submark. Line ... Both combined with a tan,
+            - emphasis [ref=f135e173]: black and white
+            - text: allotted for a super neutral ...
+      - generic:
+        - generic:
+          - navigation
+      - navigation
+    - contentinfo [ref=f135e174]:
+      - heading "바닥글 링크" [level=1] [ref=f135e175]
+      - generic [ref=f135e179]:
+        - generic [ref=f135e181]:
+          - text: 대한민국
+          - generic [ref=f135e183]:
+            - button "월평동 대전광역시 서구 - 이전 활동 기준" [ref=f135e185] [cursor=pointer]:
+              - generic [ref=f135e186]: 월평동 대전광역시 서구
+              - generic [ref=f135e188]:
+                - text: "-"
+                - generic [ref=f135e189]: 이전 활동 기준
+            - text: "-"
+            - button "위치 업데이트" [ref=f135e191] [cursor=pointer]
+        - generic [ref=f135e194]:
+          - link "도움말" [ref=f135e195] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=ko&fg=1
+          - link "의견 보내기" [ref=f135e196] [cursor=pointer]:
+            - /url: "#"
+          - link "개인정보처리방침" [ref=f135e197] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=ko&fg=1
+          - link "약관" [ref=f135e198] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=ko&fg=1

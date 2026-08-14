@@ -1,0 +1,191 @@
+- generic [ref=f59e4]:
+  - banner:
+    - link "콘텐츠로 건너뛰기":
+      - /url: "#"
+    - generic [ref=f59e15]:
+      - generic [ref=f59e17]:
+        - generic [ref=f59e18]:
+          - combobox "검색" [ref=f59e20]: secret garden arch logo emblem line art
+          - generic [ref=f59e21]:
+            - button "검색 입력 삭제" [ref=f59e24] [cursor=pointer]
+            - generic "이미지 업로드" [ref=f59e30]:
+              - button "Pinterest 렌즈" [ref=f59e31] [cursor=pointer]
+        - button "모든 핀 드롭다운" [ref=f59e38] [cursor=pointer]:
+          - generic [ref=f59e40]:
+            - generic [ref=f59e41]: 모든 핀
+            - img "드롭다운" [ref=f59e43]
+      - link "내 프로필" [ref=f59e49] [cursor=pointer]:
+        - /url: /victoryjhl/
+        - img [ref=f59e56]:
+          - generic [ref=f59e57]: 이
+      - button "계정" [ref=f59e61] [cursor=pointer]
+  - navigation [ref=f59e66]:
+    - generic [ref=f59e68]:
+      - generic [ref=f59e69]:
+        - generic "홈" [ref=f59e73]:
+          - link "홈" [ref=f59e74] [cursor=pointer]:
+            - /url: /
+        - generic "홈" [ref=f59e81]:
+          - link "홈" [ref=f59e82] [cursor=pointer]:
+            - /url: /
+        - generic "내 보드" [ref=f59e89]:
+          - link "내 보드" [ref=f59e90] [cursor=pointer]:
+            - /url: /victoryjhl/
+        - generic "만들기" [ref=f59e97]:
+          - button "만들기" [ref=f59e98] [cursor=pointer]
+        - generic "업데이트" [ref=f59e107]:
+          - button "업데이트" [ref=f59e108] [cursor=pointer]
+        - generic "메시지" [ref=f59e117]:
+          - button "메시지" [ref=f59e118] [cursor=pointer]
+      - generic "설정 및 지원" [ref=f59e126]:
+        - button "설정 및 지원" [ref=f59e127] [cursor=pointer]
+  - generic:
+    - complementary "꼬리말 부동 버튼"
+  - main [ref=f59e132]:
+    - generic [ref=f59e134]:
+      - heading "검색 결과 페이지" [level=1] [ref=f59e136]
+      - region "필터 및 세분화 검색" [ref=f59e140]:
+        - button "필터 표시" [ref=f59e149] [cursor=pointer]
+      - generic [ref=f59e160]:
+        - generic [ref=f59e161]: secret garden arch logo emblem line art 검색 결과를 추가로 불러오는 중
+        - list [ref=f59e166]:
+          - listitem [ref=f59e167]:
+            - button [ref=f59e169] [cursor=pointer]:
+              - group "핀 카드" [ref=f59e171]:
+                - generic [ref=f59e173]:
+                  - link "제목 없음 핀 페이지" [ref=f59e175]:
+                    - /url: /pin/86764730317214687/
+                    - img "포함된 이미지:" [ref=f59e185]
+                  - generic "추가 작업" [ref=f59e194]:
+                    - button "추가 작업" [ref=f59e195]
+          - listitem [ref=f59e200]:
+            - button [ref=f59e202] [cursor=pointer]:
+              - group "핀 카드" [ref=f59e204]:
+                - generic [ref=f59e206]:
+                  - link "Florist Logo Design Ideas | Mysterious Brand | Laia Branding 핀 페이지" [ref=f59e208]:
+                    - /url: /pin/30047522509931801/
+                    - 'img "포함된 내용: Mysterious and ethereal florist logo featuring subtle gradients and elegant floral icons, ideal for upscale, artistic flower shops seeking a magical and refined brand identity." [ref=f59e218]'
+                  - generic [ref=f59e223]:
+                    - heading [level=2] [ref=f59e229]:
+                      - link "Florist Logo Design Ideas | Mysterious Brand | Laia Branding 핀 페이지" [ref=f59e231]:
+                        - /url: /pin/30047522509931801/
+                        - text: Florist Logo Design Ideas | Mysterious Brand | Laia Branding
+                    - generic "추가 작업" [ref=f59e234]:
+                      - button "추가 작업" [ref=f59e235]
+          - listitem [ref=f59e240]:
+            - button [ref=f59e242] [cursor=pointer]:
+              - group "핀 카드" [ref=f59e244]:
+                - generic [ref=f59e246]:
+                  - link "demure elegant sophisticated modern creative classy chic magical flower shop branding logo design 핀 페이지" [ref=f59e248]:
+                    - /url: /pin/32580797303908867/
+                    - 'img "포함된 이미지: demure elegant sophisticated modern creative classy chic magical flower shop branding logo design" [ref=f59e258]'
+                  - generic [ref=f59e263]:
+                    - heading [level=2] [ref=f59e269]:
+                      - link "demure elegant sophisticated modern creative classy chic magical flower shop branding logo design 핀 페이지" [ref=f59e271]:
+                        - /url: /pin/32580797303908867/
+                        - text: demure elegant sophisticated modern creative classy chic magical flower shop branding logo design
+                    - generic "추가 작업" [ref=f59e274]:
+                      - button "추가 작업" [ref=f59e275]
+          - listitem [ref=f59e280]:
+            - button [ref=f59e282] [cursor=pointer]:
+              - group "핀 카드" [ref=f59e284]:
+                - generic [ref=f59e286]:
+                  - 'link "Secret Garden Wedding Venue: Elegant Gazebo Logo Design @onegiraphe 핀 페이지" [ref=f59e288]':
+                    - /url: /pin/156007574589060532/
+                    - 'img "포함된 이미지: Secret Garden Wedding Venue: Elegant Gazebo Logo Design @onegiraphe" [ref=f59e298]'
+                  - generic [ref=f59e303]:
+                    - heading [level=2] [ref=f59e309]:
+                      - 'link "Secret Garden Wedding Venue: Elegant Gazebo Logo Design @onegiraphe 핀 페이지" [ref=f59e311]':
+                        - /url: /pin/156007574589060532/
+                        - text: "Secret Garden Wedding Venue: Elegant Gazebo Logo Design @onegiraphe"
+                    - generic "추가 작업" [ref=f59e314]:
+                      - button "추가 작업" [ref=f59e315]
+          - listitem [ref=f59e320]:
+            - button [ref=f59e322] [cursor=pointer]:
+              - group "핀 카드" [ref=f59e324]:
+                - generic [ref=f59e326]:
+                  - link "﹫ adelaidethemed 🐭 ꯭ ⊹ secret garden 핀 페이지" [ref=f59e328]:
+                    - /url: /pin/430656783145043206/
+                    - img "포함된 이미지:" [ref=f59e338]
+                  - generic "추가 작업" [ref=f59e347]:
+                    - button "추가 작업" [ref=f59e348]
+          - listitem [ref=f59e353]:
+            - button [ref=f59e355] [cursor=pointer]:
+              - group "핀 카드" [ref=f59e357]:
+                - generic [ref=f59e359]:
+                  - link "Rococco Victorian Floral Line Art by Grace Noboa Illustrations | Creative Market 핀 페이지" [ref=f59e361]:
+                    - /url: /pin/AZ3nHoYHTo-bO0HNBsn3OfG0DumOwz0e53S421FL_NVuri0J2FfnyYPyYfuB98LxG-bL2-VxwnjtLZ5BdS3tpPk/
+                    - 'img "포함된 이미지: Rococco Victorian Floral Line Art by Grace Noboa Illustrations | Creative Market" [ref=f59e371]'
+                  - generic [ref=f59e376]:
+                    - generic [ref=f59e377]:
+                      - heading [level=2] [ref=f59e382]:
+                        - link "Rococco Victorian Floral Line Art by Grace Noboa Illustrations | Creative Market 핀 페이지" [ref=f59e384]:
+                          - /url: /pin/AZ3nHoYHTo-bO0HNBsn3OfG0DumOwz0e53S421FL_NVuri0J2FfnyYPyYfuB98LxG-bL2-VxwnjtLZ5BdS3tpPk/
+                          - text: Rococco Victorian Floral Line Art by Grace Noboa Illustrations | Creative Market
+                      - link "Creative Market" [ref=f59e387]:
+                        - /url: /creativemarket/
+                        - generic "Creative Market" [ref=f59e394]
+                    - generic "추가 작업" [ref=f59e397]:
+                      - button "추가 작업" [ref=f59e398]
+          - listitem [ref=f59e403]:
+            - button [ref=f59e405] [cursor=pointer]:
+              - group "핀 카드" [ref=f59e407]:
+                - generic [ref=f59e409]:
+                  - link "The Secret Garden 🗝️ - Logo 핀 페이지" [ref=f59e411]:
+                    - /url: /pin/1829656095527339/
+                    - 'img "포함된 이미지: The Secret Garden 🗝️ - Logo" [ref=f59e421]'
+                  - generic [ref=f59e426]:
+                    - heading [level=2] [ref=f59e432]:
+                      - link "The Secret Garden 🗝️ - Logo 핀 페이지" [ref=f59e434]:
+                        - /url: /pin/1829656095527339/
+                        - text: The Secret Garden 🗝️ - Logo
+                    - generic "추가 작업" [ref=f59e437]:
+                      - button "추가 작업" [ref=f59e438]
+          - listitem [ref=f59e443]:
+            - button [ref=f59e445] [cursor=pointer]:
+              - group "핀 카드" [ref=f59e447]:
+                - generic [ref=f59e449]:
+                  - link "Create a Logo That Attracts the Right Audience 핀 페이지" [ref=f59e451]:
+                    - /url: /pin/1003458360731671083/
+                    - 'img "포함된 이미지: Create a Logo That Attracts the Right Audience" [ref=f59e461]'
+                  - generic [ref=f59e466]:
+                    - heading [level=2] [ref=f59e472]:
+                      - link "Create a Logo That Attracts the Right Audience 핀 페이지" [ref=f59e474]:
+                        - /url: /pin/1003458360731671083/
+                        - text: Create a Logo That Attracts the Right Audience
+                    - generic "추가 작업" [ref=f59e477]:
+                      - button "추가 작업" [ref=f59e478]
+          - listitem [ref=f59e483]:
+            - button [ref=f59e485] [cursor=pointer]:
+              - group "핀 카드" [ref=f59e487]:
+                - generic [ref=f59e489]:
+                  - link "Make Logos, Business Cards, Social Designs and More | BrandCrowd 핀 페이지" [ref=f59e491]:
+                    - /url: /pin/1266706138656178/
+                    - 'img "포함된 이미지: Make Logos, Business Cards, Social Designs and More | BrandCrowd" [ref=f59e501]'
+                  - generic [ref=f59e506]:
+                    - heading [level=2] [ref=f59e512]:
+                      - link "Make Logos, Business Cards, Social Designs and More | BrandCrowd 핀 페이지" [ref=f59e514]:
+                        - /url: /pin/1266706138656178/
+                        - text: Make Logos, Business Cards, Social Designs and More | BrandCrowd
+                    - generic "추가 작업" [ref=f59e517]:
+                      - button "추가 작업" [ref=f59e518]
+          - listitem [ref=f59e523]:
+            - button [ref=f59e525] [cursor=pointer]:
+              - group "핀 카드" [ref=f59e527]:
+                - generic [ref=f59e529]:
+                  - link "제목 없음 핀 페이지" [ref=f59e531]:
+                    - /url: /pin/844493676373158/
+                    - img "포함된 이미지:" [ref=f59e541]
+                  - generic "추가 작업" [ref=f59e550]:
+                    - button "추가 작업" [ref=f59e551]
+          - listitem [ref=f59e556]:
+            - button [ref=f59e558] [cursor=pointer]:
+              - group "핀 카드" [ref=f59e560]:
+                - generic [ref=f59e562]:
+                  - link "제목 없음 핀 페이지" [ref=f59e564]:
+                    - /url: /pin/4292562140581802/
+                    - img "포함된 이미지:" [ref=f59e574]
+                  - generic "추가 작업" [ref=f59e583]:
+                    - button "추가 작업" [ref=f59e584]
+  - generic:
+    - contentinfo "꼬리말"

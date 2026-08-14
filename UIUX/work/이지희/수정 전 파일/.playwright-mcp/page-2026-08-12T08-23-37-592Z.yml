@@ -1,0 +1,234 @@
+- generic [ref=f278e4]:
+  - banner:
+    - link "콘텐츠로 건너뛰기":
+      - /url: "#"
+    - generic [ref=f278e15]:
+      - generic [ref=f278e17]:
+        - generic [ref=f278e18]:
+          - combobox "검색" [ref=f278e20]: minimalist monoline butterfly emblem logo black white
+          - generic [ref=f278e21]:
+            - button "검색 입력 삭제" [ref=f278e24] [cursor=pointer]
+            - generic "이미지 업로드" [ref=f278e30]:
+              - button "Pinterest 렌즈" [ref=f278e31] [cursor=pointer]
+        - button "모든 핀 드롭다운" [ref=f278e38] [cursor=pointer]:
+          - generic [ref=f278e40]:
+            - generic [ref=f278e41]: 모든 핀
+            - img "드롭다운" [ref=f278e43]
+      - link "내 프로필" [ref=f278e49] [cursor=pointer]:
+        - /url: /victoryjhl/
+        - img [ref=f278e56]:
+          - generic [ref=f278e57]: 이
+      - button "계정" [ref=f278e61] [cursor=pointer]
+  - navigation [ref=f278e66]:
+    - generic [ref=f278e68]:
+      - generic [ref=f278e69]:
+        - generic "홈" [ref=f278e73]:
+          - link "홈" [ref=f278e74] [cursor=pointer]:
+            - /url: /
+        - generic "홈" [ref=f278e81]:
+          - link "홈" [ref=f278e82] [cursor=pointer]:
+            - /url: /
+        - generic "내 보드" [ref=f278e89]:
+          - link "내 보드" [ref=f278e90] [cursor=pointer]:
+            - /url: /victoryjhl/
+        - generic "만들기" [ref=f278e97]:
+          - button "만들기" [ref=f278e98] [cursor=pointer]
+        - generic "업데이트" [ref=f278e107]:
+          - button "업데이트" [ref=f278e108] [cursor=pointer]
+        - generic "메시지" [ref=f278e117]:
+          - button "메시지" [ref=f278e118] [cursor=pointer]
+      - generic "설정 및 지원" [ref=f278e126]:
+        - button "설정 및 지원" [ref=f278e127] [cursor=pointer]
+  - main [ref=f278e132]:
+    - generic [ref=f278e134]:
+      - heading "검색 결과 페이지" [level=1] [ref=f278e136]
+      - region "필터 및 세분화 검색" [ref=f278e140]:
+        - button "필터 표시" [ref=f278e149] [cursor=pointer]
+      - generic [ref=f278e160]:
+        - generic [ref=f278e161]: minimalist monoline butterfly emblem logo black white 검색 결과를 추가로 불러오는 중
+        - list [ref=f278e166]:
+          - listitem [ref=f278e167]:
+            - button [ref=f278e169] [cursor=pointer]:
+              - group "핀 카드" [ref=f278e171]:
+                - generic [ref=f278e173]:
+                  - link "Icons | Are.na 핀 페이지" [ref=f278e175]:
+                    - /url: /pin/70439181669197694/
+                    - 'img "포함된 이미지: Icons | Are.na" [ref=f278e185]'
+                  - generic [ref=f278e190]:
+                    - heading [level=2] [ref=f278e196]:
+                      - link "Icons | Are.na 핀 페이지" [ref=f278e198]:
+                        - /url: /pin/70439181669197694/
+                        - text: Icons | Are.na
+                    - generic "추가 작업" [ref=f278e201]:
+                      - button "추가 작업" [ref=f278e202]
+          - listitem [ref=f278e207]:
+            - button [ref=f278e209] [cursor=pointer]:
+              - group "핀 카드" [ref=f278e211]:
+                - generic [ref=f278e213]:
+                  - link "Custom Logo Design 핀 페이지" [ref=f278e215]:
+                    - /url: /pin/30680841209207617/
+                    - 'img "포함된 이미지: Custom Logo Design" [ref=f278e225]'
+                  - generic [ref=f278e230]:
+                    - heading [level=2] [ref=f278e236]:
+                      - link "Custom Logo Design 핀 페이지" [ref=f278e238]:
+                        - /url: /pin/30680841209207617/
+                        - text: Custom Logo Design
+                    - generic "추가 작업" [ref=f278e241]:
+                      - button "추가 작업" [ref=f278e242]
+          - listitem [ref=f278e247]:
+            - button [ref=f278e249] [cursor=pointer]:
+              - group "핀 카드" [ref=f278e251]:
+                - generic [ref=f278e253]:
+                  - link "Modern Abstract Butterfly Logo 핀 페이지" [ref=f278e255]:
+                    - /url: /pin/4597682768356615552/
+                    - 'img "포함된 이미지: Modern Abstract Butterfly Logo" [ref=f278e265]'
+                  - generic [ref=f278e270]:
+                    - generic [ref=f278e272]:
+                      - generic [ref=f278e274]:
+                        - img "쇼핑 가능한 핀 표시기" [ref=f278e276]
+                        - heading [level=2] [ref=f278e279]:
+                          - link "Modern Abstract Butterfly Logo 핀 페이지" [ref=f278e281]:
+                            - /url: /pin/4597682768356615552/
+                            - text: Modern Abstract Butterfly Logo
+                      - link "Modern Abstract Butterfly Logo 핀 페이지" [ref=f278e283]:
+                        - /url: /pin/4597682768356615552/
+                        - generic "Scalebranding" [ref=f278e287]
+                    - generic "추가 작업" [ref=f278e290]:
+                      - button "추가 작업" [ref=f278e291]
+          - listitem [ref=f278e296]:
+            - button [ref=f278e298] [cursor=pointer]:
+              - group "핀 카드" [ref=f278e300]:
+                - generic [ref=f278e302]:
+                  - link "butterfly outline minimal - Google Search 핀 페이지" [ref=f278e304]:
+                    - /url: /pin/10555380371666113/
+                    - img "포함된 이미지:" [ref=f278e314]
+                  - generic "추가 작업" [ref=f278e323]:
+                    - button "추가 작업" [ref=f278e324]
+          - listitem [ref=f278e329]:
+            - button [ref=f278e331] [cursor=pointer]:
+              - group "핀 카드" [ref=f278e333]:
+                - generic [ref=f278e335]:
+                  - link "Stylish Premade Butterfly Logo, Minimal Clean Design, Instant Branding, Digital Download, Modern Branding, Minimal Clean Lineart, Unique - Etsy 핀 페이지" [ref=f278e337]:
+                    - /url: /pin/3307399722289059/
+                    - 'img "포함된 이미지: Stylish Premade Butterfly Logo, Minimal Clean Design, Instant Branding, Digital Download, Modern Branding, Minimal Clean Lineart, Unique - Etsy" [ref=f278e347]'
+                  - generic [ref=f278e352]:
+                    - generic [ref=f278e353]:
+                      - heading [level=2] [ref=f278e358]:
+                        - link "Stylish Premade Butterfly Logo, Minimal Clean Design, Instant Branding, Digital Download, Modern Branding, Minimal Clean Lineart, Unique - Etsy 핀 페이지" [ref=f278e360]:
+                          - /url: /pin/3307399722289059/
+                          - text: Stylish Premade Butterfly Logo, Minimal Clean Design, Instant Branding, Digital Download, Modern Branding, Minimal Clean Lineart, Unique - Etsy
+                      - link "Etsy" [ref=f278e363]:
+                        - /url: /etsy/
+                        - generic "Etsy" [ref=f278e370]
+                    - generic "추가 작업" [ref=f278e373]:
+                      - button "추가 작업" [ref=f278e374]
+          - listitem [ref=f278e379]:
+            - button [ref=f278e381] [cursor=pointer]:
+              - group "핀 카드" [ref=f278e383]:
+                - generic [ref=f278e385]:
+                  - link "제목 없음 핀 페이지" [ref=f278e387]:
+                    - /url: /pin/422775483782769799/
+                    - img "포함된 이미지:" [ref=f278e397]
+                  - generic "추가 작업" [ref=f278e406]:
+                    - button "추가 작업" [ref=f278e407]
+          - listitem [ref=f278e412]:
+            - button [ref=f278e414] [cursor=pointer]:
+              - group "핀 카드" [ref=f278e416]:
+                - generic [ref=f278e418]:
+                  - link "제목 없음 핀 페이지" [ref=f278e420]:
+                    - /url: /pin/186055028351197709/
+                    - img "포함된 이미지:" [ref=f278e430]
+                  - generic "추가 작업" [ref=f278e439]:
+                    - button "추가 작업" [ref=f278e440]
+          - listitem [ref=f278e445]:
+            - button [ref=f278e447] [cursor=pointer]:
+              - group "핀 카드" [ref=f278e449]:
+                - generic [ref=f278e451]:
+                  - link "Creative Butterfly and star logo 핀 페이지" [ref=f278e453]:
+                    - /url: /pin/595390013275291555/
+                    - 'img "포함된 이미지: Creative Butterfly and star logo" [ref=f278e463]'
+                  - generic [ref=f278e468]:
+                    - generic [ref=f278e469]:
+                      - heading [level=2] [ref=f278e474]:
+                        - link "Creative Butterfly and star logo 핀 페이지" [ref=f278e476]:
+                          - /url: /pin/595390013275291555/
+                          - text: Creative Butterfly and star logo
+                      - link "Scalebranding" [ref=f278e479]:
+                        - /url: /scalebrandingstore/
+                        - generic "Scalebranding" [ref=f278e486]
+                    - generic "추가 작업" [ref=f278e489]:
+                      - button "추가 작업" [ref=f278e490]
+          - listitem [ref=f278e495]:
+            - button [ref=f278e497] [cursor=pointer]:
+              - group "핀 카드" [ref=f278e499]:
+                - generic [ref=f278e501]:
+                  - link "Infinity Butterfly Logo 핀 페이지" [ref=f278e503]:
+                    - /url: /pin/4605704790601804672/
+                    - 'img "포함된 이미지: Infinity Butterfly Logo" [ref=f278e513]'
+                  - generic [ref=f278e518]:
+                    - generic [ref=f278e520]:
+                      - generic [ref=f278e522]:
+                        - img "쇼핑 가능한 핀 표시기" [ref=f278e524]
+                        - heading [level=2] [ref=f278e527]:
+                          - link "Infinity Butterfly Logo 핀 페이지" [ref=f278e529]:
+                            - /url: /pin/4605704790601804672/
+                            - text: Infinity Butterfly Logo
+                      - link "Infinity Butterfly Logo 핀 페이지" [ref=f278e531]:
+                        - /url: /pin/4605704790601804672/
+                        - generic "Scalebranding" [ref=f278e535]
+                    - generic "추가 작업" [ref=f278e538]:
+                      - button "추가 작업" [ref=f278e539]
+          - listitem [ref=f278e544]:
+            - button [ref=f278e546] [cursor=pointer]:
+              - group "핀 카드" [ref=f278e548]:
+                - generic [ref=f278e550]:
+                  - link "White Butterfly Logo 핀 페이지" [ref=f278e552]:
+                    - /url: /pin/4610982429712582720/
+                    - 'img "포함된 이미지: White Butterfly Logo" [ref=f278e562]'
+                  - generic [ref=f278e567]:
+                    - generic [ref=f278e569]:
+                      - generic [ref=f278e571]:
+                        - img "쇼핑 가능한 핀 표시기" [ref=f278e573]
+                        - heading [level=2] [ref=f278e576]:
+                          - link "White Butterfly Logo 핀 페이지" [ref=f278e578]:
+                            - /url: /pin/4610982429712582720/
+                            - text: White Butterfly Logo
+                      - link "White Butterfly Logo 핀 페이지" [ref=f278e580]:
+                        - /url: /pin/4610982429712582720/
+                        - generic "Scalebranding" [ref=f278e584]
+                    - generic "추가 작업" [ref=f278e587]:
+                      - button "추가 작업" [ref=f278e588]
+          - listitem [ref=f278e593]:
+            - button [ref=f278e595] [cursor=pointer]:
+              - group "핀 카드" [ref=f278e597]:
+                - generic [ref=f278e599]:
+                  - link "Butterfly Trident Logo 핀 페이지" [ref=f278e601]:
+                    - /url: /pin/4596345759467174272/
+                    - 'img "포함된 이미지: Butterfly Trident Logo" [ref=f278e611]'
+                  - generic [ref=f278e616]:
+                    - generic [ref=f278e618]:
+                      - generic [ref=f278e620]:
+                        - img "쇼핑 가능한 핀 표시기" [ref=f278e622]
+                        - heading [level=2] [ref=f278e625]:
+                          - link "Butterfly Trident Logo 핀 페이지" [ref=f278e627]:
+                            - /url: /pin/4596345759467174272/
+                            - text: Butterfly Trident Logo
+                      - link "Butterfly Trident Logo 핀 페이지" [ref=f278e629]:
+                        - /url: /pin/4596345759467174272/
+                        - generic "Scalebranding" [ref=f278e633]
+                    - generic "추가 작업" [ref=f278e636]:
+                      - button "추가 작업" [ref=f278e637]
+          - listitem [ref=f278e642]:
+            - button [ref=f278e644] [cursor=pointer]:
+              - group "핀 카드" [ref=f278e646]:
+                - generic [ref=f278e648]:
+                  - link "Tech Butterfly Logo 핀 페이지" [ref=f278e650]:
+                    - /url: /pin/557250153915794556/
+                    - 'img "포함된 이미지: Tech Butterfly Logo" [ref=f278e660]'
+                  - generic [ref=f278e665]:
+                    - heading [level=2] [ref=f278e671]:
+                      - link "Tech Butterfly Logo 핀 페이지" [ref=f278e673]:
+                        - /url: /pin/557250153915794556/
+                        - text: Tech Butterfly Logo
+                    - generic "추가 작업" [ref=f278e676]:
+                      - button "추가 작업" [ref=f278e677]

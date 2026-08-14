@@ -1,0 +1,87 @@
+flowchart TD
+    classDef main fill:#2C2623,stroke:#1A1614,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef sub fill:#7C6853,stroke:#4A3C31,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef drawer fill:#F5EBE6,stroke:#7C6853,stroke-width:2px,color:#2C2623,font-weight:bold;
+    classDef common fill:#FAF8F5,stroke:#2C2623,stroke-width:1px,color:#2C2623;
+    classDef member fill:#FFF3E0,stroke:#E65100,stroke-width:1.5px,color:#E65100,stroke-dasharray: 5 5;
+    classDef exception fill:#FFEBEE,stroke:#C62828,stroke-width:1.5px,color:#C62828,stroke-dasharray: 3 3;
+
+    Root["WICKETA x 29SELECT Ritual Timer (가상클라이언트5 윤서연)"]
+    M1["1. Home 리추얼 메인 (PG-01)"]
+    M2["2. Brewing Timer Lab 타이머랩 (PG-02)"]
+    M3["3. Pairing Guide 페어링관 (PG-03)"]
+    M4["4. Quick Order Drawer 결제 (PG-04 Aside Layer)"]
+
+    Root --> M1
+    Root --> M2
+    Root --> M3
+    Root --> M4
+
+    M1_1["Hero Section (3분 수색 그래디언트 아트 타이머)"]
+    M1_2["Pastel Gradient Motion (3D 수색 변환 비주얼)"]
+    M1_3["29SELECT Ambient Sound (에디토리얼 ASMR 사운드)"]
+    M1_4["Ritual Fact Checklist (0kcal/무색소 비주얼 팩트 표기)"]
+
+    M1 --> M1_1
+    M1 --> M1_2
+    M1 --> M1_3
+    M1 --> M1_4
+
+    M2_1["3분 수색 그래디언트 애니메이션 캔버스 (PG-31)"]
+    M2_2["29SELECT 앰비언트 사운드 플레이어 (온/오프)"]
+
+    M2 --> M2_1
+    M2 --> M2_2
+
+    M2_1_1["180초 카운트다운 타이머 캔버스"]
+    M2_1_2["파스텔 수색 그래디언트 스위처"]
+
+    M2_1 --> M2_1_1
+    M2_1 --> M2_1_2
+
+    M2_2_1["찻잔 속 물방울 앰비언트 ASMR"]
+    M2_2_2["무음 힐링 타이머 전환 모드"]
+
+    M2_2 --> M2_2_1
+    M2_2 --> M2_2_2
+
+    M3_1["29SELECT 에디터 티 페어링 가이드 (PG-32)"]
+    M3_2["오피스 & 홈 티 리추얼 룩북 (PG-33)"]
+    M3_3["페어링 스틱 4종 1-Click 담기"]
+
+    M3 --> M3_1
+    M3 --> M3_2
+    M3 --> M3_3
+
+    M3_1_1["0kcal 감성 티 페어링 레시피"]
+    M3_2_1["에디터 3분 힐링 팁 비디오"]
+
+    M3_1 --> M3_1_1
+    M3_2 --> M3_2_1
+
+    M4_1["3초 슬라이드아웃 Quick Cart Drawer (재주문)"]
+    M4_2["Virtual Scroll 위치 보존 (탐색 스크롤 100% 복원)"]
+
+    M4 --> M4_1
+    M4 --> M4_2
+
+    MEM1["[회원 영역] 나만의 리추얼 타이머 기록 (PG-M01 마이페이지)"]
+    GUEST1["[비회원 영역] 앰비언트 sound 무료 플레이어 (가정)"]
+
+    M4 -.-> MEM1
+    M4 -.-> GUEST1
+
+    EXP1["[EXP-01] 404 Page Not Found (쇼케이스 메인 안내 - 가정)"]
+    EXP2["[EXP-02] 오디오 연동 오류 안내 (무음 타이머 전환 - 가정)"]
+    EXP3["[EXP-03] 결제 네트워크 오류 안내 (Cart Drawer 임시 저장 - 가정)"]
+
+    Root -.-> EXP1
+    M2_2 -.-> EXP2
+    M4_1 -.-> EXP3
+
+    class Root,M1 main;
+    class M2,M3 sub;
+    class M4,M4_1,M4_2 drawer;
+    class M1_1,M1_2,M1_3,M1_4,M2_1,M2_2,M2_1_1,M2_1_2,M2_2_1,M2_2_2,M3_1,M3_2,M3_3,M3_1_1,M3_2_1 common;
+    class MEM1,GUEST1 member;
+    class EXP1,EXP2,EXP3 exception;

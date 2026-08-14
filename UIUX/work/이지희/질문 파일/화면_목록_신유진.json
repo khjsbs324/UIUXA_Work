@@ -1,0 +1,77 @@
+{
+  "clientId": 2,
+  "clientName": "신유진",
+  "persona": "32세 / WICKETA R&D 믹솔로지 랩 총괄 조향사",
+  "brandPurpose": "바쁜 일상에 지친 2030 세대에게 노동 없는 3분간의 초현실주의적인 휴식(길티프리 리추얼) 공간을 제공하는 것입니다. 차를 마시는 행위 자체를 환상 공간으로 입장하는 특별한 의식으로 재해석하여, 일상과의 완벽한 단절 및 마법 같은 휴식을 선사하는 것을 목표로 합니다.",
+  "slogan": "문을 열고, 현실에서 벗어나세요 (Open the Door, Escape Reality)",
+  "worldview": "비밀정원 다과회 (WONDERSCAPE)",
+  "coreValues": [
+    "1. 감정 맞춤 추천 (Emotion Dial)",
+    "2. DIY 믹솔로지 & 블렌딩 (Mixology)",
+    "3. 노동 없는 3분의 초현실 휴식"
+  ],
+  "theme": "100% 모노크롬 3대 웹사이트 페이지 (믹솔로지 랩, 20대 레시피 도감, 조향사 스토리)",
+  "pagesCount": 3,
+  "sectionsCount": 20,
+  "updatedAt": "2026-08-14",
+  "pages": [
+    {
+      "id": "P1",
+      "name": "믹솔로지 랩 (Home)",
+      "url": "#home",
+      "curations": [
+        "1초 믹솔로지 신상품 (New Mixology Drops, 4종)",
+        "조향사 추천 DIY 키트 (Perfumer's Choice, 4종)",
+        "크리에이터 숏폼 챌린지 픽 (Creator Highlights, 4종)"
+      ],
+      "keyFeatures": [
+        "HERO-01 1초 DIY 믹솔로지 캔버스 (1200x360)",
+        "SLOGAN-01 브랜드 슬로건 섹션 (히어로 직하단)",
+        "MIX-01 실시간 3D DIY 믹솔로지 스위처 & Taste Radar Chart",
+        "AROMA-01 공감각 탑/미들/베이스 올팩토리 아로마 휠",
+        "3대 핵심 큐레이션 그리드 (신상품, 추천 키트, 숏폼 챌린지 픽)",
+        "전체 20+ 상품 도감 바로가기 CTA 배너",
+        "RITUAL-01 180초 타이머 & 탄산 기포 사운드"
+      ]
+    },
+    {
+      "id": "P2",
+      "name": "믹솔로지 도감 & 샵 (Category Shop & Archive)",
+      "url": "#category",
+      "totalProducts": 20,
+      "categories": [
+        "전체보기 (20)",
+        "1초 논알콜 하이볼 (4)",
+        "DIY 베이스 & 토핑 (4)",
+        "0kcal 스파클링 에이드 (4)",
+        "올팩토리 다기 & 키트 (4)",
+        "스타터 팩 & 구독 (4)"
+      ]
+    },
+    {
+      "id": "P3",
+      "name": "브랜드 소개 (About WICKETA)",
+      "url": "#about",
+      "worldview": "비밀정원 다과회 (WONDERSCAPE)",
+      "coreValues": [
+        "감정 맞춤 추천 (Emotion Dial)",
+        "DIY 믹솔로지 & 블렌딩 (Mixology)",
+        "노동 없는 3분의 초현실 휴식"
+      ],
+      "offlineFeature": "조향사의 올팩토리 룸 360도 WebGL 투어 & 1:1 시향 예약"
+    }
+  ],
+  "requirementsMapping": {
+    "REQ-01": "베이스x토핑 3D 수색 변화 & Taste Radar Chart (Page 1 MIX-01)",
+    "REQ-02": "탑/미들/베이스 향 레이어링 아로마 휠 (Page 1 AROMA-01, Page 2 SEC-15)",
+    "REQ-03": "1초 찬물/탄산수 논알콜 하이볼 가이드 (Page 1 HERO-01, Page 2 SEC-01~04)",
+    "REQ-04": "홈카페 크리에이터 숏폼 챌린지 탭 (Page 1 REC-01~04, Page 2 SEC-19)",
+    "REQ-05": "4+2 스타터 DIY 팩 & 100% 페이백 쿠폰 (Page 1 KIT-01, Page 2 SEC-17)",
+    "REQ-06": "대체당 0kcal 영양성분표 투명 표기 (Page 1 KIT-03, Page 2 SEC-09~12)",
+    "REQ-07": "1-Click 장바구니/찜목록 & 스크롤 위치 보존 (GNB 및 Modal)"
+  },
+  "ecommerceFeatures": {
+    "cart": { "enabled": true, "location": "GNB 우측 상단", "hasModal": true },
+    "wishlist": { "enabled": true, "location": "GNB 우측 상단 & 상품 카드별 🤍", "hasModal": true }
+  }
+}

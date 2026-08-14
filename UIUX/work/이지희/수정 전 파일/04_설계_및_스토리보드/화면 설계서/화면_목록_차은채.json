@@ -1,0 +1,35 @@
+{
+  "clientId": 1,
+  "clientName": "차은채",
+  "persona": "34세 / WICKETA 총괄 디렉터",
+  "theme": "100% 모노크롬 3대 웹사이트 페이지 (메인, 카테고리, 브랜드 소개)",
+  "pagesCount": 3,
+  "sectionsCount": 20,
+  "updatedAt": "2026-08-14",
+  "pages": [
+    {
+      "id": "P1",
+      "name": "메인페이지 (Home)",
+      "url": "#home",
+      "sections": 20,
+      "keyFeatures": ["Hero 3D 캔버스", "3단계 감정 다이얼 진단", "20대 상품 큐레이션", "180초 타이머"]
+    },
+    {
+      "id": "P2",
+      "name": "믹솔로지 도감 (Category Shop)",
+      "url": "#category",
+      "categories": ["전체보기", "1초 하이볼 스틱", "미드나잇 GABA 릴랙스", "0kcal 클린티", "브루잉 리추얼", "선물세트"]
+    },
+    {
+      "id": "P3",
+      "name": "브랜드 소개 (About WICKETA)",
+      "url": "#about",
+      "worldview": "모던 모자장수의 다과회 (WONDERSCAPE)",
+      "coreValues": ["Zero-Labor 1초 융해", "0.00% 클린 포뮬러", "3분의 온전한 안식"]
+    }
+  ],
+  "ecommerceFeatures": {
+    "cart": { "enabled": true, "location": "GNB 우측 상단", "hasModal": true },
+    "wishlist": { "enabled": true, "location": "GNB 우측 상단 & 상품 카드별 🤍", "hasModal": true }
+  }
+}

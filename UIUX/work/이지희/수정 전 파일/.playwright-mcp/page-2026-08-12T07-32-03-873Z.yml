@@ -1,0 +1,162 @@
+- generic [ref=f174e4]:
+  - banner:
+    - link "콘텐츠로 건너뛰기":
+      - /url: "#"
+    - generic [ref=f174e15]:
+      - generic [ref=f174e17]:
+        - generic [ref=f174e18]:
+          - combobox "검색" [ref=f174e20]: minimalist continuous line flower emblem logo
+          - generic [ref=f174e21]:
+            - button "검색 입력 삭제" [ref=f174e24] [cursor=pointer]
+            - generic "이미지 업로드" [ref=f174e30]:
+              - button "Pinterest 렌즈" [ref=f174e31] [cursor=pointer]
+        - button "모든 핀 드롭다운" [ref=f174e38] [cursor=pointer]:
+          - generic [ref=f174e40]:
+            - generic [ref=f174e41]: 모든 핀
+            - img "드롭다운" [ref=f174e43]
+      - link "내 프로필" [ref=f174e49] [cursor=pointer]:
+        - /url: /victoryjhl/
+        - img [ref=f174e56]:
+          - generic [ref=f174e57]: 이
+      - button "계정" [ref=f174e61] [cursor=pointer]
+  - navigation [ref=f174e66]:
+    - generic [ref=f174e68]:
+      - generic [ref=f174e69]:
+        - generic "홈" [ref=f174e73]:
+          - link "홈" [ref=f174e74] [cursor=pointer]:
+            - /url: /
+        - generic "홈" [ref=f174e81]:
+          - link "홈" [ref=f174e82] [cursor=pointer]:
+            - /url: /
+        - generic "내 보드" [ref=f174e89]:
+          - link "내 보드" [ref=f174e90] [cursor=pointer]:
+            - /url: /victoryjhl/
+        - generic "만들기" [ref=f174e97]:
+          - button "만들기" [ref=f174e98] [cursor=pointer]
+        - generic "업데이트" [ref=f174e107]:
+          - button "업데이트" [ref=f174e108] [cursor=pointer]
+        - generic "메시지" [ref=f174e117]:
+          - button "메시지" [ref=f174e118] [cursor=pointer]
+      - generic "설정 및 지원" [ref=f174e126]:
+        - button "설정 및 지원" [ref=f174e127] [cursor=pointer]
+  - generic:
+    - complementary "꼬리말 부동 버튼"
+  - main [ref=f174e132]:
+    - generic [ref=f174e134]:
+      - heading "검색 결과 페이지" [level=1] [ref=f174e136]
+      - region "필터 및 세분화 검색" [ref=f174e140]:
+        - button "필터 표시" [ref=f174e149] [cursor=pointer]
+      - generic [ref=f174e160]:
+        - generic [ref=f174e161]: minimalist continuous line flower emblem logo 검색 결과를 추가로 불러오는 중
+        - list [ref=f174e166]:
+          - listitem [ref=f174e167]:
+            - button [ref=f174e169] [cursor=pointer]:
+              - group "핀 카드" [ref=f174e171]:
+                - generic [ref=f174e173]:
+                  - link "제목 없음 핀 페이지" [ref=f174e175]:
+                    - /url: /pin/985231165071445/
+                    - img "포함된 이미지:" [ref=f174e185]
+                  - generic "추가 작업" [ref=f174e194]:
+                    - button "추가 작업" [ref=f174e195]
+          - listitem [ref=f174e200]:
+            - button [ref=f174e202] [cursor=pointer]:
+              - group "핀 카드" [ref=f174e204]:
+                - generic [ref=f174e206]:
+                  - link "Flower vector one line art logo. Minimalist contour drawing monoline. Continuous line ar 핀 페이지" [ref=f174e208]:
+                    - /url: /pin/45739752460639330/
+                    - 'img "포함된 내용: Flower vector one line art logo. Minimalist contour drawing monoline. Continuous line artwork for banner, book design, web illustration" [ref=f174e218]'
+                  - generic [ref=f174e223]:
+                    - heading [level=2] [ref=f174e229]:
+                      - link "Flower vector one line art logo. Minimalist contour drawing monoline. Continuous line ar 핀 페이지" [ref=f174e231]:
+                        - /url: /pin/45739752460639330/
+                        - text: Flower vector one line art logo. Minimalist contour drawing monoline. Continuous line ar
+                    - generic "추가 작업" [ref=f174e234]:
+                      - button "추가 작업" [ref=f174e235]
+          - listitem [ref=f174e240]:
+            - button [ref=f174e242] [cursor=pointer]:
+              - group "핀 카드" [ref=f174e244]:
+                - generic [ref=f174e246]:
+                  - link "Single continuous line drawing icon flowers. Sunflower in one continuous line. 핀 페이지" [ref=f174e248]:
+                    - /url: /pin/3377768468793402/
+                    - 'img "포함된 이미지: Single continuous line drawing icon flowers. Sunflower in one continuous line." [ref=f174e258]'
+                  - generic [ref=f174e263]:
+                    - heading [level=2] [ref=f174e269]:
+                      - link "Single continuous line drawing icon flowers. Sunflower in one continuous line. 핀 페이지" [ref=f174e271]:
+                        - /url: /pin/3377768468793402/
+                        - text: Single continuous line drawing icon flowers. Sunflower in one continuous line.
+                    - generic "추가 작업" [ref=f174e274]:
+                      - button "추가 작업" [ref=f174e275]
+          - listitem [ref=f174e280]:
+            - button [ref=f174e282] [cursor=pointer]:
+              - group "핀 카드" [ref=f174e284]:
+                - generic [ref=f174e286]:
+                  - link "제목 없음 핀 페이지" [ref=f174e288]:
+                    - /url: /pin/70437491496953/
+                    - img "포함된 이미지:" [ref=f174e298]
+                  - generic "추가 작업" [ref=f174e307]:
+                    - button "추가 작업" [ref=f174e308]
+          - listitem [ref=f174e313]:
+            - button [ref=f174e315] [cursor=pointer]:
+              - group "핀 카드" [ref=f174e317]:
+                - generic [ref=f174e319]:
+                  - link "제목 없음 핀 페이지" [ref=f174e321]:
+                    - /url: /pin/2533343539158016/
+                    - img "포함된 이미지:" [ref=f174e331]
+                  - generic "추가 작업" [ref=f174e340]:
+                    - button "추가 작업" [ref=f174e341]
+          - listitem [ref=f174e346]:
+            - button [ref=f174e348] [cursor=pointer]:
+              - group "핀 카드" [ref=f174e350]:
+                - generic [ref=f174e352]:
+                  - link "Download Tulip flower logo. Continuous line hand draw 핀 페이지" [ref=f174e354]:
+                    - /url: /pin/551198441917724454/
+                    - 'img "포함된 내용: Floral Logo Inspiration" [ref=f174e364]'
+                  - generic [ref=f174e369]:
+                    - heading [level=2] [ref=f174e375]:
+                      - link "Download Tulip flower logo. Continuous line hand draw 핀 페이지" [ref=f174e377]:
+                        - /url: /pin/551198441917724454/
+                        - text: Download Tulip flower logo. Continuous line hand draw
+                    - generic "추가 작업" [ref=f174e380]:
+                      - button "추가 작업" [ref=f174e381]
+          - listitem [ref=f174e386]:
+            - button [ref=f174e388] [cursor=pointer]:
+              - group "핀 카드" [ref=f174e390]:
+                - generic [ref=f174e392]:
+                  - link "Logo - Elegant floral line art — Designs For Makers - Trendy &amp; Timeless Templates 핀 페이지" [ref=f174e394]:
+                    - /url: /pin/13581236385444389/
+                    - 'img "포함된 내용: create logo design, modern logo design, logo designe, logo designer, logo design branding, logo designer portfolio" [ref=f174e404]'
+                  - generic [ref=f174e409]:
+                    - heading [level=2] [ref=f174e415]:
+                      - link "Logo - Elegant floral line art — Designs For Makers - Trendy &amp; Timeless Templates 핀 페이지" [ref=f174e417]:
+                        - /url: /pin/13581236385444389/
+                        - text: Logo - Elegant floral line art — Designs For Makers - Trendy & Timeless Templates
+                    - generic "추가 작업" [ref=f174e420]:
+                      - button "추가 작업" [ref=f174e421]
+          - listitem [ref=f174e426]:
+            - button [ref=f174e428] [cursor=pointer]:
+              - group "핀 카드" [ref=f174e430]:
+                - generic [ref=f174e432]:
+                  - link "Continuous line hand drawing calligraphic vector flower rose concept logo beauty. Monoline spring floral design element in minimal style. Valentine love concept Stock Vector | Adobe Stock 핀 페이지" [ref=f174e434]:
+                    - /url: /pin/13510867627269060/
+                    - 'img "포함된 이미지: Continuous line hand drawing calligraphic vector flower rose concept logo beauty. Monoline spring floral design element in minimal style. Valentine love concept Stock Vector | Adobe Stock" [ref=f174e444]'
+                  - generic [ref=f174e449]:
+                    - heading [level=2] [ref=f174e455]:
+                      - link "Continuous line hand drawing calligraphic vector flower rose concept logo beauty. Monoline spring floral design element in minimal style. Valentine love concept Stock Vector | Adobe Stock 핀 페이지" [ref=f174e457]:
+                        - /url: /pin/13510867627269060/
+                        - text: Continuous line hand drawing calligraphic vector flower rose concept logo beauty. Monoline spring floral design element in minimal style. Valentine love concept Stock Vector | Adobe Stock
+                    - generic "추가 작업" [ref=f174e460]:
+                      - button "추가 작업" [ref=f174e461]
+          - listitem [ref=f174e466]:
+            - button [ref=f174e468] [cursor=pointer]:
+              - group "핀 카드" [ref=f174e470]:
+                - generic [ref=f174e472]:
+                  - link "singolo continuo linea disegno icona fiori. girasole nel uno continuo linea. minimalista lineare schizzo isolato grafico elemento. vettore illustrazione uno linea fiore, floreale logo design. semplice fiore 핀 페이지" [ref=f174e474]:
+                    - /url: /pin/170222060913333699/
+                    - 'img "포함된 이미지: singolo continuo linea disegno icona fiori. girasole nel uno continuo linea. minimalista lineare schizzo isolato grafico elemento. vettore illustrazione uno linea fiore, floreale logo design. semplice fiore" [ref=f174e484]'
+                  - generic [ref=f174e489]:
+                    - heading [level=2] [ref=f174e495]:
+                      - link "singolo continuo linea disegno icona fiori. girasole nel uno continuo linea. minimalista lineare schizzo isolato grafico elemento. vettore illustrazione uno linea fiore, floreale logo design. semplice fiore 핀 페이지" [ref=f174e497]:
+                        - /url: /pin/170222060913333699/
+                        - text: singolo continuo linea disegno icona fiori. girasole nel uno continuo linea. minimalista lineare schizzo isolato grafico elemento. vettore illustrazione uno linea fiore, floreale logo design. semplice fiore
+                    - generic "추가 작업" [ref=f174e500]:
+                      - button "추가 작업" [ref=f174e501]

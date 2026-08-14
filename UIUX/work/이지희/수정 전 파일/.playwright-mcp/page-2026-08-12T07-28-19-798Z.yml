@@ -1,0 +1,203 @@
+- generic [ref=f136e4]:
+  - banner:
+    - link "콘텐츠로 건너뛰기":
+      - /url: "#"
+    - generic [ref=f136e15]:
+      - generic [ref=f136e17]:
+        - generic [ref=f136e18]:
+          - combobox "검색" [ref=f136e20]: botanical wreath emblem monoline logo
+          - generic [ref=f136e21]:
+            - button "검색 입력 삭제" [ref=f136e24] [cursor=pointer]
+            - generic "이미지 업로드" [ref=f136e30]:
+              - button "Pinterest 렌즈" [ref=f136e31] [cursor=pointer]
+        - button "모든 핀 드롭다운" [ref=f136e38] [cursor=pointer]:
+          - generic [ref=f136e40]:
+            - generic [ref=f136e41]: 모든 핀
+            - img "드롭다운" [ref=f136e43]
+      - link "내 프로필" [ref=f136e49] [cursor=pointer]:
+        - /url: /victoryjhl/
+        - img [ref=f136e56]:
+          - generic [ref=f136e57]: 이
+      - button "계정" [ref=f136e61] [cursor=pointer]
+  - navigation [ref=f136e66]:
+    - generic [ref=f136e68]:
+      - generic [ref=f136e69]:
+        - generic "홈" [ref=f136e73]:
+          - link "홈" [ref=f136e74] [cursor=pointer]:
+            - /url: /
+        - generic "홈" [ref=f136e81]:
+          - link "홈" [ref=f136e82] [cursor=pointer]:
+            - /url: /
+        - generic "내 보드" [ref=f136e89]:
+          - link "내 보드" [ref=f136e90] [cursor=pointer]:
+            - /url: /victoryjhl/
+        - generic "만들기" [ref=f136e97]:
+          - button "만들기" [ref=f136e98] [cursor=pointer]
+        - generic "업데이트" [ref=f136e107]:
+          - button "업데이트" [ref=f136e108] [cursor=pointer]
+        - generic "메시지" [ref=f136e117]:
+          - button "메시지" [ref=f136e118] [cursor=pointer]
+      - generic "설정 및 지원" [ref=f136e126]:
+        - button "설정 및 지원" [ref=f136e127] [cursor=pointer]
+  - generic:
+    - complementary "꼬리말 부동 버튼"
+  - main [ref=f136e132]:
+    - generic [ref=f136e134]:
+      - heading "검색 결과 페이지" [level=1] [ref=f136e136]
+      - region "필터 및 세분화 검색" [ref=f136e140]:
+        - button "필터 표시" [ref=f136e149] [cursor=pointer]
+      - generic [ref=f136e160]:
+        - generic [ref=f136e161]: botanical wreath emblem monoline logo 검색 결과를 추가로 불러오는 중
+        - list [ref=f136e166]:
+          - listitem [ref=f136e167]:
+            - button [ref=f136e169] [cursor=pointer]:
+              - group "핀 카드" [ref=f136e171]:
+                - generic [ref=f136e173]:
+                  - link "Elegant circle floral frame. Hand drawn logo template in line art with flowers. Vintage botanical wreath. Vector illustration for labels, branding business identity, wedding invitation Stock Vector | Adobe Stock 핀 페이지" [ref=f136e175]:
+                    - /url: /pin/17732992277620870/
+                    - img "포함된 이미지:" [ref=f136e185]
+                  - generic "추가 작업" [ref=f136e194]:
+                    - button "추가 작업" [ref=f136e195]
+          - listitem [ref=f136e200]:
+            - button [ref=f136e202] [cursor=pointer]:
+              - group "핀 카드" [ref=f136e204]:
+                - generic [ref=f136e206]:
+                  - link "Floral wreath logo, Canva template, Nature botanical branding, Floral line art, Natural eco business, Instant download, Wildflower, Herbs 핀 페이지" [ref=f136e208]:
+                    - /url: /pin/4601764119632206848/
+                    - 'img "포함된 이미지: Floral wreath logo, Canva template, Nature botanical branding, Floral line art, Natural eco business, Instant download, Wildflower, Herbs" [ref=f136e218]'
+                  - generic [ref=f136e223]:
+                    - generic [ref=f136e224]:
+                      - heading [level=2] [ref=f136e229]:
+                        - link "Floral wreath logo, Canva template, Nature botanical branding, Floral line art, Natural eco business, Instant download, Wildflower, Herbs 핀 페이지" [ref=f136e231]:
+                          - /url: /pin/4601764119632206848/
+                          - text: Floral wreath logo, Canva template, Nature botanical branding, Floral line art, Natural eco business, Instant download, Wildflower, Herbs
+                      - link "Etsy" [ref=f136e234]:
+                        - /url: /etsy/
+                        - generic "Etsy" [ref=f136e241]
+                    - generic "추가 작업" [ref=f136e244]:
+                      - button "추가 작업" [ref=f136e245]
+          - listitem [ref=f136e250]:
+            - button [ref=f136e252] [cursor=pointer]:
+              - group "핀 카드" [ref=f136e254]:
+                - generic [ref=f136e256]:
+                  - link "제목 없음 핀 페이지" [ref=f136e258]:
+                    - /url: /pin/14988611255686182/
+                    - img "포함된 이미지:" [ref=f136e268]
+                  - generic "추가 작업" [ref=f136e277]:
+                    - button "추가 작업" [ref=f136e278]
+          - listitem [ref=f136e283]:
+            - button [ref=f136e285] [cursor=pointer]:
+              - group "핀 카드" [ref=f136e287]:
+                - generic [ref=f136e289]:
+                  - link "Minimalist Floral Wreath Logo Design, Botanical Business Branding 핀 페이지" [ref=f136e291]:
+                    - /url: /pin/4603453006844343168/
+                    - 'img "포함된 이미지: Minimalist Floral Wreath Logo Design, Botanical Business Branding" [ref=f136e301]'
+                  - generic [ref=f136e306]:
+                    - generic [ref=f136e307]:
+                      - heading [level=2] [ref=f136e312]:
+                        - link "Minimalist Floral Wreath Logo Design, Botanical Business Branding 핀 페이지" [ref=f136e314]:
+                          - /url: /pin/4603453006844343168/
+                          - text: Minimalist Floral Wreath Logo Design, Botanical Business Branding
+                      - link "Etsy" [ref=f136e317]:
+                        - /url: /etsy/
+                        - generic "Etsy" [ref=f136e324]
+                    - generic "추가 작업" [ref=f136e327]:
+                      - button "추가 작업" [ref=f136e328]
+          - listitem [ref=f136e333]:
+            - button [ref=f136e335] [cursor=pointer]:
+              - group "핀 카드" [ref=f136e338]:
+                - generic [ref=f136e340]:
+                  - link [ref=f136e342]:
+                    - /url: /pin/258675572343541963/
+                    - generic [ref=f136e349]:
+                      - 'img "かわいい花のフレームロゴです。 レトロ感のあるデザインで ブランドロゴ、サロンロゴとしてご使用いただけます。 （カラー変更できます） 商品説明 —————————————— ・お店、企業のお名前に変更します ・見本イメージ付 ・安心サポート修正３回付 ・カラー・書体変更可 ・背景色変更可 商品に含まれているサービス —————————————— Illustrator / PDF / JPG / PNG HP https://retlogo-shop.com 詳しくは retlogoshop@gmail.com までお問い合わせください。 #ロゴ #ロゴデザイン #グラフィックデザイン" [ref=f136e353]'
+                      - 'img "かわいい花のフレームロゴです。 レトロ感のあるデザインで ブランドロゴ、サロンロゴとしてご使用いただけます。 （カラー変更できます） 商品説明 —————————————— ・お店、企業のお名前に変更します ・見本イメージ付 ・安心サポート修正３回付 ・カラー・書体変更可 ・背景色変更可 商品に含まれているサービス —————————————— Illustrator / PDF / JPG / PNG HP https://retlogo-shop.com 詳しくは retlogoshop@gmail.com までお問い合わせください。 #ロゴ #ロゴデザイン #グラフィックデザイン" [ref=f136e357]'
+                      - 'img "かわいい花のフレームロゴです。 レトロ感のあるデザインで ブランドロゴ、サロンロゴとしてご使用いただけます。 （カラー変更できます） 商品説明 —————————————— ・お店、企業のお名前に変更します ・見本イメージ付 ・安心サポート修正３回付 ・カラー・書体変更可 ・背景色変更可 商品に含まれているサービス —————————————— Illustrator / PDF / JPG / PNG HP https://retlogo-shop.com 詳しくは retlogoshop@gmail.com までお問い合わせください。 #ロゴ #ロゴデザイン #グラフィックデザイン" [ref=f136e361]'
+                      - 'img "かわいい花のフレームロゴです。 レトロ感のあるデザインで ブランドロゴ、サロンロゴとしてご使用いただけます。 （カラー変更できます） 商品説明 —————————————— ・お店、企業のお名前に変更します ・見本イメージ付 ・安心サポート修正３回付 ・カラー・書体変更可 ・背景色変更可 商品に含まれているサービス —————————————— Illustrator / PDF / JPG / PNG HP https://retlogo-shop.com 詳しくは retlogoshop@gmail.com までお問い合わせください。 #ロゴ #ロゴデザイン #グラフィックデザイン" [ref=f136e365]'
+                  - generic [ref=f136e368]:
+                    - generic [ref=f136e371]:
+                      - button "4개 슬라이드 중 1번으로 이동" [ref=f136e373]
+                      - button "4개 슬라이드 중 2번으로 이동" [ref=f136e376]
+                      - button "4개 슬라이드 중 3번으로 이동" [ref=f136e379]
+                      - button "4개 슬라이드 중 4번으로 이동" [ref=f136e382]
+                    - generic "추가 작업" [ref=f136e389]:
+                      - button "추가 작업" [ref=f136e390]
+          - listitem [ref=f136e395]:
+            - button [ref=f136e397] [cursor=pointer]:
+              - group "핀 카드" [ref=f136e399]:
+                - generic [ref=f136e401]:
+                  - link "This item is unavailable - Etsy 핀 페이지" [ref=f136e403]:
+                    - /url: /pin/83035186878410066/
+                    - 'img "포함된 이미지: This item is unavailable - Etsy" [ref=f136e413]'
+                  - generic [ref=f136e418]:
+                    - heading [level=2] [ref=f136e424]:
+                      - link "This item is unavailable - Etsy 핀 페이지" [ref=f136e426]:
+                        - /url: /pin/83035186878410066/
+                        - text: This item is unavailable - Etsy
+                    - generic "추가 작업" [ref=f136e429]:
+                      - button "추가 작업" [ref=f136e430]
+          - listitem [ref=f136e435]:
+            - button [ref=f136e437] [cursor=pointer]:
+              - group "핀 카드" [ref=f136e439]:
+                - generic [ref=f136e441]:
+                  - link "Wild rose wreath png svg, botanical vector wreath, rose clipart, wedding flower png, rose line art, floral wreath graphic, commercial free 핀 페이지" [ref=f136e443]:
+                    - /url: /pin/4599019716028196864/
+                    - 'img "포함된 이미지: Wild rose wreath png svg, botanical vector wreath, rose clipart, wedding flower png, rose line art, floral wreath graphic, commercial free" [ref=f136e453]'
+                  - generic [ref=f136e458]:
+                    - generic [ref=f136e459]:
+                      - heading [level=2] [ref=f136e464]:
+                        - link "Wild rose wreath png svg, botanical vector wreath, rose clipart, wedding flower png, rose line art, floral wreath graphic, commercial free 핀 페이지" [ref=f136e466]:
+                          - /url: /pin/4599019716028196864/
+                          - text: Wild rose wreath png svg, botanical vector wreath, rose clipart, wedding flower png, rose line art, floral wreath graphic, commercial free
+                      - link "Etsy" [ref=f136e469]:
+                        - /url: /etsy/
+                        - generic "Etsy" [ref=f136e476]
+                    - generic "추가 작업" [ref=f136e479]:
+                      - button "추가 작업" [ref=f136e480]
+          - listitem [ref=f136e485]:
+            - button [ref=f136e487] [cursor=pointer]:
+              - group "핀 카드" [ref=f136e489]:
+                - generic [ref=f136e491]:
+                  - link "Black Floral Frame Logo SVG Floral Wreath PNG Minimalist Wreath Botanical Outline Clip Art 핀 페이지" [ref=f136e493]:
+                    - /url: /pin/155303888102404351/
+                    - 'img "포함된 이미지: Black Floral Frame Logo SVG Floral Wreath PNG Minimalist Wreath Botanical Outline Clip Art" [ref=f136e503]'
+                  - generic [ref=f136e508]:
+                    - generic [ref=f136e509]:
+                      - heading [level=2] [ref=f136e514]:
+                        - link "Black Floral Frame Logo SVG Floral Wreath PNG Minimalist Wreath Botanical Outline Clip Art 핀 페이지" [ref=f136e516]:
+                          - /url: /pin/155303888102404351/
+                          - text: Black Floral Frame Logo SVG Floral Wreath PNG Minimalist Wreath Botanical Outline Clip Art
+                      - link "Etsy" [ref=f136e519]:
+                        - /url: /etsy/
+                        - generic "Etsy" [ref=f136e526]
+                    - generic "추가 작업" [ref=f136e529]:
+                      - button "추가 작업" [ref=f136e530]
+          - listitem [ref=f136e535]:
+            - button [ref=f136e537] [cursor=pointer]:
+              - group "핀 카드" [ref=f136e539]:
+                - generic [ref=f136e541]:
+                  - link "Download simple floral wreath decorative,round frame floral logo,wedding logo concept for free 핀 페이지" [ref=f136e543]:
+                    - /url: /pin/51228514506339578/
+                    - 'img "포함된 이미지: Download simple floral wreath decorative,round frame floral logo,wedding logo concept for free" [ref=f136e553]'
+                  - generic [ref=f136e558]:
+                    - generic [ref=f136e559]:
+                      - heading [level=2] [ref=f136e564]:
+                        - link "Download simple floral wreath decorative,round frame floral logo,wedding logo concept for free 핀 페이지" [ref=f136e566]:
+                          - /url: /pin/51228514506339578/
+                          - text: Download simple floral wreath decorative,round frame floral logo,wedding logo concept for free
+                      - link "Vecteezy" [ref=f136e569]:
+                        - /url: /vecteezy/
+                        - generic "Vecteezy" [ref=f136e576]
+                    - generic "추가 작업" [ref=f136e579]:
+                      - button "추가 작업" [ref=f136e580]
+          - listitem [ref=f136e585]:
+            - button [ref=f136e587] [cursor=pointer]:
+              - group "핀 카드" [ref=f136e589]:
+                - generic [ref=f136e591]:
+                  - link "제목 없음 핀 페이지" [ref=f136e593]:
+                    - /url: /pin/68749415586/
+                    - img "포함된 이미지:" [ref=f136e603]
+                  - generic "추가 작업" [ref=f136e612]:
+                    - button "추가 작업" [ref=f136e613]
+  - generic:
+    - contentinfo "꼬리말"

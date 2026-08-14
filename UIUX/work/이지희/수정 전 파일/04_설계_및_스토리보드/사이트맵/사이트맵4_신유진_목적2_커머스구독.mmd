@@ -1,0 +1,87 @@
+flowchart TD
+    classDef main fill:#2D3142,stroke:#1F2430,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef sub fill:#4F5D75,stroke:#2D3142,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef drawer fill:#EBF2FA,stroke:#4F5D75,stroke-width:2px,color:#2D3142,font-weight:bold;
+    classDef common fill:#F8F9FA,stroke:#2D3142,stroke-width:1px,color:#2D3142;
+    classDef member fill:#FFF3E0,stroke:#E65100,stroke-width:1.5px,color:#E65100,stroke-dasharray: 5 5;
+    classDef exception fill:#FFEBEE,stroke:#C62828,stroke-width:1.5px,color:#C62828,stroke-dasharray: 3 3;
+
+    Root["WICKETA Mixology Commerce (가상클라이언트4 신유진)"]
+    M1["1. Home 정기구독 메인 (PG-01)"]
+    M2["2. Starter & Sub Lab (PG-02)"]
+    M3["3. Benefit & Payback 혜택계산 (PG-03)"]
+    M4["4. Cart Drawer 결제 Drawer (PG-04 Aside Layer)"]
+
+    Root --> M1
+    Root --> M2
+    Root --> M3
+    Root --> M4
+
+    M1_1["Hero Section (4+2 스타터 팩 50% & 100% 페이백)"]
+    M1_2["1-Sec Instant Dissolution (1초 탄산수 융해 퀵뷰)"]
+    M1_3["Flexible Delivery Schedule (2주/4주 배송 주기)"]
+    M1_4["0kcal Nutrition Fact (대체당 안전성 검증표)"]
+
+    M1 --> M1_1
+    M1 --> M1_2
+    M1 --> M1_3
+    M1 --> M1_4
+
+    M2_1["4+2 스타터 DIY 체험 팩 (PG-31)"]
+    M2_2["30일분 정기구독 패키지 (PG-32)"]
+
+    M2 --> M2_1
+    M2 --> M2_2
+
+    M2_1_1["베이스 4종 + 서브 2종 맞춤 큐레이션"]
+    M2_1_2["100% 페이백 바우처 자동 증정"]
+
+    M2_1 --> M2_1_1
+    M2_1 --> M2_1_2
+
+    M2_2_1["배송 주기 선택기 2주/4주"]
+    M2_2_2["구독 일시정지 및 건너뛰기 설정"]
+
+    M2_2 --> M2_2_1
+    M2_2 --> M2_2_2
+
+    M3_1["정기구독 할인율 계산기 (PG-33)"]
+    M3_2["100% 안심 페이백 바우처 안내표"]
+    M3_3["전용 탄산수 6팩 묶음 선택기"]
+
+    M3 --> M3_1
+    M3 --> M3_2
+    M3 --> M3_3
+
+    M3_1_1["연간 믹솔로지 절약 금액 시각화"]
+    M3_3_1["믹솔로지 팩 + 탄산수 번들 빌더"]
+
+    M3_1 --> M3_1_1
+    M3_3 --> M3_3_1
+
+    M4_1["슬라이드아웃 Cart Drawer 1-Click 결제"]
+    M4_2["Virtual Scroll 위치 보존 (탐색 스크롤 100% 복원)"]
+
+    M4 --> M4_1
+    M4 --> M4_2
+
+    MEM1["[회원 영역] 1-Click 구독 주기 변경 (PG-M01 마이페이지)"]
+    GUEST1["[비회원 영역] 카카오 1초 간편 로그인 (가정)"]
+
+    M4 -.-> MEM1
+    M4 -.-> GUEST1
+
+    EXP1["[EXP-01] 404 Page Not Found (메인 안내 - 가정)"]
+    EXP2["[EXP-02] 스타터 팩 품절 모달 (재입고 알림 - 가정)"]
+    EXP3["[EXP-03] 결제 네트워크 오류 안내 (Cart Drawer 임시 저장 - 가정)"]
+
+    Root -.-> EXP1
+    M2_1 -.-> EXP2
+    M4_1 -.-> EXP3
+
+    class Root,M1 main;
+    class M2,M3 sub;
+    class M4,M4_1,M4_2 drawer;
+    class M1_1,M1_2,M1_3,M1_4,M2_1,M2_2,M2_1_1,M2_1_2,M2_2_1,M2_2_2,M3_1,M3_2,M3_3,M3_1_1,M3_3_1 common;
+    class MEM1,GUEST1 member;
+    class EXP1,EXP2,EXP3 exception;

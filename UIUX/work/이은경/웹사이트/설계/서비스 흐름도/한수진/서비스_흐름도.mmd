@@ -1,0 +1,22 @@
+flowchart TD
+    Start([사용자 진입]) --> Land[메인페이지 랜딩 PAGE-100]
+    Land --> ScrollHero[히어로 비주얼 탐색 PAGE-101]
+    ScrollHero --> Compare[불편 비교 섹션 확인 PAGE-110]
+    Compare --> Flagship[비누+오브제 트레이 세트 360도 탐색 PAGE-120]
+    Flagship --> TrayTab{트레이 공간 변신 탭 클릭 PAGE-130}
+    TrayTab -- "세면대 뷰" --> Washroom[세면대 연출 화보]
+    TrayTab -- "데스크 뷰" --> Desk[데스크 주얼리 보관 화보]
+    Washroom --> ScentFilter[향 큐레이션 필터 선택 PAGE-140]
+    Desk --> ScentFilter
+    ScentFilter --> ClickCTA[사전예약 Primary CTA 클릭]
+    ClickCTA --> ScrollForm[사전예약 폼 이동 PAGE-170]
+    ScrollForm --> InputData[성함/연락처 입력 & 향 옵션 지정]
+    InputData --> Submit[사전예약 제출 버튼 클릭]
+    Submit --> CheckValid{입력값 유효성 검사}
+    CheckValid -- "오류" --> ShowErr[인라인 오류 문구 표시]
+    ShowErr --> InputData
+    CheckValid -- "성공" --> SaveDB[사전예약 DB 저장]
+    SaveDB --> ShowModal[사전예약 완료 모달 노출 PAGE-200]
+    ShowModal --> Kakao[카카오톡 선물 알림 신청]
+    Kakao --> CloseModal[모달 닫기 & 메인 상단 복귀]
+    CloseModal --> End([여정 종료])

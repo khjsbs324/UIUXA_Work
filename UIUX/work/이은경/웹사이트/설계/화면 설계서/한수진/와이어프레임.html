@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOAPHE (한수진 대표) 화면 설계 와이어프레임 [SCR-100 / SCR-200]</title>
+  <style>
+    :root {
+      --primary: #3b5998;
+      --primary-hover: #2d4373;
+      --bg-color: #faf9f6;
+      --card-bg: #ffffff;
+      --text: #333333;
+      --text-muted: #666666;
+      --border: #e0ded8;
+      --error: #e74c3c;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif; }
+    body { background-color: #f0ebe1; color: var(--text); padding-top: 50px; }
+    
+    #toolbar { position: fixed; top: 0; left: 0; right: 0; height: 50px; background: #222; color: #fff; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; z-index: 1000; font-size: 13px; }
+    .tool-group { display: flex; align-items: center; gap: 10px; }
+    .tool-btn { background: #444; color: #fff; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 12px; }
+    .tool-btn.active { background: var(--primary); font-weight: bold; }
+
+    #frame-wrapper { display: flex; justify-content: center; padding: 20px; transition: all 0.3s ease; }
+    .app-frame { width: 100%; max-width: 1280px; background: var(--bg-color); border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.1); min-height: 90vh; position: relative; transition: all 0.3s ease; }
+    .app-frame.tablet { max-width: 800px; }
+    .app-frame.mobile { max-width: 400px; }
+
+    .screen-badge { position: absolute; top: 10px; right: 10px; background: #333; color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: bold; z-index: 200; }
+
+    header { display: flex; justify-content: space-between; align-items: center; padding: 15px 30px; border-bottom: 1px solid var(--border); background: #fff; position: sticky; top: 0; z-index: 100; }
+    .logo { font-size: 22px; font-weight: 800; letter-spacing: 2px; color: var(--primary); text-decoration: none; }
+    nav { display: flex; gap: 20px; align-items: center; }
+    nav a { text-decoration: none; color: var(--text-muted); font-size: 13px; font-weight: 500; }
+    .cta-btn { background: var(--primary); color: #fff; padding: 8px 16px; border-radius: 4px; text-decoration: none; font-weight: 700; font-size: 13px; border: none; cursor: pointer; }
+    
+    .hero { padding: 80px 20px; text-align: center; background: #f4f1ea; }
+    .hero h1 { font-size: 32px; margin-bottom: 15px; color: #222; }
+    .hero p { font-size: 16px; color: var(--text-muted); margin-bottom: 25px; }
+    .placeholder-box { background: #e2dbcd; border: 2px dashed #a39b8b; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 12px; padding: 40px 20px; margin: 0 auto; max-width: 500px; }
+
+    .section { padding: 60px 30px; max-width: 1100px; margin: 0 auto; }
+    .section-title { font-size: 24px; margin-bottom: 30px; text-align: center; }
+    
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+    .card { background: var(--card-bg); padding: 25px; border-radius: 8px; border: 1px solid var(--border); }
+    
+    .tab-bar { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
+    .tab-item { padding: 10px 20px; border: 1px solid var(--border); background: #fff; border-radius: 20px; cursor: pointer; font-size: 13px; }
+    .tab-item.active { background: var(--primary); color: #fff; border-color: var(--primary); font-weight: bold; }
+
+    .form-group { margin-bottom: 15px; text-align: left; }
+    .form-group label { display: block; margin-bottom: 6px; font-weight: 600; font-size: 13px; }
+    .form-group input, .form-group select { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 4px; font-size: 14px; }
+    .error-msg { color: var(--error); font-size: 11px; margin-top: 4px; display: none; }
+
+    .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); display: none; align-items: center; justify-content: center; z-index: 2000; }
+    .modal-card { background: #fff; width: 90%; max-width: 480px; padding: 30px; border-radius: 12px; text-align: center; position: relative; }
+    .close-btn { position: absolute; top: 15px; right: 15px; border: none; background: none; font-size: 20px; cursor: pointer; }
+
+    @media (max-width: 768px) {
+      .grid-2 { grid-template-columns: 1fr; }
+      nav { display: none; }
+      .hero h1 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="toolbar">
+    <div class="tool-group">
+      <strong>SOAPHE (한수진 대표) 와이어프레임</strong>
+      <span>[현재 화면: <span id="current-screen">SCR-100 메인페이지</span>]</span>
+    </div>
+    <div class="tool-group">
+      <span>뷰포트 스위처:</span>
+      <button class="tool-btn active" onclick="setViewport('desktop')">PC 데스크톱 (1280px)</button>
+      <button class="tool-btn" onclick="setViewport('tablet')">태블릿 (800px)</button>
+      <button class="tool-btn" onclick="setViewport('mobile')">모바일 (400px)</button>
+    </div>
+  </div>
+
+  <div id="frame-wrapper">
+    <div id="app-frame" class="app-frame">
+      <div class="screen-badge">SCR-100</div>
+
+      <header>
+        <a href="#" class="logo">SOAPHE</a>
+        <nav>
+          <a href="#story">브랜드 스토리</a>
+          <a href="#tray">오브제 트레이</a>
+          <a href="#scent">향 가이드</a>
+        </nav>
+        <button class="cta-btn" onclick="scrollToForm()">비누+오브제 트레이 세트 사전예약 (35%)</button>
+      </header>
+
+      <section class="hero" id="story">
+        <h1>짓무르지 않는 깨끗함, SOAPHE 비누 + 오브제 트레이 세트</h1>
+        <p>감각적인 조형 물 빠짐 트레이 & 세면대 위 라이프스타일 뷰티</p>
+        <div class="placeholder-box">
+          <strong>[3D 비누 + 오브제형 트레이 조형 모션 뷰어]</strong>
+          <span style="font-size: 12px; color: #777; margin-top: 8px;">마우스 호버 시 360도 회전하며 빛 반사 텍스처 노출</span>
+        </div>
+      </section>
+
+      <section class="section" id="tray">
+        <h2 class="section-title">비누 무름 스트레스 100% 완벽 해결</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3 style="color: #999; margin-bottom: 10px;">기존 비누 받침대</h3>
+            <p style="font-size: 13px; color: #666;">물 고임, 짓무름, 받침대 구멍 하얀 찌꺼기 낌, 칙칙한 플라스틱 외관</p>
+          </div>
+          <div class="card" style="border-color: var(--primary);">
+            <h3 style="color: var(--primary); margin-bottom: 10px;">SOAPHE 오브제형 트레이</h3>
+            <p style="font-size: 13px;">조형적 물 빠짐 기능으로 짓무름 0% 구현 & 데스크 주얼리/소품 보관 트레이 변신</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" style="background: #fff;">
+        <h2 class="section-title">세면대에서 데스크 위로, 지속가능한 공간 오브제</h2>
+        <div class="tab-bar">
+          <button class="tab-item active" onclick="switchTrayTab(this, 'washroom')">세면대 위 컷</button>
+          <button class="tab-item" onclick="switchTrayTab(this, 'desk')">데스크 명함/주얼리 보관 컷</button>
+        </div>
+        <div class="placeholder-box" id="tray-preview" style="height: 200px;">
+          <strong>[세면대 연출 화보: 감각적 물 빠짐 트레이와 비누]</strong>
+        </div>
+      </section>
+
+      <section class="section" id="scent">
+        <h2 class="section-title">직관적인 3종 시그니처 향 스펙트럼</h2>
+        <div class="tab-bar">
+          <button class="tab-item active" onclick="switchScentTab(this, '온기')">포근함 (Warmth)</button>
+          <button class="tab-item" onclick="switchScentTab(this, '우디')">맑은 우디 (Woody)</button>
+          <button class="tab-item" onclick="switchScentTab(this, '퓨어')">파스텔 퓨어 (Pure)</button>
+        </div>
+        <div class="card" style="text-align: center;" id="scent-info">
+          <h3 id="scent-title">포근함 (Warmth) - 시그니처 앰버</h3>
+          <p id="scent-desc" style="font-size: 13px; color: #666; margin-top: 8px;">Top: 핑크 페퍼 | Mid: 앰버, 파우더리 | Base: 시더우드 (향 강도: ★★★★☆)</p>
+        </div>
+      </section>
+
+      <section class="section" id="preorder" style="background: #f4f1ea;">
+        <h2 class="section-title">비누 + 오브제형 트레이 세트 사전 예약 (35% 할인 + 각인)</h2>
+        <div class="card" style="max-width: 500px; margin: 0 auto;">
+          <form onsubmit="handlePreOrderSubmit(event)">
+            <div class="form-group">
+              <label>이름 *</label>
+              <input type="text" id="user-name" placeholder="홍길동">
+              <div class="error-msg" id="err-name">* 성함을 2자 이상 입력해주세요.</div>
+            </div>
+            <div class="form-group">
+              <label>연락처 *</label>
+              <input type="tel" id="user-phone" placeholder="01012345678">
+              <div class="error-msg" id="err-phone">* 올바른 휴대폰 번호 11자리를 입력해주세요.</div>
+            </div>
+            <div class="form-group">
+              <label>주력 세트 비누 향 선택 *</label>
+              <select id="user-scent">
+                <option value="">-- 선택하세요 --</option>
+                <option value="온기">온기 (Warmth) 세트 - 시그니처 앰버</option>
+                <option value="우디">맑은 우디 (Woody) 세트 - 우디 모스</option>
+                <option value="퓨어">파스텔 퓨어 (Pure) 세트 - 보타니컬 릴리</option>
+              </select>
+              <div class="error-msg" id="err-scent">* 사전예약 비누 향을 선택해주세요.</div>
+            </div>
+            <button type="submit" class="cta-btn" style="width: 100%; padding: 12px; font-size: 15px; margin-top: 10px;">세트 사전 예약 신청하기</button>
+          </form>
+        </div>
+      </section>
+
+      <footer style="padding: 30px; text-align: center; border-top: 1px solid var(--border); font-size: 12px; color: #888;">
+        © 2026 SOAPHE Inc. All rights reserved. | 데스크톱 메인페이지 와이어프레임
+      </footer>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-scr-200">
+    <div class="modal-card">
+      <button class="close-btn" onclick="closeModal()">×</button>
+      <div style="background: var(--primary); color: #fff; padding: 4px 8px; border-radius: 4px; display: inline-block; font-size: 11px; font-weight: bold; margin-bottom: 15px;">SCR-200</div>
+      <h2 style="font-size: 20px; margin-bottom: 10px; color: var(--primary);">사전예약 신청이 완료되었습니다!</h2>
+      <p style="font-size: 13px; color: #555; margin-bottom: 20px;">예약 번호: <strong id="res-code">SPH-2026-0812</strong><br>선택한 향 세트: <strong id="res-scent">온기 (Warmth) 세트</strong> (35% 할인 확정)</p>
+      <button class="cta-btn" style="width: 100%; margin-bottom: 10px;" onclick="alert('카카오톡 선물 알림 신청이 완료되었습니다.');">카카오톡 선물 알림 신청하기</button>
+      <button class="tool-btn" style="width: 100%; background: #ccc; color: #333;" onclick="closeModal()">확인 및 닫기</button>
+    </div>
+  </div>
+
+  <script>
+    function setViewport(type) {
+      const frame = document.getElementById('app-frame');
+      const btns = document.querySelectorAll('.tool-btn');
+      btns.forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+      frame.className = 'app-frame ' + (type === 'desktop' ? '' : type);
+    }
+
+    function scrollToForm() {
+      document.getElementById('preorder').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function switchTrayTab(btn, mode) {
+      const preview = document.getElementById('tray-preview');
+      btn.parentElement.querySelectorAll('.tab-item').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      if(mode === 'washroom') {
+        preview.innerHTML = '<strong>[세면대 연출 화보: 감각적 물 빠짐 트레이와 비누]</strong>';
+      } else {
+        preview.innerHTML = '<strong>[데스크/거실 연출 화보: 명함, 반지, 차키 보관 트레이 변신]</strong>';
+      }
+    }
+
+    function switchScentTab(btn, scent) {
+      btn.parentElement.querySelectorAll('.tab-item').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const title = document.getElementById('scent-title');
+      const desc = document.getElementById('scent-desc');
+
+      if(scent === '온기') {
+        title.innerText = '포근함 (Warmth) - 시그니처 앰버';
+        desc.innerText = 'Top: 핑크 페퍼 | Mid: 앰버, 파우더리 | Base: 시더우드 (향 강도: ★★★★☆)';
+      } else if(scent === '우디') {
+        title.innerText = '맑은 우디 (Woody) - 우디 모스';
+        desc.innerText = 'Top: 사이프러스 | Mid: 솔잎, 아이리스 | Base: 샌달우드 (향 강도: ★★★☆☆)';
+      } else {
+        title.innerText = '파스텔 퓨어 (Pure) - 보타니컬 릴리';
+        desc.innerText = 'Top: 베르가못 | Mid: 화이트 릴리 | Base: 코튼 머스크 (향 강도: ★★☆☆☆)';
+      }
+    }
+
+    function handlePreOrderSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('user-name').value.trim();
+      const phone = document.getElementById('user-phone').value.trim();
+      const scent = document.getElementById('user-scent').value;
+
+      let valid = true;
+      document.getElementById('err-name').style.display = name.length >= 2 ? 'none' : (valid = false, 'block');
+      document.getElementById('err-phone').style.display = (phone.length === 11 && !isNaN(phone)) ? 'none' : (valid = false, 'block');
+      document.getElementById('err-scent').style.display = scent !== '' ? 'none' : (valid = false, 'block');
+
+      if (valid) {
+        document.getElementById('res-scent').innerText = scent + ' 세트';
+        document.getElementById('modal-scr-200').style.display = 'flex';
+        document.getElementById('current-screen').innerText = 'SCR-200 사전예약 완료 모달';
+      }
+    }
+
+    function closeModal() {
+      document.getElementById('modal-scr-200').style.display = 'none';
+      document.getElementById('current-screen').innerText = 'SCR-100 메인페이지';
+    }
+  </script>
+</body>
+</html>

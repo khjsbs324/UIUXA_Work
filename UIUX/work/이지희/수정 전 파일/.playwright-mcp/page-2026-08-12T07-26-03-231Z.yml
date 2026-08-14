@@ -1,0 +1,216 @@
+- generic [ref=f110e4]:
+  - banner:
+    - link "콘텐츠로 건너뛰기":
+      - /url: "#"
+    - generic [ref=f110e15]:
+      - generic [ref=f110e17]:
+        - generic [ref=f110e18]:
+          - combobox "검색" [ref=f110e20]: minimalist arch flower emblem logo black white
+          - generic [ref=f110e21]:
+            - button "검색 입력 삭제" [ref=f110e24] [cursor=pointer]
+            - generic "이미지 업로드" [ref=f110e30]:
+              - button "Pinterest 렌즈" [ref=f110e31] [cursor=pointer]
+        - button "모든 핀 드롭다운" [ref=f110e38] [cursor=pointer]:
+          - generic [ref=f110e40]:
+            - generic [ref=f110e41]: 모든 핀
+            - img "드롭다운" [ref=f110e43]
+      - link "내 프로필" [ref=f110e49] [cursor=pointer]:
+        - /url: /victoryjhl/
+        - img [ref=f110e56]:
+          - generic [ref=f110e57]: 이
+      - button "계정" [ref=f110e61] [cursor=pointer]
+  - navigation [ref=f110e66]:
+    - generic [ref=f110e68]:
+      - generic [ref=f110e69]:
+        - generic "홈" [ref=f110e73]:
+          - link "홈" [ref=f110e74] [cursor=pointer]:
+            - /url: /
+        - generic "홈" [ref=f110e81]:
+          - link "홈" [ref=f110e82] [cursor=pointer]:
+            - /url: /
+        - generic "내 보드" [ref=f110e89]:
+          - link "내 보드" [ref=f110e90] [cursor=pointer]:
+            - /url: /victoryjhl/
+        - generic "만들기" [ref=f110e97]:
+          - button "만들기" [ref=f110e98] [cursor=pointer]
+      - generic "설정 및 지원" [ref=f110e114]:
+        - button "설정 및 지원" [ref=f110e115] [cursor=pointer]
+  - main [ref=f110e120]:
+    - generic [ref=f110e122]:
+      - heading "검색 결과 페이지" [level=1] [ref=f110e124]
+      - region "필터 및 세분화 검색" [ref=f110e128]:
+        - button "필터 표시" [ref=f110e137] [cursor=pointer]
+      - generic [ref=f110e148]:
+        - generic [ref=f110e149]: minimalist arch flower emblem logo black white 검색 결과를 추가로 표시
+        - list [ref=f110e154]:
+          - listitem [ref=f110e155]:
+            - button [ref=f110e157] [cursor=pointer]:
+              - group "핀 카드" [ref=f110e159]:
+                - generic [ref=f110e161]:
+                  - link "제목 없음 핀 페이지" [ref=f110e163]:
+                    - /url: /pin/53972895530860033/
+                    - img "포함된 이미지:" [ref=f110e173]
+                  - generic "추가 작업" [ref=f110e182]:
+                    - button "추가 작업" [ref=f110e183]
+          - listitem [ref=f110e188]:
+            - button [ref=f110e190] [cursor=pointer]:
+              - group "핀 카드" [ref=f110e192]:
+                - generic [ref=f110e194]:
+                  - link "Arch Frame Flowers Minimalist, Minimalist, Arch, Minimalist Design PNG Transparent Clipart Image and PSD File for Free Download 핀 페이지" [ref=f110e196]:
+                    - /url: /pin/37225134416124523/
+                    - 'img "포함된 이미지: Arch Frame Flowers Minimalist, Minimalist, Arch, Minimalist Design PNG Transparent Clipart Image and PSD File for Free Download" [ref=f110e206]'
+                  - generic [ref=f110e211]:
+                    - heading [level=2] [ref=f110e217]:
+                      - link "Arch Frame Flowers Minimalist, Minimalist, Arch, Minimalist Design PNG Transparent Clipart Image and PSD File for Free Download 핀 페이지" [ref=f110e219]:
+                        - /url: /pin/37225134416124523/
+                        - text: Arch Frame Flowers Minimalist, Minimalist, Arch, Minimalist Design PNG Transparent Clipart Image and PSD File for Free Download
+                    - generic "추가 작업" [ref=f110e222]:
+                      - button "추가 작업" [ref=f110e223]
+          - listitem [ref=f110e228]:
+            - button [ref=f110e230] [cursor=pointer]:
+              - group "핀 카드" [ref=f110e232]:
+                - generic [ref=f110e234]:
+                  - link "Arch Floral Frame. Hand drawn Botanical vector illustration. Flower wreath Black and white.Vector Pro 핀 페이지" [ref=f110e236]:
+                    - /url: /pin/633387444651476/
+                    - 'img "포함된 이미지: Arch Floral Frame. Hand drawn Botanical vector illustration. Flower wreath Black and white.Vector Pro" [ref=f110e246]'
+                  - generic [ref=f110e251]:
+                    - generic [ref=f110e252]:
+                      - heading [level=2] [ref=f110e257]:
+                        - link "Arch Floral Frame. Hand drawn Botanical vector illustration. Flower wreath Black and white.Vector Pro 핀 페이지" [ref=f110e259]:
+                          - /url: /pin/633387444651476/
+                          - text: Arch Floral Frame. Hand drawn Botanical vector illustration. Flower wreath Black and white.Vector Pro
+                      - link "Vecteezy" [ref=f110e262]:
+                        - /url: /vecteezy/
+                        - generic "Vecteezy" [ref=f110e269]
+                    - generic "추가 작업" [ref=f110e272]:
+                      - button "추가 작업" [ref=f110e273]
+          - listitem [ref=f110e278]:
+            - button [ref=f110e280] [cursor=pointer]:
+              - group "핀 카드" [ref=f110e283]:
+                - generic [ref=f110e285]:
+                  - link [ref=f110e287]:
+                    - /url: /pin/258675572343541963/
+                    - generic [ref=f110e294]:
+                      - 'img "かわいい花のフレームロゴです。 レトロ感のあるデザインで ブランドロゴ、サロンロゴとしてご使用いただけます。 （カラー変更できます） 商品説明 —————————————— ・お店、企業のお名前に変更します ・見本イメージ付 ・安心サポート修正３回付 ・カラー・書体変更可 ・背景色変更可 商品に含まれているサービス —————————————— Illustrator / PDF / JPG / PNG HP https://retlogo-shop.com 詳しくは retlogoshop@gmail.com までお問い合わせください。 #ロゴ #ロゴデザイン #グラフィックデザイン" [ref=f110e298]'
+                      - 'img "かわいい花のフレームロゴです。 レトロ感のあるデザインで ブランドロゴ、サロンロゴとしてご使用いただけます。 （カラー変更できます） 商品説明 —————————————— ・お店、企業のお名前に変更します ・見本イメージ付 ・安心サポート修正３回付 ・カラー・書体変更可 ・背景色変更可 商品に含まれているサービス —————————————— Illustrator / PDF / JPG / PNG HP https://retlogo-shop.com 詳しくは retlogoshop@gmail.com までお問い合わせください。 #ロゴ #ロゴデザイン #グラフィックデザイン" [ref=f110e302]'
+                      - 'img "かわいい花のフレームロゴです。 レトロ感のあるデザインで ブランドロゴ、サロンロゴとしてご使用いただけます。 （カラー変更できます） 商品説明 —————————————— ・お店、企業のお名前に変更します ・見本イメージ付 ・安心サポート修正３回付 ・カラー・書体変更可 ・背景色変更可 商品に含まれているサービス —————————————— Illustrator / PDF / JPG / PNG HP https://retlogo-shop.com 詳しくは retlogoshop@gmail.com までお問い合わせください。 #ロゴ #ロゴデザイン #グラフィックデザイン" [ref=f110e306]'
+                      - 'img "かわいい花のフレームロゴです。 レトロ感のあるデザインで ブランドロゴ、サロンロゴとしてご使用いただけます。 （カラー変更できます） 商品説明 —————————————— ・お店、企業のお名前に変更します ・見本イメージ付 ・安心サポート修正３回付 ・カラー・書体変更可 ・背景色変更可 商品に含まれているサービス —————————————— Illustrator / PDF / JPG / PNG HP https://retlogo-shop.com 詳しくは retlogoshop@gmail.com までお問い合わせください。 #ロゴ #ロゴデザイン #グラフィックデザイン" [ref=f110e310]'
+                  - generic [ref=f110e313]:
+                    - generic [ref=f110e316]:
+                      - button "4개 슬라이드 중 1번으로 이동" [ref=f110e318]
+                      - button "4개 슬라이드 중 2번으로 이동" [ref=f110e321]
+                      - button "4개 슬라이드 중 3번으로 이동" [ref=f110e324]
+                      - button "4개 슬라이드 중 4번으로 이동" [ref=f110e327]
+                    - generic "추가 작업" [ref=f110e334]:
+                      - button "추가 작업" [ref=f110e335]
+          - listitem [ref=f110e340]:
+            - button [ref=f110e342] [cursor=pointer]:
+              - group "핀 카드" [ref=f110e344]:
+                - generic [ref=f110e346]:
+                  - link "Create Beautiful Arch Floral Borders for Stunning Pins 핀 페이지" [ref=f110e348]:
+                    - /url: /pin/166773992449094206/
+                    - 'img "포함된 내용: Cricut Stencils" [ref=f110e358]'
+                  - generic [ref=f110e363]:
+                    - heading [level=2] [ref=f110e369]:
+                      - link "Create Beautiful Arch Floral Borders for Stunning Pins 핀 페이지" [ref=f110e371]:
+                        - /url: /pin/166773992449094206/
+                        - text: Create Beautiful Arch Floral Borders for Stunning Pins
+                    - generic "추가 작업" [ref=f110e374]:
+                      - button "추가 작업" [ref=f110e375]
+          - listitem [ref=f110e380]:
+            - button [ref=f110e382] [cursor=pointer]:
+              - group "핀 카드" [ref=f110e384]:
+                - generic [ref=f110e386]:
+                  - link "logo 핀 페이지" [ref=f110e388]:
+                    - /url: /pin/481181541463853259/
+                    - 'img "포함된 이미지: logo" [ref=f110e398]'
+                  - generic [ref=f110e403]:
+                    - heading [level=2] [ref=f110e409]:
+                      - link "logo 핀 페이지" [ref=f110e411]:
+                        - /url: /pin/481181541463853259/
+                        - text: logo
+                    - generic "추가 작업" [ref=f110e414]:
+                      - button "추가 작업" [ref=f110e415]
+          - listitem [ref=f110e420]:
+            - button [ref=f110e422] [cursor=pointer]:
+              - group "핀 카드" [ref=f110e424]:
+                - generic [ref=f110e426]:
+                  - link "제목 없음 핀 페이지" [ref=f110e428]:
+                    - /url: /pin/22166223164636004/
+                    - img "포함된 이미지:" [ref=f110e438]
+                  - generic "추가 작업" [ref=f110e447]:
+                    - button "추가 작업" [ref=f110e448]
+          - listitem [ref=f110e453]:
+            - button [ref=f110e455] [cursor=pointer]:
+              - group "핀 카드" [ref=f110e457]:
+                - generic [ref=f110e459]:
+                  - link "Floral Arch Elegant Black White Element 핀 페이지" [ref=f110e461]:
+                    - /url: /pin/82331501726635339/
+                    - 'img "포함된 이미지: Floral Arch Elegant Black White Element" [ref=f110e471]'
+                  - generic [ref=f110e476]:
+                    - heading [level=2] [ref=f110e482]:
+                      - link "Floral Arch Elegant Black White Element 핀 페이지" [ref=f110e484]:
+                        - /url: /pin/82331501726635339/
+                        - text: Floral Arch Elegant Black White Element
+                    - generic "추가 작업" [ref=f110e487]:
+                      - button "추가 작업" [ref=f110e488]
+          - listitem [ref=f110e493]:
+            - button [ref=f110e495] [cursor=pointer]:
+              - group "핀 카드" [ref=f110e497]:
+                - generic [ref=f110e499]:
+                  - link "Outline Simple Florist Badge Logo 핀 페이지" [ref=f110e501]:
+                    - /url: /pin/557390891406621150/
+                    - 'img "포함된 내용: Floral Logo Inspiration" [ref=f110e511]'
+                  - generic [ref=f110e516]:
+                    - heading [level=2] [ref=f110e522]:
+                      - link "Outline Simple Florist Badge Logo 핀 페이지" [ref=f110e524]:
+                        - /url: /pin/557390891406621150/
+                        - text: Outline Simple Florist Badge Logo
+                    - generic "추가 작업" [ref=f110e527]:
+                      - button "추가 작업" [ref=f110e528]
+          - listitem [ref=f110e533]:
+            - button [ref=f110e535] [cursor=pointer]:
+              - group "핀 카드" [ref=f110e537]:
+                - generic [ref=f110e539]:
+                  - 'link "Floral Arch SVG: Leaves Frame, Wedding Invitation (digital Download) - Etsy 핀 페이지" [ref=f110e541]':
+                    - /url: /pin/454300681179123888/
+                    - 'img "포함된 이미지: Floral Arch SVG: Leaves Frame, Wedding Invitation (digital Download) - Etsy" [ref=f110e551]'
+                  - generic [ref=f110e556]:
+                    - generic [ref=f110e557]:
+                      - heading [level=2] [ref=f110e562]:
+                        - 'link "Floral Arch SVG: Leaves Frame, Wedding Invitation (digital Download) - Etsy 핀 페이지" [ref=f110e564]':
+                          - /url: /pin/454300681179123888/
+                          - text: "Floral Arch SVG: Leaves Frame, Wedding Invitation (digital Download) - Etsy"
+                      - link "Etsy" [ref=f110e567]:
+                        - /url: /etsy/
+                        - generic "Etsy" [ref=f110e574]
+                    - generic "추가 작업" [ref=f110e577]:
+                      - button "추가 작업" [ref=f110e578]
+          - listitem [ref=f110e583]:
+            - button [ref=f110e585] [cursor=pointer]:
+              - group "핀 카드" [ref=f110e587]:
+                - generic [ref=f110e589]:
+                  - link "Floriculture Logo Design 핀 페이지" [ref=f110e591]:
+                    - /url: /pin/73042825199809719/
+                    - 'img "포함된 이미지: Floriculture Logo Design" [ref=f110e601]'
+                  - generic [ref=f110e606]:
+                    - heading [level=2] [ref=f110e612]:
+                      - link "Floriculture Logo Design 핀 페이지" [ref=f110e614]:
+                        - /url: /pin/73042825199809719/
+                        - text: Floriculture Logo Design
+                    - generic "추가 작업" [ref=f110e617]:
+                      - button "추가 작업" [ref=f110e618]
+          - listitem [ref=f110e623]:
+            - button [ref=f110e625] [cursor=pointer]:
+              - group "핀 카드" [ref=f110e627]:
+                - generic [ref=f110e629]:
+                  - link "Logo - Elegant floral line art — Designs For Makers - Trendy &amp; Timeless Templates 핀 페이지" [ref=f110e631]:
+                    - /url: /pin/13581236385444389/
+                    - 'img "포함된 내용: create logo design, modern logo design, logo designe, logo designer, logo design branding, logo designer portfolio" [ref=f110e641]'
+                  - generic [ref=f110e646]:
+                    - heading [level=2] [ref=f110e652]:
+                      - link "Logo - Elegant floral line art — Designs For Makers - Trendy &amp; Timeless Templates 핀 페이지" [ref=f110e654]:
+                        - /url: /pin/13581236385444389/
+                        - text: Logo - Elegant floral line art — Designs For Makers - Trendy & Timeless Templates
+                    - generic "추가 작업" [ref=f110e657]:
+                      - button "추가 작업" [ref=f110e658]

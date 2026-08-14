@@ -1,0 +1,164 @@
+- generic [ref=f33e4]:
+  - banner:
+    - link "콘텐츠로 건너뛰기":
+      - /url: "#"
+    - generic [ref=f33e15]:
+      - generic [ref=f33e17]:
+        - generic [ref=f33e18]:
+          - combobox "검색" [ref=f33e20]: minimalist logo mark monoline emblem
+          - generic [ref=f33e21]:
+            - button "검색 입력 삭제" [ref=f33e24] [cursor=pointer]
+            - generic "이미지 업로드" [ref=f33e30]:
+              - button "Pinterest 렌즈" [ref=f33e31] [cursor=pointer]
+        - button "모든 핀 드롭다운" [ref=f33e38] [cursor=pointer]:
+          - generic [ref=f33e40]:
+            - generic [ref=f33e41]: 모든 핀
+            - img "드롭다운" [ref=f33e43]
+      - link "내 프로필" [ref=f33e49] [cursor=pointer]:
+        - /url: /victoryjhl/
+        - img [ref=f33e56]:
+          - generic [ref=f33e57]: 이
+      - button "계정" [ref=f33e61] [cursor=pointer]
+  - navigation [ref=f33e66]:
+    - generic [ref=f33e68]:
+      - generic [ref=f33e69]:
+        - generic "홈" [ref=f33e73]:
+          - link "홈" [ref=f33e74] [cursor=pointer]:
+            - /url: /
+        - generic "홈" [ref=f33e81]:
+          - link "홈" [ref=f33e82] [cursor=pointer]:
+            - /url: /
+        - generic "내 보드" [ref=f33e89]:
+          - link "내 보드" [ref=f33e90] [cursor=pointer]:
+            - /url: /victoryjhl/
+        - generic "만들기" [ref=f33e97]:
+          - button "만들기" [ref=f33e98] [cursor=pointer]
+        - generic "업데이트" [ref=f33e107]:
+          - button "업데이트" [ref=f33e108] [cursor=pointer]
+        - generic "메시지" [ref=f33e117]:
+          - button "메시지" [ref=f33e118] [cursor=pointer]
+      - generic "설정 및 지원" [ref=f33e126]:
+        - button "설정 및 지원" [ref=f33e127] [cursor=pointer]
+  - main [ref=f33e132]:
+    - generic [ref=f33e134]:
+      - heading "검색 결과 페이지" [level=1] [ref=f33e136]
+      - region "필터 및 세분화 검색" [ref=f33e140]:
+        - button "필터 표시" [ref=f33e149] [cursor=pointer]
+      - generic [ref=f33e160]:
+        - generic [ref=f33e161]: minimalist logo mark monoline emblem 검색 결과를 추가로 불러오는 중
+        - list [ref=f33e166]:
+          - listitem [ref=f33e167]:
+            - button [ref=f33e169] [cursor=pointer]:
+              - group "핀 카드" [ref=f33e171]:
+                - generic [ref=f33e173]:
+                  - link "Timeless Visual Abstract Brand Mark Simple Yet Memorable Minimal Logo Design 핀 페이지" [ref=f33e175]:
+                    - /url: /pin/34128909673582469/
+                    - 'img "포함된 이미지: Timeless Visual Abstract Brand Mark Simple Yet Memorable Minimal Logo Design" [ref=f33e185]'
+                  - generic [ref=f33e190]:
+                    - heading [level=2] [ref=f33e196]:
+                      - link "Timeless Visual Abstract Brand Mark Simple Yet Memorable Minimal Logo Design 핀 페이지" [ref=f33e198]:
+                        - /url: /pin/34128909673582469/
+                        - text: Timeless Visual Abstract Brand Mark Simple Yet Memorable Minimal Logo Design
+                    - generic "추가 작업" [ref=f33e201]:
+                      - button "추가 작업" [ref=f33e202]
+          - listitem [ref=f33e207]:
+            - button [ref=f33e209] [cursor=pointer]:
+              - group "핀 카드" [ref=f33e211]:
+                - generic [ref=f33e213]:
+                  - link "【空想ロゴ】DONUT SHOP モグモグ 핀 페이지" [ref=f33e215]:
+                    - /url: /pin/1688918606207885/
+                    - 'img "포함된 이미지: 【空想ロゴ】DONUT SHOP モグモグ" [ref=f33e225]'
+                  - generic [ref=f33e230]:
+                    - heading [level=2] [ref=f33e236]:
+                      - link "【空想ロゴ】DONUT SHOP モグモグ 핀 페이지" [ref=f33e238]:
+                        - /url: /pin/1688918606207885/
+                        - text: 【空想ロゴ】DONUT SHOP モグモグ
+                    - generic "추가 작업" [ref=f33e241]:
+                      - button "추가 작업" [ref=f33e242]
+          - listitem [ref=f33e247]:
+            - button [ref=f33e249] [cursor=pointer]:
+              - group "핀 카드" [ref=f33e251]:
+                - generic [ref=f33e253]:
+                  - link "@littleokiestudio ceramics 🤍 핀 페이지" [ref=f33e255]:
+                    - /url: /pin/1548181186813780/
+                    - 'img "포함된 이미지: @littleokiestudio ceramics 🤍" [ref=f33e265]'
+                  - generic [ref=f33e270]:
+                    - heading [level=2] [ref=f33e276]:
+                      - link "@littleokiestudio ceramics 🤍 핀 페이지" [ref=f33e278]:
+                        - /url: /pin/1548181186813780/
+                        - text: "@littleokiestudio ceramics 🤍"
+                    - generic "추가 작업" [ref=f33e281]:
+                      - button "추가 작업" [ref=f33e282]
+          - listitem [ref=f33e287]:
+            - button [ref=f33e289] [cursor=pointer]:
+              - group "핀 카드" [ref=f33e291]:
+                - generic [ref=f33e293]:
+                  - 'link "Minimal Abstract Mark . . . #logomark #minimalism #branding #logo 핀 페이지" [ref=f33e295]':
+                    - /url: /pin/2674081026487498/
+                    - img "포함된 이미지:" [ref=f33e305]
+                  - generic "추가 작업" [ref=f33e314]:
+                    - button "추가 작업" [ref=f33e315]
+          - listitem [ref=f33e320]:
+            - button [ref=f33e322] [cursor=pointer]:
+              - group "핀 카드" [ref=f33e324]:
+                - generic [ref=f33e326]:
+                  - link "제목 없음 핀 페이지" [ref=f33e328]:
+                    - /url: /pin/140806234676186/
+                    - img "포함된 이미지:" [ref=f33e338]
+                  - generic "추가 작업" [ref=f33e347]:
+                    - button "추가 작업" [ref=f33e348]
+          - listitem [ref=f33e353]:
+            - button [ref=f33e355] [cursor=pointer]:
+              - group "핀 카드" [ref=f33e357]:
+                - generic [ref=f33e359]:
+                  - link "제목 없음 핀 페이지" [ref=f33e361]:
+                    - /url: /pin/2674081026498551/
+                    - img "포함된 이미지:" [ref=f33e371]
+                  - generic "추가 작업" [ref=f33e380]:
+                    - button "추가 작업" [ref=f33e381]
+          - listitem [ref=f33e386]:
+            - button [ref=f33e388] [cursor=pointer]:
+              - group "핀 카드" [ref=f33e390]:
+                - generic [ref=f33e392]:
+                  - link "제목 없음 핀 페이지" [ref=f33e394]:
+                    - /url: /pin/1125968743518803/
+                    - img "포함된 이미지:" [ref=f33e404]
+                  - generic "추가 작업" [ref=f33e413]:
+                    - button "추가 작업" [ref=f33e414]
+          - listitem [ref=f33e419]:
+            - button [ref=f33e421] [cursor=pointer]:
+              - group "핀 카드" [ref=f33e423]:
+                - generic [ref=f33e425]:
+                  - 'link "Minimal Business Logo Ideas: Create Modern, Geometric Lines Fonts for Impact 핀 페이지" [ref=f33e427]':
+                    - /url: /pin/1829656095932666/
+                    - 'img "포함된 이미지: Minimal Business Logo Ideas: Create Modern, Geometric Lines Fonts for Impact" [ref=f33e437]'
+                  - generic [ref=f33e442]:
+                    - heading [level=2] [ref=f33e448]:
+                      - 'link "Minimal Business Logo Ideas: Create Modern, Geometric Lines Fonts for Impact 핀 페이지" [ref=f33e450]':
+                        - /url: /pin/1829656095932666/
+                        - text: "Minimal Business Logo Ideas: Create Modern, Geometric Lines Fonts for Impact"
+                    - generic "추가 작업" [ref=f33e453]:
+                      - button "추가 작업" [ref=f33e454]
+          - listitem [ref=f33e459]:
+            - button [ref=f33e461] [cursor=pointer]:
+              - group "핀 카드" [ref=f33e463]:
+                - generic [ref=f33e465]:
+                  - link "Modern letter M monogram - Logo design I crea 핀 페이지" [ref=f33e467]:
+                    - /url: /pin/28429041394796353/
+                    - 'img "포함된 내용: Professional Logo Design Ideas. Creative logo concepts. Modern logo inspiration. Minimalist logo styles. Elegant branding ideas." [ref=f33e477]'
+                  - generic [ref=f33e482]:
+                    - heading [level=2] [ref=f33e488]:
+                      - link "Modern letter M monogram - Logo design I crea 핀 페이지" [ref=f33e490]:
+                        - /url: /pin/28429041394796353/
+                        - text: Modern letter M monogram - Logo design I crea
+                    - generic "추가 작업" [ref=f33e493]:
+                      - button "추가 작업" [ref=f33e494]
+          - listitem [ref=f33e499]:
+            - button [ref=f33e501] [cursor=pointer]:
+              - group "핀 카드" [ref=f33e503]:
+                - generic [ref=f33e505]:
+                  - 'link "Dancer - art.sigma - #black #minimal #monoline 핀 페이지" [ref=f33e507]':
+                    - /url: /pin/18577417209697356/
+                    - img "포함된 이미지:" [ref=f33e517]
+                  - generic "추가 작업" [ref=f33e526]:
+                    - button "추가 작업" [ref=f33e527]

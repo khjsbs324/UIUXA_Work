@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" width="100%" height="100%">
+  <rect width="1000" height="520" fill="#f8f9fa" rx="12"/>
+  <rect x="300" y="16" width="400" height="45" rx="8" fill="#0f172a" stroke="#000000" stroke-width="2"/>
+  <text x="500" y="44" fill="#ffffff" font-family="'Pretendard', sans-serif" font-size="15" font-weight="900" text-anchor="middle">사단(士團) 임채원 최적 병합 서비스 흐름도 (다차원 분기)</text>
+
+  <!-- Level 1: 4 Tracks Entry -->
+  <g font-family="'Pretendard', sans-serif" font-size="11" font-weight="800" text-anchor="middle">
+    <!-- Track A -->
+    <rect x="30" y="80" width="215" height="50" rx="6" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+    <text x="137" y="103" fill="#ffffff">1. 24H Timeline Slider</text>
+    <text x="137" y="120" fill="#94a3b8" font-size="10">새벽/정오/황혼/심야 슬라이더</text>
+
+    <!-- Track B -->
+    <rect x="270" y="80" width="215" height="50" rx="6" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+    <text x="377" y="103" fill="#ffffff">2. TPO Scenario Wheel</text>
+    <text x="377" y="120" fill="#94a3b8" font-size="10">오피스/산책/다이닝 듀얼 휠</text>
+
+    <!-- Track C -->
+    <rect x="515" y="80" width="215" height="50" rx="6" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+    <text x="622" y="103" fill="#ffffff">3. All-Day Portable Kit</text>
+    <text x="622" y="120" fill="#94a3b8" font-size="10">15ml 3종 가죽 세트 쇼케이스</text>
+
+    <!-- Track D -->
+    <rect x="755" y="80" width="215" height="50" rx="6" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+    <text x="862" y="103" fill="#ffffff">4. TPO Tasting Kit</text>
+    <text x="862" y="120" fill="#94a3b8" font-size="10">5종 샘플 &amp; 100% 바우처</text>
+  </g>
+
+  <!-- Level 2: Decision & Validation Layer -->
+  <g font-family="'Pretendard', sans-serif" font-size="11" font-weight="800" text-anchor="middle">
+    <!-- Diamond 1: Safe Check -->
+    <polygon points="250,195 380,165 510,195 380,225" fill="#334155" stroke="#0f172a" stroke-width="1.5"/>
+    <text x="380" y="193" fill="#ffffff">향조 조화도 &amp; 펌핑 검증</text>
+    <text x="380" y="208" fill="#94a3b8" font-size="9">{과다분사 시 자동 보정}</text>
+
+    <!-- Diamond 2: Custom / Engraving -->
+    <polygon points="560,195 680,165 800,195 680,225" fill="#334155" stroke="#0f172a" stroke-width="1.5"/>
+    <text x="680" y="193" fill="#ffffff">가죽 스트랩 각인 검수</text>
+    <text x="680" y="208" fill="#94a3b8" font-size="9">{25자 글자수 체크}</text>
+  </g>
+
+  <!-- Level 3: Cart & Voucher Check -->
+  <g font-family="'Pretendard', sans-serif" font-size="11" font-weight="800" text-anchor="middle">
+    <!-- Step: Slide Cart -->
+    <rect x="180" y="270" width="250" height="55" rx="8" fill="#0f172a" stroke="#000000" stroke-width="2"/>
+    <text x="305" y="295" fill="#ffffff">5. Quick Add Slide Cart Drawer</text>
+    <text x="305" y="312" fill="#cbd5e1" font-size="10">단품 / 듀얼 번들 / 가죽 세트</text>
+
+    <!-- Diamond 3: Voucher Check -->
+    <polygon points="540,297 680,267 820,297 680,327" fill="#475569" stroke="#1e293b" stroke-width="1.5"/>
+    <text x="680" y="295" fill="#ffffff">테이스팅 100% 바우처 여부</text>
+    <text x="680" y="310" fill="#cbd5e1" font-size="9">{25,000원 즉시 할인}</text>
+  </g>
+
+  <!-- Level 4: Checkout & Routine Loop -->
+  <g font-family="'Pretendard', sans-serif" font-size="11" font-weight="800" text-anchor="middle">
+    <!-- Regular Pay vs Subscription -->
+    <rect x="120" y="370" width="340" height="55" rx="8" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+    <text x="290" y="395" fill="#ffffff">일반 1회 결제 vs 3개월 정기 구독</text>
+    <text x="290" y="412" fill="#94a3b8" font-size="10">1초 간편결제 / 알림톡 스케줄러</text>
+
+    <!-- Order Done -->
+    <rect x="540" y="370" width="340" height="55" rx="8" fill="#0f172a" stroke="#000000" stroke-width="2"/>
+    <text x="710" y="395" fill="#ffffff">6. 주문 완료 &amp; 카카오 알림톡 발송</text>
+    <text x="710" y="412" fill="#94a3b8" font-size="10">시간대별 착향 코칭 &amp; 리필 순환</text>
+  </g>
+
+  <!-- Connective Arrows -->
+  <path d="M 137 130 L 137 195 L 250 195" fill="none" stroke="#64748b" stroke-width="2"/>
+  <path d="M 377 130 L 377 165" fill="none" stroke="#64748b" stroke-width="2"/>
+  <path d="M 510 195 L 560 195" fill="none" stroke="#64748b" stroke-width="2"/>
+  <path d="M 622 130 L 622 165 L 680 165" fill="none" stroke="#64748b" stroke-width="2"/>
+  <path d="M 862 130 L 862 297 L 820 297" fill="none" stroke="#64748b" stroke-width="2"/>
+  <path d="M 680 225 L 680 267" fill="none" stroke="#64748b" stroke-width="2"/>
+  <path d="M 540 297 L 430 297" fill="none" stroke="#64748b" stroke-width="2"/>
+  <path d="M 305 325 L 305 370" fill="none" stroke="#64748b" stroke-width="2"/>
+  <path d="M 460 397 L 540 397" fill="none" stroke="#64748b" stroke-width="2"/>
+
+  <!-- Multi-Case Box Footer -->
+  <rect x="30" y="450" width="940" height="55" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="50" y="473" fill="#0f172a" font-family="'Pretendard', sans-serif" font-size="11" font-weight="900">🔀 실전 5대 예외 처리 루프:</text>
+  <text x="50" y="492" fill="#475569" font-family="'Pretendard', sans-serif" font-size="10" font-weight="600">
+    ① 향조 충돌 시 자동 보정 ➔ ② 각인 25자 초과 시 실시간 경고 ➔ ③ 품절 시 리필 예약권 ➔ ④ 결제 실패 시 24시간 세션 복구 ➔ ⑤ 자택 시향 후 QR 바우처 환급
+  </text>
+</svg>

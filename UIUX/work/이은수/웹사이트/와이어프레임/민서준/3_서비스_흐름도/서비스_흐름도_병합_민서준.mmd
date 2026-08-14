@@ -1,0 +1,38 @@
+flowchart TD
+    Start(["사용자 유입 (메인 페이지)"]) --> ModeCheck{"방문 목적 및 진입 트랙 판별"}
+    
+    %% 4대 진입 트랙
+    ModeCheck -->|트랙 A: 나만의 커스텀 조향| TrackA["1. Atelier Custom Lab<br>(3축 피펫 슬라이더 조작)"]
+    ModeCheck -->|트랙 B: 원료 스토리 탐구| TrackB["2. Encyclopedic Herbarium<br>(24종 자생 원료 도록 탐색)"]
+    ModeCheck -->|트랙 C: 완제품/선물 구매| TrackC["3. Master Collection<br>(1·2·3마패 보석함 쇼케이스)"]
+    ModeCheck -->|트랙 D: 이전 레시피 재주문| TrackD["4. Secret Scent Cipher<br>(고유 Cipher 코드 입력)"]
+
+    %% 조향 및 검증 단계
+    TrackB -->|원료 바인딩 선택| TrackA
+    TrackD -->|포뮬러 1초 복원| TrackA
+
+    TrackA --> RatioCheck{"3축 비율 합산 100% 검증"}
+    RatioCheck -->|비율 불균형| AutoBalance["⚠️ 황금 비율 자동 보정 안내"] --> TrackA
+    RatioCheck -->|100% 정상 균형| EngraveStage["2. 3D Engraving Atelier<br>(놋쇠 마패 캡 각인 & 360도 검수)"]
+
+    EngraveStage --> TextCheck{"글자수(25자) & 서체 검증"}
+    TextCheck -->|글자수 초과| TextWarn["❌ 글자수 초과 경고 & 수정"] --> EngraveStage
+    TextCheck -->|정상 통과| CipherGen["3. Secret Cipher Hash 발급<br>(#SADAN-8842 고유 코드 생성)"]
+
+    CipherGen --> CartStep["Slide Cart Drawer 담기"]
+    TrackC --> CartStep
+
+    %% 장바구니 및 할인 판별
+    CartStep --> VoucherCheck{"디스커버리 100% 바우처 보유 여부"}
+    VoucherCheck -->|바우처 코드 적용| Discount["25,000원 100% 즉시 차감"] --> PayChoice
+    VoucherCheck -->|미보유/일반| PayChoice{"결제 수단 선택"}
+
+    %% 결제 및 예외
+    PayChoice -->|간편결제 / 카드| PayEngine["결제 승인 엔진"]
+    PayEngine --> PaySuccess{"승인 결과"}
+    
+    PaySuccess -->|결제 실패/한도초과| FailRecovery["🔄 24시간 세션 복구 & 다른 수단 유도"] --> PayChoice
+    PaySuccess -->|승인 완료| OrderDone(["주문 완료 & 디지털 첩보 증서 발송"])
+
+    %% 사후 리텐션 루프
+    OrderDone --> RefillLoop["Cipher 기반 원클릭 리필 및 정기 구독 순환"]

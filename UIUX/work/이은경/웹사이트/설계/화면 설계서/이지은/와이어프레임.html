@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOAPHE (이지은 CD) 화면 설계 와이어프레임 [SCR-100 / SCR-200]</title>
+  <style>
+    :root {
+      --primary: #2d6a4f;
+      --bg-color: #f7f5f0;
+      --card-bg: #ffffff;
+      --text: #2c3e50;
+      --border: #e0dcd3;
+      --error: #e74c3c;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Pretendard', sans-serif; }
+    body { background-color: #e8e4d9; color: var(--text); padding-top: 50px; }
+    
+    #toolbar { position: fixed; top: 0; left: 0; right: 0; height: 50px; background: #1b4332; color: #fff; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; z-index: 1000; font-size: 13px; }
+    .tool-btn { background: #2d6a4f; color: #fff; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 12px; }
+    .tool-btn.active { background: #52b788; font-weight: bold; }
+
+    #frame-wrapper { display: flex; justify-content: center; padding: 20px; }
+    .app-frame { width: 100%; max-width: 1280px; background: var(--bg-color); border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.1); min-height: 90vh; position: relative; transition: all 0.3s ease; }
+    .app-frame.tablet { max-width: 800px; }
+    .app-frame.mobile { max-width: 400px; }
+
+    .screen-badge { position: absolute; top: 10px; right: 10px; background: #1b4332; color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: bold; z-index: 200; }
+
+    header { display: flex; justify-content: space-between; align-items: center; padding: 15px 30px; border-bottom: 1px solid var(--border); background: #fff; position: sticky; top: 0; z-index: 100; }
+    .logo { font-size: 22px; font-weight: 800; color: var(--primary); text-decoration: none; letter-spacing: 2px; }
+    nav a { text-decoration: none; color: #4a5d4e; font-size: 13px; margin-left: 20px; font-weight: 500; }
+    .cta-btn { background: var(--primary); color: #fff; padding: 8px 16px; border-radius: 4px; text-decoration: none; font-weight: 700; font-size: 13px; border: none; cursor: pointer; }
+
+    .hero { padding: 80px 20px; text-align: center; background: #e8e4d9; }
+    .hero h1 { font-size: 32px; margin-bottom: 15px; color: #1b4332; }
+    .placeholder-box { background: #d8d3c5; border: 2px dashed #8d8778; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 12px; padding: 40px 20px; margin: 0 auto; max-width: 500px; }
+
+    .section { padding: 60px 30px; max-width: 1100px; margin: 0 auto; }
+    .section-title { font-size: 24px; margin-bottom: 30px; text-align: center; color: #1b4332; }
+    
+    .card { background: var(--card-bg); padding: 25px; border-radius: 8px; border: 1px solid var(--border); }
+    .form-group { margin-bottom: 15px; text-align: left; }
+    .form-group label { display: block; margin-bottom: 6px; font-weight: 600; font-size: 13px; }
+    .form-group input { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 4px; }
+    .error-msg { color: var(--error); font-size: 11px; margin-top: 4px; display: none; }
+
+    .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); display: none; align-items: center; justify-content: center; z-index: 2000; }
+    .modal-card { background: #fff; width: 90%; max-width: 480px; padding: 30px; border-radius: 12px; text-align: center; position: relative; }
+  </style>
+</head>
+<body>
+
+  <div id="toolbar">
+    <div><strong>SOAPHE (이지은 CD) 와이어프레임</strong> [화면: <span id="current-screen">SCR-100 메인</span>]</div>
+    <div>
+      <button class="tool-btn active" onclick="setViewport('desktop')">PC (1280px)</button>
+      <button class="tool-btn" onclick="setViewport('tablet')">태블릿 (800px)</button>
+      <button class="tool-btn" onclick="setViewport('mobile')">모바일 (400px)</button>
+    </div>
+  </div>
+
+  <div id="frame-wrapper">
+    <div id="app-frame" class="app-frame">
+      <div class="screen-badge">SCR-100</div>
+
+      <header>
+        <a href="#" class="logo">SOAPHE</a>
+        <nav>
+          <a href="#story">웰니스 브랜딩</a>
+          <a href="#quiz">1:1 향 추천 퀴즈</a>
+        </nav>
+        <button class="cta-btn" onclick="scrollToForm()">비누+오브제 트레이 세트 사전 펀딩 (30%)</button>
+      </header>
+
+      <section class="hero" id="story">
+        <h1>오래 남는 온기를 공간에 선물하다</h1>
+        <p>SOAPHE 비누 + 오브제형 트레이 세트 웰니스 뷰티</p>
+        <div class="placeholder-box">
+          <strong>[비누 + 오브제형 트레이 3D 조형 뷰어]</strong>
+          <span style="font-size: 12px; color: #666; margin-top: 6px;">360도 회전하며 트레이 안착감 시각화</span>
+        </div>
+      </section>
+
+      <section class="section" id="quiz">
+        <h2 class="section-title">오늘의 감정에 맞춘 1:1 세트 향 추천 퀴즈</h2>
+        <div class="card" style="max-width: 600px; margin: 0 auto; text-align: center;">
+          <h3>Q1. 지금 나에게 가장 필요한 정서적 상태는?</h3>
+          <div style="margin: 20px 0; display: flex; gap: 10px; justify-content: center;">
+            <label><input type="radio" name="q1" value="온기" checked> 온기 & 머무름</label>
+            <label><input type="radio" name="q1" value="휴식"> 휴식 & 안정</label>
+          </div>
+          <button onclick="openQuizResult()" class="cta-btn">추천 결과 확인하기</button>
+        </div>
+      </section>
+
+      <section class="section" id="funding" style="background: #e8e4d9;">
+        <h2 class="section-title">비누 + 오브제형 트레이 세트 사전 펀딩 (30% 할인)</h2>
+        <div class="card" style="max-width: 500px; margin: 0 auto;">
+          <form onsubmit="handleFundingSubmit(event)">
+            <div class="form-group">
+              <label>이름 *</label>
+              <input type="text" id="user-name" placeholder="홍길동">
+              <div class="error-msg" id="err-name">* 성함을 2자 이상 입력해주세요.</div>
+            </div>
+            <div class="form-group">
+              <label>연락처 *</label>
+              <input type="tel" id="user-phone" placeholder="01012345678">
+              <div class="error-msg" id="err-phone">* 올바른 휴대폰 번호 11자리를 입력해주세요.</div>
+            </div>
+            <button type="submit" class="cta-btn" style="width: 100%; padding: 12px; margin-top: 10px;">세트 사전 펀딩 신청하기</button>
+          </form>
+        </div>
+      </section>
+
+      <footer style="padding: 30px; text-align: center; border-top: 1px solid var(--border); font-size: 12px; color: #777;">
+        © 2026 SOAPHE Wellness. All rights reserved.
+      </footer>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-scr-200">
+    <div class="modal-card">
+      <div style="background: var(--primary); color: #fff; padding: 4px 8px; border-radius: 4px; display: inline-block; font-size: 11px; font-weight: bold; margin-bottom: 15px;">SCR-200</div>
+      <h2 style="font-size: 20px; color: var(--primary); margin-bottom: 10px;">1:1 맞춤 추천 결과</h2>
+      <p style="font-size: 13px; color: #555; margin-bottom: 20px;">추천 조합: <strong id="res-scent">온기 & 머무름 - 시그니처 앰버 비누 & 오브제 트레이 세트</strong></p>
+      <button class="cta-btn" style="width: 100%; margin-bottom: 10px;" onclick="scrollToForm(); closeModal();">이 조합으로 사전 펀딩 신청하기</button>
+      <button class="tool-btn" style="width: 100%; background: #ccc; color: #333;" onclick="closeModal()">확인 및 닫기</button>
+    </div>
+  </div>
+
+  <script>
+    function setViewport(type) {
+      const frame = document.getElementById('app-frame');
+      document.querySelectorAll('.tool-btn').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+      frame.className = 'app-frame ' + (type === 'desktop' ? '' : type);
+    }
+    function scrollToForm() { document.getElementById('funding').scrollIntoView({ behavior: 'smooth' }); }
+    function openQuizResult() {
+      document.getElementById('modal-scr-200').style.display = 'flex';
+      document.getElementById('current-screen').innerText = 'SCR-200 맞춤 결과 모달';
+    }
+    function closeModal() {
+      document.getElementById('modal-scr-200').style.display = 'none';
+      document.getElementById('current-screen').innerText = 'SCR-100 메인';
+    }
+    function handleFundingSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('user-name').value.trim();
+      const phone = document.getElementById('user-phone').value.trim();
+      let valid = true;
+      document.getElementById('err-name').style.display = name.length >= 2 ? 'none' : (valid = false, 'block');
+      document.getElementById('err-phone').style.display = (phone.length === 11 && !isNaN(phone)) ? 'none' : (valid = false, 'block');
+      if (valid) alert('SOAPHE 비누+오브제 트레이 세트 사전 펀딩 신청이 완료되었습니다!');
+    }
+  </script>
+</body>
+</html>

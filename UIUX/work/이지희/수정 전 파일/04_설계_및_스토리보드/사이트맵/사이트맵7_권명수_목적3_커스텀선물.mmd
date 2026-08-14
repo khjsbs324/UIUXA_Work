@@ -1,0 +1,87 @@
+flowchart TD
+    classDef main fill:#3E2723,stroke:#1B0000,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef sub fill:#8D6E63,stroke:#3E2723,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef drawer fill:#FCE4EC,stroke:#8D6E63,stroke-width:2px,color:#3E2723,font-weight:bold;
+    classDef common fill:#FFF8F8,stroke:#3E2723,stroke-width:1px,color:#3E2723;
+    classDef member fill:#FFF3E0,stroke:#E65100,stroke-width:1.5px,color:#E65100,stroke-dasharray: 5 5;
+    classDef exception fill:#FFEBEE,stroke:#C62828,stroke-width:1.5px,color:#C62828,stroke-dasharray: 3 3;
+
+    Root["WICKETA Beauty Custom Gift (가상클라이언트6 권명수)"]
+    M1["1. Home 선물 메인 (PG-01)"]
+    M2["2. Custom Studio 3D 각인 (PG-02)"]
+    M3["3. Gift Showcase 선물관 (PG-03)"]
+    M4["4. Gift Drawer 결제 Drawer (PG-04 Aside Layer)"]
+
+    Root --> M1
+    Root --> M2
+    Root --> M3
+    Root --> M4
+
+    M1_1["Hero Section (Edit-Well 단독 뷰티 파우치 3D 각인 선물 팩)"]
+    M1_2["3D Bottle Engraving Preview (실시간 보틀 각인 렌더러)"]
+    M1_3["Inner Beauty Gift Bundle (히알루론산 4종 선물 세트)"]
+    M1_4["Gift Fact Checklist (친환경 방수 파우치 & 웰컴 바우처)"]
+
+    M1 --> M1_1
+    M1 --> M1_2
+    M1 --> M1_3
+    M1 --> M1_4
+
+    M2_1["실시간 3D 글래스 보틀 각인 시뮬레이터 (PG-31)"]
+    M2_2["로즈 골드/매트 실버 캡 및 폰트 스위처"]
+
+    M2 --> M2_1
+    M2 --> M2_2
+
+    M2_1_1["모던 세리프 폰트 3종 시뮬레이션"]
+    M2_1_2["친환경 실크스크린 미세 인쇄 내구성 안내"]
+
+    M2_1 --> M2_1_1
+    M2_1 --> M2_1_2
+
+    M2_2_1["투명 리유저블 글래스 보틀 뷰어"]
+    M2_2_2["소프트 핑크 틴티드 글래스 뷰어"]
+
+    M2_2 --> M2_2_1
+    M2_2 --> M2_2_2
+
+    M3_1["Edit-Well 뷰티 파우치 번들 빌더 (PG-32)"]
+    M3_2["웰니스 에디토리얼 모바일 카드 작성 폼 (PG-33)"]
+    M3_3["1-Click 카카오 선물하기 연동"]
+
+    M3 --> M3_1
+    M3 --> M3_2
+    M3 --> M3_3
+
+    M3_1_1["4종 무카페인 스틱 맞춤 수량 선택기"]
+    M3_2_1["모바일 감성 뷰티 카드 템플릿"]
+
+    M3_1 --> M3_1_1
+    M3_2 --> M3_2_1
+
+    M4_1["3초 슬라이드아웃 Gift Cart Drawer (선물 주문서)"]
+    M4_2["Virtual Scroll 위치 보존 (탐색 스크롤 100% 복원)"]
+
+    M4 --> M4_1
+    M4 --> M4_2
+
+    MEM1["[회원 영역] 저장된 3D 각인 템플릿 (PG-M01 마이페이지)"]
+    GUEST1["[비회원 영역] 감성 모바일 카드 무료 발급 (가정)"]
+
+    M4 -.-> MEM1
+    M4 -.-> GUEST1
+
+    EXP1["[EXP-01] 404 Page Not Found (메인 안식처 안내 - 가정)"]
+    EXP2["[EXP-02] 뷰티 파우치 패키지 품절 모달 (재입고 알림 - 가정)"]
+    EXP3["[EXP-03] 각인 글자수 초과 에러 모달 (가정)"]
+
+    Root -.-> EXP1
+    M2_1 -.-> EXP2
+    M2_1 -.-> EXP3
+
+    class Root,M1 main;
+    class M2,M3 sub;
+    class M4,M4_1,M4_2 drawer;
+    class M1_1,M1_2,M1_3,M1_4,M2_1,M2_2,M2_1_1,M2_1_2,M2_2_1,M2_2_2,M3_1,M3_2,M3_3,M3_1_1,M3_2_1 common;
+    class MEM1,GUEST1 member;
+    class EXP1,EXP2,EXP3 exception;

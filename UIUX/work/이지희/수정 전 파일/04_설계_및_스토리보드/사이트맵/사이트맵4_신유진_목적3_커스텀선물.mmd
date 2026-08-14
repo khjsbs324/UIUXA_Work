@@ -1,0 +1,87 @@
+flowchart TD
+    classDef main fill:#2E2A36,stroke:#1B0000,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef sub fill:#685B79,stroke:#2E2A36,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef drawer fill:#F4EFF9,stroke:#685B79,stroke-width:2px,color:#2E2A36,font-weight:bold;
+    classDef common fill:#FAF8FC,stroke:#2E2A36,stroke-width:1px,color:#2E2A36;
+    classDef member fill:#FFF3E0,stroke:#E65100,stroke-width:1.5px,color:#E65100,stroke-dasharray: 5 5;
+    classDef exception fill:#FFEBEE,stroke:#C62828,stroke-width:1.5px,color:#C62828,stroke-dasharray: 3 3;
+
+    Root["WICKETA Perfumer Gift Studio (가상클라이언트02 신유진)"]
+    M1["1. Home 조향 선물 메인 (PG-01)"]
+    M2["2. Custom Studio 3D 조향 라벨 (PG-02)"]
+    M3["3. Gift Showcase 앰플 선물관 (PG-03)"]
+    M4["4. Gift Drawer 조향 결제 (PG-04 Aside Layer)"]
+
+    Root --> M1
+    Root --> M2
+    Root --> M3
+    Root --> M4
+
+    M1_1["Hero Section (세상에 하나뿐인 나만의 향기 선물)"]
+    M1_2["3D Bottle Label Preview (실시간 라벨 렌더러)"]
+    M1_3["Apothecary Dropper Bundle (앰플 4종 선물 세트)"]
+    M1_4["Perfumer Certification Checklist (공식 향기 보증서)"]
+
+    M1 --> M1_1
+    M1 --> M1_2
+    M1 --> M1_3
+    M1 --> M1_4
+
+    M2_1["실시간 3D 조향 라벨 시뮬레이터 (PG-31)"]
+    M2_2["갈색 유리 앰플 캡 & 폰트 스위처"]
+
+    M2 --> M2_1
+    M2 --> M2_2
+
+    M2_1_1["Top-Mid-Base 성분 비율 자동 라벨링"]
+    M2_1_2["친환경 크라프트 라벨 방수 코팅 스펙"]
+
+    M2_1 --> M2_1_1
+    M2_1 --> M2_1_2
+
+    M2_2_1["아포테케리 앰플 360도 3D 뷰어"]
+    M2_2_2["정밀 유리 스포이드 눈금 뷰어"]
+
+    M2_2 --> M2_2_1
+    M2_2 --> M2_2_2
+
+    M3_1["12종 에센스 중 4종 선택 번들 빌더 (PG-32)"]
+    M3_2["조향사 신유진 감성 향기 카드 작성 폼 (PG-33)"]
+    M3_3["1-Click 카카오 선물하기 연동"]
+
+    M3 --> M3_1
+    M3 --> M3_2
+    M3 --> M3_3
+
+    M3_1_1["시트러스/플로럴/우디 밸런스 검증기"]
+    M3_2_1["모바일 향기 피라미드 카드 템플릿"]
+
+    M3_1 --> M3_1_1
+    M3_2 --> M3_2_1
+
+    M4_1["3초 슬라이드아웃 Gift Cart Drawer (선물 주문서)"]
+    M4_2["Virtual Scroll 위치 보존 (탐색 스크롤 100% 복원)"]
+
+    M4 --> M4_1
+    M4 --> M4_2
+
+    MEM1["[회원 영역] 저장된 조향 포뮬러 (PG-M01 마이페이지)"]
+    GUEST1["[비회원 영역] 감성 향기 보증서 발급 (가정)"]
+
+    M4 -.-> MEM1
+    M4 -.-> GUEST1
+
+    EXP1["[EXP-01] 404 Page Not Found (메인 랩 안내 - 가정)"]
+    EXP2["[EXP-02] 앰플 패키지 품절 모달 (재입고 알림 - 가정)"]
+    EXP3["[EXP-03] 라벨 글자수 초과 에러 모달 (가정)"]
+
+    Root -.-> EXP1
+    M2_1 -.-> EXP2
+    M2_1 -.-> EXP3
+
+    class Root,M1 main;
+    class M2,M3 sub;
+    class M4,M4_1,M4_2 drawer;
+    class M1_1,M1_2,M1_3,M1_4,M2_1,M2_2,M2_1_1,M2_1_2,M2_2_1,M2_2_2,M3_1,M3_2,M3_3,M3_1_1,M3_2_1 common;
+    class MEM1,GUEST1 member;
+    class EXP1,EXP2,EXP3 exception;

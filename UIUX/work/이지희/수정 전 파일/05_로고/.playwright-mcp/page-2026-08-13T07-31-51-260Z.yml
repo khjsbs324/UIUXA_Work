@@ -1,0 +1,85 @@
+- generic [ref=f36e4]:
+  - banner:
+    - link "콘텐츠로 건너뛰기":
+      - /url: "#"
+    - generic [ref=f36e15]:
+      - generic [ref=f36e17]:
+        - generic [ref=f36e18]:
+          - combobox "검색" [ref=f36e20]: botanical arch minimalist logo mark
+          - generic [ref=f36e21]:
+            - button "검색 입력 삭제" [ref=f36e24] [cursor=pointer]
+            - generic "이미지 업로드" [ref=f36e30]:
+              - button "Pinterest 렌즈" [ref=f36e31] [cursor=pointer]
+        - button "모든 핀 드롭다운" [ref=f36e38] [cursor=pointer]:
+          - generic [ref=f36e40]:
+            - generic [ref=f36e41]: 모든 핀
+            - img "드롭다운" [ref=f36e43]
+      - link "내 프로필" [ref=f36e49] [cursor=pointer]:
+        - /url: /victoryjhl/
+        - img [ref=f36e56]:
+          - generic [ref=f36e57]: 이
+      - button "계정" [ref=f36e61] [cursor=pointer]
+  - navigation [ref=f36e66]:
+    - generic [ref=f36e68]:
+      - generic [ref=f36e69]:
+        - generic "홈" [ref=f36e73]:
+          - link "홈" [ref=f36e74] [cursor=pointer]:
+            - /url: /
+        - generic "홈" [ref=f36e81]:
+          - link "홈" [ref=f36e82] [cursor=pointer]:
+            - /url: /
+        - generic "내 보드" [ref=f36e89]:
+          - link "내 보드" [ref=f36e90] [cursor=pointer]:
+            - /url: /victoryjhl/
+        - generic "만들기" [ref=f36e97]:
+          - button "만들기" [ref=f36e98] [cursor=pointer]
+      - generic "설정 및 지원" [ref=f36e114]:
+        - button "설정 및 지원" [ref=f36e115] [cursor=pointer]
+  - main [ref=f36e120]:
+    - generic [ref=f36e122]:
+      - heading "검색 결과 페이지" [level=1] [ref=f36e124]
+      - region "필터 및 세분화 검색" [ref=f36e128]:
+        - generic [ref=f36e131]:
+          - button "필터 표시" [ref=f36e137] [cursor=pointer]
+          - button "Word" [ref=f36e148] [cursor=pointer]
+          - button "Check" [ref=f36e159] [cursor=pointer]
+          - button "Combination" [ref=f36e170] [cursor=pointer]
+          - button "Geometric" [ref=f36e181] [cursor=pointer]
+          - button "Letter" [ref=f36e192] [cursor=pointer]
+      - generic [ref=f36e204]:
+        - generic:
+          - generic:
+            - generic:
+              - list:
+                - listitem [ref=f36e205]:
+                  - button [ref=f36e207] [cursor=pointer]:
+                    - group "핀 카드" [ref=f36e210]:
+                      - generic [ref=f36e212]:
+                        - link "제목 없음 핀 페이지" [ref=f36e214]:
+                          - /url: /pin/86764730317214687/
+                          - img "포함된 이미지:" [ref=f36e224]
+                        - generic "추가 작업" [ref=f36e233]:
+                          - button "추가 작업" [ref=f36e234]
+                - listitem [ref=f36e239]:
+                  - button [ref=f36e241] [cursor=pointer]:
+                    - group "핀 카드" [ref=f36e244]:
+                      - generic [ref=f36e246]:
+                        - link "arch collection with geometric,curve,flower.Vector illustration for icon,sticker,printable and tattoo 핀 페이지" [ref=f36e248]:
+                          - /url: /pin/925700898382488325/
+                          - 'img "포함된 이미지: arch collection with geometric,curve,flower.Vector illustration for icon,sticker,printable and tattoo" [ref=f36e258]'
+                        - generic [ref=f36e263]:
+                          - heading [level=2] [ref=f36e269]:
+                            - link "arch collection with geometric,curve,flower.Vector illustration for icon,sticker,printable and tattoo 핀 페이지" [ref=f36e271]:
+                              - /url: /pin/925700898382488325/
+                              - text: arch collection with geometric,curve,flower.Vector illustration for icon,sticker,printable and tattoo
+                          - generic "추가 작업" [ref=f36e274]:
+                            - button "추가 작업" [ref=f36e275]
+                - listitem [ref=f36e280]:
+                  - button [ref=f36e282] [cursor=pointer]:
+                    - group "핀 카드" [ref=f36e285]:
+                      - generic [ref=f36e287]:
+                        - 'link "Floral details from a recent brand project 🌸⁠⠀ ⁠⠀ | #beckylord #beckylorddesign⠀⁠⠀ 핀 페이지" [ref=f36e289]':
+                          - /url: /pin/35325178325492510/
+                          - img "포함된 이미지:" [ref=f36e299]
+                        - generic "추가 작업" [ref=f36e308]:
+                          - button "추가 작업" [ref=f36e309]

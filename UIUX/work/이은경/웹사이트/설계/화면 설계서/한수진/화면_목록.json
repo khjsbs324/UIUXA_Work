@@ -1,0 +1,53 @@
+[
+  {
+    "id": "SCR-100",
+    "name": "메인페이지",
+    "purpose": "SOAPHE 비누 + 오브제형 트레이 세트 사전예약 유도",
+    "entryConditions": "URL 접속 또는 로고 클릭",
+    "sections": [
+      "Hero",
+      "Compare",
+      "FlagshipSet",
+      "LifestyleTray",
+      "ScentGuide",
+      "PreOrderForm",
+      "FAQ"
+    ],
+    "actions": [
+      "향 선택",
+      "트레이 탭 스위칭",
+      "사전예약 제출"
+    ],
+    "states": [
+      "Default",
+      "Loading",
+      "Error",
+      "Success"
+    ],
+    "nextScreens": [
+      "SCR-200"
+    ]
+  },
+  {
+    "id": "SCR-200",
+    "name": "사전예약 완료 모달",
+    "purpose": "예약 번호 발급 및 카톡 알림 신청",
+    "entryConditions": "사전예약 폼 유효성검사 성공 제출",
+    "sections": [
+      "Ticket",
+      "KakaoNotificationBtn"
+    ],
+    "actions": [
+      "카톡 알림 신청",
+      "확인 닫기"
+    ],
+    "states": [
+      "Default",
+      "Loading",
+      "Success"
+    ],
+    "nextScreens": [
+      "SCR-100"
+    ]
+  }
+]

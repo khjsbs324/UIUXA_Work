@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WICKETA 반응형 와이어프레임 뷰어 - 가상클라이언트15 서지안</title>
+  <style>
+    :root {
+      --bg-slate: #0F172A;
+      --card-bg: #FFFFFF;
+      --border-color: #E2E8F0;
+      --text-main: #1E293B;
+      --text-muted: #64748B;
+      --amber: #8B4513;
+      --amber-light: #FEF3C7;
+      --cyan: #008080;
+      --cyan-light: #E0F7FA;
+      --violet: #7C3AED;
+      --violet-light: #F3E5F5;
+      --red: #EF4444;
+      --sidebar-width: 280px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #F8FAFC;
+      color: var(--text-main);
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Sidebar Navigation */
+    #sidebar {
+      width: var(--sidebar-width);
+      background-color: var(--bg-slate);
+      color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid #334155;
+      z-index: 10;
+      flex-shrink: 0;
+    }
+
+    .sidebar-header {
+      padding: 20px;
+      border-bottom: 1px solid #334155;
+      background: linear-gradient(135deg, #8B4513, #008080, #7C3AED);
+    }
+    .sidebar-header h1 { font-size: 15px; font-weight: 800; color: #FFFFFF; }
+    .sidebar-header p { font-size: 11px; color: #E2E8F0; margin-top: 4px; }
+
+    .nav-section { flex: 1; overflow-y: auto; padding: 12px; }
+    .nav-section h2 { font-size: 11px; text-transform: uppercase; color: #94A3B8; margin: 12px 8px 6px; letter-spacing: 0.5px; }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      padding: 9px 12px;
+      border-radius: 8px;
+      color: #94A3B8;
+      text-decoration: none;
+      font-size: 13px;
+      margin-bottom: 4px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .nav-item:hover, .nav-item.active {
+      background-color: #1E293B;
+      color: #FFFFFF;
+      font-weight: 600;
+    }
+    .nav-item.active { border-left: 3px solid #008080; }
+    .nav-item span.badge {
+      margin-left: auto;
+      font-size: 10px;
+      padding: 2px 6px;
+      border-radius: 10px;
+      background-color: #334155;
+      color: #CBD5E1;
+    }
+
+    /* Main Content Area */
+    #main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Top Control Bar */
+    .top-bar {
+      height: 60px;
+      background-color: #FFFFFF;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+    }
+    .screen-title h2 { font-size: 16px; font-weight: 700; color: var(--text-main); }
+    .screen-title p { font-size: 12px; color: var(--text-muted); }
+
+    .purpose-tabs {
+      display: flex;
+      gap: 6px;
+      background: #F1F5F9;
+      padding: 4px;
+      border-radius: 8px;
+    }
+    .purpose-btn {
+      padding: 6px 12px;
+      font-size: 12px;
+      border: none;
+      border-radius: 6px;
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .purpose-btn.active {
+      background: #FFFFFF;
+      color: var(--text-main);
+      font-weight: 700;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    /* Viewport Area */
+    .viewport-container {
+      flex: 1;
+      overflow-y: auto;
+      padding: 24px;
+      background-color: #F8FAFC;
+    }
+
+    .wireframe-page {
+      display: none;
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+      max-width: 1000px;
+      margin: 0 auto 40px;
+      overflow: hidden;
+    }
+    .wireframe-page.active { display: block; }
+
+    /* Component Blocks */
+    .wf-header {
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #FAFAFA;
+    }
+    .wf-logo { font-weight: 900; font-size: 18px; color: var(--amber); }
+    .wf-gnb { display: flex; gap: 16px; font-size: 13px; font-weight: 600; color: var(--text-muted); }
+
+    .wf-hero {
+      padding: 40px 24px;
+      background: linear-gradient(135deg, #FEF3C7, #E0F7FA);
+      border-bottom: 1px solid var(--border-color);
+      text-align: center;
+    }
+    .wf-hero h2 { font-size: 24px; color: var(--text-main); margin-bottom: 8px; }
+    .wf-hero p { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; }
+
+    .wf-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: var(--cyan);
+      color: #FFFFFF;
+      border: none;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      margin: 4px;
+    }
+    .wf-btn-amber { background-color: var(--amber); }
+    .wf-btn-violet { background-color: var(--violet); }
+
+    .wf-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      padding: 24px;
+    }
+    .wf-card {
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 16px;
+      background: #FFFFFF;
+    }
+    .wf-card h3 { font-size: 14px; margin-bottom: 8px; color: var(--text-main); }
+    .wf-card p { font-size: 12px; color: var(--text-muted); margin-bottom: 12px; }
+
+    /* Order Drawer Modal */
+    #cart-drawer {
+      position: fixed;
+      top: 0; right: -420px;
+      width: 400px; height: 100vh;
+      background: #FFFFFF;
+      box-shadow: -4px 0 20px rgba(0,0,0,0.15);
+      z-index: 100;
+      transition: right 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    #cart-drawer.open { right: 0; }
+    .drawer-header {
+      padding: 20px;
+      background: var(--bg-slate);
+      color: #FFFFFF;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .drawer-body { flex: 1; padding: 20px; overflow-y: auto; }
+    .drawer-footer { padding: 20px; border-top: 1px solid var(--border-color); background: #FAFAFA; }
+
+    .overlay {
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.4); z-index: 90; display: none;
+    }
+    .overlay.open { display: block; }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div id="sidebar">
+    <div class="sidebar-header">
+      <h1>WICKETA 화면 설계서</h1>
+      <p>서지안 (P8 육아대디) 5대 목적 통합 뷰어</p>
+    </div>
+    <div class="nav-section">
+      <h2>메인 & 서비스 화면</h2>
+      <a class="nav-item active" onclick="showPage('PG-01', this)">PG-01 Home (메인 안식처) <span class="badge">메인</span></a>
+      <a class="nav-item" onclick="showPage('PG-02', this)">PG-02 Space Tour & Lab <span class="badge">3D투어</span></a>
+      <a class="nav-item" onclick="showPage('PG-03', this)">PG-03 Highball Shop & Gifting <span class="badge">상점/소셜</span></a>
+      <a class="nav-item" onclick="openDrawer()">PG-04 Cart Drawer (Aside) <span class="badge">3초결제</span></a>
+
+      <h2>상세 & 모달 화면</h2>
+      <a class="nav-item" onclick="showPage('PG-31', this)">PG-31 3D 이니셜 각인 상세 <span class="badge">3D각인</span></a>
+      <a class="nav-item" onclick="showPage('PG-32', this)">PG-32 1초 수색 & 180초 타이머 <span class="badge">ASMR</span></a>
+      <a class="nav-item" onclick="showPage('PG-33', this)">PG-33 번들 빌더 & 100% 페이백 <span class="badge">15%이체</span></a>
+      <a class="nav-item" onclick="showPage('PG-M01', this)">PG-M01 마이페이지 (MY) <span class="badge">회원</span></a>
+
+      <h2>예외 처리 화면</h2>
+      <a class="nav-item" onclick="showPage('EXP-01', this)">EXP-01 404 안내 페이지 <span class="badge">404</span></a>
+      <a class="nav-item" onclick="showPage('EXP-02', this)">EXP-02 일시 품절 모달 <span class="badge">품절</span></a>
+      <a class="nav-item" onclick="showPage('EXP-03', this)">EXP-03 결제 오류 레이어 <span class="badge">오류</span></a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main-content">
+    <div class="top-bar">
+      <div class="screen-title">
+        <h2 id="current-title">PG-01 Home (메인 안식처)</h2>
+        <p id="current-purpose">브랜드 정체성 전달, 노동제로 1초 하이볼 레시피 소개 및 LNB 무드 스위처 제공</p>
+      </div>
+      <div class="purpose-tabs">
+        <button class="purpose-btn active" onclick="switchPurpose(1, this)">목적1 시향예약</button>
+        <button class="purpose-btn" onclick="switchPurpose(2, this)">목적2 정기구독</button>
+        <button class="purpose-btn" onclick="switchPurpose(3, this)">목적3 카카오선물</button>
+        <button class="purpose-btn" onclick="switchPurpose(4, this)">목적4 180초타이머</button>
+        <button class="purpose-btn" onclick="switchPurpose(5, this)">목적5 100%페이백</button>
+      </div>
+    </div>
+
+    <div class="viewport-container">
+      <!-- PG-01 -->
+      <div id="PG-01" class="wireframe-page active">
+        <div class="wf-header">
+          <div class="wf-logo">WICKETA</div>
+          <div class="wf-gnb">
+            <span>1초 가이드</span>
+            <span>상점</span>
+            <span>마이페이지</span>
+            <button class="wf-btn" onclick="openDrawer()">🛒 Cart Drawer (REQ-04)</button>
+          </div>
+        </div>
+        <div class="wf-hero">
+          <h2>Zero-Labor 1-Sec Non-Alcohol Highball</h2>
+          <p>육아 퇴근 후 물 끓이기, 찻잎 거르기, 설거지 0건의 1초 안식처 (REQ-01, REQ-02)</p>
+          <button class="wf-btn wf-btn-amber" onclick="showPage('PG-02')">🏛️ 성수/도산 3D 공간 디지털 트윈 투어</button>
+          <button class="wf-btn wf-btn-violet" onclick="showPage('PG-31')">✒️ 3D 이니셜 각인 선물하기 (REQ-01)</button>
+        </div>
+        <div class="wf-grid">
+          <div class="wf-card">
+            <h3>💧 1초 융해 수색 룩북 (REQ-01)</h3>
+            <p>탄산수 투하 시 1.0초 만에 퍼지는 Cold Brew Amber & Carbonated Cyan 수색 모션</p>
+            <button class="wf-btn" onclick="showPage('PG-32')">1초 수색 뷰어 감상</button>
+          </div>
+          <div class="wf-card">
+            <h3>💳 15% 정기구독 혜택 계산기 (REQ-03)</h3>
+            <p>탄산수 6팩 믹스앤매치 시 월 15% 자동 절약 혜택 조절 슬라이더</p>
+            <button class="wf-btn wf-btn-amber" onclick="showPage('PG-33')">15% 계산기 실행</button>
+          </div>
+          <div class="wf-card">
+            <h3>🌙 밤 10시 180초 힐링 타이머 (REQ-05)</h3>
+            <p>뇌식을 돕는 180초 카운트다운 & 앰비언트 얼음 ASMR 오디오 트랙</p>
+            <button class="wf-btn wf-btn-violet" onclick="showPage('PG-32')">180초 타이머 시작</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PG-02 -->
+      <div id="PG-02" class="wireframe-page">
+        <div class="wf-header"><div class="wf-logo">WICKETA - Space Tour & Lab</div></div>
+        <div class="wf-hero">
+          <h2>🏛️ 360도 공간 포토그래피 & 디지털 트윈 (REQ-01)</h2>
+          <p>성수/도산 안식처 안개 룸 & 믹솔로지 바 핫스팟 인터랙션</p>
+          <button class="wf-btn" onclick="openDrawerWithMode('시향예약')">📅 1:1 시향 룸 타임슬롯 3초 예약 (REQ-04)</button>
+        </div>
+      </div>
+
+      <!-- PG-03 -->
+      <div id="PG-03" class="wireframe-page">
+        <div class="wf-header"><div class="wf-logo">WICKETA - Shop & Gifting Center</div></div>
+        <div class="wf-hero">
+          <h2>🍷 상점 & 크리에이터 5인 숏폼 릴스 그리드 (REQ-01, REQ-05)</h2>
+          <p>육아대디 3초 레시피, 1초 융해 팩트체크, 주소 미입력 카카오 1초 선물</p>
+          <button class="wf-btn wf-btn-violet" onclick="openDrawerWithMode('카카오선물')">📲 주소 몰라도 보내는 카카오 1초 선물</button>
+        </div>
+      </div>
+
+      <!-- PG-31 -->
+      <div id="PG-31" class="wireframe-page">
+        <div class="wf-header"><div class="wf-logo">3D 이니셜 각인 미리보기 캔버스 (REQ-01)</div></div>
+        <div class="wf-hero">
+          <h2>✒️ 금박/은박 3D 이니셜 각인 시뮬레이터</h2>
+          <p>틴케이스 매트 블랙 / 샌드 3D 회전 뷰어 및 각인 보증서 생성</p>
+          <button class="wf-btn wf-btn-amber" onclick="openDrawerWithMode('카카오선물')">각인 보증서 카카오 알림톡 발송 (REQ-05)</button>
+        </div>
+      </div>
+
+      <!-- PG-32 -->
+      <div id="PG-32" class="wireframe-page">
+        <div class="wf-header"><div class="wf-logo">180초 수색 변환 & ASMR (REQ-01, REQ-02)</div></div>
+        <div class="wf-hero">
+          <h2>⏳ 180초 무알콜 힐링 카운트다운 타이머</h2>
+          <p>앰비언트 얼음 ASMR 오디오 재생 & 마이페이지 동기화</p>
+          <button class="wf-btn" onclick="showPage('PG-M01')">🎧 ASMR 사운드 마이 동기화 (REQ-02)</button>
+        </div>
+      </div>
+
+      <!-- PG-33 -->
+      <div id="PG-33" class="wireframe-page">
+        <div class="wf-header"><div class="wf-logo">번들 빌더 & 100% 페이백 (REQ-03)</div></div>
+        <div class="wf-hero">
+          <h2>🏆 30일 리추얼 100% 페이백 챌린지 신청</h2>
+          <p>탄산수 6팩 믹스앤매치 15% 할인 및 주간 챌린지 미션</p>
+          <button class="wf-btn wf-btn-violet" onclick="openDrawerWithMode('정기구독')">💳 30일 정기배송 15% 자동이체 결제 (REQ-04)</button>
+        </div>
+      </div>
+
+      <!-- PG-M01 -->
+      <div id="PG-M01" class="wireframe-page">
+        <div class="wf-header"><div class="wf-logo">마이페이지 - 서지안 님</div></div>
+        <div class="wf-hero">
+          <h2>👨‍👧‍👦 서지안 님의 30일 리추얼 현황판</h2>
+          <p>배송주기(2주/4주) 스위처 | 각인 템플릿 재주문 | 챌린지 1일차 뱃지</p>
+        </div>
+      </div>
+
+      <!-- EXP Pages -->
+      <div id="EXP-01" class="wireframe-page">
+        <div class="wf-hero"><h2>404 페이지 - 길을 잃으셨나요?</h2><button class="wf-btn" onclick="showPage('PG-01')">메인 안식처 이동</button></div>
+      </div>
+      <div id="EXP-02" class="wireframe-page">
+        <div class="wf-hero"><h2>일시 품절 모달 - 카카오톡 재입고 알림 신청</h2><button class="wf-btn" onclick="showPage('PG-33')">대체 번들 보기</button></div>
+      </div>
+      <div id="EXP-03" class="wireframe-page">
+        <div class="wf-hero"><h2>결제 승인 시간 초과 - 입력 정보 100% 임시 보존</h2><button class="wf-btn" onclick="openDrawer()">결제 재시도</button></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Overlay -->
+  <div id="overlay" class="overlay" onclick="closeDrawer()"></div>
+
+  <!-- Cart Drawer Aside Modal -->
+  <div id="cart-drawer">
+    <div class="drawer-header">
+      <h3 id="drawer-title">⚡ 3초 Fast Checkout (REQ-04)</h3>
+      <button style="background:none; border:none; color:#FFF; font-size:18px; cursor:pointer;" onclick="closeDrawer()">✕</button>
+    </div>
+    <div class="drawer-body">
+      <div class="wf-card" style="margin-bottom:12px;">
+        <h4 id="drawer-mode-text">목적별 특화 결제/예약 모드</h4>
+        <p style="font-size:11px; color:#64748B; margin-top:4px;">Virtual Scroll 100% 보존 기술이 적용되어 닫기 클릭 시 이전 스크롤 위치로 복귀됩니다.</p>
+      </div>
+      <div style="margin-bottom:12px;">
+        <label style="font-size:12px; font-weight:700;">받는 사람 / 예약자 정보</label>
+        <input type="text" value="서지안 (010-9876-5432)" style="width:100%; padding:8px; margin-top:4px; border:1px solid #CBD5E1; border-radius:4px;">
+      </div>
+      <div style="margin-bottom:12px;">
+        <label style="font-size:12px; font-weight:700;">1-Click 저장 수단</label>
+        <select style="width:100%; padding:8px; margin-top:4px; border:1px solid #CBD5E1; border-radius:4px;">
+          <option>신한카드 ****-****-1234 (사전 등록)</option>
+          <option>카카오페이 1초 간편결제</option>
+        </select>
+      </div>
+    </div>
+    <div class="drawer-footer">
+      <button class="wf-btn wf-btn-amber" style="width:100%; padding:14px;" onclick="completeOrder()">⚡ 3초 만에 완료하기 (REQ-04)</button>
+    </div>
+  </div>
+
+  <script>
+    function showPage(pageId, element) {
+      document.querySelectorAll('.wireframe-page').forEach(el => el.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+
+      if (element) {
+        document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+        element.classList.add('active');
+      }
+
+      document.getElementById('current-title').innerText = pageId + " - " + (element ? element.innerText.split('\n')[0] : '');
+    }
+
+    function openDrawer() {
+      document.getElementById('cart-drawer').classList.add('open');
+      document.getElementById('overlay').classList.add('open');
+    }
+
+    function openDrawerWithMode(mode) {
+      document.getElementById('drawer-mode-text').innerText = "현재 모드: [" + mode + "] 3초 특화 결제";
+      openDrawer();
+    }
+
+    function closeDrawer() {
+      document.getElementById('cart-drawer').classList.remove('open');
+      document.getElementById('overlay').classList.remove('open');
+    }
+
+    function completeOrder() {
+      alert("⚡ [REQ-04] 3초 패스트 완료! 이전 보던 탐색 위치로 스크롤 100% 복원됩니다.");
+      closeDrawer();
+      showPage('PG-M01');
+    }
+
+    function switchPurpose(purposeNum, element) {
+      document.querySelectorAll('.purpose-btn').forEach(btn => btn.classList.remove('active'));
+      element.classList.add('active');
+
+      if(purposeNum === 1) showPage('PG-02');
+      else if(purposeNum === 2) showPage('PG-33');
+      else if(purposeNum === 3) showPage('PG-31');
+      else if(purposeNum === 4) showPage('PG-32');
+      else if(purposeNum === 5) showPage('PG-03');
+    }
+  </script>
+</body>
+</html>

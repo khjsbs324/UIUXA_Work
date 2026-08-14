@@ -1,0 +1,83 @@
+- generic [ref=f94e4]:
+  - banner:
+    - link "콘텐츠로 건너뛰기":
+      - /url: "#"
+    - generic [ref=f94e15]:
+      - generic [ref=f94e18]:
+        - generic:
+          - img "검색 아이콘"
+        - combobox "검색" [ref=f94e20]
+        - generic "이미지 업로드" [ref=f94e23]:
+          - button "Pinterest 렌즈" [ref=f94e24] [cursor=pointer]
+      - link "내 프로필" [ref=f94e33] [cursor=pointer]:
+        - /url: /victoryjhl/
+        - img [ref=f94e40]:
+          - generic [ref=f94e41]: 이
+      - button "계정" [ref=f94e45] [cursor=pointer]
+  - navigation [ref=f94e50]:
+    - generic [ref=f94e52]:
+      - generic [ref=f94e53]:
+        - generic "홈" [ref=f94e57]:
+          - link "홈" [ref=f94e58] [cursor=pointer]:
+            - /url: /
+        - generic "홈" [ref=f94e65]:
+          - link "홈" [ref=f94e66] [cursor=pointer]:
+            - /url: /
+        - generic "내 보드" [ref=f94e73]:
+          - link "내 보드" [ref=f94e74] [cursor=pointer]:
+            - /url: /victoryjhl/
+        - generic "만들기" [ref=f94e81]:
+          - button "만들기" [ref=f94e82] [cursor=pointer]
+      - generic "설정 및 지원" [ref=f94e98]:
+        - button "설정 및 지원" [ref=f94e99] [cursor=pointer]
+  - main [ref=f94e104]:
+    - generic [ref=f94e113]:
+      - button "뒤로" [ref=f94e115] [cursor=pointer]
+      - generic [ref=f94e125]:
+        - generic:
+          - generic:
+            - generic:
+              - list:
+                - listitem [ref=f94e126]:
+                  - group "Closeup content container" [ref=f94e133]:
+                    - generic [ref=f94e138]:
+                      - region "핀 이미지 및 탐색할 항목" [ref=f94e141]
+                      - generic [ref=f94e152]:
+                        - generic [ref=f94e155]:
+                          - list [ref=f94e156]:
+                            - generic [ref=f94e157]:
+                              - listitem [ref=f94e159]:
+                                - generic "반응" [ref=f94e162]:
+                                  - button "반응" [ref=f94e163] [cursor=pointer]
+                                - generic [ref=f94e168]: "0"
+                              - listitem [ref=f94e170]:
+                                - generic "댓글" [ref=f94e173]:
+                                  - button "댓글" [ref=f94e174] [cursor=pointer]
+                              - listitem [ref=f94e180]:
+                                - generic "공유" [ref=f94e184]:
+                                  - button "이 핀 공유" [ref=f94e187] [cursor=pointer]
+                              - listitem [ref=f94e193]:
+                                - generic "추가 작업" [ref=f94e198]:
+                                  - button "추가 작업" [ref=f94e201] [cursor=pointer]
+                          - generic [ref=f94e211]:
+                            - 'button "저장할 보드 선택: ..." [ref=f94e214] [cursor=pointer]':
+                              - generic "..." [ref=f94e217]
+                            - button "저장" [ref=f94e223] [cursor=pointer]
+                        - generic [ref=f94e231]:
+                          - generic [ref=f94e240]:
+                            - link [ref=f94e242] [cursor=pointer]:
+                              - /url: /logokucom/
+                              - img "LOGOKU 아바타 링크" [ref=f94e249]
+                            - link [ref=f94e253] [cursor=pointer]:
+                              - /url: /logokucom/
+                              - heading "LOGOKU" [level=2] [ref=f94e254]
+                          - generic [ref=f94e257]:
+                            - generic [ref=f94e259]:
+                              - link [ref=f94e266] [cursor=pointer]:
+                                - /url: https://www.logoku.com/letter-c-leaf-logo-ccb?utm_source=Pinterest&utm_medium=organic
+                                - heading "Letter C Leaf Logo - Ready Made, Sold Once" [level=1] [ref=f94e267]
+                              - link "사이트 방문" [ref=f94e275] [cursor=pointer]:
+                                - /url: https://www.logoku.com/letter-c-leaf-logo-ccb?utm_source=Pinterest&utm_medium=organic
+                            - generic [ref=f94e279]:
+                              - heading "설명" [level=4] [ref=f94e280]
+                              - generic [ref=f94e281]: Letter C Leaf Logo - LOGOKU

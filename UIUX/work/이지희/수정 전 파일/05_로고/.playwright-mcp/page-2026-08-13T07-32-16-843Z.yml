@@ -1,0 +1,151 @@
+- generic [ref=f79e4]:
+  - banner:
+    - link "콘텐츠로 건너뛰기":
+      - /url: "#"
+    - generic [ref=f79e15]:
+      - generic [ref=f79e17]:
+        - generic [ref=f79e18]:
+          - combobox "검색" [ref=f79e20]: organic curves wellness tea logo mark
+          - generic [ref=f79e21]:
+            - button "검색 입력 삭제" [ref=f79e24] [cursor=pointer]
+            - generic "이미지 업로드" [ref=f79e30]:
+              - button "Pinterest 렌즈" [ref=f79e31] [cursor=pointer]
+        - button "모든 핀 드롭다운" [ref=f79e38] [cursor=pointer]:
+          - generic [ref=f79e40]:
+            - generic [ref=f79e41]: 모든 핀
+            - img "드롭다운" [ref=f79e43]
+      - link "내 프로필" [ref=f79e49] [cursor=pointer]:
+        - /url: /victoryjhl/
+        - img [ref=f79e56]:
+          - generic [ref=f79e57]: 이
+      - button "계정" [ref=f79e61] [cursor=pointer]
+  - navigation [ref=f79e66]:
+    - generic [ref=f79e68]:
+      - generic [ref=f79e69]:
+        - generic "홈" [ref=f79e73]:
+          - link "홈" [ref=f79e74] [cursor=pointer]:
+            - /url: /
+        - generic "홈" [ref=f79e81]:
+          - link "홈" [ref=f79e82] [cursor=pointer]:
+            - /url: /
+        - generic "내 보드" [ref=f79e89]:
+          - link "내 보드" [ref=f79e90] [cursor=pointer]:
+            - /url: /victoryjhl/
+        - generic "만들기" [ref=f79e97]:
+          - button "만들기" [ref=f79e98] [cursor=pointer]
+      - generic "설정 및 지원" [ref=f79e114]:
+        - button "설정 및 지원" [ref=f79e115] [cursor=pointer]
+  - main [ref=f79e120]:
+    - generic [ref=f79e122]:
+      - heading "검색 결과 페이지" [level=1] [ref=f79e124]
+      - region "필터 및 세분화 검색" [ref=f79e128]:
+        - button "필터 표시" [ref=f79e137] [cursor=pointer]
+      - generic [ref=f79e148]:
+        - generic [ref=f79e149]: organic curves wellness tea logo mark 검색 결과를 추가로 표시
+        - list [ref=f79e154]:
+          - listitem [ref=f79e155]:
+            - button [ref=f79e157] [cursor=pointer]:
+              - group "핀 카드" [ref=f79e160]:
+                - generic [ref=f79e162]:
+                  - link "제목 없음 핀 페이지" [ref=f79e164]:
+                    - /url: /pin/329818372732157193/
+                    - img "포함된 이미지:" [ref=f79e174]
+                  - generic "추가 작업" [ref=f79e183]:
+                    - button "추가 작업" [ref=f79e184]
+          - listitem [ref=f79e189]:
+            - button [ref=f79e191] [cursor=pointer]:
+              - group "핀 카드" [ref=f79e194]:
+                - generic [ref=f79e196]:
+                  - link "Feminine logo. logo and identity design. Wellness aesthetic. wellness branding design 핀 페이지" [ref=f79e198]:
+                    - /url: /pin/1124140757030664550/
+                    - 'img "포함된 내용: business logo design startup logos brand identity inspiration professional logos unique logo concepts" [ref=f79e208]'
+                  - generic [ref=f79e213]:
+                    - heading [level=2] [ref=f79e219]:
+                      - link "Feminine logo. logo and identity design. Wellness aesthetic. wellness branding design 핀 페이지" [ref=f79e221]:
+                        - /url: /pin/1124140757030664550/
+                        - text: Feminine logo. logo and identity design. Wellness aesthetic. wellness branding design
+                    - generic "추가 작업" [ref=f79e224]:
+                      - button "추가 작업" [ref=f79e225]
+          - listitem [ref=f79e230]:
+            - button [ref=f79e232] [cursor=pointer]:
+              - group "핀 카드" [ref=f79e235]:
+                - generic [ref=f79e237]:
+                  - link "HA on TikTok 핀 페이지" [ref=f79e239]:
+                    - /url: /pin/6122149489263600/
+                    - 'img "포함된 이미지: HA on TikTok" [ref=f79e249]'
+                  - generic [ref=f79e254]:
+                    - heading [level=2] [ref=f79e260]:
+                      - link "HA on TikTok 핀 페이지" [ref=f79e262]:
+                        - /url: /pin/6122149489263600/
+                        - text: HA on TikTok
+                    - generic "추가 작업" [ref=f79e265]:
+                      - button "추가 작업" [ref=f79e266]
+          - listitem [ref=f79e271]:
+            - button [ref=f79e273] [cursor=pointer]:
+              - group "핀 카드" [ref=f79e276]:
+                - generic [ref=f79e278]:
+                  - link "nature demure minimal seamless calming aesthetic earthy wellness space logo design 핀 페이지" [ref=f79e280]:
+                    - /url: /pin/3518505955795678/
+                    - 'img "포함된 이미지: nature demure minimal seamless calming aesthetic earthy wellness space logo design" [ref=f79e290]'
+                  - generic [ref=f79e295]:
+                    - heading [level=2] [ref=f79e301]:
+                      - link "nature demure minimal seamless calming aesthetic earthy wellness space logo design 핀 페이지" [ref=f79e303]:
+                        - /url: /pin/3518505955795678/
+                        - text: nature demure minimal seamless calming aesthetic earthy wellness space logo design
+                    - generic "추가 작업" [ref=f79e306]:
+                      - button "추가 작업" [ref=f79e307]
+          - listitem [ref=f79e312]:
+            - button [ref=f79e314] [cursor=pointer]:
+              - group "핀 카드" [ref=f79e317]:
+                - generic [ref=f79e319]:
+                  - link "gentle yoga • holistic wellness • slow living • feminine energy • mindful living • calm home • wellness inspiration • intentional living 핀 페이지" [ref=f79e321]:
+                    - /url: /pin/1829656095545747/
+                    - img "포함된 이미지:" [ref=f79e331]
+                  - generic "추가 작업" [ref=f79e340]:
+                    - button "추가 작업" [ref=f79e341]
+          - listitem [ref=f79e346]:
+            - button [ref=f79e348] [cursor=pointer]:
+              - group "핀 카드" [ref=f79e351]:
+                - generic [ref=f79e353]:
+                  - link "제목 없음 핀 페이지" [ref=f79e355]:
+                    - /url: /pin/91197961199775714/
+                    - img "포함된 이미지:" [ref=f79e365]
+                  - generic "추가 작업" [ref=f79e374]:
+                    - button "추가 작업" [ref=f79e375]
+          - listitem [ref=f79e380]:
+            - button [ref=f79e382] [cursor=pointer]:
+              - group "핀 카드" [ref=f79e385]:
+                - generic [ref=f79e387]:
+                  - link "Vector tea green leaves. Lines for Farm Product Label Eco Logo Organic plant design. Rou 핀 페이지" [ref=f79e389]:
+                    - /url: /pin/258534834856560338/
+                    - 'img "포함된 내용: Vector tea green leaves. Lines for Farm Product Label Eco Logo Organic plant design. Round Bauer emblem linear style. Vintage abstract icon for natural products design cosmetics, ecological health" [ref=f79e399]'
+                  - generic [ref=f79e404]:
+                    - heading [level=2] [ref=f79e410]:
+                      - link "Vector tea green leaves. Lines for Farm Product Label Eco Logo Organic plant design. Rou 핀 페이지" [ref=f79e412]:
+                        - /url: /pin/258534834856560338/
+                        - text: Vector tea green leaves. Lines for Farm Product Label Eco Logo Organic plant design. Rou
+                    - generic "추가 작업" [ref=f79e415]:
+                      - button "추가 작업" [ref=f79e416]
+          - listitem [ref=f79e421]:
+            - button [ref=f79e423] [cursor=pointer]:
+              - group "핀 카드" [ref=f79e426]:
+                - generic [ref=f79e428]:
+                  - link "Identidade Visual | Nutricionista | Marca Premium para Saúde, Cuidado e Bem-estar 핀 페이지" [ref=f79e430]:
+                    - /url: /pin/361906520077377420/
+                    - 'img "포함된 이미지: Identidade Visual | Nutricionista | Marca Premium para Saúde, Cuidado e Bem-estar" [ref=f79e440]'
+                  - generic [ref=f79e445]:
+                    - heading [level=2] [ref=f79e451]:
+                      - link "Identidade Visual | Nutricionista | Marca Premium para Saúde, Cuidado e Bem-estar 핀 페이지" [ref=f79e453]:
+                        - /url: /pin/361906520077377420/
+                        - text: Identidade Visual | Nutricionista | Marca Premium para Saúde, Cuidado e Bem-estar
+                    - generic "추가 작업" [ref=f79e456]:
+                      - button "추가 작업" [ref=f79e457]
+          - listitem [ref=f79e462]:
+            - button [ref=f79e464] [cursor=pointer]:
+              - group "핀 카드" [ref=f79e467]:
+                - generic [ref=f79e469]:
+                  - 'link "some bits of recent portfolio work / wellness retreat concept 🌱 wouldn’t mind to relax in the middle of nowhere. hope you like it 😌 #branding #graphicdesign #graphicdesigner #creative #logodesign #brandingdesign #brandidentity #branding #branddesign #brandingconcept #smallbusiness #ontwerper #grafischontwerp 핀 페이지" [ref=f79e471]':
+                    - /url: /pin/11188699074642730/
+                    - img "포함된 이미지:" [ref=f79e481]
+                  - generic "추가 작업" [ref=f79e490]:
+                    - button "추가 작업" [ref=f79e491]

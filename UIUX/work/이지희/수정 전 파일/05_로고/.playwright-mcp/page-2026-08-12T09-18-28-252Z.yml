@@ -1,0 +1,102 @@
+- generic [ref=f66e4]:
+  - banner:
+    - link "콘텐츠로 건너뛰기":
+      - /url: "#"
+    - generic [ref=f66e15]:
+      - generic [ref=f66e18]:
+        - generic:
+          - img "검색 아이콘"
+        - combobox "검색" [ref=f66e20]
+        - generic "이미지 업로드" [ref=f66e23]:
+          - button "Pinterest 렌즈" [ref=f66e24] [cursor=pointer]
+      - link "내 프로필" [ref=f66e33] [cursor=pointer]:
+        - /url: /victoryjhl/
+        - img [ref=f66e40]:
+          - generic [ref=f66e41]: 이
+      - button "계정" [ref=f66e45] [cursor=pointer]
+  - navigation [ref=f66e50]:
+    - generic [ref=f66e52]:
+      - generic [ref=f66e53]:
+        - generic "홈" [ref=f66e57]:
+          - link "홈" [ref=f66e58] [cursor=pointer]:
+            - /url: /
+        - generic "홈" [ref=f66e65]:
+          - link "홈" [ref=f66e66] [cursor=pointer]:
+            - /url: /
+        - generic "내 보드" [ref=f66e73]:
+          - link "내 보드" [ref=f66e74] [cursor=pointer]:
+            - /url: /victoryjhl/
+        - generic "만들기" [ref=f66e81]:
+          - button "만들기" [ref=f66e82] [cursor=pointer]
+        - generic "업데이트" [ref=f66e91]:
+          - button "업데이트" [ref=f66e92] [cursor=pointer]
+        - generic "메시지" [ref=f66e101]:
+          - button "메시지" [ref=f66e102] [cursor=pointer]
+      - generic "설정 및 지원" [ref=f66e110]:
+        - button "설정 및 지원" [ref=f66e111] [cursor=pointer]
+  - main [ref=f66e116]:
+    - generic [ref=f66e125]:
+      - button "뒤로" [ref=f66e127] [cursor=pointer]
+      - generic [ref=f66e136]:
+        - generic [ref=f66e137]: 관련 상품 결과를 불러오는 중
+        - list [ref=f66e142]:
+          - listitem [ref=f66e143]:
+            - group "Closeup content container" [ref=f66e150]:
+              - generic [ref=f66e155]:
+                - region "핀 이미지 및 탐색할 항목" [ref=f66e158]:
+                  - link "사이트 방문" [ref=f66e172] [cursor=pointer]:
+                    - /url: http://www.polafijalkocreative.com/?utm_source=Pinterest&utm_medium=organic
+                - generic [ref=f66e177]:
+                  - generic [ref=f66e180]:
+                    - list [ref=f66e181]:
+                      - generic [ref=f66e182]:
+                        - listitem [ref=f66e184]:
+                          - generic "반응" [ref=f66e187]:
+                            - button "반응" [ref=f66e188] [cursor=pointer]
+                          - generic [ref=f66e193]: "0"
+                        - listitem [ref=f66e195]:
+                          - generic "댓글" [ref=f66e198]:
+                            - button "댓글" [ref=f66e199] [cursor=pointer]
+                        - listitem [ref=f66e205]:
+                          - generic "공유" [ref=f66e209]:
+                            - button "이 핀 공유" [ref=f66e212] [cursor=pointer]
+                        - listitem [ref=f66e218]:
+                          - generic "추가 작업" [ref=f66e223]:
+                            - button "추가 작업" [ref=f66e226] [cursor=pointer]
+                    - generic [ref=f66e236]:
+                      - 'button "저장할 보드 선택: 프로필" [ref=f66e239] [cursor=pointer]':
+                        - generic "프로필" [ref=f66e242]
+                      - button "저장" [ref=f66e248] [cursor=pointer]
+                  - generic [ref=f66e256]:
+                    - generic [ref=f66e265]:
+                      - link [ref=f66e267] [cursor=pointer]:
+                        - /url: /polafijalkocreative/
+                        - img "Pola Fijalko Creative | Branding + Design 아바타 링크" [ref=f66e274]
+                      - link [ref=f66e278] [cursor=pointer]:
+                        - /url: /polafijalkocreative/
+                        - heading "Pola Fijalko Creative | Branding + Design" [level=2] [ref=f66e279]
+                    - generic [ref=f66e282]:
+                      - generic [ref=f66e284]:
+                        - link [ref=f66e291] [cursor=pointer]:
+                          - /url: http://www.polafijalkocreative.com/?utm_source=Pinterest&utm_medium=organic
+                          - heading "Botanical Logo Mark" [level=1] [ref=f66e292]
+                        - link "사이트 방문" [ref=f66e300] [cursor=pointer]:
+                          - /url: http://www.polafijalkocreative.com/?utm_source=Pinterest&utm_medium=organic
+                      - generic [ref=f66e304]:
+                        - heading "설명" [level=4] [ref=f66e305]
+                        - generic [ref=f66e309]:
+                          - text: Minimal floral design by @polafijalkocreative Inquire to work with us.
+                          - link "#blooming" [ref=f66e311] [cursor=pointer]:
+                            - /url: /search/pins/?q=blooming
+                          - link "#flowerlogo" [ref=f66e313] [cursor=pointer]:
+                            - /url: /search/pins/?q=flowerlogo
+                          - link "#botanical" [ref=f66e315] [cursor=pointer]:
+                            - /url: /search/pins/?q=botanical
+                          - link "#botanicalart" [ref=f66e317] [cursor=pointer]:
+                            - /url: /search/pins/?q=botanicalart
+                          - link "#geometricart" [ref=f66e319] [cursor=pointer]:
+                            - /url: /search/pins/?q=geometricart
+          - listitem [ref=f66e321]
+          - listitem [ref=f66e325]
+          - listitem [ref=f66e329]
+          - listitem [ref=f66e333]

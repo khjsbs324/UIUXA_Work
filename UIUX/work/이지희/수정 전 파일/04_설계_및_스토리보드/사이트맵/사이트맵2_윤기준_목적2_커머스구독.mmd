@@ -1,0 +1,87 @@
+flowchart TD
+    classDef main fill:#1C2541,stroke:#0B132B,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef sub fill:#3A506B,stroke:#1C2541,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef drawer fill:#E0F7FA,stroke:#3A506B,stroke-width:2px,color:#1C2541,font-weight:bold;
+    classDef common fill:#F8F9FA,stroke:#1C2541,stroke-width:1px,color:#1C2541;
+    classDef member fill:#FFF3E0,stroke:#E65100,stroke-width:1.5px,color:#E65100,stroke-dasharray: 5 5;
+    classDef exception fill:#FFEBEE,stroke:#C62828,stroke-width:1.5px,color:#C62828,stroke-dasharray: 3 3;
+
+    Root["WICKETA Precision Subscription (가상클라이언트2 윤기준)"]
+    M1["1. Home 정기구독 메인 (PG-01)"]
+    M2["2. Subscription Lab 정기구독 (PG-02)"]
+    M3["3. Benefit & Calc 혜택계산 (PG-03)"]
+    M4["4. Cart Drawer 결제 Drawer (PG-04 Aside Layer)"]
+
+    Root --> M1
+    Root --> M2
+    Root --> M3
+    Root --> M4
+
+    M1_1["Hero Section (산화 방지 30일 정기구독 15% 상시할인)"]
+    M1_2["30-Day Freshness Quick View (신선도 100% 보존 뷰)"]
+    M1_3["Precision Delivery Schedule (2주/4주 정밀 배송 주기)"]
+    M1_4["Zero Defect Quality Fact (0% 오차 품질성적서)"]
+
+    M1 --> M1_1
+    M1 --> M1_2
+    M1 --> M1_3
+    M1 --> M1_4
+
+    M2_1["30일분 하이엔드 정밀 구독 팩 (PG-31)"]
+    M2_2["스마트 배송 주기 스위처 2주/4주 (PG-32)"]
+
+    M2 --> M2_1
+    M2 --> M2_2
+
+    M2_1_1["싱글 오리진 4종 수치 프로파일"]
+    M2_1_2["3중 밀폐 수밀 틴케이스 보관 시뮬레이터"]
+
+    M2_1 --> M2_1_1
+    M2_1 --> M2_1_2
+
+    M2_2_1["배송일 캘린더 정밀 변경 모달"]
+    M2_2_2["구독 일시정지 및 건너뛰기 설정"]
+
+    M2_2 --> M2_2_1
+    M2_2 --> M2_2_2
+
+    M3_1["실시간 정기구독 할인율 계산기 (PG-33)"]
+    M3_2["첫 구독 100% 품질 보증 바우처 안내표"]
+    M3_3["티스푼 & 정밀 타이머 번들 빌더"]
+
+    M3 --> M3_1
+    M3 --> M3_2
+    M3 --> M3_3
+
+    M3_1_1["연간 정기구독 절약 금액 수치 시각화"]
+    M3_3_1["정밀 팩 + 하이엔드 굿즈 선택기"]
+
+    M3_1 --> M3_1_1
+    M3_3 --> M3_3_1
+
+    M4_1["슬라이드아웃 Cart Drawer 1-Click 결제"]
+    M4_2["Virtual Scroll 위치 보존 (탐색 스크롤 100% 복원)"]
+
+    M4 --> M4_1
+    M4 --> M4_2
+
+    MEM1["[회원 영역] 1-Click 구독 주기 변경 (PG-M01 마이페이지)"]
+    GUEST1["[비회원 영역] 카카오 1초 간편 로그인 (가정)"]
+
+    M4 -.-> MEM1
+    M4 -.-> GUEST1
+
+    EXP1["[EXP-01] 404 Page Not Found (정밀 메인 안내 - 가정)"]
+    EXP2["[EXP-02] 정기구독 패키지 품절 모달 (재입고 알림 - 가정)"]
+    EXP3["[EXP-03] 결제 네트워크 오류 안내 (Cart Drawer 임시 저장 - 가정)"]
+
+    Root -.-> EXP1
+    M2_1 -.-> EXP2
+    M4_1 -.-> EXP3
+
+    class Root,M1 main;
+    class M2,M3 sub;
+    class M4,M4_1,M4_2 drawer;
+    class M1_1,M1_2,M1_3,M1_4,M2_1,M2_2,M2_1_1,M2_1_2,M2_2_1,M2_2_2,M3_1,M3_2,M3_3,M3_1_1,M3_3_1 common;
+    class MEM1,GUEST1 member;
+    class EXP1,EXP2,EXP3 exception;

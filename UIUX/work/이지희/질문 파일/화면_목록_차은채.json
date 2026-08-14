@@ -1,0 +1,66 @@
+{
+  "clientId": 1,
+  "clientName": "차은채",
+  "persona": "34세 / WICKETA 총괄 디렉터",
+  "brandPurpose": "바쁜 일상에 지친 2030 세대에게 노동 없는 3분간의 초현실주의적인 휴식(길티프리 리추얼) 공간을 제공하는 것입니다. 차를 마시는 행위 자체를 환상 공간으로 입장하는 특별한 의식으로 재해석하여, 일상과의 완벽한 단절 및 마법 같은 휴식을 선사하는 것을 목표로 합니다.",
+  "slogan": "문을 열고, 현실에서 벗어나세요 (Open the Door, Escape Reality)",
+  "worldview": "비밀정원 다과회 (WONDERSCAPE)",
+  "coreValues": [
+    "1. 감정 맞춤 추천 (Emotion Dial)",
+    "2. DIY 믹솔로지 & 블렌딩 (Mixology)",
+    "3. 노동 없는 3분의 초현실 휴식"
+  ],
+  "theme": "100% 모노크롬 3대 웹사이트 페이지 (메인 3대 큐레이션 & 도감 20대 전체 상품 분리)",
+  "pagesCount": 3,
+  "sectionsCount": 20,
+  "updatedAt": "2026-08-14",
+  "pages": [
+    {
+      "id": "P1",
+      "name": "메인 안식처 (Home)",
+      "url": "#home",
+      "curations": [
+        "신상품 (New Arrivals, 4종)",
+        "추천상품 (Director's Picks, 4종)",
+        "이벤트 & 기획 상품 (Special Events, 4종)"
+      ],
+      "keyFeatures": [
+        "HERO-01 2배 확장된 시네마틱 3D 비주얼 캔버스",
+        "SLOGAN-01 브랜드 슬로건 섹션 (히어로 직하단)",
+        "QUIZ-01 감정 다이얼 맞춤 & DIY 블렌딩 진단",
+        "3대 핵심 큐레이션 그리드 (신상품, 추천상품, 이벤트상품)",
+        "전체 상품 도감 바로가기 CTA 배너",
+        "RITUAL-01 180초 타이머"
+      ]
+    },
+    {
+      "id": "P2",
+      "name": "믹솔로지 도감 (Category Shop & Archive)",
+      "url": "#category",
+      "totalProducts": 20,
+      "categories": [
+        "전체보기 (20)",
+        "1초 하이볼 스틱 (4)",
+        "미드나잇 GABA 릴랙스 (4)",
+        "0kcal 클린티 (4)",
+        "브루잉 리추얼 & 다기 (4)",
+        "선물세트 & 정기구독 (4)"
+      ]
+    },
+    {
+      "id": "P3",
+      "name": "비밀정원 스토리 (About WICKETA)",
+      "url": "#about",
+      "worldview": "비밀정원 다과회 (WONDERSCAPE)",
+      "coreValues": [
+        "감정 맞춤 추천 (Emotion Dial)",
+        "DIY 믹솔로지 & 블렌딩 (Mixology)",
+        "노동 없는 3분의 초현실 휴식"
+      ]
+    }
+  ],
+  "ecommerceFeatures": {
+    "cart": { "enabled": true, "location": "GNB 우측 상단", "hasModal": true },
+    "wishlist": { "enabled": true, "location": "GNB 우측 상단 & 상품 카드별 🤍", "hasModal": true }
+  }
+}

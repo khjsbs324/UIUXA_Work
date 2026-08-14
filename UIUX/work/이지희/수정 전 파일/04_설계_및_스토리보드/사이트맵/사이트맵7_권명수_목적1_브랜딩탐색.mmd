@@ -1,0 +1,87 @@
+flowchart TD
+    classDef main fill:#3E2723,stroke:#1B0000,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef sub fill:#8D6E63,stroke:#3E2723,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef drawer fill:#FCE4EC,stroke:#8D6E63,stroke-width:2px,color:#3E2723,font-weight:bold;
+    classDef common fill:#FFF8F8,stroke:#3E2723,stroke-width:1px,color:#3E2723;
+    classDef member fill:#FFF3E0,stroke:#E65100,stroke-width:1.5px,color:#E65100,stroke-dasharray: 5 5;
+    classDef exception fill:#FFEBEE,stroke:#C62828,stroke-width:1.5px,color:#C62828,stroke-dasharray: 3 3;
+
+    Root["WICKETA x Edit-Well (가상클라이언트6 권명수)"]
+    M1["1. Home 이너뷰티 메인 (PG-01)"]
+    M2["2. Inner Beauty Routine 루틴관 (PG-02)"]
+    M3["3. Edit-Well Shop 단독상점 (PG-03)"]
+    M4["4. Cart Drawer 결제 Drawer (PG-04 Aside Layer)"]
+
+    Root --> M1
+    Root --> M2
+    Root --> M3
+    Root --> M4
+
+    M1_1["Hero Section (Inner Beauty & Healthy Mixology)"]
+    M1_2["Editorial Beauty Story (0.5px 글래스모피즘 에세이)"]
+    M1_3["Pure Water Lookbook (로즈 파스텔 수색 룩북)"]
+    M1_4["0g Clean Label Checklist (0kcal/무가당 팩트 체크표)"]
+
+    M1 --> M1_1
+    M1 --> M1_2
+    M1 --> M1_3
+    M1 --> M1_4
+
+    M2_1["3단계 피부 & 수면 밸런스 체크 퀴즈 (PG-31)"]
+    M2_2["히알루론산 & 비타민C 항산화 수치 라벨 (PG-32)"]
+
+    M2 --> M2_1
+    M2 --> M2_2
+
+    M2_1_1["1:1 맞춤 이너뷰티 티 처방 카드"]
+    M2_1_2["수분/디톡스 밸런스 레이더 차트"]
+
+    M2_1 --> M2_1_1
+    M2_1 --> M2_1_2
+
+    M2_2_1["피부과 전문의 0g 투명 검증서"]
+    M2_2_2["식물성 항산화 성분 배합 시뮬레이터"]
+
+    M2_2 --> M2_2_1
+    M2_2 --> M2_2_2
+
+    M3_1["Edit-Well 단독 뷰티 파우치 쇼케이스 (PG-33)"]
+    M3_2["투명 리유저블 글래스 보틀 3D 뷰어"]
+    M3_3["콜라보 기획전 사전 신청 혜택"]
+
+    M3 --> M3_1
+    M3 --> M3_2
+    M3 --> M3_3
+
+    M3_1_1["방수 뷰티 파우치 + 무카페인 스틱 세트"]
+    M3_3_1["Edit-Well 웰컴 바우처 신청 폼"]
+
+    M3_1 --> M3_1_1
+    M3_3 --> M3_3_1
+
+    M4_1["슬라이드아웃 Cart Drawer (1-Page 처방전 주문서)"]
+    M4_2["Virtual Scroll 위치 보존 (탐색 스크롤 100% 복원)"]
+
+    M4 --> M4_1
+    M4 --> M4_2
+
+    MEM1["[회원 영역] 뷰티 진단 기록 & 파우치 주문 (PG-M01 마이페이지)"]
+    GUEST1["[비회원 영역] 카카오 1초 간편 로그인 (가정)"]
+
+    M4 -.-> MEM1
+    M4 -.-> GUEST1
+
+    EXP1["[EXP-01] 404 Page Not Found (메인 안식처 안내 - 가정)"]
+    EXP2["[EXP-02] 뷰티 파우치 품절 안내 모달 (재입고 알림 - 가정)"]
+    EXP3["[EXP-03] 결제 네트워크 오류 안내 (Cart Drawer 임시 저장 - 가정)"]
+
+    Root -.-> EXP1
+    M3_1 -.-> EXP2
+    M4_1 -.-> EXP3
+
+    class Root,M1 main;
+    class M2,M3 sub;
+    class M4,M4_1,M4_2 drawer;
+    class M1_1,M1_2,M1_3,M1_4,M2_1,M2_2,M2_1_1,M2_1_2,M2_2_1,M2_2_2,M3_1,M3_2,M3_3,M3_1_1,M3_3_1 common;
+    class MEM1,GUEST1 member;
+    class EXP1,EXP2,EXP3 exception;

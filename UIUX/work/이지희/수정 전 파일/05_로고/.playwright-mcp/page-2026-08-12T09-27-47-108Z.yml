@@ -1,0 +1,115 @@
+- generic [ref=f124e4]:
+  - banner:
+    - link "콘텐츠로 건너뛰기":
+      - /url: "#"
+    - generic [ref=f124e15]:
+      - generic [ref=f124e18]:
+        - generic:
+          - img "검색 아이콘"
+        - combobox "검색" [ref=f124e20]
+        - generic "이미지 업로드" [ref=f124e23]:
+          - button "Pinterest 렌즈" [ref=f124e24] [cursor=pointer]
+      - link "내 프로필" [ref=f124e33] [cursor=pointer]:
+        - /url: /victoryjhl/
+        - img [ref=f124e40]:
+          - generic [ref=f124e41]: 이
+      - button "계정" [ref=f124e45] [cursor=pointer]
+  - navigation [ref=f124e50]:
+    - generic [ref=f124e52]:
+      - generic [ref=f124e53]:
+        - generic "홈" [ref=f124e57]:
+          - link "홈" [ref=f124e58] [cursor=pointer]:
+            - /url: /
+        - generic "홈" [ref=f124e65]:
+          - link "홈" [ref=f124e66] [cursor=pointer]:
+            - /url: /
+        - generic "내 보드" [ref=f124e73]:
+          - link "내 보드" [ref=f124e74] [cursor=pointer]:
+            - /url: /victoryjhl/
+        - generic "만들기" [ref=f124e81]:
+          - button "만들기" [ref=f124e82] [cursor=pointer]
+        - generic "업데이트" [ref=f124e91]:
+          - 'button "업데이트: 32개 알림" [ref=f124e92] [cursor=pointer]'
+        - generic "메시지" [ref=f124e101]:
+          - button "메시지" [ref=f124e102] [cursor=pointer]
+      - generic "설정 및 지원" [ref=f124e110]:
+        - button "설정 및 지원" [ref=f124e111] [cursor=pointer]
+  - generic:
+    - complementary "꼬리말 부동 버튼"
+  - main [ref=f124e116]:
+    - generic [ref=f124e125]:
+      - button "뒤로" [ref=f124e127] [cursor=pointer]
+      - generic [ref=f124e136]:
+        - generic [ref=f124e137]: 관련 상품 결과를 불러오는 중
+        - list [ref=f124e142]:
+          - listitem [ref=f124e143]:
+            - group "Closeup content container" [ref=f124e150]:
+              - generic [ref=f124e155]:
+                - region "핀 이미지 및 탐색할 항목" [ref=f124e158]:
+                  - generic [ref=f124e168]:
+                    - button "더 크게 보기" [ref=f124e170] [cursor=pointer]:
+                      - generic [ref=f124e172]:
+                        - generic: 더 크게 보기
+                        - img "더 크게 보기" [ref=f124e174]
+                    - button "이미지 검색" [ref=f124e179] [cursor=pointer]:
+                      - generic [ref=f124e181]:
+                        - generic: 이미지 검색
+                        - img "이미지 검색" [ref=f124e183]
+                    - link "사이트 방문" [ref=f124e188] [cursor=pointer]:
+                      - /url: https://www.freepik.com/premium-vector/butterfly-logo-simple-elegant-monoline-colorful_18396902.htm?utm_source=Pinterest&utm_medium=organic
+                - generic [ref=f124e193]:
+                  - generic [ref=f124e196]:
+                    - list [ref=f124e197]:
+                      - generic [ref=f124e198]:
+                        - listitem [ref=f124e200]:
+                          - generic "반응" [ref=f124e203]:
+                            - button "반응" [ref=f124e204] [cursor=pointer]
+                          - generic [ref=f124e209]: "72"
+                        - listitem [ref=f124e211]:
+                          - generic "댓글" [ref=f124e214]:
+                            - button "댓글" [ref=f124e215] [cursor=pointer]
+                        - listitem [ref=f124e221]:
+                          - generic "공유" [ref=f124e225]:
+                            - button "이 핀 공유" [ref=f124e228] [cursor=pointer]
+                        - listitem [ref=f124e234]:
+                          - generic "추가 작업" [ref=f124e239]:
+                            - button "추가 작업" [ref=f124e242] [cursor=pointer]
+                    - generic [ref=f124e252]:
+                      - 'button "저장할 보드 선택: ..." [ref=f124e255] [cursor=pointer]':
+                        - generic "..." [ref=f124e258]
+                      - button "저장" [ref=f124e264] [cursor=pointer]
+                  - generic [ref=f124e272]:
+                    - generic [ref=f124e281]:
+                      - link [ref=f124e283] [cursor=pointer]:
+                        - /url: /magnific_ai/
+                        - img "Magnific (formerly Freepik) 아바타 링크" [ref=f124e290]
+                      - link [ref=f124e294] [cursor=pointer]:
+                        - /url: /magnific_ai/
+                        - heading [level=2] [ref=f124e295]:
+                          - generic [ref=f124e297]:
+                            - text: Magnific (formerly
+                            - generic [ref=f124e298]:
+                              - text: Freepik)
+                              - img "도메인 인증" [ref=f124e300]
+                    - generic [ref=f124e302]:
+                      - generic [ref=f124e304]:
+                        - link [ref=f124e311] [cursor=pointer]:
+                          - /url: https://www.freepik.com/premium-vector/butterfly-logo-simple-elegant-monoline-colorful_18396902.htm?utm_source=Pinterest&utm_medium=organic
+                          - heading "Butterfly logo simple and elegant monoline and colorful | Premium Vector" [level=1] [ref=f124e312]
+                        - link "사이트 방문" [ref=f124e320] [cursor=pointer]:
+                          - /url: https://www.freepik.com/premium-vector/butterfly-logo-simple-elegant-monoline-colorful_18396902.htm?utm_source=Pinterest&utm_medium=organic
+                      - generic [ref=f124e322]:
+                        - generic [ref=f124e324]:
+                          - heading "설명" [level=4] [ref=f124e325]
+                          - generic [ref=f124e326]: Download this Premium vector of Butterfly logo simple and elegant monoline and colorful and explore millions of professional vectors on Magnific.
+                        - button [ref=f124e340] [cursor=pointer]:
+                          - heading "댓글 4개" [level=2] [ref=f124e348]
+                  - img "편집기를 불러오는 중" [ref=f124e367]
+          - listitem [ref=f124e368]
+          - listitem [ref=f124e372]
+          - listitem [ref=f124e376]
+          - listitem [ref=f124e380]
+          - listitem [ref=f124e384]
+          - listitem [ref=f124e388]
+  - generic:
+    - contentinfo "꼬리말"

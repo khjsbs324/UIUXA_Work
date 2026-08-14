@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 450" width="100%" height="100%">
+  <rect width="1000" height="450" fill="#f8f9fa" rx="12"/>
+  <rect x="330" y="20" width="340" height="50" rx="8" fill="#0f172a" stroke="#000000" stroke-width="2"/>
+  <text x="500" y="52" fill="#ffffff" font-family="'Pretendard', sans-serif" font-size="16" font-weight="900" text-anchor="middle">사단(士團) 임채원 최적 병합 사이트맵 IA</text>
+
+  <!-- Level 1 Menu Boxes -->
+  <g font-family="'Pretendard', sans-serif" font-size="13" font-weight="800" text-anchor="middle">
+    <!-- 1.0 Timeline -->
+    <line x1="500" y1="70" x2="110" y2="120" stroke="#94a3b8" stroke-width="2"/>
+    <rect x="20" y="120" width="180" height="45" rx="6" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+    <text x="110" y="148" fill="#ffffff">1.0 24H Timeline</text>
+
+    <!-- 2.0 TPO Wheel -->
+    <line x1="500" y1="70" x2="305" y2="120" stroke="#94a3b8" stroke-width="2"/>
+    <rect x="215" y="120" width="180" height="45" rx="6" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+    <text x="305" y="148" fill="#ffffff">2.0 TPO Scenario Wheel</text>
+
+    <!-- 3.0 Portable Kit -->
+    <line x1="500" y1="70" x2="500" y2="120" stroke="#94a3b8" stroke-width="2"/>
+    <rect x="410" y="120" width="180" height="45" rx="6" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+    <text x="500" y="148" fill="#ffffff">3.0 All-Day Portable Kit</text>
+
+    <!-- 4.0 Smart Refill -->
+    <line x1="500" y1="70" x2="695" y2="120" stroke="#94a3b8" stroke-width="2"/>
+    <rect x="605" y="120" width="180" height="45" rx="6" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+    <text x="695" y="148" fill="#ffffff">4.0 Daily Smart Refill</text>
+
+    <!-- 5.0 Tasting Kit -->
+    <line x1="500" y1="70" x2="890" y2="120" stroke="#94a3b8" stroke-width="2"/>
+    <rect x="800" y="120" width="180" height="45" rx="6" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+    <text x="890" y="148" fill="#ffffff">5.0 TPO Tasting Kit</text>
+  </g>
+
+  <!-- Level 2 Sub Menu Boxes -->
+  <g font-family="'Pretendard', sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#334155">
+    <!-- Sub 1 -->
+    <line x1="110" y1="165" x2="110" y2="200" stroke="#cbd5e1" stroke-width="1.5"/>
+    <rect x="20" y="200" width="180" height="70" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="110" y="225">· 06:00 새벽 / 12:00 정오</text>
+    <text x="110" y="245">· 18:00 황혼 / 24:00 심야</text>
+    <text x="110" y="260">· 시간별 조도 무드 뷰</text>
+
+    <!-- Sub 2 -->
+    <line x1="305" y1="165" x2="305" y2="200" stroke="#cbd5e1" stroke-width="1.5"/>
+    <rect x="215" y="200" width="180" height="70" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="305" y="225">· 오피스/산책/다이닝 휠</text>
+    <text x="305" y="245">· 1·2·3마패 듀얼 레이어링</text>
+    <text x="305" y="260">· 체온 부위별 펌핑 가이드</text>
+
+    <!-- Sub 3 -->
+    <line x1="500" y1="165" x2="500" y2="200" stroke="#cbd5e1" stroke-width="1.5"/>
+    <rect x="410" y="200" width="180" height="70" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="500" y="225">· 15ml 마패 단품 (1·2·3)</text>
+    <text x="500" y="245">· 15ml 3종 가죽 세트</text>
+    <text x="500" y="260">· 노리개 가죽 키체인 옵션</text>
+
+    <!-- Sub 4 -->
+    <line x1="695" y1="165" x2="695" y2="200" stroke="#cbd5e1" stroke-width="1.5"/>
+    <rect x="605" y="200" width="180" height="70" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="695" y="225">· 시간대별 알림톡 스케줄</text>
+    <text x="695" y="245">· 3개월 정기 카트리지 배송</text>
+    <text x="695" y="260">· 잔량 예측 &amp; 원클릭 교체</text>
+
+    <!-- Sub 5 -->
+    <line x1="890" y1="165" x2="890" y2="200" stroke="#cbd5e1" stroke-width="1.5"/>
+    <rect x="800" y="200" width="180" height="70" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="890" y="225">· 24H 5종 미니 시향 킷</text>
+    <text x="890" y="245">· 100% 바우처 즉시 환급</text>
+    <text x="890" y="260">· Quick Slide Cart Drawer</text>
+  </g>
+
+  <!-- Bottom Badge -->
+  <rect x="280" y="380" width="440" height="35" rx="17" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/>
+  <text x="500" y="403" fill="#334155" font-family="'Pretendard', sans-serif" font-size="12" font-weight="700" text-anchor="middle">Type 3 (SW19 / 딥티크형) 24시간 시간축 &amp; TPO 최적 병합 구조</text>
+</svg>

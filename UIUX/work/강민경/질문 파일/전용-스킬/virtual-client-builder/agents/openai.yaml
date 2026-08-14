@@ -1,0 +1,4 @@
+interface:
+  display_name: "가상 클라이언트 빌더"
+  short_description: "승인된 종합 분석으로 근거 기반 가상 클라이언트를 생성합니다."
+  default_prompt: "$virtual-client-builder를 사용해 승인된 종합 분석 입력에서 추적 가능한 가상 클라이언트와 요구사항을 생성해 주세요."

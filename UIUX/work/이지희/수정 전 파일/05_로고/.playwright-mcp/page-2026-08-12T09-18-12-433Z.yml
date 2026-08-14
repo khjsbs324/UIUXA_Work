@@ -1,0 +1,271 @@
+- generic [active] [ref=f62e1]:
+  - generic:
+    - generic:
+      - link "주요 콘텐츠로 이동" [ref=f62e2] [cursor=pointer]
+      - link "접근성 도움말" [ref=f62e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=ko
+  - generic [ref=f62e8]:
+    - search [ref=f62e9]:
+      - generic [ref=f62e12]:
+        - link [ref=f62e13] [cursor=pointer]:
+          - /url: https://www.google.com/webhp?hl=ko&ictx=0&sa=X&ved=0ahUKEwiLuJeI4ZqWAxV-slYBHXGdMx4QpYkNCAo
+          - img "Google 홈으로 이동" [ref=f62e14]
+        - generic [ref=f62e19]:
+          - combobox "검색" [ref=f62e22]: site:pinterest.com/pin "monoline" "logo mark" "minimalist" butterfly OR botanical OR tea site:pinterest.com/pin "monoline" "logo mark" "minimalist" butterfly OR botanical OR tea
+          - generic [ref=f62e23]:
+            - button "지우기" [ref=f62e25] [cursor=pointer]
+            - generic [ref=f62e30]:
+              - button "입력 도구" [ref=f62e31] [cursor=pointer]
+              - button "음성 검색" [ref=f62e35] [cursor=pointer]
+              - button "이미지로 검색" [ref=f62e38] [cursor=pointer]
+        - button "검색" [ref=f62e41] [cursor=pointer]
+    - generic [ref=f62e46]:
+      - button "설정" [ref=f62e48] [cursor=pointer]
+      - button "공유" [ref=f62e54] [cursor=pointer]
+      - generic [ref=f62e60]:
+        - button "Google 앱" [ref=f62e62] [cursor=pointer]
+        - link "로그인" [ref=f62e67] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=ko&passive=true&continue=https://www.google.com/search%3Fq%3Dsite:pinterest.com/pin%2B%2522monoline%2522%2B%2522logo%2Bmark%2522%2B%2522minimalist%2522%2Bbutterfly%2BOR%2Bbotanical%2BOR%2Btea&ec=futura_srp_og_si_72236_p
+  - generic [ref=f62e69]:
+    - navigation [ref=f62e75]:
+      - generic [ref=f62e81]:
+        - list [ref=f62e82]:
+          - listitem [ref=f62e83]:
+            - link "AI 모드" [ref=f62e86] [cursor=pointer]:
+              - /url: /search?q=site:pinterest.com/pin+%22monoline%22+%22logo+mark%22+%22minimalist%22+butterfly+OR+botanical+OR+tea&sca_esv=1a87055de532744c&udm=50&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA70DBExgkDFCpIGAUraPZqPrF7gx5lk2It4g6nB4ghos-Hg1TmeZlIHOh3L1-qiWgc97R3nE96xmVAgeLTdYP-XE46B52bOvd56RB_iy6bGL0UtG3pXB9VChZUepc29b-UeeDl0P69CnJ4w_OlOt2rzYH-DW45tL2_RoT6wTbd1E48JF4dg&aep=1&ntc=1&cs=0&sa=X&ved=2ahUKEwiLuJeI4ZqWAxV-slYBHXGdMx4Q2J8OegQIERAD
+          - listitem [ref=f62e90]:
+            - link "전체" [disabled] [ref=f62e91]
+          - listitem [ref=f62e94]:
+            - link "이미지" [ref=f62e95] [cursor=pointer]:
+              - /url: /search?sca_esv=1a87055de532744c&udm=2&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA70DBExgkDFCpIGAUraPZqPrF7gx5lk2It4g6nB4ghos-Hg1TmeZlIHOh3L1-qiWgc97R3nE96xmVAgeLTdYP-XE46B52bOvd56RB_iy6bGL0UtG3pXB9VChZUepc29b-UeeDl0P69CnJ4w_OlOt2rzYH-DW45tL2_RoT6wTbd1E48JF4dg&q=site:pinterest.com/pin+%22monoline%22+%22logo+mark%22+%22minimalist%22+butterfly+OR+botanical+OR+tea&sa=X&ved=2ahUKEwiLuJeI4ZqWAxV-slYBHXGdMx4QtKgLegQIFBAB
+          - listitem [ref=f62e98]:
+            - link "쇼핑" [ref=f62e99] [cursor=pointer]:
+              - /url: /search?sca_esv=1a87055de532744c&udm=28&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA70DBExgkDFCpIGAUraPZqPrF7gx5lk2It4g6nB4ghos-Hg1TmeZlIHOh3L1-qiWgc97R3nE96xmVAgeLTdYP-XE46B52bOvd56RB_iy6bGL0UtG3pXB9VChZUepc29b-UeeDl0P69CnJ4w_OlOt2rzYH-DW45tL2_RoT6wTbd1E48JF4dg&q=site:pinterest.com/pin+%22monoline%22+%22logo+mark%22+%22minimalist%22+butterfly+OR+botanical+OR+tea&ved=1t:220175&ictx=111
+          - listitem [ref=f62e102]:
+            - link "짧은 동영상" [ref=f62e103] [cursor=pointer]:
+              - /url: /search?sca_esv=1a87055de532744c&udm=39&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA70DBExgkDFCpIGAUraPZqPrF7gx5lk2It4g6nB4ghos-Hg1TmeZlIHOh3L1-qiWgc97R3nE96xmVAgeLTdYP-XE46B52bOvd56RB_iy6bGL0UtG3pXB9VChZUepc29b-UeeDl0P69CnJ4w_OlOt2rzYH-DW45tL2_RoT6wTbd1E48JF4dg&q=site:pinterest.com/pin+%22monoline%22+%22logo+mark%22+%22minimalist%22+butterfly+OR+botanical+OR+tea&sa=X&ved=2ahUKEwiLuJeI4ZqWAxV-slYBHXGdMx4Qs6gLegQIFRAB
+          - listitem [ref=f62e106]:
+            - link "동영상" [ref=f62e107] [cursor=pointer]:
+              - /url: /search?sca_esv=1a87055de532744c&udm=7&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA70DBExgkDFCpIGAUraPZqPrF7gx5lk2It4g6nB4ghos-Hg1TmeZlIHOh3L1-qiWgc97R3nE96xmVAgeLTdYP-XE46B52bOvd56RB_iy6bGL0UtG3pXB9VChZUepc29b-UeeDl0P69CnJ4w_OlOt2rzYH-DW45tL2_RoT6wTbd1E48JF4dg&q=site:pinterest.com/pin+%22monoline%22+%22logo+mark%22+%22minimalist%22+butterfly+OR+botanical+OR+tea&sa=X&ved=2ahUKEwiLuJeI4ZqWAxV-slYBHXGdMx4QtKgLegQIFhAB
+          - listitem [ref=f62e110]:
+            - link "뉴스" [ref=f62e111] [cursor=pointer]:
+              - /url: /search?sca_esv=1a87055de532744c&q=site:pinterest.com/pin+%22monoline%22+%22logo+mark%22+%22minimalist%22+butterfly+OR+botanical+OR+tea&tbm=nws&source=lnms&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA70DBExgkDFCpIGAUraPZqPrF7gx5lk2It4g6nB4ghos-Hg1TmeZlIHOh3L1-qiWgc97R3nE96xmVAgeLTdYP-XE46B52bOvd56RB_iy6bGL0UtG3pXB9VChZUepc29b-UeeDl0P69CnJ4w_OlOt2rzYH-DW45tL2_RoT6wTbd1E48JF4dg&sa=X&ved=2ahUKEwiLuJeI4ZqWAxV-slYBHXGdMx4Q0pQJegQIGBAB
+          - listitem [ref=f62e114]:
+            - button [ref=f62e115] [cursor=pointer]:
+              - generic "필터 더보기" [ref=f62e116]: 더보기
+        - button "도구" [ref=f62e123] [cursor=pointer]
+    - heading "검색결과" [level=1] [ref=f62e130]
+    - main [ref=f62e136]:
+      - generic [ref=f62e140]:
+        - generic [ref=f62e143]:
+          - heading "Web results" [level=2] [ref=f62e144]
+          - generic [ref=f62e145]:
+            - generic [ref=f62e148]:
+              - link "Botanical Logo Mark Pinterest https://nz.pinterest.com › pin" [ref=f62e150] [cursor=pointer]:
+                - /url: https://nz.pinterest.com/pin/380483868543376347/
+                - heading "Botanical Logo Mark" [level=3] [ref=f62e151]
+                - generic [ref=f62e157]:
+                  - generic [ref=f62e158]: Pinterest
+                  - generic [ref=f62e160]: https://nz.pinterest.com › pin
+              - button "검색결과에 관한 정보" [ref=f62e164] [cursor=pointer]
+            - generic [ref=f62e171]:
+              - text: Gold
+              - emphasis [ref=f62e172]: Botanical
+              - text: Logo ·
+              - emphasis [ref=f62e173]: Botanical
+              - text: Line Art Logo · Geometric Logo.
+              - emphasis [ref=f62e174]: Botanical Logo Mark
+              - text: "|"
+              - emphasis [ref=f62e175]: Monoline
+              - text: geometric logo, Quatrefoil logo,
+              - emphasis [ref=f62e176]: Minimalist botanical
+              - text: pattern.
+        - generic [ref=f62e180]:
+          - generic [ref=f62e183]:
+            - link "Minimal Letter B Logo Design Pinterest https://www.pinterest.com › pin" [ref=f62e185] [cursor=pointer]:
+              - /url: https://www.pinterest.com/pin/612419249331421601/
+              - heading "Minimal Letter B Logo Design" [level=3] [ref=f62e186]
+              - generic [ref=f62e192]:
+                - generic [ref=f62e193]: Pinterest
+                - generic [ref=f62e195]: https://www.pinterest.com › pin
+            - button "검색결과에 관한 정보" [ref=f62e199] [cursor=pointer]
+          - generic [ref=f62e205]:
+            - generic [ref=f62e206]: 2021. 3. 30. —
+            - generic [ref=f62e207]:
+              - text: Brand Identity Ideas · Logo Design Inspiration ·
+              - emphasis [ref=f62e208]: Minimalist
+              - text: Letter B Logo · Modern
+              - emphasis [ref=f62e209]: Minimalist
+              - text: Logo.
+        - generic [ref=f62e213]:
+          - generic [ref=f62e216]:
+            - link "Minimalist X Logo Design Pinterest · ashokpala 4년 전" [ref=f62e218] [cursor=pointer]:
+              - /url: https://in.pinterest.com/pin/logo--307863324538890356/
+              - heading "Minimalist X Logo Design" [level=3] [ref=f62e219]
+              - generic [ref=f62e225]:
+                - generic [ref=f62e226]: Pinterest · ashokpala
+                - generic [ref=f62e228]: 4년 전
+            - button "검색결과에 관한 정보" [ref=f62e232] [cursor=pointer]
+          - generic [ref=f62e239]:
+            - text: Related interests.
+            - emphasis [ref=f62e240]: Minimalist
+            - text: X Logo Design · Infinity X Logo · Modern X Logo ·
+            - emphasis [ref=f62e241]: Minimalist
+            - text: Letter E Branding · Letter E
+            - emphasis [ref=f62e242]: Monoline
+            - text: Concept Logo.
+        - generic [ref=f62e246]:
+          - generic [ref=f62e249]:
+            - link "Letter N Deer monogram typography logomark design ... Pinterest https://www.pinterest.com › pin" [ref=f62e251] [cursor=pointer]:
+              - /url: https://www.pinterest.com/pin/596164069461923943/
+              - heading "Letter N Deer monogram typography logomark design ..." [level=3] [ref=f62e252]
+              - generic [ref=f62e258]:
+                - generic [ref=f62e259]: Pinterest
+                - generic [ref=f62e261]: https://www.pinterest.com › pin
+            - button "검색결과에 관한 정보" [ref=f62e265] [cursor=pointer]
+          - generic [ref=f62e271]:
+            - generic [ref=f62e272]: 2025. 5. 8. —
+            - generic [ref=f62e273]:
+              - emphasis [ref=f62e274]: Minimalist
+              - text: Deer Logo |
+              - emphasis [ref=f62e275]: Minimalist
+              - text: reindeer logo design,
+              - emphasis [ref=f62e276]: Minimalist
+              - text: deer design, Logo ideas ...
+              - emphasis [ref=f62e277]: Tea
+              - text: brands | Game logo,
+              - emphasis [ref=f62e278]: Logo mark
+              - text: ", Deer crest. Koen ..."
+        - generic [ref=f62e282]:
+          - generic [ref=f62e285]:
+            - link "Organic Personal Brand design Pinterest https://www.pinterest.com › pin" [ref=f62e287] [cursor=pointer]:
+              - /url: https://www.pinterest.com/pin/334533078587983266/
+              - heading "Organic Personal Brand design" [level=3] [ref=f62e288]
+              - generic [ref=f62e294]:
+                - generic [ref=f62e295]: Pinterest
+                - generic [ref=f62e297]: https://www.pinterest.com › pin
+            - button "검색결과에 관한 정보" [ref=f62e301] [cursor=pointer]
+          - generic [ref=f62e308]:
+            - text: ...
+            - emphasis [ref=f62e309]: logo mark
+            - text: . Thistle wildflower monogram. Logo ...
+            - emphasis [ref=f62e310]: monoline
+            - text: ", Oval monogram design. More to explore. HF_GraphicDesign · HF Graphic Design ..."
+            - emphasis [ref=f62e311]: Minimalist
+            - text: Herbal ...
+        - generic [ref=f62e315]:
+          - generic [ref=f62e318]:
+            - link "Line art coffee logo vector illustration design graphic ... Pinterest · ibrahin7 5년 전" [ref=f62e320] [cursor=pointer]:
+              - /url: https://www.pinterest.com/pin/lodzrov_-i-will-design-modern-line-art-logo-for-5-on-fiverrcom--38069559339553748/
+              - heading "Line art coffee logo vector illustration design graphic ..." [level=3] [ref=f62e321]
+              - generic [ref=f62e327]:
+                - generic [ref=f62e328]: Pinterest · ibrahin7
+                - generic [ref=f62e330]: 5년 전
+            - button "검색결과에 관한 정보" [ref=f62e334] [cursor=pointer]
+          - generic [ref=f62e341]:
+            - text: ...
+            - emphasis [ref=f62e342]: monoline
+            - text: ", outline, linear, clever, coffee, cafe ... Coffee and"
+            - emphasis [ref=f62e343]: Tea
+            - text: Cup
+            - emphasis [ref=f62e344]: Minimalist
+            - text: Logo Design Template |
+            - emphasis [ref=f62e345]: Tea
+            - text: cup logo design, Logo vector.
+        - generic [ref=f62e349]:
+          - generic [ref=f62e352]:
+            - link "Tree Care Logo Pinterest https://www.pinterest.com › pin" [ref=f62e354] [cursor=pointer]:
+              - /url: https://www.pinterest.com/pin/337347828359703548/
+              - heading "Tree Care Logo" [level=3] [ref=f62e355]
+              - generic [ref=f62e361]:
+                - generic [ref=f62e362]: Pinterest
+                - generic [ref=f62e364]: https://www.pinterest.com › pin
+            - button "검색결과에 관한 정보" [ref=f62e368] [cursor=pointer]
+          - generic [ref=f62e375]:
+            - text: ...
+            - emphasis [ref=f62e376]: monoline
+            - text: "#modernlogo # ..."
+            - emphasis [ref=f62e377]: Minimalist
+            - text: tree logo design. Tree. More about this ...
+            - emphasis [ref=f62e378]: Logo Mark
+            - text: . We think you'll love these. Related ...
+        - generic [ref=f62e382]:
+          - generic [ref=f62e385]:
+            - link "Floral Botanical Logo Pinterest · ansammawad 3년 전" [ref=f62e387] [cursor=pointer]:
+              - /url: https://www.pinterest.com/pin/floral-botanical-logo--890305420063373089/
+              - heading "Floral Botanical Logo" [level=3] [ref=f62e388]
+              - generic [ref=f62e394]:
+                - generic [ref=f62e395]: Pinterest · ansammawad
+                - generic [ref=f62e397]: 3년 전
+            - button "검색결과에 관한 정보" [ref=f62e401] [cursor=pointer]
+          - generic [ref=f62e408]:
+            - emphasis [ref=f62e409]: Minimalist
+            - text: Modern Flower Logo · Elegant Floral Business Logo ... This product includes
+            - emphasis [ref=f62e410]: monoline
+            - text: flowers rose, tulip, floral seamless ...
+        - generic [ref=f62e414]:
+          - generic [ref=f62e417]:
+            - link "Illustrative Logo Design Pinterest https://www.pinterest.com › pin" [ref=f62e419] [cursor=pointer]:
+              - /url: https://www.pinterest.com/pin/108156828540767723/
+              - heading "Illustrative Logo Design" [level=3] [ref=f62e420]
+              - generic [ref=f62e426]:
+                - generic [ref=f62e427]: Pinterest
+                - generic [ref=f62e429]: https://www.pinterest.com › pin
+            - button "검색결과에 관한 정보" [ref=f62e433] [cursor=pointer]
+          - generic [ref=f62e439]:
+            - generic [ref=f62e440]: 2020. 6. 17. —
+            - generic [ref=f62e441]:
+              - text: "#portrait #botanicalillustration #"
+              - emphasis [ref=f62e442]: monoline
+              - text: "#handdrawn ... Black & White Aesthetic"
+              - emphasis [ref=f62e443]: Minimalist
+              - text: Circle Makeup Logo - Templates by Canva ...
+        - generic [ref=f62e447]:
+          - generic [ref=f62e450]:
+            - link "24 Fonts for Cafe Logo Pinterest · goofydesignercom 2년 전" [ref=f62e452] [cursor=pointer]:
+              - /url: https://www.pinterest.com/pin/24-best-fonts-for-cafe-logo-that-offer-a-taste-of-elegance--996210380062457124/
+              - heading "24 Fonts for Cafe Logo" [level=3] [ref=f62e453]
+              - generic [ref=f62e459]:
+                - generic [ref=f62e460]: Pinterest · goofydesignercom
+                - generic [ref=f62e462]: 2년 전
+            - button "검색결과에 관한 정보" [ref=f62e466] [cursor=pointer]
+          - generic [ref=f62e473]:
+            - text: ... Logo · Modern
+            - emphasis [ref=f62e474]: Minimalist Tea
+            - text: Logo · Bold Whiskey Branding · Coffee shop logo design /
+            - emphasis [ref=f62e475]: TEA
+            - text: "& TOAST | Modern cafe branding design, Modern"
+            - emphasis [ref=f62e476]: tea
+            - text: .
+      - navigation [ref=f62e479]:
+        - heading "페이지 탐색" [level=1] [ref=f62e480]
+        - text: "1"
+        - link "Page 2" [ref=f62e483] [cursor=pointer]:
+          - /url: /search?q=site:pinterest.com/pin+%22monoline%22+%22logo+mark%22+%22minimalist%22+butterfly+OR+botanical+OR+tea&sca_esv=1a87055de532744c&ei=VDp8aou-Bv7k2roP8brO8QE&start=10&sa=N&sstk=AU9db-BSYL6HgNv_KLDQWJpBkcsTDoUCf62VIyq-bNk7HJSVNRrfsMoyf1a-uLKUeFPOdv62TdxTOpKKipw5ksofcUCJ6j3P-p5c1A&ved=2ahUKEwiLuJeI4ZqWAxV-slYBHXGdMx4Q8tMDegQILBAE
+          - text: "2"
+        - heading [level=2] [ref=f62e485]:
+          - link "다음" [ref=f62e486] [cursor=pointer]:
+            - /url: /search?q=site:pinterest.com/pin+%22monoline%22+%22logo+mark%22+%22minimalist%22+butterfly+OR+botanical+OR+tea&sca_esv=1a87055de532744c&ei=VDp8aou-Bv7k2roP8brO8QE&start=10&sa=N&sstk=AU9db-BSYL6HgNv_KLDQWJpBkcsTDoUCf62VIyq-bNk7HJSVNRrfsMoyf1a-uLKUeFPOdv62TdxTOpKKipw5ksofcUCJ6j3P-p5c1A&ved=2ahUKEwiLuJeI4ZqWAxV-slYBHXGdMx4Q8NMDegQILBAG
+      - navigation
+    - contentinfo [ref=f62e489]:
+      - heading "바닥글 링크" [level=1] [ref=f62e490]
+      - generic [ref=f62e494]:
+        - generic [ref=f62e496]:
+          - text: 대한민국
+          - generic [ref=f62e498]:
+            - button "월평동 대전광역시 서구 - 이전 활동 기준" [ref=f62e500] [cursor=pointer]:
+              - generic [ref=f62e501]: 월평동 대전광역시 서구
+              - generic [ref=f62e503]:
+                - text: "-"
+                - generic [ref=f62e504]: 이전 활동 기준
+            - text: "-"
+            - button "위치 업데이트" [ref=f62e506] [cursor=pointer]
+        - generic [ref=f62e509]:
+          - link "도움말" [ref=f62e510] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=ko&fg=1
+          - link "의견 보내기" [ref=f62e511] [cursor=pointer]:
+            - /url: "#"
+          - link "개인정보처리방침" [ref=f62e512] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=ko&fg=1
+          - link "약관" [ref=f62e513] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=ko&fg=1

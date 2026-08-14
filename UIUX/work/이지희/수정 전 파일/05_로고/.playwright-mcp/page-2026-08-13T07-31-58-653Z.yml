@@ -1,0 +1,194 @@
+- generic [ref=f51e4]:
+  - banner:
+    - link "콘텐츠로 건너뛰기":
+      - /url: "#"
+    - generic [ref=f51e15]:
+      - generic [ref=f51e17]:
+        - generic [ref=f51e18]:
+          - combobox "검색" [ref=f51e20]: tea leaf circular flow monoline logo mark
+          - generic [ref=f51e21]:
+            - button "검색 입력 삭제" [ref=f51e24] [cursor=pointer]
+            - generic "이미지 업로드" [ref=f51e30]:
+              - button "Pinterest 렌즈" [ref=f51e31] [cursor=pointer]
+        - button "모든 핀 드롭다운" [ref=f51e38] [cursor=pointer]:
+          - generic [ref=f51e40]:
+            - generic [ref=f51e41]: 모든 핀
+            - img "드롭다운" [ref=f51e43]
+      - link "내 프로필" [ref=f51e49] [cursor=pointer]:
+        - /url: /victoryjhl/
+        - img [ref=f51e56]:
+          - generic [ref=f51e57]: 이
+      - button "계정" [ref=f51e61] [cursor=pointer]
+  - navigation [ref=f51e66]:
+    - generic [ref=f51e68]:
+      - generic [ref=f51e69]:
+        - generic "홈" [ref=f51e73]:
+          - link "홈" [ref=f51e74] [cursor=pointer]:
+            - /url: /
+        - generic "홈" [ref=f51e81]:
+          - link "홈" [ref=f51e82] [cursor=pointer]:
+            - /url: /
+        - generic "내 보드" [ref=f51e89]:
+          - link "내 보드" [ref=f51e90] [cursor=pointer]:
+            - /url: /victoryjhl/
+        - generic "만들기" [ref=f51e97]:
+          - button "만들기" [ref=f51e98] [cursor=pointer]
+        - generic "업데이트" [ref=f51e107]:
+          - button "업데이트" [ref=f51e108] [cursor=pointer]
+        - generic "메시지" [ref=f51e117]:
+          - button "메시지" [ref=f51e118] [cursor=pointer]
+      - generic "설정 및 지원" [ref=f51e126]:
+        - button "설정 및 지원" [ref=f51e127] [cursor=pointer]
+  - main [ref=f51e132]:
+    - generic [ref=f51e134]:
+      - heading "검색 결과 페이지" [level=1] [ref=f51e136]
+      - region "필터 및 세분화 검색" [ref=f51e140]:
+        - button "필터 표시" [ref=f51e149] [cursor=pointer]
+      - generic [ref=f51e160]:
+        - generic [ref=f51e161]: tea leaf circular flow monoline logo mark 검색 결과를 추가로 불러오는 중
+        - list [ref=f51e166]:
+          - listitem [ref=f51e167]:
+            - button [ref=f51e169] [cursor=pointer]:
+              - group "핀 카드" [ref=f51e172]:
+                - generic [ref=f51e174]:
+                  - link "hojas de árbol de té vectorial y taza para cafe eco logo diseño de planta orgánica día internacional del té emblema redondo estilo lineal. icono abstracto vintage para productos naturales cosméticos, conceptos ecológicos, salud 핀 페이지" [ref=f51e176]:
+                    - /url: /pin/35747390788397310/
+                    - 'img "포함된 이미지: hojas de árbol de té vectorial y taza para cafe eco logo diseño de planta orgánica día internacional del té emblema redondo estilo lineal. icono abstracto vintage para productos naturales cosméticos, conceptos ecológicos, salud" [ref=f51e186]'
+                  - generic [ref=f51e191]:
+                    - heading [level=2] [ref=f51e197]:
+                      - link "hojas de árbol de té vectorial y taza para cafe eco logo diseño de planta orgánica día internacional del té emblema redondo estilo lineal. icono abstracto vintage para productos naturales cosméticos, conceptos ecológicos, salud 핀 페이지" [ref=f51e199]:
+                        - /url: /pin/35747390788397310/
+                        - text: hojas de árbol de té vectorial y taza para cafe eco logo diseño de planta orgánica día internacional del té emblema redondo estilo lineal. icono abstracto vintage para productos naturales cosméticos, conceptos ecológicos, salud
+                    - generic "추가 작업" [ref=f51e202]:
+                      - button "추가 작업" [ref=f51e203]
+          - listitem [ref=f51e208]:
+            - button [ref=f51e210] [cursor=pointer]:
+              - group "핀 카드" [ref=f51e213]:
+                - generic [ref=f51e215]:
+                  - link "Vector cup of Tea and tree Leaves for Cafe or Farm Product Label Eco Logo Organic plant 핀 페이지" [ref=f51e217]:
+                    - /url: /pin/4925880835722922/
+                    - 'img "포함된 내용: Vector cup of Tea and tree Leaves for Cafe or Farm Product Label Eco Logo Organic plant design. Round international tea day emblem linear style. Vintage abstract icon for natural products design" [ref=f51e227]'
+                  - generic [ref=f51e232]:
+                    - heading [level=2] [ref=f51e238]:
+                      - link "Vector cup of Tea and tree Leaves for Cafe or Farm Product Label Eco Logo Organic plant 핀 페이지" [ref=f51e240]:
+                        - /url: /pin/4925880835722922/
+                        - text: Vector cup of Tea and tree Leaves for Cafe or Farm Product Label Eco Logo Organic plant
+                    - generic "추가 작업" [ref=f51e243]:
+                      - button "추가 작업" [ref=f51e244]
+          - listitem [ref=f51e249]:
+            - button [ref=f51e251] [cursor=pointer]:
+              - group "핀 카드" [ref=f51e254]:
+                - generic [ref=f51e256]:
+                  - link "제목 없음 핀 페이지" [ref=f51e258]:
+                    - /url: /pin/31595634885820707/
+                    - img "포함된 이미지:" [ref=f51e268]
+                  - generic "추가 작업" [ref=f51e277]:
+                    - button "추가 작업" [ref=f51e278]
+          - listitem [ref=f51e283]:
+            - button [ref=f51e285] [cursor=pointer]:
+              - group "핀 카드" [ref=f51e288]:
+                - generic [ref=f51e290]:
+                  - link "제목 없음 핀 페이지" [ref=f51e292]:
+                    - /url: /pin/19140367163723671/
+                    - img "포함된 이미지:" [ref=f51e302]
+                  - generic "추가 작업" [ref=f51e311]:
+                    - button "추가 작업" [ref=f51e312]
+          - listitem [ref=f51e317]:
+            - button [ref=f51e319] [cursor=pointer]:
+              - group "핀 카드" [ref=f51e322]:
+                - generic [ref=f51e324]:
+                  - 'link "Vector Tea Tree Leaves and Sun for Cafe or Farm Product Label Eco Logo Organic Plant Design. Round Emblem Linear Style Stock Vector - Illustration of field, restaurant: 263224996 핀 페이지" [ref=f51e326]':
+                    - /url: /pin/273875221086836494/
+                    - 'img "포함된 이미지: Vector Tea Tree Leaves and Sun for Cafe or Farm Product Label Eco Logo Organic Plant Design. Round Emblem Linear Style Stock Vector - Illustration of field, restaurant: 263224996" [ref=f51e336]'
+                  - generic [ref=f51e341]:
+                    - heading [level=2] [ref=f51e347]:
+                      - 'link "Vector Tea Tree Leaves and Sun for Cafe or Farm Product Label Eco Logo Organic Plant Design. Round Emblem Linear Style Stock Vector - Illustration of field, restaurant: 263224996 핀 페이지" [ref=f51e349]':
+                        - /url: /pin/273875221086836494/
+                        - text: "Vector Tea Tree Leaves and Sun for Cafe or Farm Product Label Eco Logo Organic Plant Design. Round Emblem Linear Style Stock Vector - Illustration of field, restaurant: 263224996"
+                    - generic "추가 작업" [ref=f51e352]:
+                      - button "추가 작업" [ref=f51e353]
+          - listitem [ref=f51e358]:
+            - button [ref=f51e360] [cursor=pointer]:
+              - group "핀 카드" [ref=f51e363]:
+                - generic [ref=f51e365]:
+                  - link "Green Leaves Tea Farm Logo 핀 페이지" [ref=f51e367]:
+                    - /url: /pin/4596627180052546944/
+                    - 'img "포함된 이미지: Green Leaves Tea Farm Logo" [ref=f51e377]'
+                  - generic [ref=f51e382]:
+                    - generic [ref=f51e384]:
+                      - generic [ref=f51e386]:
+                        - img "쇼핑 가능한 핀 표시기" [ref=f51e388]
+                        - heading [level=2] [ref=f51e391]:
+                          - link "Green Leaves Tea Farm Logo 핀 페이지" [ref=f51e393]:
+                            - /url: /pin/4596627180052546944/
+                            - text: Green Leaves Tea Farm Logo
+                      - link "Green Leaves Tea Farm Logo 핀 페이지" [ref=f51e395]:
+                        - /url: /pin/4596627180052546944/
+                        - generic "Scalebranding" [ref=f51e399]
+                    - generic "추가 작업" [ref=f51e402]:
+                      - button "추가 작업" [ref=f51e403]
+          - listitem [ref=f51e408]:
+            - button [ref=f51e410] [cursor=pointer]:
+              - group "핀 카드" [ref=f51e413]:
+                - generic [ref=f51e415]:
+                  - link "Villorya Organics 핀 페이지" [ref=f51e417]:
+                    - /url: /pin/969751732289677071/
+                    - 'img "포함된 이미지: Villorya Organics" [ref=f51e427]'
+                  - generic [ref=f51e432]:
+                    - heading [level=2] [ref=f51e438]:
+                      - link "Villorya Organics 핀 페이지" [ref=f51e440]:
+                        - /url: /pin/969751732289677071/
+                        - text: Villorya Organics
+                    - generic "추가 작업" [ref=f51e443]:
+                      - button "추가 작업" [ref=f51e444]
+          - listitem [ref=f51e449]:
+            - button [ref=f51e451] [cursor=pointer]:
+              - group "핀 카드" [ref=f51e454]:
+                - generic [ref=f51e456]:
+                  - link "Vector tea tree leaves and abstract lines for Cafe or Farm Product Label Eco Logo Organi 핀 페이지" [ref=f51e458]:
+                    - /url: /pin/134334001380566112/
+                    - 'img "포함된 내용: Vector tea tree leaves and abstract lines for Cafe or Farm Product Label Eco Logo Organic plant design. Round Bauer emblem linear style. Vintage abstract icon for natural products design cosmetics" [ref=f51e468]'
+                  - generic [ref=f51e473]:
+                    - heading [level=2] [ref=f51e479]:
+                      - link "Vector tea tree leaves and abstract lines for Cafe or Farm Product Label Eco Logo Organi 핀 페이지" [ref=f51e481]:
+                        - /url: /pin/134334001380566112/
+                        - text: Vector tea tree leaves and abstract lines for Cafe or Farm Product Label Eco Logo Organi
+                    - generic "추가 작업" [ref=f51e484]:
+                      - button "추가 작업" [ref=f51e485]
+          - listitem [ref=f51e490]:
+            - button [ref=f51e492] [cursor=pointer]:
+              - group "핀 카드" [ref=f51e495]:
+                - generic [ref=f51e497]:
+                  - link "Vector tea green leaves. Lines for Farm Product Label Eco Logo Organic plant design. Rou 핀 페이지" [ref=f51e499]:
+                    - /url: /pin/258534834856560338/
+                    - 'img "포함된 내용: Vector tea green leaves. Lines for Farm Product Label Eco Logo Organic plant design. Round Bauer emblem linear style. Vintage abstract icon for natural products design cosmetics, ecological health" [ref=f51e509]'
+                  - generic [ref=f51e514]:
+                    - heading [level=2] [ref=f51e520]:
+                      - link "Vector tea green leaves. Lines for Farm Product Label Eco Logo Organic plant design. Rou 핀 페이지" [ref=f51e522]:
+                        - /url: /pin/258534834856560338/
+                        - text: Vector tea green leaves. Lines for Farm Product Label Eco Logo Organic plant design. Rou
+                    - generic "추가 작업" [ref=f51e525]:
+                      - button "추가 작업" [ref=f51e526]
+          - listitem [ref=f51e531]:
+            - button [ref=f51e533] [cursor=pointer]:
+              - group "핀 카드" [ref=f51e536]:
+                - generic [ref=f51e538]:
+                  - link "제목 없음 핀 페이지" [ref=f51e540]:
+                    - /url: /pin/329818372732157193/
+                    - img "포함된 이미지:" [ref=f51e550]
+                  - generic "추가 작업" [ref=f51e559]:
+                    - button "추가 작업" [ref=f51e560]
+          - listitem [ref=f51e565]:
+            - button [ref=f51e567] [cursor=pointer]:
+              - group "핀 카드" [ref=f51e570]:
+                - generic [ref=f51e572]:
+                  - link "taza vectorial de té y hojas de árbol para café 핀 페이지" [ref=f51e574]:
+                    - /url: /pin/369084131985447963/
+                    - 'img "포함된 내용: Clothing logo design" [ref=f51e584]'
+                  - generic [ref=f51e589]:
+                    - heading [level=2] [ref=f51e595]:
+                      - link "taza vectorial de té y hojas de árbol para café 핀 페이지" [ref=f51e597]:
+                        - /url: /pin/369084131985447963/
+                        - text: taza vectorial de té y hojas de árbol para café
+                    - generic "추가 작업" [ref=f51e600]:
+                      - button "추가 작업" [ref=f51e601]

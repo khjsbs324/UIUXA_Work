@@ -1,0 +1,246 @@
+{
+  "clientId": 1,
+  "clientName": "차은채",
+  "persona": "34세 / WICKETA 총괄 디렉터",
+  "killerFeature": "D2C 자사몰 브랜드 론칭 비주얼 룩북 3D 공간 파노라마",
+  "sections15Count": 15,
+  "integratedGoalsCount": 5,
+  "updatedAt": "2026-08-14",
+  "goals": [
+    {
+      "code": "목적1_브랜딩탐색",
+      "name": "목적 1: 브랜딩/탐색",
+      "desc": "브랜드 정체성 룩북 & 360도 공간 파노라마 에디토리얼"
+    },
+    {
+      "code": "목적2_커머스구독",
+      "name": "목적 2: 커머스/구독",
+      "desc": "30일 정기구독 15% 이체 할인 계산기 대시보드 & 슬라이드아웃 Cart Drawer"
+    },
+    {
+      "code": "목적3_커스텀선물",
+      "name": "목적 3: 커스텀/선물",
+      "desc": "3D 회전 VIP 이니셜 각인 Live Studio & 카카오 1초 선물"
+    },
+    {
+      "code": "목적4_리추얼타이머",
+      "name": "목적 4: 리추얼/타이머",
+      "desc": "180초 카운트다운 타이머 링 & sound 다크 오디오"
+    },
+    {
+      "code": "목적5_재방문소셜",
+      "name": "목적 5: 재방문/소셜",
+      "desc": "크리에이터 숏폼 릴스 그리드 & 100% 페이백 하트 투표"
+    }
+  ],
+  "screens": [
+    { "id": "PG-01", "name": "Home (메인 안식처)", "type": "Main", "sectionsCount": 15 },
+    { "id": "PG-02", "name": "Space Tour & Lab", "type": "Sub" },
+    { "id": "PG-03", "name": "Custom Shop", "type": "Sub" },
+    { "id": "PG-04", "name": "Fast Cart Drawer", "type": "Layer" },
+    { "id": "PG-31", "name": "Custom Engraving", "type": "Sub" },
+    { "id": "PG-32", "name": "Ritual Timer", "type": "Sub" },
+    { "id": "PG-33", "name": "Subscription Calc", "type": "Sub" },
+    { "id": "PG-M01", "name": "My Sanctuary", "type": "Member" },
+    { "id": "EXP-01", "name": "No Result Modal", "type": "Modal" },
+    { "id": "EXP-02", "name": "Certification Modal", "type": "Modal" },
+    { "id": "EXP-03", "name": "Network Modal", "type": "Modal" }
+  ],
+  "sections": [
+    {
+      "id": "SEC-01",
+      "goal": "목적1_브랜딩탐색",
+      "name": "⭐ 1순위 차은채 디렉터 론칭 룩북 시그니처 팩",
+      "theme": "D2C 자사몰 브랜드 론칭 비주얼 룩북 3D 공간 파노라마 킬러 상품",
+      "uiComponent": "3D Hero Canvas 카드",
+      "imageSpec": "🖼️ [이미지: 차은채 D2C 자사몰 브랜드 론칭 비주얼 룩북 3D 공간 파노라마 (16:9)]",
+      "displayData": "수색 퍼짐 3D 그래픽, 론칭 타이틀",
+      "userAction": "Canvas 드래그 & 클릭",
+      "systemMotion": "1.0초 오로라 수색 융해 모션",
+      "targetScreen": "PG-02",
+      "stateChange": "Hover시 3D 수색 회전 및 포커스 링"
+    },
+    {
+      "id": "SEC-02",
+      "goal": "목적3_커스텀선물",
+      "name": "차은채 VIP 디렉터 론칭 룩북 각인 틴케이스",
+      "theme": "디렉터 론칭 룩북 맞춤 이니셜 각인",
+      "uiComponent": "3D 각인 뷰어 카드",
+      "imageSpec": "🖼️ [이미지: 차은채 맞춤 틴케이스 (4:3)]",
+      "displayData": "실시간 이니셜 텍스트, 금박/은박 옵션",
+      "userAction": "텍스트 입력 및 각인 선택",
+      "systemMotion": "실시간 텍스트 3D 캔버스 렌더링",
+      "targetScreen": "PG-31",
+      "stateChange": "입력 시 즉시 3D 오브젝트 실시간 반영"
+    },
+    {
+      "id": "SEC-03",
+      "goal": "목적4_리추얼타이머",
+      "name": "차은채 180초 브루잉 리추얼 스틱",
+      "theme": "3분 카운트다운 타이머 연동",
+      "uiComponent": "타이머 링 모션 카드",
+      "imageSpec": "🖼️ [이미지: 차은채 180초 타이머 링 (1:1)]",
+      "displayData": "03:00 카운트다운, 앰비언트 sound",
+      "userAction": "▶ 시작 버튼 클릭",
+      "systemMotion": "SVG 링 게이지 감소 애니메이션",
+      "targetScreen": "PG-32",
+      "stateChange": "재생 중 앰비언트 오디오 파형 출력"
+    },
+    {
+      "id": "SEC-04",
+      "goal": "all",
+      "name": "차은채 0g당 항산화 검증서 팩",
+      "theme": "당 0g, 카페인 0mg 검증서",
+      "uiComponent": "성적서 팝업 연동 카드",
+      "imageSpec": "🖼️ [이미지: 차은채 국가인증 영양성적서 (3:4)]",
+      "displayData": "국가인증 0.00% 성적서 PDF/이미지",
+      "userAction": "성적서 보기 클릭",
+      "systemMotion": "레이어 모달 팝업 페이드인",
+      "targetScreen": "EXP-02",
+      "stateChange": "모달 오픈 시 배경 블러 및 스크롤 고정"
+    },
+    {
+      "id": "SEC-05",
+      "goal": "목적2_커머스구독",
+      "name": "차은채 30일 정기배송 15% 할인 팩",
+      "theme": "2주/4주 배송주기 관리",
+      "uiComponent": "15% 할인 계산기 카드",
+      "imageSpec": "🖼️ [이미지: 차은채 2주/4주 배송주기 선택 (16:9)]",
+      "displayData": "연간 148,000원 할인 절약액",
+      "userAction": "2주/4주 주기 선택 슬라이더",
+      "systemMotion": "절약 금액 숫자 롤링 카운팅 모션",
+      "targetScreen": "PG-33",
+      "stateChange": "선택 주기 카드 하이라이트 스타일링"
+    },
+    {
+      "id": "SEC-06",
+      "goal": "목적1_브랜딩탐색",
+      "name": "차은채 오로라 수색 믹솔로지 번들",
+      "theme": "1초 찬물 퍼짐 Canvas 모션",
+      "uiComponent": "믹솔로지 카루셀 카드",
+      "imageSpec": "🖼️ [이미지: 차은채 오로라 수색 퍼짐 모션 (1:1)]",
+      "displayData": "탄산수 융해 비주얼 섬네일",
+      "userAction": "좌우 스와이프 / 드래그",
+      "systemMotion": "가로 카루셀 관성 슬라이딩",
+      "targetScreen": "PG-03",
+      "stateChange": "카드 Hover 시 확대 및 상세 툴팁 노출"
+    },
+    {
+      "id": "SEC-07",
+      "goal": "목적1_브랜딩탐색",
+      "name": "차은채 오프라인 시향 룸 3초 예약 팩",
+      "theme": "1:1 시향 룸 타임슬롯 연동",
+      "uiComponent": "타임슬롯 캘린더 카드",
+      "imageSpec": "🖼️ [이미지: 차은채 성수/도산 시향 룸 (16:9)]",
+      "displayData": "성수/도산 시향 룸 캘린더 타임슬롯",
+      "userAction": "3초 예약 버튼 클릭",
+      "systemMotion": "카카오 1초 예약 알림톡 팝업",
+      "targetScreen": "PG-02",
+      "stateChange": "예약 완료 후 타임슬롯 비활성화"
+    },
+    {
+      "id": "SEC-08",
+      "goal": "목적2_커머스구독",
+      "name": "차은채 0.00% 무알콜/무카페인 온가족 팩",
+      "theme": "온가족 유기농 팩트 검증",
+      "uiComponent": "팩트 검증 카드",
+      "imageSpec": "🖼️ [이미지: 차은채 무알콜 검증서 (4:3)]",
+      "displayData": "0.00% 무카페인 성분 검증표",
+      "userAction": "검증표 확대 클릭",
+      "systemMotion": "이미지 라이트박스 뷰어 오픈",
+      "targetScreen": "PG-01",
+      "stateChange": "확대 시 고해상도 벡터 그래픽 렌더링"
+    },
+    {
+      "id": "SEC-09",
+      "goal": "목적4_리추얼타이머",
+      "name": "차은채 밤 12시 GABA 뇌식 릴랙스 팩",
+      "theme": "모니터 피로 방지 뇌 휴식",
+      "uiComponent": "다크 UI 릴랙스 카드",
+      "imageSpec": "🖼️ [이미지: 차은채 미드나잇 다크 UI (16:9)]",
+      "displayData": "GABA 함량 데이터, 야간 모드",
+      "userAction": "다크 모드 스위치 클릭",
+      "systemMotion": "전역 앰비언트 다크 인디고 전환",
+      "targetScreen": "PG-01",
+      "stateChange": "0.3초 부드러운 배경색 트랜지션"
+    },
+    {
+      "id": "SEC-10",
+      "goal": "목적1_브랜딩탐색",
+      "name": "차은채 전해질 수분 보충 3D 아로마 팩",
+      "theme": "전해질 보충 & 3D 아로마 휠",
+      "uiComponent": "3D 아로마 휠 카드",
+      "imageSpec": "🖼️ [이미지: 차은채 전해질 3D 아로마 휠 (1:1)]",
+      "displayData": "8대 아로마 노트 레이더 차트",
+      "userAction": "차트 각도 드래그 및 호버",
+      "systemMotion": "3D 아로마 휠 회전 및 펄스 모션",
+      "targetScreen": "PG-31",
+      "stateChange": "선택 노트 강조 컬러 및 설명 툴팁"
+    },
+    {
+      "id": "SEC-11",
+      "goal": "목적3_커스텀선물",
+      "name": "차은채 0.5px 마이크로 그리드 금박 보증서",
+      "theme": "건축 미학 금박 보증서",
+      "uiComponent": "금박 보증서 카드",
+      "imageSpec": "🖼️ [이미지: 차은채 0.5px 그리드 보증서 (4:3)]",
+      "displayData": "0.5px 미세 그리드 명세",
+      "userAction": "보증서 확인 클릭",
+      "systemMotion": "금박 빛 반사 쉐이더 인터랙션",
+      "targetScreen": "PG-03",
+      "stateChange": "마우스 무브 시 광택 하이라이트 추적"
+    },
+    {
+      "id": "SEC-12",
+      "goal": "목적5_재방문소셜",
+      "name": "차은채 비건 인증 틴케이스 업사이클링 팩",
+      "theme": "틴케이스 DIY 가이드",
+      "uiComponent": "DIY 가이드 카드",
+      "imageSpec": "🖼️ [이미지: 차은채 틴케이스 DIY 가이드 (1:1)]",
+      "displayData": "틴케이스 업사이클링 단계별 팁",
+      "userAction": "가이드 실행 클릭",
+      "systemMotion": "단계별 스텝 아코디언 슬라이드",
+      "targetScreen": "PG-01",
+      "stateChange": "완료 단계 체크 아이콘 전환"
+    },
+    {
+      "id": "SEC-13",
+      "goal": "목적5_재방문소셜",
+      "name": "차은채 숏폼 릴스 100% 페이백 패키지",
+      "theme": "크리에이터 숏폼 연동",
+      "uiComponent": "릴스 그리드 카드",
+      "imageSpec": "🖼️ [이미지: 차은채 숏폼 릴스 그리드 (9:16)]",
+      "displayData": "🩵 1.2K 투표 수, 크리에이터 영상",
+      "userAction": "하트 버튼 클릭",
+      "systemMotion": "하트 팝업 파티클 & 카운트 +1",
+      "targetScreen": "PG-01",
+      "stateChange": "투표 완료 상태 영구 저장 (로컬)"
+    },
+    {
+      "id": "SEC-14",
+      "goal": "목적3_커스텀선물",
+      "name": "차은채 카카오 1초 기프팅 하이볼 에디션",
+      "theme": "주소 미입력 카카오 선물",
+      "uiComponent": "알림톡 1초 결제 카드",
+      "imageSpec": "🖼️ [이미지: 차은채 카카오 1초 선물 (4:3)]",
+      "displayData": "수령인 전화번호 입력 폼",
+      "userAction": "1초 선물하기 클릭",
+      "systemMotion": "우측 Order Drawer 즉시 슬라이드",
+      "targetScreen": "PG-04",
+      "stateChange": "슬라이드아웃 Cart Drawer 활성화"
+    },
+    {
+      "id": "SEC-15",
+      "goal": "목적2_커머스구독",
+      "name": "WICKETA 차은채 한정판 스타터 팩",
+      "theme": "D2C 론칭 파격 체험 팩",
+      "uiComponent": "Sticky CTA 하단 바 카드",
+      "imageSpec": "🖼️ [이미지: 차은채 파격 체험 스타터 (16:9)]",
+      "displayData": "한정판 잔여 수량 카운트다운",
+      "userAction": "3초 결제 CTA 클릭",
+      "systemMotion": "Order Drawer 패스트 체크아웃",
+      "targetScreen": "PG-04",
+      "stateChange": "스크롤 시 뷰포트 하단 고정 유지"
+    }
+  ]
+}

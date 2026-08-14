@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" width="100%" height="100%">
+  <rect width="1000" height="520" fill="#f8f9fa" rx="12"/>
+  <rect x="300" y="16" width="400" height="45" rx="8" fill="#1e293b" stroke="#0f172a" stroke-width="2"/>
+  <text x="500" y="44" fill="#ffffff" font-family="'Pretendard', sans-serif" font-size="15" font-weight="900" text-anchor="middle">사단(士團) 민서준 최적 병합 서비스 흐름도 (다차원 분기)</text>
+
+  <!-- Level 1: 4 Tracks Entry -->
+  <g font-family="'Pretendard', sans-serif" font-size="11" font-weight="800" text-anchor="middle">
+    <!-- Track A -->
+    <rect x="30" y="80" width="215" height="50" rx="6" fill="#0f172a" stroke="#000000" stroke-width="1.5"/>
+    <text x="137" y="103" fill="#ffffff">1. Atelier Custom Lab</text>
+    <text x="137" y="120" fill="#94a3b8" font-size="10">3축 피펫 레이어링 캔버스</text>
+
+    <!-- Track B -->
+    <rect x="270" y="80" width="215" height="50" rx="6" fill="#334155" stroke="#1e293b" stroke-width="1.5"/>
+    <text x="377" y="103" fill="#ffffff">2. Encyclopedic Herbarium</text>
+    <text x="377" y="120" fill="#cbd5e1" font-size="10">24종 자생 원료 도록 탐색</text>
+
+    <!-- Track C -->
+    <rect x="515" y="80" width="215" height="50" rx="6" fill="#334155" stroke="#1e293b" stroke-width="1.5"/>
+    <text x="622" y="103" fill="#ffffff">3. Master Collection</text>
+    <text x="622" y="120" fill="#cbd5e1" font-size="10">1·2·3마패 완제품 쇼케이스</text>
+
+    <!-- Track D -->
+    <rect x="755" y="80" width="215" height="50" rx="6" fill="#334155" stroke="#1e293b" stroke-width="1.5"/>
+    <text x="862" y="103" fill="#ffffff">4. Secret Scent Cipher</text>
+    <text x="862" y="120" fill="#cbd5e1" font-size="10">Cipher 코드 1초 복원 &amp; 리필</text>
+  </g>
+
+  <!-- Level 2: Decision & Validation Layer -->
+  <g font-family="'Pretendard', sans-serif" font-size="11" font-weight="800" text-anchor="middle">
+    <!-- Diamond 1: Ratio Check -->
+    <polygon points="250,195 380,165 510,195 380,225" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+    <text x="380" y="193" fill="#ffffff">3축 비율 합산 100% 검증</text>
+    <text x="380" y="208" fill="#94a3b8" font-size="9">{불균형 시 황금 비율 보정}</text>
+
+    <!-- Diamond 2: Engraving Check -->
+    <polygon points="560,195 680,165 800,195 680,225" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+    <text x="680" y="193" fill="#ffffff">3D 마패 각인 &amp; 360도 검수</text>
+    <text x="680" y="208" fill="#94a3b8" font-size="9">{25자 글자수/서체 체크}</text>
+  </g>
+
+  <!-- Level 3: Cart & Voucher Check -->
+  <g font-family="'Pretendard', sans-serif" font-size="11" font-weight="800" text-anchor="middle">
+    <!-- Step: Slide Cart -->
+    <rect x="180" y="270" width="250" height="55" rx="8" fill="#0f172a" stroke="#000000" stroke-width="2"/>
+    <text x="305" y="295" fill="#ffffff">5. Quick Add Slide Cart Drawer</text>
+    <text x="305" y="312" fill="#cbd5e1" font-size="10">커스텀 보틀 / 완제품 담기</text>
+
+    <!-- Diamond 3: Voucher Check -->
+    <polygon points="540,297 680,267 820,297 680,327" fill="#475569" stroke="#1e293b" stroke-width="1.5"/>
+    <text x="680" y="295" fill="#ffffff">디스커버리 100% 바우처 여부</text>
+    <text x="680" y="310" fill="#cbd5e1" font-size="9">{25,000원 즉시 할인}</text>
+  </g>
+
+  <!-- Level 4: Checkout & Done -->
+  <g font-family="'Pretendard', sans-serif" font-size="11" font-weight="800" text-anchor="middle">
+    <!-- Regular Pay vs Subscription -->
+    <rect x="120" y="370" width="340" height="55" rx="8" fill="#334155" stroke="#1e293b" stroke-width="1.5"/>
+    <text x="290" y="395" fill="#ffffff">일반 1회 결제 vs 정기 리필 구독</text>
+    <text x="290" y="412" fill="#94a3b8" font-size="10">1초 간편결제 / 알루미늄 카트리지</text>
+
+    <!-- Order Done -->
+    <rect x="540" y="370" width="340" height="55" rx="8" fill="#0f172a" stroke="#000000" stroke-width="2"/>
+    <text x="710" y="395" fill="#ffffff">6. 주문 완료 &amp; 디지털 첩보 증서 발송</text>
+    <text x="710" y="412" fill="#94a3b8" font-size="10">Cipher 코드 발급 &amp; 리필 루프 순환</text>
+  </g>
+
+  <!-- Connective Arrows -->
+  <path d="M 137 130 L 137 195 L 250 195" fill="none" stroke="#64748b" stroke-width="2"/>
+  <path d="M 377 130 L 377 165" fill="none" stroke="#64748b" stroke-width="2"/>
+  <path d="M 510 195 L 560 195" fill="none" stroke="#64748b" stroke-width="2"/>
+  <path d="M 622 130 L 622 165 L 680 165" fill="none" stroke="#64748b" stroke-width="2"/>
+  <path d="M 862 130 L 862 297 L 820 297" fill="none" stroke="#64748b" stroke-width="2"/>
+  <path d="M 680 225 L 680 267" fill="none" stroke="#64748b" stroke-width="2"/>
+  <path d="M 540 297 L 430 297" fill="none" stroke="#64748b" stroke-width="2"/>
+  <path d="M 305 325 L 305 370" fill="none" stroke="#64748b" stroke-width="2"/>
+  <path d="M 460 397 L 540 397" fill="none" stroke="#64748b" stroke-width="2"/>
+
+  <!-- Multi-Case Box Footer -->
+  <rect x="30" y="450" width="940" height="55" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="50" y="473" fill="#0f172a" font-family="'Pretendard', sans-serif" font-size="11" font-weight="900">🔀 실전 5대 예외 처리 루프:</text>
+  <text x="50" y="492" fill="#475569" font-family="'Pretendard', sans-serif" font-size="10" font-weight="600">
+    ① 3축 불균형 시 자동 보정 ➔ ② 3D 렌더링 지연 시 2D 폴백 ➔ ③ 각인 글자수 초과 경고 ➔ ④ Cipher 코드 분실 시 번호 복구 ➔ ⑤ 결제 실패 시 24시간 세션 복구
+  </text>
+</svg>

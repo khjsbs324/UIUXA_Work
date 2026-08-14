@@ -1,0 +1,192 @@
+- generic [ref=f92e4]:
+  - banner:
+    - link "콘텐츠로 건너뛰기":
+      - /url: "#"
+    - generic [ref=f92e15]:
+      - generic [ref=f92e17]:
+        - generic [ref=f92e18]:
+          - combobox "검색" [ref=f92e20]: botanical wreath monoline logo mark
+          - generic [ref=f92e21]:
+            - button "검색 입력 삭제" [ref=f92e24] [cursor=pointer]
+            - generic "이미지 업로드" [ref=f92e30]:
+              - button "Pinterest 렌즈" [ref=f92e31] [cursor=pointer]
+        - button "모든 핀 드롭다운" [ref=f92e38] [cursor=pointer]:
+          - generic [ref=f92e40]:
+            - generic [ref=f92e41]: 모든 핀
+            - img "드롭다운" [ref=f92e43]
+      - link "내 프로필" [ref=f92e49] [cursor=pointer]:
+        - /url: /victoryjhl/
+        - img [ref=f92e56]:
+          - generic [ref=f92e57]: 이
+      - button "계정" [ref=f92e61] [cursor=pointer]
+  - navigation [ref=f92e66]:
+    - generic [ref=f92e68]:
+      - generic [ref=f92e69]:
+        - generic "홈" [ref=f92e73]:
+          - link "홈" [ref=f92e74] [cursor=pointer]:
+            - /url: /
+        - generic "홈" [ref=f92e81]:
+          - link "홈" [ref=f92e82] [cursor=pointer]:
+            - /url: /
+        - generic "내 보드" [ref=f92e89]:
+          - link "내 보드" [ref=f92e90] [cursor=pointer]:
+            - /url: /victoryjhl/
+        - generic "만들기" [ref=f92e97]:
+          - button "만들기" [ref=f92e98] [cursor=pointer]
+      - generic "설정 및 지원" [ref=f92e114]:
+        - button "설정 및 지원" [ref=f92e115] [cursor=pointer]
+  - main [ref=f92e120]:
+    - generic [ref=f92e122]:
+      - heading "검색 결과 페이지" [level=1] [ref=f92e124]
+      - region "필터 및 세분화 검색" [ref=f92e128]:
+        - button "필터 표시" [ref=f92e137] [cursor=pointer]
+      - generic [ref=f92e148]:
+        - generic [ref=f92e149]: botanical wreath monoline logo mark 검색 결과를 추가로 표시
+        - list [ref=f92e154]:
+          - listitem [ref=f92e155]:
+            - button [ref=f92e157] [cursor=pointer]:
+              - group "핀 카드" [ref=f92e160]:
+                - generic [ref=f92e162]:
+                  - link "Floral wreath logo, Canva template, Nature botanical branding, Floral line art, Natural eco business, Instant download, Wildflower, Herbs 핀 페이지" [ref=f92e164]:
+                    - /url: /pin/4601764119632206848/
+                    - 'img "포함된 이미지: Floral wreath logo, Canva template, Nature botanical branding, Floral line art, Natural eco business, Instant download, Wildflower, Herbs" [ref=f92e174]'
+                  - generic [ref=f92e179]:
+                    - generic [ref=f92e180]:
+                      - heading [level=2] [ref=f92e185]:
+                        - link "Floral wreath logo, Canva template, Nature botanical branding, Floral line art, Natural eco business, Instant download, Wildflower, Herbs 핀 페이지" [ref=f92e187]:
+                          - /url: /pin/4601764119632206848/
+                          - text: Floral wreath logo, Canva template, Nature botanical branding, Floral line art, Natural eco business, Instant download, Wildflower, Herbs
+                      - link "Etsy" [ref=f92e190]:
+                        - /url: /etsy/
+                        - generic "Etsy" [ref=f92e197]
+                    - generic "추가 작업" [ref=f92e200]:
+                      - button "추가 작업" [ref=f92e201]
+          - listitem [ref=f92e206]:
+            - button [ref=f92e208] [cursor=pointer]:
+              - group "핀 카드" [ref=f92e211]:
+                - generic [ref=f92e213]:
+                  - link "제목 없음 핀 페이지" [ref=f92e215]:
+                    - /url: /pin/118289927710268592/
+                    - img "포함된 이미지:" [ref=f92e225]
+                  - generic "추가 작업" [ref=f92e234]:
+                    - button "추가 작업" [ref=f92e235]
+          - listitem [ref=f92e240]:
+            - button [ref=f92e242] [cursor=pointer]:
+              - group "핀 카드" [ref=f92e246]:
+                - generic [ref=f92e248]:
+                  - link [ref=f92e250]:
+                    - /url: /pin/76420524924467763/
+                    - generic [ref=f92e257]:
+                      - 'img "Un symbole mémorable, prêt à être adopté ! 🌿 J’aime créer ce détail qui reste en tête et qui donne tout de suite une direction. Parce qu’une identité, ce n’est pas juste “faire joli” : c’est trouver un repère fort autour duquel tout devient plus simple. C’est exactement comme ça que j’ai pensé Épiphyte : on ne part pas d’une page blanche, on part d’un symbole qui ancre ton univers. Et après, tout s’aligne plus vite. Si tu veux une identité visuelle professionnelle (et surtout chargée de..." [ref=f92e261]'
+                      - 'img "Un symbole mémorable, prêt à être adopté ! 🌿 J’aime créer ce détail qui reste en tête et qui donne tout de suite une direction. Parce qu’une identité, ce n’est pas juste “faire joli” : c’est trouver un repère fort autour duquel tout devient plus simple. C’est exactement comme ça que j’ai pensé Épiphyte : on ne part pas d’une page blanche, on part d’un symbole qui ancre ton univers. Et après, tout s’aligne plus vite. Si tu veux une identité visuelle professionnelle (et surtout chargée de..." [ref=f92e265]'
+                      - 'img "Un symbole mémorable, prêt à être adopté ! 🌿 J’aime créer ce détail qui reste en tête et qui donne tout de suite une direction. Parce qu’une identité, ce n’est pas juste “faire joli” : c’est trouver un repère fort autour duquel tout devient plus simple. C’est exactement comme ça que j’ai pensé Épiphyte : on ne part pas d’une page blanche, on part d’un symbole qui ancre ton univers. Et après, tout s’aligne plus vite. Si tu veux une identité visuelle professionnelle (et surtout chargée de..." [ref=f92e269]'
+                      - 'img "Un symbole mémorable, prêt à être adopté ! 🌿 J’aime créer ce détail qui reste en tête et qui donne tout de suite une direction. Parce qu’une identité, ce n’est pas juste “faire joli” : c’est trouver un repère fort autour duquel tout devient plus simple. C’est exactement comme ça que j’ai pensé Épiphyte : on ne part pas d’une page blanche, on part d’un symbole qui ancre ton univers. Et après, tout s’aligne plus vite. Si tu veux une identité visuelle professionnelle (et surtout chargée de..." [ref=f92e273]'
+                  - generic [ref=f92e276]:
+                    - generic [ref=f92e279]:
+                      - button "4개 슬라이드 중 1번으로 이동" [ref=f92e281]
+                      - button "4개 슬라이드 중 2번으로 이동" [ref=f92e284]
+                      - button "4개 슬라이드 중 3번으로 이동" [ref=f92e287]
+                      - button "4개 슬라이드 중 4번으로 이동" [ref=f92e290]
+                    - generic "추가 작업" [ref=f92e297]:
+                      - button "추가 작업" [ref=f92e298]
+          - listitem [ref=f92e303]:
+            - button [ref=f92e305] [cursor=pointer]:
+              - group "핀 카드" [ref=f92e308]:
+                - generic [ref=f92e310]:
+                  - link "Elegant circle floral frame. Hand drawn logo template in line art with flowers. Vintage botanical wreath. Vector illustration for labels, branding business identity, wedding invitation Stock Vector | Adobe Stock 핀 페이지" [ref=f92e312]:
+                    - /url: /pin/17732992277620870/
+                    - 'img "포함된 이미지: Elegant circle floral frame. Hand drawn logo template in line art with flowers. Vintage botanical wreath. Vector illustration for labels, branding business identity, wedding invitation Stock Vector | Adobe Stock" [ref=f92e322]'
+                  - generic [ref=f92e327]:
+                    - heading [level=2] [ref=f92e333]:
+                      - link "Elegant circle floral frame. Hand drawn logo template in line art with flowers. Vintage botanical wreath. Vector illustration for labels, branding business identity, wedding invitation Stock Vector | Adobe Stock 핀 페이지" [ref=f92e335]:
+                        - /url: /pin/17732992277620870/
+                        - text: Elegant circle floral frame. Hand drawn logo template in line art with flowers. Vintage botanical wreath. Vector illustration for labels, branding business identity, wedding invitation Stock Vector | Adobe Stock
+                    - generic "추가 작업" [ref=f92e338]:
+                      - button "추가 작업" [ref=f92e339]
+          - listitem [ref=f92e344]:
+            - button [ref=f92e346] [cursor=pointer]:
+              - group "핀 카드" [ref=f92e349]:
+                - generic [ref=f92e351]:
+                  - link "제목 없음 핀 페이지" [ref=f92e353]:
+                    - /url: /pin/304626362318565887/
+                    - img "포함된 이미지:" [ref=f92e363]
+                  - generic "추가 작업" [ref=f92e372]:
+                    - button "추가 작업" [ref=f92e373]
+          - listitem [ref=f92e378]:
+            - button [ref=f92e380] [cursor=pointer]:
+              - group "핀 카드" [ref=f92e383]:
+                - generic [ref=f92e385]:
+                  - link "Wild rose wreath png svg, botanical vector wreath, rose clipart, wedding flower png, rose line art, floral wreath graphic, commercial free 핀 페이지" [ref=f92e387]:
+                    - /url: /pin/4599019716028196864/
+                    - 'img "포함된 이미지: Wild rose wreath png svg, botanical vector wreath, rose clipart, wedding flower png, rose line art, floral wreath graphic, commercial free" [ref=f92e397]'
+                  - generic [ref=f92e402]:
+                    - generic [ref=f92e403]:
+                      - heading [level=2] [ref=f92e408]:
+                        - link "Wild rose wreath png svg, botanical vector wreath, rose clipart, wedding flower png, rose line art, floral wreath graphic, commercial free 핀 페이지" [ref=f92e410]:
+                          - /url: /pin/4599019716028196864/
+                          - text: Wild rose wreath png svg, botanical vector wreath, rose clipart, wedding flower png, rose line art, floral wreath graphic, commercial free
+                      - link "Etsy" [ref=f92e413]:
+                        - /url: /etsy/
+                        - generic "Etsy" [ref=f92e420]
+                    - generic "추가 작업" [ref=f92e423]:
+                      - button "추가 작업" [ref=f92e424]
+          - listitem [ref=f92e429]:
+            - button [ref=f92e431] [cursor=pointer]:
+              - group "핀 카드" [ref=f92e434]:
+                - generic [ref=f92e436]:
+                  - link "제목 없음 핀 페이지" [ref=f92e438]:
+                    - /url: /pin/633387444408096/
+                    - img "포함된 이미지:" [ref=f92e448]
+                  - generic "추가 작업" [ref=f92e457]:
+                    - button "추가 작업" [ref=f92e458]
+          - listitem [ref=f92e463]:
+            - button [ref=f92e465] [cursor=pointer]:
+              - group "핀 카드" [ref=f92e469]:
+                - generic [ref=f92e471]:
+                  - link [ref=f92e473]:
+                    - /url: /pin/258675572343541963/
+                    - generic [ref=f92e480]:
+                      - 'img "かわいい花のフレームロゴです。 レトロ感のあるデザインで ブランドロゴ、サロンロゴとしてご使用いただけます。 （カラー変更できます） 商品説明 —————————————— ・お店、企業のお名前に変更します ・見本イメージ付 ・安心サポート修正３回付 ・カラー・書体変更可 ・背景色変更可 商品に含まれているサービス —————————————— Illustrator / PDF / JPG / PNG HP https://retlogo-shop.com 詳しくは retlogoshop@gmail.com までお問い合わせください。 #ロゴ #ロゴデザイン #グラフィックデザイン" [ref=f92e484]'
+                      - 'img "かわいい花のフレームロゴです。 レトロ感のあるデザインで ブランドロゴ、サロンロゴとしてご使用いただけます。 （カラー変更できます） 商品説明 —————————————— ・お店、企業のお名前に変更します ・見本イメージ付 ・安心サポート修正３回付 ・カラー・書体変更可 ・背景色変更可 商品に含まれているサービス —————————————— Illustrator / PDF / JPG / PNG HP https://retlogo-shop.com 詳しくは retlogoshop@gmail.com までお問い合わせください。 #ロゴ #ロゴデザイン #グラフィックデザイン" [ref=f92e488]'
+                      - 'img "かわいい花のフレームロゴです。 レトロ感のあるデザインで ブランドロゴ、サロンロゴとしてご使用いただけます。 （カラー変更できます） 商品説明 —————————————— ・お店、企業のお名前に変更します ・見本イメージ付 ・安心サポート修正３回付 ・カラー・書体変更可 ・背景色変更可 商品に含まれているサービス —————————————— Illustrator / PDF / JPG / PNG HP https://retlogo-shop.com 詳しくは retlogoshop@gmail.com までお問い合わせください。 #ロゴ #ロゴデザイン #グラフィックデザイン" [ref=f92e492]'
+                      - 'img "かわいい花のフレームロゴです。 レトロ感のあるデザインで ブランドロゴ、サロンロゴとしてご使用いただけます。 （カラー変更できます） 商品説明 —————————————— ・お店、企業のお名前に変更します ・見本イメージ付 ・安心サポート修正３回付 ・カラー・書体変更可 ・背景色変更可 商品に含まれているサービス —————————————— Illustrator / PDF / JPG / PNG HP https://retlogo-shop.com 詳しくは retlogoshop@gmail.com までお問い合わせください。 #ロゴ #ロゴデザイン #グラフィックデザイン" [ref=f92e496]'
+                  - generic [ref=f92e499]:
+                    - generic [ref=f92e502]:
+                      - button "4개 슬라이드 중 1번으로 이동" [ref=f92e504]
+                      - button "4개 슬라이드 중 2번으로 이동" [ref=f92e507]
+                      - button "4개 슬라이드 중 3번으로 이동" [ref=f92e510]
+                      - button "4개 슬라이드 중 4번으로 이동" [ref=f92e513]
+                    - generic "추가 작업" [ref=f92e520]:
+                      - button "추가 작업" [ref=f92e521]
+          - listitem [ref=f92e526]:
+            - button [ref=f92e528] [cursor=pointer]:
+              - group "핀 카드" [ref=f92e531]:
+                - generic [ref=f92e533]:
+                  - link "제목 없음 핀 페이지" [ref=f92e535]:
+                    - /url: /pin/14988611255686182/
+                    - img "포함된 이미지:" [ref=f92e545]
+                  - generic "추가 작업" [ref=f92e554]:
+                    - button "추가 작업" [ref=f92e555]
+          - listitem [ref=f92e560]:
+            - button [ref=f92e562] [cursor=pointer]:
+              - group "핀 카드" [ref=f92e565]:
+                - generic [ref=f92e567]:
+                  - link "Delicate Line Art Logo • Logo Template • Hand drawn botanical • Modern Botanicals • @crocus.paperi 핀 페이지" [ref=f92e569]:
+                    - /url: /pin/421227371418355094/
+                    - 'img "포함된 이미지: Delicate Line Art Logo • Logo Template • Hand drawn botanical • Modern Botanicals • @crocus.paperi" [ref=f92e579]'
+                  - generic [ref=f92e584]:
+                    - heading [level=2] [ref=f92e590]:
+                      - link "Delicate Line Art Logo • Logo Template • Hand drawn botanical • Modern Botanicals • @crocus.paperi 핀 페이지" [ref=f92e592]:
+                        - /url: /pin/421227371418355094/
+                        - text: Delicate Line Art Logo • Logo Template • Hand drawn botanical • Modern Botanicals • @crocus.paperi
+                    - generic "추가 작업" [ref=f92e595]:
+                      - button "추가 작업" [ref=f92e596]
+          - listitem [ref=f92e601]:
+            - button [ref=f92e603] [cursor=pointer]:
+              - group "핀 카드" [ref=f92e606]:
+                - generic [ref=f92e608]:
+                  - link "제목 없음 핀 페이지" [ref=f92e610]:
+                    - /url: /pin/68749415586/
+                    - img "포함된 이미지:" [ref=f92e620]
+                  - generic "추가 작업" [ref=f92e629]:
+                    - button "추가 작업" [ref=f92e630]

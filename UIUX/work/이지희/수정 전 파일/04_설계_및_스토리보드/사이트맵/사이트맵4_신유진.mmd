@@ -1,0 +1,73 @@
+flowchart TD
+    classDef main fill:#2B3A42,stroke:#1A252C,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef sub fill:#3F5D6B,stroke:#2B3A42,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef drawer fill:#E0F7FA,stroke:#3F5D6B,stroke-width:2px,color:#1C2541,font-weight:bold;
+    classDef common fill:#F8F9FA,stroke:#1C2541,stroke-width:1px,color:#1C2541;
+    classDef member fill:#FFF3E0,stroke:#E65100,stroke-width:1.5px,color:#E65100,stroke-dasharray: 5 5;
+    classDef exception fill:#FFEBEE,stroke:#C62828,stroke-width:1.5px,color:#C62828,stroke-dasharray: 3 3;
+
+    Root["WICKETA DIY Mixology Lab (가상클라이언트4 신유진)"]
+    M1["1. Home DIY 메인 (PG-01)"]
+    M2["2. Mixology Lab 3D 시뮬레이터 (PG-02)"]
+    M3["3. Olfactory Archive 향 아카이브 (PG-03)"]
+    M4["4. Cart Drawer 결제 Drawer (PG-04 Aside Layer)"]
+
+    Root --> M1
+    Root --> M2
+    Root --> M3
+    Root --> M4
+
+    M1_1["Hero Section (Create Your Own Surreal Mixology)"]
+    M1_2["3D Color Change Simulator (베이스x토핑 3D 수색 시뮬레이터)"]
+    M1_3["Taste Radar Chart (단맛/쓴맛/바디감 맛 수치표)"]
+    M1_4["4+2 Starter Kit Offer (4+2 스타터 팩 페이백 안내)"]
+
+    M1 --> M1_1
+    M1 --> M1_2
+    M1 --> M1_3
+    M1 --> M1_4
+
+    M2_1["베이스 티 x 서브 토핑 믹스앤매치 (Recipe Builder)"]
+    M2_2["홈카페 크리에이터 숏폼 챌린지 (Short-form Challenge)"]
+
+    M2 --> M2_1
+    M2 --> M2_2
+
+    M2_2_1["크리에이터 숏폼 영상 플레이어"]
+    M2_2_2["유저 레시피 챌린지 등록 폼"]
+
+    M2_2 --> M2_2_1
+    M2_2 --> M2_2_2
+
+    M3_1["탑/미들/베이스 올팩토리 아카이브 (Olfactory Notes)"]
+    M3_2["대체당 0kcal 영양성분 투명 표기 (Stevia FAQ)"]
+
+    M3 --> M3_1
+    M3 --> M3_2
+
+    M4_1["100% 페이백 쿠폰 자동 적용 (1-Page 처방전 주문서)"]
+    M4_2["Virtual Scroll 위치 보존 (탐색 스크롤 100% 복원)"]
+
+    M4 --> M4_1
+    M4 --> M4_2
+
+    MEM1["[회원 영역] 페이백 쿠폰 이력 및 마이 레시피 (PG-M01)"]
+    GUEST1["[비회원 영역] 체험 팩 주문 (첫구매 페이백 쿠폰 발급 - 가정)"]
+
+    M4 -.-> MEM1
+    M4 -.-> GUEST1
+
+    EXP1["[EXP-01] 404 Page Not Found (DIY 메인 안내 - 가정)"]
+    EXP2["[EXP-02] 숏폼 동영상 재생 오류 안내 (재시도 모달 - 가정)"]
+    EXP3["[EXP-03] 결제 네트워크 오류 안내 (Cart Drawer 임시 저장 - 가정)"]
+
+    Root -.-> EXP1
+    M2_2 -.-> EXP2
+    M4_1 -.-> EXP3
+
+    class Root,M1 main;
+    class M2,M3 sub;
+    class M4,M4_1,M4_2 drawer;
+    class M1_1,M1_2,M1_3,M1_4,M2_1,M2_2,M2_2_1,M2_2_2,M3_1,M3_2 common;
+    class MEM1,GUEST1 member;
+    class EXP1,EXP2,EXP3 exception;

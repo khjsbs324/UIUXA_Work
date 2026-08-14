@@ -1,0 +1,9 @@
+flowchart TD
+  A[W09-HOME Quick Brew Dashboard] --> B[W09-DIAG 감정·상황 진단]
+  B --> C[W09-MIX 믹솔로지 탐색]
+  C --> D[W09-RITUAL 리추얼 실행]
+  D --> E[W09-BUILD 번들·구독 설계]
+  E --> F[W09-COMM 기록·커뮤니티]
+  F --> G[W09-DONE 저장·완료]
+  B -->|진단 건너뛰기| C
+  E -->|선택 오류| E

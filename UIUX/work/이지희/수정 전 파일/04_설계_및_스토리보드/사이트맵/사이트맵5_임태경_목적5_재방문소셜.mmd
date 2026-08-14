@@ -1,0 +1,87 @@
+flowchart TD
+    classDef main fill:#2A1810,stroke:#1A0F0A,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef sub fill:#4A3228,stroke:#2A1810,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef drawer fill:#FDFBF7,stroke:#4A3228,stroke-width:2px,color:#2A1810,font-weight:bold;
+    classDef common fill:#F8F9FA,stroke:#2A1810,stroke-width:1px,color:#2A1810;
+    classDef member fill:#FFF3E0,stroke:#E65100,stroke-width:1.5px,color:#E65100,stroke-dasharray: 5 5;
+    classDef exception fill:#FFEBEE,stroke:#C62828,stroke-width:1.5px,color:#C62828,stroke-dasharray: 3 3;
+
+    Root["WICKETA Hospitality Loyalty (가상클라이언트05 임태경)"]
+    M1["1. Home 멤버십 메인 (PG-01)"]
+    M2["2. Guest Review Showcase 투숙객 리뷰 (PG-02)"]
+    M3["3. Hotel Loyalty Center 멤버십 제휴 (PG-03)"]
+    M4["4. Quick Cart Drawer 홈티타임 결제 (PG-04 Aside Layer)"]
+
+    Root --> M1
+    Root --> M2
+    Root --> M3
+    Root --> M4
+
+    M1_1["Hero Section (호텔의 여운을 일상으로, 홈 티타임)"]
+    M1_2["Guest Experience Story (투숙객 스토리)"]
+    M1_3["In-Room to Home Tea Ranking (인룸 인기 랭킹)"]
+    M1_4["Loyalty Partner Checklist (호텔 마일리지 연동표)"]
+
+    M1 --> M1_1
+    M1 --> M1_2
+    M1 --> M1_3
+    M1 --> M1_4
+
+    M2_1["투숙객 인룸 티타임 포토 리뷰 그리드 (PG-31)"]
+    M2_2["만족도 평가 & 스파 바우처 즉시 발급 폼 (PG-32)"]
+
+    M2 --> M2_1
+    M2 --> M2_2
+
+    M2_1_1["객실 채광 & 티타임 고해상도 화보"]
+    M2_1_2["실제 투숙객 음용기 & 힐링 팁"]
+
+    M2_1 --> M2_1_1
+    M2_1 --> M2_1_2
+
+    M2_2_1["객실 번호 인증 1-Click 리뷰 작성"]
+    M2_2_2["호텔 스파 15% 할인권 즉시 발급"]
+
+    M2_2 --> M2_2_1
+    M2_2 --> M2_2_2
+
+    M3_1["호텔 멤버십 마일리지 1초 연동 (PG-33)"]
+    M3_2["호텔 F&B 신규 라인업 알림톡 신청"]
+    M3_3["홈 티타임 스타터 세트 1-Click 담기"]
+
+    M3 --> M3_1
+    M3 --> M3_2
+    M3 --> M3_3
+
+    M3_1_1["마일리지 100% 포인트 전환 계산기"]
+    M3_2_1["차기 시즌 호텔 웰컴 티 티저 영상"]
+
+    M3_1 --> M3_1_1
+    M3_2 --> M3_2_1
+
+    M4_1["3초 슬라이드아웃 Quick Cart Drawer (홈 세트 결제)"]
+    M4_2["Virtual Scroll 위치 보존 (탐색 스크롤 100% 복원)"]
+
+    M4 --> M4_1
+    M4 --> M4_2
+
+    MEM1["[회원 영역] 마일리지 & 쿠폰함 (PG-M01 마이페이지)"]
+    GUEST1["[비회원 영역] 객실 인증 로그인 (가정)"]
+
+    M4 -.-> MEM1
+    M4 -.-> GUEST1
+
+    EXP1["[EXP-01] 404 Page Not Found (메인 안내 - 가정)"]
+    EXP2["[EXP-02] 마일리지 연동 지연 모달 (가정)"]
+    EXP3["[EXP-03] 결제 오류 복원 안내 (가정)"]
+
+    Root -.-> EXP1
+    M3_1 -.-> EXP2
+    M4_1 -.-> EXP3
+
+    class Root,M1 main;
+    class M2,M3 sub;
+    class M4,M4_1,M4_2 drawer;
+    class M1_1,M1_2,M1_3,M1_4,M2_1,M2_2,M2_1_1,M2_1_2,M2_2_1,M2_2_2,M3_1,M3_2,M3_3,M3_1_1,M3_2_1 common;
+    class MEM1,GUEST1 member;
+    class EXP1,EXP2,EXP3 exception;

@@ -1,0 +1,94 @@
+- generic [active] [ref=f140e1]:
+  - generic:
+    - generic:
+      - link "주요 콘텐츠로 이동" [ref=f140e2] [cursor=pointer]
+      - link "접근성 도움말" [ref=f140e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=ko
+  - generic [ref=f140e8]:
+    - search [ref=f140e9]:
+      - generic [ref=f140e12]:
+        - link [ref=f140e13] [cursor=pointer]:
+          - /url: https://www.google.com/webhp?hl=ko&ictx=0&sa=X&ved=0ahUKEwj_1NCY5ZqWAxU0hlYBHWl_Dp8QpYkNCAo
+          - img "Google 홈으로 이동" [ref=f140e14]
+        - generic [ref=f140e19]:
+          - combobox "검색" [ref=f140e22]: site:pinterest.com/pin "botanical arch" OR "floral arch" OR "garden trellis" logo mark monoline site:pinterest.com/pin "botanical arch" OR "floral arch" OR "garden trellis" logo mark monoline
+          - generic [ref=f140e23]:
+            - button "지우기" [ref=f140e25] [cursor=pointer]
+            - generic [ref=f140e30]:
+              - button "입력 도구" [ref=f140e31] [cursor=pointer]
+              - button "음성 검색" [ref=f140e35] [cursor=pointer]
+              - button "이미지로 검색" [ref=f140e38] [cursor=pointer]
+        - button "검색" [ref=f140e41] [cursor=pointer]
+    - generic [ref=f140e46]:
+      - button "설정" [ref=f140e48] [cursor=pointer]
+      - button "공유" [ref=f140e54] [cursor=pointer]
+      - generic [ref=f140e60]:
+        - button "Google 앱" [ref=f140e62] [cursor=pointer]
+        - link "로그인" [ref=f140e67] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=ko&passive=true&continue=https://www.google.com/search%3Fq%3Dsite:pinterest.com/pin%2B%2522botanical%2Barch%2522%2BOR%2B%2522floral%2Barch%2522%2BOR%2B%2522garden%2Btrellis%2522%2Blogo%2Bmark%2Bmonoline&ec=futura_srp_og_si_72236_p
+  - generic [ref=f140e69]:
+    - navigation [ref=f140e75]:
+      - generic [ref=f140e81]:
+        - list [ref=f140e82]:
+          - listitem [ref=f140e83]:
+            - link "AI 모드" [ref=f140e86] [cursor=pointer]:
+              - /url: /search?q=site:pinterest.com/pin+%22botanical+arch%22+OR+%22floral+arch%22+OR+%22garden+trellis%22+logo+mark+monoline&sca_esv=1a87055de532744c&udm=50&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA70DBExgkDFCpIGAUraPZqPrF7gx5lk2It4g6nB4ghos-Hg1TmeZlIHOh3L1-qiWgc97R3nE96xmVAgeLTdYP-XGiQh5Yy8419WgrT9NBzudVmHhQh9TiH1wBX0hU45O72W3e-p9uyJ-_BJDohZgXwsUElrWVv10fxFauijjdGwa0V7CYCMFpY_xkvx4s-EboHT1-w6Y&aep=1&ntc=1&cs=0&sa=X&ved=2ahUKEwj_1NCY5ZqWAxU0hlYBHWl_Dp8Q2J8OegQIDhAD
+          - listitem [ref=f140e90]:
+            - link "전체" [disabled] [ref=f140e91]
+          - listitem [ref=f140e94]:
+            - link "이미지" [ref=f140e95] [cursor=pointer]:
+              - /url: /search?sca_esv=1a87055de532744c&udm=2&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA70DBExgkDFCpIGAUraPZqPrF7gx5lk2It4g6nB4ghos-Hg1TmeZlIHOh3L1-qiWgc97R3nE96xmVAgeLTdYP-XGiQh5Yy8419WgrT9NBzudVmHhQh9TiH1wBX0hU45O72W3e-p9uyJ-_BJDohZgXwsUElrWVv10fxFauijjdGwa0V7CYCMFpY_xkvx4s-EboHT1-w6Y&q=site:pinterest.com/pin+%22botanical+arch%22+OR+%22floral+arch%22+OR+%22garden+trellis%22+logo+mark+monoline&sa=X&ved=2ahUKEwj_1NCY5ZqWAxU0hlYBHWl_Dp8QtKgLegQIERAB
+          - listitem [ref=f140e98]:
+            - link "쇼핑" [ref=f140e99] [cursor=pointer]:
+              - /url: /search?sca_esv=1a87055de532744c&udm=28&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA70DBExgkDFCpIGAUraPZqPrF7gx5lk2It4g6nB4ghos-Hg1TmeZlIHOh3L1-qiWgc97R3nE96xmVAgeLTdYP-XGiQh5Yy8419WgrT9NBzudVmHhQh9TiH1wBX0hU45O72W3e-p9uyJ-_BJDohZgXwsUElrWVv10fxFauijjdGwa0V7CYCMFpY_xkvx4s-EboHT1-w6Y&q=site:pinterest.com/pin+%22botanical+arch%22+OR+%22floral+arch%22+OR+%22garden+trellis%22+logo+mark+monoline&ved=1t:220175&ictx=111
+          - listitem [ref=f140e102]:
+            - link "짧은 동영상" [ref=f140e103] [cursor=pointer]:
+              - /url: /search?sca_esv=1a87055de532744c&udm=39&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA70DBExgkDFCpIGAUraPZqPrF7gx5lk2It4g6nB4ghos-Hg1TmeZlIHOh3L1-qiWgc97R3nE96xmVAgeLTdYP-XGiQh5Yy8419WgrT9NBzudVmHhQh9TiH1wBX0hU45O72W3e-p9uyJ-_BJDohZgXwsUElrWVv10fxFauijjdGwa0V7CYCMFpY_xkvx4s-EboHT1-w6Y&q=site:pinterest.com/pin+%22botanical+arch%22+OR+%22floral+arch%22+OR+%22garden+trellis%22+logo+mark+monoline&sa=X&ved=2ahUKEwj_1NCY5ZqWAxU0hlYBHWl_Dp8Qs6gLegQIExAB
+          - listitem [ref=f140e106]:
+            - link "동영상" [ref=f140e107] [cursor=pointer]:
+              - /url: /search?sca_esv=1a87055de532744c&udm=7&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA70DBExgkDFCpIGAUraPZqPrF7gx5lk2It4g6nB4ghos-Hg1TmeZlIHOh3L1-qiWgc97R3nE96xmVAgeLTdYP-XGiQh5Yy8419WgrT9NBzudVmHhQh9TiH1wBX0hU45O72W3e-p9uyJ-_BJDohZgXwsUElrWVv10fxFauijjdGwa0V7CYCMFpY_xkvx4s-EboHT1-w6Y&q=site:pinterest.com/pin+%22botanical+arch%22+OR+%22floral+arch%22+OR+%22garden+trellis%22+logo+mark+monoline&sa=X&ved=2ahUKEwj_1NCY5ZqWAxU0hlYBHWl_Dp8QtKgLegQIEhAB
+          - listitem [ref=f140e110]:
+            - link "뉴스" [ref=f140e111] [cursor=pointer]:
+              - /url: /search?sca_esv=1a87055de532744c&q=site:pinterest.com/pin+%22botanical+arch%22+OR+%22floral+arch%22+OR+%22garden+trellis%22+logo+mark+monoline&tbm=nws&source=lnms&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA70DBExgkDFCpIGAUraPZqPrF7gx5lk2It4g6nB4ghos-Hg1TmeZlIHOh3L1-qiWgc97R3nE96xmVAgeLTdYP-XGiQh5Yy8419WgrT9NBzudVmHhQh9TiH1wBX0hU45O72W3e-p9uyJ-_BJDohZgXwsUElrWVv10fxFauijjdGwa0V7CYCMFpY_xkvx4s-EboHT1-w6Y&sa=X&ved=2ahUKEwj_1NCY5ZqWAxU0hlYBHWl_Dp8Q0pQJegQIFBAB
+          - listitem [ref=f140e114]:
+            - button [ref=f140e115] [cursor=pointer]:
+              - generic "필터 더보기" [ref=f140e116]: 더보기
+        - button "도구" [ref=f140e123] [cursor=pointer]
+    - heading "검색결과" [level=1] [ref=f140e130]
+    - main [ref=f140e136]:
+      - generic [ref=f140e138]:
+        - generic [ref=f140e140]:
+          - heading [level=3] [ref=f140e141]:
+            - emphasis [ref=f140e143]: site:pinterest.com/pin "botanical arch" OR "floral arch" OR "garden trellis" logo mark ...
+            - text: 와(과) 일치하는 검색결과가 없습니다.
+          - paragraph [ref=f140e144]: "제안:"
+          - list [ref=f140e145]:
+            - listitem [ref=f140e146]: 모든 단어의 철자가 정확한지 확인하세요.
+            - listitem [ref=f140e147]: 다른 검색어를 사용해 보세요.
+            - listitem [ref=f140e148]: 더 일반적인 검색어를 사용해 보세요.
+            - listitem [ref=f140e149]: 키워드 수를 줄여보세요.
+          - img "얼음 속에서 무언가를 낚는 설인의 이미지" [ref=f140e153]
+        - navigation
+      - navigation
+    - contentinfo [ref=f140e240]:
+      - heading "바닥글 링크" [level=1] [ref=f140e241]
+      - generic [ref=f140e245]:
+        - generic [ref=f140e247]:
+          - text: 대한민국
+          - generic [ref=f140e249]:
+            - button "월평동 대전광역시 서구 - IP 주소 기반" [ref=f140e251] [cursor=pointer]:
+              - generic [ref=f140e252]: 월평동 대전광역시 서구
+              - generic [ref=f140e254]:
+                - text: "-"
+                - generic [ref=f140e255]: IP 주소 기반
+            - text: "-"
+            - button "위치 업데이트" [ref=f140e257] [cursor=pointer]
+        - generic [ref=f140e260]:
+          - link "도움말" [ref=f140e261] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=ko&fg=1
+          - link "의견 보내기" [ref=f140e262] [cursor=pointer]:
+            - /url: "#"
+          - link "개인정보처리방침" [ref=f140e263] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=ko&fg=1
+          - link "약관" [ref=f140e264] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=ko&fg=1

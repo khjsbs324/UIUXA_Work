@@ -1,0 +1,81 @@
+- generic [ref=f111e4]:
+  - banner:
+    - link "콘텐츠로 건너뛰기":
+      - /url: "#"
+    - generic [ref=f111e15]:
+      - generic [ref=f111e18]:
+        - generic:
+          - img "검색 아이콘"
+        - combobox "검색" [ref=f111e20]
+        - generic "이미지 업로드" [ref=f111e23]:
+          - button "Pinterest 렌즈" [ref=f111e24] [cursor=pointer]
+      - link "내 프로필" [ref=f111e33] [cursor=pointer]:
+        - /url: /victoryjhl/
+        - img [ref=f111e40]:
+          - generic [ref=f111e41]: 이
+      - button "계정" [ref=f111e45] [cursor=pointer]
+  - navigation [ref=f111e50]:
+    - generic [ref=f111e52]:
+      - generic [ref=f111e53]:
+        - generic "홈" [ref=f111e57]:
+          - link "홈" [ref=f111e58] [cursor=pointer]:
+            - /url: /
+        - generic "홈" [ref=f111e65]:
+          - link "홈" [ref=f111e66] [cursor=pointer]:
+            - /url: /
+        - generic "내 보드" [ref=f111e73]:
+          - link "내 보드" [ref=f111e74] [cursor=pointer]:
+            - /url: /victoryjhl/
+        - generic "만들기" [ref=f111e81]:
+          - button "만들기" [ref=f111e82] [cursor=pointer]
+      - generic "설정 및 지원" [ref=f111e98]:
+        - button "설정 및 지원" [ref=f111e99] [cursor=pointer]
+  - main [ref=f111e104]:
+    - generic [ref=f111e113]:
+      - button "뒤로" [ref=f111e115] [cursor=pointer]
+      - generic [ref=f111e124]:
+        - generic [ref=f111e125]: 관련 상품 결과를 불러오는 중
+        - list [ref=f111e130]:
+          - listitem [ref=f111e131]:
+            - group "Closeup content container" [ref=f111e138]:
+              - generic [ref=f111e143]:
+                - region "핀 이미지 및 탐색할 항목" [ref=f111e146]:
+                  - link "사이트 방문" [ref=f111e160] [cursor=pointer]:
+                    - /url: https://stock.adobe.com/images/letter-c-with-butterfly-silhouette-monarch-wing-butterfly-logo-template-isolated-on-white-background-calligraphic-hand-drawn-lettering-design-alphabet-concept-monogram-vector-illustration/270160398?utm_source=Pinterest&utm_medium=organic
+                - generic [ref=f111e165]:
+                  - generic [ref=f111e168]:
+                    - list [ref=f111e169]:
+                      - generic [ref=f111e170]:
+                        - listitem [ref=f111e172]:
+                          - generic "반응" [ref=f111e175]:
+                            - button "반응" [ref=f111e176] [cursor=pointer]
+                          - generic [ref=f111e181]: "2"
+                        - listitem [ref=f111e183]:
+                          - generic "댓글" [ref=f111e186]:
+                            - button "댓글" [ref=f111e187] [cursor=pointer]
+                        - listitem [ref=f111e193]:
+                          - generic "공유" [ref=f111e197]:
+                            - button "이 핀 공유" [ref=f111e200] [cursor=pointer]
+                        - listitem [ref=f111e206]:
+                          - generic "추가 작업" [ref=f111e211]:
+                            - button "추가 작업" [ref=f111e214] [cursor=pointer]
+                    - generic [ref=f111e224]:
+                      - 'button "저장할 보드 선택: ..." [ref=f111e227] [cursor=pointer]':
+                        - generic "..." [ref=f111e230]
+                      - button "저장" [ref=f111e236] [cursor=pointer]
+                  - generic [ref=f111e245]:
+                    - generic [ref=f111e247]:
+                      - link [ref=f111e254] [cursor=pointer]:
+                        - /url: https://stock.adobe.com/images/letter-c-with-butterfly-silhouette-monarch-wing-butterfly-logo-template-isolated-on-white-background-calligraphic-hand-drawn-lettering-design-alphabet-concept-monogram-vector-illustration/270160398?utm_source=Pinterest&utm_medium=organic
+                        - heading "Letter C with butterfly silhouette. Monarch wing butterfly logo template isolated on white background. Calligraphic hand drawn lettering design. Alphabet concept. Monogram vector illustration Stock Vector | Adobe Stock" [level=1] [ref=f111e255]
+                      - link "사이트 방문" [ref=f111e263] [cursor=pointer]:
+                        - /url: https://stock.adobe.com/images/letter-c-with-butterfly-silhouette-monarch-wing-butterfly-logo-template-isolated-on-white-background-calligraphic-hand-drawn-lettering-design-alphabet-concept-monogram-vector-illustration/270160398?utm_source=Pinterest&utm_medium=organic
+                    - generic [ref=f111e267]:
+                      - heading "설명" [level=4] [ref=f111e268]
+                      - generic [ref=f111e269]: Download Letter C with butterfly silhouette. Monarch wing butterfly logo template isolated on white background. Calligraphic hand drawn lettering design. Alphabet concept. Monogram vector illustration Stock Vector and explore similar vectors at Adobe Stock
+          - listitem [ref=f111e274]
+          - listitem [ref=f111e278]
+          - listitem [ref=f111e282]
+          - listitem [ref=f111e286]
+          - listitem [ref=f111e290]
+          - listitem [ref=f111e294]

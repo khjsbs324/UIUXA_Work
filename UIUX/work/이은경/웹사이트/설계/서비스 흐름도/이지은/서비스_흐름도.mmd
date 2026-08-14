@@ -1,0 +1,9 @@
+flowchart TD
+    Start([사용자 진입]) --> Land[메인페이지 랜딩 PAGE-100]
+    Land --> QuizStart[1:1 감정 향 추천 퀴즈 클릭 PAGE-140]
+    QuizStart --> Q1[Q1. 오늘의 감정 상태 선택]
+    Q1 --> Q2[Q2. 좋아하는 공간 무드 선택]
+    Q2 --> Q3[Q3. 선물 및 자가사용 목적 선택]
+    Q3 --> Result[1:1 맞춤 향 & 오브제 트레이 세트 추천 카드 PAGE-200]
+    Result --> Funding[비누+오브제 트레이 세트 사전 펀딩 신청 PAGE-150]
+    Funding --> End([펀딩 완료])

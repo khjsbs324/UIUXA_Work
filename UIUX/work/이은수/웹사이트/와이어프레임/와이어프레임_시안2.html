@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사단(士團) — 조선 암행어사 마패 헤리티지 & 커스텀 레이어링 하우스 최종 와이어프레임</title>
+    <style>
+        :root {
+            --bg-white: #ffffff;
+            --bg-base: #fafafa;
+            --bg-surface: #f4f4f5;
+            --bg-dark: #121212;
+            --text-primary: #121212;
+            --text-secondary: #52525b;
+            --text-muted: #71717a;
+            --border-line: #e4e4e7;
+            --border-dark: #27272a;
+            --accent-brass: #b45309;
+            --accent-brass-light: #fef3c7;
+            --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-serif: 'Nanum Myeongjo', serif;
+            --font-mono: 'SF Mono', 'Courier New', monospace;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font-sans); }
+        body { background-color: var(--bg-white); color: var(--text-primary); line-height: 1.75; -webkit-font-smoothing: antialiased; }
+
+        .container { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+        .container-narrow { max-width: 900px; margin: 0 auto; padding: 0 28px; }
+
+        /* Minimalist Typography */
+        .section-header { text-align: center; margin-bottom: 56px; }
+        .section-tag { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--text-muted); border-bottom: 1px solid var(--text-muted); padding-bottom: 4px; margin-bottom: 14px; }
+        .section-title { font-size: 34px; font-weight: 900; letter-spacing: -0.6px; line-height: 1.35; color: var(--text-primary); margin-bottom: 14px; font-family: var(--font-serif); }
+        .section-desc { font-size: 15px; color: var(--text-secondary); max-width: 740px; margin: 0 auto; word-break: keep-all; line-height: 1.8; }
+
+        /* Modern Flat Buttons */
+        .btn-black { background: var(--bg-dark); color: #ffffff; padding: 14px 30px; border-radius: 2px; font-weight: 800; font-size: 13px; display: inline-block; text-decoration: none; border: 1px solid var(--bg-dark); cursor: pointer; text-align: center; transition: background 0.2s; }
+        .btn-black:hover { background: #27272a; }
+        .btn-outline { background: transparent; color: var(--text-primary); padding: 14px 30px; border-radius: 2px; font-weight: 800; font-size: 13px; display: inline-block; text-decoration: none; border: 1px solid var(--border-dark); cursor: pointer; text-align: center; }
+        .btn-outline:hover { background: var(--bg-surface); }
+
+        /* Wireframe Elements */
+        .wireframe-box { background: var(--bg-surface); border: 1.5px dashed var(--border-line); border-radius: 4px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text-muted); text-align: center; padding: 28px; }
+        .story-product-split { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; margin-top: 36px; }
+        .product-badge { font-size: 11px; font-weight: 800; font-family: var(--font-mono); color: var(--text-muted); margin-bottom: 8px; display: inline-block; }
+
+        /* Grid Utilities */
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+
+        /* Stat Card */
+        .stat-card { background: #ffffff; border: 1px solid var(--border-line); padding: 28px 20px; text-align: center; border-radius: 4px; }
+        .stat-number { font-size: 38px; font-weight: 900; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 4px; }
+        .stat-label { font-size: 12px; font-weight: 800; color: var(--text-secondary); }
+
+        /* Process Step */
+        .process-card { background: #ffffff; border: 1px solid var(--border-line); padding: 32px 24px; border-radius: 4px; position: relative; }
+        .process-num { font-size: 12px; font-weight: 900; color: var(--accent-brass); font-family: var(--font-mono); margin-bottom: 12px; }
+
+        /* 3-Column Card Collection Grid */
+        .filter-tab-bar { display: flex; justify-content: center; gap: 10px; margin-bottom: 36px; flex-wrap: wrap; }
+        .filter-tab { padding: 10px 22px; border: 1px solid var(--border-line); background: #fff; font-size: 13px; font-weight: 800; border-radius: 3px; cursor: pointer; transition: all 0.2s; }
+        .filter-tab:hover { background: var(--bg-surface); }
+        .filter-tab.active { background: var(--bg-dark); color: #fff; border-color: var(--bg-dark); }
+        
+        .product-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .product-card { background: #ffffff; border: 1px solid var(--border-line); border-radius: 4px; padding: 26px 22px; display: flex; flex-direction: column; justify-content: space-between; text-align: left; transition: transform 0.2s, box-shadow 0.2s; }
+        .product-card:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.04); }
+        .product-card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+        .product-card-title { font-size: 19px; font-weight: 900; font-family: var(--font-serif); margin-bottom: 6px; }
+        .product-card-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 18px; min-height: 42px; }
+        .product-card-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-line); padding-top: 16px; margin-top: auto; }
+        .product-card-price { font-size: 18px; font-weight: 900; font-family: var(--font-mono); }
+    </style>
+</head>
+<body>
+
+    <!-- SEC-01: Top Notification Bar & Sticky GNB -->
+    <div style="background:var(--bg-dark); color:#e4e4e7; font-size:11px; padding:9px 0; letter-spacing:0.5px;">
+        <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
+            <div>📜 조선 암행어사 마패 헤리티지 & 100% 커스텀 레이어링 하우스 『사단(士團)』</div>
+            <div style="display:flex; gap:16px;">
+                <span>누적 12만병 완판</span><span>|</span><span>100% 환급 킷 (1.9만)</span><span>|</span><span>어사 비밀 첩보서</span><span>|</span><span>아틀리에 예약</span>
+            </div>
+        </div>
+    </div>
+    <header style="position:sticky; top:0; background:rgba(255,255,255,0.98); backdrop-filter:blur(10px); border-bottom:1px solid var(--border-line); z-index:1000; padding:18px 0;">
+        <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
+            <div style="display:flex; align-items:center; gap:12px;">
+                <div style="width:36px; height:36px; border:1.5px solid var(--text-primary); display:flex; align-items:center; justify-content:center; font-weight:900; font-family:var(--font-serif); font-size:16px;">士</div>
+                <div>
+                    <div style="font-size:17px; font-weight:900; font-family:var(--font-serif);">사단 (士團)</div>
+                    <div style="font-size:9px; font-weight:800; color:var(--text-muted); letter-spacing:1.5px;">SADAN HAUTE PERFUMERY</div>
+                </div>
+            </div>
+            <nav style="display:flex; gap:22px; font-size:13px; font-weight:700;">
+                <a href="#philosophy" style="text-decoration:none; color:var(--text-secondary);">브랜드 철학</a>
+                <a href="#tech" style="text-decoration:none; color:var(--text-secondary);">핵심 기술력</a>
+                <a href="#process" style="text-decoration:none; color:var(--text-secondary);">4단계 제작과정</a>
+                <a href="#story-1" style="text-decoration:none; color:var(--text-secondary);">1마패(일상)</a>
+                <a href="#story-2" style="text-decoration:none; color:var(--text-secondary);">2마패(감성)</a>
+                <a href="#story-3" style="text-decoration:none; color:var(--text-secondary);">3마패(시그니처)</a>
+                <a href="#story-wellness" style="text-decoration:none; color:var(--text-secondary);">웰니스 오브제</a>
+                <a href="#all-catalog" style="text-decoration:none; color:var(--text-primary); font-weight:900; border-bottom:2px solid var(--text-primary); padding-bottom:2px;">★ 전체 16종 모아보기</a>
+            </nav>
+            <a href="#discovery" class="btn-black" style="padding:10px 20px; font-size:12px;">디스커버리 킷 &gt;</a>
+        </div>
+    </header>
+
+    <!-- SEC-02: Hero Master Stage & Real-time Live Metrics -->
+    <section style="padding:90px 0; background:var(--bg-base); border-bottom:1px solid var(--border-line);">
+        <div class="container">
+            <div class="section-header" style="margin-bottom:24px;">
+                <span class="section-tag">HERITAGE HAUTE PERFUMERY</span>
+                <h1 class="section-title" style="font-size:44px;">내가 머무는 공간과 시간의 깊이,<br>나만의 시그니처 향으로 완성하는 어사 비밀 첩보</h1>
+                <p class="section-desc">조선 암행어사 마패의 무게와 품격을 현대적 포터블 오브제로 재해석하고, 100% 충돌 없는 3대 마패 레이어링 시스템을 제안합니다.</p>
+            </div>
+            
+            <div style="display:grid; grid-template-columns:1.2fr 1fr; gap:40px; align-items:center; margin-top:36px; margin-bottom:48px;">
+                <div class="wireframe-box" style="height:420px; background:#fff;">
+                    <span class="product-badge">[3D OBJECT VIEWPORT]</span>
+                    <strong style="font-size:18px; font-family:var(--font-serif); margin-top:8px;">사단 포터블 마패 오브제 보틀 3D 렌더링</strong>
+                    <p style="font-size:12px; margin-top:6px; color:var(--text-secondary);">파손 없는 견고한 경량 투명 용기 & 2D 플랫 라인 메달리온 마패 캡</p>
+                </div>
+                <div style="background:#fff; border:1px solid var(--border-line); padding:36px; border-radius:4px;">
+                    <span class="section-tag">CORE MISSION</span>
+                    <h3 style="font-size:22px; font-weight:900; font-family:var(--font-serif); margin:10px 0 14px;">이야기와 기술이 깃든 16가지 마패의 여정</h3>
+                    <p style="font-size:13px; color:var(--text-secondary); line-height:1.8; margin-bottom:20px;">
+                        단순히 완성된 규격 향수를 판매하는 것을 넘어, 소비자가 스스로 자신의 후각적 정체성을 발견하고 조합하는 D2C 비스포크 경험을 제공합니다.
+                    </p>
+                    <div style="display:flex; gap:12px;">
+                        <a href="#story-1" class="btn-black" style="flex:1;">이야기로 둘러보기 &gt;</a>
+                        <a href="#all-catalog" class="btn-outline" style="flex:1;">전체 상품 한눈에 보기</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Metrics Grid -->
+            <div class="grid-4">
+                <div class="stat-card">
+                    <div class="stat-number">120,000+</div>
+                    <div class="stat-label">누적 보틀 완판 (D2C)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">78.4%</div>
+                    <div class="stat-label">정기 재구매율 (Repurchase)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">92.6%</div>
+                    <div class="stat-label">디스커버리 킷 본품 전환율</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">IFRA 국제 안전 & EWG 그린</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-03: Brand Core Philosophy & Heritage Story -->
+    <section id="philosophy" style="padding:100px 0; border-bottom:1px solid var(--border-line); background:#fff;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">BRAND PHILOSOPHY</span>
+                <h2 class="section-title">조선 암행어사의 절개와 비밀 첩보의 현대적 부활</h2>
+                <p class="section-desc">사단(士團)은 남의 시선에 맞춘 유행 향수를 거부하고, 자신의 주체적 절개와 깊이를 드러내는 현대의 어사들을 위한 브랜드입니다.</p>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:28px;">
+                <div style="border:1px solid var(--border-line); padding:32px; border-radius:4px;">
+                    <div style="font-size:12px; font-weight:900; color:var(--accent-brass); margin-bottom:8px;">PHILOSOPHY 01</div>
+                    <h3 style="font-size:18px; font-weight:900; font-family:var(--font-serif); margin-bottom:12px;">주체적인 나만의 향 (Autonomous Identity)</h3>
+                    <p style="font-size:13px; color:var(--text-secondary); line-height:1.8;">
+                        남들과 똑같은 클론 향수를 거부합니다. 1·2·3마패 등급별 노트를 자신의 직관과 상황에 맞춰 직접 조합하는 진정한 나만의 시그니처를 지향합니다.
+                    </p>
+                </div>
+                <div style="border:1px solid var(--border-line); padding:32px; border-radius:4px;">
+                    <div style="font-size:12px; font-weight:900; color:var(--accent-brass); margin-bottom:8px;">PHILOSOPHY 02</div>
+                    <h3 style="font-size:18px; font-weight:900; font-family:var(--font-serif); margin-bottom:12px;">한국적 여백과 네오 코리안 미학</h3>
+                    <p style="font-size:13px; color:var(--text-secondary); line-height:1.8;">
+                        과장된 사극풍 클리셰를 배제하고, 나눔명조의 단아함과 퓨어 화이트, 능화창 격자 실선 프레임으로 정갈한 현대적 한국미를 정의합니다.
+                    </p>
+                </div>
+                <div style="border:1px solid var(--border-line); padding:32px; border-radius:4px;">
+                    <div style="font-size:12px; font-weight:900; color:var(--accent-brass); margin-bottom:8px;">PHILOSOPHY 03</div>
+                    <h3 style="font-size:18px; font-weight:900; font-family:var(--font-serif); margin-bottom:12px;">투명한 신뢰와 공정 채취</h3>
+                    <p style="font-size:13px; color:var(--text-secondary); line-height:1.8;">
+                        완도, 지리산, 오대산 등 조선 8도 자생 청정 농가와의 100% 공정 무역 및 전 성분 EWG 그린 등급 공개로 완벽한 신뢰를 약속합니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-04: Technical Innovation & Core Engineering (3대 핵심 기술력) -->
+    <section id="tech" style="padding:100px 0; border-bottom:1px solid var(--border-line); background:var(--bg-base);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">TECHNICAL INNOVATION</span>
+                <h2 class="section-title">사단(士團)의 독자적 3대 조향 & 하드웨어 기술력</h2>
+                <p class="section-desc">예술적 감성을 완벽하게 구현하기 위해 분자 화학 기술과 하드웨어 엔지니어링을 결합했습니다.</p>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:28px;">
+                <div style="background:#fff; border:1px solid var(--border-line); padding:32px; border-radius:4px;">
+                    <span class="product-badge">TECH 01 · HARDWARE</span>
+                    <h3 style="font-size:18px; font-weight:900; font-family:var(--font-serif); margin-bottom:10px;">파손 없는 초경량 투명 하드웨어</h3>
+                    <p style="font-size:13px; color:var(--text-secondary); line-height:1.8; margin-bottom:14px;">
+                        유리병의 파손 위험과 무거운 무게(350g+)를 해결한 특수 강화 고투명 폴리머 바디와 2D 플랫 라인 메달리온 마패 캡 설계.
+                    </p>
+                    <div style="font-size:11px; font-weight:800; color:var(--text-muted);">✓ 낙하 충격 흡수 100% &nbsp; ✓ 휴대 무게 68g 경량화</div>
+                </div>
+                <div style="background:#fff; border:1px solid var(--border-line); padding:32px; border-radius:4px;">
+                    <span class="product-badge">TECH 02 · FORMULATION</span>
+                    <h3 style="font-size:18px; font-weight:900; font-family:var(--font-serif); margin-bottom:10px;">100% 충돌 없는 분자 결합 포뮬러</h3>
+                    <p style="font-size:13px; color:var(--text-secondary); line-height:1.8; margin-bottom:14px;">
+                        베이스와 포인트 향료가 겹칠 때 발생하는 후각적 간섭을 분자 구조 레벨에서 완충하여, 어떤 비율로 레이어링해도 조화로운 발향 달성.
+                    </p>
+                    <div style="font-size:11px; font-weight:800; color:var(--text-muted);">✓ 부향률 25% 익스트레 드 퍼퓸 &nbsp; ✓ 12시간 잔향 유지</div>
+                </div>
+                <div style="background:#fff; border:1px solid var(--border-line); padding:32px; border-radius:4px;">
+                    <span class="product-badge">TECH 03 · EXTRACTION</span>
+                    <h3 style="font-size:18px; font-weight:900; font-family:var(--font-serif); margin-bottom:10px;">35℃ 저온 초임계 CO2 분별 증류</h3>
+                    <p style="font-size:13px; color:var(--text-secondary); line-height:1.8; margin-bottom:14px;">
+                        고온 수증기로 인한 향 분자 파괴 없이 35℃ 저온 초임계 CO2 가압 방식으로 조선 8도 자생 원료의 순수 원액을 99.8% 순도로 추출.
+                    </p>
+                    <div style="font-size:11px; font-weight:800; color:var(--text-muted);">✓ 열변성 제로 &nbsp; ✓ 천연 테르펜 활성 100% 보존</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-05: Artisanal Manufacturing Process (4단계 장인 제작 과정) -->
+    <section id="process" style="padding:100px 0; border-bottom:1px solid var(--border-line); background:#fff;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">ARTISANAL CRAFTSMANSHIP PROCESS</span>
+                <h2 class="section-title">자연의 숨결부터 손끝의 각인까지, 4단계 제작 과정</h2>
+                <p class="section-desc">한 병의 사단 마패 향수가 완성되기까지 거치는 엄격한 장인 정신과 과학적 정제 공정입니다.</p>
+            </div>
+            <div class="grid-4">
+                <div class="process-card">
+                    <div class="process-num">STAGE 01</div>
+                    <h4 style="font-size:17px; font-weight:900; font-family:var(--font-serif); margin-bottom:8px;">8도 청정 원료 채취</h4>
+                    <p style="font-size:12px; color:var(--text-secondary); line-height:1.7;">
+                        오대산 백단목, 지리산 적송, 완도 유자 등 최적의 수확 시기에 맞춰 청정 자생 원료를 선별 채취합니다.
+                    </p>
+                </div>
+                <div class="process-card">
+                    <div class="process-num">STAGE 02</div>
+                    <h4 style="font-size:17px; font-weight:900; font-family:var(--font-serif); margin-bottom:8px;">35℃ 초임계 정제</h4>
+                    <p style="font-size:12px; color:var(--text-secondary); line-height:1.7;">
+                        저온 초임계 CO2 분별 증류탑에서 불순물을 완벽히 걸러내고 순수 에센셜 오일만을 정밀 추출합니다.
+                    </p>
+                </div>
+                <div class="process-card">
+                    <div class="process-num">STAGE 03</div>
+                    <h4 style="font-size:17px; font-weight:900; font-family:var(--font-serif); margin-bottom:8px;">30일 오동나무 숙성</h4>
+                    <p style="font-size:12px; color:var(--text-secondary); line-height:1.7;">
+                        옻칠 오동나무 항온·항습 챔버에서 30일간의 매서레이션(Maceration) 숙성을 거쳐 깊은 잔향을 완성합니다.
+                    </p>
+                </div>
+                <div class="process-card">
+                    <div class="process-num">STAGE 04</div>
+                    <h4 style="font-size:17px; font-weight:900; font-family:var(--font-serif); margin-bottom:8px;">놋쇠 각인 & 한지 봉인</h4>
+                    <p style="font-size:12px; color:var(--text-secondary); line-height:1.7;">
+                        장인의 손으로 놋쇠 마패 캡에 레이저 각인을 새기고 수제 안동 한지 띠지로 밀봉하여 출고합니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-06: Milestones, Global Track Record & Certifications (브랜드 핵심 성과) -->
+    <section style="padding:100px 0; border-bottom:1px solid var(--border-line); background:var(--bg-base);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">TRACK RECORD & CERTIFICATION</span>
+                <h2 class="section-title">숫자로 검증된 사단(士團)의 글로벌 성과</h2>
+                <p class="section-desc">국내외 퍼퓸 디깅족과 전문가들이 인정한 사단의 검증된 기록입니다.</p>
+            </div>
+            <div style="display:grid; grid-template-columns:1.2fr 1fr; gap:40px; align-items:center;">
+                <div style="background:#fff; border:1px solid var(--border-line); padding:36px; border-radius:4px;">
+                    <h3 style="font-size:20px; font-weight:900; font-family:var(--font-serif); margin-bottom:18px;">글로벌 4대 도시 플래그십 & 팝업 살롱</h3>
+                    <div style="font-size:13px; color:var(--text-secondary); line-height:2;">
+                        · 🇰🇷 <strong>서울 북촌 한옥 살롱:</strong> 100% 예약제 프라이빗 1:1 아틀리에 운영<br>
+                        · 🇰🇷 <strong>서울 성수 모던 랩:</strong> 분자 조향 & 실시간 3D 각인 팝업<br>
+                        · 🇫🇷 <strong>파리 마레 지구 살롱:</strong> K-헤리티지 퍼퓸 특별 초청전 완판<br>
+                        · 🇯🇵 <strong>도쿄 긴자 플래그십:</strong> 오리엔탈 샌달우드 부문 D2C 1위 달성
+                    </div>
+                </div>
+                <div class="wireframe-box" style="height:280px; background:#fff;">
+                    <span class="product-badge">INTERNATIONAL COMPLIANCE</span>
+                    <strong style="font-size:18px; font-family:var(--font-serif); margin-top:8px;">[ IFRA & EWG 그린 공식 인증서 ]</strong>
+                    <p style="font-size:12px; color:var(--text-secondary); margin-top:8px; line-height:1.7;">
+                        국제향료협회(IFRA) 표준 100% 준수<br>전 성분 EWG 그린 등급 및 비건 처방 인증
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-07: Narrative Showcase 1 — 1마패 (일상 Base) & 유자 청송 -->
+    <section id="story-1" style="padding:100px 0; border-bottom:1px solid var(--border-line); background:#fff;">
+        <div class="container">
+            <span class="section-tag">STORY 01 · 1MAPAE BASE</span>
+            <div class="story-product-split">
+                <div>
+                    <h2 class="section-title" style="font-size:32px;">"새벽의 각성과 맑은 하루의 시작"<br>Product 01. 유자 청송 (淸松)</h2>
+                    <p style="font-size:14px; color:var(--text-secondary); line-height:1.8; margin-bottom:20px;">
+                        완도 해풍을 맞고 자란 완숙 유자의 싱그러운 시트러스와 오대산 새벽 솔잎의 맑은 피톤치드가 어우러져, 
+                        답답한 일상에 상쾌한 각성과 생기를 불어넣는 사단의 대표 데일리 베이스 향수입니다.
+                    </p>
+                    <div style="background:var(--bg-base); border:1px solid var(--border-line); padding:20px; border-radius:4px; margin-bottom:24px;">
+                        <div style="font-size:12px; font-weight:800; margin-bottom:6px;">주요 향조 노트 (Olfactive Pyramid)</div>
+                        <div style="font-size:13px; color:var(--text-secondary);">
+                            · <strong>TOP:</strong> 완도 완숙 유자 껍질, 베르가못<br>
+                            · <strong>MIDDLE:</strong> 지리산 청송 솔잎, 대나무 잎<br>
+                            · <strong>BASE:</strong> 은은한 삼나무, 화이트 머스크
+                        </div>
+                        <div style="margin-top:14px; font-size:20px; font-weight:900; font-family:var(--font-mono);">58,000 KRW <span style="font-size:12px; font-weight:normal; color:var(--text-muted);">(50ml)</span></div>
+                    </div>
+                    <div style="display:flex; gap:12px;">
+                        <button class="btn-black">유자 청송 바로 담기 &gt;</button>
+                        <a href="#all-catalog" class="btn-outline">1마패 다른 향 보기</a>
+                    </div>
+                </div>
+                <div class="wireframe-box" style="height:400px; background:var(--bg-base);">
+                    <span class="product-badge">PRODUCT 01 · 1마패 BASE</span>
+                    <strong style="font-size:20px; font-family:var(--font-serif); margin-top:8px;">[ 유자 청송 50ml 비주얼 뷰어 ]</strong>
+                    <p style="font-size:12px; margin-top:10px; color:var(--text-secondary); max-width:280px;">
+                        함께 구성된 1마패 라인업: <br><strong>02. 백차 죽림 (5.8만) · 03. 새벽 안개 (5.8만)</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-08: Narrative Showcase 2 — 2마패 (감성 Point) & 적송 홍화 -->
+    <section id="story-2" style="padding:100px 0; border-bottom:1px solid var(--border-line); background:var(--bg-base);">
+        <div class="container">
+            <span class="section-tag">STORY 02 · 2MAPAE POINT</span>
+            <div class="story-product-split">
+                <div class="wireframe-box" style="height:400px; background:#fff;">
+                    <span class="product-badge">PRODUCT 04 · 2마패 POINT</span>
+                    <strong style="font-size:20px; font-family:var(--font-serif); margin-top:8px;">[ 적송 홍화 50ml 비주얼 뷰어 ]</strong>
+                    <p style="font-size:12px; margin-top:10px; color:var(--text-secondary); max-width:280px;">
+                        함께 구성된 2마패 라인업: <br><strong>05. 남원 국화 · 06. 달빛 매화 · 07. 단청 모란 (각 7.8만)</strong>
+                    </p>
+                </div>
+                <div>
+                    <h2 class="section-title" style="font-size:32px;">"감정의 온도를 바꾸는 붉은 결"<br>Product 04. 적송 홍화 (紅花)</h2>
+                    <p style="font-size:14px; color:var(--text-secondary); line-height:1.8; margin-bottom:20px;">
+                        단조로운 일상에 나만의 개성을 더하고 싶을 때, 지리산 적송의 붉은 수피와 붉은 홍화 꽃잎의 화사함이 만드는 
+                        단아하고 세련된 플로럴 우디 포인트 향수입니다.
+                    </p>
+                    <div style="background:#fff; border:1px solid var(--border-line); padding:20px; border-radius:4px; margin-bottom:24px;">
+                        <div style="font-size:12px; font-weight:800; margin-bottom:6px;">주요 향조 노트 (Olfactive Pyramid)</div>
+                        <div style="font-size:13px; color:var(--text-secondary);">
+                            · <strong>TOP:</strong> 붉은 야생 홍화, 산딸기 잎<br>
+                            · <strong>MIDDLE:</strong> 지리산 적송목, 동백꽃<br>
+                            · <strong>BASE:</strong> 앰버 우드, 소프트 머스크
+                        </div>
+                        <div style="margin-top:14px; font-size:20px; font-weight:900; font-family:var(--font-mono);">78,000 KRW <span style="font-size:12px; font-weight:normal; color:var(--text-muted);">(50ml)</span></div>
+                    </div>
+                    <div style="display:flex; gap:12px;">
+                        <button class="btn-black">적송 홍화 바로 담기 &gt;</button>
+                        <a href="#all-catalog" class="btn-outline">2마패 다른 향 보기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-09: Narrative Showcase 3 — 3마패 (올데이 Signature) & 백단 묵향 -->
+    <section id="story-3" style="padding:100px 0; border-bottom:1px solid var(--border-line); background:#fff;">
+        <div class="container">
+            <span class="section-tag">STORY 03 · 3MAPAE MASTER SIGNATURE</span>
+            <div class="story-product-split">
+                <div>
+                    <span style="background:var(--bg-dark); color:#fff; font-size:10px; font-weight:900; padding:4px 10px; border-radius:2px; letter-spacing:1px;">MASTER SIGNATURE</span>
+                    <h2 class="section-title" style="font-size:32px; margin-top:12px;">"군주의 절개와 100년 묵향의 깊이"<br>Product 08. 백단 묵향 (墨香)</h2>
+                    <p style="font-size:14px; color:var(--text-secondary); line-height:1.8; margin-bottom:20px;">
+                        사단(士團) 브랜드의 정체성을 대표하는 마스터피스. 오대산 100년 백단목의 묵직한 샌달우드와 안동 송연묵의 그윽한 먹 냄새가 
+                        피부에 스며들어 12시간 동안 흔들리지 않는 품격과 고요한 아우라를 선사합니다.
+                    </p>
+                    <div style="background:var(--bg-base); border:1.5px solid var(--text-primary); padding:20px; border-radius:4px; margin-bottom:24px;">
+                        <div style="font-size:12px; font-weight:800; margin-bottom:6px;">주요 향조 노트 (Olfactive Pyramid)</div>
+                        <div style="font-size:13px; color:var(--text-secondary);">
+                            · <strong>TOP:</strong> 안동 전통 송연묵, 훈증 정향<br>
+                            · <strong>MIDDLE:</strong> 오대산 100년 백단목, 규장각 한지<br>
+                            · <strong>BASE:</strong> 고목 가죽, 오리엔탈 앰버 (12시간 지속)
+                        </div>
+                        <div style="margin-top:14px; font-size:20px; font-weight:900; font-family:var(--font-mono);">98,000 KRW <span style="font-size:12px; font-weight:normal; color:var(--text-muted);">(50ml)</span></div>
+                    </div>
+                    <div style="display:flex; gap:12px;">
+                        <button class="btn-black">백단 묵향 바로 담기 &gt;</button>
+                        <a href="#all-catalog" class="btn-outline">3마패 다른 향 보기</a>
+                    </div>
+                </div>
+                <div class="wireframe-box" style="height:400px; background:var(--bg-base); border:2px solid var(--text-primary);">
+                    <span class="product-badge" style="color:var(--text-primary); font-weight:900;">PRODUCT 08 · 3마패 MASTER</span>
+                    <strong style="font-size:22px; font-family:var(--font-serif); margin-top:8px;">[ 백단 묵향 50ml 마스터 뷰어 ]</strong>
+                    <p style="font-size:12px; margin-top:10px; color:var(--text-secondary); max-width:280px;">
+                        함께 구성된 3마패 라인업: <br><strong>09. 제주 침향 · 10. 고서 지향 · 11. 순라 레더 (각 9.8만)</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-10: Narrative Showcase 4 — Wellness & Objects & 놋쇠 롤온/미스트 -->
+    <section id="story-wellness" style="padding:100px 0; border-bottom:1px solid var(--border-line); background:var(--bg-base);">
+        <div class="container">
+            <span class="section-tag">STORY 04 · WELLNESS & RITUAL</span>
+            <div class="story-product-split">
+                <div class="wireframe-box" style="height:380px; background:#fff;">
+                    <span class="product-badge">PRODUCTS 12~14 · WELLNESS</span>
+                    <strong style="font-size:20px; font-family:var(--font-serif); margin-top:8px;">[ 포터블 놋쇠 롤온 & 한방 미스트 뷰어 ]</strong>
+                    <p style="font-size:12px; margin-top:10px; color:var(--text-secondary);">
+                        손끝에서 느껴지는 놋쇠의 차가움과 지압 쿨링 리추얼
+                    </p>
+                </div>
+                <div>
+                    <h2 class="section-title" style="font-size:32px;">"손끝에서 머무는 놋쇠의 쉼"<br>Product 12. 놋쇠 롤온 & 13. 필로우 미스트</h2>
+                    <p style="font-size:14px; color:var(--text-secondary); line-height:1.8; margin-bottom:20px;">
+                        피로가 누적된 오후, 관자놀이에 놋쇠 구슬로 시원하게 지압하는 롤온 오일과 
+                        잠들기 전 베개에 뿌려 오대산 침향의 깊은 숙면을 유도하는 한방 웰니스 라인업입니다.
+                    </p>
+                    <div style="background:#fff; border:1px solid var(--border-line); padding:20px; border-radius:4px; margin-bottom:24px;">
+                        <div style="display:flex; justify-content:space-between; font-size:13px; font-weight:800; margin-bottom:6px;">
+                            <span>12. 놋쇠 롤온 오일 (10ml)</span><span>38,000 KRW</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; font-size:13px; font-weight:800; margin-bottom:6px;">
+                            <span>13. 한방 필로우 미스트 (100ml)</span><span>42,000 KRW</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; font-size:13px; font-weight:800;">
+                            <span>14. 황동 마패 인센스 (30개입)</span><span>45,000 KRW</span>
+                        </div>
+                    </div>
+                    <button class="btn-black">웰니스 오브제 세트 주문 &gt;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-11: Custom Olfactive Lab & Secret Cipher -->
+    <section style="padding:100px 0; border-bottom:1px solid var(--border-line); background:#fff;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">CUSTOM OLFACTIVE LAB</span>
+                <h2 class="section-title">1·2·3마패 커스텀 조향 랩 & 어사 비밀 첩보서</h2>
+                <p class="section-desc">내가 조합한 비율에 따라 세상에 단 하나뿐인 비밀 첩보 암호가 부여됩니다.</p>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1.2fr; gap:40px; align-items:center;">
+                <div style="background:var(--bg-base); border:1px solid var(--border-line); padding:32px; border-radius:4px;">
+                    <h4 style="font-size:16px; font-weight:900; margin-bottom:16px;">3축 피펫 실시간 슬라이더</h4>
+                    <div style="margin-bottom:14px;">
+                        <div style="display:flex; justify-content:space-between; font-size:12px; font-weight:800; margin-bottom:4px;">
+                            <span>BASE: 유자청송 (50ml)</span><span>30%</span>
+                        </div>
+                        <input type="range" style="width:100%;" value="30">
+                    </div>
+                    <div style="margin-bottom:14px;">
+                        <div style="display:flex; justify-content:space-between; font-size:12px; font-weight:800; margin-bottom:4px;">
+                            <span>POINT: 적송홍화 (50ml)</span><span>40%</span>
+                        </div>
+                        <input type="range" style="width:100%;" value="40">
+                    </div>
+                    <div style="margin-bottom:20px;">
+                        <div style="display:flex; justify-content:space-between; font-size:12px; font-weight:800; margin-bottom:4px;">
+                            <span>ALL-DAY: 백단묵향 (50ml)</span><span>30%</span>
+                        </div>
+                        <input type="range" style="width:100%;" value="30">
+                    </div>
+                    <div style="background:var(--bg-surface); padding:12px; text-align:center; border-radius:2px; font-family:var(--font-mono); font-weight:900;">
+                        #SADAN-CIPHER-304030
+                    </div>
+                </div>
+                <div class="wireframe-box" style="height:340px; background:#fff;">
+                    <strong style="font-size:16px; font-family:var(--font-serif);">[ 비밀 첩보 8대 공식 조합 가이드북 증정 ]</strong>
+                    <span style="font-size:12px; color:var(--text-secondary); margin-top:8px;">구매 고객 전원 실패 없는 8대 시그니처 레이어링 레시피북을 동봉해 드립니다.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-12: 100% Refundable Discovery Tasting Kit -->
+    <section id="discovery" style="padding:100px 0; border-bottom:1px solid var(--border-line); background:var(--bg-base);">
+        <div class="container">
+            <div style="background:#fff; border:2px solid var(--text-primary); padding:48px; border-radius:4px; display:grid; grid-template-columns:1.3fr 1fr; gap:40px; align-items:center;">
+                <div>
+                    <span class="section-tag">100% REFUNDABLE TRIAL</span>
+                    <h2 style="font-size:30px; font-weight:900; font-family:var(--font-serif); margin:8px 0 14px;">먼저 시향하고 결정하세요.<br>사단 3종 디스커버리 킷</h2>
+                    <p style="font-size:14px; color:var(--text-secondary); line-height:1.8; margin-bottom:20px;">
+                        1·2·3마패 미니어처(5ml x 3)와 한지 시향지 세트를 19,000원에 먼저 시향해 보세요. 본품 결제 시 결제액 19,000원이 <strong>100% 전액 차감 환급</strong>됩니다.
+                    </p>
+                    <div style="font-size:12px; font-weight:800;">✓ 무료 배송 &nbsp; ✓ 본품 100% 환급 바우처 즉시 발급</div>
+                </div>
+                <div class="wireframe-box" style="height:220px; background:var(--bg-surface);">
+                    <div style="font-size:18px; font-weight:900; font-family:var(--font-serif);">3종 디스커버리 킷</div>
+                    <div style="font-size:26px; font-weight:900; margin:8px 0;">19,000 KRW</div>
+                    <button class="btn-black" style="width:100%;">디스커버리 킷 신청하기 &gt;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-13: ★ ALL 16 PRODUCTS MASTER 3-COLUMN CARD ARCHIVE (한 줄에 3개 카드 그리드) -->
+    <section id="all-catalog" style="padding:110px 0; border-bottom:1px solid var(--border-line); background:#fff;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">ALL 16 PRODUCTS COLLECTION</span>
+                <h2 class="section-title">사단(士團) 16대 컬렉션 전체 모아보기</h2>
+                <p class="section-desc">카테고리 탭을 선택하여 한 줄에 3개씩 깔끔하게 정돈된 사단 16대 전 제품 카드를 한눈에 탐색하세요.</p>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="filter-tab-bar">
+                <button class="filter-tab active" onclick="filterCategory('all', this)">전체 16종 (All)</button>
+                <button class="filter-tab" onclick="filterCategory('1mapae', this)">1마패 일상 Base (3종)</button>
+                <button class="filter-tab" onclick="filterCategory('2mapae', this)">2마패 감성 Point (4종)</button>
+                <button class="filter-tab" onclick="filterCategory('3mapae', this)">3마패 올데이 Signature (4종)</button>
+                <button class="filter-tab" onclick="filterCategory('wellness', this)">포터블 웰니스 (3종)</button>
+                <button class="filter-tab" onclick="filterCategory('gift', this)">디스커버리 & 마스터 (2종)</button>
+            </div>
+
+            <!-- 3-Column Product Cards Grid -->
+            <div class="product-grid-3" id="productCardContainer">
+                
+                <!-- Card 01: 1마패 -->
+                <div class="product-card" data-cat="1mapae">
+                    <div class="product-card-top">
+                        <span class="product-badge" style="background:#f4f4f5; padding:3px 8px; border-radius:2px;">1마패 · BASE</span>
+                        <span style="font-size:11px; font-weight:800; color:var(--text-muted);">50ml / 1.7 fl.oz.</span>
+                    </div>
+                    <h4 class="product-card-title">01. 유자 청송 (淸松)</h4>
+                    <p class="product-card-desc">완도 유자의 싱그러운 시트러스와 새벽 솔잎의 맑은 피톤치드가 전하는 모닝 리프레시.</p>
+                    <div class="product-card-footer">
+                        <div class="product-card-price">58,000 KRW</div>
+                        <button class="btn-black" style="padding:8px 16px; font-size:12px;">담기</button>
+                    </div>
+                </div>
+
+                <!-- Card 02: 1마패 -->
+                <div class="product-card" data-cat="1mapae">
+                    <div class="product-card-top">
+                        <span class="product-badge" style="background:#f4f4f5; padding:3px 8px; border-radius:2px;">1마패 · BASE</span>
+                        <span style="font-size:11px; font-weight:800; color:var(--text-muted);">50ml / 1.7 fl.oz.</span>
+                    </div>
+                    <h4 class="product-card-title">02. 백차 죽림 (竹林)</h4>
+                    <p class="product-card-desc">지리산 청정 백차의 은은함과 푸른 대나무 수액의 청량하고 차분한 그린 티 노트.</p>
+                    <div class="product-card-footer">
+                        <div class="product-card-price">58,000 KRW</div>
+                        <button class="btn-black" style="padding:8px 16px; font-size:12px;">담기</button>
+                    </div>
+                </div>
+
+                <!-- Card 03: 1마패 -->
+                <div class="product-card" data-cat="1mapae">
+                    <div class="product-card-top">
+                        <span class="product-badge" style="background:#f4f4f5; padding:3px 8px; border-radius:2px;">1마패 · BASE</span>
+                        <span style="font-size:11px; font-weight:800; color:var(--text-muted);">50ml / 1.7 fl.oz.</span>
+                    </div>
+                    <h4 class="product-card-title">03. 새벽 안개 (曉霧)</h4>
+                    <p class="product-card-desc">오대산 새벽 물안개와 맑은 야생 박하 잎이 주는 투명하고 시원한 아쿠아 노트.</p>
+                    <div class="product-card-footer">
+                        <div class="product-card-price">58,000 KRW</div>
+                        <button class="btn-black" style="padding:8px 16px; font-size:12px;">담기</button>
+                    </div>
+                </div>
+
+                <!-- Card 04: 2마패 -->
+                <div class="product-card" data-cat="2mapae">
+                    <div class="product-card-top">
+                        <span class="product-badge" style="background:#fef3c7; color:#b45309; padding:3px 8px; border-radius:2px;">2마패 · POINT</span>
+                        <span style="font-size:11px; font-weight:800; color:var(--text-muted);">50ml / 1.7 fl.oz.</span>
+                    </div>
+                    <h4 class="product-card-title">04. 적송 홍화 (紅花)</h4>
+                    <p class="product-card-desc">지리산 적송의 붉은 수피와 붉은 홍화 꽃잎의 화사함이 만드는 단아한 플로럴 우디.</p>
+                    <div class="product-card-footer">
+                        <div class="product-card-price">78,000 KRW</div>
+                        <button class="btn-black" style="padding:8px 16px; font-size:12px;">담기</button>
+                    </div>
+                </div>
+
+                <!-- Card 05: 2마패 -->
+                <div class="product-card" data-cat="2mapae">
+                    <div class="product-card-top">
+                        <span class="product-badge" style="background:#fef3c7; color:#b45309; padding:3px 8px; border-radius:2px;">2마패 · POINT</span>
+                        <span style="font-size:11px; font-weight:800; color:var(--text-muted);">50ml / 1.7 fl.oz.</span>
+                    </div>
+                    <h4 class="product-card-title">05. 남원 국화 (秋菊)</h4>
+                    <p class="product-card-desc">남원 야생 국화의 그윽한 꿀 향과 쌉싸름한 꿀풀 잎의 세련된 가을 정취.</p>
+                    <div class="product-card-footer">
+                        <div class="product-card-price">78,000 KRW</div>
+                        <button class="btn-black" style="padding:8px 16px; font-size:12px;">담기</button>
+                    </div>
+                </div>
+
+                <!-- Card 06: 2마패 -->
+                <div class="product-card" data-cat="2mapae">
+                    <div class="product-card-top">
+                        <span class="product-badge" style="background:#fef3c7; color:#b45309; padding:3px 8px; border-radius:2px;">2마패 · POINT</span>
+                        <span style="font-size:11px; font-weight:800; color:var(--text-muted);">50ml / 1.7 fl.oz.</span>
+                    </div>
+                    <h4 class="product-card-title">06. 달빛 매화 (月梅)</h4>
+                    <p class="product-card-desc">설중매화의 순백 꽃잎과 은은한 새벽 백단목이 만드는 우아한 오리엔탈 플로럴.</p>
+                    <div class="product-card-footer">
+                        <div class="product-card-price">78,000 KRW</div>
+                        <button class="btn-black" style="padding:8px 16px; font-size:12px;">담기</button>
+                    </div>
+                </div>
+
+                <!-- Card 07: 2마패 -->
+                <div class="product-card" data-cat="2mapae">
+                    <div class="product-card-top">
+                        <span class="product-badge" style="background:#fef3c7; color:#b45309; padding:3px 8px; border-radius:2px;">2마패 · POINT</span>
+                        <span style="font-size:11px; font-weight:800; color:var(--text-muted);">50ml / 1.7 fl.oz.</span>
+                    </div>
+                    <h4 class="product-card-title">07. 단청 모란 (牧丹)</h4>
+                    <p class="product-card-desc">궁궐 처마 단청의 화려한 모란꽃과 차분한 백차가 어우러진 풍성한 부케.</p>
+                    <div class="product-card-footer">
+                        <div class="product-card-price">78,000 KRW</div>
+                        <button class="btn-black" style="padding:8px 16px; font-size:12px;">담기</button>
+                    </div>
+                </div>
+
+                <!-- Card 08: 3마패 MASTER -->
+                <div class="product-card" data-cat="3mapae" style="border:1.5px solid var(--text-primary);">
+                    <div class="product-card-top">
+                        <span class="product-badge" style="background:var(--bg-dark); color:#fff; padding:3px 8px; border-radius:2px;">3마패 · MASTER BEST</span>
+                        <span style="font-size:11px; font-weight:800; color:var(--text-muted);">50ml / 1.7 fl.oz.</span>
+                    </div>
+                    <h4 class="product-card-title">08. 백단 묵향 (墨香)</h4>
+                    <p class="product-card-desc">오대산 100년 백단목과 안동 송연묵의 그윽함이 만드는 12시간 지속 마스터피스.</p>
+                    <div class="product-card-footer">
+                        <div class="product-card-price">98,000 KRW</div>
+                        <button class="btn-black" style="padding:8px 16px; font-size:12px;">담기</button>
+                    </div>
+                </div>
+
+                <!-- Card 09: 3마패 -->
+                <div class="product-card" data-cat="3mapae">
+                    <div class="product-card-top">
+                        <span class="product-badge" style="background:#18181b; color:#f4f4f5; padding:3px 8px; border-radius:2px;">3마패 · SIGNATURE</span>
+                        <span style="font-size:11px; font-weight:800; color:var(--text-muted);">50ml / 1.7 fl.oz.</span>
+                    </div>
+                    <h4 class="product-card-title">09. 제주 침향 (沈香)</h4>
+                    <p class="product-card-desc">한라산 야생 침향과 참나무 훈증 숯 냄새의 깊고 비밀스러운 스모키 우디.</p>
+                    <div class="product-card-footer">
+                        <div class="product-card-price">98,000 KRW</div>
+                        <button class="btn-black" style="padding:8px 16px; font-size:12px;">담기</button>
+                    </div>
+                </div>
+
+                <!-- Card 10: 3마패 -->
+                <div class="product-card" data-cat="3mapae">
+                    <div class="product-card-top">
+                        <span class="product-badge" style="background:#18181b; color:#f4f4f5; padding:3px 8px; border-radius:2px;">3마패 · SIGNATURE</span>
+                        <span style="font-size:11px; font-weight:800; color:var(--text-muted);">50ml / 1.7 fl.oz.</span>
+                    </div>
+                    <h4 class="product-card-title">10. 고서 지향 (紙香)</h4>
+                    <p class="product-card-desc">규장각 닥나무 수제 한지와 마른 서책에서 피어오르는 지적이고 정갈한 파우더리 노트.</p>
+                    <div class="product-card-footer">
+                        <div class="product-card-price">98,000 KRW</div>
+                        <button class="btn-black" style="padding:8px 16px; font-size:12px;">담기</button>
+                    </div>
+                </div>
+
+                <!-- Card 11: 3마패 -->
+                <div class="product-card" data-cat="3mapae">
+                    <div class="product-card-top">
+                        <span class="product-badge" style="background:#18181b; color:#f4f4f5; padding:3px 8px; border-radius:2px;">3마패 · SIGNATURE</span>
+                        <span style="font-size:11px; font-weight:800; color:var(--text-muted);">50ml / 1.7 fl.oz.</span>
+                    </div>
+                    <h4 class="product-card-title">11. 순라 레더 (巡邏)</h4>
+                    <p class="product-card-desc">조선 순라군의 단단한 무두질 가죽 혁대와 훈증 정향의 강인한 레더 앰버 노트.</p>
+                    <div class="product-card-footer">
+                        <div class="product-card-price">98,000 KRW</div>
+                        <button class="btn-black" style="padding:8px 16px; font-size:12px;">담기</button>
+                    </div>
+                </div>
+
+                <!-- Card 12: 웰니스 -->
+                <div class="product-card" data-cat="wellness">
+                    <div class="product-card-top">
+                        <span class="product-badge" style="background:#e0f2fe; color:#0369a1; padding:3px 8px; border-radius:2px;">WELLNESS OBJECT</span>
+                        <span style="font-size:11px; font-weight:800; color:var(--text-muted);">10ml Roll-on</span>
+                    </div>
+                    <h4 class="product-card-title">12. 놋쇠 롤온 오일</h4>
+                    <p class="product-card-desc">관자놀이와 손목에 시원한 놋쇠 구슬로 롤링 지압하여 피로를 깨우는 쿨링 에센스.</p>
+                    <div class="product-card-footer">
+                        <div class="product-card-price">38,000 KRW</div>
+                        <button class="btn-black" style="padding:8px 16px; font-size:12px;">담기</button>
+                    </div>
+                </div>
+
+                <!-- Card 13: 웰니스 -->
+                <div class="product-card" data-cat="wellness">
+                    <div class="product-card-top">
+                        <span class="product-badge" style="background:#e0f2fe; color:#0369a1; padding:3px 8px; border-radius:2px;">WELLNESS OBJECT</span>
+                        <span style="font-size:11px; font-weight:800; color:var(--text-muted);">100ml Pillow Mist</span>
+                    </div>
+                    <h4 class="product-card-title">13. 한방 필로우 미스트</h4>
+                    <p class="product-card-desc">침구류에 분사하여 오대산 야생 침향과 쑥의 은은한 아로마로 편안한 숙면을 유도.</p>
+                    <div class="product-card-footer">
+                        <div class="product-card-price">42,000 KRW</div>
+                        <button class="btn-black" style="padding:8px 16px; font-size:12px;">담기</button>
+                    </div>
+                </div>
+
+                <!-- Card 14: 웰니스 -->
+                <div class="product-card" data-cat="wellness">
+                    <div class="product-card-top">
+                        <span class="product-badge" style="background:#e0f2fe; color:#0369a1; padding:3px 8px; border-radius:2px;">WELLNESS OBJECT</span>
+                        <span style="font-size:11px; font-weight:800; color:var(--text-muted);">30 Sticks + Holder</span>
+                    </div>
+                    <h4 class="product-card-title">14. 황동 마패 인센스</h4>
+                    <p class="product-card-desc">자연 건조 침향 인센스 스틱과 묵직한 황동 마패 받침대로 완성하는 공간 훈향.</p>
+                    <div class="product-card-footer">
+                        <div class="product-card-price">45,000 KRW</div>
+                        <button class="btn-black" style="padding:8px 16px; font-size:12px;">담기</button>
+                    </div>
+                </div>
+
+                <!-- Card 15: 디스커버리 킷 -->
+                <div class="product-card" data-cat="gift" style="border:1.5px dashed var(--text-primary);">
+                    <div class="product-card-top">
+                        <span class="product-badge" style="background:var(--bg-dark); color:#fff; padding:3px 8px; border-radius:2px;">100% 환급 킷</span>
+                        <span style="font-size:11px; font-weight:800; color:var(--text-muted);">5ml x 3종 세트</span>
+                    </div>
+                    <h4 class="product-card-title">15. 사단 3종 디스커버리 킷</h4>
+                    <p class="product-card-desc">1·2·3마패 대표 향을 집에서 먼저 시향. 본품 구매 시 결제액 100% 전액 차감 환급.</p>
+                    <div class="product-card-footer">
+                        <div class="product-card-price">19,000 KRW</div>
+                        <button class="btn-black" style="padding:8px 16px; font-size:12px;">신청하기</button>
+                    </div>
+                </div>
+
+                <!-- Card 16: 마스터 오동나무 함 -->
+                <div class="product-card" data-cat="gift" style="border:1.5px solid var(--accent-brass); background:#fffcf8;">
+                    <div class="product-card-top">
+                        <span class="product-badge" style="background:var(--accent-brass); color:#fff; padding:3px 8px; border-radius:2px;">MASTER EDITION</span>
+                        <span style="font-size:11px; font-weight:800; color:var(--accent-brass);">풀패키지 기프트</span>
+                    </div>
+                    <h4 class="product-card-title">16. 옻칠 오동나무 3단 함</h4>
+                    <p class="product-card-desc">50ml 본품 + 놋쇠 마패 캡 각인 + 옻칠 오동나무 3단 보관함 + 안동 비단 보자기 매듭.</p>
+                    <div class="product-card-footer">
+                        <div class="product-card-price" style="color:var(--accent-brass);">248,000 KRW</div>
+                        <button class="btn-black" style="padding:8px 16px; font-size:12px; background:var(--accent-brass); border-color:var(--accent-brass);">주문하기</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-14: Packaging, Flagship Atelier Booking & Master Clean Footer -->
+    <section style="padding:100px 0; border-bottom:1px solid var(--border-line); background:var(--bg-base);">
+        <div class="container">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px;">
+                <div style="background:#fff; border:1px solid var(--border-line); padding:36px; border-radius:4px;">
+                    <span class="section-tag">GIFT PACKAGING</span>
+                    <h3 style="font-size:22px; font-weight:900; font-family:var(--font-serif); margin:8px 0 12px;">능화창(菱花窓) 선물 패키징</h3>
+                    <p style="font-size:13px; color:var(--text-secondary); line-height:1.8; margin-bottom:20px;">
+                        조선 전통 창호의 정갈한 꽃살문 격자 패턴 실선 상자와 수제 한지 띠지 봉인으로 소중한 분께 한국의 품격을 전하세요.
+                    </p>
+                    <button class="btn-black" style="width:100%;">선물 패키징 옵션 선택 &gt;</button>
+                </div>
+                <div style="background:#fff; border:1px solid var(--border-line); padding:36px; border-radius:4px;">
+                    <span class="section-tag">PRIVATE ATELIER</span>
+                    <h3 style="font-size:22px; font-weight:900; font-family:var(--font-serif); margin:8px 0 12px;">북촌 · 성수 플래그십 아틀리에</h3>
+                    <p style="font-size:13px; color:var(--text-secondary); line-height:1.8; margin-bottom:20px;">
+                        사단의 전문 조향 아티잔과 함께 16가지 원료를 직접 다루며 나만의 마패 포뮬러를 조합하는 1:1 예약제 시향실입니다.
+                    </p>
+                    <button class="btn-black" style="width:100%;">1:1 아틀리에 예약하기 &gt;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Master Clean Footer -->
+    <footer style="padding:80px 0 40px; background:var(--bg-dark); color:#a1a1aa; font-size:12px;">
+        <div class="container">
+            <div style="display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; margin-bottom:40px;">
+                <div>
+                    <div style="font-size:16px; font-weight:900; color:#fff; font-family:var(--font-serif); margin-bottom:14px;">士團 (SADAN)</div>
+                    <p style="line-height:1.8;">조선 암행어사 마패 헤리티지 & 100% 커스텀 레이어링 하우스.<br>서울시 종로구 북촌로 142 · 성수동 연무장길 88</p>
+                </div>
+                <div>
+                    <div style="font-size:13px; font-weight:900; color:#fff; margin-bottom:12px;">마패 컬렉션</div>
+                    <p style="line-height:2;">· 1마패 (일상 Base 3종)<br>· 2마패 (감성 Point 4종)<br>· 3마패 (시그니처 4종)<br>· 웰니스 오브제 (3종)</p>
+                </div>
+                <div>
+                    <div style="font-size:13px; font-weight:900; color:#fff; margin-bottom:12px;">기술 및 연구</div>
+                    <p style="line-height:2;">· 초임계 CO2 추출<br>· 분자 결합 포뮬러<br>· 포터블 하드웨어<br>· IFRA 안전 인증</p>
+                </div>
+                <div>
+                    <div style="font-size:13px; font-weight:900; color:#fff; margin-bottom:12px;">고객 지원</div>
+                    <p style="line-height:2;">· 100% 환급 쿠폰<br>· EWG 올그린 인증<br>· B2B 기업 견적<br>· 1:1 아틀리에 예약</p>
+                </div>
+            </div>
+            <div style="border-top:1px solid var(--border-dark); padding-top:24px; text-align:center; color:#71717a;">
+                © 2026 SADAN Haute Perfumery House. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive JS Tab Switcher -->
+    <script>
+        function filterCategory(category, btnElement) {
+            // Update active button style
+            const tabs = document.querySelectorAll('.filter-tab');
+            tabs.forEach(t => t.classList.remove('active'));
+            btnElement.classList.add('active');
+
+            // Filter product cards
+            const cards = document.querySelectorAll('#productCardContainer .product-card');
+            cards.forEach(card => {
+                const cat = card.getAttribute('data-cat');
+                if (category === 'all' || cat === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
