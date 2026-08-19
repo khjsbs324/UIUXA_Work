@@ -1,0 +1,52 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef recipe fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef studio fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["🏠 W05-HOME (스튜디오 허브)<br/>• 9:16 세로형 숏폼 캔버스<br/>• 5대 퀵독"]
+
+    RECIPE["🍹 W05-RECIPE (레시피 & 장비 스펙)<br/>• 3단 변색 배합비<br/>• 더블월 잔 & 쉐이커"]
+    STUDIO["📸 W05-STUDIO (3D 스튜디오 & BGM)<br/>• AURORA-STUDIO-01 3D 조명 배치<br/>• BGM 3종 스트리밍 & 선착순 카운터"]
+
+    SCORE_CHECK{"촬영 연출 점수<br/>(90점 이상?)"}
+    DROP_CHECK{"선착순 잔여<br/>수량 검증"}
+
+    DRAWER["🛒 W05-DRAWER (3초 패스트 결제)<br/>• 1-Click 간편결제 / 25% 번들 / 정기구독"]
+    DONE["✅ W05-DONE (가이드 & 라이선스)<br/>• 촬영 PDF / BGM 링크 / 팬미팅 모바일 티켓"]
+    COMM["🔄 W05-COMM (챌린지 & 피드)<br/>• 실시간 랭킹 투표 & 페이백 이벤트"]
+
+    %% 연결
+    HOME -->|목적1: 릴스 레시피| RECIPE
+    RECIPE --> DRAWER
+
+    HOME -->|목적2: 장비 풀세트| RECIPE
+    RECIPE --> STUDIO
+    STUDIO --> SCORE_CHECK
+    SCORE_CHECK -->|우수| DRAWER
+    SCORE_CHECK -->|불균형 시| STUDIO
+
+    HOME -->|목적3: 바이럴 구독| RECIPE
+    RECIPE --> STUDIO
+    STUDIO --> DRAWER
+
+    HOME -->|목적4: 챌린지 인증| COMM
+    COMM --> DONE
+
+    HOME -->|목적5: 한정판 드롭| RECIPE
+    RECIPE --> STUDIO
+    STUDIO --> DROP_CHECK
+    DROP_CHECK -->|선착순 확보| DRAWER
+    DROP_CHECK -->|마감 시| STUDIO
+
+    DRAWER --> DONE
+    DONE --> COMM
+
+    class HOME home;
+    class RECIPE recipe;
+    class STUDIO studio;
+    class SCORE_CHECK,DROP_CHECK decision;
+    class DRAWER,DONE drawer;
+    class COMM support;

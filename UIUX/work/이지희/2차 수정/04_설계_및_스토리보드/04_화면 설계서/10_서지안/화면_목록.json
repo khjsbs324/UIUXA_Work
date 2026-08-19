@@ -1,0 +1,215 @@
+{
+  "clientId": "10",
+  "clientName": "서지안",
+  "archetype": "A-4 온가족 안심 웰니스 매거진형 (Family Wellness)",
+  "integratedFlowFile": "10_서지안_서비스_흐름도_통합.md",
+  "integratedSitemapFile": "10_서지안_사이트맵_통합.md",
+  "screens": [
+    {
+      "id": "W10-HOME",
+      "name": "온가족 웰니스 메인 허브",
+      "depth": "1-Depth",
+      "purposes": [
+        "목적 1~5"
+      ]
+    },
+    {
+      "id": "W10-CATALOG",
+      "name": "클린 포뮬러 도감",
+      "depth": "2-Depth",
+      "purposes": [
+        "목적 1, 2, 5"
+      ]
+    },
+    {
+      "id": "W10-ESTIMATE",
+      "name": "패밀리 계산 & 플래너",
+      "depth": "2-Depth",
+      "purposes": [
+        "목적 1, 5"
+      ]
+    },
+    {
+      "id": "W10-BUILD",
+      "name": "3D 자수 선물 랩",
+      "depth": "2-Depth",
+      "purposes": [
+        "목적 3, 5"
+      ]
+    },
+    {
+      "id": "W10-RITUAL",
+      "name": "밤 23:00 육퇴 힐링 룸",
+      "depth": "2-Depth",
+      "purposes": [
+        "목적 4"
+      ]
+    },
+    {
+      "id": "W10-DRAWER",
+      "name": "Slide-out 패밀리 새벽구독 드로어",
+      "depth": "Aside Layer",
+      "purposes": [
+        "목적 1~4"
+      ]
+    },
+    {
+      "id": "W10-DONE",
+      "name": "가족 건강 리포트 PDF & 구독 승인",
+      "depth": "Modal",
+      "purposes": [
+        "목적 1~5"
+      ]
+    },
+    {
+      "id": "W10-COMM",
+      "name": "육아 일기 & 커뮤니티",
+      "depth": "2-Depth",
+      "purposes": [
+        "목적 4"
+      ]
+    }
+  ],
+  "curations": [
+    {
+      "secId": "SEC-01",
+      "productCode": "WK-P01",
+      "name": "⭐ [맘스 베스트] 0.00mg 무카페인 블루베리 루이보스",
+      "category": "🌿 0.00mg 무카페인/무설탕 클린티 (4)",
+      "price": 32000
+    },
+    {
+      "secId": "SEC-02",
+      "productCode": "WK-P02",
+      "name": "👶 [성장기 비타민] 유기농 딸기 & 비타민C 과일티 팩",
+      "category": "👶 성장기 아이 맞춤 비타민 과일티 (4)",
+      "price": 28000
+    },
+    {
+      "secId": "SEC-03",
+      "productCode": "WK-P03",
+      "name": "🌙 [육퇴 안식] 밤 11시 미드나잇 캐모마일 & 테아닌 팩",
+      "category": "🌙 맘스 나이트 안식 & 정기구독 팩 (4)",
+      "price": 34000
+    },
+    {
+      "secId": "SEC-04",
+      "productCode": "WK-P04",
+      "name": "🌿 [온가족 보리] 국산 무농약 발아보리 순차 대용량 팩",
+      "category": "🌿 0.00mg 무카페인/무설탕 클린티 (4)",
+      "price": 25000
+    },
+    {
+      "secId": "SEC-05",
+      "productCode": "WK-P05",
+      "name": "🧵 [오가닉 자수] 아이 이름 커스텀 자수 코튼 파우치",
+      "category": "🧵 3D 아이 이름 자수 오가닉 파우치 (4)",
+      "price": 22000
+    },
+    {
+      "secId": "SEC-06",
+      "productCode": "WK-P06",
+      "name": "👶 [면역 쑥쑥] 엘더베리 & 아연 튼튼 키즈티 팩",
+      "category": "👶 성장기 아이 맞춤 비타민 과일티 (4)",
+      "price": 31000
+    },
+    {
+      "secId": "SEC-07",
+      "productCode": "WK-P07",
+      "name": "🌿 [임산부 안심] 루이보스 바닐라 순수 디카페인 팩",
+      "category": "🌿 0.00mg 무카페인/무설탕 클린티 (4)",
+      "price": 29000
+    },
+    {
+      "secId": "SEC-08",
+      "productCode": "WK-P08",
+      "name": "👶 [물마시기 습관] 달콤 사과 & 비트 천연 수색 티스틱",
+      "category": "👶 성장기 아이 맞춤 비타민 과일티 (4)",
+      "price": 27000
+    },
+    {
+      "secId": "SEC-09",
+      "productCode": "WK-P09",
+      "name": "🎈 [구디백 20인] 유치원 생일 답례용 개별 포장 20세트",
+      "category": "🎈 유치원 생일파티 20인분 구디백 (4)",
+      "price": 48000
+    },
+    {
+      "secId": "SEC-10",
+      "productCode": "WK-P10",
+      "name": "👶 [키즈 보틀] 친환경 트라이탄 350ml 빨대 보틀",
+      "category": "👶 성장기 아이 맞춤 비타민 과일티 (4)",
+      "price": 19000
+    },
+    {
+      "secId": "SEC-11",
+      "productCode": "WK-P11",
+      "name": "🧵 [패밀리 세트] 엄마-아이 커플 자수 에코백 세트",
+      "category": "🧵 3D 아이 이름 자수 오가닉 파우치 (4)",
+      "price": 38000
+    },
+    {
+      "secId": "SEC-12",
+      "productCode": "WK-P12",
+      "name": "🎈 [어린이집 30인] 소풍 & 생일파티 스티커 구디백 팩",
+      "category": "🎈 유치원 생일파티 20인분 구디백 (4)",
+      "price": 68000
+    },
+    {
+      "secId": "SEC-13",
+      "productCode": "WK-P13",
+      "name": "🧵 [자수 네임택] 미아방지 자수 텀블러 스트랩",
+      "category": "🧵 3D 아이 이름 자수 오가닉 파우치 (4)",
+      "price": 15000
+    },
+    {
+      "secId": "SEC-14",
+      "productCode": "WK-P14",
+      "name": "🌿 [무설탕 스위트] 천연 스테비아 잎 복숭아 과일티",
+      "category": "🌿 0.00mg 무카페인/무설탕 클린티 (4)",
+      "price": 26000
+    },
+    {
+      "secId": "SEC-15",
+      "productCode": "WK-P15",
+      "name": "🎈 [선생님 선물] 감사 엽서 & 프리미엄 티 4종 세트",
+      "category": "🎈 유치원 생일파티 20인분 구디백 (4)",
+      "price": 45000
+    },
+    {
+      "secId": "SEC-16",
+      "productCode": "WK-P16",
+      "name": "🌙 [새벽구독 120포] 온가족 30일 안심 패밀리 구독 팩",
+      "category": "🌙 맘스 나이트 안식 & 정기구독 팩 (4)",
+      "price": 78000
+    },
+    {
+      "secId": "SEC-17",
+      "productCode": "WK-P17",
+      "name": "🧵 [소창 손수건] 100% 무표백 아기 소창 손수건 3P",
+      "category": "🧵 3D 아이 이름 자수 오가닉 파우치 (4)",
+      "price": 18000
+    },
+    {
+      "secId": "SEC-18",
+      "productCode": "WK-P18",
+      "name": "🌙 [맘스 릴랙스] 젖몸살/붓기 완화 펌프킨 팥차 팩",
+      "category": "🌙 맘스 나이트 안식 & 정기구독 팩 (4)",
+      "price": 30000
+    },
+    {
+      "secId": "SEC-19",
+      "productCode": "WK-P19",
+      "name": "🎈 [홈파티 키즈] 어린이 무알콜 과일 칵테일 펀치 키트",
+      "category": "🎈 유치원 생일파티 20인분 구디백 (4)",
+      "price": 39000
+    },
+    {
+      "secId": "SEC-20",
+      "productCode": "WK-P20",
+      "name": "🌙 [오르골 타이머] 432Hz 자장가 사운드 180초 타이머",
+      "category": "🌙 맘스 나이트 안식 & 정기구독 팩 (4)",
+      "price": 42000
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef catalog fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef build fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["🏠 W06-HOME (미니멀 안식처 허브)<br/>• 무채색 3D 캔버스<br/>• 조도 70% 딤드"]
+
+    CATALOG["🏢 W06-CATALOG (무채색 오브제 도감)<br/>• 매트 블랙 틴 스펙<br/>• ZERO-KTR-01 성적서"]
+    BUILD["📐 W06-BUILD (3D 공간 배치 & 각인)<br/>• MINIMAL-SPACE-01 뷰어<br/>• MONO-ENGRAVER-01 각인"]
+    RITUAL["🌙 W06-RITUAL (432Hz 캄테크)<br/>• 432Hz 사운드 & 180초 타이머"]
+
+    MATCH_CHECK{"공간 조화도<br/>(95점 이상?)"}
+    TIME_CHECK{"180초 완주<br/>검증"}
+
+    DRAWER["🛒 W06-DRAWER (Slide-out 결제)<br/>• 20% 번들 / 30일 구독 / B2B 세금계산서"]
+    DONE["✅ W06-DONE (주문 승인)<br/>• 스타일링 PDF / 작가 보증서"]
+    COMM["🔄 W06-COMM (포트폴리오 & 저널)<br/>• 시공 피드 & 30일 출석부"]
+
+    %% 연결
+    HOME -->|목적1: 공간 매칭 번들| CATALOG
+    CATALOG --> BUILD
+    BUILD --> MATCH_CHECK
+    MATCH_CHECK -->|우수| DRAWER
+    MATCH_CHECK -->|부조화 시| BUILD
+
+    HOME -->|목적2: 캄테크 구독| CATALOG
+    CATALOG --> DRAWER
+
+    HOME -->|목적3: 모노그램 선물| CATALOG
+    CATALOG --> BUILD
+    BUILD --> DRAWER
+
+    HOME -->|목적4: 180초 명상| RITUAL
+    RITUAL --> TIME_CHECK
+    TIME_CHECK -->|완주| COMM
+    COMM -.->|다음날 순환| RITUAL
+
+    HOME -->|목적5: 쇼룸 오브제| CATALOG
+    CATALOG --> BUILD
+    BUILD --> DRAWER
+
+    DRAWER --> DONE
+    DONE --> COMM
+
+    class HOME home;
+    class CATALOG catalog;
+    class BUILD,RITUAL build;
+    class MATCH_CHECK,TIME_CHECK decision;
+    class DRAWER,DONE drawer;
+    class COMM support;

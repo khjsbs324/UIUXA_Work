@@ -1,0 +1,37 @@
+flowchart TD
+    classDef root fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef gnb fill:#E8EAF6,stroke:#3F51B5,stroke-width:1.5px,color:#1A237E,font-weight:bold;
+    classDef p1 fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef p2 fill:#FFF8E1,stroke:#F57F17,stroke-width:1.5px,color:#E65100,font-weight:bold;
+    classDef p3 fill:#E1F5FE,stroke:#0277BD,stroke-width:1.5px,color:#01579B,font-weight:bold;
+    classDef aside fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    ROOT["🏛️ 차은채 WICKETA 안식처 플랫폼 (목적 1: 브랜딩 & 시향 예약)"]
+    
+    GNB1["GNB 1: 브랜드 세계관<br/>(Brand Sanctuary)"]
+    GNB2["GNB 2: 프라이빗 시향<br/>(Tasting & Reserve)"]
+    GNB3["GNB 3: 쇼룸 방문 안내<br/>(Location & Docent)"]
+    
+    ROOT --> GNB1
+    ROOT --> GNB2
+    ROOT --> GNB3
+    
+    GNB1 --> P1_1["W01-HOME<br/>에디토리얼 안식처 메인"]
+    GNB1 --> P1_2["W01-SPACE<br/>3D 가상 아포테케리 쇼룸"]
+    GNB1 --> P1_3["W01-ESSAY<br/>디렉터 조향 에세이 저널"]
+    
+    GNB2 --> P2_1["W01-ABOUT<br/>1:1 시향 프로그램 소개"]
+    GNB2 --> P2_2["W01-RESERVE<br/>실시간 시향 예약 캘린더"]
+    GNB2 --> P2_3["W01-DONE<br/>모바일 QR 시향 패스 발급"]
+    
+    GNB3 --> P3_1["W01-COMM-MAP<br/>성수 쇼룸 인터랙티브 지도"]
+    GNB3 --> P3_2["W01-COMM-DOCENT<br/>VIP 도슨트 가이드 PDF"]
+    
+    P2_2 -.->|마감 시 오버레이| ASIDE1["EXP-01<br/>취소석 대기 알림 모달"]
+
+    class ROOT root;
+    class GNB1,GNB2,GNB3 gnb;
+    class P1_1,P1_2,P1_3 p1;
+    class P2_1,P2_2,P2_3 p2;
+    class P3_1,P3_2 p3;
+    class ASIDE1 aside;

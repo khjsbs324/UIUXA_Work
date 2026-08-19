@@ -1,0 +1,51 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef catalog fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef build fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["🏠 W09-HOME (터미널 대시보드 허브)<br/>• 추출 수율 곡선 캔버스<br/>• 5대 개발자 콘솔"]
+
+    CATALOG["🏢 W09-CATALOG (HPLC 성분 도감)<br/>• TDS 농도계 & 0.1g 저울<br/>• 0.00mg 무카페인 데이터"]
+    BUILD["📐 W09-BUILD (파라미터 & 코드 각인)<br/>• PRECISION-DASH-01 연산기<br/>• CODE-ENGRAVER-01 깃 잔디 각인"]
+    RITUAL["⏱️ W09-RITUAL (0.1초 정밀 계측)<br/>• TIMER-01S-01 밀리초 카운팅"]
+    ESTIMATE["📑 W09-ESTIMATE (해커톤 팀팩 계산)<br/>• HACKATHON-CALC-01 25% 할인"]
+
+    TIMER_CHECK{"180초 완주<br/>수율 연산"}
+
+    DRAWER["🛒 W09-DRAWER (Slide-out 결제)<br/>• 1-Click 간편결제 / 수질 구독 / 심야 퀵"]
+    DONE["✅ W09-DONE (주문 승인)<br/>• 데이터시트 PDF / 터미널 바우처"]
+    COMM["🔄 W09-COMM (오픈소스 & 로그)<br/>• JSON 로그 다운로드 & 디스코드 알림"]
+
+    %% 연결
+    HOME -->|목적1: 기어 번들| CATALOG
+    CATALOG --> BUILD
+    BUILD --> DRAWER
+
+    HOME -->|목적2: 수질 구독| CATALOG
+    CATALOG --> DRAWER
+
+    HOME -->|목적3: 코드 각인 선물| CATALOG
+    CATALOG --> BUILD
+    BUILD --> DRAWER
+
+    HOME -->|목적4: 타이머 로그| RITUAL
+    RITUAL --> TIMER_CHECK
+    TIMER_CHECK -->|완주 수율 19.8%| COMM
+    COMM -.->|다음 브루잉 시| RITUAL
+
+    HOME -->|목적5: 해커톤 팀팩| CATALOG
+    CATALOG --> ESTIMATE
+    ESTIMATE --> DRAWER
+
+    DRAWER --> DONE
+    DONE --> COMM
+
+    class HOME home;
+    class CATALOG catalog;
+    class BUILD,RITUAL,ESTIMATE build;
+    class TIMER_CHECK decision;
+    class DRAWER,DONE drawer;
+    class COMM support;

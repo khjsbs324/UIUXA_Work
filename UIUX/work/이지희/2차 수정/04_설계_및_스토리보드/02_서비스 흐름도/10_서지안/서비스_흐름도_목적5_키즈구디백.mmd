@@ -1,0 +1,29 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef catalog fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef estimate fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef done fill:#ECEFF1,stroke:#455A64,stroke-width:1.5px,color:#263238;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W10-HOME (구디백 진입)<br/>• [키즈 구디백 제작] 클릭"]
+    CATALOG["02 W10-CATALOG (원료 확인)<br/>• 20인분 무카페인 미니 틴"]
+    ESTIMATE["03 W10-ESTIMATE (3D 스티커 라벨)<br/>• KIDS-STICKER-01 3D 라벨링"]
+    CALC["04 W10-ESTIMATE (인원수 계산)<br/>• GOODIE-CALC-01 20% 할인"]
+    DRAWER["05 W10-DRAWER (지정일 결제)<br/>• 파티 전일 배송 지정 결제"]
+    DONE["06 W10-DONE (발주 완료)<br/>• 생일 가랜드 PDF 발급"]
+    COMM["F1 W10-COMM (파티 후기)<br/>• 맘스 피드 사진 공유"]
+
+    HOME --> CATALOG
+    CATALOG --> ESTIMATE
+    ESTIMATE --> CALC
+    CALC --> DRAWER
+    DRAWER --> DONE
+    DONE --> COMM
+
+    class HOME home;
+    class CATALOG catalog;
+    class ESTIMATE,CALC estimate;
+    class DRAWER drawer;
+    class DONE done;
+    class COMM support;

@@ -1,0 +1,3520 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEUMIM (스밈) - 0.1mm 에르고 테크 웰니스 체형 교정 플랫폼 (와이어프레임_병합)</title>
+  <!-- Google Fonts: 한국어 Gowun Batang & Pretendard CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Pretendard:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ==========================================================================
+       [Web Fonts: 마루 부리 (Maru Buri) 감성 부리체]
+       ========================================================================== */
+    @font-face {
+      font-family: 'MaruBuri';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Bold.woff') format('woff');
+      font-weight: 700;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'MaruBuri';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    /* ==========================================================================
+       [CSS Design Tokens & Theme]
+       ========================================================================== */
+    :root {
+      --bg-base: #fbf9f5;
+      --bg-surface: #ffffff;
+      --bg-card: #f5f1e8;
+      --bg-card-hover: #ede7d8;
+      --bg-accent-light: #fef8f0;
+      
+      --color-text-primary: #1c2420;
+      --color-text-secondary: #4a5750;
+      --color-text-muted: #7c8a82;
+      --color-text-inverse: #ffffff;
+      
+      --color-forest: #243028;
+      --color-forest-dark: #151d18;
+      --color-terracotta: #d26e2e;
+      --color-terracotta-hover: #ba5c20;
+      --color-sage: #2a7a52;
+      --color-border: #e2dbca;
+      --color-border-focus: #243028;
+      
+      --font-serif: 'Gowun Batang', -apple-system, serif;
+      --font-maruburi: 'MaruBuri', 'Gowun Batang', serif;
+      --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      
+      --shadow-sm: 0 2px 8px rgba(28, 36, 32, 0.04);
+      --shadow-md: 0 8px 24px rgba(28, 36, 32, 0.06);
+      --shadow-lg: 0 16px 40px rgba(28, 36, 32, 0.09);
+      --shadow-sticky: 0 -4px 20px rgba(28, 36, 32, 0.08);
+      
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+      
+      --container-max: 1240px;
+      --transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Reset & Base */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font-sans); }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      background-color: var(--bg-base);
+      color: var(--color-text-primary);
+      line-height: 1.75;
+      letter-spacing: -0.02em;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+    ul { list-style: none; }
+    .container { max-width: var(--container-max); margin: 0 auto; padding: 0 24px; }
+
+    /* Top Switcher */
+    .page-switch-bar {
+      background: var(--color-forest-dark);
+      color: #fff;
+      padding: 10px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      position: sticky;
+      top: 0;
+      z-index: 1100;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .page-switch-tabs { display: flex; gap: 8px; }
+    .btn-page-tab {
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      background: rgba(255,255,255,0.1);
+      color: #dedede;
+      font-weight: 700;
+      font-size: 12.5px;
+      transition: var(--transition);
+    }
+    .btn-page-tab:hover, .btn-page-tab.active {
+      background: var(--color-terracotta);
+      color: #fff;
+    }
+
+    /* Page View Containers */
+    .page-view { display: none; }
+    .page-view.active { display: block; animation: fadeIn 0.35s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* ==========================================================================
+       [SEC-01: GNB & Header - 와이어프레임_90 표준 규격]
+       ========================================================================== */
+    .header-gnb {
+      background: rgba(251, 249, 245, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-border);
+      position: sticky;
+      top: 45px;
+      z-index: 1000;
+      transition: var(--transition);
+    }
+    .gnb-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 72px;
+    }
+    .logo {
+      font-family: var(--font-serif);
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: var(--color-forest);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .logo-badge { font-family: var(--font-sans); font-size: 11px; font-weight: 700; color: var(--color-terracotta); letter-spacing: 0.05em; }
+
+    .gnb-nav { display: flex; gap: 28px; align-items: center; }
+    .gnb-link { font-size: 14px; font-weight: 700; color: var(--color-text-secondary); transition: var(--transition); position: relative; }
+    .gnb-link:hover, .gnb-link.active { color: var(--color-forest); }
+    .gnb-link.active::after {
+      content: ''; position: absolute; bottom: -8px; left: 0; width: 100%; height: 2px; background: var(--color-forest);
+    }
+
+    .gnb-actions { display: flex; gap: 10px; align-items: center; }
+    
+    /* 장바구니 아이콘 예시.png 규격 반영 라인아트 아이콘 버튼 */
+    .gnb-icon-btn {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-forest);
+      transition: var(--transition);
+      background: transparent;
+    }
+    .gnb-icon-btn:hover {
+      background: var(--bg-card);
+      color: var(--color-terracotta);
+      transform: translateY(-1px);
+    }
+
+    .nav-icon-svg {
+      display: block;
+      width: 22px;
+      height: 22px;
+    }
+
+    .icon-badge {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      background: var(--color-terracotta);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 800;
+      min-width: 16px;
+      height: 16px;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+
+    .btn-primary {
+      padding: 10px 20px;
+      font-size: 13.5px;
+      font-weight: 800;
+      background: var(--color-forest);
+      color: #fff;
+      border-radius: var(--radius-full);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: 4px;
+    }
+    .btn-primary:hover { background: var(--color-forest-dark); transform: translateY(-1px); }
+
+    .btn-accent {
+      background: var(--color-terracotta);
+      color: #fff;
+    }
+    .btn-accent:hover { background: var(--color-terracotta-hover); }
+
+    /* ==========================================================================
+       [SEC-02: Hero & Manifesto - 와이어프레임_90 바로 보이는 화면]
+       ========================================================================== */
+    .hero-section {
+      padding: 80px 0 60px;
+      text-align: center;
+      background: radial-gradient(circle at 50% 30%, #fff 0%, var(--bg-base) 70%);
+      position: relative;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      padding: 6px 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-full);
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--color-forest);
+      letter-spacing: 0.08em;
+      margin-bottom: 24px;
+    }
+    .hero-manifesto-title {
+      font-family: var(--font-serif);
+      font-size: 45px;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--color-forest);
+      max-width: 880px;
+      margin: 0 auto 20px;
+      letter-spacing: -0.03em;
+    }
+    .hero-manifesto-title span {
+      font-family: var(--font-maruburi);
+      font-weight: 900;
+      color: var(--color-terracotta);
+      letter-spacing: -0.01em;
+      display: inline-block;
+      position: relative;
+      padding: 0 6px;
+      margin: 0 2px;
+      z-index: 1;
+      -webkit-text-stroke: 0.8px currentColor;
+    }
+    .hero-manifesto-title span::after {
+      content: '';
+      position: absolute;
+      left: -6px;
+      bottom: 1px;
+      width: calc(100% + 12px);
+      height: 20px;
+      background: radial-gradient(ellipse at center, rgba(255, 182, 132, 0.85) 0%, rgba(255, 198, 158, 0.45) 55%, transparent 75%);
+      filter: blur(3.5px);
+      border-radius: 9999px;
+      z-index: -1;
+      pointer-events: none;
+    }
+    .hero-manifesto-desc {
+      font-size: 17px;
+      color: var(--color-text-secondary);
+      max-width: 700px;
+      margin: 0 auto 36px;
+      line-height: 1.8;
+    }
+    .hero-cta-group { display: flex; justify-content: center; gap: 14px; margin-bottom: 40px; }
+
+    /* 4대 자부심 지표 바 */
+    .pride-metrics-bar {
+      background: var(--bg-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 24px 32px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      box-shadow: var(--shadow-md);
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .metric-item { text-align: center; position: relative; }
+    .metric-item:not(:last-child)::after {
+      content: ''; position: absolute; right: 0; top: 15%; height: 70%; width: 1px; background: var(--color-border);
+    }
+    .metric-value { font-family: var(--font-serif); font-size: 34px; font-weight: 800; color: var(--color-forest); line-height: 1.1; }
+    .metric-label { font-size: 13px; font-weight: 800; color: var(--color-text-primary); margin-top: 4px; }
+    .metric-sub { font-size: 11px; color: var(--color-text-muted); }
+
+    /* ==========================================================================
+       [브랜드 이야기 시각 이미지 시스템: 우리가 걸어온 길, 그리고 스밈이 존재하는 이유]
+       ========================================================================== */
+    .journey-section {
+      padding: 90px 0;
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .journey-chapter {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 48px;
+      align-items: center;
+      margin-bottom: 70px;
+    }
+    .journey-chapter.reverse {
+      grid-template-columns: 1.2fr 1fr;
+    }
+    .journey-chapter.reverse .journey-visual-card { order: 2; }
+    .journey-chapter.reverse .journey-text-box { order: 1; }
+
+    .journey-visual-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .visual-image-frame {
+      height: 220px;
+      background: linear-gradient(135deg, #ded5c2 0%, #cfc4ac 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 20px;
+      text-align: center;
+    }
+    .visual-badge-overlay {
+      position: absolute; top: 12px; left: 12px;
+      background: rgba(36, 48, 40, 0.85); color: #fff;
+      font-size: 10.5px; font-weight: 700; padding: 3px 8px; border-radius: var(--radius-full);
+    }
+    .visual-caption-box {
+      background: #fff;
+      padding: 16px 20px;
+      border-top: 1px solid var(--color-border);
+    }
+    .visual-caption-title { font-size: 13.5px; font-weight: 800; color: var(--color-forest); margin-bottom: 4px; }
+    .visual-caption-desc { font-size: 12px; color: var(--color-text-secondary); line-height: 1.5; }
+
+    .journey-tag { color: var(--color-terracotta); font-size: 12px; font-weight: 800; letter-spacing: 0.1em; margin-bottom: 8px; }
+    .journey-heading { font-family: var(--font-serif); font-size: 26px; font-weight: 800; color: var(--color-forest); margin-bottom: 14px; line-height: 1.4; letter-spacing: -0.02em; }
+    .journey-body { font-size: 15px; color: var(--color-text-secondary); line-height: 1.85; margin-bottom: 16px; }
+    .journey-highlight {
+      background: var(--bg-accent-light);
+      border-left: 3px solid var(--color-terracotta);
+      padding: 14px 18px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 13.5px;
+      color: var(--color-forest);
+      font-weight: 700;
+      line-height: 1.65;
+    }
+
+    /* ==========================================================================
+       [Top 3 Featured Masterpieces] 지그재그 집중 조명
+       ========================================================================== */
+    .section-title-wrap { text-align: center; margin-bottom: 50px; }
+    .section-tag { font-size: 12px; font-weight: 800; color: var(--color-terracotta); letter-spacing: 0.1em; margin-bottom: 8px; }
+    .section-title { font-family: var(--font-serif); font-size: 36px; font-weight: 800; color: var(--color-forest); margin-bottom: 12px; letter-spacing: -0.03em; }
+    .section-desc { font-size: 15.5px; color: var(--color-text-secondary); max-width: 600px; margin: 0 auto; line-height: 1.7; }
+
+    .featured-grid { display: flex; flex-direction: column; gap: 60px; }
+    .featured-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      box-shadow: var(--shadow-md);
+      position: relative;
+    }
+    .featured-card.reverse { grid-template-columns: 1fr 1.1fr; }
+    .featured-card.reverse .featured-visual { order: 2; border-right: none; border-left: 1px solid var(--color-border); }
+    .featured-card.reverse .featured-content { order: 1; }
+
+    .featured-visual {
+      background: var(--bg-card);
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      border-right: 1px solid var(--color-border);
+    }
+    
+    .visual-3d-box {
+      width: 100%;
+      height: 280px;
+      background: #e9e3d5;
+      border: 2px dashed #cfc5af;
+      border-radius: var(--radius-md);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      cursor: crosshair;
+      transition: var(--transition);
+    }
+    .visual-3d-box:hover { background: #e2dbca; }
+    .visual-3d-icon { font-size: 44px; margin-bottom: 8px; }
+    .magnifier-hint {
+      position: absolute; bottom: 12px; right: 12px;
+      font-size: 11px; font-weight: 800; color: var(--color-forest);
+      background: rgba(255,255,255,0.9); padding: 4px 10px; border-radius: var(--radius-full);
+    }
+
+    /* 카드 우상단 찜 버튼 */
+    .btn-card-wish {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #fff;
+      border: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-text-muted);
+      box-shadow: var(--shadow-sm);
+      z-index: 10;
+      transition: var(--transition);
+    }
+    .btn-card-wish:hover { transform: scale(1.1); border-color: var(--color-terracotta); color: var(--color-terracotta); }
+    .btn-card-wish.active { color: #ef4444; border-color: #ef4444; background: #fff5f5; }
+    .btn-card-wish.active svg { fill: #ef4444; stroke: #ef4444; }
+
+    .featured-content {
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .featured-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      background: var(--bg-accent-light);
+      border: 1px solid var(--color-terracotta);
+      color: var(--color-terracotta);
+      font-size: 11.5px;
+      font-weight: 800;
+      border-radius: var(--radius-full);
+      width: fit-content;
+      margin-bottom: 14px;
+    }
+    .featured-name { font-family: var(--font-serif); font-size: 26px; font-weight: 800; color: var(--color-forest); margin-bottom: 12px; line-height: 1.35; }
+    .featured-copy { font-size: 15px; color: var(--color-text-secondary); margin-bottom: 20px; line-height: 1.75; }
+    
+    .feature-points { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+    .point-item { display: flex; align-items: center; gap: 10px; font-size: 13.5px; color: var(--color-text-primary); font-weight: 600; }
+    .point-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--color-terracotta); }
+
+    .price-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 24px; }
+    .price-original { font-size: 15px; color: var(--color-text-muted); text-decoration: line-through; }
+    .price-sale { font-size: 24px; font-weight: 900; color: var(--color-forest); }
+    .price-discount { font-size: 18px; font-weight: 800; color: var(--color-terracotta); }
+
+    .featured-actions { display: flex; gap: 12px; }
+
+    /* ==========================================================================
+       [Social Proof]
+       ========================================================================== */
+    .proof-section {
+      padding: 80px 0;
+      background: var(--bg-card);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+      margin: 80px 0;
+    }
+    .proof-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .proof-stat-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      text-align: center;
+    }
+    .proof-num { font-family: var(--font-serif); font-size: 38px; font-weight: 800; color: var(--color-forest); }
+    .proof-title { font-size: 14px; font-weight: 800; color: var(--color-text-primary); margin-top: 4px; }
+    .proof-desc { font-size: 12px; color: var(--color-text-secondary); margin-top: 2px; }
+
+    .reviews-slider {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .review-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .review-stars { color: #f59e0b; font-size: 14px; margin-bottom: 10px; }
+    .review-text { font-size: 13.5px; color: var(--color-text-primary); line-height: 1.65; margin-bottom: 16px; font-weight: 500; }
+    .review-author { display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--color-text-muted); border-top: 1px solid var(--bg-card); padding-top: 12px; }
+    .review-badge { background: var(--bg-card); padding: 2px 8px; border-radius: var(--radius-full); font-weight: 700; color: var(--color-forest); }
+
+    /* ==========================================================================
+       [Explore Catalog Banner]
+       ========================================================================== */
+    .explore-catalog-banner {
+      background: linear-gradient(135deg, var(--color-forest) 0%, var(--color-forest-dark) 100%);
+      color: #fff;
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: var(--shadow-lg);
+      margin: 60px 0;
+    }
+    .catalog-banner-left { max-width: 620px; }
+    .catalog-tag { color: var(--color-terracotta); font-size: 12px; font-weight: 800; letter-spacing: 0.1em; margin-bottom: 8px; }
+    .catalog-banner-title { font-family: var(--font-serif); font-size: 28px; font-weight: 800; margin-bottom: 12px; line-height: 1.35; }
+    .catalog-banner-desc { font-size: 14.5px; color: #b7c7be; line-height: 1.7; }
+    .catalog-category-pills { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+    .cat-pill { background: rgba(255,255,255,0.12); padding: 4px 12px; border-radius: var(--radius-full); font-size: 12px; font-weight: 700; color: #e1e9e4; }
+
+    /* ==========================================================================
+       [Fit Finder]
+       ========================================================================== */
+    .fit-finder-banner {
+      background: var(--bg-accent-light);
+      border: 2px solid var(--color-terracotta);
+      border-radius: var(--radius-lg);
+      padding: 32px 40px;
+      margin: 60px 0;
+      box-shadow: var(--shadow-md);
+    }
+    .fit-finder-header { text-align: center; margin-bottom: 24px; }
+    .fit-finder-title { font-family: var(--font-serif); font-size: 24px; font-weight: 800; color: var(--color-forest); }
+    
+    .fit-finder-inputs {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr auto;
+      gap: 20px;
+      align-items: center;
+      background: #fff;
+      padding: 20px 24px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+    }
+    .input-control label { display: block; font-size: 12px; font-weight: 800; color: var(--color-text-secondary); margin-bottom: 6px; }
+    .input-slider-val { font-size: 15px; font-weight: 800; color: var(--color-forest); float: right; }
+    input[type=range] { width: 100%; accent-color: var(--color-terracotta); cursor: pointer; }
+    
+    .fit-result-badge {
+      background: var(--color-forest);
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: var(--radius-md);
+      text-align: center;
+    }
+    .fit-result-label { font-size: 11px; color: #a3c2b0; font-weight: 700; }
+    .fit-result-size { font-size: 20px; font-weight: 800; color: #fff; }
+
+    /* ==========================================================================
+       [AI 실시간 자세 각도 대시보드 & 전국 웰니스 센터 1:1 무료 진단 원본 스타일]
+       ========================================================================== */
+    .hud-center-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin: 70px 0;
+    }
+    .hud-card, .center-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .gauge-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      margin: 24px 0;
+    }
+    .gauge-circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: conic-gradient(var(--color-sage) 0% 88%, #e2ded5 88% 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .gauge-inner {
+      width: 90px;
+      height: 90px;
+      background: #fff;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .gauge-score { font-size: 28px; font-weight: 800; color: var(--color-forest); line-height: 1; }
+    .gauge-unit { font-size: 11px; color: var(--color-text-muted); }
+
+    /* FAQ Section */
+    .faq-container { max-width: 800px; margin: 80px auto; }
+    .faq-item {
+      background: var(--bg-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      margin-bottom: 12px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .faq-question {
+      padding: 18px 24px;
+      font-weight: 700;
+      font-size: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--color-forest);
+    }
+    .faq-answer {
+      padding: 0 24px 18px;
+      font-size: 13.5px;
+      color: var(--color-text-secondary);
+      display: none;
+      line-height: 1.6;
+    }
+    .faq-item.open .faq-answer { display: block; }
+    .faq-item.open .faq-question span { transform: rotate(180deg); }
+
+    /* ==========================================================================
+       [서브페이지 전용: 28개 전 상품 4대 탭 및 그리드]
+       ========================================================================== */
+    .showcase-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      padding: 10px 24px;
+      background: var(--bg-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-full);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--color-text-secondary);
+      transition: var(--transition);
+    }
+    .tab-btn:hover, .tab-btn.active {
+      background: var(--color-forest);
+      color: #fff;
+      border-color: var(--color-forest);
+    }
+
+    .products-grid-4col {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    .product-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .product-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--color-forest); }
+
+    .product-img-wrap {
+      background: var(--bg-card);
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .product-badge-rec {
+      position: absolute; top: 10px; left: 10px;
+      background: var(--color-terracotta); color: #fff;
+      font-size: 10.5px; font-weight: 800; padding: 2px 8px; border-radius: var(--radius-full);
+    }
+    .product-body { padding: 18px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .product-tag { font-size: 11px; font-weight: 800; color: var(--color-text-muted); margin-bottom: 4px; }
+    .product-title { font-size: 15px; font-weight: 800; color: var(--color-forest); margin-bottom: 6px; line-height: 1.35; }
+    .product-spec { font-size: 12px; color: var(--color-text-secondary); margin-bottom: 12px; }
+    
+    .product-price-box { display: flex; justify-content: space-between; align-items: baseline; margin-top: auto; padding-top: 10px; border-top: 1px dashed var(--color-border); }
+    .p-sale { font-size: 16px; font-weight: 800; color: var(--color-forest); }
+    .p-orig { font-size: 12px; color: var(--color-text-muted); text-decoration: line-through; }
+
+    .product-card-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 12px; }
+    .btn-card-quick { padding: 6px; font-size: 12px; font-weight: 700; border: 1px solid var(--color-border); border-radius: var(--radius-sm); color: var(--color-forest); text-align: center; }
+    .btn-card-quick:hover { background: var(--bg-card); }
+    .btn-card-trial { padding: 6px; font-size: 12px; font-weight: 800; background: var(--color-forest); color: #fff; border-radius: var(--radius-sm); text-align: center; }
+    .btn-card-trial:hover { background: var(--color-forest-dark); }
+
+    /* Sticky Bar & Modals */
+    .sticky-trial-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 64px;
+      background: rgba(28, 36, 32, 0.96);
+      backdrop-filter: blur(8px);
+      border-top: 1px solid rgba(255,255,255,0.15);
+      z-index: 1050;
+      display: flex;
+      align-items: center;
+      box-shadow: var(--shadow-sticky);
+    }
+    .sticky-inner {
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+    }
+    .sticky-info { display: flex; align-items: center; gap: 14px; font-size: 14px; }
+    .sticky-pill {
+      background: var(--color-terracotta);
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: var(--radius-full);
+    }
+
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(4px);
+      z-index: 1200;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-overlay.active { display: flex; animation: fadeIn 0.2s ease; }
+    .modal-card {
+      background: var(--bg-surface);
+      border-radius: var(--radius-lg);
+      max-width: 600px;
+      width: 90%;
+      padding: 32px;
+      position: relative;
+      box-shadow: var(--shadow-lg);
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .modal-close { position: absolute; top: 20px; right: 20px; font-size: 20px; color: var(--color-text-muted); cursor: pointer; }
+    
+    .bottomsheet-overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 1250;
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    .bottomsheet-overlay.active { display: flex; }
+    .bottomsheet-card {
+      background: var(--bg-surface);
+      border-top-left-radius: var(--radius-lg);
+      border-top-right-radius: var(--radius-lg);
+      max-width: 580px;
+      width: 100%;
+      padding: 32px;
+      box-shadow: var(--shadow-lg);
+      animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+
+    .form-group { margin-bottom: 16px; }
+    .form-label { display: block; font-size: 13px; font-weight: 700; color: var(--color-text-primary); margin-bottom: 6px; }
+    .form-input {
+      width: 100%; padding: 12px 14px; font-size: 14px;
+      border: 1px solid var(--color-border); border-radius: var(--radius-sm);
+      background: var(--bg-base); font-family: inherit;
+    }
+    .form-input:focus { border-color: var(--color-forest); outline: none; background: #fff; }
+
+    /* ==========================================================================
+       [PAGE 3: 우측 미니멀 인디케이터 도트 ➔ 텍스트 확장 퀵 네비게이터]
+       ========================================================================== */
+    .story-tab-bar {
+      position: fixed;
+      right: 28px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 990;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      margin: 0;
+      pointer-events: none;
+    }
+    .story-tab-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-items: flex-end;
+      padding: 0;
+      pointer-events: auto;
+    }
+    .story-tab-list::-webkit-scrollbar { display: none; }
+
+    /* 기본 상태: 작고 정갈한 10px 미니멀 도트 */
+    .story-tab-btn {
+      height: 36px;
+      min-width: 36px;
+      padding: 0;
+      border-radius: var(--radius-full);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+      position: relative;
+    }
+
+    .story-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(28, 36, 32, 0.35);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+      margin-right: 13px;
+    }
+
+    .story-btn-text {
+      max-width: 0;
+      opacity: 0;
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+      pointer-events: none;
+    }
+
+    /* 활성화 상태 (도달 시): 점이 캡슐로 변하며 텍스트 전체 표시 */
+    .story-tab-btn.active {
+      background: var(--color-forest);
+      padding: 0 16px 0 14px;
+      box-shadow: 0 6px 20px rgba(21, 29, 24, 0.28);
+      transform: translateX(-4px);
+    }
+    .story-tab-btn.active .story-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--color-terracotta);
+      margin-right: 8px;
+      box-shadow: none;
+    }
+    .story-tab-btn.active .story-btn-text {
+      max-width: 180px;
+      opacity: 1;
+      color: #ffffff;
+    }
+
+    /* 마우스 호버 시에도 부드럽게 펼쳐짐 */
+    .story-tab-btn:not(.active):hover {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(210, 110, 46, 0.35);
+      padding: 0 16px 0 14px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      transform: translateX(-4px);
+    }
+    .story-tab-btn:not(.active):hover .story-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--color-terracotta);
+      margin-right: 8px;
+      box-shadow: none;
+    }
+    .story-tab-btn:not(.active):hover .story-btn-text {
+      max-width: 180px;
+      opacity: 1;
+      color: var(--color-forest);
+    }
+
+    @media (max-width: 1100px) {
+      .story-tab-bar {
+        display: none;
+      }
+    }
+
+    .story-section {
+      padding: 70px 0;
+      border-bottom: 1px solid var(--color-border);
+      scroll-margin-top: 160px;
+    }
+    .story-section-title {
+      font-family: var(--font-serif);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--color-forest);
+      margin-bottom: 12px;
+      line-height: 1.35;
+    }
+    .story-section-question {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-terracotta);
+      margin-bottom: 24px;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      margin-top: 32px;
+    }
+    .story-grid.reverse {
+      grid-template-columns: 1fr 1.1fr;
+    }
+
+    .story-visual-card {
+      background: var(--bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+    }
+    .story-visual-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .story-visual-tag {
+      font-size: 11px;
+      font-weight: 800;
+      background: var(--color-terracotta);
+      color: #ffffff;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+    .story-visual-canvas {
+      width: 100%;
+      height: 250px;
+      background: #1a231e;
+      border-radius: var(--radius-md);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #a0c2b2;
+      position: relative;
+      overflow: hidden;
+      cursor: crosshair;
+    }
+    .story-visual-caption {
+      margin-top: 14px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+    }
+
+    .narrative-box {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .phase-step {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .phase-num {
+      width: 32px;
+      height: 32px;
+      background: var(--color-forest);
+      color: #ffffff;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .phase-content h4 {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--color-forest);
+      margin-bottom: 4px;
+    }
+    .phase-content p {
+      font-size: 13.5px;
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+
+    .story-featured-box {
+      margin-top: 40px;
+      background: var(--bg-surface);
+      border: 2px solid var(--color-forest);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-lg);
+    }
+    .story-featured-inner {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+    .story-interactive-stage {
+      background: #18261e;
+      border-radius: var(--radius-md);
+      height: 240px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #e2f0e8;
+      position: relative;
+      padding: 20px;
+    }
+    .story-stage-slider-wrap {
+      margin-top: 14px;
+      width: 80%;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .story-stage-slider-wrap input { width: 100%; accent-color: var(--color-terracotta); }
+
+    .story-featured-details h3 {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--color-forest);
+      margin-bottom: 8px;
+    }
+    .story-featured-desc {
+      font-size: 13.5px;
+      color: var(--color-text-secondary);
+      margin-bottom: 18px;
+      line-height: 1.65;
+    }
+
+    .story-proof-section {
+      padding: 60px 0;
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      margin: 50px 0;
+      text-align: center;
+    }
+    .story-proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 36px;
+      padding: 0 24px;
+    }
+    .story-proof-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+    .story-proof-val {
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--color-forest);
+      margin-bottom: 6px;
+    }
+    .story-proof-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--color-forest);
+      margin-bottom: 6px;
+    }
+    .story-proof-desc {
+      font-size: 12.5px;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+  
+    /* ==========================================================================
+       [Story 92 Modular Styling - Warm Nature Theme Tokens]
+       ========================================================================== */
+    .story92-hero {
+      position: relative;
+      background: var(--color-forest);
+      color: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 140px 80px;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 70px;
+      overflow: hidden;
+    }
+    .story92-hero-guide {
+      position: absolute;
+      top: 24px; right: 28px;
+      background: rgba(21, 29, 24, 0.85);
+      border: 1px dashed rgba(255, 255, 255, 0.35);
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 12px;
+      color: #dedede;
+      line-height: 1.6;
+      text-align: right;
+    }
+    .story92-hero-title {
+      font-family: var(--font-maruburi);
+      font-size: 54px;
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      color: #FFFFFF;
+      margin-bottom: 20px;
+    }
+    .story92-hero-sub {
+      font-size: 19px;
+      color: #e2dbca;
+      line-height: 1.85;
+      max-width: 740px;
+      margin-bottom: 34px;
+    }
+
+    /* Universal Placeholder in Warm Theme */
+    .story92-ph-box {
+      background: var(--bg-card);
+      border: 1.5px dashed var(--color-border);
+      border-radius: var(--radius-md);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      color: var(--color-text-secondary);
+      font-size: 13px;
+      line-height: 1.6;
+      transition: var(--transition);
+    }
+    .story92-ph-box:hover {
+      border-color: var(--color-terracotta);
+      background: var(--bg-accent-light);
+    }
+    .story92-ph-title {
+      font-family: var(--font-maruburi);
+      font-weight: 700;
+      color: var(--color-forest);
+      font-size: 14.5px;
+      margin-bottom: 4px;
+    }
+
+    /* Bento Grid */
+    .story92-bento-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    .story92-bento-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-sm);
+    }
+    .story92-bento-card.wide { grid-column: span 2; }
+    .story92-bento-card.alert-bg {
+      background: #fdf5f2;
+      border-color: #f6d4c4;
+    }
+
+    /* Review Grid (Dense & No Empty Space) */
+    .story92-review-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .story92-review-item {
+      background: #FFFFFF;
+      border: 1px solid #f6d4c4;
+      border-radius: var(--radius-md);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    /* Zig-Zag 3 Pillars */
+    .story92-zigzag-container {
+      display: flex;
+      flex-direction: column;
+      gap: 70px;
+      margin-top: 50px;
+    }
+    .story92-zigzag-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .story92-zigzag-row.reverse { direction: rtl; }
+    .story92-zigzag-row.reverse .story92-zigzag-content { direction: ltr; }
+    .story92-zigzag-ph {
+      height: 320px;
+      border-radius: var(--radius-lg);
+    }
+    .story92-zigzag-content { padding: 10px; }
+    .story92-pillar-badge {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--color-terracotta);
+      margin-bottom: 12px;
+      letter-spacing: 0.05em;
+    }
+    .story92-pillar-title {
+      font-family: var(--font-maruburi);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--color-forest);
+      margin-bottom: 16px;
+    }
+    .story92-contrast-box {
+      background: var(--bg-card);
+      border-left: 4px solid var(--color-terracotta);
+      padding: 14px 18px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--color-forest);
+      margin-bottom: 14px;
+    }
+
+    /* Macro */
+    .story92-macro-visual {
+      background: var(--color-forest);
+      color: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 70px 40px;
+      text-align: center;
+      margin: 60px 0;
+    }
+
+    /* Blueprint Tilt Cards */
+    .story92-blueprint-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      perspective: 1000px;
+      margin-top: 40px;
+    }
+    .story92-blueprint-card {
+      background: #1c2420;
+      color: #FFFFFF;
+      border: 1px solid #33433a;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transform-style: preserve-3d;
+      transition: transform 0.1s ease-out, box-shadow 0.2s ease-out;
+    }
+    .story92-blueprint-card:hover {
+      box-shadow: 0 20px 40px rgba(42, 122, 82, 0.25);
+    }
+    .story92-blueprint-ph {
+      height: 190px;
+      background: #131b16;
+      border-bottom: 1px dashed #4a5d52;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      text-align: center;
+      color: #a8d5be;
+    }
+
+    /* Before/After Drag Slider */
+    .story92-ba-wrap {
+      position: relative;
+      height: 280px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      user-select: none;
+      cursor: ew-resize;
+    }
+    .story92-ba-layer {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 800;
+      padding: 20px;
+      text-align: center;
+    }
+    .story92-ba-layer.before {
+      background: #fde8e4;
+      color: #c53030;
+      width: 100%;
+    }
+    .story92-ba-layer.after {
+      background: #e6f4ea;
+      color: #276749;
+      width: 50%;
+      border-right: 3px solid #2a7a52;
+      overflow: hidden;
+    }
+    .story92-ba-handle {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 38px; height: 38px;
+      background: var(--color-forest);
+      color: #FFFFFF;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      box-shadow: var(--shadow-md);
+      pointer-events: none;
+    }
+
+    /* Product Grid Showcase without Buy Buttons */
+    .story92-product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+      margin-top: 36px;
+    }
+    .story92-prod-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+    .story92-prod-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .story92-prod-ph {
+      height: 160px;
+      background: var(--bg-card);
+      border-bottom: 1px dashed var(--color-border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+      text-align: center;
+      color: var(--color-text-secondary);
+      font-size: 12px;
+    }
+
+  
+    /* ==========================================================================
+       [SEC-02: Sticky Stack Problem Cards - One-by-One Full Screen Showcase]
+       ========================================================================== */
+    .story92-problem-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      margin-bottom: 50px;
+      position: relative;
+    }
+    .story92-problem-card {
+      background: var(--bg-surface);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 42px;
+      box-shadow: 0 12px 36px rgba(28, 36, 32, 0.08);
+      position: sticky;
+      top: 110px;
+      min-height: 480px;
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 40px;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+    .story92-problem-card:nth-child(1) { z-index: 10; top: 100px; }
+    .story92-problem-card:nth-child(2) { z-index: 20; top: 115px; }
+    .story92-problem-card:nth-child(3) { z-index: 30; top: 130px; }
+    .story92-problem-card:nth-child(4) { z-index: 40; top: 145px; }
+    
+    .story92-problem-card.alert-card {
+      background: #fdf8f6;
+      border-color: #f6d4c4;
+    }
+    .story92-problem-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--color-terracotta);
+      background: #fde8e4;
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      margin-bottom: 12px;
+      letter-spacing: 0.05em;
+    }
+    .story92-problem-title {
+      font-family: var(--font-maruburi);
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--color-forest);
+      line-height: 1.4;
+      margin-bottom: 16px;
+    }
+    .story92-problem-desc {
+      font-size: 14.5px;
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+    .story92-problem-statbox {
+      background: var(--bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 18px 22px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       [Top Switcher] 3대 독립 페이지 즉시 전환 툴바
+       ========================================================================== -->
+  <div class="page-switch-bar">
+    <div><strong>SEUMIM (스밈) 마스터 통합 플랫폼 와이어프레임</strong> (Eight Sleep 융합 롤모델)</div>
+    <div class="page-switch-tabs">
+      <button class="btn-page-tab active" onclick="switchPage('page-main')">1. 메인 랜딩페이지 (Main)</button>
+      <button class="btn-page-tab" onclick="switchPage('page-shop')">2. 28개 전 상품 서브 (Shop All)</button>
+      <button class="btn-page-tab" onclick="switchPage('page-story')">3. 브랜드 이야기 서브 (Our Story)</button>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       [SEC-01: GNB & Header - 와이어프레임_90 표준 규격]
+       ========================================================================== -->
+  <header class="header-gnb">
+    <div class="container gnb-inner">
+      <a href="javascript:void(0)" class="logo" onclick="switchPage('page-main')">
+        SEUMIM <span class="logo-badge">스밈 0.1mm</span>
+      </a>
+
+      <!-- 중앙 내비게이션 (와이어프레임_90 원본) -->
+      <nav class="gnb-nav">
+        <a href="javascript:void(0)" class="gnb-link active" onclick="switchPage('page-main')">홈(메인)</a>
+        <a href="#sec-featured" class="gnb-link" onclick="switchPage('page-main')">3대 대표작</a>
+        <a href="javascript:void(0)" class="gnb-link" onclick="switchPage('page-shop')">전체 상품 (28)</a>
+        <a href="#sec-hud" class="gnb-link" onclick="switchPage('page-main')">AI 케어 &amp; 센터</a>
+        <a href="javascript:void(0)" class="gnb-link" onclick="switchPage('page-story')">Our Story</a>
+      </nav>
+
+      <!-- 우측 액션: 라인아트 찜, 장바구니 + 30일 무료시착 (배송조회, 고객센터 제외) -->
+      <div class="gnb-actions">
+        <!-- 1. 찜 (라인아트 하트 아이콘) -->
+        <button class="gnb-icon-btn" onclick="openWishlistModal()" title="찜한 상품 목록">
+          <svg class="nav-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+          </svg>
+          <span class="icon-badge" id="gnb-wish-count">2</span>
+        </button>
+
+        <!-- 2. 장바구니 (장바구니 아이콘 예시.png 규격 라인아트 토트백 아이콘) -->
+        <button class="gnb-icon-btn" onclick="openCartModal()" title="시착 장바구니">
+          <svg class="nav-icon-svg" viewBox="0 0 100 100">
+            <!-- Bag Body -->
+            <path d="M22 42 Q20 42 22 48 L28 84 Q30 90 38 90 L62 90 Q70 90 72 84 L78 48 Q80 42 78 42 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/>
+            <!-- Handle -->
+            <path d="M36 44 V30 C36 18 64 18 64 30 V44" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+            <!-- Rivet circles -->
+            <circle cx="36" cy="46" r="6" fill="currentColor" />
+            <circle cx="64" cy="46" r="6" fill="currentColor" />
+          </svg>
+          <span class="icon-badge" id="gnb-cart-count">1</span>
+        </button>
+
+        <!-- 3. 30일 무료시착 버튼 -->
+        <button class="btn-primary btn-accent" onclick="openCheckoutModal('0.1mm 심리스 넥&숄더 밴드', 'M (95~100)')">
+          30일 무료 시착 (0원)
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ==========================================================================
+       [PAGE 1: 메인 랜딩페이지 (Main Landing) - 와이어프레임_90 바로 보이는 화면]
+       ========================================================================== -->
+  <main id="page-main" class="page-view active">
+    
+    <!-- SEC-02: Hero & Manifesto (와이어프레임_90 원본과 100% 동일) -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-eyebrow">EFFORTLESS WELLNESS · 0.1mm SEAMLESS TECH</div>
+        <h1 class="hero-manifesto-title">
+          바쁜 하루 속에서도,<br>
+          나를 먼저 아끼는 <span>다정한 균형</span>
+        </h1>
+        <p class="hero-manifesto-desc">
+          억지스러운 압박 대신 기분 좋은 편안함으로,<br>
+          당신의 일상에 건강한 쉼을 채워드릴게요.
+        </p>
+        
+        <div class="hero-cta-group">
+          <button class="btn-primary" onclick="scrollToSection('sec-featured')">스밈 3대 대표작 알아보기 ➔</button>
+          <button class="btn-primary btn-accent" onclick="openCheckoutModal('0.1mm 심리스 넥&숄더 밴드', 'M')">
+            결제금액 0원 · 30일 무료 시착
+          </button>
+        </div>
+
+        <!-- 4대 자부심 지표 바 -->
+        <div class="pride-metrics-bar">
+          <div class="metric-item">
+            <div class="metric-value">38g</div>
+            <div class="metric-label">깃털 같은 초경량</div>
+            <div class="metric-sub">0.1mm 초박형 센서 섬유</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-value">99.8%</div>
+            <div class="metric-label">무봉제 은폐율</div>
+            <div class="metric-sub">출근복 속에 쏙 숨는 핏</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-value">300+</div>
+            <div class="metric-label">전문가 실착 검증</div>
+            <div class="metric-sub">정형외과 의사·개발자 추천</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-value">100%</div>
+            <div class="metric-label">30일 안심 무료 반품</div>
+            <div class="metric-sub">결제금액 0원 무료 맞교환</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 우리가 걸어온 길, 그리고 스밈이 존재하는 이유 -->
+    <section id="sec-journey" class="journey-section">
+      <div class="container">
+        <div class="section-title-wrap">
+          <div class="section-tag">OUR PHILOSOPHY &amp; JOURNEY</div>
+          <h2 class="section-title">우리가 걸어온 길, 그리고 스밈이 존재하는 이유</h2>
+          <p class="section-desc">
+            시중에 널린 흔한 교정 밴드를 만들지 않습니다. 원천 부품 기술에서 출발하여 일상에 자연스럽게 스며드는 바른 균형의 여정을 시각적 증명과 함께 들려드립니다.
+          </p>
+        </div>
+
+        <!-- Story Chapter 1 -->
+        <div class="journey-chapter">
+          <div class="journey-visual-card">
+            <div class="visual-image-frame">
+              <span class="visual-badge-overlay">📷 R&amp;D 나노 공정 실사진</span>
+              <div style="font-size:52px; margin-bottom:8px;">🧵</div>
+              <div style="font-family:var(--font-serif); font-size:15px; font-weight:800; color:var(--color-forest);">[0.1mm 전도성 센서 섬유 현미경 단면]</div>
+            </div>
+            <div class="visual-caption-box">
+              <div class="visual-caption-title">3년 450번의 원사 배합 실험의 결실</div>
+              <div class="visual-caption-desc">머리카락 굵기보다 얇은 나노 회로를 직조하여 이물감 제로와 100회 물세탁 내구성을 확보했습니다.</div>
+            </div>
+          </div>
+          <div class="journey-text-box">
+            <div class="journey-tag">CHAPTER 01 · 탄생의 배경</div>
+            <h3 class="journey-heading">"왜 체형 교정은 늘 아프고 불편해야만 할까요?"</h3>
+            <p class="journey-body">
+              우리는 본래 첨단 스마트 섬유 부품을 개발하던 엔지니어 팀이었습니다. 하루 14시간씩 현미경과 모니터를 보며 일하던 개발자들은 하나같이 심각한 거북목과 허리 통증을 겪고 있었습니다. 시중의 딱딱한 강제 압박 밴드는 셔츠 밖으로 튀어나왔고 강한 조임은 숨을 턱턱 막히게 했습니다.
+            </p>
+            <p class="journey-body">
+              "몸을 억지로 조이지 않으면서도, 마치 아무것도 입지 않은 것처럼 가볍게 바른 자세를 유도할 수는 없을까?" 이 질문 하나에서 스밈(SEUMIM)의 여정이 시작되었습니다.
+            </p>
+            <div class="journey-highlight">
+              💡 부품 제조 기업의 원천 기술인 '전도성 센서 섬유'를 6조 8,000억 달러 웰니스 시장의 게임 체인저로 전환한 첫 발걸음이었습니다.
+            </div>
+          </div>
+        </div>
+
+        <!-- Story Chapter 2 -->
+        <div class="journey-chapter reverse">
+          <div class="journey-visual-card">
+            <div class="visual-image-frame" style="background: linear-gradient(135deg, #f0e6d6 0%, #e2d4c0 100%);">
+              <span class="visual-badge-overlay" style="background:#d26e2e;">📊 기술 혁신 비교 인포그래픽</span>
+              <div style="font-size:48px; margin-bottom:8px;">⚖️</div>
+              <div style="font-family:var(--font-serif); font-size:14px; font-weight:800; color:var(--color-forest);">[기존 교정기(X) vs 스밈 0.1mm 코어웨어(O)]</div>
+            </div>
+            <div class="visual-caption-box">
+              <div class="visual-caption-title">0.01초 작업 시차 필터링 &amp; 지렛대 탄성 프레임</div>
+              <div class="visual-caption-desc">신발 묶기 등 일상 움직임의 오알람을 완벽히 차단하고, 강제 압박 없이 스스로 바르게 펴지도록 만듭니다.</div>
+            </div>
+          </div>
+          <div class="journey-text-box">
+            <div class="journey-tag">CHAPTER 02 · 기존 시장의 한계 극복</div>
+            <h3 class="journey-heading">고통스러운 강제 조임과 시끄러운 오알람의 종말</h3>
+            <p class="journey-body">
+              기존의 고무줄 강제 압박기는 착용할수록 근육을 퇴화시키고 소화불량을 유발합니다. 또한 기존의 부착형 센서는 물을 마시는 일상 동작조차 '불량 자세'로 오진하여 시도 때도 없이 진동을 울리며 극심한 스트레스를 주었습니다.
+            </p>
+            <p class="journey-body">
+              스밈은 <strong>0.01초 작업 시차 필터링 알고리즘</strong>으로 일시적 움직임과 고착된 나쁜 자세를 완벽히 구분하고, <strong>인체공학 지렛대 탄성 복원 구조</strong>를 통해 압박 없이 스스로 펴지도록 만들었습니다.
+            </p>
+            <div class="journey-highlight">
+              ⚡ 82.3%의 직장인이 자세 무너짐을 인지하지 못하는 현실, 스밈은 업무 몰입을 방해하지 않는 '무소음 촉각 햅틱 넛지'로 바른 정렬을 회복시킵니다.
+            </div>
+          </div>
+        </div>
+
+        <!-- Story Chapter 3 -->
+        <div class="journey-chapter">
+          <div class="journey-visual-card">
+            <div class="visual-image-frame" style="background: linear-gradient(135deg, #dce8e0 0%, #c8dcd0 100%);">
+              <span class="visual-badge-overlay" style="background:#2a7a52;">🌿 300+ 전문가 실착 검증 갤러리</span>
+              <div style="font-size:52px; margin-bottom:8px;">🧑‍⚕️</div>
+              <div style="font-family:var(--font-serif); font-size:14px; font-weight:800; color:var(--color-forest);">[전문의·개발자 300인 실착 임상 현장]</div>
+            </div>
+            <div class="visual-caption-box">
+              <div class="visual-caption-title">300+ 현업 전문가들의 일상 속에 스며든 바른 균형</div>
+              <div class="visual-caption-desc">정형외과 의사, 물리치료사, IT 개발자들이 3주간 일상에서 착용하고 통증 87% 감소 효과를 검증했습니다.</div>
+            </div>
+          </div>
+          <div class="journey-text-box">
+            <div class="journey-tag">CHAPTER 03 · 브랜드 철학과 가치</div>
+            <h3 class="journey-heading">"일상에 바른 균형이 자연스럽게 스며들도록"</h3>
+            <p class="journey-body">
+              <strong>스밈(SEUMIM)</strong>은 '스며들다'에서 비롯된 이름입니다. 퇴근 후 지친 몸을 이끌고 억지로 운동을 강요하지 않습니다. 모니터 앞, 조타실, 수술실, 분장실 등 여러분이 치열하게 일하는 그 자리에서 바른 습관이 옷처럼 편안하게 스며듭니다.
+            </p>
+            <p class="journey-body">
+              0.1mm 초슬림 무봉제 공법으로 어떤 복장 속에 입어도 티가 나지 않으며, 100회 물세탁이 가능하여 매일 아침 새 옷처럼 쾌적하게 착용할 수 있습니다.
+            </p>
+            <div class="journey-highlight">
+              ✨ 하드웨어 28종 + AI 10초 미니멀 케어 구독 + 전국 웰니스 센터의 3중 선순환 플랫폼으로 지속 가능한 건강한 변화를 약속합니다.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SEC-03~05: Top 3 Featured Masterpieces (지그재그 집중 조명) -->
+    <section id="sec-featured" class="container" style="padding: 80px 24px;">
+      <div class="section-title-wrap">
+        <div class="section-tag">FEATURED MASTERPIECES TOP 3</div>
+        <h2 class="section-title">스밈을 대표하는 3대 시그니처 마스터피스</h2>
+        <p class="section-desc">가장 많은 직장인의 체형 문제를 해결한 핵심 3대 대표작을 3D 단면도로 확인하세요.</p>
+      </div>
+
+      <div class="featured-grid">
+        
+        <!-- [Top 1] 0.1mm 심리스 넥&숄더 밴드 -->
+        <div class="featured-card">
+          <button class="btn-card-wish active" onclick="toggleWish(1, this)" title="찜하기">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#ef4444" stroke="#ef4444" stroke-width="2">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg>
+          </button>
+          <div class="featured-visual">
+            <div class="visual-3d-box" onclick="openQuickView(1)">
+              <div class="visual-3d-icon">🎽</div>
+              <div style="font-weight:800; font-size:14px; color:var(--color-forest);">[Top 1] 0.1mm 넥&amp;숄더 밴드 3D 단면도</div>
+              <div style="font-size:12px; color:var(--color-text-secondary); margin-top:4px;">전면 자석 버클 &amp; 15도 견인 메커니즘</div>
+              <span class="magnifier-hint">🔍 클릭 시 3D 단면 분해 뷰어</span>
+            </div>
+          </div>
+          <div class="featured-content">
+            <span class="featured-badge">거북목 &amp; 말린 어깨 집중 케어</span>
+            <h3 class="featured-name">0.1mm 심리스 넥&amp;숄더 밴드</h3>
+            <p class="featured-copy">
+              모니터 앞 10시간, 앞으로 쏟아지는 목과 말린 어깨를 전면 자석 버클로 1초 만에 체결하여 15도 자동 견인합니다. 38g 깃털 무게로 셔츠 안에 입어도 전혀 티가 나지 않습니다.
+            </p>
+            <div class="feature-points">
+              <div class="point-item"><span class="point-dot"></span> 0.1mm 무봉제 전도성 센서 섬유로 피부 밀착</div>
+              <div class="point-item"><span class="point-dot"></span> 뒤틀림 방지 X-크로스 텐션 백 프레임 탑재</div>
+              <div class="point-item"><span class="point-dot"></span> 300+ 개발자 실착 후기 평점 4.9점 달성</div>
+            </div>
+            <div class="price-row">
+              <span class="price-discount">34% OFF</span>
+              <span class="price-sale">59,000원</span>
+              <span class="price-original">89,000원</span>
+            </div>
+            <div class="featured-actions">
+              <button class="btn-primary" onclick="openQuickView(1)">3D 단면 분해도 보기</button>
+              <button class="btn-primary btn-accent" onclick="openCheckoutModal('0.1mm 심리스 넥&숄더 밴드', 'M (95~100)')">
+                30일 0원 무료 시착
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- [Top 2] 3D 에어로 메쉬 척추 정렬 조끼 (Reverse) -->
+        <div class="featured-card reverse">
+          <button class="btn-card-wish" onclick="toggleWish(2, this)" title="찜하기">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg>
+          </button>
+          <div class="featured-visual">
+            <div class="visual-3d-box" onclick="openQuickView(2)">
+              <div class="visual-3d-icon">🦺</div>
+              <div style="font-weight:800; font-size:14px; color:var(--color-forest);">[Top 2] 척추 정렬 조끼 3D 단면도</div>
+              <div style="font-size:12px; color:var(--color-text-secondary); margin-top:4px;">출근복 속 숨은 지퍼 &amp; 탄성 프레임</div>
+              <span class="magnifier-hint">🔍 클릭 시 3D 단면 분해 뷰어</span>
+            </div>
+          </div>
+          <div class="featured-content">
+            <span class="featured-badge">굽은 등 &amp; 척추 틀어짐 방지</span>
+            <h3 class="featured-name">3D 에어로 메쉬 척추 정렬 조끼</h3>
+            <p class="featured-copy">
+              출근 룩에 완벽히 은폐되는 시크릿 지퍼 구조. 12시간 동안 착용해도 땀이 차지 않는 3중 에어로 메쉬와 척추 곡선을 지지하는 탄성 복원 프레임 단면을 확인하세요.
+            </p>
+            <div class="feature-points">
+              <div class="point-item"><span class="point-dot"></span> 99.8% 은폐율 숨은 지퍼 테일러링 공법</div>
+              <div class="point-item"><span class="point-dot"></span> 12시간 쿨링 에어로 메쉬 통기성 극대화</div>
+              <div class="point-item"><span class="point-dot"></span> 장시간 좌식 근무 시 척추 측면 틀어짐 차단</div>
+            </div>
+            <div class="price-row">
+              <span class="price-discount">31% OFF</span>
+              <span class="price-sale">89,000원</span>
+              <span class="price-original">129,000원</span>
+            </div>
+            <div class="featured-actions">
+              <button class="btn-primary" onclick="openQuickView(2)">3D 단면 분해도 보기</button>
+              <button class="btn-primary btn-accent" onclick="openCheckoutModal('3D 에어로 메쉬 척추 정렬 조끼', 'L (100~105)')">
+                30일 0원 무료 시착
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- [Top 3] 골반 수평 유지 에어셀 벨트 -->
+        <div class="featured-card">
+          <button class="btn-card-wish active" onclick="toggleWish(3, this)" title="찜하기">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#ef4444" stroke="#ef4444" stroke-width="2">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg>
+          </button>
+          <div class="featured-visual">
+            <div class="visual-3d-box" onclick="openQuickView(3)">
+              <div class="visual-3d-icon">🥋</div>
+              <div style="font-weight:800; font-size:14px; color:var(--color-forest);">[Top 3] 골반 에어셀 벨트 3D 단면도</div>
+              <div style="font-size:12px; color:var(--color-text-secondary); margin-top:4px;">공기 팽창 밸런스 패드 메커니즘</div>
+              <span class="magnifier-hint">🔍 클릭 시 3D 단면 분해 뷰어</span>
+            </div>
+          </div>
+          <div class="featured-content">
+            <span class="featured-badge">다리 꼬기 &amp; 골반 틀어짐 차단</span>
+            <h3 class="featured-name">골반 수평 유지 에어셀 벨트</h3>
+            <p class="featured-copy">
+              앉았을 때 무의식적으로 다리를 꼬면, 골반 에어셀 패드가 공기를 팽창시켜 골반을 물리적으로 수평 복원합니다. 짝다리 짚는 습관까지 원천 교정합니다.
+            </p>
+            <div class="feature-points">
+              <div class="point-item"><span class="point-dot"></span> 착석 시 다리 꼬기 물리적 차단 에어셀 내장</div>
+              <div class="point-item"><span class="point-dot"></span> 좌우 체압 불균형 0.1초 실시간 감지 분산</div>
+              <div class="point-item"><span class="point-dot"></span> 슬랙스나 바지 안쪽에 얇게 밀착되는 초박형 핏</div>
+            </div>
+            <div class="price-row">
+              <span class="price-discount">30% OFF</span>
+              <span class="price-sale">69,000원</span>
+              <span class="price-original">99,000원</span>
+            </div>
+            <div class="featured-actions">
+              <button class="btn-primary" onclick="openQuickView(3)">3D 단면 분해도 보기</button>
+              <button class="btn-primary btn-accent" onclick="openCheckoutModal('골반 수평 유지 에어셀 벨트', 'M (30~33인치)')">
+                30일 0원 무료 시착
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SEC-06: Social Proof & Clinical Data -->
+    <section class="proof-section">
+      <div class="container">
+        <div class="section-title-wrap">
+          <div class="section-tag">CLINICAL &amp; SOCIAL PROOF</div>
+          <h2 class="section-title">300+ 전문가 실착 데이터 및 4.9점 비포/애프터</h2>
+          <p class="section-desc">정형외과 전문의와 IT 개발자들이 3주간 실착하고 검증한 수치화된 개선 결과입니다.</p>
+        </div>
+
+        <div class="proof-stats-grid">
+          <div class="proof-stat-card">
+            <div class="proof-num">87.4%</div>
+            <div class="proof-title">목·어깨 통증 피로도 감소</div>
+            <div class="proof-desc">하루 9시간 이상 코딩 개발자 120인 검증</div>
+          </div>
+          <div class="proof-stat-card">
+            <div class="proof-num">3.2 h</div>
+            <div class="proof-title">일일 바른 자세 유지 시간 증가</div>
+            <div class="proof-desc">착용 전 1.4시간 ➔ 착용 후 4.6시간 증가</div>
+          </div>
+          <div class="proof-stat-card">
+            <div class="proof-num">98.2%</div>
+            <div class="proof-title">셔츠 속 은폐 만족도</div>
+            <div class="proof-desc">출근 시 동료가 눈치채지 못함 응답률</div>
+          </div>
+        </div>
+
+        <div class="reviews-slider">
+          <div class="review-card">
+            <div class="review-stars">★★★★★ 5.0</div>
+            <p class="review-text">"하루 12시간 모니터만 보는 백엔드 개발자입니다. 넥밴드 착용 후 퇴근할 때 목 뻐근함이 80% 이상 사라졌습니다. 셔츠 안에 입어도 아무도 몰라요."</p>
+            <div class="review-author">
+              <span>김민석 (31세, 시니어 개발자)</span>
+              <span class="review-badge">178cm / 74kg (M 착용)</span>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">★★★★★ 4.9</div>
+            <p class="review-text">"정형외과 의사로서 수많은 교정기를 보았지만, 스밈처럼 '억지로 조이지 않고 체감 피로도를 낮추는 무봉제 기술'은 처음입니다. 환자분들께도 적극 추천합니다."</p>
+            <div class="review-author">
+              <span>이현우 원장 (정형외과 전문의)</span>
+              <span class="review-badge">전문의 자문단</span>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">★★★★★ 5.0</div>
+            <p class="review-text">"의자에만 앉으면 다리를 꼬아서 골반이 삐뚤어졌는데, 에어셀 벨트 착용 후 다리 꼴 때마다 팽창해서 자동으로 바른 자세가 잡힙니다. 0원 시착 최고!"</p>
+            <div class="review-author">
+              <span>박지영 (29세, UX 디자이너)</span>
+              <span class="review-badge">164cm / 52kg (S 착용)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- [메인 전용 전환 배너] 28개 전 상품 카탈로그 서브페이지로 이동 안내 -->
+    <section class="container">
+      <div class="explore-catalog-banner">
+        <div class="catalog-banner-left">
+          <div class="catalog-tag">FULL COLLECTION (28 PRODUCTS)</div>
+          <h3 class="catalog-banner-title">더 많은 맞춤형 교정 솔루션이 필요하신가요?</h3>
+          <p class="catalog-banner-desc">
+            스밈은 3대 대표작 외에도 전문 집중 케어, 스마트 센서 테크, 직무별 인체공학 ACC 등 
+            <strong>총 28종의 체형 맞춤 라인업</strong>을 완비하고 있습니다. 
+            서브페이지에서 4대 카테고리 전체 상품을 탐색하고 비교해 보세요.
+          </p>
+          <div class="catalog-category-pills">
+            <span class="cat-pill">시그니처 코어웨어 7종</span>
+            <span class="cat-pill">전문 집중 케어 7종</span>
+            <span class="cat-pill">스마트 센서 테크 7종</span>
+            <span class="cat-pill">직업 맞춤 교정 ACC 7종</span>
+          </div>
+        </div>
+        <div>
+          <button class="btn-primary btn-accent" style="padding:16px 28px; font-size:15px; white-space:nowrap;" onclick="switchPage('page-shop')">
+            28개 전 상품 컬렉션 보러가기 ➔
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEC-08: 스마트 체형 맞춤 사이즈 파인더 미니 모듈 -->
+    <section class="container">
+      <div class="fit-finder-banner">
+        <div class="fit-finder-header">
+          <div class="section-tag" style="color:var(--color-terracotta);">SMART FIT FINDER</div>
+          <h3 class="fit-finder-title">내 몸에 딱 맞는 0.1mm 핏! 1초 사이즈 파인더</h3>
+          <p style="font-size:14px; color:var(--color-text-secondary); margin-top:4px;">키와 몸무게를 슬라이더로 조절하면 권장 사이즈와 부위별 실측 치수를 실시간 도출합니다.</p>
+        </div>
+
+        <div class="fit-finder-inputs">
+          <div class="input-control">
+            <label>키 (Height): <span class="input-slider-val" id="val-height">178 cm</span></label>
+            <input type="range" min="150" max="195" value="178" oninput="updateFitFinder(this.value, null)">
+          </div>
+          <div class="input-control">
+            <label>몸무게 (Weight): <span class="input-slider-val" id="val-weight">72 kg</span></label>
+            <input type="range" min="40" max="120" value="72" oninput="updateFitFinder(null, this.value)">
+          </div>
+          <div class="input-control">
+            <label>체형 실루엣</label>
+            <select class="form-input" style="padding:8px 12px; font-weight:700;" onchange="calculateSize()">
+              <option>표준 체형 (Standard)</option>
+              <option>슬림 체형 (Slim)</option>
+              <option>어깨/체격 발달형 (Athletic)</option>
+            </select>
+          </div>
+          <div class="fit-result-badge">
+            <div class="fit-result-label">추천 최적 사이즈</div>
+            <div class="fit-result-size" id="fit-calc-size">M (95~100)</div>
+          </div>
+        </div>
+
+        <div style="display:flex; justify-content:center; gap:12px; margin-top:20px;">
+          <button class="btn-sm-ghost" style="padding:8px 16px; border:1px solid var(--color-border); border-radius:var(--radius-full);" onclick="openFitModal()">📏 부위별 0.1mm 정밀 실측표 확인</button>
+          <button class="btn-primary btn-accent" style="padding:8px 18px; font-size:13px;" onclick="openCheckoutModal('0.1mm 심리스 넥&숄더 밴드', document.getElementById('fit-calc-size').innerText)">
+            추천 사이즈로 30일 무료 시착 (0원)
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEC-09: AI HUD & 오프라인 센터 (원본 복원 상태 유지) -->
+    <section id="sec-hud" class="container">
+      <div class="hud-center-grid">
+        <div class="hud-card">
+          <div class="section-tag">AI REALTIME HUD</div>
+          <h3 style="font-size:22px; font-weight:800; color:var(--color-forest); margin-bottom:10px;">AI 실시간 자세 각도 대시보드</h3>
+          <p style="font-size:13.5px; color:var(--color-text-secondary);">스마트 센서 섬유가 0.05도 단위로 척추 틀어짐을 감지하여 실시간 자세 점수를 표시합니다.</p>
+          
+          <div class="gauge-container">
+            <div class="gauge-circle">
+              <div class="gauge-inner">
+                <div class="gauge-score">95</div>
+                <div class="gauge-unit">바른 균형 점수</div>
+              </div>
+            </div>
+            <div style="font-size:13px; line-height:1.6;">
+              <div style="font-weight:700; color:var(--color-sage);">● 정상 정렬 상태 (95점)</div>
+              <div style="color:var(--color-text-muted);">• 경추 각도: 14도 (안정)</div>
+              <div style="color:var(--color-text-muted);">• 좌우 골반 수평 편차: 0.2cm</div>
+            </div>
+          </div>
+          <button class="btn-primary" style="width:100%; justify-content:center;" onclick="alert('웹캠과 연동하여 10초 AI 자세 측정을 시작합니다.')">
+            10초 AI 자세 측정 시작하기
+          </button>
+        </div>
+
+        <div class="center-card">
+          <div class="section-tag" style="color:var(--color-terracotta);">O2O WELLNESS CENTER</div>
+          <h3 style="font-size:22px; font-weight:800; color:var(--color-forest); margin-bottom:10px;">전국 웰니스 센터 1:1 무료 진단</h3>
+          <p style="font-size:13.5px; color:var(--color-text-secondary);">전국 12개 직영/제휴 센터에서 전문 물리치료사의 3D 체형 측정 및 실착 진단을 무료로 받으세요.</p>
+          
+          <div style="background:var(--bg-card); padding:16px; border-radius:var(--radius-md); margin:20px 0; font-size:13px;">
+            <div style="font-weight:700; margin-bottom:4px;">📍 가까운 스밈 웰니스 센터 (강남 플래그십)</div>
+            <div style="color:var(--color-text-secondary);">서울 강남구 테헤란로 152 강남파이낸스센터 3F (예약 가능)</div>
+          </div>
+          <button class="btn-primary btn-accent" style="width:100%; justify-content:center;" onclick="openCenterModal()">
+            오프라인 1회 무료 체험 예약하기
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEC-10: FAQ -->
+    <section class="container faq-container">
+      <div class="section-title-wrap">
+        <div class="section-tag">FREQUENTLY ASKED QUESTIONS</div>
+        <h2 class="section-title">자주 묻는 질문</h2>
+      </div>
+
+      <div class="faq-item open" onclick="toggleFaq(this)">
+        <div class="faq-question">Q. 30일 무료 시착은 정말 결제금액이 0원인가요? <span>▼</span></div>
+        <div class="faq-answer">네, 맞습니다. 신청 시 결제되는 금액은 0원이며, 30일 동안 일상과 직장에서 충분히 입어보신 후 만족스러우실 때 구매를 결정하시면 됩니다.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">Q. 사이즈가 맞지 않으면 어떻게 하나요? <span>▼</span></div>
+        <div class="faq-answer">30일 기간 내라면 왕복 배송비 전액 무료로 원하시는 사이즈로 100% 무료 맞교환해 드립니다.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">Q. 세탁기에 넣고 돌려도 센서가 고장 나지 않나요? <span>▼</span></div>
+        <div class="faq-answer">스밈의 0.1mm 전도성 센서 섬유는 완전 방수 실링 처리되어 일반 세탁망에 넣어 세탁기 표준 코스로 100회 이상 세탁하셔도 안전합니다.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">Q. 셔츠나 정장 안에 입어도 티가 안 나나요? <span>▼</span></div>
+        <div class="faq-answer">0.1mm 초슬림 무봉제 심리스 편직 기술로 제작되어 얇은 흰 셔츠 안에 착용해도 99.8% 은폐되어 겉으로 드러나지 않습니다.</div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ==========================================================================
+       [PAGE 2: 28개 전 상품 카탈로그 서브페이지 (Shop All)]
+       ========================================================================== -->
+  <main id="page-shop" class="page-view container" style="padding: 60px 24px;">
+    <div class="section-title-wrap" style="text-align:left;">
+      <div class="section-tag">SHOP ALL / 28 PRODUCTS CATALOG</div>
+      <h1 class="section-title">스밈 4대 카테고리 28개 전 상품 컬렉션</h1>
+      <p class="section-desc" style="margin:0;">스마트 체형 맞춤 사이즈 파인더로 내 사이즈를 확인하고, 4대 카테고리 상품을 정밀 비교하세요.</p>
+    </div>
+
+    <!-- 스마트 사이즈 파인더 상단 마스터 바 -->
+    <div class="fit-finder-banner" style="margin: 30px 0 40px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+        <h3 style="font-family:var(--font-serif); font-size:18px; font-weight:800; color:var(--color-forest);">🔍 스마트 사이즈 파인더 연동 활성화</h3>
+        <span style="font-size:12px; color:var(--color-terracotta); font-weight:800;">● 현재 키: 178cm / 몸무게: 72kg ➔ 권장: M 사이즈</span>
+      </div>
+      <div style="font-size:13px; color:var(--color-text-secondary);">
+        아래 28개 전 상품 카드에 내 체형에 최적합한 <strong>[권장 사이즈 뱃지]</strong>가 실시간으로 표시됩니다.
+      </div>
+    </div>
+
+    <!-- 카테고리 필터 탭 -->
+    <div class="showcase-tabs" style="justify-content:flex-start;">
+      <button class="tab-btn active" onclick="filterShopPage('all', this)">전체보기 (28)</button>
+      <button class="tab-btn" onclick="filterShopPage('cat1', this)">시그니처 코어웨어 (7)</button>
+      <button class="tab-btn" onclick="filterShopPage('cat2', this)">전문 집중 케어 (7)</button>
+      <button class="tab-btn" onclick="filterShopPage('cat3', this)">스마트 센서 테크 (7)</button>
+      <button class="tab-btn" onclick="filterShopPage('cat4', this)">직업 맞춤 교정 ACC (7)</button>
+    </div>
+
+    <!-- 28개 전 상품 그리드 -->
+    <div class="products-grid-4col" id="shop-products-grid"></div>
+  </main>
+
+
+  <!-- ==========================================================================
+       [PAGE 3: 91 바디럽형 상품별 독립 서사 브랜드 이야기 (Our Story)]
+       ========================================================================== -->
+    <!-- ==========================================================================
+       [PAGE 3: 가상클라이언트 92 기반 브랜드 이야기 (Our Story & 7-Phase Showcase)]
+       ========================================================================== -->
+  <main id="page-story" class="page-view container" style="padding: 40px 24px 80px;">
+
+    <!-- SUB ANCHOR TAB BAR -->
+    <div class="story-tab-bar">
+      <div class="story-tab-list">
+        <button class="story-tab-btn active" onclick="scrollToStorySec('sec-st92-hero', this)" title="01. 매니페스토">
+          <span class="story-dot"></span>
+          <span class="story-btn-text">01. 브랜드 매니페스토</span>
+        </button>
+        <button class="story-tab-btn" onclick="scrollToStorySec('sec-st92-origin', this)" title="02. 문제점&후기">
+          <span class="story-dot"></span>
+          <span class="story-btn-text">02. 문제점 &amp; 실착 인증</span>
+        </button>
+        <button class="story-tab-btn" onclick="scrollToStorySec('sec-st92-pillars', this)" title="03. 3대 철학">
+          <span class="story-dot"></span>
+          <span class="story-btn-text">03. 3대 다정한 균형</span>
+        </button>
+        <button class="story-tab-btn" onclick="scrollToStorySec('sec-st92-macro', this)" title="04. 심리스 나노">
+          <span class="story-dot"></span>
+          <span class="story-btn-text">04. 0.1mm 심리스 혁신</span>
+        </button>
+        <button class="story-tab-btn" onclick="scrollToStorySec('sec-st92-blueprint', this)" title="05. 3D 도면">
+          <span class="story-dot"></span>
+          <span class="story-btn-text">05. 3D 엔지니어링 도면</span>
+        </button>
+        <button class="story-tab-btn" onclick="scrollToStorySec('sec-st92-usecases', this)" title="06. 전후 비교">
+          <span class="story-dot"></span>
+          <span class="story-btn-text">06. 일상 변화 B/A</span>
+        </button>
+        <button class="story-tab-btn" onclick="scrollToStorySec('sec-st92-collection', this)" title="07. 15종 쇼케이스">
+          <span class="story-dot"></span>
+          <span class="story-btn-text">07. 15종 전 라인업</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- SEC-01: Editorial Hero -->
+    <section id="sec-st92-hero" class="story92-hero">
+      <div class="story92-hero-guide">
+        <strong>📸 [HERO EDITORIAL VISUAL AREA]</strong><br>
+        자연 채광 오피스 공간 &amp; 0.1mm 심리스 코어웨어 착용 실루엣 화보
+      </div>
+      <div style="position:relative; z-index:5; max-width:680px;">
+        <span class="section-tag" style="background:rgba(255,255,255,0.15); color:#e2dbca; border:1px solid rgba(255,255,255,0.25);">
+          ✦ 0.1mm Seamless · 스며드는 다정한 균형
+        </span>
+        <h1 class="story92-hero-title">
+          바쁜 하루 속에서도,<br>
+          나를 먼저 아끼는 다정한 균형
+        </h1>
+        <p class="story92-hero-sub">
+          몸을 억지로 조이지 않고, 일상 속에 부드럽게 스며들어 스스로 바른 자세를 기억하게 합니다.
+        </p>
+        <div style="display:flex; gap:14px; flex-wrap:wrap;">
+          <button class="btn-primary btn-accent" style="padding:14px 28px; font-size:14.5px;" onclick="openCheckoutModal('0.1mm 심리스 넥&숄더 밴드', 'M (95~100)')">
+            30일 무료 시착 시작하기 (0원)
+          </button>
+          <button class="btn-sm-ghost" style="padding:14px 24px; font-size:14.5px; border:1px solid rgba(255,255,255,0.35); color:#fff; border-radius:var(--radius-full);" onclick="scrollToStorySec('sec-st92-collection')">
+            15종 컬렉션 탐색하기 ➔
+          </button>
+        </div>
+      </div>
+    </section>
+
+        <!-- SEC-02: The Origin & Evidence (One-by-One Large Problem Showcase) -->
+    <section id="sec-st92-origin" style="padding:40px 0 60px;">
+      <div style="text-align:center; max-width:820px; margin:0 auto 50px;">
+        <span class="section-tag" style="background:#fde8e4; color:var(--color-terracotta);">THE ORIGIN &amp; EVIDENCE</span>
+        <h2 class="story-section-title" style="font-family:var(--font-maruburi); font-size:34px; margin-bottom:14px;">하루 9.4시간 책상 앞, 왜 우리는 매일 무너질까요?</h2>
+        <p style="font-size:16px; color:var(--color-text-secondary); line-height:1.8;">
+          스크롤을 내려 우리가 바쁜 일상 속에서 당연하게 참아왔던 <strong>4가지 자세 무너짐의 실태와 고통</strong>을 하나씩 확인해 보세요.
+        </p>
+      </div>
+
+      <div class="story92-problem-stack">
+        
+        <!-- Problem Card 01 -->
+        <div class="story92-problem-card">
+          <div class="story92-ph-box" style="height:380px; padding:28px;">
+            <div class="story92-ph-title" style="font-size:16px; margin-bottom:8px;">📸 [시각자료 01 : 목 &amp; 승모근 통증 실태]</div>
+            <div style="font-size:13.5px; color:var(--color-text-secondary); max-width:360px; line-height:1.7;">
+              모니터를 향해 거북이처럼 15° 이상 쏟아지는 경추와 이로 인해 2.4배 이상 솟아오른 승모근 근육 경직 실태 시각 자료
+            </div>
+          </div>
+          <div>
+            <div class="story92-problem-badge">PROBLEM 01 / 04</div>
+            <h3 class="story92-problem-title">무너지는 자세, 통증 후에야 깨닫는 자각 불가</h3>
+            <p class="story92-problem-desc">
+              업무에 몰입하는 동안 목과 허리가 서서히 앞으로 쏟아지지만, 뇌는 이를 인지하지 못합니다. 퇴근길 묵직한 두통과 결림이 찾아온 뒤에야 무너졌음을 후회합니다.
+            </p>
+            <div class="story92-problem-statbox">
+              <div style="display:flex; align-items:center; gap:20px;">
+                <div style="width:72px; height:72px; border-radius:50%; background:conic-gradient(var(--color-terracotta) 0% 82.3%, var(--color-border) 82.3% 100%); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                  <div style="width:52px; height:52px; background:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:14.5px; font-weight:900; color:var(--color-terracotta);">82.3%</div>
+                </div>
+                <div>
+                  <div style="font-family:var(--font-maruburi); font-size:17px; font-weight:700; color:var(--color-forest); margin-bottom:4px;">직장인 82.3% 자세 무너짐 자각 불가</div>
+                  <div style="font-size:12.5px; color:var(--color-text-muted); line-height:1.5;">업무 집중 상태에서는 척추 각도가 18° 틀어져도 스스로 인지 불가능</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Problem Card 02 -->
+        <div class="story92-problem-card">
+          <div class="story92-ph-box" style="height:380px; padding:28px;">
+            <div class="story92-ph-title" style="font-size:16px; margin-bottom:8px;">📸 [시각자료 02 : 치료 골든타임 지연 &amp; 야근 실태]</div>
+            <div style="font-size:13.5px; color:var(--color-text-secondary); max-width:360px; line-height:1.7;">
+              야근과 연차 눈치로 병원 물리치료를 미루는 2030 직장인의 고립된 오피스 야간 실루엣 &amp; 연간 척추 환자 421만 명 통계 도해
+            </div>
+          </div>
+          <div>
+            <div class="story92-problem-badge">PROBLEM 02 / 04</div>
+            <h3 class="story92-problem-title">골든타임을 미루는 현실: 40.4%가 시간 부족과 눈치로 치료 지연</h3>
+            <p class="story92-problem-desc">
+              환자는 폭증하고 있으나, 2030 직장인의 40.4%가 '야근 등 절대적인 시간 부족'과 '연차 사용의 눈치' 때문에 실질적인 병원 물리치료를 미루고 있습니다.
+            </p>
+            <div class="story92-problem-statbox">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span style="font-size:13px; font-weight:700; color:var(--color-forest);">시간 부족·연차 눈치로 치료 지연율</span>
+                <span style="font-size:16px; font-weight:900; color:var(--color-terracotta);">40.4% (직장인 10명 중 4명)</span>
+              </div>
+              <div style="width:100%; height:14px; background:var(--color-border); border-radius:10px; overflow:hidden; margin-bottom:8px;">
+                <div style="width:40.4%; height:100%; background:var(--color-terracotta);"></div>
+              </div>
+              <div style="display:flex; justify-content:space-between; font-size:12px; color:var(--color-text-muted);">
+                <span>평일 낮 병원 방문 불가</span>
+                <span>연간 2030 척추 환자 421만 명 급증 🏥</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Problem Card 03 -->
+        <div class="story92-problem-card alert-card">
+          <div class="story92-ph-box" style="height:380px; padding:28px; background:#fffaf8; border-color:#f6d4c4;">
+            <div class="story92-ph-title" style="font-size:16px; color:var(--color-terracotta); margin-bottom:8px;">📸 [시각자료 03 : 쇠 와이어 피부 압박 &amp; 서랍 방치]</div>
+            <div style="font-size:13.5px; color:#a15322; max-width:360px; line-height:1.7;">
+              두꺼운 플라스틱 지지대와 쇠 와이어 보조기가 갈비뼈를 짓누르고 피부에 남긴 붉은 상처 자국 &amp; 서랍 속에 처박힌 실태 컷
+            </div>
+          </div>
+          <div>
+            <div class="story92-problem-badge" style="background:#fde8e4; color:var(--color-terracotta);">PROBLEM 03 / 04</div>
+            <h3 class="story92-problem-title">서랍 속에 처박힌 조임 보조기들의 고통</h3>
+            <p class="story92-problem-desc">
+              자세를 고쳐보려 구매했던 수많은 교정기들은 두꺼운 쇠붙이와 억지 압박으로 소화불량과 흉통을 유발했습니다. 결국 30분도 견디지 못하고 서랍 속에 방치되었습니다.
+            </p>
+            <div class="story92-problem-statbox" style="background:#ffffff; border-color:#f6d4c4;">
+              <div style="font-size:13px; color:var(--color-terracotta); font-weight:800; line-height:1.7;">
+                • 기존 보조기 30분 이상 착용 불가율: <strong>76.4%</strong><br>
+                • 셔츠 밖으로 튀어나와 출근 시 착용 불가: <strong>91.2%</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Problem Card 04 -->
+        <div class="story92-problem-card alert-card">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+            <div class="story92-ph-box" style="height:380px; padding:20px; background:#fffaf8; border-color:#f6d4c4;">
+              <div style="font-weight:800; font-size:13px; color:var(--color-terracotta); margin-bottom:6px;">📸 [불편 후기 포토 01]</div>
+              <div style="font-size:12px; color:var(--color-text-secondary); line-height:1.5; margin-bottom:12px;">타사 쇠 와이어 보조기의 갈비뼈 압박 &amp; 옷태 파괴 컷</div>
+              <div style="background:#ffffff; padding:12px; border-radius:var(--radius-sm); font-size:12px; border:1px solid #f6d4c4; text-align:left; color:#333; line-height:1.5;">
+                "유명하다는 8만 원대 밴드 샀는데 쇠 와이어가 갈비뼈를 너무 짓눌러서 밥 먹으면 체함. 셔츠 밖으로 툭 튀어나와 출근할 땐 절대 못 참."
+                <div style="font-weight:800; color:var(--color-terracotta); margin-top:4px;">— IT 개발자 A님 (32세)</div>
+              </div>
+            </div>
+
+            <div class="story92-ph-box" style="height:380px; padding:20px; background:#fffaf8; border-color:#f6d4c4;">
+              <div style="font-weight:800; font-size:13px; color:var(--color-terracotta); margin-bottom:6px;">📸 [불편 후기 포토 02]</div>
+              <div style="font-size:12px; color:var(--color-text-secondary); line-height:1.5; margin-bottom:12px;">타사 부착형 센서 오작동 &amp; 테이프 피부 발진 컷</div>
+              <div style="background:#ffffff; padding:12px; border-radius:var(--radius-sm); font-size:12px; border:1px solid #f6d4c4; text-align:left; color:#333; line-height:1.5;">
+                "등에 붙이는 센서는 신발 끈만 묶어도 징징 울려서 회의 때 민망해 죽는 줄... 테이프 붙인 자리에 빨간 뾰루지까지 나서 일주일 만에 버림."
+                <div style="font-weight:800; color:var(--color-terracotta); margin-top:4px;">— 마케터 B님 (29세)</div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="story92-problem-badge" style="background:#fde8e4; color:var(--color-terracotta);">PROBLEM 04 / 04</div>
+            <h3 class="story92-problem-title">블라인드 2030 직장인들의 타 교정제품 실패 찐후기</h3>
+            <p class="story92-problem-desc">
+              자세를 고쳐보려 수많은 제품을 샀지만, <strong>"숨 막히는 강제 조임"</strong>, <strong>"셔츠 밖 옷태 파괴"</strong>, <strong>"시도 때도 없는 오작동 진동 스트레스"</strong>로 인해 결국 1주일도 못 가 서랍 속에 처박혔습니다.
+            </p>
+            <div class="story92-problem-statbox" style="background:#ffffff; border-color:#f6d4c4;">
+              <div style="margin-bottom:8px;">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                  <span style="font-size:13px; font-weight:700; color:var(--color-forest);">타사 교정제품 1개월 내 중도 포기율</span>
+                  <span style="font-size:20px; font-weight:900; color:var(--color-terracotta);">91.4%</span>
+                </div>
+              </div>
+              <div style="font-size:12px; color:var(--color-text-muted); line-height:1.6; border-top:1px dashed #f6d4c4; padding-top:6px;">
+                • 포기 사유 1위: 살 짓눌림 &amp; 소화불량 흉통 (48.2%)<br>
+                • 포기 사유 2위: 셔츠 밖 튀어나옴 등 옷태 훼손 (29.6%)<br>
+                • 포기 사유 3위: 센서 오진동 스트레스 &amp; 피부 발진 (13.6%)
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Narrative Bridge -->
+      <div style="background:var(--color-forest); color:#fff; padding:36px 40px; border-radius:var(--radius-lg); text-align:center; box-shadow:var(--shadow-md); margin-top:20px;">
+        <div style="font-family:var(--font-maruburi); font-size:20px; font-weight:700; margin-bottom:6px;">
+          ✦ 그래서 우리는 몸을 억지로 조이는 대신, 일상에 자연스럽게 스며드는 길을 선택했습니다.
+        </div>
+        <div style="font-size:13.5px; color:#e2dbca;">피부와 호흡을 존중하는 스밈(SEUMIM)의 3대 다정한 균형 철학</div>
+      </div>
+    </section>
+
+    <!-- SEC-03: The 3 Pillars (Zig-Zag) -->
+    <section id="sec-st92-pillars" style="padding:50px 0;">
+      <div style="text-align:center; max-width:1040px; margin:0 auto 50px;">
+        <span class="section-tag">ZIG-ZAG 3 PILLARS</span>
+        <h2 class="story-section-title" style="font-family:var(--font-maruburi); font-size:30px; margin-bottom:12px; white-space:nowrap; letter-spacing:-0.02em;">고통스러운 조임 대신, 일상에 스며드는 '티 없는' 다정한 균형</h2>
+        <p style="font-size:15px; color:var(--color-text-secondary); line-height:1.8; max-width:760px; margin:0 auto;">
+          바른 자세는 억지로 뼈를 꺾고 몸을 옥죄어 만드는 것이 아닙니다. 스밈(SEUMIM)은 일상을 방해하지 않고 가장 다정하게 지탱합니다.
+        </p>
+      </div>
+
+      <div class="story92-zigzag-container">
+        <!-- Pillar 01 -->
+        <div class="story92-zigzag-row">
+          <div class="story92-ph-box story92-zigzag-ph">
+            <div class="story92-ph-title">🌿 [비주얼 02 : 스며들다 (Natural Habit)]</div>
+            <div style="max-width:320px;">피부에 부드럽게 닿는 천연 텐셀 나노 섬유 직조 컷 &amp; 스스로 자세를 기억하게 만드는 메커니즘 도해</div>
+          </div>
+          <div class="story92-zigzag-content">
+            <div class="story92-pillar-badge">PILLAR 01</div>
+            <h3 class="story92-pillar-title">'스며들다' (Natural Habit)</h3>
+            <div class="story92-contrast-box">
+              강제 교정의 피로 ➔ 일상 속 자연스러운 습관 형성
+            </div>
+            <p style="font-size:14.5px; color:var(--color-text-secondary); line-height:1.8;">
+              억지로 자세를 강요하지 않고, 건강한 습관이 일상에 자연스럽게 녹아들어 몸과 마음의 균형을 완성합니다.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pillar 02 (Reverse) -->
+        <div class="story92-zigzag-row reverse">
+          <div class="story92-ph-box story92-zigzag-ph">
+            <div class="story92-ph-title">🧵 [비주얼 03 : 티 없이 (Seamless &amp; Flawless)]</div>
+            <div style="max-width:320px;">0.1mm 심리스 무봉제 본딩 초접사 단면 &amp; 얇은 화이트 셔츠 속 99.8% 완벽 은폐 스킨핏 컷</div>
+          </div>
+          <div class="story92-zigzag-content">
+            <div class="story92-pillar-badge">PILLAR 02</div>
+            <h3 class="story92-pillar-title">'티 없이' (Seamless &amp; Flawless)</h3>
+            <div class="story92-contrast-box">
+              투박한 옷태 파괴 ➔ 0.1mm 셔츠 속 99.8% 은폐
+            </div>
+            <p style="font-size:14.5px; color:var(--color-text-secondary); line-height:1.8;">
+              봉제선이 전혀 없는 0.1mm 무봉제 본딩 기술로 얇은 화이트 셔츠나 슬랙스 안에 입어도 겉으로 전혀 '티가 나지 않는' 극상의 슬림함과 당당한 오피스 실루엣을 선사합니다.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pillar 03 -->
+        <div class="story92-zigzag-row">
+          <div class="story92-ph-box story92-zigzag-ph">
+            <div class="story92-ph-title">⚖️ [비주얼 04 : Effort-Free (Kind Balance)]</div>
+            <div style="max-width:320px;">퇴근 후 힘든 운동 없이도, 앉은 자리에서 지렛대 탄성으로 편안하게 숨 쉬며 지탱하는 오피스 웰니스 컷</div>
+          </div>
+          <div class="story92-zigzag-content">
+            <div class="story92-pillar-badge">PILLAR 03</div>
+            <h3 class="story92-pillar-title">'Effort-Free' (Kind Balance)</h3>
+            <div class="story92-contrast-box">
+              퇴근 후 1시간 운동 강요 ➔ 앉은 자리 10초 케어
+            </div>
+            <p style="font-size:14.5px; color:var(--color-text-secondary); line-height:1.8;">
+              퇴근 후 지친 몸으로 힘든 운동을 강요하지 않습니다. 일하는 순간에도 숨 쉬듯 편안하게 지탱하는 다정한 웰니스를 만듭니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEC-04: Full-bleed Macro -->
+    <section id="sec-st92-macro" class="story92-macro-visual">
+      <div style="font-size:12.5px; letter-spacing:2px; text-transform:uppercase; color:#a8d5be; margin-bottom:10px;">100% Full-bleed Macro Innovation</div>
+      <h2 style="font-family:var(--font-maruburi); font-size:30px; font-weight:700; margin-bottom:10px;">
+        [📸 비주얼 05 : 0.1mm 심리스 무봉제 나노 텍스처 초근접 100% 풀와이드 줌인]
+      </h2>
+      <p style="font-size:15px; color:#e2dbca;">피부와 하나 되는 완벽한 밀착, 닿는 순간 숨 쉬는 편안함을 시각적으로 증명하는 매크로 컷</p>
+    </section>
+
+    <!-- SEC-05: Technical Blueprint -->
+    <section id="sec-st92-blueprint" style="background:#151d18; color:#fff; padding:60px 40px; border-radius:var(--radius-lg); margin-bottom:60px;">
+      <div style="text-align:center; max-width:760px; margin:0 auto 40px;">
+        <span class="section-tag" style="background:rgba(255,255,255,0.1); color:#a8d5be;">3D TECHNICAL BLUEPRINT</span>
+        <h2 style="font-family:var(--font-maruburi); font-size:32px; font-weight:700; color:#fff; margin:10px 0;">몸에 닿는 순간 느껴지는 착용감의 과학</h2>
+        <p style="font-size:14px; color:#a5b5ac;">카드 위에 마우스를 올려 3D 엔지니어링 도면 인터랙션을 확인하세요.</p>
+      </div>
+
+      <div class="story92-blueprint-grid">
+        <div class="story92-blueprint-card story92-tilt">
+          <div class="story92-blueprint-ph">
+            <div style="font-family:var(--font-maruburi); font-size:14px; font-weight:700; color:#a8d5be;">📐 [도면 01 : 0.1mm 심리스 나노 압착 도면]</div>
+            <div style="font-size:11.5px; color:#7c8a82; margin-top:4px;">무봉제 접합 단면 3D 렌더링</div>
+          </div>
+          <div style="padding:24px;">
+            <div style="font-size:11px; font-weight:800; color:var(--color-terracotta); letter-spacing:1px; margin-bottom:6px;">NAKED SEAMLESS</div>
+            <div style="font-family:var(--font-maruburi); font-size:18px; font-weight:700; margin-bottom:8px;">01. 0.1mm 심리스 본딩</div>
+            <div style="font-size:13px; color:#a5b5ac; line-height:1.7;">봉제선을 100% 제거하여 셔츠 속 99.8% 은폐율을 자랑하며 살 눌림 자국이 전혀 남지 않습니다.</div>
+          </div>
+        </div>
+
+        <div class="story92-blueprint-card story92-tilt">
+          <div class="story92-blueprint-ph">
+            <div style="font-family:var(--font-maruburi); font-size:14px; font-weight:700; color:#a8d5be;">🌬️ [도면 02 : 38g 에어로 메쉬 통기 기류도]</div>
+            <div style="font-size:11.5px; color:#7c8a82; margin-top:4px;">초미세 쿨링 에어로 에어플로우 시뮬레이션</div>
+          </div>
+          <div style="padding:24px;">
+            <div style="font-size:11px; font-weight:800; color:var(--color-terracotta); letter-spacing:1px; margin-bottom:6px;">AIRY WEIGHTLESS</div>
+            <div style="font-family:var(--font-maruburi); font-size:18px; font-weight:700; margin-bottom:8px;">02. 38g 에어로 메쉬</div>
+            <div style="font-size:13px; color:#a5b5ac; line-height:1.7;">달걀 하나보다 가벼운 초경량으로 하루 종일 착용해도 땀이 차지 않는 초미세 통기 구조를 갖췄습니다.</div>
+          </div>
+        </div>
+
+        <div class="story92-blueprint-card story92-tilt">
+          <div class="story92-blueprint-ph">
+            <div style="font-family:var(--font-maruburi); font-size:14px; font-weight:700; color:#a8d5be;">⚙️ [도면 03 : 척추 기립근 4중 동적 텐션도]</div>
+            <div style="font-size:11.5px; color:#7c8a82; margin-top:4px;">지렛대 원리 탄성 복원 메커니즘</div>
+          </div>
+          <div style="padding:24px;">
+            <div style="font-size:11px; font-weight:800; color:var(--color-terracotta); letter-spacing:1px; margin-bottom:6px;">DYNAMIC RESTORING</div>
+            <div style="font-family:var(--font-maruburi); font-size:18px; font-weight:700; margin-bottom:8px;">03. 동적 텐션 프레임</div>
+            <div style="font-size:13px; color:#a5b5ac; line-height:1.7;">몸을 옥죄지 않고 지렛대 원리에 따라 유연하게 척추를 밀어 올려 바른 정렬을 복원합니다.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEC-06: Filterable Cases & B/A Slider -->
+    <section id="sec-st92-usecases" style="padding:40px 0 60px;">
+      <div style="text-align:center; max-width:760px; margin:0 auto 40px;">
+        <span class="section-tag">FILTERABLE USE CASES</span>
+        <h2 class="story-section-title" style="font-family:var(--font-maruburi); font-size:32px; margin-bottom:12px;">하루 끝에 비로소 느껴지는 가벼운 어깨</h2>
+        <p style="font-size:15px; color:var(--color-text-secondary); line-height:1.8;">
+          스밈을 만난 후, 2030 직장인들의 일상과 실루엣이 어떻게 변화했는지 확인해 보세요.
+        </p>
+      </div>
+
+      <div style="display:flex; justify-content:center; gap:10px; margin-bottom:40px;">
+        <button class="btn-page-tab active" onclick="filterStory92Cases('all', this)">전체 보기 (4)</button>
+        <button class="btn-page-tab" onclick="filterStory92Cases('desk', this)">오피스 데스크</button>
+        <button class="btn-page-tab" onclick="filterStory92Cases('commute', this)">출퇴근 · 이동</button>
+        <button class="btn-page-tab" onclick="filterStory92Cases('meeting', this)">외근 · 미팅</button>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;">
+        <div style="background:var(--bg-surface); border:1px solid var(--color-border); border-radius:var(--radius-lg); padding:30px; box-shadow:var(--shadow-sm);">
+          <div style="font-family:var(--font-maruburi); font-weight:700; font-size:16px; margin-bottom:14px; color:var(--color-forest);">
+            마우스로 슬라이더를 좌우로 드래그하세요
+          </div>
+          <div class="story92-ba-wrap" id="st92-ba-slider">
+            <div class="story92-ba-layer before">
+              <div>
+                <div style="font-size:12.5px; font-weight:900; margin-bottom:4px;">[BEFORE]</div>
+                [📸 비주얼 : 굽은 등 &amp; 솟아오른 승모근 통증]
+              </div>
+            </div>
+            <div class="story92-ba-layer after" id="st92-ba-after">
+              <div>
+                <div style="font-size:12.5px; font-weight:900; margin-bottom:4px;">[AFTER]</div>
+                [📸 비주얼 : 어깨선 32% 개선 단정한 실루엣]
+              </div>
+            </div>
+            <div class="story92-ba-handle" id="st92-ba-handle">⬌</div>
+          </div>
+          <div style="text-align:center; margin-top:14px; font-size:12px; color:var(--color-text-muted);">
+            * 300인 전문의 &amp; IT 앰배서더 실착 임상 테스트 결과 (만족도 98.6%)
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;" id="st92-cases-container">
+          <div style="background:var(--bg-card); border-radius:var(--radius-md); padding:20px; border:1px solid var(--color-border);">
+            <div style="font-size:11.5px; font-weight:800; color:var(--color-terracotta); margin-bottom:4px;">08:30 출근길</div>
+            <div style="font-family:var(--font-maruburi); font-size:16px; font-weight:700; color:var(--color-forest); margin-bottom:4px;">슬림한 오피스룩</div>
+            <div style="font-size:12px; color:var(--color-text-secondary);">얇은 셔츠 속에도 티 나지 않는 0.1mm 완벽 은폐</div>
+          </div>
+          <div style="background:var(--bg-card); border-radius:var(--radius-md); padding:20px; border:1px solid var(--color-border);">
+            <div style="font-size:11.5px; font-weight:800; color:var(--color-terracotta); margin-bottom:4px;">14:00 집중 업무</div>
+            <div style="font-family:var(--font-maruburi); font-size:16px; font-weight:700; color:var(--color-forest); margin-bottom:4px;">무의식 거북목 지탱</div>
+            <div style="font-size:12px; color:var(--color-text-secondary);">모니터 앞 쏟아지는 목과 어깨를 탄성으로 서포트</div>
+          </div>
+          <div style="background:var(--bg-card); border-radius:var(--radius-md); padding:20px; border:1px solid var(--color-border);">
+            <div style="font-size:11.5px; font-weight:800; color:var(--color-terracotta); margin-bottom:4px;">17:00 외근 미팅</div>
+            <div style="font-family:var(--font-maruburi); font-size:16px; font-weight:700; color:var(--color-forest); margin-bottom:4px;">당당한 프로 핏</div>
+            <div style="font-size:12px; color:var(--color-text-secondary);">단정하게 펴진 어깨선으로 당당한 실루엣 연출</div>
+          </div>
+          <div style="background:var(--bg-card); border-radius:var(--radius-md); padding:20px; border:1px solid var(--color-border);">
+            <div style="font-size:11.5px; font-weight:800; color:var(--color-terracotta); margin-bottom:4px;">19:30 가벼운 퇴근</div>
+            <div style="font-family:var(--font-maruburi); font-size:16px; font-weight:700; color:var(--color-forest); margin-bottom:4px;">가벼운 승모근</div>
+            <div style="font-size:12px; color:var(--color-text-secondary);">퇴근길에도 뭉침 없이 깃털처럼 가벼운 어깨</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEC-07: Collection Showcase (No Buy Buttons, Pure Image & Specs) -->
+    <section id="sec-st92-collection" style="padding:40px 0 60px;">
+      <div style="text-align:center; max-width:760px; margin:0 auto 40px;">
+        <span class="section-tag" style="background:#e6f4ea; color:var(--color-sage);">COLLECTION SHOWCASE</span>
+        <h2 class="story-section-title" style="font-family:var(--font-maruburi); font-size:32px; margin-bottom:12px;">수치로 증명하는 스밈 15종 전 라인업</h2>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:20px; background:var(--color-forest); color:#fff; border-radius:var(--radius-lg); padding:36px 24px; margin-bottom:40px; text-align:center;">
+        <div>
+          <div style="font-size:34px; font-weight:900; color:var(--color-terracotta);">38g</div>
+          <div style="font-size:13px; color:#e2dbca; margin-top:4px;">깃털 초경량 설계</div>
+        </div>
+        <div>
+          <div style="font-size:34px; font-weight:900; color:#fff;">99.8%</div>
+          <div style="font-size:13px; color:#e2dbca; margin-top:4px;">무봉제 의류 은폐율</div>
+        </div>
+        <div>
+          <div style="font-size:34px; font-weight:900; color:#fff;">300+</div>
+          <div style="font-size:13px; color:#e2dbca; margin-top:4px;">전문의·앰배서더 검증</div>
+        </div>
+        <div>
+          <div style="font-size:34px; font-weight:900; color:var(--color-sage);">100%</div>
+          <div style="font-size:13px; color:#e2dbca; margin-top:4px;">30일 0원 안심 무료 시착</div>
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:center; gap:10px; margin-bottom:30px;">
+        <button class="btn-page-tab active" onclick="switchStory92Category('signature', this)">시그니처 코어웨어 (4)</button>
+        <button class="btn-page-tab" onclick="switchStory92Category('care', this)">전문 집중케어 (4)</button>
+        <button class="btn-page-tab" onclick="switchStory92Category('sensor', this)">스마트 센서테크 (4)</button>
+        <button class="btn-page-tab" onclick="switchStory92Category('acc', this)">직업 맞춤ACC (3)</button>
+      </div>
+
+      <!-- Pure Product Showcase Grid without Buy Buttons -->
+      <div class="story92-product-grid" id="st92-product-container">
+        <!-- 01 -->
+        <div class="story92-prod-card">
+          <div class="story92-prod-ph">
+            <div class="story92-ph-title" style="font-size:13px;">[대표 01 제품 컷]</div>
+            <div>0.1mm 심리스 넥&amp;숄더 밴드 렌더링</div>
+          </div>
+          <div style="padding:20px;">
+            <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px;">
+              <span class="section-tag" style="font-size:10.5px; padding:2px 6px;">대표작 01</span>
+              <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">0.1mm 무봉제</span>
+              <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">38g 초경량</span>
+            </div>
+            <div style="font-family:var(--font-maruburi); font-size:16px; font-weight:700; color:var(--color-forest); margin-bottom:6px;">0.1mm 심리스 넥&amp;숄더 밴드</div>
+            <div style="font-size:12.5px; color:var(--color-text-secondary); line-height:1.6;">Naked Seamless 0.1mm 무봉제 본딩, 전면 자석 버클로 완벽 밀착 및 말린 어깨 정렬</div>
+          </div>
+        </div>
+
+        <!-- 02 -->
+        <div class="story92-prod-card">
+          <div class="story92-prod-ph">
+            <div class="story92-ph-title" style="font-size:13px;">[대표 02 제품 컷]</div>
+            <div>3D 에어로 메쉬 척추 조끼 렌더링</div>
+          </div>
+          <div style="padding:20px;">
+            <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px;">
+              <span class="section-tag" style="font-size:10.5px; padding:2px 6px;">대표작 02</span>
+              <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">38g 쿨링메쉬</span>
+              <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">4중 텐션</span>
+            </div>
+            <div style="font-family:var(--font-maruburi); font-size:16px; font-weight:700; color:var(--color-forest); margin-bottom:6px;">3D 에어로 메쉬 척추 조끼</div>
+            <div style="font-size:12.5px; color:var(--color-text-secondary); line-height:1.6;">Airy Weightless 쿨링 메쉬, 척추 기립근 4중 탄성 프레임으로 하루 종일 쾌적한 지지력</div>
+          </div>
+        </div>
+
+        <!-- 03 -->
+        <div class="story92-prod-card">
+          <div class="story92-prod-ph">
+            <div class="story92-ph-title" style="font-size:13px;">[대표 03 제품 컷]</div>
+            <div>골반 수평 유지 에어셀 벨트 렌더링</div>
+          </div>
+          <div style="padding:20px;">
+            <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px;">
+              <span class="section-tag" style="font-size:10.5px; padding:2px 6px;">대표작 03</span>
+              <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">에어셀 패드</span>
+              <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">골반 18.2° 교정</span>
+            </div>
+            <div style="font-family:var(--font-maruburi); font-size:16px; font-weight:700; color:var(--color-forest); margin-bottom:6px;">골반 수평 유지 에어셀 벨트</div>
+            <div style="font-size:12.5px; color:var(--color-text-secondary); line-height:1.6;">Dynamic Restoring 공기 주입식 에어셀 패드로 다리 꼬기 습관을 물리적으로 부드럽게 차단</div>
+          </div>
+        </div>
+
+        <!-- 04 -->
+        <div class="story92-prod-card">
+          <div class="story92-prod-ph">
+            <div class="story92-ph-title" style="font-size:13px;">[코어웨어 제품 컷]</div>
+            <div>0.1mm 럼버 서포트 언더웨어 컷</div>
+          </div>
+          <div style="padding:20px;">
+            <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px;">
+              <span class="section-tag" style="font-size:10.5px; padding:2px 6px;">코어웨어</span>
+              <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">요추 4~5번 지지</span>
+              <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">슬랙스핏</span>
+            </div>
+            <div style="font-family:var(--font-maruburi); font-size:16px; font-weight:700; color:var(--color-forest); margin-bottom:6px;">0.1mm 럼버 서포트 언더웨어</div>
+            <div style="font-size:12.5px; color:var(--color-text-secondary); line-height:1.6;">요추 4~5번 38g 초경량 밀착 지지, 슬랙스 핏을 흐트러뜨리지 않는 완벽한 은폐 디자인</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Story Footer Navigation Banner -->
+    <div style="background:var(--bg-card); padding:48px 32px; border-radius:var(--radius-lg); text-align:center; margin-top:40px; border:1px solid var(--color-border);">
+      <h3 style="font-family:var(--font-maruburi); font-size:24px; font-weight:700; color:var(--color-forest); margin-bottom:12px;">스밈의 4대 카테고리 28종 전체 컬렉션을 확인해보세요</h3>
+      <p style="font-size:14px; color:var(--color-text-secondary); margin-bottom:28px;">30일 무료 시착으로 0.1mm의 놀라운 착용감을 결제금액 0원에 직접 체험하실 수 있습니다.</p>
+      <div style="display:flex; justify-content:center; gap:14px; flex-wrap:wrap;">
+        <button class="btn-primary btn-accent" style="padding:14px 28px; font-size:15px;" onclick="switchPage('page-shop')">
+          28종 전 상품 카탈로그 보러 가기 ➔
+        </button>
+        <button class="btn-sm-ghost" style="padding:14px 28px; font-size:14px; border:1px solid var(--color-forest); border-radius:var(--radius-full); background:#fff;" onclick="switchPage('page-main')">
+          메인 3D 체험으로 돌아가기
+        </button>
+      </div>
+    </div>
+
+  </main>
+
+
+  <!-- ==========================================================================
+       [SEC-11: Global Footer]
+       ========================================================================== -->
+  <footer class="global-footer" style="background:var(--color-forest-dark); padding:60px 0 100px; color:#fff; font-size:13px; border-top:1px solid rgba(255,255,255,0.1);">
+    <div class="container">
+      <div style="display:grid; grid-template-columns:2fr 1fr 1fr 1.5fr; gap:40px; margin-bottom:40px;">
+        <div>
+          <div class="logo" style="color:#fff; margin-bottom:12px;">SEUMIM <span class="logo-badge">0.1mm</span></div>
+          <p style="color:#a5b5ac; line-height:1.7; font-size:12.5px;">
+            스밈(SEUMIM)은 0.1mm 무봉제 전도성 센서 섬유 기술을 바탕으로 일상 속에 바른 균형을 설계하는 하이엔드 테크 웰니스 플랫폼입니다.
+          </p>
+        </div>
+        <div>
+          <div style="font-size:14px; font-weight:800; color:#fff; margin-bottom:14px;">제품 라인업 (28)</div>
+          <ul style="display:flex; flex-direction:column; gap:8px; color:#a5b5ac; font-size:12.5px;">
+            <li><a href="javascript:void(0)" onclick="switchPage('page-shop')">시그니처 코어웨어 (7)</a></li>
+            <li><a href="javascript:void(0)" onclick="switchPage('page-shop')">전문 집중 케어 (7)</a></li>
+            <li><a href="javascript:void(0)" onclick="switchPage('page-shop')">스마트 센서 테크 (7)</a></li>
+            <li><a href="javascript:void(0)" onclick="switchPage('page-shop')">직업 맞춤 교정 ACC (7)</a></li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-size:14px; font-weight:800; color:#fff; margin-bottom:14px;">고객 신뢰 센터</div>
+          <ul style="display:flex; flex-direction:column; gap:8px; color:#a5b5ac; font-size:12.5px;">
+            <li><a href="javascript:void(0)" onclick="openCheckoutModal('0.1mm 넥&숄더 밴드', 'M')">30일 무료 시착 정책</a></li>
+            <li><a href="javascript:void(0)" onclick="openFitModal()">1초 스마트 사이즈 가이드</a></li>
+            <li><a href="javascript:void(0)" onclick="openCenterModal()">전국 12개 웰니스 센터</a></li>
+            <li><a href="javascript:void(0)" onclick="switchPage('page-story')">브랜드 스토리 (Our Story)</a></li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-size:14px; font-weight:800; color:#fff; margin-bottom:14px;">CS 고객센터</div>
+          <p style="color:#fff; font-size:18px; font-weight:800; margin-bottom:6px;">1588-9240</p>
+          <p style="color:#a5b5ac; font-size:12px; line-height:1.6;">
+            평일 09:30 ~ 18:30 (점심 12:30 ~ 13:30)<br>
+            주말 및 공휴일 1:1 카카오톡 상담 운영
+          </p>
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid rgba(255,255,255,0.1); padding-top:24px; color:#7c8a82; font-size:12px;">
+        <div>© 2026 SEUMIM Inc. All rights reserved. 30일 안심 무료 맞교환/반품 100% 보장.</div>
+        <div style="display:flex; gap:16px;">
+          <a href="#">이용약관</a>
+          <a href="#">개인정보처리방침</a>
+          <a href="#">사업자정보확인</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ==========================================================================
+       [SEC-12: Sticky Bottom Trial Bar]
+       ========================================================================== -->
+  <div class="sticky-trial-bar">
+    <div class="sticky-inner">
+      <div class="sticky-info">
+        <span class="sticky-pill">결제금액 0원</span>
+        <span><strong>SEUMIM 30일 무료 시착</strong> | 입어보고 결정하세요 (100% 무료 반품)</span>
+      </div>
+      <button class="btn-primary btn-accent" onclick="openCheckoutModal('0.1mm 심리스 넥&숄더 밴드', 'M (95~100)')">
+        지금 0원에 시착하기 ➔
+      </button>
+    </div>
+  </div>
+
+
+  <!-- ==========================================================================
+       [Modals: 찜, 장바구니, 사이즈, 퀵뷰, 체크아웃]
+       ========================================================================== -->
+  
+  <!-- 1. 찜 목록 모달 -->
+  <div id="modal-wishlist" class="modal-overlay" onclick="closeModalOnOutside(event, 'modal-wishlist')">
+    <div class="modal-card">
+      <span class="modal-close" onclick="closeModal('modal-wishlist')">✕</span>
+      <h3 style="font-family:var(--font-serif); font-size:22px; font-weight:800; color:var(--color-forest); margin-bottom:8px;">
+        나의 찜한 상품 목록 (Wishlist)
+      </h3>
+      <p style="font-size:13px; color:var(--color-text-secondary); margin-bottom:20px;">
+        체형에 관심 있는 상품을 찜해두고 언제든 30일 0원 무료 시착으로 신청하세요.
+      </p>
+      <div id="wishlist-items-container" style="display:flex; flex-direction:column; gap:12px; margin-bottom:24px;"></div>
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <button class="btn-sm-ghost" style="padding:8px 16px; border:1px solid var(--color-border); border-radius:var(--radius-full);" onclick="closeModal('modal-wishlist')">계속 둘러보기</button>
+        <button class="btn-primary btn-accent" onclick="closeModal('modal-wishlist'); switchPage('page-shop');">
+          전체 상품 더 찜하러 가기 ➔
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. 시착 장바구니 모달 -->
+  <div id="modal-cart" class="modal-overlay" onclick="closeModalOnOutside(event, 'modal-cart')">
+    <div class="modal-card">
+      <span class="modal-close" onclick="closeModal('modal-cart')">✕</span>
+      <h3 style="font-family:var(--font-serif); font-size:22px; font-weight:800; color:var(--color-forest); margin-bottom:8px;">
+        30일 무료 시착 장바구니 (Cart)
+      </h3>
+      <p style="font-size:13px; color:var(--color-text-secondary); margin-bottom:20px;">
+        담으신 상품은 <strong>결제금액 0원</strong>으로 30일 동안 무료 배송 및 착용해 보실 수 있습니다.
+      </p>
+      <div id="cart-items-container" style="display:flex; flex-direction:column; gap:12px; margin-bottom:20px;"></div>
+      <div style="background:var(--bg-card); padding:16px; border-radius:var(--radius-md); margin-bottom:20px; display:flex; justify-content:space-between; align-items:center;">
+        <div>
+          <div style="font-size:12px; color:var(--color-text-muted);">총 시착 신청 상품 (1개)</div>
+          <div style="font-size:14px; font-weight:800; color:var(--color-forest);">0원 안심 무료 시착 패키지</div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:22px; font-weight:900; color:var(--color-terracotta);">결제 예정 0원</div>
+          <div style="font-size:11px; color:var(--color-sage); font-weight:700;">왕복 배송비 100% 무료</div>
+        </div>
+      </div>
+      <button class="btn-primary btn-accent" style="width:100%; justify-content:center; padding:14px; font-size:15px;" onclick="closeModal('modal-cart'); openCheckoutModal('0.1mm 심리스 넥&숄더 밴드', 'M (95~100)');">
+        지금 0원에 시착 접수하기 ➔
+      </button>
+    </div>
+  </div>
+
+  <!-- 3. 스마트 사이즈 가이드 모달 -->
+  <div id="modal-fit" class="modal-overlay" onclick="closeModalOnOutside(event, 'modal-fit')">
+    <div class="modal-card">
+      <span class="modal-close" onclick="closeModal('modal-fit')">✕</span>
+      <h3 style="font-family:var(--font-serif); font-size:22px; font-weight:800; color:var(--color-forest); margin-bottom:8px;">
+        스마트 체형 맞춤 사이즈 가이드
+      </h3>
+      <p style="font-size:13px; color:var(--color-text-secondary); margin-bottom:20px;">
+        스밈은 0.1mm 정밀 패턴으로 제작되어 일반 의류 규격(95/100)과 100% 호환됩니다.
+      </p>
+      <table style="width:100%; font-size:12.5px; border-collapse:collapse; margin-bottom:20px; text-align:center;">
+        <thead>
+          <tr style="background:var(--bg-card); border-bottom:1px solid var(--color-border);">
+            <th style="padding:8px;">사이즈</th>
+            <th style="padding:8px;">일반 규격</th>
+            <th style="padding:8px;">가슴둘레 (cm)</th>
+            <th style="padding:8px;">허리치수 (inch)</th>
+            <th style="padding:8px;">권장 체형</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--color-border);">
+            <td style="padding:8px; font-weight:700;">S</td>
+            <td>90~95</td>
+            <td>88~94</td>
+            <td>26~29</td>
+            <td>슬림 체형 / 여성</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--color-border); background:var(--bg-accent-light); font-weight:700;">
+            <td style="padding:8px; color:var(--color-terracotta);">M (추천)</td>
+            <td>95~100</td>
+            <td>95~102</td>
+            <td>30~33</td>
+            <td>표준 성인 남녀</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--color-border);">
+            <td style="padding:8px; font-weight:700;">L</td>
+            <td>100~105</td>
+            <td>103~110</td>
+            <td>34~36</td>
+            <td>체격 발달형</td>
+          </tr>
+          <tr>
+            <td style="padding:8px; font-weight:700;">XL</td>
+            <td>105~110</td>
+            <td>111~118</td>
+            <td>37~40</td>
+            <td>빅사이즈</td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="background:var(--bg-card); padding:14px; border-radius:var(--radius-sm); font-size:12px; margin-bottom:20px;">
+        💡 <strong>안심 맞교환 보장:</strong> 만약 착용 후 사이즈가 맞지 않더라도 30일간 100% 무료로 다른 사이즈로 맞교환해 드립니다.
+      </div>
+      <button class="btn-primary" style="width:100%; justify-content:center;" onclick="closeModal('modal-fit'); openCheckoutModal('0.1mm 넥&숄더 밴드', 'M (95~100)');">
+        M 사이즈로 30일 무료 시착 신청 (0원)
+      </button>
+    </div>
+  </div>
+
+  <!-- 4. 상품 퀵뷰 모달 -->
+  <div id="modal-quickview" class="modal-overlay" onclick="closeModalOnOutside(event, 'modal-quickview')">
+    <div class="modal-card">
+      <span class="modal-close" onclick="closeModal('modal-quickview')">✕</span>
+      <div id="quickview-content"></div>
+    </div>
+  </div>
+
+  <!-- 5. Bottom Sheet 1초 퀵 체크아웃 모달 -->
+  <div id="modal-checkout" class="bottomsheet-overlay" onclick="closeModalOnOutside(event, 'modal-checkout')">
+    <div class="bottomsheet-card">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+        <h3 style="font-family:var(--font-serif); font-size:20px; font-weight:800; color:var(--color-forest);">
+          SEUMIM 30일 무료 시착 접수
+        </h3>
+        <span class="modal-close" style="position:static;" onclick="closeModal('modal-checkout')">✕</span>
+      </div>
+      <div style="background:var(--bg-card); padding:12px 16px; border-radius:var(--radius-sm); margin-bottom:20px; display:flex; justify-content:space-between; align-items:center;">
+        <div>
+          <div style="font-weight:800; font-size:14px;" id="checkout-prod-name">0.1mm 심리스 넥&amp;숄더 밴드</div>
+          <div style="font-size:12px; color:var(--color-text-secondary);" id="checkout-prod-size">선택 사이즈: M (95~100)</div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:18px; font-weight:800; color:var(--color-terracotta);">0원</div>
+          <div style="font-size:11px; color:var(--color-sage); font-weight:800;">30일 무료 체험</div>
+        </div>
+      </div>
+      <form onsubmit="submitTrial(event)">
+        <div class="form-group">
+          <label class="form-label">받으실 주소 (배송지)</label>
+          <input type="text" class="form-input" placeholder="도로명 주소 및 상세주소 입력" value="서울시 강남구 테헤란로 152 강남파이낸스센터 12층" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">휴대폰 번호 (운송장 알림톡 발송)</label>
+          <input type="tel" class="form-input" placeholder="010-0000-0000" value="010-9876-5432" required>
+        </div>
+        <div style="font-size:12px; color:var(--color-text-muted); margin-bottom:20px; line-height:1.5;">
+          • 오늘 오후 4시 이전 접수 시 당일 안심 출고됩니다.<br>
+          • 30일 체험 후 불만족 시 동봉된 0원 반품 스티커로 무료 수거됩니다.
+        </div>
+        <button type="submit" class="btn-primary btn-accent" style="width:100%; justify-content:center; padding:14px; font-size:15px;">
+          결제금액 0원 무료 시착 접수 완료 ➔
+        </button>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- ==========================================================================
+       [JavaScript Master Logic]
+       ========================================================================== -->
+  <script>
+    const PRODUCTS_28 = [
+      { id: 1, cat: 'cat1', catName: '시그니처 코어웨어', name: '[대표 1] 0.1mm 심리스 넥&숄더 밴드', priceSale: '59,000원', priceOrig: '89,000원', tag: '#거북목 #15도견인', icon: '🎽', spec: '말린어깨 자동 견인 38g 무봉제', isTop: true, isWished: true },
+      { id: 2, cat: 'cat1', catName: '시그니처 코어웨어', name: '[대표 2] 3D 에어로 메쉬 척추 조끼', priceSale: '89,000원', priceOrig: '129,000원', tag: '#숨은지퍼 #12시간쿨링', icon: '🦺', spec: '출근복 속 은폐 탄성 프레임', isTop: true, isWished: false },
+      { id: 3, cat: 'cat1', catName: '시그니처 코어웨어', name: '[대표 3] 골반 수평 유지 에어셀 벨트', priceSale: '69,000원', priceOrig: '99,000원', tag: '#다리꼬기차단 #체압분산', icon: '🥋', spec: '공기 팽창 밸런스 패드', isTop: true, isWished: true },
+      { id: 4, cat: 'cat1', catName: '시그니처 코어웨어', name: '올인원 심리스 풀바디 밸런스 슈트', priceSale: '139,000원', priceOrig: '189,000원', tag: '#전신정렬 #일체형', icon: '🦸', spec: '목부터 골반까지 3중 일체형 케어', isWished: false },
+      { id: 5, cat: 'cat1', catName: '시그니처 코어웨어', name: '흉추 확장 라이트 하네스', priceSale: '54,000원', priceOrig: '79,000원', tag: '#굽은등 #X크로스', icon: '🎗️', spec: '가슴 열림 텐션 밴드', isWished: false },
+      { id: 6, cat: 'cat1', catName: '시그니처 코어웨어', name: '요추 지지 통기성 코르셋 웨어', priceSale: '75,000원', priceOrig: '109,000원', tag: '#허리뻐근함 #탄성지지대', icon: '🩱', spec: '4개 탄성 지지대 초슬림 웨어', isWished: false },
+      { id: 7, cat: 'cat1', catName: '시그니처 코어웨어', name: '경추 릴렉스 심리스 카라 넥웨어', priceSale: '47,000원', priceOrig: '69,000원', tag: '#셔츠카라속 #미세견인', icon: '👔', spec: '비즈니스 셔츠 카라 속 은폐형', isWished: false },
+
+      { id: 8, cat: 'cat2', catName: '전문 집중 케어', name: '수근관 터널 손목 중립 서포터', priceSale: '31,000원', priceOrig: '45,000원', tag: '#손목각도0도 #타건피로', icon: '🧤', spec: '키보드/마우스 작업 각도 고정', isWished: false },
+      { id: 9, cat: 'cat2', catName: '전문 집중 케어', name: '3D 에르고노믹 럼버 허리 쿠션', priceSale: '45,000원', priceOrig: '65,000원', tag: '#요추전만45도 #의자밀착', icon: '🛋️', spec: '등받이 밀착 메모리폼', isWished: false },
+      { id: 10, cat: 'cat2', catName: '전문 집중 케어', name: '림프 순환 케어 카프 슬리브', priceSale: '27,000원', priceOrig: '39,000원', tag: '#다리부종 #단계별압박', icon: '🧦', spec: '무봉제 종아리 혈액순환 케어', isWished: false },
+      { id: 11, cat: 'cat2', catName: '전문 집중 케어', name: 'C-Spine 경추 견인 메모리폼 베개', priceSale: '59,000원', priceOrig: '85,000원', tag: '#수면중C자복원 #목결림', icon: '🛏️', spec: '수면 중 경추 곡선 자동 복원', isWished: false },
+      { id: 12, cat: 'cat2', catName: '전문 집중 케어', name: '견관절 회전근개 안정 서포트 밴드', priceSale: '38,000원', priceOrig: '55,000원', tag: '#어깨들림방지 #회전안정', icon: '🧣', spec: '팔을 많이 쓰는 직군용 스트랩', isWished: false },
+      { id: 13, cat: 'cat2', catName: '전문 집중 케어', name: '족저근막 아치 릴리프 슬리브', priceSale: '24,000원', priceOrig: '35,000원', tag: '#발바닥아치 #체압분산', icon: '🦶', spec: '실리콘 돔형 아치 서포트', isWished: false },
+      { id: 14, cat: 'cat2', catName: '전문 집중 케어', name: '무릎 관절 감압 완충 프로텍터', priceSale: '34,000원', priceOrig: '49,000원', tag: '#슬개골완충 #계단보행', icon: '🦵', spec: '보행 시 슬개골 압력 30% 감압', isWished: false },
+
+      { id: 15, cat: 'cat3', catName: '스마트 센서 테크', name: '0.05도 초정밀 모션 바이오 트래커', priceSale: '99,000원', priceOrig: '149,000원', tag: '#블루투스 #0.05도감지', icon: '📡', spec: '척추 각도 실시간 측정 센서', isWished: false },
+      { id: 16, cat: 'cat3', catName: '스마트 센서 테크', name: '무소음 AI 햅틱 넛지 클립', priceSale: '59,000원', priceOrig: '89,000원', tag: '#무소음진동 #옷깃부착', icon: '📎', spec: '구부정할 때 조용히 진동 알림', isWished: false },
+      { id: 17, cat: 'cat3', catName: '스마트 센서 테크', name: '데스크탑 USB 실시간 자세 HUD', priceSale: '79,000원', priceOrig: '119,000원', tag: '#모니터부착 #LED점수', icon: '🖥️', spec: '모니터 상단 자세 점수 라이트바', isWished: false },
+      { id: 18, cat: 'cat3', catName: '스마트 센서 테크', name: '3D 스마트 체압 매트릭스 방석', priceSale: '109,000원', priceOrig: '159,000원', tag: '#좌우체압감지 #방석형', icon: '💺', spec: '엉덩이 한쪽 쏠림 실시간 알림', isWished: false },
+      { id: 19, cat: 'cat3', catName: '스마트 센서 테크', name: '스마트 횡격막 호흡 유도 밴드', priceSale: '69,000원', priceOrig: '99,000원', tag: '#복식호흡 #흉곽압박감지', icon: '🫁', spec: '스트레스성 흉식호흡 완화', isWished: false },
+      { id: 20, cat: 'cat3', catName: '스마트 센서 테크', name: '생체 데이터 스마트 링 연동 모듈', priceSale: '129,000원', priceOrig: '179,000원', tag: '#스마트링 #수면자세', icon: '💍', spec: '수면 중 자세 뒤틀림 기록', isWished: false },
+      { id: 21, cat: 'cat3', catName: '스마트 센서 테크', name: 'AI 실시간 자세 워치 페이스 앱', priceSale: '0원 (무료)', priceOrig: '29,000원', tag: '#애플워치 #갤럭시워치', icon: '⌚', spec: '워치 화면 1초 퀵-글랜스 점수', isWished: false },
+
+      { id: 22, cat: 'cat4', catName: '직업 맞춤 교정 ACC', name: '출장용 에어 럼버 팽창 앵커', priceSale: '29,000원', priceOrig: '42,000원', tag: '#KTX비행기좌석 #1초공기', icon: '✈️', spec: '이동 좌석 허리 빈 공간 지지', isWished: false },
+      { id: 23, cat: 'cat4', catName: '직업 맞춤 교정 ACC', name: '타블렛 드로잉 암레스트 서포터', priceSale: '36,000원', priceOrig: '52,000원', tag: '#웹툰작가 #팔꿈치지지', icon: '🎨', spec: '펜 타블렛 작업 시 팔꿈치 부양', isWished: false },
+      { id: 24, cat: 'cat4', catName: '직업 맞춤 교정 ACC', name: '운전용 페달링 힐 안정화 앵커', priceSale: '26,000원', priceOrig: '38,000원', tag: '#발목꺾임방지 #운전기사', icon: '🚗', spec: '엑셀 조작 시 발뒤꿈치 지지', isWished: false },
+      { id: 25, cat: 'cat4', catName: '직업 맞춤 교정 ACC', name: '기립 작업 체압 분산 힐 컵', priceSale: '19,000원', priceOrig: '29,000원', tag: '#바리스타셰프 #뒤꿈치충격', icon: '👞', spec: '서서 일할 때 충격 40% 흡수', isWished: false },
+      { id: 26, cat: 'cat4', catName: '직업 맞춤 교정 ACC', name: '관절 중립 락(Lock) 텐션 스트랩', priceSale: '23,000원', priceOrig: '33,000원', tag: '#미용사공예가 #손가락보호', icon: '✂️', spec: '반복 작업 시 관절 꺾임 방지', isWished: false },
+      { id: 27, cat: 'cat4', catName: '직업 맞춤 교정 ACC', name: '현장 기립 작업 무릎 완충 패드', priceSale: '25,000원', priceOrig: '37,000원', tag: '#감리소장 #무릎보호', icon: '👷', spec: '쪼그려 앉을 때 무릎 관절 보호', isWished: false },
+      { id: 28, cat: 'cat4', catName: '직업 맞춤 교정 ACC', name: '에르고 랩탑 넥-업 거치형 파우치', priceSale: '33,000원', priceOrig: '48,000원', tag: '#노마드 #15도시야각', icon: '💻', spec: '노트북 파우치 겸 15도 거치대', isWished: false }
+    ];
+
+    let cartList = [
+      { id: 1, name: '[대표 1] 0.1mm 심리스 넥&숄더 밴드', size: 'M (95~100)', price: '0원 (시착)' }
+    ];
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderProducts('shop-products-grid', PRODUCTS_28);
+      updateBadges();
+    });
+
+    function renderProducts(containerId, list) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      container.innerHTML = list.map(p => `
+        <div class="product-card">
+          <button class="btn-card-wish ${p.isWished ? 'active' : ''}" onclick="toggleWish(${p.id}, this)" title="찜하기">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="${p.isWished ? '#ef4444' : 'none'}" stroke="${p.isWished ? '#ef4444' : 'currentColor'}" stroke-width="2">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg>
+          </button>
+          <div class="product-img-wrap">
+            <span style="font-size:48px;">${p.icon}</span>
+            ${p.isTop ? '<span class="product-badge-rec">대표 3종</span>' : '<span class="product-badge-rec" style="background:var(--color-forest);">권장: M</span>'}
+          </div>
+          <div class="product-body">
+            <div>
+              <div class="product-tag">${p.tag}</div>
+              <h4 class="product-title">${p.name}</h4>
+              <p class="product-spec">${p.spec}</p>
+            </div>
+            <div class="product-price-box">
+              <span class="p-sale">${p.priceSale}</span>
+              <span class="p-orig">${p.priceOrig}</span>
+            </div>
+            <div class="product-card-actions">
+              <button class="btn-card-quick" onclick="openQuickView(${p.id})">🔍 퀵뷰</button>
+              <button class="btn-card-trial" onclick="addToCartAndCheckout('${p.name}', 'M (95~100)')">0원 시착</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function toggleWish(id, btn) {
+      const p = PRODUCTS_28.find(item => item.id === id);
+      if (p) {
+        p.isWished = !p.isWished;
+        const svg = btn.querySelector('svg');
+        if (p.isWished) {
+          btn.classList.add('active');
+          if (svg) {
+            svg.setAttribute('fill', '#ef4444');
+            svg.setAttribute('stroke', '#ef4444');
+          }
+        } else {
+          btn.classList.remove('active');
+          if (svg) {
+            svg.setAttribute('fill', 'none');
+            svg.setAttribute('stroke', 'currentColor');
+          }
+        }
+        updateBadges();
+      }
+    }
+
+    function updateBadges() {
+      const wishCount = PRODUCTS_28.filter(p => p.isWished).length;
+      document.getElementById('gnb-wish-count').innerText = wishCount;
+      document.getElementById('gnb-cart-count').innerText = cartList.length;
+    }
+
+    function openWishlistModal() {
+      const wished = PRODUCTS_28.filter(p => p.isWished);
+      const container = document.getElementById('wishlist-items-container');
+      if (wished.length === 0) {
+        container.innerHTML = `<div style="text-align:center; padding:30px 0; color:var(--color-text-muted);">찜한 상품이 없습니다. 마음에 드는 상품을 찜해보세요!</div>`;
+      } else {
+        container.innerHTML = wished.map(p => `
+          <div style="background:var(--bg-card); padding:12px 16px; border-radius:var(--radius-sm); display:flex; justify-content:space-between; align-items:center;">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <span style="font-size:24px;">${p.icon}</span>
+              <div>
+                <div style="font-weight:800; font-size:13.5px; color:var(--color-forest);">${p.name}</div>
+                <div style="font-size:11.5px; color:var(--color-text-muted);">${p.priceSale} | 권장: M</div>
+              </div>
+            </div>
+            <button class="btn-primary btn-accent" style="padding:6px 12px; font-size:12px;" onclick="closeModal('modal-wishlist'); openCheckoutModal('${p.name}', 'M (95~100)');">
+              0원 시착
+            </button>
+          </div>
+        `).join('');
+      }
+      document.getElementById('modal-wishlist').classList.add('active');
+    }
+
+    function openCartModal() {
+      const container = document.getElementById('cart-items-container');
+      container.innerHTML = cartList.map(item => `
+        <div style="background:var(--bg-card); padding:12px 16px; border-radius:var(--radius-sm); display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <div style="font-weight:800; font-size:14px; color:var(--color-forest);">${item.name}</div>
+            <div style="font-size:12px; color:var(--color-text-secondary);">사이즈: ${item.size}</div>
+          </div>
+          <div style="text-align:right;">
+            <div style="font-size:16px; font-weight:800; color:var(--color-terracotta);">${item.price}</div>
+            <div style="font-size:11px; color:var(--color-sage);">30일 무료 체험</div>
+          </div>
+        </div>
+      `).join('');
+      document.getElementById('modal-cart').classList.add('active');
+    }
+
+    function addToCartAndCheckout(prodName, prodSize) {
+      if (!cartList.some(item => item.name === prodName)) {
+        cartList.push({ id: Date.now(), name: prodName, size: prodSize, price: '0원 (시착)' });
+        updateBadges();
+      }
+      openCheckoutModal(prodName, prodSize);
+    }
+
+    function switchPage(pageId) {
+      document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.btn-page-tab').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.gnb-link').forEach(l => l.classList.remove('active'));
+      
+      const targetPage = document.getElementById(pageId);
+      if (targetPage) targetPage.classList.add('active');
+
+      const tabIdx = pageId === 'page-main' ? 0 : pageId === 'page-shop' ? 1 : 2;
+      document.querySelectorAll('.btn-page-tab')[tabIdx].classList.add('active');
+      
+      if (pageId === 'page-main') {
+        document.querySelectorAll('.gnb-link')[0].classList.add('active');
+      } else if (pageId === 'page-shop') {
+        document.querySelectorAll('.gnb-link')[2].classList.add('active');
+      } else if (pageId === 'page-story') {
+        document.querySelectorAll('.gnb-link')[4].classList.add('active');
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function filterShopPage(cat, btn) {
+      document.querySelectorAll('#page-shop .showcase-tabs .tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filtered = cat === 'all' ? PRODUCTS_28 : PRODUCTS_28.filter(p => p.cat === cat);
+      renderProducts('shop-products-grid', filtered);
+    }
+
+    function updateFitFinder(height, weight) {
+      if (height) document.getElementById('val-height').innerText = height + ' cm';
+      if (weight) document.getElementById('val-weight').innerText = weight + ' kg';
+      calculateSize();
+    }
+
+    function calculateSize() {
+      const h = parseInt(document.getElementById('val-height').innerText);
+      const w = parseInt(document.getElementById('val-weight').innerText);
+      let size = 'M (95~100)';
+      if (h < 165 && w < 55) size = 'S (90~95)';
+      else if (h > 182 || w > 82) size = 'L (100~105)';
+      else if (h > 188 || w > 95) size = 'XL (105~110)';
+      document.getElementById('fit-calc-size').innerText = size;
+    }
+
+    function openFitModal() { document.getElementById('modal-fit').classList.add('active'); }
+    function openCenterModal() { alert('전국 12개 센터 지점 검색 및 1회 무료 체험 예약 캘린더 모달을 호출합니다.'); }
+    function closeModal(id) { document.getElementById(id).classList.remove('active'); }
+    function closeModalOnOutside(e, id) { if (e.target.id === id) closeModal(id); }
+
+    function openQuickView(id) {
+      const p = PRODUCTS_28.find(item => item.id === id) || PRODUCTS_28[0];
+      const content = document.getElementById('quickview-content');
+      content.innerHTML = `
+        <div style="text-align:center; padding:10px 0 20px; border-bottom:1px solid var(--color-border); margin-bottom:20px;">
+          <div style="font-size:56px; margin-bottom:8px;">${p.icon}</div>
+          <span class="featured-badge">${p.tag}</span>
+          <h3 style="font-family:var(--font-serif); font-size:22px; font-weight:800; color:var(--color-forest);">${p.name}</h3>
+          <p style="font-size:13px; color:var(--color-text-secondary); margin-top:4px;">${p.spec}</p>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:16px;">
+          <span style="font-size:14px; color:var(--color-text-muted);">할인 판매가</span>
+          <div>
+            <span style="font-size:22px; font-weight:800; color:var(--color-forest);">${p.priceSale}</span>
+            <span style="font-size:13px; color:var(--color-text-muted); text-decoration:line-through; margin-left:6px;">${p.priceOrig}</span>
+          </div>
+        </div>
+        <div style="background:var(--bg-card); padding:14px; border-radius:var(--radius-sm); font-size:12.5px; margin-bottom:20px;">
+          • <strong>0.1mm 정밀 실측:</strong> M 사이즈 기준 가슴둘레 96~102cm 최적합<br>
+          • <strong>실착 만족도:</strong> 동일 체형 구매자 98.4%가 "정사이즈 편안함" 응답
+        </div>
+        <div style="display:flex; gap:8px;">
+          <button class="btn-card-wish ${p.isWished ? 'active' : ''}" style="position:static; width:44px; height:44px; flex-shrink:0;" onclick="toggleWish(${p.id}, this)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="${p.isWished ? '#ef4444' : 'none'}" stroke="${p.isWished ? '#ef4444' : 'currentColor'}" stroke-width="2">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg>
+          </button>
+          <button class="btn-primary btn-accent" style="flex:1; justify-content:center; padding:12px;" onclick="closeModal('modal-quickview'); addToCartAndCheckout('${p.name}', 'M (95~100)');">
+            30일 무료 시착 장바구니 담기 (0원)
+          </button>
+        </div>
+      `;
+      document.getElementById('modal-quickview').classList.add('active');
+    }
+
+    function openCheckoutModal(prodName, prodSize) {
+      document.getElementById('checkout-prod-name').innerText = prodName;
+      document.getElementById('checkout-prod-size').innerText = '선택 사이즈: ' + prodSize;
+      document.getElementById('modal-checkout').classList.add('active');
+    }
+
+    function submitTrial(e) {
+      e.preventDefault();
+      closeModal('modal-checkout');
+      alert('🎉 [시착 접수 완료] 결제금액 0원! 30일 무료 시착 키트가 당일 발송됩니다.\n동봉된 0원 반품 스티커로 언제든 무료 반품/맞교환이 가능합니다.');
+    }
+
+    function toggleFaq(el) { el.classList.toggle('open'); }
+    function scrollToSection(id) { document.getElementById(id).scrollIntoView({ behavior: 'smooth' }); }
+
+    /* ==========================================================================
+       [Brand Story Page 3 Interactive Functions]
+       ========================================================================== */
+    function scrollToStorySec(sectionId, btnEl) {
+      if (btnEl) {
+        document.querySelectorAll('.story-tab-btn').forEach(b => b.classList.remove('active'));
+        btnEl.classList.add('active');
+      }
+      const el = document.getElementById(sectionId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function update3DStage(stageNum, val) {
+      if (stageNum === 1) {
+        const txt = document.getElementById('stage-status-1');
+        if (txt) txt.innerText = val > 50 ? `3D 분해율: ${val}% (자석 버클 & 0.1mm 레이어 분리)` : `기본 착용 모드 (0.1mm 은폐 밀착)`;
+      } else if (stageNum === 2) {
+        const txt = document.getElementById('stage-status-2');
+        if (txt) txt.innerText = val > 50 ? `프레임 전개도: ${val}% (기립근 지렛대 탄성 2.4배 지지)` : `출근복 속 은폐 모드 (체온 -2.4℃ 쿨링)`;
+      } else if (stageNum === 3) {
+        const txt = document.getElementById('stage-status-3');
+        if (txt) txt.innerText = val > 50 ? `에어셀 팽창도: ${val}% (다리 꼬기 물리 차단 작동)` : `좌우 수평 균형 50 : 50 유지`;
+      }
+    }
+
+    function magnifyDemo(e, type) {
+      const mag = document.getElementById(`${type}-mag`);
+      if (!mag) return;
+      mag.style.display = 'block';
+      const rect = e.currentTarget.getBoundingClientRect();
+      const x = e.clientX - rect.left - 45;
+      const y = e.clientY - rect.top - 45;
+      mag.style.left = `${x}px`;
+      mag.style.top = `${y}px`;
+    }
+
+    // 스토리 페이지 우측 세로 퀵 네비게이터 자동 ScrollSpy (스크롤 실시간 연동)
+    window.addEventListener('scroll', () => {
+      const storyPage = document.getElementById('page-story');
+      if (!storyPage || !storyPage.classList.contains('active')) return;
+
+      const sections = [
+        'sec-st92-hero',
+        'sec-st92-origin',
+        'sec-st92-pillars',
+        'sec-st92-macro',
+        'sec-st92-blueprint',
+        'sec-st92-usecases',
+        'sec-st92-collection'
+      ];
+      
+      const tabButtons = document.querySelectorAll('.story-tab-btn');
+      if (!tabButtons.length) return;
+
+      let activeIndex = 0;
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+
+      // 페이지 최하단 도달 시 마지막 탭 활성화
+      if (scrollY + windowHeight >= documentHeight - 50) {
+        activeIndex = sections.length - 1;
+      } else {
+        sections.forEach((sId, idx) => {
+          const sec = document.getElementById(sId);
+          if (sec) {
+            const rect = sec.getBoundingClientRect();
+            // 섹션 상단이 뷰포트 상단 40% 이내로 들어왔을 때 해당 인덱스로 갱신
+            if (rect.top <= windowHeight * 0.45) {
+              activeIndex = idx;
+            }
+          }
+        });
+      }
+
+      tabButtons.forEach((tb, tIdx) => {
+        tb.classList.toggle('active', tIdx === activeIndex);
+      });
+    });
+  
+    /* ==========================================================================
+       [Story 92 Modular Interactive Logic]
+       ========================================================================== */
+    // 3D Tilt on Blueprint Cards
+    document.querySelectorAll('.story92-tilt').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * -8;
+        const rotateY = ((x - centerX) / centerX) * 8;
+        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+      });
+    });
+
+    // Before/After Slider for Story 92
+    const st92Slider = document.getElementById('st92-ba-slider');
+    const st92After = document.getElementById('st92-ba-after');
+    const st92Handle = document.getElementById('st92-ba-handle');
+    let isDragging92 = false;
+
+    if (st92Slider && st92After && st92Handle) {
+      function updateSt92Slider(x) {
+        const rect = st92Slider.getBoundingClientRect();
+        let pos = ((x - rect.left) / rect.width) * 100;
+        if (pos < 0) pos = 0;
+        if (pos > 100) pos = 100;
+        st92After.style.width = pos + '%';
+        st92Handle.style.left = pos + '%';
+      }
+      st92Slider.addEventListener('mousedown', (e) => {
+        isDragging92 = true;
+        updateSt92Slider(e.clientX);
+      });
+      window.addEventListener('mousemove', (e) => {
+        if (isDragging92) updateSt92Slider(e.clientX);
+      });
+      window.addEventListener('mouseup', () => { isDragging92 = false; });
+    }
+
+    // Filter Cases for Story 92
+    function filterStory92Cases(cat, btn) {
+      document.querySelectorAll('#sec-st92-usecases .btn-page-tab').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      const container = document.getElementById('st92-cases-container');
+      if (!container) return;
+
+      if (cat === 'all') {
+        container.innerHTML = `
+          <div style="background:var(--bg-card); border-radius:var(--radius-md); padding:20px; border:1px solid var(--color-border);">
+            <div style="font-size:11.5px; font-weight:800; color:var(--color-terracotta); margin-bottom:4px;">08:30 출근길</div>
+            <div style="font-family:var(--font-maruburi); font-size:16px; font-weight:700; color:var(--color-forest); margin-bottom:4px;">슬림한 오피스룩</div>
+            <div style="font-size:12px; color:var(--color-text-secondary);">얇은 셔츠 속에도 티 나지 않는 0.1mm 완벽 은폐</div>
+          </div>
+          <div style="background:var(--bg-card); border-radius:var(--radius-md); padding:20px; border:1px solid var(--color-border);">
+            <div style="font-size:11.5px; font-weight:800; color:var(--color-terracotta); margin-bottom:4px;">14:00 집중 업무</div>
+            <div style="font-family:var(--font-maruburi); font-size:16px; font-weight:700; color:var(--color-forest); margin-bottom:4px;">무의식 거북목 지탱</div>
+            <div style="font-size:12px; color:var(--color-text-secondary);">모니터 앞 쏟아지는 목과 어깨를 탄성으로 서포트</div>
+          </div>
+          <div style="background:var(--bg-card); border-radius:var(--radius-md); padding:20px; border:1px solid var(--color-border);">
+            <div style="font-size:11.5px; font-weight:800; color:var(--color-terracotta); margin-bottom:4px;">17:00 외근 미팅</div>
+            <div style="font-family:var(--font-maruburi); font-size:16px; font-weight:700; color:var(--color-forest); margin-bottom:4px;">당당한 프로 핏</div>
+            <div style="font-size:12px; color:var(--color-text-secondary);">단정하게 펴진 어깨선으로 당당한 실루엣 연출</div>
+          </div>
+          <div style="background:var(--bg-card); border-radius:var(--radius-md); padding:20px; border:1px solid var(--color-border);">
+            <div style="font-size:11.5px; font-weight:800; color:var(--color-terracotta); margin-bottom:4px;">19:30 가벼운 퇴근</div>
+            <div style="font-family:var(--font-maruburi); font-size:16px; font-weight:700; color:var(--color-forest); margin-bottom:4px;">가벼운 승모근</div>
+            <div style="font-size:12px; color:var(--color-text-secondary);">퇴근길에도 뭉침 없이 깃털처럼 가벼운 어깨</div>
+          </div>
+        `;
+      } else if (cat === 'desk') {
+        container.innerHTML = `
+          <div style="grid-column:span 2; background:var(--bg-card); border-radius:var(--radius-md); padding:24px; border:1px solid var(--color-border);">
+            <div style="font-size:12px; font-weight:800; color:var(--color-terracotta); margin-bottom:6px;">14:00 데스크 집중 업무 모드</div>
+            <div style="font-family:var(--font-maruburi); font-size:18px; font-weight:700; color:var(--color-forest); margin-bottom:8px;">모니터 앞 쏟아지는 상체 동적 텐션 복원</div>
+            <div style="font-size:13px; color:var(--color-text-secondary); line-height:1.7;">8시간 동안 책상 앞에 앉아 있어도 허리와 목이 굽어지지 않도록 인체공학적 탄성 프레임이 부드럽게 지탱합니다.</div>
+          </div>
+        `;
+      } else if (cat === 'commute') {
+        container.innerHTML = `
+          <div style="grid-column:span 2; background:var(--bg-card); border-radius:var(--radius-md); padding:24px; border:1px solid var(--color-border);">
+            <div style="font-size:12px; font-weight:800; color:var(--color-terracotta); margin-bottom:6px;">08:30 &amp; 19:30 지하철/버스 출퇴근</div>
+            <div style="font-family:var(--font-maruburi); font-size:18px; font-weight:700; color:var(--color-forest); margin-bottom:8px;">38g 깃털 같은 무게로 피로도 제로 보행</div>
+            <div style="font-size:13px; color:var(--color-text-secondary); line-height:1.7;">출퇴근 이동 중 척추에 가해지는 보행 충격을 흡수하고, 셔츠 속에 99.8% 은폐되어 아무도 눈치채지 못합니다.</div>
+          </div>
+        `;
+      } else if (cat === 'meeting') {
+        container.innerHTML = `
+          <div style="grid-column:span 2; background:var(--bg-card); border-radius:var(--radius-md); padding:24px; border:1px solid var(--color-border);">
+            <div style="font-size:12px; font-weight:800; color:var(--color-terracotta); margin-bottom:6px;">17:00 VIP 클라이언트 외근 &amp; 프레젠테이션</div>
+            <div style="font-family:var(--font-maruburi); font-size:18px; font-weight:700; color:var(--color-forest); margin-bottom:8px;">단정하게 펴진 어깨선으로 당당한 프로페셔널 핏</div>
+            <div style="font-size:13px; color:var(--color-text-secondary); line-height:1.7;">중요한 발표나 미팅 자리에서 라운드숄더 없이 곧고 당당한 실루엣을 완성하여 신뢰감을 극대화합니다.</div>
+          </div>
+        `;
+      }
+    }
+
+    // Switch Category for Story 92 Showcase (No Buy Buttons)
+    function switchStory92Category(cat, btn) {
+      document.querySelectorAll('#sec-st92-collection .btn-page-tab').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      const container = document.getElementById('st92-product-container');
+      if (!container) return;
+
+      if (cat === 'signature') {
+        container.innerHTML = `
+          <div class="story92-prod-card">
+            <div class="story92-prod-ph">
+              <div class="story92-ph-title" style="font-size:13px;">[대표 01 제품 컷]</div>
+              <div>0.1mm 심리스 넥&amp;숄더 밴드 렌더링</div>
+            </div>
+            <div style="padding:20px;">
+              <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px;">
+                <span class="section-tag" style="font-size:10.5px; padding:2px 6px;">대표작 01</span>
+                <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">0.1mm 무봉제</span>
+                <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">38g 초경량</span>
+              </div>
+              <div style="font-family:var(--font-maruburi); font-size:16px; font-weight:700; color:var(--color-forest); margin-bottom:6px;">0.1mm 심리스 넥&amp;숄더 밴드</div>
+              <div style="font-size:12.5px; color:var(--color-text-secondary); line-height:1.6;">Naked Seamless 0.1mm 무봉제 본딩, 전면 자석 버클로 완벽 밀착 및 말린 어깨 정렬</div>
+            </div>
+          </div>
+          <div class="story92-prod-card">
+            <div class="story92-prod-ph">
+              <div class="story92-ph-title" style="font-size:13px;">[대표 02 제품 컷]</div>
+              <div>3D 에어로 메쉬 척추 조끼 렌더링</div>
+            </div>
+            <div style="padding:20px;">
+              <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px;">
+                <span class="section-tag" style="font-size:10.5px; padding:2px 6px;">대표작 02</span>
+                <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">38g 쿨링메쉬</span>
+                <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">4중 텐션</span>
+              </div>
+              <div style="font-family:var(--font-maruburi); font-size:16px; font-weight:700; color:var(--color-forest); margin-bottom:6px;">3D 에어로 메쉬 척추 조끼</div>
+              <div style="font-size:12.5px; color:var(--color-text-secondary); line-height:1.6;">Airy Weightless 쿨링 메쉬, 척추 기립근 4중 탄성 프레임으로 하루 종일 쾌적한 지지력</div>
+            </div>
+          </div>
+          <div class="story92-prod-card">
+            <div class="story92-prod-ph">
+              <div class="story92-ph-title" style="font-size:13px;">[대표 03 제품 컷]</div>
+              <div>골반 수평 유지 에어셀 벨트 렌더링</div>
+            </div>
+            <div style="padding:20px;">
+              <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px;">
+                <span class="section-tag" style="font-size:10.5px; padding:2px 6px;">대표작 03</span>
+                <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">에어셀 패드</span>
+                <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">골반 18.2° 교정</span>
+              </div>
+              <div style="font-family:var(--font-maruburi); font-size:16px; font-weight:700; color:var(--color-forest); margin-bottom:6px;">골반 수평 유지 에어셀 벨트</div>
+              <div style="font-size:12.5px; color:var(--color-text-secondary); line-height:1.6;">Dynamic Restoring 공기 주입식 에어셀 패드로 다리 꼬기 습관을 물리적으로 부드럽게 차단</div>
+            </div>
+          </div>
+          <div class="story92-prod-card">
+            <div class="story92-prod-ph">
+              <div class="story92-ph-title" style="font-size:13px;">[코어웨어 제품 컷]</div>
+              <div>0.1mm 럼버 서포트 언더웨어 컷</div>
+            </div>
+            <div style="padding:20px;">
+              <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px;">
+                <span class="section-tag" style="font-size:10.5px; padding:2px 6px;">코어웨어</span>
+                <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">요추 4~5번 지지</span>
+                <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">슬랙스핏</span>
+              </div>
+              <div style="font-family:var(--font-maruburi); font-size:16px; font-weight:700; color:var(--color-forest); margin-bottom:6px;">0.1mm 럼버 서포트 언더웨어</div>
+              <div style="font-size:12.5px; color:var(--color-text-secondary); line-height:1.6;">요추 4~5번 38g 초경량 밀착 지지, 슬랙스 핏을 흐트러뜨리지 않는 완벽한 은폐 디자인</div>
+            </div>
+          </div>
+        `;
+      } else if (cat === 'care') {
+        container.innerHTML = `
+          <div class="story92-prod-card">
+            <div class="story92-prod-ph">
+              <div class="story92-ph-title" style="font-size:13px;">[전문케어 제품 컷]</div>
+              <div>경추 C커브 릴렉스 서포터 각도 렌더링</div>
+            </div>
+            <div style="padding:20px;">
+              <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px;">
+                <span class="section-tag" style="font-size:10.5px; padding:2px 6px;">전문케어</span>
+                <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">메모리폼</span>
+                <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">C커브 각도</span>
+              </div>
+              <div style="font-family:var(--font-maruburi); font-size:16px; font-weight:700; color:var(--color-forest); margin-bottom:6px;">경추 C커브 릴렉스 서포터</div>
+              <div style="font-size:12.5px; color:var(--color-text-secondary); line-height:1.6;">메모리 에어로폼, 턱 당김 유도 인체공학적 각도로 목 뒤 압력 즉각 이완</div>
+            </div>
+          </div>
+          <div class="story92-prod-card">
+            <div class="story92-prod-ph">
+              <div class="story92-ph-title" style="font-size:13px;">[전문케어 제품 컷]</div>
+              <div>흉추 확장 텐션 스트랩 듀얼 밴딩 컷</div>
+            </div>
+            <div style="padding:20px;">
+              <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px;">
+                <span class="section-tag" style="font-size:10.5px; padding:2px 6px;">전문케어</span>
+                <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">듀얼 밴딩</span>
+                <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">라운드숄더</span>
+              </div>
+              <div style="font-family:var(--font-maruburi); font-size:16px; font-weight:700; color:var(--color-forest); margin-bottom:6px;">흉추 확장 텐션 스트랩</div>
+              <div style="font-size:12.5px; color:var(--color-text-secondary); line-height:1.6;">견갑골 모음 듀얼 밴딩 시스템으로 말린 흉추를 자연스럽게 확장 교정</div>
+            </div>
+          </div>
+          <div class="story92-prod-card">
+            <div class="story92-prod-ph">
+              <div class="story92-ph-title" style="font-size:13px;">[전문케어 제품 컷]</div>
+              <div>좌골 체압 분산 밸런스 방석 3D 허니콤 컷</div>
+            </div>
+            <div style="padding:20px;">
+              <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px;">
+                <span class="section-tag" style="font-size:10.5px; padding:2px 6px;">전문케어</span>
+                <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">3D 허니콤</span>
+                <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">체압 분산</span>
+              </div>
+              <div style="font-family:var(--font-maruburi); font-size:16px; font-weight:700; color:var(--color-forest); margin-bottom:6px;">좌골 체압 분산 밸런스 방석</div>
+              <div style="font-size:12.5px; color:var(--color-text-secondary); line-height:1.6;">3D 허니콤 에어셀로 엉덩이 압력을 균등 분산하여 척추 압박 완화</div>
+            </div>
+          </div>
+          <div class="story92-prod-card">
+            <div class="story92-prod-ph">
+              <div class="story92-ph-title" style="font-size:13px;">[전문케어 제품 컷]</div>
+              <div>발목 밸런스 힐 서포트 인솔 아치 컷</div>
+            </div>
+            <div style="padding:20px;">
+              <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px;">
+                <span class="section-tag" style="font-size:10.5px; padding:2px 6px;">전문케어</span>
+                <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">3단 아치</span>
+                <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">충격 흡수</span>
+              </div>
+              <div style="font-family:var(--font-maruburi); font-size:16px; font-weight:700; color:var(--color-forest); margin-bottom:6px;">발목 밸런스 힐 서포트 인솔</div>
+              <div style="font-size:12.5px; color:var(--color-text-secondary); line-height:1.6;">발 아치 3단 서포트로 보행 시 무릎 안쪽 꺾임 및 척추 충격 방지</div>
+            </div>
+          </div>
+        `;
+      } else if (cat === 'sensor') {
+        container.innerHTML = `
+          <div class="story92-prod-card">
+            <div class="story92-prod-ph">
+              <div class="story92-ph-title" style="font-size:13px;">[스마트 테크 제품 컷]</div>
+              <div>스마트 햅틱 자세 코칭 밴드 모듈 컷</div>
+            </div>
+            <div style="padding:20px;">
+              <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px;">
+                <span class="section-tag" style="font-size:10.5px; padding:2px 6px;">스마트 테크</span>
+                <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">15° 햅틱코칭</span>
+                <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">시차 필터링</span>
+              </div>
+              <div style="font-family:var(--font-maruburi); font-size:16px; font-weight:700; color:var(--color-forest); margin-bottom:6px;">스마트 햅틱 자세 코칭 밴드</div>
+              <div style="font-size:12.5px; color:var(--color-text-secondary); line-height:1.6;">15도 이상 기울어짐 감지 시 미세 진동으로 스스로 바른 자세를 기억하도록 유도</div>
+            </div>
+          </div>
+          <div class="story92-prod-card">
+            <div class="story92-prod-ph">
+              <div class="story92-ph-title" style="font-size:13px;">[스마트 테크 제품 컷]</div>
+              <div>블루투스 실시간 각도 센서 &amp; 앱 화면</div>
+            </div>
+            <div style="padding:20px;">
+              <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px;">
+                <span class="section-tag" style="font-size:10.5px; padding:2px 6px;">스마트 테크</span>
+                <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">6축 자이로</span>
+                <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">앱 대시보드</span>
+              </div>
+              <div style="font-family:var(--font-maruburi); font-size:16px; font-weight:700; color:var(--color-forest); margin-bottom:6px;">블루투스 실시간 각도 센서 모듈</div>
+              <div style="font-size:12.5px; color:var(--color-text-secondary); line-height:1.6;">6축 자이로 센서로 일일 자세 점수 및 척추 불균형 데이터를 스마트폰 앱으로 분석</div>
+            </div>
+          </div>
+          <div class="story92-prod-card">
+            <div class="story92-prod-ph">
+              <div class="story92-ph-title" style="font-size:13px;">[스마트 테크 제품 컷]</div>
+              <div>온열 릴렉스 럼버 테크 벨트 그래핀 패드 컷</div>
+            </div>
+            <div style="padding:20px;">
+              <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px;">
+                <span class="section-tag" style="font-size:10.5px; padding:2px 6px;">스마트 테크</span>
+                <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">그래핀 온열</span>
+                <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">3단 온도</span>
+              </div>
+              <div style="font-family:var(--font-maruburi); font-size:16px; font-weight:700; color:var(--color-forest); margin-bottom:6px;">온열 릴렉스 럼버 테크 벨트</div>
+              <div style="font-size:12.5px; color:var(--color-text-secondary); line-height:1.6;">초경량 그래핀 발열 패드가 긴장된 허리 기립근을 따뜻하게 이완 케어</div>
+            </div>
+          </div>
+          <div class="story92-prod-card">
+            <div class="story92-prod-ph">
+              <div class="story92-ph-title" style="font-size:13px;">[스마트 테크 제품 컷]</div>
+              <div>EMS 척추 근육 활성화 패치 미세전류 컷</div>
+            </div>
+            <div style="padding:20px;">
+              <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px;">
+                <span class="section-tag" style="font-size:10.5px; padding:2px 6px;">스마트 테크</span>
+                <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">저주파 EMS</span>
+                <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">15분 회복</span>
+              </div>
+              <div style="font-family:var(--font-maruburi); font-size:16px; font-weight:700; color:var(--color-forest); margin-bottom:6px;">EMS 척추 근육 활성화 패치</div>
+              <div style="font-size:12.5px; color:var(--color-text-secondary); line-height:1.6;">저주파 미세 전류로 굳어진 심부 기립근을 부드럽게 자극하고 강화</div>
+            </div>
+          </div>
+        `;
+      } else if (cat === 'acc') {
+        container.innerHTML = `
+          <div class="story92-prod-card">
+            <div class="story92-prod-ph">
+              <div class="story92-ph-title" style="font-size:13px;">[직업 ACC 제품 컷]</div>
+              <div>직장인 데스크 에르고 암레스트 거치 컷</div>
+            </div>
+            <div style="padding:20px;">
+              <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px;">
+                <span class="section-tag" style="font-size:10.5px; padding:2px 6px;">직업 ACC</span>
+                <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">어깨 체압분산</span>
+                <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">인체공학</span>
+              </div>
+              <div style="font-family:var(--font-maruburi); font-size:16px; font-weight:700; color:var(--color-forest); margin-bottom:6px;">직장인 데스크 에르고 암레스트</div>
+              <div style="font-size:12.5px; color:var(--color-text-secondary); line-height:1.6;">키보드/마우스 타이핑 시 손목과 승모근에 실리는 하중을 40% 분산 지탱</div>
+            </div>
+          </div>
+          <div class="story92-prod-card">
+            <div class="story92-prod-ph">
+              <div class="story92-ph-title" style="font-size:13px;">[직업 ACC 제품 컷]</div>
+              <div>출장용 휴대용 에어 럼버 앵커 KTX 좌석 컷</div>
+            </div>
+            <div style="padding:20px;">
+              <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px;">
+                <span class="section-tag" style="font-size:10.5px; padding:2px 6px;">직업 ACC</span>
+                <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">원터치 에어</span>
+                <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">KTX/항공</span>
+              </div>
+              <div style="font-family:var(--font-maruburi); font-size:16px; font-weight:700; color:var(--color-forest); margin-bottom:6px;">출장용 휴대용 에어 럼버 앵커</div>
+              <div style="font-size:12.5px; color:var(--color-text-secondary); line-height:1.6;">KTX, 비행기, 택시 등 장거리 이동 시 요추 빈 공간을 완벽하게 채워주는 휴대용 지지대</div>
+            </div>
+          </div>
+          <div class="story92-prod-card">
+            <div class="story92-prod-ph">
+              <div class="story92-ph-title" style="font-size:13px;">[직업 ACC 제품 컷]</div>
+              <div>차량용 척추 드라이빙 패드 시트 장착 컷</div>
+            </div>
+            <div style="padding:20px;">
+              <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px;">
+                <span class="section-tag" style="font-size:10.5px; padding:2px 6px;">직업 ACC</span>
+                <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">3D 입체성형</span>
+                <span style="font-size:10px; font-weight:700; color:var(--color-sage); background:#e6f4ea; padding:2px 6px; border-radius:4px;">운전피로 완화</span>
+              </div>
+              <div style="font-family:var(--font-maruburi); font-size:16px; font-weight:700; color:var(--color-forest); margin-bottom:6px;">차량용 척추 드라이빙 패드</div>
+              <div style="font-size:12.5px; color:var(--color-text-secondary); line-height:1.6;">장거리 출퇴근 및 운전 시 척추에 가해지는 도로 진동과 골반 틀어짐 방지</div>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+  </script>
+</body>
+</html>

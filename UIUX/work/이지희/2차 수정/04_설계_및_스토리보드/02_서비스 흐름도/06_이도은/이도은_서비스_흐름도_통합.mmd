@@ -1,0 +1,62 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef explore fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef atelier fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef action fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    subgraph HUB ["HUB: WICKETA 이도은 캄테크 안식처 메인 허브"]
+        HOME["01 W06-HOME (캄테크 메인)<br/>• OLED 다크모드 미니멀 캔버스<br/>• CALM-TECH-01 피로 진단기<br/>• CALM-LOOP-01 명상 버튼"]
+    end
+
+    subgraph PATH1 ["경로 1: 시각 피로 진단 & 무소음 번들 구매"]
+        DETOX["02-A W06-DETOX<br/>시각 피로 진단 콘솔<br/>• 피로도 진단 & 무소음 번들"]
+    end
+
+    subgraph PATH2 ["경로 2: 무카페인 심야 디톡스 정기구독"]
+        SUB["02-B W06-SUB<br/>심야 디톡스 정기구독<br/>• 30일 배송 & 15% 할인"]
+    end
+
+    subgraph PATH3 ["경로 3: 모노크롬 틴세트 각인 선물 발송"]
+        GIFT["02-C W06-GIFT<br/>MONOCHROME-GIFT-01 아틀리에<br/>• 매트 틴 각인 & 선물 포장"]
+    end
+
+    subgraph PATH4 ["경로 4: 180초 스크린오프 명상 & 아카이빙"]
+        RITUAL["02-D W06-RITUAL<br/>180초 명상 플레이어<br/>• 90% 딤드 & 싱잉볼 차임"]
+    end
+
+    subgraph PATH5 ["경로 5: 무반사 세라믹 데스크 셋업 주문"]
+        MATTE["02-E W06-MATTE<br/>MATTE-CERAMIC-01 뷰어<br/>• 무광 코스터 & 인센스 홀더"]
+    end
+
+    subgraph TRANSACT ["TRANSACT: 공통 장바구니 결제 & 완료 모달"]
+        DRAWER["W06-DRAWER (슬라이드아웃 Cart)<br/>• 일반/구독/선물/셋업 1초 간편결제<br/>• 가상 스크롤 100% 위치 복원"]
+        DONE["W06-DONE (통합 완료 모달)<br/>• 미니멀 영수증, 선물 바우처 발급<br/>• 카카오 알림톡 즉시 발송"]
+        DRAWER --> DONE
+    end
+
+    subgraph ARCHIVE ["ARCHIVE: 마인드풀니스 아카이브 & 순환"]
+        COMM["W06-COMM (마인드풀니스 아카이브)<br/>• 1줄 감정 기록 & 30일 뱃지<br/>• 실시간 배송 추적 & 22시 알림 루프"]
+    end
+
+    HOME --> DETOX
+    HOME --> SUB
+    HOME --> GIFT
+    HOME --> RITUAL
+    HOME --> MATTE
+
+    DETOX --> DRAWER
+    SUB --> DRAWER
+    GIFT --> DRAWER
+    MATTE --> DRAWER
+    RITUAL --> COMM
+    DONE --> COMM
+
+    COMM -.->|매일 밤 22시 스크린오프 명상 순환| RITUAL
+    DONE -.->|쇼핑 계속하기 스크롤 복원| HOME
+
+    class HOME home;
+    class DETOX,MATTE explore;
+    class GIFT,SUB,RITUAL atelier;
+    class DRAWER,DONE action;
+    class COMM support;

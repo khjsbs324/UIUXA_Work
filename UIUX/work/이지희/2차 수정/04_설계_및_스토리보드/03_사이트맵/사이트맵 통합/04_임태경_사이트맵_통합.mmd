@@ -1,0 +1,50 @@
+graph TD
+    classDef root fill:#0D47A1,stroke:#01579B,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef gnb fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef lnb fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef detail fill:#FFF8E1,stroke:#F57F17,stroke-width:1.5px,color:#E65100;
+    classDef aside fill:#E1F5FE,stroke:#0277BD,stroke-width:1.5px,color:#01579B;
+
+    ROOT["🏠 W04-HOME (호텔 B2B 포털)<br/>• 3D 어메니티 쇼케이스<br/>• 5대 B2B 콘솔"]
+
+    GNB1["🏢 GNB-01: 어메니티 도감<br/>(W04-CATALOG)"]
+    GNB2["📑 GNB-02: B2B 견적 & 계약<br/>(W04-ESTIMATE)"]
+    GNB3["🛠️ GNB-03: 3D 로고 각인실<br/>(W04-BUILD)"]
+    GNB4["🔄 GNB-04: ERP 재발주 & 협업<br/>(W04-COMM)"]
+
+    ROOT --> GNB1
+    ROOT --> GNB2
+    ROOT --> GNB3
+    ROOT --> GNB4
+
+    %% GNB1
+    SAMPLE["🎁 VIP-SAMPLE-01 0원 샘플"]
+    CERT["📜 463종 잔류농약 0% 성적서"]
+    GNB1 --> SAMPLE
+    GNB1 --> CERT
+
+    %% GNB2
+    CALC["📑 B2B-ESTIMATE-01 5,000세트"]
+    CORP["🏢 국세청 법인 인증"]
+    GNB2 --> CALC
+    GNB2 --> CORP
+
+    %% GNB3
+    LOGO["⚡ HOTEL-ENGRAVER-01 로고 각인"]
+    MOQ["📦 MOQ 100세트 검증"]
+    GNB3 --> LOGO
+    GNB3 --> MOQ
+
+    %% GNB4
+    ERP["🔄 ERP-REORDER-01 1초 재발주"]
+    MICHELIN["🍽️ MICHELIN-CALENDAR-01 미팅"]
+    GNB4 --> ERP
+    GNB4 --> MICHELIN
+
+    DRAWER["🛒 Aside: W04-DRAWER<br/>• 전자서명 계약 / 세금계산서"]
+    ROOT -.-> DRAWER
+
+    class ROOT root;
+    class GNB1,GNB2,GNB3,GNB4 gnb;
+    class SAMPLE,CERT,CALC,CORP,LOGO,MOQ,ERP,MICHELIN detail;
+    class DRAWER aside;

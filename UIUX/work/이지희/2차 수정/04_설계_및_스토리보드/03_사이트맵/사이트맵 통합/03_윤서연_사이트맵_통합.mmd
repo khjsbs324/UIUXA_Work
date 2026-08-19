@@ -1,0 +1,51 @@
+graph TD
+    classDef root fill:#0D47A1,stroke:#01579B,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef gnb fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef lnb fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef detail fill:#FFF8E1,stroke:#F57F17,stroke-width:1.5px,color:#E65100;
+    classDef aside fill:#E1F5FE,stroke:#0277BD,stroke-width:1.5px,color:#01579B;
+
+    ROOT["🏠 W03-HOME (데스크테리어 허브)<br/>• 3D 데스크셋업 캔버스<br/>• 낮/밤 테마 스위처"]
+
+    GNB1["📖 GNB-01: 데스크 매거진<br/>(W03-LOOKBOOK)"]
+    GNB2["📐 GNB-02: 3D 데스크 셋업<br/>(W03-BUILD)"]
+    GNB3["🌙 GNB-03: 나이트 리추얼<br/>(W03-RITUAL)"]
+    GNB4["📷 GNB-04: 데스크 챌린지<br/>(W03-COMM)"]
+
+    ROOT --> GNB1
+    ROOT --> GNB2
+    ROOT --> GNB3
+    ROOT --> GNB4
+
+    %% GNB1
+    LNB11["🎨 매트 파스텔 틴"]
+    LNB12["🍰 디저트 페어링"]
+    GNB1 --> LNB11
+    GNB1 --> LNB12
+
+    %% GNB2
+    SIM["📐 DESK-SIMULATOR-01 3D 배치"]
+    WRAP["🎁 LINEN-WRAP-01 보자기 포장"]
+    GNB2 --> SIM
+    GNB2 --> WRAP
+
+    %% GNB3
+    SOUND["🌙 432Hz 빗소리 & 180초 타이머"]
+    SUB["🚚 NIGHT-SUB-01 30일 새벽구독"]
+    GNB3 --> SOUND
+    GNB3 --> SUB
+
+    %% GNB4
+    FEED["📷 #데스크테리어 사진 피드"]
+    BADGE["🏆 에디터스 픽 뱃지"]
+    GNB4 --> FEED
+    GNB4 --> BADGE
+
+    DRAWER["🛒 Aside: W03-DRAWER<br/>• 20% 세트 할인 / 카카오 선물"]
+    ROOT -.-> DRAWER
+
+    class ROOT root;
+    class GNB1,GNB2,GNB3,GNB4 gnb;
+    class LNB11,LNB12 lnb;
+    class SIM,WRAP,SOUND,SUB,FEED,BAD detail;
+    class DRAWER aside;

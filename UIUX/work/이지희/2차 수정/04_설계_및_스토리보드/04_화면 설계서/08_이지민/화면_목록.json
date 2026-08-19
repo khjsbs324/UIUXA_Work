@@ -1,0 +1,215 @@
+{
+  "clientId": "08",
+  "clientName": "이지민",
+  "archetype": "C-1 비주얼 숏폼 인터랙션형 (Aurora Visual Lab)",
+  "integratedFlowFile": "08_이지민_서비스_흐름도_통합.md",
+  "integratedSitemapFile": "08_이지민_사이트맵_통합.md",
+  "screens": [
+    {
+      "id": "W08-HOME",
+      "name": "오로라 비주얼 메인 허브",
+      "depth": "1-Depth",
+      "purposes": [
+        "목적 1~5"
+      ]
+    },
+    {
+      "id": "W08-AURORA",
+      "name": "실시간 오로라 수색 변환 캔버스",
+      "depth": "2-Depth",
+      "purposes": [
+        "목적 1"
+      ]
+    },
+    {
+      "id": "W08-REELS",
+      "name": "9:16 릴스 챌린지 룸",
+      "depth": "2-Depth",
+      "purposes": [
+        "목적 2"
+      ]
+    },
+    {
+      "id": "W08-CATALOG",
+      "name": "오로라 수색 & 비주얼 굿즈 갤러리",
+      "depth": "2-Depth",
+      "purposes": [
+        "목적 1, 3, 5"
+      ]
+    },
+    {
+      "id": "W08-BUILD",
+      "name": "홀로그램 각인실",
+      "depth": "2-Depth",
+      "purposes": [
+        "목적 3"
+      ]
+    },
+    {
+      "id": "W08-DRAWER",
+      "name": "Slide-out 1초 결제/정기구독 드로어",
+      "depth": "Aside Layer",
+      "purposes": [
+        "목적 1~4"
+      ]
+    },
+    {
+      "id": "W08-DONE",
+      "name": "오로라 포토 카드 & 챌린지 승인",
+      "depth": "Modal",
+      "purposes": [
+        "목적 1~5"
+      ]
+    },
+    {
+      "id": "W08-COMM",
+      "name": "SNS 인증샷 랭킹",
+      "depth": "2-Depth",
+      "purposes": [
+        "목적 4"
+      ]
+    }
+  ],
+  "curations": [
+    {
+      "secId": "SEC-01",
+      "productCode": "WK-P01",
+      "name": "⭐ [수색 시그니처] 갤럭시 블루 ➔ 바이올렛 변환 팩",
+      "category": "🌌 영롱한 오로라 버터플라이피 팩 (4)",
+      "price": 36000
+    },
+    {
+      "secId": "SEC-02",
+      "productCode": "WK-P02",
+      "name": "💖 [핑크 오로라] 로즈 쿼츠 히비스커스 & 피치 블렌드",
+      "category": "💖 로즈 쿼츠 핑크 히비스커스 팩 (4)",
+      "price": 29000
+    },
+    {
+      "secId": "SEC-03",
+      "productCode": "WK-P03",
+      "name": "💚 [네온 에메랄드] 라임 마테 형광 그린 믹서 스틱",
+      "category": "💚 에메랄드 시트러스 라임 팩 (4)",
+      "price": 28000
+    },
+    {
+      "secId": "SEC-04",
+      "productCode": "WK-P04",
+      "name": "🥂 [빛 굴절 잔] 360도 오로라 빛 굴절 홀로그램 더블월 잔",
+      "category": "🥂 빛 굴절 홀로그램 더블월 글래스 (4)",
+      "price": 38000
+    },
+    {
+      "secId": "SEC-05",
+      "productCode": "WK-P05",
+      "name": "🎁 [릴스 스타터] 9:16 바이럴 영상 촬영용 거치대 & 키트",
+      "category": "🎁 릴스 바이럴 스타터 킷 & 엽서 (4)",
+      "price": 49000
+    },
+    {
+      "secId": "SEC-06",
+      "productCode": "WK-P06",
+      "name": "🌌 [미드나잇 오로라] 밤하늘 별빛 반짝이 식용 글리터 티",
+      "category": "🌌 영롱한 오로라 버터플라이피 팩 (4)",
+      "price": 39000
+    },
+    {
+      "secId": "SEC-07",
+      "productCode": "WK-P07",
+      "name": "💖 [루비 핑크] 비건 안토시아닌 라즈베리 탄산 스틱",
+      "category": "💖 로즈 쿼츠 핑크 히비스커스 팩 (4)",
+      "price": 27000
+    },
+    {
+      "secId": "SEC-08",
+      "productCode": "WK-P08",
+      "name": "💚 [그린 오로라] 민트 & 청포도 0kcal 스파클링 팩",
+      "category": "💚 에메랄드 시트러스 라임 팩 (4)",
+      "price": 26000
+    },
+    {
+      "secId": "SEC-09",
+      "productCode": "WK-P09",
+      "name": "🥂 [크리스탈 머들러] 빛 산란 크리스탈 컷팅 유리 머들러",
+      "category": "🥂 빛 굴절 홀로그램 더블월 글래스 (4)",
+      "price": 18000
+    },
+    {
+      "secId": "SEC-10",
+      "productCode": "WK-P10",
+      "name": "🎁 [포토 엽서] 오로라 홀로그램 엽서 5종 세트",
+      "category": "🎁 릴스 바이럴 스타터 킷 & 엽서 (4)",
+      "price": 12000
+    },
+    {
+      "secId": "SEC-11",
+      "productCode": "WK-P11",
+      "name": "🌌 [선셋 바이올렛] 노을빛 그라데이션 3단 층분리 팩",
+      "category": "🌌 영롱한 오로라 버터플라이피 팩 (4)",
+      "price": 33000
+    },
+    {
+      "secId": "SEC-12",
+      "productCode": "WK-P12",
+      "name": "💖 [코랄 핑크] 자몽 & 로즈페탈 감성 티백 세트",
+      "category": "💖 로즈 쿼츠 핑크 히비스커스 팩 (4)",
+      "price": 31000
+    },
+    {
+      "secId": "SEC-13",
+      "productCode": "WK-P13",
+      "name": "💚 [옐로우 그린] 유자 & 레몬그라스 비타민 스틱",
+      "category": "💚 에메랄드 시트러스 라임 팩 (4)",
+      "price": 25000
+    },
+    {
+      "secId": "SEC-14",
+      "productCode": "WK-P14",
+      "name": "🥂 [오로라 샷잔] 칵테일용 미니 홀로그램 샷잔 2P",
+      "category": "🥂 빛 굴절 홀로그램 더블월 글래스 (4)",
+      "price": 22000
+    },
+    {
+      "secId": "SEC-15",
+      "productCode": "WK-P15",
+      "name": "🎁 [인플루언서 팩] 6종 컬러 풀세트 & 촬영 조명 킷",
+      "category": "🎁 릴스 바이럴 스타터 킷 & 엽서 (4)",
+      "price": 65000
+    },
+    {
+      "secId": "SEC-16",
+      "productCode": "WK-P16",
+      "name": "🌌 [새벽구독] 매월 새로운 수색 신제품 30일 구독 팩",
+      "category": "🌌 영롱한 오로라 버터플라이피 팩 (4)",
+      "price": 33150
+    },
+    {
+      "secId": "SEC-17",
+      "productCode": "WK-P17",
+      "name": "💖 [펄 샤이닝] 식용 진주 펄이 흩날리는 샴페인 티",
+      "category": "💖 로즈 쿼츠 핑크 히비스커스 팩 (4)",
+      "price": 42000
+    },
+    {
+      "secId": "SEC-18",
+      "productCode": "WK-P18",
+      "name": "💚 [키위 에메랄드] 0kcal 키위 스파클링 토핑 스틱",
+      "category": "💚 에메랄드 시트러스 라임 팩 (4)",
+      "price": 27500
+    },
+    {
+      "secId": "SEC-19",
+      "productCode": "WK-P19",
+      "name": "🥂 [레인보우 코스터] LED 조명 내장 오로라 코스터",
+      "category": "🥂 빛 굴절 홀로그램 더블월 글래스 (4)",
+      "price": 20000
+    },
+    {
+      "secId": "SEC-20",
+      "productCode": "WK-P20",
+      "name": "🎁 [바이럴 챌린지] 100% 페이백 보증 릴스 챌린지 팩",
+      "category": "🎁 릴스 바이럴 스타터 킷 & 엽서 (4)",
+      "price": 35000
+    }
+  ]
+}

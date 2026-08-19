@@ -1,0 +1,36 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef look fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef build fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W03-HOME (선물 진입)<br/>• [동료 축하 선물] 클릭"]
+    LOOK["02 W03-LOOKBOOK (패키지 선택)<br/>• 린넨 기프트 세트 스펙 확인"]
+    BUILD["03 W03-BUILD (3D 린넨 포장)<br/>• LINEN-WRAP-01 360도 뷰어"]
+    CARD["04 W03-BUILD (응원 카드)<br/>• 에디토리얼 감성 엽서 작성"]
+    DRAWER["05 W03-DRAWER (선물 결제)<br/>• 카카오 친구 선택 & 1초 결제"]
+    
+    ADDR_CHECK{"06 주소 보유<br/>여부 확인"}
+    
+    DONE["07 W03-DONE (모바일 카드)<br/>• 3D 언박싱 모바일 바우처"]
+    COMM["F1 W03-COMM (배송 추적)<br/>• 실시간 배송 대시보드"]
+
+    HOME --> LOOK
+    LOOK --> BUILD
+    BUILD --> CARD
+    CARD --> DRAWER
+    DRAWER --> ADDR_CHECK
+    
+    ADDR_CHECK -->|주소 확인 완료| DONE
+    ADDR_CHECK -->|주소 입력 링크 전송| DONE
+    
+    DONE --> COMM
+
+    class HOME home;
+    class LOOK look;
+    class BUILD,CARD build;
+    class ADDR_CHECK decision;
+    class DRAWER,DONE drawer;
+    class COMM support;

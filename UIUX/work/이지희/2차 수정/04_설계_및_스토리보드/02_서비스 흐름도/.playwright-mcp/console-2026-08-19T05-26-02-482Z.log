@@ -1,0 +1,54 @@
+[    1222ms] Error: Unable to retrieve appVersion because #__PWS_DATA__ was not found in the DOM.
+    at r (https://s.pinimg.com/webapp/www/search/[scope].ko_KR-9e6549d0e1d4d056.mjs:92:65428)
+    at d (https://s.pinimg.com/webapp/www/search/[scope].ko_KR-9e6549d0e1d4d056.mjs:92:63345)
+    at https://s.pinimg.com/webapp/www/search/[scope].ko_KR-9e6549d0e1d4d056.mjs:92:64304
+[    1225ms] Error: Unable to retrieve appVersion because #__PWS_DATA__ was not found in the DOM.
+    at r (https://s.pinimg.com/webapp/www/search/[scope].ko_KR-9e6549d0e1d4d056.mjs:92:65428)
+    at d (https://s.pinimg.com/webapp/www/search/[scope].ko_KR-9e6549d0e1d4d056.mjs:92:63345)
+    at https://s.pinimg.com/webapp/www/search/[scope].ko_KR-9e6549d0e1d4d056.mjs:92:63943
+[    1225ms] Error: Unable to retrieve appVersion because #__PWS_DATA__ was not found in the DOM.
+    at r (https://s.pinimg.com/webapp/www/search/[scope].ko_KR-9e6549d0e1d4d056.mjs:92:65428)
+    at d (https://s.pinimg.com/webapp/www/search/[scope].ko_KR-9e6549d0e1d4d056.mjs:92:63345)
+    at https://s.pinimg.com/webapp/www/search/[scope].ko_KR-9e6549d0e1d4d056.mjs:92:64304
+[    1225ms] Error: Unable to retrieve appVersion because #__PWS_DATA__ was not found in the DOM.
+    at r (https://s.pinimg.com/webapp/www/search/[scope].ko_KR-9e6549d0e1d4d056.mjs:92:65428)
+    at d (https://s.pinimg.com/webapp/www/search/[scope].ko_KR-9e6549d0e1d4d056.mjs:92:63345)
+    at https://s.pinimg.com/webapp/www/search/[scope].ko_KR-9e6549d0e1d4d056.mjs:92:63943
+[    1225ms] Error: Unable to retrieve appVersion because #__PWS_DATA__ was not found in the DOM.
+    at r (https://s.pinimg.com/webapp/www/search/[scope].ko_KR-9e6549d0e1d4d056.mjs:92:65428)
+    at d (https://s.pinimg.com/webapp/www/search/[scope].ko_KR-9e6549d0e1d4d056.mjs:92:63345)
+    at https://s.pinimg.com/webapp/www/search/[scope].ko_KR-9e6549d0e1d4d056.mjs:92:64304
+[    1225ms] Error: Unable to retrieve appVersion because #__PWS_DATA__ was not found in the DOM.
+    at r (https://s.pinimg.com/webapp/www/search/[scope].ko_KR-9e6549d0e1d4d056.mjs:92:65428)
+    at d (https://s.pinimg.com/webapp/www/search/[scope].ko_KR-9e6549d0e1d4d056.mjs:92:63345)
+    at https://s.pinimg.com/webapp/www/search/[scope].ko_KR-9e6549d0e1d4d056.mjs:92:63943
+[    1758ms] [ERROR] Unexpected hydration error Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings. 
+    at Suspense (<anonymous>)
+    at m (https://s.pinimg.com/webapp/www/search/[scope].ko_KR-9e6549d0e1d4d056.mjs:92:67635)
+    at oJ (https://s.pinimg.com/webapp/www/_client.ko_KR-ab745211fa9a6f6e.mjs:236:11397)
+    at rx (https://s.pinimg.com/webapp/www/_client.ko_KR-ab745211fa9a6f6e.mjs:236:17808)
+    at rR (https://s.pinimg.com/webapp/www/_client.ko_KR-ab745211fa9a6f6e.mjs:236:21174)
+    at uu (https://s.pinimg.com/webapp/www/_client.ko_KR-ab745211fa9a6f6e.mjs:397:90206)
+    at reduxProvider (https://s.pinimg.com/webapp/www/_client.ko_KR-ab745211fa9a6f6e.mjs:401:162609)
+    at https://s.pinimg.com/webapp/www/_client.ko_KR-ab745211fa9a6f6e.mjs:401:145992
+    at fd (https://s.pinimg.com/webapp/www/_client.ko_KR-ab745211fa9a6f6e.mjs:401:114853)
+    at fb (https://s.pinimg.com/webapp/www/_client.ko_KR-ab745211fa9a6f6e.mjs:401:114931)
+    at m2 (https://s.pinimg.com/webapp/www/_client.ko_KR-ab745211fa9a6f6e.mjs:401:111657)
+    at P (https://s.pinimg.com/webapp/80926.ko_KR-6de9a1bfaf16d9d3.mjs:1:13996)
+    at u (https://s.pinimg.com/webapp/www/search/[scope].ko_KR-9e6549d0e1d4d056.mjs:84:1554)
+    at e.exports (https://s.pinimg.com/webapp/vendor-react-c7a0a1d6d76cab14.mjs:9:69109)
+    at s (https://s.pinimg.com/webapp/44649.ko_KR-b4a15540c7ffd904.mjs:1:91583)
+    at h (https://s.pinimg.com/webapp/www/search/[scope].ko_KR-9e6549d0e1d4d056.mjs:79:21020)
+    at m3 (https://s.pinimg.com/webapp/www/_client.ko_KR-ab745211fa9a6f6e.mjs:401:112264)
+    at tF (https://s.pinimg.com/webapp/vendor-react-c7a0a1d6d76cab14.mjs:14:6486)
+    at tN (https://s.pinimg.com/webapp/vendor-react-c7a0a1d6d76cab14.mjs:14:4430)
+    at https://s.pinimg.com/webapp/vendor-react-c7a0a1d6d76cab14.mjs:14:12631
+    at t5 (https://s.pinimg.com/webapp/vendor-react-c7a0a1d6d76cab14.mjs:14:13641)
+    at tJ (https://s.pinimg.com/webapp/vendor-react-c7a0a1d6d76cab14.mjs:14:9012)
+    at Suspense (<anonymous>) @ https://s.pinimg.com/webapp/www/_client.ko_KR-ab745211fa9a6f6e.mjs:400
+[    2116ms] [WARNING] [GSI_LOGGER]: Your client application uses one of the Google One Tap prompt UI status methods that may stop functioning when FedCM becomes mandatory. Refer to the migration guide to update your code accordingly and opt-in to FedCM to test your changes. Learn more: https://developers.google.com/identity/gsi/web/guides/fedcm-migration?s=dc#display_moment and https://developers.google.com/identity/gsi/web/guides/fedcm-migration?s=dc#skipped_moment @ https://accounts.google.com/gsi/client?hl=ko:86
+[    2173ms] [ERROR] Not signed in with the identity provider. @ https://kr.pinterest.com/search/pins/?q=abstract%20organic%20circular%20flow%20minimalist%20logo%20mark:0
+[    2372ms] [ERROR] [GSI_LOGGER]: FedCM get() rejects with NetworkError: Error retrieving a token. @ https://accounts.google.com/gsi/client?hl=ko:87
+[    2494ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://kr.pinterest.com/secure/unauth_user_data/:0
+[    2739ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://kr.pinterest.com/resource/ApiResource/get/?source_url=%2Fsearch%2Fpins%2F%3Fq%3Dabstract%2520organic%2520circular%2520flow%2520minimalist%2520logo%2520mark&data=%7B%22options%22%3A%7B%22url%22%3A%22%2Fv3%2Fusers%2Fsettings%2Fgen_ai%2F%22%2C%22data%22%3A%7B%7D%7D%2C%22context%22%3A%7B%7D%7D&_=1787117164920:0
+[    3320ms] [ERROR] Failed to load resource: net::ERR_FILE_NOT_FOUND @ blob:https://kr.pinterest.com/422d58cd-5248-4035-9c2a-23896209f6c9:0

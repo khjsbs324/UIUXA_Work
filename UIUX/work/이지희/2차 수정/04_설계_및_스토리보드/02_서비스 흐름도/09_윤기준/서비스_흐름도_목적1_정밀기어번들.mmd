@@ -1,0 +1,27 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef catalog fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef build fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef done fill:#ECEFF1,stroke:#455A64,stroke-width:1.5px,color:#263238;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W09-HOME (터미널 진입)<br/>• [초정밀 기어 번들] 클릭"]
+    CATALOG["02 W09-CATALOG (기어 스펙)<br/>• TDS 농도계 & HPLC 성분표"]
+    BUILD["03 W09-BUILD (파라미터 시뮬)<br/>• PRECISION-DASH-01 수율 계산"]
+    DRAWER["04 W09-DRAWER (기어 번들 결제)<br/>• GEAR-BUNDLE-01 20% 할인"]
+    DONE["05 W09-DONE (데이터시트 발급)<br/>• 브루잉 알고리즘 PDF 증정"]
+    COMM["F1 W09-COMM (깃허브 연동)<br/>• 오픈소스 레포지토리 연결"]
+
+    HOME --> CATALOG
+    CATALOG --> BUILD
+    BUILD --> DRAWER
+    DRAWER --> DONE
+    DONE --> COMM
+
+    class HOME home;
+    class CATALOG catalog;
+    class BUILD build;
+    class DRAWER drawer;
+    class DONE done;
+    class COMM support;

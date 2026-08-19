@@ -1,0 +1,54 @@
+flowchart TD
+    classDef discover fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef decide fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef pathA fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20;
+    classDef pathB fill:#FFF8E1,stroke:#F57F17,stroke-width:1.5px,color:#E65100;
+    classDef follow fill:#37474F,stroke:#263238,stroke-width:2px,color:#FFFFFF;
+
+    subgraph DISCOVER_CONSIDER ["Phase 1: DISCOVER & CONSIDER · 극저자극 캄테크 룸 탐색과 마인드풀 신뢰 형성"]
+        C01["01 캄 룸 진입 (W06-HOME)<br/>• 사용자: 비 내리는 밤 서재 무드 & 극저자극 다크 캔버스 확인<br/>• 화면: HERO-06 다크모드 앰비언트 캔버스<br/>• 반응: 블루라이트 자동 필터링 및 CALM-CONTROLLER-01 탐색 CTA 제공"]
+        C02["02 캄테크 콘솔 조작 (W06-HOME)<br/>• 사용자: CALM-CONTROLLER-01 슬라이더 조작<br/>• 화면: CALM-CONTROLLER-01 마인드풀 모듈<br/>• 반응: 432Hz 뇌파 동조 음향 스트리밍 & 조명 조도 조절"]
+        C03["03 뇌 피로도 자가 진단 (W06-DIAG)<br/>• 사용자: 번아웃 지수 & 수면 부채 3단계 다이얼 입력<br/>• 화면: Brain Fatigue Check 진단 콘솔<br/>• 반응: 테아닌/GABA 권장 섭취량 및 맞춤 저자극 티 3안 처방"]
+        C04["04 저자극 포뮬러 탐색 (W06-MIX)<br/>• 사용자: 테아닌 200mg/GABA 100mg 성분 도감 비교<br/>• 화면: Low-Stimulus Blend Explorer<br/>• 반응: 0.00% 카페인 프리 시험성적서 및 뇌파 이완 시뮬레이션"]
+        C05["05 180초 디지털 디톡스 체험 (W06-RITUAL)<br/>• 사용자: 180초 침묵 타이머 실행<br/>• 화면: 180s Digital Detox Player<br/>• 반응: 화면 암전 모드 및 180초 뇌식 호흡 가이드 펄스"]
+
+        C01 --> C02 --> C03 --> C04 --> C05
+    end
+
+    subgraph DECIDE_SELECT ["Phase 2: DECIDE · 전환 경로 선택"]
+        C06["06 전환 행동 결정 (W06-SHOP / BUILD)<br/>• 사용자: [프라이빗 디톡스 정기구독] 또는 [슬랙 캄 알림 연동] 선택<br/>• 화면: Primary / Secondary CTA 바<br/>• 반응: 선택한 전환 경로(PATH A 또는 PATH B) 즉시 분기"]
+    end
+
+    C05 --> C06
+
+    subgraph PATH_A ["Phase 3-A: PATH A · 저자극 뇌식 티 정기구독 & 매트 다기 경로"]
+        A1["A1 저자극 아카이브 & 성분 확인 (W06-SHOP)<br/>• 사용자: 6대 LNB 카테고리 및 KTR 0.00% 무카페인 성적서 검토<br/>• 화면: Low-Stimulus Tea Archive (6대 LNB)<br/>• 반응: 무카페인 인증 배지 및 월간 15% 정기구독 할인 적용"]
+        A2["A2 매트 다기 세트 설계 (W06-BUILD)<br/>• 사용자: 무광 매트 세라믹 머그 + 캄테크 스틱 조합<br/>• 화면: Matte Teaware Builder<br/>• 반응: 3D 무광 오브제 실시간 렌더링 및 디톡스 번들 구성"]
+        A3["A3 심리스 발주 & 결제 (W06-DONE)<br/>• 사용자: Sanctuary Cart Drawer에서 1-Click 주문 완료<br/>• 화면: 슬라이드아웃 Sanctuary Cart Drawer<br/>• 반응: 텍스트 중심 미니멀 결제 후 스크롤 위치 100% 복원"]
+
+        A1 --> A2 --> A3
+    end
+
+    subgraph PATH_B ["Phase 3-B: PATH B · 주간 마인드풀 리포트 & 슬랙 알림 연동 경로"]
+        B1["B1 슬랙/이메일 알림 선택 (W06-ABOUT)<br/>• 사용자: 주간 뇌 피로 회복 리포트 또는 슬랙 캄 봇 연동 선택<br/>• 화면: Calm Science Journal & Webhook CTA<br/>• 반응: 슬랙 웹훅 연동 및 주간 리포트 구독 모달 구동"]
+        B2["B2 웹훅 URL & 이메일 입력 (W06-COMM)<br/>• 사용자: 슬랙 Webhook URL 또는 이메일 주소 입력<br/>• 화면: Slack Integration & Report Modal<br/>• 반응: 봇 연동 유효성 테스트 및 주간 알림 스케줄 등록"]
+        B3["B3 연동 완료 & 디톡스 패스 발급 (W06-DONE)<br/>• 사용자: 슬랙 연동 완료 확인 및 웰컴 디톡스 가이드 확인<br/>• 화면: Detox Subscription Activated Modal<br/>• 반응: 슬랙 테스트 웰컴 메시지 발송 및 디톡스 PDF 전송"]
+
+        B1 --> B2 --> B3
+    end
+
+    C06 -- "Mind Subscription / Matte Set" --> A1
+    C06 -- "Weekly Calm Report / Slack Bot" --> B1
+
+    subgraph FOLLOW_UP ["Phase 4: 공통 후속 경험 · 침묵 아카이빙 & 마인드풀 라이프 지속"]
+        F1["F1 비공개 익명 일기 & 디톡스 케어 (W06-COMM)<br/>• 사용자: 나만의 익명 뇌식 일기 저장 및 번아웃 극복 기록<br/>• 화면: Silent Archive & Footer Brand Journal<br/>• 반응: 월간 뇌파 회복 지수 리포트 발송 및 프라이빗 힐링 세션 안내"]
+    end
+
+    A3 --> F1
+    B3 --> F1
+
+    class C01,C02,C03,C04,C05 discover;
+    class C06 decide;
+    class A1,A2,A3 pathA;
+    class B1,B2,B3 pathB;
+    class F1 follow;

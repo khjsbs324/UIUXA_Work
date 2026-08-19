@@ -1,0 +1,36 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef auth fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef catalog fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W04-HOME (샘플 진입)<br/>• [호텔 VIP 샘플 킷 신청] 클릭"]
+    AUTH["02 W04-ESTIMATE (사업자 인증)<br/>• BIZ-AUTH-01 사업자번호 입력"]
+    
+    BIZ_CHECK{"03 국세청 API<br/>법인 검증"}
+    
+    CATALOG["04 W04-CATALOG (샘플 팩 확인)<br/>• 4종 어메니티 샘플 자동 선택"]
+    DOC_ATTACH["03-B 서류 첨부 (Fallback)<br/>• 사업자등록증 사본 업로드"]
+    DRAWER["05 W04-DRAWER (배송지 입력)<br/>• 호텔 수령처 지정 (0원 결제)"]
+    DONE["06 W04-DONE (신청 완료)<br/>• F&B 품평 가이드 PDF 발급"]
+    COMM["F1 W04-COMM (전담 매니저)<br/>• 1:1 B2B 컨시어지 채널 연결"]
+
+    HOME --> AUTH
+    AUTH --> BIZ_CHECK
+    
+    BIZ_CHECK -->|법인 인증 성공| CATALOG
+    BIZ_CHECK -->|미등록 사업자| DOC_ATTACH
+    DOC_ATTACH --> CATALOG
+    
+    CATALOG --> DRAWER
+    DRAWER --> DONE
+    DONE --> COMM
+
+    class HOME home;
+    class AUTH,DOC_ATTACH auth;
+    class BIZ_CHECK decision;
+    class CATALOG catalog;
+    class DRAWER,DONE drawer;
+    class COMM support;

@@ -1,0 +1,49 @@
+flowchart LR
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef pipeline fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef b2b fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef transact fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    subgraph HUB ["B2B 호텔 메인 파이프라인"]
+        HOME["01 W04-HOME<br/>B2B 메인 파이프라인<br/>• HOTEL-ESTIMATE-01"]
+    end
+
+    subgraph WORKFLOW ["B2B 5대 발주 & 견적 파이프라인"]
+        direction TB
+        ESTIMATE["02-A W04-ESTIMATE<br/>500객실 대량 견적 산출<br/>• 계단식 볼륨 단가"]
+        SAMPLE["02-B W04-SAMPLE<br/>VIP 8종 샘플 킷 신청<br/>• 사업자 무료 익일배송"]
+        GIFT["02-C W04-GIFT<br/>VIP 가죽 케이스 커스텀<br/>• 호텔 로고 금박 각인"]
+        FNB["02-E W04-FNB<br/>호텔 F&B 시즌 공급<br/>• 애프터눈 티 1,000세트"]
+        B2B["03 W04-B2B<br/>사업자 세금계산서 계약<br/>• 전자 납품 계약 체결"]
+    end
+
+    subgraph TRANSACT ["공통 B2B 발주 & 계약 승인"]
+        DRAWER["W04-DRAWER<br/>B2B 슬라이드아웃 발주<br/>• 세금계산서/법인카드"]
+        DONE["W04-DONE<br/>계약 승인 & 발주 완료<br/>• 전자계약서 / 출고표"]
+        DRAWER --> DONE
+    end
+
+    subgraph ERP ["ERP 재고 관리 & 재발주 루프"]
+        ERP_NODE["W04-ERP<br/>BULK-REORDER-01<br/>• 안전재고 20% 자동 재발주<br/>• 1:1 키 어카운트 매니저"]
+    end
+
+    HOME --> ESTIMATE
+    HOME --> SAMPLE
+    HOME --> GIFT
+    HOME --> FNB
+
+    ESTIMATE --> B2B
+    SAMPLE --> DONE
+    GIFT --> B2B
+    FNB --> B2B
+    B2B --> DRAWER
+
+    DONE --> ERP_NODE
+    ERP_NODE -.->|안전재고 20% 도달 시 원클릭 재발주| DRAWER
+
+    class HOME home;
+    class ESTIMATE,SAMPLE,FNB pipeline;
+    class GIFT,B2B b2b;
+    class DRAWER,DONE transact;
+    class ERP_NODE support;

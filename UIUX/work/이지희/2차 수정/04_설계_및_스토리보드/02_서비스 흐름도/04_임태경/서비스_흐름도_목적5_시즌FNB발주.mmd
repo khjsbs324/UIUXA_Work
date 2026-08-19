@@ -1,0 +1,38 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef catalog fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef meeting fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W04-HOME (다이닝 진입)<br/>• [미슐랭 다이닝 티 페어링] 클릭"]
+    CATALOG["02 W04-CATALOG (원료 검토)<br/>• 희귀 백차 & 심야 침향 스펙 확인"]
+    MEETING["03 W04-ESTIMATE (1:1 조향 미팅)<br/>• MEETING-CALENDAR-01 예약"]
+    
+    SCHEDULE_CHECK{"03-B 미팅 일정<br/>확정 검증"}
+    
+    ATELIER["04 W04-ESTIMATE (독점 블렌딩)<br/>• DINING-ATELIER-01 포뮬러 확정"]
+    DRAWER["05 W04-DRAWER (독점 계약 승인)<br/>• 전자세금계산서 승인 & 법인 결제"]
+    DONE["06 W04-DONE (독점 인증서)<br/>• 공식 독점 공급 인증서 PDF 발급"]
+    RESCHEDULE["03-C 일정 재조정 (Fallback)<br/>• 대체 타임슬롯 선택"]
+    COMM["F1 W04-COMM (도슨트 교육)<br/>• 호텔 F&B 서빙 가이드북"]
+
+    HOME --> CATALOG
+    CATALOG --> MEETING
+    MEETING --> SCHEDULE_CHECK
+    
+    SCHEDULE_CHECK -->|일정 확정| ATELIER
+    SCHEDULE_CHECK -->|일정 충돌| RESCHEDULE
+    RESCHEDULE -.->|일정 변경 후| MEETING
+    
+    ATELIER --> DRAWER
+    DRAWER --> DONE
+    DONE --> COMM
+
+    class HOME home;
+    class CATALOG catalog;
+    class MEETING,ATELIER,RESCHEDULE meeting;
+    class SCHEDULE_CHECK decision;
+    class DRAWER,DONE drawer;
+    class COMM support;

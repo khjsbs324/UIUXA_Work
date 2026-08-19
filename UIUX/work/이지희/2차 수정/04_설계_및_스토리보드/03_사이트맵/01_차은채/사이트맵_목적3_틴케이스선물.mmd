@@ -1,0 +1,39 @@
+flowchart TD
+    classDef root fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef gnb fill:#E8EAF6,stroke:#3F51B5,stroke-width:1.5px,color:#1A237E,font-weight:bold;
+    classDef p1 fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef p2 fill:#FFF8E1,stroke:#F57F17,stroke-width:1.5px,color:#E65100,font-weight:bold;
+    classDef p3 fill:#E1F5FE,stroke:#0277BD,stroke-width:1.5px,color:#01579B,font-weight:bold;
+    classDef p4 fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    ROOT["🎁 차은채 WICKETA 안식처 플랫폼 (목적 3: 틴 각인 선물 특화)"]
+    
+    GNB1["GNB 1: 디렉터 컬렉션<br/>(Director's Collection)"]
+    GNB2["GNB 2: 3D 비스포크 아틀리에<br/>(3D Bespoke Atelier)"]
+    GNB3["GNB 3: 카카오 선물하기<br/>(Kakao Gift Service)"]
+    GNB4["GNB 4: 실시간 배송 추적<br/>(Gift Tracker)"]
+    
+    ROOT --> GNB1
+    ROOT --> GNB2
+    ROOT --> GNB3
+    ROOT --> GNB4
+    
+    GNB1 --> P1_1["W01-HOME<br/>디렉터스 룩북 메인"]
+    GNB1 --> P1_2["W01-COLLECT<br/>20종 상품 도감 아카이브"]
+    
+    GNB2 --> P2_1["W01-BUILD-ENGRAVE<br/>3D 레이저 각인 아틀리에"]
+    GNB2 --> P2_2["W01-BUILD-WRAP<br/>3D 보자기 포장 뷰어"]
+    GNB2 --> P2_3["W01-BUILD-CARD<br/>캘리그래피 카드 에디터"]
+    
+    GNB3 --> P3_1["W01-DRAWER-GIFT<br/>선물 결제 드로어"]
+    GNB3 --> P3_2["W01-DONE-CARD<br/>3D 언박싱 모바일 카드"]
+    
+    GNB4 --> P4_1["W01-COMM-TRACK<br/>실시간 선물 배송 추적"]
+    GNB4 --> P4_2["W01-COMM-THANKS<br/>감사 메시지 보관함"]
+
+    class ROOT root;
+    class GNB1,GNB2,GNB3,GNB4 gnb;
+    class P1_1,P1_2 p1;
+    class P2_1,P2_2,P2_3 p2;
+    class P3_1,P3_2 p3;
+    class P4_1,P4_2 p4;

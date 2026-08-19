@@ -1,0 +1,54 @@
+flowchart TD
+    classDef discover fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef decide fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef pathA fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20;
+    classDef pathB fill:#FFF8E1,stroke:#F57F17,stroke-width:1.5px,color:#E65100;
+    classDef follow fill:#37474F,stroke:#263238,stroke-width:2px,color:#FFFFFF;
+
+    subgraph DISCOVER_CONSIDER ["Phase 1: DISCOVER & CONSIDER · 호텔 스위트룸 공간 몰입과 럭셔리 신뢰 형성"]
+        C01["01 스위트룸 진입 (W04-HOME)<br/>• 사용자: 5성급 부티크 호텔 시네마틱 3D 공간 확인<br/>• 화면: HERO-04 360도 스위트룸 캔버스<br/>• 반응: 클래식 앰비언트 사운드 및 VIP 컨시어지 탐색 CTA 제공"]
+        C02["02 인룸 컨시어지 탐색 (W04-HOME)<br/>• 사용자: HOTEL-CONCIERGE-01 조작<br/>• 화면: 인룸 티타임 컨시어지 인터랙티브 모듈<br/>• 반응: 객실 타입(디럭스/스위트/프레지덴셜)별 맞춤 어메니티 렌더링"]
+        C03["03 투숙 무드 진단 (W04-DIAG)<br/>• 사용자: 얼리체크인/스파/턴다운 3단계 다이얼 선택<br/>• 화면: Check-in Mood Intake 콘솔<br/>• 반응: 투숙 시간대 및 피로도에 맞춘 웰컴 티 솔루션 실시간 매칭"]
+        C04["04 어메니티 블렌드 탐색 (W04-MIX)<br/>• 사용자: 0.00% 무카페인 허브티 & 스펙 비교<br/>• 화면: Suite Blend Explorer 캔버스<br/>• 반응: 심야 턴다운 안심 디카페인 시험성적서 및 향미 프로파일 노출"]
+        C05["05 VIP 인룸 리추얼 체험 (W04-RITUAL)<br/>• 사용자: 클래식 음향 연동 180초 브루잉 실행<br/>• 화면: VIP In-Room Ritual 룸<br/>• 반응: 품격 있는 티타임 가이드 및 5성급 릴랙스 앰비언스 제공"]
+
+        C01 --> C02 --> C03 --> C04 --> C05
+    end
+
+    subgraph DECIDE_SELECT ["Phase 2: DECIDE · 전환 경로 선택"]
+        C06["06 전환 행동 결정 (W04-SHOP / ABOUT)<br/>• 사용자: [VIP 어메니티 패키지 주문] 또는 [B2B 납품 견적/샘플] 선택<br/>• 화면: Primary / Secondary CTA 바<br/>• 반응: 선택한 전환 경로(PATH A 또는 PATH B) 즉시 분기"]
+    end
+
+    C05 --> C06
+
+    subgraph PATH_A ["Phase 3-A: PATH A · VIP 어메니티 주문 & 메탈 틴 커스텀 경로"]
+        A1["A1 어메니티 도감 & B2B 사양 확인 (W04-SHOP)<br/>• 사용자: 6대 LNB 카테고리 및 납품 사양서 검토<br/>• 화면: VIP Amenity Archive (6대 LNB)<br/>• 반응: VIP 어메니티 라인업 및 대량 구매 할인표 노출"]
+        A2["A2 메탈 틴 레이저 각인 설계 (W04-BUILD)<br/>• 사용자: 블랙 틴케이스 + 호텔 로고/이니셜 각인 선택<br/>• 화면: VIP Gift & Tin Builder<br/>• 반응: 3D 메탈 틴케이스 실시간 레이저 각인 시뮬레이션"]
+        A3["A3 심리스 발주 & 결제 (W04-DONE)<br/>• 사용자: Amenity Drawer에서 1-Click 발주 완료<br/>• 화면: 슬라이드아웃 Amenity Drawer<br/>• 반응: 페이지 이탈 없이 발주 완료 후 스크롤 위치 100% 복원"]
+
+        A1 --> A2 --> A3
+    end
+
+    subgraph PATH_B ["Phase 3-B: PATH B · B2B 대량 견적 & VIP 샘플 신청 경로"]
+        B1["B1 B2B 견적/샘플 선택 (W04-ABOUT)<br/>• 사용자: B2B 호텔 제휴 또는 무료 샘플 키트 선택<br/>• 화면: Hotel B2B Partnership & Quotation<br/>• 반응: 객실 규모별 자동 견적 계산기 및 샘플 신청 모달 구동"]
+        B2["B2 납품 정보 & 사업자 등록 (W04-ABOUT)<br/>• 사용자: 호텔명, 객실 수, 사업자 등록번호 입력<br/>• 화면: B2B Quotation & Sample Form<br/>• 반응: 전담 B2B 매니저 1:1 배정 및 견적서 PDF 자동 생성"]
+        B3["B3 신청 완료 & 샘플 발송 안내 (W04-DONE)<br/>• 사용자: 견적 신청 번호 및 샘플 트래킹 확인<br/>• 화면: Concierge Confirmed Modal<br/>• 반응: 전담 매니저 유선 상담 알림 및 VIP 샘플 익일 특송 배송"]
+
+        B1 --> B2 --> B3
+    end
+
+    C06 -- "VIP Amenity Order / Custom Tin" --> A1
+    C06 -- "B2B Partnership / Sample Request" --> B1
+
+    subgraph FOLLOW_UP ["Phase 4: 공통 후속 경험 · VIP 방명록 아카이빙 & B2B 파트너십 유지"]
+        F1["F1 VIP 게스트북 & 정기 납품 케어 (W04-COMM)<br/>• 사용자: 스위트룸 투숙객 티타임 리뷰 확인 & B2B 정기 납품 관리<br/>• 화면: VIP Guest Book & Footer B2B Portal<br/>• 반응: 분기별 어메니티 리뉴얼 리포트 및 VIP 프라이빗 세미나 초청"]
+    end
+
+    A3 --> F1
+    B3 --> F1
+
+    class C01,C02,C03,C04,C05 discover;
+    class C06 decide;
+    class A1,A2,A3 pathA;
+    class B1,B2,B3 pathB;
+    class F1 follow;

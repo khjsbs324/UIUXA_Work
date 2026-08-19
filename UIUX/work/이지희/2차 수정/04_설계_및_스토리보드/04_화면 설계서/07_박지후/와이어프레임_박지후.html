@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WICKETA 와이어프레임 - 07 박지후 (B-2 Office Multi-Floor Pantry)</title>
+  <style>
+    :root {
+      --bg-white: #FFFFFF; --bg-light: #F5F5F5; --bg-gray: #E5E5E5;
+      --border-dark: #111111; --border-gray: #CCCCCC;
+      --text-dark: #111111; --text-muted: #555555;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Pretendard', sans-serif; background-color: var(--bg-light); color: var(--text-dark); min-height: 100vh; display: flex; flex-direction: column; }
+    .wf-top-helper { background: #111111; color: #FFFFFF; padding: 10px 32px; font-size: 11px; display: flex; justify-content: space-between; position: sticky; top: 0; z-index: 1000; }
+    .wf-top-helper button { background: #222222; color: #EEEEEE; border: 1px solid #444444; padding: 5px 12px; font-size: 11px; font-weight: 700; border-radius: 4px; cursor: pointer; }
+    .wf-top-helper button.active { background: #FFFFFF; color: #111111; }
+
+    header.pantry-header { background: #FFFFFF; border-bottom: 2px solid var(--border-dark); padding: 18px 48px; display: flex; justify-content: space-between; align-items: center; }
+    .container { max-width: 1320px; margin: 0 auto; padding: 40px 24px; width: 100%; flex: 1; }
+    .page-view { display: none; }
+    .page-view.active { display: block; }
+
+    .inventory-section { border: 2px solid var(--border-dark); background: #FFFFFF; padding: 36px; border-radius: 8px; margin-bottom: 36px; }
+    .floor-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 24px 0; }
+    .floor-card { border: 1px solid var(--border-dark); background: var(--bg-light); padding: 20px; border-radius: 6px; }
+    .floor-name { font-size: 13px; font-weight: 900; }
+    .floor-stock-bar { height: 8px; background: #CCCCCC; border-radius: 4px; margin: 10px 0; overflow: hidden; }
+    .stock-fill { height: 100%; background: #111111; }
+
+    .pantry-cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .pantry-bulk-card { border: 1px solid var(--border-gray); background: #FFFFFF; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; }
+    .pantry-hero-box { height: 190px; border-bottom: 1px solid var(--border-gray); background: var(--bg-gray); position: relative; display: flex; justify-content: center; align-items: center; }
+    .pantry-box-badge { position: absolute; top: 10px; left: 10px; background: #111111; color: #FFFFFF; font-size: 11px; font-weight: 900; padding: 4px 10px; border-radius: 4px; }
+    .pantry-placeholder { font-size: 11px; font-weight: 700; color: var(--text-muted); }
+    .pantry-info { padding: 20px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .pantry-cat { font-size: 10px; font-weight: 900; color: var(--text-muted); }
+    .pantry-title { font-size: 15px; font-weight: 900; margin: 4px 0 8px; }
+    .unit-price-box { font-size: 11px; color: var(--text-dark); background: #EEEEEE; padding: 6px 10px; border-radius: 4px; font-weight: 700; margin-bottom: 6px; border: 1px solid #CCCCCC; }
+    .dispenser-fit { font-size: 11px; color: var(--text-muted); margin-bottom: 12px; }
+    .pantry-card-footer { display: flex; justify-content: space-between; align-items: center; }
+    .price { font-size: 15px; font-weight: 900; }
+
+    .btn-wf { background: #FFFFFF; border: 1px solid var(--border-dark); padding: 8px 16px; font-size: 12px; font-weight: 700; cursor: pointer; }
+    .btn-wf.primary { background: var(--border-dark); color: #FFFFFF; }
+
+    .cart-drawer { position: fixed; top: 0; right: -440px; width: 420px; height: 100vh; background: #FFFFFF; border-left: 2px solid var(--border-dark); z-index: 2000; transition: right 0.3s ease; display: flex; flex-direction: column; }
+    .cart-drawer.open { right: 0; }
+
+    footer.site-footer { background: #111111; color: #999999; padding: 48px 32px; font-size: 12px; margin-top: auto; }
+    .footer-content { max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; }
+  </style>
+</head>
+<body>
+  <div class="wf-top-helper">
+    <div><strong>[B-2 무채색 사내 탕비실 재고 현황 와이어프레임]</strong> 07 박지후 매니저 맞춤</div>
+    <div>
+      <button class="active" onclick="switchPage('home')">Page 1: 층별 탕비실 재고 콘솔</button>
+      <button onclick="switchPage('catalog')">Page 2: 오피스 벌크 스토어 (20종 전체)</button>
+      <button onclick="switchPage('about')">Page 3: 사내 복지 웰니스 & 세계관</button>
+      <button onclick="toggleDrawer()">🛒 세금계산서 / 법인결제</button>
+    </div>
+  </div>
+
+  <header class="pantry-header">
+    <div style="font-weight:900; font-size:20px; letter-spacing:1px;">WICKETA CORPORATE PANTRY WELLNESS</div>
+    <nav style="display:flex; gap:24px; font-size:13px; font-weight:700;">
+      <a href="javascript:void(0)" onclick="switchPage('home')">층별 재고 모니터링</a>
+      <a href="javascript:void(0)" onclick="switchPage('home')">탕비실 예산 계산기</a>
+      <a href="javascript:void(0)" onclick="switchPage('catalog')">오피스 벌크 (20)</a>
+      <a href="javascript:void(0)" onclick="switchPage('home')">디스펜서 0원 렌탈</a>
+      <a href="javascript:void(0)" onclick="switchPage('about')">복지 포털</a>
+    </nav>
+    <button class="btn-wf primary" onclick="toggleDrawer()">법인 정기결제 (120포)</button>
+  </header>
+
+  <!-- PAGE 1 -->
+  <main id="page-home" class="page-view active container">
+    <section class="inventory-section">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <div>
+          <span style="font-size:11px; font-weight:900; letter-spacing:2px;">OFFICE WELLNESS MONITORING</span>
+          <h1 style="font-size:24px; font-weight:900; margin-top:2px;">사내 층별(1F~4F) 탕비실 디스펜서 비품 잔여량 모니터링</h1>
+        </div>
+        <button class="btn-wf primary" onclick="toggleDrawer()">전 층 120포 자동 리필 결제</button>
+      </div>
+
+      <div class="floor-grid">
+        <div class="floor-card">
+          <div class="floor-name">1F 로비 웰컴 라운지</div>
+          <div class="floor-stock-bar"><div class="stock-fill" style="width:85%;"></div></div>
+          <div style="font-size:11px; color:var(--text-muted);">잔여량: 85포 / 100포 (안정)</div>
+        </div>
+        <div class="floor-card">
+          <div class="floor-name">2F 개발팀 탕비실</div>
+          <div class="floor-stock-bar"><div class="stock-fill" style="width:20%; background:#444444;"></div></div>
+          <div style="font-size:11px; color:var(--text-dark); font-weight:700;">잔여량: 18포 ([경고] 리필 필요)</div>
+        </div>
+        <div class="floor-card">
+          <div class="floor-name">3F 기획/마케팅 탕비실</div>
+          <div class="floor-stock-bar"><div class="stock-fill" style="width:60%;"></div></div>
+          <div style="font-size:11px; color:var(--text-muted);">잔여량: 60포 / 100포 (보통)</div>
+        </div>
+        <div class="floor-card">
+          <div class="floor-name">4F 경영지원/임원실</div>
+          <div class="floor-stock-bar"><div class="stock-fill" style="width:90%;"></div></div>
+          <div style="font-size:11px; color:var(--text-muted);">잔여량: 90포 / 100포 (여유)</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PAGE 2 -->
+  <main id="page-catalog" class="page-view container">
+    <div style="border-bottom:2px solid var(--border-dark); padding-bottom:16px; margin-bottom:36px; display:flex; justify-content:space-between; align-items:flex-end;">
+      <div>
+        <h1 style="font-size:26px; font-weight:900;">오피스 탕비실 벌크 리필 스토어 (20종 전체)</h1>
+        <p style="color:var(--text-muted); font-size:13px;">박지후 매니저 맞춤 1포당 단가 및 4단 디스펜서 호환 규격이 표기된 벌크 도감</p>
+      </div>
+      <div style="display:flex; gap:8px;">
+        <button class="btn-wf primary" onclick="filterProducts('전체 오피스 팩 (20)')">전체 오피스 팩 (20)</button>
+        <button class="btn-wf " onclick="filterProducts('☕ 09:00 집중력 부스팅 에너지티 (4)')">☕ 09:00 집중력 부스팅 에너지티 (4)</button>
+        <button class="btn-wf " onclick="filterProducts('🌿 14:00 식곤증 해소 클린티 (4)')">🌿 14:00 식곤증 해소 클린티 (4)</button>
+        <button class="btn-wf " onclick="filterProducts('🌙 19:00 야근 스트레스 이완 GABA티 (4)')">🌙 19:00 야근 스트레스 이완 GABA티 (4)</button>
+        <button class="btn-wf " onclick="filterProducts('📦 탕비실 120/180포 벌크 리필 (4)')">📦 탕비실 120/180포 벌크 리필 (4)</button>
+        <button class="btn-wf " onclick="filterProducts('🗄️ 아크릴 디스펜서 & 보관 거치대 (4)')">🗄️ 아크릴 디스펜서 & 보관 거치대 (4)</button>
+        
+      </div>
+    </div>
+    <div class="pantry-cards-grid">
+        <div class="pantry-bulk-card" data-cat="☕ 09:00 집중력 부스팅 에너지티 (4)">
+          <div class="pantry-hero-box">
+            <span class="pantry-box-badge">180포 벌크 박스</span>
+            <div class="pantry-placeholder">[SEC-01 탕비실 대용량 박스 뷰]</div>
+          </div>
+          <div class="pantry-info">
+            <span class="pantry-cat">☕ 09:00 집중력 부스팅 에너지티 (4)</span>
+            <h4 class="pantry-title">⭐ [09:00 에너지] 집중력 부스팅 과라나 & 마테 스틱</h4>
+            <div class="unit-price-box">1포당 단가: <strong>325원</strong> (사내 복지 예산 최적화)</div>
+            <div class="dispenser-fit">✓ 4단 투명 아크릴 디스펜서 호환 완제품</div>
+            <div class="pantry-card-footer">
+              <div class="price">32,000원 (법인가)</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">법인 정기결제</button>
+            </div>
+          </div>
+        </div>
+        <div class="pantry-bulk-card" data-cat="🌿 14:00 식곤증 해소 클린티 (4)">
+          <div class="pantry-hero-box">
+            <span class="pantry-box-badge">120포 정기 리필</span>
+            <div class="pantry-placeholder">[SEC-02 탕비실 대용량 박스 뷰]</div>
+          </div>
+          <div class="pantry-info">
+            <span class="pantry-cat">🌿 14:00 식곤증 해소 클린티 (4)</span>
+            <h4 class="pantry-title">🌿 [14:00 식곤증] 식후 입가심 페퍼민트 & 레몬 클린티</h4>
+            <div class="unit-price-box">1포당 단가: <strong>325원</strong> (사내 복지 예산 최적화)</div>
+            <div class="dispenser-fit">✓ 4단 투명 아크릴 디스펜서 호환 완제품</div>
+            <div class="pantry-card-footer">
+              <div class="price">28,000원 (법인가)</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">법인 정기결제</button>
+            </div>
+          </div>
+        </div>
+        <div class="pantry-bulk-card" data-cat="🌙 19:00 야근 스트레스 이완 GABA티 (4)">
+          <div class="pantry-hero-box">
+            <span class="pantry-box-badge">180포 벌크 박스</span>
+            <div class="pantry-placeholder">[SEC-03 탕비실 대용량 박스 뷰]</div>
+          </div>
+          <div class="pantry-info">
+            <span class="pantry-cat">🌙 19:00 야근 스트레스 이완 GABA티 (4)</span>
+            <h4 class="pantry-title">🌙 [19:00 야근케어] 야근 스트레스 이완 GABA 무카페인 팩</h4>
+            <div class="unit-price-box">1포당 단가: <strong>325원</strong> (사내 복지 예산 최적화)</div>
+            <div class="dispenser-fit">✓ 4단 투명 아크릴 디스펜서 호환 완제품</div>
+            <div class="pantry-card-footer">
+              <div class="price">30,000원 (법인가)</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">법인 정기결제</button>
+            </div>
+          </div>
+        </div>
+        <div class="pantry-bulk-card" data-cat="📦 탕비실 120/180포 벌크 리필 (4)">
+          <div class="pantry-hero-box">
+            <span class="pantry-box-badge">120포 정기 리필</span>
+            <div class="pantry-placeholder">[SEC-04 탕비실 대용량 박스 뷰]</div>
+          </div>
+          <div class="pantry-info">
+            <span class="pantry-cat">📦 탕비실 120/180포 벌크 리필 (4)</span>
+            <h4 class="pantry-title">📦 [탕비실 120포] 30인 스타트업 맞춤 120포 벌크 박스</h4>
+            <div class="unit-price-box">1포당 단가: <strong>325원</strong> (사내 복지 예산 최적화)</div>
+            <div class="dispenser-fit">✓ 4단 투명 아크릴 디스펜서 호환 완제품</div>
+            <div class="pantry-card-footer">
+              <div class="price">78,000원 (법인가)</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">법인 정기결제</button>
+            </div>
+          </div>
+        </div>
+        <div class="pantry-bulk-card" data-cat="🗄️ 아크릴 디스펜서 & 보관 거치대 (4)">
+          <div class="pantry-hero-box">
+            <span class="pantry-box-badge">180포 벌크 박스</span>
+            <div class="pantry-placeholder">[SEC-05 탕비실 대용량 박스 뷰]</div>
+          </div>
+          <div class="pantry-info">
+            <span class="pantry-cat">🗄️ 아크릴 디스펜서 & 보관 거치대 (4)</span>
+            <h4 class="pantry-title">🗄️ [디스펜서] 탕비실 전용 4단 투명 아크릴 스틱 오거나이저</h4>
+            <div class="unit-price-box">1포당 단가: <strong>325원</strong> (사내 복지 예산 최적화)</div>
+            <div class="dispenser-fit">✓ 4단 투명 아크릴 디스펜서 호환 완제품</div>
+            <div class="pantry-card-footer">
+              <div class="price">35,000원 (법인가)</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">법인 정기결제</button>
+            </div>
+          </div>
+        </div>
+        <div class="pantry-bulk-card" data-cat="☕ 09:00 집중력 부스팅 에너지티 (4)">
+          <div class="pantry-hero-box">
+            <span class="pantry-box-badge">120포 정기 리필</span>
+            <div class="pantry-placeholder">[SEC-06 탕비실 대용량 박스 뷰]</div>
+          </div>
+          <div class="pantry-info">
+            <span class="pantry-cat">☕ 09:00 집중력 부스팅 에너지티 (4)</span>
+            <h4 class="pantry-title">☕ [09:00 모닝] 타우린 1,000mg 함유 무설탕 에너지 팩</h4>
+            <div class="unit-price-box">1포당 단가: <strong>325원</strong> (사내 복지 예산 최적화)</div>
+            <div class="dispenser-fit">✓ 4단 투명 아크릴 디스펜서 호환 완제품</div>
+            <div class="pantry-card-footer">
+              <div class="price">34,000원 (법인가)</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">법인 정기결제</button>
+            </div>
+          </div>
+        </div>
+        <div class="pantry-bulk-card" data-cat="🌿 14:00 식곤증 해소 클린티 (4)">
+          <div class="pantry-hero-box">
+            <span class="pantry-box-badge">180포 벌크 박스</span>
+            <div class="pantry-placeholder">[SEC-07 탕비실 대용량 박스 뷰]</div>
+          </div>
+          <div class="pantry-info">
+            <span class="pantry-cat">🌿 14:00 식곤증 해소 클린티 (4)</span>
+            <h4 class="pantry-title">🌿 [14:00 리프레시] 유자 진저 소화 촉진 온수 스틱</h4>
+            <div class="unit-price-box">1포당 단가: <strong>325원</strong> (사내 복지 예산 최적화)</div>
+            <div class="dispenser-fit">✓ 4단 투명 아크릴 디스펜서 호환 완제품</div>
+            <div class="pantry-card-footer">
+              <div class="price">27,000원 (법인가)</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">법인 정기결제</button>
+            </div>
+          </div>
+        </div>
+        <div class="pantry-bulk-card" data-cat="🌙 19:00 야근 스트레스 이완 GABA티 (4)">
+          <div class="pantry-hero-box">
+            <span class="pantry-box-badge">120포 정기 리필</span>
+            <div class="pantry-placeholder">[SEC-08 탕비실 대용량 박스 뷰]</div>
+          </div>
+          <div class="pantry-info">
+            <span class="pantry-cat">🌙 19:00 야근 스트레스 이완 GABA티 (4)</span>
+            <h4 class="pantry-title">🌙 [19:00 릴랙스] 블루 캐모마일 & 바닐라 릴리프 팩</h4>
+            <div class="unit-price-box">1포당 단가: <strong>325원</strong> (사내 복지 예산 최적화)</div>
+            <div class="dispenser-fit">✓ 4단 투명 아크릴 디스펜서 호환 완제품</div>
+            <div class="pantry-card-footer">
+              <div class="price">29,000원 (법인가)</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">법인 정기결제</button>
+            </div>
+          </div>
+        </div>
+        <div class="pantry-bulk-card" data-cat="📦 탕비실 120/180포 벌크 리필 (4)">
+          <div class="pantry-hero-box">
+            <span class="pantry-box-badge">180포 벌크 박스</span>
+            <div class="pantry-placeholder">[SEC-09 탕비실 대용량 박스 뷰]</div>
+          </div>
+          <div class="pantry-info">
+            <span class="pantry-cat">📦 탕비실 120/180포 벌크 리필 (4)</span>
+            <h4 class="pantry-title">📦 [탕비실 180포] 50인 오피스 대용량 180포 에코 벌크</h4>
+            <div class="unit-price-box">1포당 단가: <strong>325원</strong> (사내 복지 예산 최적화)</div>
+            <div class="dispenser-fit">✓ 4단 투명 아크릴 디스펜서 호환 완제품</div>
+            <div class="pantry-card-footer">
+              <div class="price">110,000원 (법인가)</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">법인 정기결제</button>
+            </div>
+          </div>
+        </div>
+        <div class="pantry-bulk-card" data-cat="🗄️ 아크릴 디스펜서 & 보관 거치대 (4)">
+          <div class="pantry-hero-box">
+            <span class="pantry-box-badge">120포 정기 리필</span>
+            <div class="pantry-placeholder">[SEC-10 탕비실 대용량 박스 뷰]</div>
+          </div>
+          <div class="pantry-info">
+            <span class="pantry-cat">🗄️ 아크릴 디스펜서 & 보관 거치대 (4)</span>
+            <h4 class="pantry-title">🗄️ [원목 트레이] 회사 로고 레이저 각인 탕비실 우드 트레이</h4>
+            <div class="unit-price-box">1포당 단가: <strong>325원</strong> (사내 복지 예산 최적화)</div>
+            <div class="dispenser-fit">✓ 4단 투명 아크릴 디스펜서 호환 완제품</div>
+            <div class="pantry-card-footer">
+              <div class="price">42,000원 (법인가)</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">법인 정기결제</button>
+            </div>
+          </div>
+        </div>
+        <div class="pantry-bulk-card" data-cat="☕ 09:00 집중력 부스팅 에너지티 (4)">
+          <div class="pantry-hero-box">
+            <span class="pantry-box-badge">180포 벌크 박스</span>
+            <div class="pantry-placeholder">[SEC-11 탕비실 대용량 박스 뷰]</div>
+          </div>
+          <div class="pantry-info">
+            <span class="pantry-cat">☕ 09:00 집중력 부스팅 에너지티 (4)</span>
+            <h4 class="pantry-title">☕ [09:00 비타민] 비타민B군 8종 충전 에너지 스틱</h4>
+            <div class="unit-price-box">1포당 단가: <strong>325원</strong> (사내 복지 예산 최적화)</div>
+            <div class="dispenser-fit">✓ 4단 투명 아크릴 디스펜서 호환 완제품</div>
+            <div class="pantry-card-footer">
+              <div class="price">31,000원 (법인가)</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">법인 정기결제</button>
+            </div>
+          </div>
+        </div>
+        <div class="pantry-bulk-card" data-cat="🌿 14:00 식곤증 해소 클린티 (4)">
+          <div class="pantry-hero-box">
+            <span class="pantry-box-badge">120포 정기 리필</span>
+            <div class="pantry-placeholder">[SEC-12 탕비실 대용량 박스 뷰]</div>
+          </div>
+          <div class="pantry-info">
+            <span class="pantry-cat">🌿 14:00 식곤증 해소 클린티 (4)</span>
+            <h4 class="pantry-title">🌿 [14:00 클렌즈] 루이보스 & 자몽 제로칼로리 팩</h4>
+            <div class="unit-price-box">1포당 단가: <strong>325원</strong> (사내 복지 예산 최적화)</div>
+            <div class="dispenser-fit">✓ 4단 투명 아크릴 디스펜서 호환 완제품</div>
+            <div class="pantry-card-footer">
+              <div class="price">26,000원 (법인가)</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">법인 정기결제</button>
+            </div>
+          </div>
+        </div>
+        <div class="pantry-bulk-card" data-cat="🌙 19:00 야근 스트레스 이완 GABA티 (4)">
+          <div class="pantry-hero-box">
+            <span class="pantry-box-badge">180포 벌크 박스</span>
+            <div class="pantry-placeholder">[SEC-13 탕비실 대용량 박스 뷰]</div>
+          </div>
+          <div class="pantry-info">
+            <span class="pantry-cat">🌙 19:00 야근 스트레스 이완 GABA티 (4)</span>
+            <h4 class="pantry-title">🌙 [19:00 디톡스] 모니터 피로 완화 루테인 안토시아닌 팩</h4>
+            <div class="unit-price-box">1포당 단가: <strong>325원</strong> (사내 복지 예산 최적화)</div>
+            <div class="dispenser-fit">✓ 4단 투명 아크릴 디스펜서 호환 완제품</div>
+            <div class="pantry-card-footer">
+              <div class="price">33,000원 (법인가)</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">법인 정기결제</button>
+            </div>
+          </div>
+        </div>
+        <div class="pantry-bulk-card" data-cat="📦 탕비실 120/180포 벌크 리필 (4)">
+          <div class="pantry-hero-box">
+            <span class="pantry-box-badge">120포 정기 리필</span>
+            <div class="pantry-placeholder">[SEC-14 탕비실 대용량 박스 뷰]</div>
+          </div>
+          <div class="pantry-info">
+            <span class="pantry-cat">📦 탕비실 120/180포 벌크 리필 (4)</span>
+            <h4 class="pantry-title">📦 [대용량 300포] 100인 기업 전용 분기 정기배송 박스</h4>
+            <div class="unit-price-box">1포당 단가: <strong>325원</strong> (사내 복지 예산 최적화)</div>
+            <div class="dispenser-fit">✓ 4단 투명 아크릴 디스펜서 호환 완제품</div>
+            <div class="pantry-card-footer">
+              <div class="price">175,000원 (법인가)</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">법인 정기결제</button>
+            </div>
+          </div>
+        </div>
+        <div class="pantry-bulk-card" data-cat="🗄️ 아크릴 디스펜서 & 보관 거치대 (4)">
+          <div class="pantry-hero-box">
+            <span class="pantry-box-badge">180포 벌크 박스</span>
+            <div class="pantry-placeholder">[SEC-15 탕비실 대용량 박스 뷰]</div>
+          </div>
+          <div class="pantry-info">
+            <span class="pantry-cat">🗄️ 아크릴 디스펜서 & 보관 거치대 (4)</span>
+            <h4 class="pantry-title">🗄️ [종이컵 홀더] 친환경 대나무 티스틱 & 컵 홀더</h4>
+            <div class="unit-price-box">1포당 단가: <strong>325원</strong> (사내 복지 예산 최적화)</div>
+            <div class="dispenser-fit">✓ 4단 투명 아크릴 디스펜서 호환 완제품</div>
+            <div class="pantry-card-footer">
+              <div class="price">22,000원 (법인가)</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">법인 정기결제</button>
+            </div>
+          </div>
+        </div>
+        <div class="pantry-bulk-card" data-cat="☕ 09:00 집중력 부스팅 에너지티 (4)">
+          <div class="pantry-hero-box">
+            <span class="pantry-box-badge">120포 정기 리필</span>
+            <div class="pantry-placeholder">[SEC-16 탕비실 대용량 박스 뷰]</div>
+          </div>
+          <div class="pantry-info">
+            <span class="pantry-cat">☕ 09:00 집중력 부스팅 에너지티 (4)</span>
+            <h4 class="pantry-title">☕ [09:00 더치티] 콜드브루 스타일 스모키 홍차 스틱</h4>
+            <div class="unit-price-box">1포당 단가: <strong>325원</strong> (사내 복지 예산 최적화)</div>
+            <div class="dispenser-fit">✓ 4단 투명 아크릴 디스펜서 호환 완제품</div>
+            <div class="pantry-card-footer">
+              <div class="price">35,000원 (법인가)</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">법인 정기결제</button>
+            </div>
+          </div>
+        </div>
+        <div class="pantry-bulk-card" data-cat="🌿 14:00 식곤증 해소 클린티 (4)">
+          <div class="pantry-hero-box">
+            <span class="pantry-box-badge">180포 벌크 박스</span>
+            <div class="pantry-placeholder">[SEC-17 탕비실 대용량 박스 뷰]</div>
+          </div>
+          <div class="pantry-info">
+            <span class="pantry-cat">🌿 14:00 식곤증 해소 클린티 (4)</span>
+            <h4 class="pantry-title">🌿 [14:00 이온] 탈수 방지 0kcal 전해질 아쿠아 스틱</h4>
+            <div class="unit-price-box">1포당 단가: <strong>325원</strong> (사내 복지 예산 최적화)</div>
+            <div class="dispenser-fit">✓ 4단 투명 아크릴 디스펜서 호환 완제품</div>
+            <div class="pantry-card-footer">
+              <div class="price">24,000원 (법인가)</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">법인 정기결제</button>
+            </div>
+          </div>
+        </div>
+        <div class="pantry-bulk-card" data-cat="🌙 19:00 야근 스트레스 이완 GABA티 (4)">
+          <div class="pantry-hero-box">
+            <span class="pantry-box-badge">120포 정기 리필</span>
+            <div class="pantry-placeholder">[SEC-18 탕비실 대용량 박스 뷰]</div>
+          </div>
+          <div class="pantry-info">
+            <span class="pantry-cat">🌙 19:00 야근 스트레스 이완 GABA티 (4)</span>
+            <h4 class="pantry-title">🌙 [19:00 숙면] 타트체리 & 마그네슘 퇴근 전 안식 팩</h4>
+            <div class="unit-price-box">1포당 단가: <strong>325원</strong> (사내 복지 예산 최적화)</div>
+            <div class="dispenser-fit">✓ 4단 투명 아크릴 디스펜서 호환 완제품</div>
+            <div class="pantry-card-footer">
+              <div class="price">36,000원 (법인가)</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">법인 정기결제</button>
+            </div>
+          </div>
+        </div>
+        <div class="pantry-bulk-card" data-cat="📦 탕비실 120/180포 벌크 리필 (4)">
+          <div class="pantry-hero-box">
+            <span class="pantry-box-badge">180포 벌크 박스</span>
+            <div class="pantry-placeholder">[SEC-19 탕비실 대용량 박스 뷰]</div>
+          </div>
+          <div class="pantry-info">
+            <span class="pantry-cat">📦 탕비실 120/180포 벌크 리필 (4)</span>
+            <h4 class="pantry-title">📦 [복지 선물] 임직원 명절 복지 기프트 틴 세트</h4>
+            <div class="unit-price-box">1포당 단가: <strong>325원</strong> (사내 복지 예산 최적화)</div>
+            <div class="dispenser-fit">✓ 4단 투명 아크릴 디스펜서 호환 완제품</div>
+            <div class="pantry-card-footer">
+              <div class="price">49,000원 (법인가)</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">법인 정기결제</button>
+            </div>
+          </div>
+        </div>
+        <div class="pantry-bulk-card" data-cat="🗄️ 아크릴 디스펜서 & 보관 거치대 (4)">
+          <div class="pantry-hero-box">
+            <span class="pantry-box-badge">120포 정기 리필</span>
+            <div class="pantry-placeholder">[SEC-20 탕비실 대용량 박스 뷰]</div>
+          </div>
+          <div class="pantry-info">
+            <span class="pantry-cat">🗄️ 아크릴 디스펜서 & 보관 거치대 (4)</span>
+            <h4 class="pantry-title">🗄️ [스마트 센서] 재고 소진 시 자동 발주 연동 스마트 트레이</h4>
+            <div class="unit-price-box">1포당 단가: <strong>325원</strong> (사내 복지 예산 최적화)</div>
+            <div class="dispenser-fit">✓ 4단 투명 아크릴 디스펜서 호환 완제품</div>
+            <div class="pantry-card-footer">
+              <div class="price">55,000원 (법인가)</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">법인 정기결제</button>
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </main>
+
+  <!-- PAGE 3 -->
+  <main id="page-about" class="page-view container">
+    <section class="inventory-section">
+      <span style="font-size:11px; font-weight:900; letter-spacing:2px;">CORPORATE WELLNESS & PANTRY CARE</span>
+      <h1 style="font-size:28px; font-weight:900; margin-top:4px;">박지후의 오피스 탕비실 웰니스 (Office Wellness)</h1>
+      <p style="color:var(--text-muted); margin-top:4px;">임직원의 카페인 부작용을 줄이고 1초 만에 번아웃을 리프레시하는 사내 복지 티 솔루션</p>
+
+      <div style="border-left:4px solid var(--border-dark); padding:20px 0 20px 28px; margin:24px 0; background:var(--bg-light);">
+        <h3 style="font-size:16px; font-weight:900;">"문을 열고, 현실에서 벗어나세요 (Open the Door, Escape Reality)"</h3>
+        <p style="font-size:13px; color:var(--text-muted); margin-top:6px; line-height:1.8;">
+          하루 4잔의 고카페인 커피로 인한 가슴 두근거림과 만성 피로에서 벗어나야 합니다.<br/>
+          위케타 오피스 웰니스는 <strong>찬물 0.1초 융해 스틱</strong>과 <strong>시간대별(09:00 에너지 / 14:00 소화 / 19:00 야근 이완) 큐레이션</strong>을 통해 사내 탕비실을 건강한 힐링 라운지로 바꿉니다.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <aside id="cart-drawer" class="cart-drawer">
+    <div style="padding:20px 24px; border-bottom:1px solid var(--border-gray); display:flex; justify-content:space-between;">
+      <h4>🛒 CORPORATE PANTRY CART</h4>
+      <button class="btn-wf" onclick="toggleDrawer()">✕ 닫기</button>
+    </div>
+    <div style="flex:1; padding:24px;">
+      <div style="border:1px solid var(--border-gray); padding:16px; margin-bottom:16px;">
+        <strong>[탕비실 120포] 30인 스타트업 맞춤 120포 벌크 박스</strong>
+        <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">수량: 1박스 / 78,000원 (법인가)</div>
+      </div>
+    </div>
+    <div style="padding:20px 24px; border-top:1px solid var(--border-gray); background:var(--bg-light);">
+      <button class="btn-wf primary" style="width:100%; padding:12px;">세금계산서 발행 & 정기결제</button>
+    </div>
+  </aside>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div>
+        <h5>WICKETA B2B (위케타)</h5>
+        <p>문을 열고, 현실에서 벗어나세요 (Open the Door, Escape Reality)</p>
+        <p style="margin-top:6px;">고객센터: 1588-0000 | 서울시 성동구 성수이로 00 쇼룸</p>
+      </div>
+      <div>
+        <h5>인증 & 지원</h5>
+        <p>KTR 3無 공인 시험성적서</p>
+      </div>
+      <div>
+        <h5>공식 채널</h5>
+        <p>B2B: b2b.wicketa.com</p>
+        <p>© 2026 WICKETA All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function switchPage(p) {
+      document.querySelectorAll('.page-view').forEach(el => el.classList.remove('active'));
+      let t = document.getElementById('page-' + p);
+      if(!t) t = document.getElementById('page-catalog');
+      if(!t) t = document.getElementById('page-home');
+      if(t) t.classList.add('active');
+
+      document.querySelectorAll('.wf-top-helper button').forEach(b => b.classList.remove('active'));
+      const btns = document.querySelectorAll('.wf-top-helper button');
+      if(p==='home'&&btns[0]) btns[0].classList.add('active');
+      else if(p==='catalog'&&btns[1]) btns[1].classList.add('active');
+      else if(p==='about'&&btns[2]) btns[2].classList.add('active');
+      window.scrollTo(0,0);
+    }
+    function toggleDrawer() { document.getElementById('cart-drawer').classList.toggle('open'); }
+    function filterProducts(cat) {
+      document.querySelectorAll('#page-catalog .pantry-bulk-card').forEach(c => {
+        if(cat.includes('전체') || c.getAttribute('data-cat') === cat) c.style.display = 'flex';
+        else c.style.display = 'none';
+      });
+      document.querySelectorAll('#page-catalog .btn-wf').forEach(b => b.classList.remove('primary'));
+      if(event && event.target) event.target.classList.add('primary');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WICKETA 와이어프레임 - 05 송아린 (B-3 Zero Diet Signal Spa)</title>
+  <style>
+    :root {
+      --bg-white: #FFFFFF; --bg-light: #F5F5F5; --bg-gray: #E5E5E5;
+      --border-dark: #111111; --border-gray: #CCCCCC;
+      --text-dark: #111111; --text-muted: #555555;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Pretendard', sans-serif; background-color: var(--bg-light); color: var(--text-dark); min-height: 100vh; display: flex; flex-direction: column; }
+    .wf-top-helper { background: #111111; color: #FFFFFF; padding: 10px 32px; font-size: 11px; display: flex; justify-content: space-between; position: sticky; top: 0; z-index: 1000; }
+    .wf-top-helper button { background: #222222; color: #EEEEEE; border: 1px solid #444444; padding: 5px 12px; font-size: 11px; font-weight: 700; border-radius: 4px; cursor: pointer; }
+    .wf-top-helper button.active { background: #FFFFFF; color: #111111; }
+
+    header.diet-header { background: #FFFFFF; border-bottom: 2px solid var(--border-dark); padding: 18px 48px; display: flex; justify-content: space-between; align-items: center; }
+    .container { max-width: 1320px; margin: 0 auto; padding: 40px 24px; width: 100%; flex: 1; }
+    .page-view { display: none; }
+    .page-view.active { display: block; }
+
+    .stopwatch-section { border: 2px solid var(--border-dark); background: #FFFFFF; padding: 36px; border-radius: 8px; margin-bottom: 36px; }
+    .stopwatch-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 32px; align-items: center; margin: 24px 0; }
+    .stopwatch-dial { height: 260px; border: 3px solid var(--border-dark); background: var(--bg-light); border-radius: 50%; width: 260px; margin: 0 auto; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+    .dial-big { font-size: 42px; font-weight: 900; color: var(--border-dark); }
+
+    .calendar-30-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+    .day-cell { border: 1px solid var(--border-gray); background: var(--bg-light); padding: 12px 6px; text-align: center; border-radius: 4px; font-size: 11px; }
+    .day-cell.checked { background: #111111; color: #FFFFFF; font-weight: 900; }
+
+    .diet-cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .traffic-diet-card { border: 1px solid var(--border-gray); background: #FFFFFF; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; }
+    .diet-hero-box { height: 190px; border-bottom: 1px solid var(--border-gray); background: var(--bg-gray); position: relative; display: flex; justify-content: center; align-items: center; }
+    .diet-kcal-badge { position: absolute; top: 10px; left: 10px; background: #111111; color: #FFFFFF; font-size: 11px; font-weight: 900; padding: 4px 10px; border-radius: 4px; }
+    .diet-placeholder { font-size: 11px; font-weight: 700; color: var(--text-muted); }
+    .diet-info { padding: 20px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .traffic-lights { display: flex; gap: 6px; margin-bottom: 8px; }
+    .light-badge { background: #EEEEEE; color: #111111; font-size: 10px; font-weight: 900; padding: 3px 8px; border-radius: 4px; border: 1px solid #CCCCCC; }
+    .diet-cat { font-size: 10px; font-weight: 900; color: var(--text-muted); }
+    .diet-title { font-size: 15px; font-weight: 900; margin: 4px 0 10px; }
+    .intake-timing { font-size: 11px; color: var(--text-muted); background: var(--bg-light); padding: 8px 10px; border-radius: 4px; margin-bottom: 12px; }
+    .diet-card-footer { display: flex; justify-content: space-between; align-items: center; }
+    .price { font-size: 15px; font-weight: 900; }
+
+    .btn-wf { background: #FFFFFF; border: 1px solid var(--border-dark); padding: 8px 16px; font-size: 12px; font-weight: 700; cursor: pointer; }
+    .btn-wf.primary { background: var(--border-dark); color: #FFFFFF; }
+
+    .cart-drawer { position: fixed; top: 0; right: -440px; width: 420px; height: 100vh; background: #FFFFFF; border-left: 2px solid var(--border-dark); z-index: 2000; transition: right 0.3s ease; display: flex; flex-direction: column; }
+    .cart-drawer.open { right: 0; }
+
+    footer.site-footer { background: #111111; color: #999999; padding: 48px 32px; font-size: 12px; margin-top: auto; }
+    .footer-content { max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; }
+  </style>
+</head>
+<body>
+  <div class="wf-top-helper">
+    <div><strong>[B-3 무채색 0.00kcal 다이어트 와이어프레임]</strong> 05 송아린 맞춤</div>
+    <div>
+      <button class="active" onclick="switchPage('home')">Page 1: 0.00kcal 신호등 룸</button>
+      <button onclick="switchPage('catalog')">Page 2: 0kcal 클린 스파클링 상점 (20종 전체)</button>
+      <button onclick="switchPage('about')">Page 3: KTR 0.00kcal 검증실 & 세계관</button>
+      <button onclick="toggleDrawer()">🛒 식단 결제 드로어</button>
+    </div>
+  </div>
+
+  <header class="diet-header">
+    <div style="font-weight:900; font-size:20px; letter-spacing:1px;">WICKETA ZERO DIET SIGNAL LAB</div>
+    <nav style="display:flex; gap:24px; font-size:13px; font-weight:700;">
+      <a href="javascript:void(0)" onclick="switchPage('home')">0.00kcal 스톱워치</a>
+      <a href="javascript:void(0)" onclick="switchPage('home')">30일 바디 챌린지</a>
+      <a href="javascript:void(0)" onclick="switchPage('catalog')">0kcal 도감 (20)</a>
+      <a href="javascript:void(0)" onclick="switchPage('home')">쉐이커 각인실</a>
+      <a href="javascript:void(0)" onclick="switchPage('about')">KTR 성적서</a>
+    </nav>
+    <button class="btn-wf primary" onclick="toggleDrawer()">장바구니 (2)</button>
+  </header>
+
+  <!-- PAGE 1 -->
+  <main id="page-home" class="page-view active container">
+    <section class="stopwatch-section">
+      <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+        <div>
+          <span style="font-size:11px; font-weight:900; letter-spacing:2px;">ZERO-CALORIE ACCREDITED ROOM</span>
+          <h1 style="font-size:24px; font-weight:900; margin-top:2px;">KTR 공인 0.00kcal 스톱워치 & 30일 식단 트래커</h1>
+        </div>
+        <button class="btn-wf primary" onclick="toggleDrawer()">30일 식단 챌린지 20% 할인 구독</button>
+      </div>
+
+      <div class="stopwatch-grid">
+        <div class="stopwatch-dial">
+          <span style="font-size:12px; font-weight:900; color:var(--text-muted);">CALORIE METER</span>
+          <div class="dial-big">0.00</div>
+          <span style="font-size:14px; font-weight:900; color:var(--text-dark);">kcal / 100ml</span>
+          <div style="font-size:10px; color:var(--text-muted); margin-top:6px;">당류 0g | 나트륨 0mg</div>
+        </div>
+
+        <div>
+          <h3 style="font-size:16px; font-weight:900; margin-bottom:12px;">30-Day 바디프로필 식단 트래커 캘린더</h3>
+          <div class="calendar-30-grid">
+            <div class="day-cell checked">Day 1 ✓</div>
+            <div class="day-cell checked">Day 2 ✓</div>
+            <div class="day-cell checked">Day 3 ✓</div>
+            <div class="day-cell checked">Day 4 ✓</div>
+            <div class="day-cell">Day 5</div>
+            <div class="day-cell">Day 6</div>
+            <div class="day-cell">Day 7</div>
+            <div class="day-cell">Day 8</div>
+            <div class="day-cell">Day 9</div>
+            <div class="day-cell">Day 10</div>
+            <div class="day-cell">Day 11</div>
+            <div class="day-cell">Day 12</div>
+          </div>
+          <p style="font-size:12px; color:var(--text-muted); margin-top:12px;">매일 아침 공복 유산소 및 운동 직전 1포 섭취 인증 시 완주 리워드 제공</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PAGE 2 -->
+  <main id="page-catalog" class="page-view container">
+    <div style="border-bottom:2px solid var(--border-dark); padding-bottom:16px; margin-bottom:36px; display:flex; justify-content:space-between; align-items:flex-end;">
+      <div>
+        <h1 style="font-size:26px; font-weight:900;">0kcal 영양 성분 무채색 스토어 (20종 전체)</h1>
+        <p style="color:var(--text-muted); font-size:13px;">송아린 다이어터 맞춤 당류/나트륨/지방 0g 뱃지가 달린 길티프리 도감</p>
+      </div>
+      <div style="display:flex; gap:8px;">
+        <button class="btn-wf primary" onclick="filterProducts('전체 0kcal 클린팩 (20)')">전체 0kcal 클린팩 (20)</button>
+        <button class="btn-wf " onclick="filterProducts('🍹 0kcal 버터플라이피 스파클링 (4)')">🍹 0kcal 버터플라이피 스파클링 (4)</button>
+        <button class="btn-wf " onclick="filterProducts('💪 운동 전 부스팅 에메랄드 마테 (4)')">💪 운동 전 부스팅 에메랄드 마테 (4)</button>
+        <button class="btn-wf " onclick="filterProducts('🌙 야식 방어 0.00mg 무카페인 GABA (4)')">🌙 야식 방어 0.00mg 무카페인 GABA (4)</button>
+        <button class="btn-wf " onclick="filterProducts('🏋️ 30일 챌린지 보틀 번들 팩 (4)')">🏋️ 30일 챌린지 보틀 번들 팩 (4)</button>
+        <button class="btn-wf " onclick="filterProducts('🍓 비건 안토시아닌 루비 베리 믹서 (4)')">🍓 비건 안토시아닌 루비 베리 믹서 (4)</button>
+        
+      </div>
+    </div>
+    <div class="diet-cards-grid">
+        <div class="traffic-diet-card" data-cat="🍹 0kcal 버터플라이피 스파클링 (4)">
+          <div class="diet-hero-box">
+            <span class="diet-kcal-badge">0.00 kcal (길티프리)</span>
+            <div class="diet-placeholder">[SEC-01 0kcal 스파클링 뷰박스]</div>
+          </div>
+          <div class="diet-info">
+            <div class="traffic-lights">
+              <span class="light-badge">당류 0g</span>
+              <span class="light-badge">나트륨 0mg</span>
+              <span class="light-badge">지방 0g</span>
+            </div>
+            <span class="diet-cat">🍹 0kcal 버터플라이피 스파클링 (4)</span>
+            <h4 class="diet-title">⭐ [0kcal 시그니처] 블루 오로라 버터플라이피 스파클링</h4>
+            <div class="intake-timing">권장 섭취 타이밍: 운동 30분 전 탄산수 300ml 부스팅</div>
+            <div class="diet-card-footer">
+              <div class="price">34,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">30일 식단 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="traffic-diet-card" data-cat="💪 운동 전 부스팅 에메랄드 마테 (4)">
+          <div class="diet-hero-box">
+            <span class="diet-kcal-badge">0.00 kcal (길티프리)</span>
+            <div class="diet-placeholder">[SEC-02 0kcal 스파클링 뷰박스]</div>
+          </div>
+          <div class="diet-info">
+            <div class="traffic-lights">
+              <span class="light-badge">당류 0g</span>
+              <span class="light-badge">나트륨 0mg</span>
+              <span class="light-badge">지방 0g</span>
+            </div>
+            <span class="diet-cat">💪 운동 전 부스팅 에메랄드 마테 (4)</span>
+            <h4 class="diet-title">💪 [부스팅 마테] 운동 전 버닝 에메랄드 라임 마테 팩</h4>
+            <div class="intake-timing">권장 섭취 타이밍: 운동 30분 전 탄산수 300ml 부스팅</div>
+            <div class="diet-card-footer">
+              <div class="price">29,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">30일 식단 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="traffic-diet-card" data-cat="🌙 야식 방어 0.00mg 무카페인 GABA (4)">
+          <div class="diet-hero-box">
+            <span class="diet-kcal-badge">0.00 kcal (길티프리)</span>
+            <div class="diet-placeholder">[SEC-03 0kcal 스파클링 뷰박스]</div>
+          </div>
+          <div class="diet-info">
+            <div class="traffic-lights">
+              <span class="light-badge">당류 0g</span>
+              <span class="light-badge">나트륨 0mg</span>
+              <span class="light-badge">지방 0g</span>
+            </div>
+            <span class="diet-cat">🌙 야식 방어 0.00mg 무카페인 GABA (4)</span>
+            <h4 class="diet-title">🌙 [야식 방어] 야식 충동 차단 GABA 루이보스 팩</h4>
+            <div class="intake-timing">권장 섭취 타이밍: 운동 30분 전 탄산수 300ml 부스팅</div>
+            <div class="diet-card-footer">
+              <div class="price">28,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">30일 식단 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="traffic-diet-card" data-cat="🏋️ 30일 챌린지 보틀 번들 팩 (4)">
+          <div class="diet-hero-box">
+            <span class="diet-kcal-badge">0.00 kcal (길티프리)</span>
+            <div class="diet-placeholder">[SEC-04 0kcal 스파클링 뷰박스]</div>
+          </div>
+          <div class="diet-info">
+            <div class="traffic-lights">
+              <span class="light-badge">당류 0g</span>
+              <span class="light-badge">나트륨 0mg</span>
+              <span class="light-badge">지방 0g</span>
+            </div>
+            <span class="diet-cat">🏋️ 30일 챌린지 보틀 번들 팩 (4)</span>
+            <h4 class="diet-title">🏋️ [30일 챌린지] 바디프로필 30일 1일 1포 챌린지 박스</h4>
+            <div class="intake-timing">권장 섭취 타이밍: 운동 30분 전 탄산수 300ml 부스팅</div>
+            <div class="diet-card-footer">
+              <div class="price">68,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">30일 식단 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="traffic-diet-card" data-cat="🍓 비건 안토시아닌 루비 베리 믹서 (4)">
+          <div class="diet-hero-box">
+            <span class="diet-kcal-badge">0.00 kcal (길티프리)</span>
+            <div class="diet-placeholder">[SEC-05 0kcal 스파클링 뷰박스]</div>
+          </div>
+          <div class="diet-info">
+            <div class="traffic-lights">
+              <span class="light-badge">당류 0g</span>
+              <span class="light-badge">나트륨 0mg</span>
+              <span class="light-badge">지방 0g</span>
+            </div>
+            <span class="diet-cat">🍓 비건 안토시아닌 루비 베리 믹서 (4)</span>
+            <h4 class="diet-title">🍓 [루비 베리] 안토시아닌 비건 스파클링 탄산 믹서</h4>
+            <div class="intake-timing">권장 섭취 타이밍: 운동 30분 전 탄산수 300ml 부스팅</div>
+            <div class="diet-card-footer">
+              <div class="price">27,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">30일 식단 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="traffic-diet-card" data-cat="🍹 0kcal 버터플라이피 스파클링 (4)">
+          <div class="diet-hero-box">
+            <span class="diet-kcal-badge">0.00 kcal (길티프리)</span>
+            <div class="diet-placeholder">[SEC-06 0kcal 스파클링 뷰박스]</div>
+          </div>
+          <div class="diet-info">
+            <div class="traffic-lights">
+              <span class="light-badge">당류 0g</span>
+              <span class="light-badge">나트륨 0mg</span>
+              <span class="light-badge">지방 0g</span>
+            </div>
+            <span class="diet-cat">🍹 0kcal 버터플라이피 스파클링 (4)</span>
+            <h4 class="diet-title">🍹 [트리플 레몬] 0kcal 비타민C 레몬 스파클링 스틱</h4>
+            <div class="intake-timing">권장 섭취 타이밍: 운동 30분 전 탄산수 300ml 부스팅</div>
+            <div class="diet-card-footer">
+              <div class="price">26,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">30일 식단 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="traffic-diet-card" data-cat="💪 운동 전 부스팅 에메랄드 마테 (4)">
+          <div class="diet-hero-box">
+            <span class="diet-kcal-badge">0.00 kcal (길티프리)</span>
+            <div class="diet-placeholder">[SEC-07 0kcal 스파클링 뷰박스]</div>
+          </div>
+          <div class="diet-info">
+            <div class="traffic-lights">
+              <span class="light-badge">당류 0g</span>
+              <span class="light-badge">나트륨 0mg</span>
+              <span class="light-badge">지방 0g</span>
+            </div>
+            <span class="diet-cat">💪 운동 전 부스팅 에메랄드 마테 (4)</span>
+            <h4 class="diet-title">💪 [L-카르니틴] 체지방 분해 부스팅 자몽 블렌드</h4>
+            <div class="intake-timing">권장 섭취 타이밍: 운동 30분 전 탄산수 300ml 부스팅</div>
+            <div class="diet-card-footer">
+              <div class="price">32,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">30일 식단 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="traffic-diet-card" data-cat="🌙 야식 방어 0.00mg 무카페인 GABA (4)">
+          <div class="diet-hero-box">
+            <span class="diet-kcal-badge">0.00 kcal (길티프리)</span>
+            <div class="diet-placeholder">[SEC-08 0kcal 스파클링 뷰박스]</div>
+          </div>
+          <div class="diet-info">
+            <div class="traffic-lights">
+              <span class="light-badge">당류 0g</span>
+              <span class="light-badge">나트륨 0mg</span>
+              <span class="light-badge">지방 0g</span>
+            </div>
+            <span class="diet-cat">🌙 야식 방어 0.00mg 무카페인 GABA (4)</span>
+            <h4 class="diet-title">🌙 [붓기 제로] 호박 & 옥수수수염 0kcal 클린티</h4>
+            <div class="intake-timing">권장 섭취 타이밍: 운동 30분 전 탄산수 300ml 부스팅</div>
+            <div class="diet-card-footer">
+              <div class="price">25,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">30일 식단 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="traffic-diet-card" data-cat="🏋️ 30일 챌린지 보틀 번들 팩 (4)">
+          <div class="diet-hero-box">
+            <span class="diet-kcal-badge">0.00 kcal (길티프리)</span>
+            <div class="diet-placeholder">[SEC-09 0kcal 스파클링 뷰박스]</div>
+          </div>
+          <div class="diet-info">
+            <div class="traffic-lights">
+              <span class="light-badge">당류 0g</span>
+              <span class="light-badge">나트륨 0mg</span>
+              <span class="light-badge">지방 0g</span>
+            </div>
+            <span class="diet-cat">🏋️ 30일 챌린지 보틀 번들 팩 (4)</span>
+            <h4 class="diet-title">🏋️ [각인 쉐이커] BPA-Free 트라이탄 500ml 각인 보틀</h4>
+            <div class="intake-timing">권장 섭취 타이밍: 운동 30분 전 탄산수 300ml 부스팅</div>
+            <div class="diet-card-footer">
+              <div class="price">19,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">30일 식단 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="traffic-diet-card" data-cat="🍓 비건 안토시아닌 루비 베리 믹서 (4)">
+          <div class="diet-hero-box">
+            <span class="diet-kcal-badge">0.00 kcal (길티프리)</span>
+            <div class="diet-placeholder">[SEC-10 0kcal 스파클링 뷰박스]</div>
+          </div>
+          <div class="diet-info">
+            <div class="traffic-lights">
+              <span class="light-badge">당류 0g</span>
+              <span class="light-badge">나트륨 0mg</span>
+              <span class="light-badge">지방 0g</span>
+            </div>
+            <span class="diet-cat">🍓 비건 안토시아닌 루비 베리 믹서 (4)</span>
+            <h4 class="diet-title">🍓 [석류 콜라겐] 0kcal 저분자 피쉬 콜라겐 믹서</h4>
+            <div class="intake-timing">권장 섭취 타이밍: 운동 30분 전 탄산수 300ml 부스팅</div>
+            <div class="diet-card-footer">
+              <div class="price">33,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">30일 식단 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="traffic-diet-card" data-cat="🍹 0kcal 버터플라이피 스파클링 (4)">
+          <div class="diet-hero-box">
+            <span class="diet-kcal-badge">0.00 kcal (길티프리)</span>
+            <div class="diet-placeholder">[SEC-11 0kcal 스파클링 뷰박스]</div>
+          </div>
+          <div class="diet-info">
+            <div class="traffic-lights">
+              <span class="light-badge">당류 0g</span>
+              <span class="light-badge">나트륨 0mg</span>
+              <span class="light-badge">지방 0g</span>
+            </div>
+            <span class="diet-cat">🍹 0kcal 버터플라이피 스파클링 (4)</span>
+            <h4 class="diet-title">🍹 [민트 쿨링] 갈증 해소 페퍼민트 스파클링 스틱</h4>
+            <div class="intake-timing">권장 섭취 타이밍: 운동 30분 전 탄산수 300ml 부스팅</div>
+            <div class="diet-card-footer">
+              <div class="price">24,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">30일 식단 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="traffic-diet-card" data-cat="💪 운동 전 부스팅 에메랄드 마테 (4)">
+          <div class="diet-hero-box">
+            <span class="diet-kcal-badge">0.00 kcal (길티프리)</span>
+            <div class="diet-placeholder">[SEC-12 0kcal 스파클링 뷰박스]</div>
+          </div>
+          <div class="diet-info">
+            <div class="traffic-lights">
+              <span class="light-badge">당류 0g</span>
+              <span class="light-badge">나트륨 0mg</span>
+              <span class="light-badge">지방 0g</span>
+            </div>
+            <span class="diet-cat">💪 운동 전 부스팅 에메랄드 마테 (4)</span>
+            <h4 class="diet-title">💪 [BCAA 에너지] 무설탕 타우린 & 그린티 에너지 팩</h4>
+            <div class="intake-timing">권장 섭취 타이밍: 운동 30분 전 탄산수 300ml 부스팅</div>
+            <div class="diet-card-footer">
+              <div class="price">35,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">30일 식단 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="traffic-diet-card" data-cat="🌙 야식 방어 0.00mg 무카페인 GABA (4)">
+          <div class="diet-hero-box">
+            <span class="diet-kcal-badge">0.00 kcal (길티프리)</span>
+            <div class="diet-placeholder">[SEC-13 0kcal 스파클링 뷰박스]</div>
+          </div>
+          <div class="diet-info">
+            <div class="traffic-lights">
+              <span class="light-badge">당류 0g</span>
+              <span class="light-badge">나트륨 0mg</span>
+              <span class="light-badge">지방 0g</span>
+            </div>
+            <span class="diet-cat">🌙 야식 방어 0.00mg 무카페인 GABA (4)</span>
+            <h4 class="diet-title">🌙 [수면 릴랙스] 심야 숙면 돕는 타트체리 무당 티</h4>
+            <div class="intake-timing">권장 섭취 타이밍: 운동 30분 전 탄산수 300ml 부스팅</div>
+            <div class="diet-card-footer">
+              <div class="price">31,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">30일 식단 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="traffic-diet-card" data-cat="🏋️ 30일 챌린지 보틀 번들 팩 (4)">
+          <div class="diet-hero-box">
+            <span class="diet-kcal-badge">0.00 kcal (길티프리)</span>
+            <div class="diet-placeholder">[SEC-14 0kcal 스파클링 뷰박스]</div>
+          </div>
+          <div class="diet-info">
+            <div class="traffic-lights">
+              <span class="light-badge">당류 0g</span>
+              <span class="light-badge">나트륨 0mg</span>
+              <span class="light-badge">지방 0g</span>
+            </div>
+            <span class="diet-cat">🏋️ 30일 챌린지 보틀 번들 팩 (4)</span>
+            <h4 class="diet-title">🏋️ [덤벨 머들러] 스테인리스 덤벨 디자인 바 머들러</h4>
+            <div class="intake-timing">권장 섭취 타이밍: 운동 30분 전 탄산수 300ml 부스팅</div>
+            <div class="diet-card-footer">
+              <div class="price">15,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">30일 식단 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="traffic-diet-card" data-cat="🍓 비건 안토시아닌 루비 베리 믹서 (4)">
+          <div class="diet-hero-box">
+            <span class="diet-kcal-badge">0.00 kcal (길티프리)</span>
+            <div class="diet-placeholder">[SEC-15 0kcal 스파클링 뷰박스]</div>
+          </div>
+          <div class="diet-info">
+            <div class="traffic-lights">
+              <span class="light-badge">당류 0g</span>
+              <span class="light-badge">나트륨 0mg</span>
+              <span class="light-badge">지방 0g</span>
+            </div>
+            <span class="diet-cat">🍓 비건 안토시아닌 루비 베리 믹서 (4)</span>
+            <h4 class="diet-title">🍓 [히비스커스] HCA 가르시니아 함유 다이어트 팩</h4>
+            <div class="intake-timing">권장 섭취 타이밍: 운동 30분 전 탄산수 300ml 부스팅</div>
+            <div class="diet-card-footer">
+              <div class="price">29,500원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">30일 식단 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="traffic-diet-card" data-cat="🍹 0kcal 버터플라이피 스파클링 (4)">
+          <div class="diet-hero-box">
+            <span class="diet-kcal-badge">0.00 kcal (길티프리)</span>
+            <div class="diet-placeholder">[SEC-16 0kcal 스파클링 뷰박스]</div>
+          </div>
+          <div class="diet-info">
+            <div class="traffic-lights">
+              <span class="light-badge">당류 0g</span>
+              <span class="light-badge">나트륨 0mg</span>
+              <span class="light-badge">지방 0g</span>
+            </div>
+            <span class="diet-cat">🍹 0kcal 버터플라이피 스파클링 (4)</span>
+            <h4 class="diet-title">🍹 [새벽구독] 30일 다이어터 맞춤 스파클링 정기배송</h4>
+            <div class="intake-timing">권장 섭취 타이밍: 운동 30분 전 탄산수 300ml 부스팅</div>
+            <div class="diet-card-footer">
+              <div class="price">33,150원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">30일 식단 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="traffic-diet-card" data-cat="💪 운동 전 부스팅 에메랄드 마테 (4)">
+          <div class="diet-hero-box">
+            <span class="diet-kcal-badge">0.00 kcal (길티프리)</span>
+            <div class="diet-placeholder">[SEC-17 0kcal 스파클링 뷰박스]</div>
+          </div>
+          <div class="diet-info">
+            <div class="traffic-lights">
+              <span class="light-badge">당류 0g</span>
+              <span class="light-badge">나트륨 0mg</span>
+              <span class="light-badge">지방 0g</span>
+            </div>
+            <span class="diet-cat">💪 운동 전 부스팅 에메랄드 마테 (4)</span>
+            <h4 class="diet-title">💪 [전해질 보충] 0kcal 이온 미네랄 솔트 스틱</h4>
+            <div class="intake-timing">권장 섭취 타이밍: 운동 30분 전 탄산수 300ml 부스팅</div>
+            <div class="diet-card-footer">
+              <div class="price">22,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">30일 식단 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="traffic-diet-card" data-cat="🌙 야식 방어 0.00mg 무카페인 GABA (4)">
+          <div class="diet-hero-box">
+            <span class="diet-kcal-badge">0.00 kcal (길티프리)</span>
+            <div class="diet-placeholder">[SEC-18 0kcal 스파클링 뷰박스]</div>
+          </div>
+          <div class="diet-info">
+            <div class="traffic-lights">
+              <span class="light-badge">당류 0g</span>
+              <span class="light-badge">나트륨 0mg</span>
+              <span class="light-badge">지방 0g</span>
+            </div>
+            <span class="diet-cat">🌙 야식 방어 0.00mg 무카페인 GABA (4)</span>
+            <h4 class="diet-title">🌙 [디톡스] 유기농 모링가 & 레몬밤 클렌즈 팩</h4>
+            <div class="intake-timing">권장 섭취 타이밍: 운동 30분 전 탄산수 300ml 부스팅</div>
+            <div class="diet-card-footer">
+              <div class="price">27,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">30일 식단 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="traffic-diet-card" data-cat="🏋️ 30일 챌린지 보틀 번들 팩 (4)">
+          <div class="diet-hero-box">
+            <span class="diet-kcal-badge">0.00 kcal (길티프리)</span>
+            <div class="diet-placeholder">[SEC-19 0kcal 스파클링 뷰박스]</div>
+          </div>
+          <div class="diet-info">
+            <div class="traffic-lights">
+              <span class="light-badge">당류 0g</span>
+              <span class="light-badge">나트륨 0mg</span>
+              <span class="light-badge">지방 0g</span>
+            </div>
+            <span class="diet-cat">🏋️ 30일 챌린지 보틀 번들 팩 (4)</span>
+            <h4 class="diet-title">🏋️ [피트니스 키트] 보틀 + 밴드 + 4종 믹서 스타터 킷</h4>
+            <div class="intake-timing">권장 섭취 타이밍: 운동 30분 전 탄산수 300ml 부스팅</div>
+            <div class="diet-card-footer">
+              <div class="price">45,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">30일 식단 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="traffic-diet-card" data-cat="🍓 비건 안토시아닌 루비 베리 믹서 (4)">
+          <div class="diet-hero-box">
+            <span class="diet-kcal-badge">0.00 kcal (길티프리)</span>
+            <div class="diet-placeholder">[SEC-20 0kcal 스파클링 뷰박스]</div>
+          </div>
+          <div class="diet-info">
+            <div class="traffic-lights">
+              <span class="light-badge">당류 0g</span>
+              <span class="light-badge">나트륨 0mg</span>
+              <span class="light-badge">지방 0g</span>
+            </div>
+            <span class="diet-cat">🍓 비건 안토시아닌 루비 베리 믹서 (4)</span>
+            <h4 class="diet-title">🍓 [KTR 인증] 0.00kcal 공인 시험성적서 보증 팩</h4>
+            <div class="intake-timing">권장 섭취 타이밍: 운동 30분 전 탄산수 300ml 부스팅</div>
+            <div class="diet-card-footer">
+              <div class="price">30,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">30일 식단 담기</button>
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </main>
+
+  <!-- PAGE 3 -->
+  <main id="page-about" class="page-view container">
+    <section class="stopwatch-section">
+      <span style="font-size:11px; font-weight:900; letter-spacing:2px;">ZERO CALORIE & CLEAN DIET LAB</span>
+      <h1 style="font-size:28px; font-weight:900; margin-top:4px;">송아린의 0kcal 클린 웰니스 (Zero Diet Spa)</h1>
+      <p style="color:var(--text-muted); margin-top:4px;">단 1칼로리의 죄책감도 없이 탄산수와 즐기는 상쾌한 다이어트 리추얼</p>
+
+      <div style="border-left:4px solid var(--border-dark); padding:20px 0 20px 28px; margin:24px 0; background:var(--bg-light);">
+        <h3 style="font-size:16px; font-weight:900;">"문을 열고, 현실에서 벗어나세요 (Open the Door, Escape Reality)"</h3>
+        <p style="font-size:13px; color:var(--text-muted); margin-top:6px; line-height:1.8;">
+          다이어트는 고통스러운 참음이 아니라, 내 몸을 맑게 비우는 즐거운 미식 경험이어야 합니다.<br/>
+          위케타 0kcal 스파클링 라인은 <strong>KTR 공인 0.00kcal 시험 성적서</strong>로 검증된 성분만을 담아, 운동 전 부스팅과 야식 충동을 완벽히 방어합니다.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <aside id="cart-drawer" class="cart-drawer">
+    <div style="padding:20px 24px; border-bottom:1px solid var(--border-gray); display:flex; justify-content:space-between;">
+      <h4>🛒 DIET CART</h4>
+      <button class="btn-wf" onclick="toggleDrawer()">✕ 닫기</button>
+    </div>
+    <div style="flex:1; padding:24px;">
+      <div style="border:1px solid var(--border-gray); padding:16px; margin-bottom:16px;">
+        <strong>[0kcal 시그니처] 블루 오로라 버터플라이피 스파클링</strong>
+        <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">수량: 1개 / 34,000원</div>
+      </div>
+    </div>
+    <div style="padding:20px 24px; border-top:1px solid var(--border-gray); background:var(--bg-light);">
+      <button class="btn-wf primary" style="width:100%; padding:12px;">1-CLICK CHECKOUT</button>
+    </div>
+  </aside>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div>
+        <h5>WICKETA (위케타)</h5>
+        <p>문을 열고, 현실에서 벗어나세요 (Open the Door, Escape Reality)</p>
+        <p style="margin-top:6px;">고객센터: 1588-0000 | 서울시 성동구 성수이로 00 쇼룸</p>
+      </div>
+      <div>
+        <h5>인증 & 지원</h5>
+        <p>KTR 3無 공인 시험성적서</p>
+      </div>
+      <div>
+        <h5>공식 채널</h5>
+        <p>Instagram: @wicketa_official</p>
+        <p>© 2026 WICKETA All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function switchPage(p) {
+      document.querySelectorAll('.page-view').forEach(el => el.classList.remove('active'));
+      let t = document.getElementById('page-' + p);
+      if(!t) t = document.getElementById('page-catalog');
+      if(!t) t = document.getElementById('page-home');
+      if(t) t.classList.add('active');
+
+      document.querySelectorAll('.wf-top-helper button').forEach(b => b.classList.remove('active'));
+      const btns = document.querySelectorAll('.wf-top-helper button');
+      if(p==='home'&&btns[0]) btns[0].classList.add('active');
+      else if(p==='catalog'&&btns[1]) btns[1].classList.add('active');
+      else if(p==='about'&&btns[2]) btns[2].classList.add('active');
+      window.scrollTo(0,0);
+    }
+    function toggleDrawer() { document.getElementById('cart-drawer').classList.toggle('open'); }
+    function filterProducts(cat) {
+      document.querySelectorAll('#page-catalog .traffic-diet-card').forEach(c => {
+        if(cat.includes('전체') || c.getAttribute('data-cat') === cat) c.style.display = 'flex';
+        else c.style.display = 'none';
+      });
+      document.querySelectorAll('#page-catalog .btn-wf').forEach(b => b.classList.remove('primary'));
+      if(event && event.target) event.target.classList.add('primary');
+    }
+  </script>
+</body>
+</html>

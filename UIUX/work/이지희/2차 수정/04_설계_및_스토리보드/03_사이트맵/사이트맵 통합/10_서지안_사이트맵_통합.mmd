@@ -1,0 +1,51 @@
+graph TD
+    classDef root fill:#0D47A1,stroke:#01579B,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef gnb fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef lnb fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef detail fill:#FFF8E1,stroke:#F57F17,stroke-width:1.5px,color:#E65100;
+    classDef aside fill:#E1F5FE,stroke:#0277BD,stroke-width:1.5px,color:#01579B;
+
+    ROOT["🏠 W10-HOME (온가족 웰니스 메인)<br/>• 안심 캔버스<br/>• 5대 패밀리 콘솔"]
+
+    GNB1["🏢 GNB-01: 클린 도감<br/>(W10-CATALOG)"]
+    GNB2["📑 GNB-02: 패밀리 계산<br/>(W10-ESTIMATE)"]
+    GNB3["🛠️ GNB-03: 3D 자수 선물<br/>(W10-BUILD)"]
+    GNB4["🌙 GNB-04: 육퇴 힐링<br/>(W10-RITUAL)"]
+
+    ROOT --> GNB1
+    ROOT --> GNB2
+    ROOT --> GNB3
+    ROOT --> GNB4
+
+    %% GNB1
+    CLEAN["📜 CLEAN-CERT-01 3無 성적서"]
+    KIDS["👶 성장기 과일티"]
+    GNB1 --> CLEAN
+    GNB1 --> KIDS
+
+    %% GNB2
+    BULK["🧮 FAMILY-BULK-01 120포 비율"]
+    GOODIE["🎈 GOODIE-CALC-01 20인분"]
+    GNB2 --> BULK
+    GNB2 --> GOODIE
+
+    %% GNB3
+    EMBROID["⚡ EMBROIDERY-VIEWER-01 자수"]
+    STICKER["🎨 KIDS-STICKER-01 3D 라벨"]
+    GNB3 --> EMBROID
+    GNB3 --> STICKER
+
+    %% GNB4
+    MUSIC["🌙 MOM-RITUAL-01 오르골"]
+    DIARY["📝 MOM-DIARY-01 1줄 일기"]
+    GNB4 --> MUSIC
+    GNB4 --> DIARY
+
+    DRAWER["🛒 Aside: W10-DRAWER<br/>• 카카오페이 1초 결제 / 안심 새벽배송"]
+    ROOT -.-> DRAWER
+
+    class ROOT root;
+    class GNB1,GNB2,GNB3,GNB4 gnb;
+    class CLEAN,KIDS lnb;
+    class BULK,GOODIE,EMBROID,STICKER,MUSIC,DIARY detail;
+    class DRAWER aside;

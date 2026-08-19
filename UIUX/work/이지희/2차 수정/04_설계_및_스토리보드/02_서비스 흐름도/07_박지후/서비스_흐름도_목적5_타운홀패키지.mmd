@@ -1,0 +1,29 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef catalog fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef estimate fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef done fill:#ECEFF1,stroke:#455A64,stroke-width:1.5px,color:#263238;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W07-HOME (타운홀 진입)<br/>• [전사 타운홀 50인분] 클릭"]
+    CATALOG["02 W07-CATALOG (스파클링 확인)<br/>• 0.00% 논알콜 50인분 스펙"]
+    ESTIMATE["03 W07-ESTIMATE (수량 계산)<br/>• TOWNHALL-CALC-01 원료 산출"]
+    DISPENSER["04 W07-ESTIMATE (디스펜서 추가)<br/>• LARGE-DISPENSER-01 0원 렌탈"]
+    DRAWER["05 W07-DRAWER (법인 결제)<br/>• 행사 시간 지정 & 결제 승인"]
+    DONE["06 W07-DONE (발주 완료)<br/>• 케이터링 발주서 PDF 발급"]
+    COMM["F1 W07-COMM (셋업 지원)<br/>• 사옥 셋업 및 회수 스케줄"]
+
+    HOME --> CATALOG
+    CATALOG --> ESTIMATE
+    ESTIMATE --> DISPENSER
+    DISPENSER --> DRAWER
+    DRAWER --> DONE
+    DONE --> COMM
+
+    class HOME home;
+    class CATALOG catalog;
+    class ESTIMATE,DISPENSER estimate;
+    class DRAWER drawer;
+    class DONE done;
+    class COMM support;

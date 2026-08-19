@@ -1,0 +1,29 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef catalog fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef build fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef done fill:#ECEFF1,stroke:#455A64,stroke-width:1.5px,color:#263238;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W06-HOME (쇼룸 진입)<br/>• [쇼룸 다기 오브제] 클릭"]
+    CATALOG["02 W06-CATALOG (오브제 확인)<br/>• 도예 작가 협업 다기 스펙"]
+    BUILD["03 W06-BUILD (3D 쇼룸 배치)<br/>• OBJECT-PLACER-01 뷰어"]
+    ESTIMATE["04 W06-BUILD (디자이너 견적)<br/>• DESIGNER-ESTIMATE-01 20% 할인"]
+    DRAWER["05 W06-DRAWER (B2B 결제)<br/>• 세금계산서 승인 & 납기 지정"]
+    DONE["06 W06-DONE (발주 완료)<br/>• 작가 작품 보증서 PDF 발급"]
+    COMM["F1 W06-COMM (쇼룸 도슨트)<br/>• 전시 가이드북 연동"]
+
+    HOME --> CATALOG
+    CATALOG --> BUILD
+    BUILD --> ESTIMATE
+    ESTIMATE --> DRAWER
+    DRAWER --> DONE
+    DONE --> COMM
+
+    class HOME home;
+    class CATALOG catalog;
+    class BUILD,ESTIMATE build;
+    class DRAWER drawer;
+    class DONE done;
+    class COMM support;

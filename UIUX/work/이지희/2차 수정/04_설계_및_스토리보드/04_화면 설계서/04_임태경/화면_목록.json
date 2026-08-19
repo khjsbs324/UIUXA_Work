@@ -1,0 +1,215 @@
+{
+  "clientId": "04",
+  "clientName": "임태경",
+  "archetype": "B-2 엔터프라이즈 B2B 조달형 (B2B Hospitality Suite)",
+  "integratedFlowFile": "04_임태경_서비스_흐름도_통합.md",
+  "integratedSitemapFile": "04_임태경_사이트맵_통합.md",
+  "screens": [
+    {
+      "id": "W04-HOME",
+      "name": "B2B 호스피탈리티 메인 허브",
+      "depth": "1-Depth",
+      "purposes": [
+        "목적 1~5"
+      ]
+    },
+    {
+      "id": "W04-ESTIMATE",
+      "name": "5,000세트 B2B 견적 계산기",
+      "depth": "2-Depth",
+      "purposes": [
+        "목적 1"
+      ]
+    },
+    {
+      "id": "W04-SAMPLE",
+      "name": "0원 VIP 샘플 & 3D 트레이 뷰어",
+      "depth": "2-Depth",
+      "purposes": [
+        "목적 2, 5"
+      ]
+    },
+    {
+      "id": "W04-PLANNER",
+      "name": "체크인 무드 웰컴티 플래너",
+      "depth": "2-Depth",
+      "purposes": [
+        "목적 3"
+      ]
+    },
+    {
+      "id": "W04-CATALOG",
+      "name": "호텔 어메니티 & B2B 조달 스위트",
+      "depth": "2-Depth",
+      "purposes": [
+        "목적 1, 4"
+      ]
+    },
+    {
+      "id": "W04-DRAWER",
+      "name": "Slide-out B2B 발주/견적 드로어",
+      "depth": "Aside Layer",
+      "purposes": [
+        "목적 1~4"
+      ]
+    },
+    {
+      "id": "W04-DONE",
+      "name": "전자계약 승인 & 인보이스 발급",
+      "depth": "Modal",
+      "purposes": [
+        "목적 1~5"
+      ]
+    },
+    {
+      "id": "W04-PORTAL",
+      "name": "B2B 정기납품 & 파트너 포털",
+      "depth": "2-Depth",
+      "purposes": [
+        "목적 5"
+      ]
+    }
+  ],
+  "curations": [
+    {
+      "secId": "SEC-01",
+      "productCode": "WK-P01",
+      "name": "⭐ [5성급 시그니처] 인룸 웰컴 버터플라이피 티 팩",
+      "category": "🏨 5성급 호텔 인룸 웰컴티 팩 (4)",
+      "price": 39000
+    },
+    {
+      "secId": "SEC-02",
+      "productCode": "WK-P02",
+      "name": "📦 [5,000세트 벌크] 호텔 조달 전용 1초 융해 티 1,000포 번들",
+      "category": "📦 5,000세트 B2B 벌크 조달 팩 (4)",
+      "price": 850000
+    },
+    {
+      "secId": "SEC-03",
+      "productCode": "WK-P03",
+      "name": "🌱 [ESG 생분해] 친환경 사탕수수 파우치 웰컴티 팩",
+      "category": "🌱 ESG 생분해 파우치 & 우드 트레이 (4)",
+      "price": 32000
+    },
+    {
+      "secId": "SEC-04",
+      "productCode": "WK-P04",
+      "name": "🛁 [나이트 스파] 딥 릴랙스 캐모마일 & 바닐라 스파 팩",
+      "category": "🛁 나이트 스파 & 릴랙스 허브티 (4)",
+      "price": 28000
+    },
+    {
+      "secId": "SEC-05",
+      "productCode": "WK-P05",
+      "name": "💎 [VIP 스위트] 자작나무 인룸 트레이 & 티 6종 기프트",
+      "category": "💎 VIP 스위트 룸 맞춤 기프트 (4)",
+      "price": 65000
+    },
+    {
+      "secId": "SEC-06",
+      "productCode": "WK-P06",
+      "name": "🏨 [조식 라운지] 상쾌한 모닝 시트러스 라임 마테 팩",
+      "category": "🏨 5성급 호텔 인룸 웰컴티 팩 (4)",
+      "price": 29000
+    },
+    {
+      "secId": "SEC-07",
+      "productCode": "WK-P07",
+      "name": "📦 [3,000세트 벌크] 스위트룸 전용 프리미엄 블렌드 벌크",
+      "category": "📦 5,000세트 B2B 벌크 조달 팩 (4)",
+      "price": 560000
+    },
+    {
+      "secId": "SEC-08",
+      "productCode": "WK-P08",
+      "name": "🌱 [우드 트레이] 호텔 로고 레이저 각인 원목 트레이",
+      "category": "🌱 ESG 생분해 파우치 & 우드 트레이 (4)",
+      "price": 45000
+    },
+    {
+      "secId": "SEC-09",
+      "productCode": "WK-P09",
+      "name": "🛁 [사우나 & 스파] 0kcal 미네랄 아쿠아 수분 충전 티",
+      "category": "🛁 나이트 스파 & 릴랙스 허브티 (4)",
+      "price": 27000
+    },
+    {
+      "secId": "SEC-10",
+      "productCode": "WK-P10",
+      "name": "💎 [프레지덴셜] 옻칠 웰컴 박스 & 하이엔드 다기 세트",
+      "category": "💎 VIP 스위트 룸 맞춤 기프트 (4)",
+      "price": 120000
+    },
+    {
+      "secId": "SEC-11",
+      "productCode": "WK-P11",
+      "name": "🏨 [체크인 컨시어지] 웰컴 드링크 스파클링 에이드 팩",
+      "category": "🏨 5성급 호텔 인룸 웰컴티 팩 (4)",
+      "price": 34000
+    },
+    {
+      "secId": "SEC-12",
+      "productCode": "WK-P12",
+      "name": "📦 [10,000세트 엔터프라이즈] 리조트 체인 전용 어메니티 벌크",
+      "category": "📦 5,000세트 B2B 벌크 조달 팩 (4)",
+      "price": 1600000
+    },
+    {
+      "secId": "SEC-13",
+      "productCode": "WK-P13",
+      "name": "🌱 [PLA 티백] 100% 옥수수 전분 생분해 피라미드 티백",
+      "category": "🌱 ESG 생분해 파우치 & 우드 트레이 (4)",
+      "price": 31000
+    },
+    {
+      "secId": "SEC-14",
+      "productCode": "WK-P14",
+      "name": "🛁 [아로마 테라피] 라벤더 GABA 0.00mg 무카페인 티",
+      "category": "🛁 나이트 스파 & 릴랙스 허브티 (4)",
+      "price": 35000
+    },
+    {
+      "secId": "SEC-15",
+      "productCode": "WK-P15",
+      "name": "💎 [기프트 틴] 호텔 자체 PB 틴케이스 제작 솔루션",
+      "category": "💎 VIP 스위트 룸 맞춤 기프트 (4)",
+      "price": 48000
+    },
+    {
+      "secId": "SEC-16",
+      "productCode": "WK-P16",
+      "name": "🏨 [호텔 바텐더] 인룸 논알콜 하이볼 스모키 얼그레이 팩",
+      "category": "🏨 5성급 호텔 인룸 웰컴티 팩 (4)",
+      "price": 33000
+    },
+    {
+      "secId": "SEC-17",
+      "productCode": "WK-P17",
+      "name": "📦 [정기납품] 매월 1일 지정일 객실 자동 납품 패키지",
+      "category": "📦 5,000세트 B2B 벌크 조달 팩 (4)",
+      "price": 420000
+    },
+    {
+      "secId": "SEC-18",
+      "productCode": "WK-P18",
+      "name": "🌱 [친환경 코스터] 천연 코르크 & 린넨 인룸 코스터 4P",
+      "category": "🌱 ESG 생분해 파우치 & 우드 트레이 (4)",
+      "price": 18000
+    },
+    {
+      "secId": "SEC-19",
+      "productCode": "WK-P19",
+      "name": "🛁 [피트니스] 운동 후 전해질 보충 클린티 팩",
+      "category": "🛁 나이트 스파 & 릴랙스 허브티 (4)",
+      "price": 29500
+    },
+    {
+      "secId": "SEC-20",
+      "productCode": "WK-P20",
+      "name": "💎 [멤버십 바우처] 호텔 멤버십 전용 웰컴티 바우처 팩",
+      "category": "💎 VIP 스위트 룸 맞춤 기프트 (4)",
+      "price": 50000
+    }
+  ]
+}

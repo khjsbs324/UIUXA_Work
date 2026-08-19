@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WICKETA 와이어프레임 - 04 임태경 (B-2 Enterprise B2B ERP)</title>
+  <style>
+    :root {
+      --bg-white: #FFFFFF; --bg-light: #F5F5F5; --bg-gray: #E5E5E5;
+      --border-dark: #111111; --border-gray: #CCCCCC;
+      --text-dark: #111111; --text-muted: #555555;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Pretendard', sans-serif; background-color: var(--bg-light); color: var(--text-dark); min-height: 100vh; display: flex; flex-direction: column; }
+    .wf-top-helper { background: #111111; color: #FFFFFF; padding: 10px 32px; font-size: 11px; display: flex; justify-content: space-between; position: sticky; top: 0; z-index: 1000; }
+    .wf-top-helper button { background: #222222; color: #EEEEEE; border: 1px solid #444444; padding: 5px 12px; font-size: 11px; font-weight: 700; border-radius: 4px; cursor: pointer; }
+    .wf-top-helper button.active { background: #FFFFFF; color: #111111; }
+
+    header.b2b-erp-header { background: #FFFFFF; border-bottom: 2px solid var(--border-dark); padding: 18px 48px; display: flex; justify-content: space-between; align-items: center; }
+    .container { max-width: 1360px; margin: 0 auto; padding: 36px 24px; width: 100%; flex: 1; }
+    .page-view { display: none; }
+    .page-view.active { display: block; }
+
+    .kpi-banner-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 32px; }
+    .kpi-card { border: 1px solid var(--border-dark); background: #FFFFFF; padding: 20px; border-radius: 6px; }
+    .kpi-title { font-size: 11px; font-weight: 700; color: var(--text-muted); }
+    .kpi-value { font-size: 24px; font-weight: 900; color: var(--text-dark); margin: 6px 0; }
+    .kpi-desc { font-size: 11px; color: var(--text-muted); font-weight: 700; }
+
+    .erp-matrix-section { border: 2px solid var(--border-dark); background: #FFFFFF; padding: 32px; border-radius: 8px; margin-bottom: 32px; }
+    .erp-table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 12px; }
+    .erp-table th, .erp-table td { border: 1px solid var(--border-gray); padding: 12px 14px; text-align: left; }
+    .erp-table th { background: var(--bg-gray); font-weight: 900; }
+    .erp-table tr.highlight { background: #EEEEEE; border: 2px solid var(--border-dark); font-weight: 700; }
+
+    .rfp-action-bar { background: var(--border-dark); color: #FFFFFF; padding: 24px 32px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; }
+
+    .spec-table-container { border: 1px solid var(--border-gray); background: #FFFFFF; border-radius: 8px; overflow: hidden; }
+    .b2b-spec-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .b2b-spec-table th, .b2b-spec-table td { border-bottom: 1px solid var(--border-gray); padding: 14px 16px; text-align: left; }
+    .b2b-spec-table th { background: var(--bg-gray); font-weight: 900; }
+    .b2b-badge { background: #EEEEEE; padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; }
+    .b2b-price { font-weight: 900; color: var(--text-dark); }
+
+    .btn-wf { background: #FFFFFF; border: 1px solid var(--border-dark); padding: 8px 16px; font-size: 12px; font-weight: 700; cursor: pointer; }
+    .btn-wf.primary { background: var(--border-dark); color: #FFFFFF; }
+
+    .cart-drawer { position: fixed; top: 0; right: -460px; width: 440px; height: 100vh; background: #FFFFFF; border-left: 2px solid var(--border-dark); z-index: 2000; transition: right 0.3s ease; display: flex; flex-direction: column; }
+    .cart-drawer.open { right: 0; }
+
+    footer.site-footer { background: #111111; color: #999999; padding: 48px 32px; font-size: 12px; margin-top: auto; border-top: 1px solid #333333; }
+    .footer-content { max-width: 1360px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; }
+  </style>
+</head>
+<body>
+  <div class="wf-top-helper">
+    <div><strong>[B-2 무채색 호텔 B2B 조달 ERP 와이어프레임]</strong> 04 임태경 바이어 맞춤</div>
+    <div>
+      <button class="active" onclick="switchPage('home')">Page 1: B2B 조달 ERP 대시보드</button>
+      <button onclick="switchPage('catalog')">Page 2: 어메니티 조달 스펙시트 (20종 전체)</button>
+      <button onclick="switchPage('about')">Page 3: ESG 파트너십 & 세계관</button>
+      <button onclick="toggleDrawer()">🛒 전자발주서 / RFP 드로어</button>
+    </div>
+  </div>
+
+  <header class="b2b-erp-header">
+    <div style="font-weight:900; font-size:20px; letter-spacing:1px;">WICKETA HOSPITALITY ERP PORTAL</div>
+    <nav style="display:flex; gap:24px; font-size:13px; font-weight:700;">
+      <a href="javascript:void(0)" onclick="switchPage('home')">조달 KPI 지표</a>
+      <a href="javascript:void(0)" onclick="switchPage('home')">MOQ 시뮬레이터</a>
+      <a href="javascript:void(0)" onclick="switchPage('catalog')">조달 스펙시트 (20)</a>
+      <a href="javascript:void(0)" onclick="switchPage('home')">0원 샘플 신청</a>
+      <a href="javascript:void(0)" onclick="switchPage('about')">ESG 생분해 성적서</a>
+    </nav>
+    <button class="btn-wf primary" onclick="toggleDrawer()">전자발주서 (5,000세트)</button>
+  </header>
+
+  <!-- PAGE 1 -->
+  <main id="page-home" class="page-view active container">
+    <div class="kpi-banner-grid">
+      <div class="kpi-card">
+        <div class="kpi-title">월간 총 납품 케파</div>
+        <div class="kpi-value">50,000 <small style="font-size:14px;">세트</small></div>
+        <div class="kpi-desc">전국 5성급 12개 체인 제휴</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-title">PLA 생분해 인증률</div>
+        <div class="kpi-value">100.0 <small style="font-size:14px;">%</small></div>
+        <div class="kpi-desc">미세플라스틱 0% 성적서</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-title">최대 대량 단가 할인율</div>
+        <div class="kpi-value">-35.0 <small style="font-size:14px;">%</small></div>
+        <div class="kpi-desc">10,000세트 이상 조달 시</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-title">평균 납기 리드타임</div>
+        <div class="kpi-value">D+2 <small style="font-size:14px;">일</small></div>
+        <div class="kpi-desc">전국 팔레트 직배송</div>
+      </div>
+    </div>
+
+    <section class="erp-matrix-section">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <div>
+          <span style="font-size:11px; font-weight:900;">B2B-ESTIMATE-01</span>
+          <h2 style="font-size:20px; font-weight:900; margin-top:2px;">호텔 객실수 맞춤 5,000세트 실시간 MOQ 조달 매트릭스</h2>
+        </div>
+        <button class="btn-wf primary" onclick="toggleDrawer()">선택 견적서 PDF 다운로드</button>
+      </div>
+
+      <table class="erp-table">
+        <thead>
+          <tr>
+            <th>조달 규모</th>
+            <th>할인율</th>
+            <th>세트 공급단가</th>
+            <th>총 공급가액 (VAT별도)</th>
+            <th>특전 지원 사항</th>
+            <th>선택</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1,000 세트</td>
+            <td>10% DC</td>
+            <td>35,100원</td>
+            <td>35,100,000원</td>
+            <td>사탕수수 생분해 파우치 로고 인쇄</td>
+            <td><button class="btn-wf">선택</button></td>
+          </tr>
+          <tr class="highlight">
+            <td>5,000 세트 (호텔 추천)</td>
+            <td>25% DC</td>
+            <td>29,250원</td>
+            <td>146,250,000원</td>
+            <td>인룸 원목 웰컴 트레이 100개 + ESG 현판</td>
+            <td><button class="btn-wf primary">선택됨</button></td>
+          </tr>
+          <tr>
+            <td>10,000 세트 (리조트 체인)</td>
+            <td>35% DC</td>
+            <td>25,350원</td>
+            <td>253,500,000원</td>
+            <td>독점 PB 블렌딩 개발 + 금형 제작 지원</td>
+            <td><button class="btn-wf">선택</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="rfp-action-bar">
+      <div>
+        <h3 style="font-size:16px; font-weight:900;">호텔 사업자 전용 0원 VIP 샘플 신청 & 공식 RFP 제안서 발급</h3>
+        <p style="font-size:12px; color:#CCCCCC; margin-top:4px;">사업자등록증 업로드 시 웰컴티 4종 테이스팅 키트와 원목 트레이 목업을 24시간 내 배송합니다.</p>
+      </div>
+      <button class="btn-wf primary" style="background:#FFFFFF; color:#111111; font-size:13px; padding:12px 24px;">0원 VIP 키트 신청</button>
+    </div>
+  </main>
+
+  <!-- PAGE 2 -->
+  <main id="page-catalog" class="page-view container">
+    <div style="border-bottom:2px solid var(--border-dark); padding-bottom:16px; margin-bottom:28px; display:flex; justify-content:space-between; align-items:flex-end;">
+      <div>
+        <h1 style="font-size:24px; font-weight:900;">호텔 어메니티 B2B 조달 스펙시트 (20종 전체)</h1>
+        <p style="color:var(--text-muted); font-size:13px;">임태경 바이어 맞춤 MOQ/박스입수량/팔레트 단가가 수록된 조달 테이블</p>
+      </div>
+      <div style="display:flex; gap:8px;">
+        <button class="btn-wf primary" onclick="filterProducts('전체 어메니티 팩 (20)')">전체 어메니티 팩 (20)</button>
+        <button class="btn-wf " onclick="filterProducts('🏨 5성급 호텔 인룸 웰컴티 팩 (4)')">🏨 5성급 호텔 인룸 웰컴티 팩 (4)</button>
+        <button class="btn-wf " onclick="filterProducts('📦 5,000세트 B2B 벌크 조달 팩 (4)')">📦 5,000세트 B2B 벌크 조달 팩 (4)</button>
+        <button class="btn-wf " onclick="filterProducts('🌱 ESG 생분해 파우치 & 우드 트레이 (4)')">🌱 ESG 생분해 파우치 & 우드 트레이 (4)</button>
+        <button class="btn-wf " onclick="filterProducts('🛁 나이트 스파 & 릴랙스 허브티 (4)')">🛁 나이트 스파 & 릴랙스 허브티 (4)</button>
+        <button class="btn-wf " onclick="filterProducts('💎 VIP 스위트 룸 맞춤 기프트 (4)')">💎 VIP 스위트 룸 맞춤 기프트 (4)</button>
+        
+      </div>
+    </div>
+
+    <div class="spec-table-container">
+      <table class="b2b-spec-table">
+        <thead>
+          <tr>
+            <th>SEC_ID</th>
+            <th>카테고리</th>
+            <th>품목명</th>
+            <th>박스 입수량</th>
+            <th>최소주문수량 (MOQ)</th>
+            <th>B2B 대량 공급단가</th>
+            <th>납기 리드타임</th>
+            <th>조달 발주</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr class="b2b-row" data-cat="🏨 5성급 호텔 인룸 웰컴티 팩 (4)">
+          <td><strong>SEC-01</strong></td>
+          <td><span class="b2b-badge">🏨 5성급 호텔 인룸 웰컴티 팩 (4)</span></td>
+          <td><strong>⭐ [5성급 시그니처] 인룸 웰컴 버터플라이피 티 팩</strong></td>
+          <td><code>500개 / 1 Box</code></td>
+          <td><strong>MOQ: 1,000 세트</strong></td>
+          <td><span class="b2b-price">39,000원 (25% DC)</span></td>
+          <td><code>D+2 전국 직배송</code></td>
+          <td><button class="btn-wf primary" onclick="toggleDrawer()">발주서 담기</button></td>
+        </tr>
+        <tr class="b2b-row" data-cat="📦 5,000세트 B2B 벌크 조달 팩 (4)">
+          <td><strong>SEC-02</strong></td>
+          <td><span class="b2b-badge">📦 5,000세트 B2B 벌크 조달 팩 (4)</span></td>
+          <td><strong>📦 [5,000세트 벌크] 호텔 조달 전용 1초 융해 티 1,000포 번들</strong></td>
+          <td><code>500개 / 1 Box</code></td>
+          <td><strong>MOQ: 1,000 세트</strong></td>
+          <td><span class="b2b-price">850,000원 (25% DC)</span></td>
+          <td><code>D+2 전국 직배송</code></td>
+          <td><button class="btn-wf primary" onclick="toggleDrawer()">발주서 담기</button></td>
+        </tr>
+        <tr class="b2b-row" data-cat="🌱 ESG 생분해 파우치 & 우드 트레이 (4)">
+          <td><strong>SEC-03</strong></td>
+          <td><span class="b2b-badge">🌱 ESG 생분해 파우치 & 우드 트레이 (4)</span></td>
+          <td><strong>🌱 [ESG 생분해] 친환경 사탕수수 파우치 웰컴티 팩</strong></td>
+          <td><code>500개 / 1 Box</code></td>
+          <td><strong>MOQ: 1,000 세트</strong></td>
+          <td><span class="b2b-price">32,000원 (25% DC)</span></td>
+          <td><code>D+2 전국 직배송</code></td>
+          <td><button class="btn-wf primary" onclick="toggleDrawer()">발주서 담기</button></td>
+        </tr>
+        <tr class="b2b-row" data-cat="🛁 나이트 스파 & 릴랙스 허브티 (4)">
+          <td><strong>SEC-04</strong></td>
+          <td><span class="b2b-badge">🛁 나이트 스파 & 릴랙스 허브티 (4)</span></td>
+          <td><strong>🛁 [나이트 스파] 딥 릴랙스 캐모마일 & 바닐라 스파 팩</strong></td>
+          <td><code>500개 / 1 Box</code></td>
+          <td><strong>MOQ: 1,000 세트</strong></td>
+          <td><span class="b2b-price">28,000원 (25% DC)</span></td>
+          <td><code>D+2 전국 직배송</code></td>
+          <td><button class="btn-wf primary" onclick="toggleDrawer()">발주서 담기</button></td>
+        </tr>
+        <tr class="b2b-row" data-cat="💎 VIP 스위트 룸 맞춤 기프트 (4)">
+          <td><strong>SEC-05</strong></td>
+          <td><span class="b2b-badge">💎 VIP 스위트 룸 맞춤 기프트 (4)</span></td>
+          <td><strong>💎 [VIP 스위트] 자작나무 인룸 트레이 & 티 6종 기프트</strong></td>
+          <td><code>500개 / 1 Box</code></td>
+          <td><strong>MOQ: 1,000 세트</strong></td>
+          <td><span class="b2b-price">65,000원 (25% DC)</span></td>
+          <td><code>D+2 전국 직배송</code></td>
+          <td><button class="btn-wf primary" onclick="toggleDrawer()">발주서 담기</button></td>
+        </tr>
+        <tr class="b2b-row" data-cat="🏨 5성급 호텔 인룸 웰컴티 팩 (4)">
+          <td><strong>SEC-06</strong></td>
+          <td><span class="b2b-badge">🏨 5성급 호텔 인룸 웰컴티 팩 (4)</span></td>
+          <td><strong>🏨 [조식 라운지] 상쾌한 모닝 시트러스 라임 마테 팩</strong></td>
+          <td><code>500개 / 1 Box</code></td>
+          <td><strong>MOQ: 1,000 세트</strong></td>
+          <td><span class="b2b-price">29,000원 (25% DC)</span></td>
+          <td><code>D+2 전국 직배송</code></td>
+          <td><button class="btn-wf primary" onclick="toggleDrawer()">발주서 담기</button></td>
+        </tr>
+        <tr class="b2b-row" data-cat="📦 5,000세트 B2B 벌크 조달 팩 (4)">
+          <td><strong>SEC-07</strong></td>
+          <td><span class="b2b-badge">📦 5,000세트 B2B 벌크 조달 팩 (4)</span></td>
+          <td><strong>📦 [3,000세트 벌크] 스위트룸 전용 프리미엄 블렌드 벌크</strong></td>
+          <td><code>500개 / 1 Box</code></td>
+          <td><strong>MOQ: 1,000 세트</strong></td>
+          <td><span class="b2b-price">560,000원 (25% DC)</span></td>
+          <td><code>D+2 전국 직배송</code></td>
+          <td><button class="btn-wf primary" onclick="toggleDrawer()">발주서 담기</button></td>
+        </tr>
+        <tr class="b2b-row" data-cat="🌱 ESG 생분해 파우치 & 우드 트레이 (4)">
+          <td><strong>SEC-08</strong></td>
+          <td><span class="b2b-badge">🌱 ESG 생분해 파우치 & 우드 트레이 (4)</span></td>
+          <td><strong>🌱 [우드 트레이] 호텔 로고 레이저 각인 원목 트레이</strong></td>
+          <td><code>500개 / 1 Box</code></td>
+          <td><strong>MOQ: 1,000 세트</strong></td>
+          <td><span class="b2b-price">45,000원 (25% DC)</span></td>
+          <td><code>D+2 전국 직배송</code></td>
+          <td><button class="btn-wf primary" onclick="toggleDrawer()">발주서 담기</button></td>
+        </tr>
+        <tr class="b2b-row" data-cat="🛁 나이트 스파 & 릴랙스 허브티 (4)">
+          <td><strong>SEC-09</strong></td>
+          <td><span class="b2b-badge">🛁 나이트 스파 & 릴랙스 허브티 (4)</span></td>
+          <td><strong>🛁 [사우나 & 스파] 0kcal 미네랄 아쿠아 수분 충전 티</strong></td>
+          <td><code>500개 / 1 Box</code></td>
+          <td><strong>MOQ: 1,000 세트</strong></td>
+          <td><span class="b2b-price">27,000원 (25% DC)</span></td>
+          <td><code>D+2 전국 직배송</code></td>
+          <td><button class="btn-wf primary" onclick="toggleDrawer()">발주서 담기</button></td>
+        </tr>
+        <tr class="b2b-row" data-cat="💎 VIP 스위트 룸 맞춤 기프트 (4)">
+          <td><strong>SEC-10</strong></td>
+          <td><span class="b2b-badge">💎 VIP 스위트 룸 맞춤 기프트 (4)</span></td>
+          <td><strong>💎 [프레지덴셜] 옻칠 웰컴 박스 & 하이엔드 다기 세트</strong></td>
+          <td><code>500개 / 1 Box</code></td>
+          <td><strong>MOQ: 1,000 세트</strong></td>
+          <td><span class="b2b-price">120,000원 (25% DC)</span></td>
+          <td><code>D+2 전국 직배송</code></td>
+          <td><button class="btn-wf primary" onclick="toggleDrawer()">발주서 담기</button></td>
+        </tr>
+        <tr class="b2b-row" data-cat="🏨 5성급 호텔 인룸 웰컴티 팩 (4)">
+          <td><strong>SEC-11</strong></td>
+          <td><span class="b2b-badge">🏨 5성급 호텔 인룸 웰컴티 팩 (4)</span></td>
+          <td><strong>🏨 [체크인 컨시어지] 웰컴 드링크 스파클링 에이드 팩</strong></td>
+          <td><code>500개 / 1 Box</code></td>
+          <td><strong>MOQ: 1,000 세트</strong></td>
+          <td><span class="b2b-price">34,000원 (25% DC)</span></td>
+          <td><code>D+2 전국 직배송</code></td>
+          <td><button class="btn-wf primary" onclick="toggleDrawer()">발주서 담기</button></td>
+        </tr>
+        <tr class="b2b-row" data-cat="📦 5,000세트 B2B 벌크 조달 팩 (4)">
+          <td><strong>SEC-12</strong></td>
+          <td><span class="b2b-badge">📦 5,000세트 B2B 벌크 조달 팩 (4)</span></td>
+          <td><strong>📦 [10,000세트 엔터프라이즈] 리조트 체인 전용 어메니티 벌크</strong></td>
+          <td><code>500개 / 1 Box</code></td>
+          <td><strong>MOQ: 1,000 세트</strong></td>
+          <td><span class="b2b-price">1,600,000원 (25% DC)</span></td>
+          <td><code>D+2 전국 직배송</code></td>
+          <td><button class="btn-wf primary" onclick="toggleDrawer()">발주서 담기</button></td>
+        </tr>
+        <tr class="b2b-row" data-cat="🌱 ESG 생분해 파우치 & 우드 트레이 (4)">
+          <td><strong>SEC-13</strong></td>
+          <td><span class="b2b-badge">🌱 ESG 생분해 파우치 & 우드 트레이 (4)</span></td>
+          <td><strong>🌱 [PLA 티백] 100% 옥수수 전분 생분해 피라미드 티백</strong></td>
+          <td><code>500개 / 1 Box</code></td>
+          <td><strong>MOQ: 1,000 세트</strong></td>
+          <td><span class="b2b-price">31,000원 (25% DC)</span></td>
+          <td><code>D+2 전국 직배송</code></td>
+          <td><button class="btn-wf primary" onclick="toggleDrawer()">발주서 담기</button></td>
+        </tr>
+        <tr class="b2b-row" data-cat="🛁 나이트 스파 & 릴랙스 허브티 (4)">
+          <td><strong>SEC-14</strong></td>
+          <td><span class="b2b-badge">🛁 나이트 스파 & 릴랙스 허브티 (4)</span></td>
+          <td><strong>🛁 [아로마 테라피] 라벤더 GABA 0.00mg 무카페인 티</strong></td>
+          <td><code>500개 / 1 Box</code></td>
+          <td><strong>MOQ: 1,000 세트</strong></td>
+          <td><span class="b2b-price">35,000원 (25% DC)</span></td>
+          <td><code>D+2 전국 직배송</code></td>
+          <td><button class="btn-wf primary" onclick="toggleDrawer()">발주서 담기</button></td>
+        </tr>
+        <tr class="b2b-row" data-cat="💎 VIP 스위트 룸 맞춤 기프트 (4)">
+          <td><strong>SEC-15</strong></td>
+          <td><span class="b2b-badge">💎 VIP 스위트 룸 맞춤 기프트 (4)</span></td>
+          <td><strong>💎 [기프트 틴] 호텔 자체 PB 틴케이스 제작 솔루션</strong></td>
+          <td><code>500개 / 1 Box</code></td>
+          <td><strong>MOQ: 1,000 세트</strong></td>
+          <td><span class="b2b-price">48,000원 (25% DC)</span></td>
+          <td><code>D+2 전국 직배송</code></td>
+          <td><button class="btn-wf primary" onclick="toggleDrawer()">발주서 담기</button></td>
+        </tr>
+        <tr class="b2b-row" data-cat="🏨 5성급 호텔 인룸 웰컴티 팩 (4)">
+          <td><strong>SEC-16</strong></td>
+          <td><span class="b2b-badge">🏨 5성급 호텔 인룸 웰컴티 팩 (4)</span></td>
+          <td><strong>🏨 [호텔 바텐더] 인룸 논알콜 하이볼 스모키 얼그레이 팩</strong></td>
+          <td><code>500개 / 1 Box</code></td>
+          <td><strong>MOQ: 1,000 세트</strong></td>
+          <td><span class="b2b-price">33,000원 (25% DC)</span></td>
+          <td><code>D+2 전국 직배송</code></td>
+          <td><button class="btn-wf primary" onclick="toggleDrawer()">발주서 담기</button></td>
+        </tr>
+        <tr class="b2b-row" data-cat="📦 5,000세트 B2B 벌크 조달 팩 (4)">
+          <td><strong>SEC-17</strong></td>
+          <td><span class="b2b-badge">📦 5,000세트 B2B 벌크 조달 팩 (4)</span></td>
+          <td><strong>📦 [정기납품] 매월 1일 지정일 객실 자동 납품 패키지</strong></td>
+          <td><code>500개 / 1 Box</code></td>
+          <td><strong>MOQ: 1,000 세트</strong></td>
+          <td><span class="b2b-price">420,000원 (25% DC)</span></td>
+          <td><code>D+2 전국 직배송</code></td>
+          <td><button class="btn-wf primary" onclick="toggleDrawer()">발주서 담기</button></td>
+        </tr>
+        <tr class="b2b-row" data-cat="🌱 ESG 생분해 파우치 & 우드 트레이 (4)">
+          <td><strong>SEC-18</strong></td>
+          <td><span class="b2b-badge">🌱 ESG 생분해 파우치 & 우드 트레이 (4)</span></td>
+          <td><strong>🌱 [친환경 코스터] 천연 코르크 & 린넨 인룸 코스터 4P</strong></td>
+          <td><code>500개 / 1 Box</code></td>
+          <td><strong>MOQ: 1,000 세트</strong></td>
+          <td><span class="b2b-price">18,000원 (25% DC)</span></td>
+          <td><code>D+2 전국 직배송</code></td>
+          <td><button class="btn-wf primary" onclick="toggleDrawer()">발주서 담기</button></td>
+        </tr>
+        <tr class="b2b-row" data-cat="🛁 나이트 스파 & 릴랙스 허브티 (4)">
+          <td><strong>SEC-19</strong></td>
+          <td><span class="b2b-badge">🛁 나이트 스파 & 릴랙스 허브티 (4)</span></td>
+          <td><strong>🛁 [피트니스] 운동 후 전해질 보충 클린티 팩</strong></td>
+          <td><code>500개 / 1 Box</code></td>
+          <td><strong>MOQ: 1,000 세트</strong></td>
+          <td><span class="b2b-price">29,500원 (25% DC)</span></td>
+          <td><code>D+2 전국 직배송</code></td>
+          <td><button class="btn-wf primary" onclick="toggleDrawer()">발주서 담기</button></td>
+        </tr>
+        <tr class="b2b-row" data-cat="💎 VIP 스위트 룸 맞춤 기프트 (4)">
+          <td><strong>SEC-20</strong></td>
+          <td><span class="b2b-badge">💎 VIP 스위트 룸 맞춤 기프트 (4)</span></td>
+          <td><strong>💎 [멤버십 바우처] 호텔 멤버십 전용 웰컴티 바우처 팩</strong></td>
+          <td><code>500개 / 1 Box</code></td>
+          <td><strong>MOQ: 1,000 세트</strong></td>
+          <td><span class="b2b-price">50,000원 (25% DC)</span></td>
+          <td><code>D+2 전국 직배송</code></td>
+          <td><button class="btn-wf primary" onclick="toggleDrawer()">발주서 담기</button></td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <!-- PAGE 3 -->
+  <main id="page-about" class="page-view container">
+    <section class="erp-matrix-section">
+      <span style="font-size:11px; font-weight:900; letter-spacing:2px;">B2B HOSPITALITY & ESG PARTNERSHIP</span>
+      <h1 style="font-size:28px; font-weight:900; margin-top:4px;">위케타 호스피탈리티 ESG 조달 솔루션</h1>
+      <p style="color:var(--text-muted); margin-top:4px;">5성급 호텔과 프리미엄 리조트를 위한 지속 가능한 인룸 웰컴티 파트너십</p>
+
+      <div style="border-left:4px solid var(--border-dark); padding:20px 0 20px 28px; margin:24px 0; background:var(--bg-light);">
+        <h3 style="font-size:16px; font-weight:900;">"문을 열고, 현실에서 벗어나세요 (Open the Door, Escape Reality)"</h3>
+        <p style="font-size:13px; color:var(--text-muted); margin-top:6px; line-height:1.8;">
+          호텔 체크인 순간부터 고객에게 전달되는 첫 인상은 디테일에서 결정됩니다.<br/>
+          위케타 호스피탈리티 스위트는 <strong>100% 옥수수 전분 생분해 PLA 티백</strong>과 <strong>0.00mg 무카페인 천연 티</strong>를 통해 호텔의 ESG 친환경 가치를 극대화하고 투숙객에게 완벽한 안식을 선사합니다.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <aside id="cart-drawer" class="cart-drawer">
+    <div style="padding:20px 24px; border-bottom:1px solid var(--border-gray); display:flex; justify-content:space-between;">
+      <h4>🛒 B2B 발주 및 견적서 드로어</h4>
+      <button class="btn-wf" onclick="toggleDrawer()">✕ 닫기</button>
+    </div>
+    <div style="flex:1; padding:24px;">
+      <div style="border:1px solid var(--border-gray); padding:16px; margin-bottom:16px;">
+        <strong>[5,000세트 벌크] 호텔 조달 웰컴티 1,000포 번들</strong>
+        <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">수량: 5세트 (5,000개) / 146,250,000원</div>
+      </div>
+    </div>
+    <div style="padding:20px 24px; border-top:1px solid var(--border-gray); background:var(--bg-light);">
+      <button class="btn-wf primary" style="width:100%; padding:12px;">전자계약서 승인 & 인보이스 발송</button>
+    </div>
+  </aside>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div>
+        <h5>WICKETA HOSPITALITY (위케타)</h5>
+        <p>문을 열고, 현실에서 벗어나세요 (Open the Door, Escape Reality)</p>
+        <p style="margin-top:6px;">고객센터: 1588-0000 | 서울시 성동구 성수이로 00 쇼룸</p>
+      </div>
+      <div>
+        <h5>인증 & 지원</h5>
+        <p>KTR 3無 공인 시험성적서 & PLA 생분해 인증</p>
+      </div>
+      <div>
+        <h5>공식 채널</h5>
+        <p>B2B Portal: b2b.wicketa.com</p>
+        <p>© 2026 WICKETA All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function switchPage(p) {
+      document.querySelectorAll('.page-view').forEach(el => el.classList.remove('active'));
+      let t = document.getElementById('page-' + p);
+      if(!t) t = document.getElementById('page-catalog');
+      if(!t) t = document.getElementById('page-home');
+      if(t) t.classList.add('active');
+
+      document.querySelectorAll('.wf-top-helper button').forEach(b => b.classList.remove('active'));
+      const btns = document.querySelectorAll('.wf-top-helper button');
+      if(p==='home'&&btns[0]) btns[0].classList.add('active');
+      else if(p==='catalog'&&btns[1]) btns[1].classList.add('active');
+      else if(p==='about'&&btns[2]) btns[2].classList.add('active');
+      window.scrollTo(0,0);
+    }
+    function toggleDrawer() { document.getElementById('cart-drawer').classList.toggle('open'); }
+    function filterProducts(cat) {
+      document.querySelectorAll('#page-catalog .b2b-row').forEach(c => {
+        if(cat.includes('전체') || c.getAttribute('data-cat') === cat) c.style.display = 'table-row';
+        else c.style.display = 'none';
+      });
+      document.querySelectorAll('#page-catalog .btn-wf').forEach(b => b.classList.remove('primary'));
+      if(event && event.target) event.target.classList.add('primary');
+    }
+  </script>
+</body>
+</html>

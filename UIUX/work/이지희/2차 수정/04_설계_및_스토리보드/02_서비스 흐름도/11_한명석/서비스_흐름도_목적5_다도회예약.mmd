@@ -1,0 +1,34 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef catalog fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef reserve fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef done fill:#ECEFF1,stroke:#455A64,stroke-width:1.5px,color:#263238;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W11-HOME (다도회 진입)<br/>• [1:1 다도회 예약] 클릭"]
+    CATALOG["02 W11-CATALOG (프로그램 소개)<br/>• 명원 다실 1:1 세레머니 스펙"]
+    RESERVE["03 W11-ESTIMATE (예약 캘린더)<br/>• SENIOR-RESERVE-01 일자 선택"]
+    
+    SEAT_CHECK{"04 잔여석 여부<br/>검증"}
+    
+    DONE["05 W11-DONE (초대권 발급)<br/>• SENIOR-PASS-01 큰글씨 초대장"]
+    WAIT["04-B 전화 대기 접수 (Fallback)<br/>• 취소석 전화 알림 등록"]
+    COMM["F1 W11-COMM (길안내 지도)<br/>• 성수 쇼룸 큰글씨 지도"]
+
+    HOME --> CATALOG
+    CATALOG --> RESERVE
+    RESERVE --> SEAT_CHECK
+    
+    SEAT_CHECK -->|잔여석 있음| DONE
+    SEAT_CHECK -->|예약 마감| WAIT
+    WAIT -.->|대체일 선택 시| RESERVE
+    
+    DONE --> COMM
+
+    class HOME home;
+    class CATALOG catalog;
+    class RESERVE,WAIT reserve;
+    class SEAT_CHECK decision;
+    class DONE done;
+    class COMM support;

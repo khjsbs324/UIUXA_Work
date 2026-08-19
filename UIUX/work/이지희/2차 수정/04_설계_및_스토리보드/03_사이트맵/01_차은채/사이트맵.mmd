@@ -1,0 +1,61 @@
+flowchart TD
+    classDef root fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef main fill:#E8F5E9,stroke:#2E7D32,stroke-width:2px,color:#1B5E20,font-weight:bold;
+    classDef sub fill:#E1F5FE,stroke:#0277BD,stroke-width:1.5px,color:#01579B;
+    classDef act fill:#FFF8E1,stroke:#F57F17,stroke-width:1.5px,color:#E65100;
+    classDef common fill:#ECEFF1,stroke:#455A64,stroke-width:1.5px,color:#263238;
+    classDef exp fill:#FFEBEE,stroke:#C62828,stroke-width:1.5px,color:#B71C1C;
+
+    ROOT["WICKETA 차은채 플랫폼 루트<br/>(에디토리얼 안식처)"]
+    HOME["W01-HOME<br/>에디토리얼 안식처 메인"]
+    SPACE["W01-SPACE<br/>3D 가상 쇼룸"]
+    ESSAY["W01-ESSAY<br/>브랜드 에세이 저널"]
+    COLLECT["W01-COLLECT<br/>디렉터스 컬렉션 (6대 LNB)"]
+    DIAG["W01-DIAG<br/>3축 감정 진단 콘솔"]
+    MIX["W01-MIX<br/>믹솔로지 & 1초 융해"]
+    RITUAL["W01-RITUAL<br/>180초 리추얼 플레이어"]
+    BUILD["W01-BUILD<br/>3D 비스포크 아틀리에"]
+    ABOUT["W01-ABOUT<br/>시향 안내 & VIP 인증"]
+    RESERVE["W01-RESERVE<br/>프라이빗 시향 예약"]
+    DONE["W01-DONE<br/>주문 및 예약 완료"]
+    COMM["W01-COMM<br/>통합 리추얼 아카이브"]
+    DRAWER["W01-DRAWER<br/>슬라이드아웃 장바구니"]
+
+    EXP1["EXP-01<br/>404 페이지 찾을 수 없음"]
+    EXP2["EXP-02<br/>품절 대체 안내"]
+    EXP3["EXP-03<br/>네트워크 오류 모달"]
+
+    ROOT --> HOME
+    HOME --> SPACE
+    HOME --> COLLECT
+    HOME --> DIAG
+    HOME --> RITUAL
+    HOME --> ABOUT
+
+    SPACE --> ESSAY
+    ESSAY --> ABOUT
+    ABOUT --> RESERVE
+    RESERVE --> DONE
+
+    DIAG --> MIX
+    MIX --> DRAWER
+
+    COLLECT --> BUILD
+    ESSAY --> BUILD
+    BUILD --> DRAWER
+
+    RITUAL --> COMM
+    DRAWER --> DONE
+    DONE --> COMM
+    DONE --> HOME
+
+    HOME -.-> EXP1
+    COLLECT -.-> EXP2
+    DRAWER -.-> EXP3
+
+    class ROOT root;
+    class HOME main;
+    class SPACE,ESSAY,COLLECT,DIAG,MIX,RITUAL sub;
+    class BUILD,ABOUT,RESERVE,DONE,COMM act;
+    class DRAWER common;
+    class EXP1,EXP2,EXP3 exp;

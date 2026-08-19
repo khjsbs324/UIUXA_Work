@@ -1,0 +1,37 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef explore fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef atelier fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef transact fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W01-HOME (룩북 진입)<br/>• 리미티드 룩북 화보 배너<br/>• [나만의 틴케이스 각인] 클릭"]
+    COLLECT["02 W01-COLLECT (상품 도감)<br/>• 6대 LNB 20종 도감 탐색<br/>• 메탈 틴케이스 세트 선택"]
+    BUILD["03 W01-BUILD (3D 각인 아틀리에)<br/>• TIN-ENGRAVER-01 레이저 각인<br/>• 영문 이니셜 10자 입력"]
+    WRAP["04 W01-BUILD (패브릭 & 카드)<br/>• 3D 보자기 포장 뷰어<br/>• 캘리그래피 메시지 카드 작성"]
+    
+    DRAWER["05 W01-DRAWER (선물 결제)<br/>• 카카오톡 친구 선택<br/>• 1-Click 간편결제"]
+    
+    ADDR_CHECK{"05-B 주소<br/>보유 여부"}
+    
+    DONE["06 W01-DONE (모바일 카드)<br/>• 3D 언박싱 카드 발급<br/>• 카카오톡 메시지 전송"]
+    COMM["F1 W01-COMM (배송 추적)<br/>• 실시간 배송 조회 & 감사 카드"]
+
+    HOME --> COLLECT
+    COLLECT --> BUILD
+    BUILD --> WRAP
+    WRAP --> DRAWER
+    DRAWER --> ADDR_CHECK
+    
+    ADDR_CHECK -->|주소 입력 완료| DONE
+    ADDR_CHECK -->|주소 미입력 링크 전송| DONE
+    
+    DONE --> COMM
+
+    class HOME home;
+    class COLLECT explore;
+    class BUILD,WRAP atelier;
+    class ADDR_CHECK decision;
+    class DRAWER,DONE transact;
+    class COMM support;

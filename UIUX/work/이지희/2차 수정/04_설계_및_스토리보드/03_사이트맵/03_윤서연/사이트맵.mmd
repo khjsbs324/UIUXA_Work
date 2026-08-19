@@ -1,0 +1,53 @@
+flowchart TD
+    classDef root fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef main fill:#E8F5E9,stroke:#2E7D32,stroke-width:2px,color:#1B5E20,font-weight:bold;
+    classDef sub fill:#E1F5FE,stroke:#0277BD,stroke-width:1.5px,color:#01579B;
+    classDef act fill:#FFF8E1,stroke:#F57F17,stroke-width:1.5px,color:#E65100;
+    classDef common fill:#ECEFF1,stroke:#455A64,stroke-width:1.5px,color:#263238;
+    classDef exp fill:#FFEBEE,stroke:#C62828,stroke-width:1.5px,color:#B71C1C;
+
+    ROOT["WICKETA 윤서연 플랫폼 루트<br/>(감성 큐레이션 매거진)"]
+    HOME["W03-HOME<br/>29SELECT 매거진 홈"]
+    TPO["W03-TPO<br/>TPO 무드 셀렉터"]
+    PAIR["W03-PAIRING<br/>디저트 페어링 북"]
+    SELECT["W03-SELECT<br/>에디터스 셀렉션 (6대 LNB)"]
+    STORY["W03-STORY<br/>에디터 인터뷰 저널"]
+    RITUAL["W03-RITUAL<br/>감성 티타임 플레이어"]
+    GIFT["W03-GIFT<br/>패브릭 기프트 빌더"]
+    COMM["W03-COMM<br/>데스크테리어 갤러리"]
+    DONE["W03-DONE<br/>큐레이션 주문 완료"]
+    DRAWER["W03-DRAWER<br/>슬라이드아웃 장바구니"]
+
+    EXP1["EXP-01<br/>404 페이지 찾을 수 없음"]
+    EXP2["EXP-02<br/>품절 대체 안내"]
+    EXP3["EXP-03<br/>네트워크 오류 모달"]
+
+    ROOT --> HOME
+    HOME --> TPO
+    HOME --> PAIR
+    HOME --> SELECT
+    HOME --> STORY
+    HOME --> RITUAL
+
+    TPO --> SELECT
+    PAIR --> DRAWER
+    SELECT --> GIFT
+    STORY --> PAIR
+    GIFT --> DRAWER
+
+    RITUAL --> COMM
+    COMM --> HOME
+    DRAWER --> DONE
+    DONE --> COMM
+    DONE --> HOME
+
+    HOME -.-> EXP1
+    SELECT -.-> EXP2
+    GIFT -.-> EXP3
+
+    class ROOT root;
+    class HOME main;
+    class TPO,PAIR,SELECT,STORY,RITUAL sub;
+    class GIFT,COMM,DONE act;
+    class DRAWER common;
+    class EXP1,EXP2,EXP3 exp;

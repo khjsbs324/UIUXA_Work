@@ -1,0 +1,57 @@
+graph TD
+    classDef root fill:#0D47A1,stroke:#01579B,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef gnb fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef lnb fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef detail fill:#FFF8E1,stroke:#F57F17,stroke-width:1.5px,color:#E65100;
+    classDef aside fill:#E1F5FE,stroke:#0277BD,stroke-width:1.5px,color:#01579B;
+
+    ROOT["🏠 W08-HOME (틱톡 믹서 허브)<br/>• 9:16 숏폼 캔버스<br/>• 5대 목적 퀵독"]
+
+    GNB1["🍹 GNB-01: 트렌디 믹서<br/>(W08-CATALOG)"]
+    GNB2["🧪 GNB-02: 매직 변색 랩<br/>(W08-SIMULATE)"]
+    GNB3["🛠️ GNB-03: 이모지 각인실<br/>(W08-BUILD)"]
+    GNB4["📑 GNB-04: 축제 100잔 계산<br/>(W08-ESTIMATE)"]
+    GNB5["🎬 GNB-05: 브이로그 챌린지<br/>(W08-COMM)"]
+
+    ROOT --> GNB1
+    ROOT --> GNB2
+    ROOT --> GNB3
+    ROOT --> GNB4
+    ROOT --> GNB5
+
+    %% GNB1
+    LNB11["🎀 파스텔 메탈 틴"]
+    LNB12["✨ 트렌디 믹서 구독"]
+    GNB1 --> LNB11
+    GNB1 --> LNB12
+
+    %% GNB2
+    MAGIC["🧪 MAGIC-COLOR-01 3단 변색"]
+    GNB2 --> MAGIC
+
+    %% GNB3
+    EMOJI["⚡ EMOJI-ENGRAVER-01 각인"]
+    CARD["💌 틱톡 스티커 엽서"]
+    GNB3 --> EMOJI
+    GNB3 --> CARD
+
+    %% GNB4
+    FESTIVAL["🧮 FESTIVAL-CALC-01 30%"]
+    BANNER["🎪 BANNER-PDF-01 X배너"]
+    GNB4 --> FESTIVAL
+    GNB4 --> BANNER
+
+    %% GNB5
+    FEED["🎬 VLOG-FEED-01 실시간 피드"]
+    RANK["🏆 TIKTOK-RANK-01 투표"]
+    GNB5 --> FEED
+    GNB5 --> RANK
+
+    DRAWER["🛒 Aside: W08-DRAWER<br/>• TIKTOK-PAY-01 15% 학생할인 1초 결제"]
+    ROOT -.-> DRAWER
+
+    class ROOT root;
+    class GNB1,GNB2,GNB3,GNB4,GNB5 gnb;
+    class LNB11,LNB12 lnb;
+    class MAGIC,EMOJI,CARD,FESTIVAL,BANNER,FEED,RANK detail;
+    class DRAWER aside;

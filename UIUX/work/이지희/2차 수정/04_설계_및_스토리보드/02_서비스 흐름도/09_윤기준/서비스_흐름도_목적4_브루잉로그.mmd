@@ -1,0 +1,31 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef ritual fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef comm fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W09-HOME (타이머 진입)<br/>• [0.1초 정밀 타이머 시작] 클릭"]
+    RITUAL["02 W09-RITUAL (밀리초 계측)<br/>• TIMER-01S-01 0.1초 카운팅"]
+    
+    TIMER_CHECK{"03 180초 완주<br/>여부 확인"}
+    
+    LOG["04 W09-COMM (로그 내보내기)<br/>• LOG-EXPORT-01 JSON 다운로드"]
+    CHART["05 W09-COMM (월간 차트)<br/>• 수율 분포도 그래프 렌더링"]
+    LOOP_NODE["F1 파라미터 로딩 루프<br/>• 다음 브루잉 시 프리셋 자동 반영"]
+
+    HOME --> RITUAL
+    RITUAL --> TIMER_CHECK
+    
+    TIMER_CHECK -->|완주 수율 19.8%| LOG
+    TIMER_CHECK -->|조기 중단| HOME
+    
+    LOG --> CHART
+    CHART --> LOOP_NODE
+    LOOP_NODE -.->|다음 브루잉 실행| RITUAL
+
+    class HOME home;
+    class RITUAL ritual;
+    class TIMER_CHECK decision;
+    class LOG,CHART comm;
+    class LOOP_NODE support;

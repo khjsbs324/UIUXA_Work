@@ -1,0 +1,54 @@
+flowchart TD
+    classDef discover fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef decide fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef pathA fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20;
+    classDef pathB fill:#FFF8E1,stroke:#F57F17,stroke-width:1.5px,color:#E65100;
+    classDef follow fill:#37474F,stroke:#263238,stroke-width:2px,color:#FFFFFF;
+
+    subgraph DISCOVER_CONSIDER ["Phase 1: DISCOVER & CONSIDER · 조향 연구소 탐색과 올팩토리 신뢰 형성"]
+        C01["01 연구소 진입 (W02-HOME)<br/>• 사용자: 조향 실험실 3D 캔버스 & 아포테케리 무드 확인<br/>• 화면: HERO-02 조향 연구소 캔버스<br/>• 반응: 3D 향미 분자 인터랙션 및 MIX-01 랩 탐색 CTA 제공"]
+        C02["02 올팩토리 콘솔 조작 (W02-HOME)<br/>• 사용자: MIX-01 올팩토리 콘솔 드래그 조작<br/>• 화면: MIX-01 믹솔로지 콘솔 모듈<br/>• 반응: 4대 베이스 티 + 8종 토핑 실시간 배합 렌더링"]
+        C03["03 향미 노트 진단 (W02-DIAG)<br/>• 사용자: 탑/미들/베이스 3단 아로마 취향 다이얼 입력<br/>• 화면: Note Intake 진단 콘솔<br/>• 반응: 취향에 최적화된 시그니처 믹솔로지 포뮬러 3안 도출"]
+        C04["04 수색 층분리 랩 탐색 (W02-MIX)<br/>• 사용자: 탄산수 융해 및 3단계 비중 레이어링 조절<br/>• 화면: Real-Time Layering Lab<br/>• 반응: 물과 탄산수에 따른 실시간 수색 그라데이션 시뮬레이션"]
+        C05["05 180초 올팩토리 의식 체험 (W02-RITUAL)<br/>• 사용자: 발향 3단계 타이머 실행<br/>• 화면: Olfactory 180s Timer 룸<br/>• 반응: 시트러스 ➔ 플로럴 ➔ 우디 3단계 발향 ASMR 가이드"]
+
+        C01 --> C02 --> C03 --> C04 --> C05
+    end
+
+    subgraph DECIDE_SELECT ["Phase 2: DECIDE · 전환 경로 선택"]
+        C06["06 전환 행동 결정 (W02-SHOP / BUILD)<br/>• 사용자: [DIY 믹솔로지 키트 주문] 또는 [신규 노트 알림/시향] 선택<br/>• 화면: Primary / Secondary CTA 바<br/>• 반응: 선택한 전환 경로(PATH A 또는 PATH B) 즉시 분기"]
+    end
+
+    C05 --> C06
+
+    subgraph PATH_A ["Phase 3-A: PATH A · DIY 믹솔로지 키트 주문 & 커스텀 보틀 경로"]
+        A1["A1 조향 노트 도감 & 성분 확인 (W02-SHOP)<br/>• 사용자: 6대 LNB 카테고리 및 무알콜 성적서 검토<br/>• 화면: Olfactory Note Archive (6대 LNB)<br/>• 반응: 0.00% 무알콜/무당류 인증표 및 베이스 원료 노출"]
+        A2["A2 DIY 믹스 키트 설계 (W02-BUILD)<br/>• 사용자: 비커/플라스크 다기 + 나만의 레시피 포뮬러 조합<br/>• 화면: DIY Mixology Kit Builder<br/>• 반응: 3D 조향 보틀 실시간 렌더링 및 가격 자동 계산"]
+        A3["A3 심리스 발주 & 결제 (W02-DONE)<br/>• 사용자: Lab Flask Cart Drawer에서 1-Click 주문 완료<br/>• 화면: 슬라이드아웃 Flask Cart Drawer<br/>• 반응: 페이지 이탈 없이 결제 후 스크롤 위치 100% 복원"]
+
+        A1 --> A2 --> A3
+    end
+
+    subgraph PATH_B ["Phase 3-B: PATH B · 신규 향미 노트 출시 알림 & 시향 키트 경로"]
+        B1["B1 신규 노트 알림 선택 (W02-ABOUT)<br/>• 사용자: 조향사 신규 포뮬러 출시 알림 또는 무료 시향 신청<br/>• 화면: Olfactory Chemistry Story & Sample CTA<br/>• 반응: 1:1 조향 샘플 신청 모달 구동"]
+        B2["B2 알림 정보 & 배송지 입력 (W02-COMM)<br/>• 사용자: 연락처 및 샘플 수령지 입력<br/>• 화면: Sample Request & Notification Modal<br/>• 반응: 신청 유효성 검증 및 카카오 알림톡 동의 저장"]
+        B3["B3 신청 완료 & 레시피 카드 발급 (W02-DONE)<br/>• 사용자: 나만의 조향 레시피 고유 ID 및 바우처 확인<br/>• 화면: Custom Recipe Saved Modal<br/>• 반응: 카카오 알림톡 즉시 발송 및 시향 샘플 발송 안내"]
+
+        B1 --> B2 --> B3
+    end
+
+    C06 -- "DIY Kit Order / Custom Flask" --> A1
+    C06 -- "New Scent Notification / Free Sample" --> B1
+
+    subgraph FOLLOW_UP ["Phase 4: 공통 후속 경험 · 레시피 아카이빙 & 조향 커뮤니티 지속"]
+        F1["F1 레시피 공유 & 월간 조향 챌린지 (W02-COMM)<br/>• 사용자: 나만의 믹솔로지 레시피 공유 및 콘테스트 참여<br/>• 화면: Recipe Community & Brand Journal<br/>• 반응: 월간 우수 레시피 선정 제품화 혜택 및 신규 원료 우선 제공"]
+    end
+
+    A3 --> F1
+    B3 --> F1
+
+    class C01,C02,C03,C04,C05 discover;
+    class C06 decide;
+    class A1,A2,A3 pathA;
+    class B1,B2,B3 pathB;
+    class F1 follow;

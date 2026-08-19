@@ -1,0 +1,254 @@
+{
+  "clientId": "02",
+  "clientName": "신유진",
+  "archetype": "B-1 인터랙티브 쇼케이스형 (Viral Mixology Lab)",
+  "integratedFlowFile": "02_신유진_서비스_흐름도_통합.md",
+  "integratedSitemapFile": "02_신유진_사이트맵_통합.md",
+  "screens": [
+    {
+      "screenId": "W02-HOME",
+      "name": "믹솔로지 랩 메인 허브",
+      "depth": "1-Depth",
+      "components": [
+        "HERO-01",
+        "SLOGAN-01",
+        "PARTY-BULK-01",
+        "OLFACTORY-DIAL-01",
+        "CUR-01",
+        "CUR-02",
+        "CUR-03",
+        "RITUAL-01"
+      ],
+      "purposeIds": [
+        "목적 1",
+        "목적 2",
+        "목적 3",
+        "목적 4",
+        "목적 5"
+      ]
+    },
+    {
+      "screenId": "W02-RECIPE",
+      "name": "바이럴 믹솔로지 레시피 랩",
+      "depth": "2-Depth",
+      "components": [
+        "RECIPE-VIEWER-01",
+        "LNB-FILTER-01",
+        "SEC-01~20-GRID",
+        "KTR-CERT-01"
+      ],
+      "purposeIds": [
+        "목적 1",
+        "목적 4"
+      ]
+    },
+    {
+      "screenId": "W02-STUDIO",
+      "name": "후각 조향 스튜디오 & 포뮬러 랩",
+      "depth": "2-Depth",
+      "components": [
+        "OLFACTORY-DIAL-01",
+        "FORMULA-REGISTER-01",
+        "AROMA-SUB-01"
+      ],
+      "purposeIds": [
+        "목적 2",
+        "목적 5"
+      ]
+    },
+    {
+      "screenId": "W02-BUILD",
+      "name": "홈바 스타터 빌더 & 각인실",
+      "depth": "2-Depth",
+      "components": [
+        "STARTER-ENGRAVER-01",
+        "STARTER-SIMULATOR-01",
+        "KAKAO-GIFT-01"
+      ],
+      "purposeIds": [
+        "목적 3"
+      ]
+    },
+    {
+      "screenId": "W02-ESTIMATE",
+      "name": "홈파티 벌크 계산기",
+      "depth": "2-Depth",
+      "components": [
+        "PARTY-BULK-01",
+        "BUNDLE-DISCOUNT-01"
+      ],
+      "purposeIds": [
+        "목적 1"
+      ]
+    },
+    {
+      "screenId": "W02-DRAWER",
+      "name": "Slide-out 패스트 체크아웃",
+      "depth": "Aside Layer",
+      "components": [
+        "FAST-PAY-01",
+        "30DAY-SUB-01",
+        "SCROLL-RESTORE-01"
+      ],
+      "purposeIds": [
+        "목적 1",
+        "목적 2",
+        "목적 3",
+        "목적 4"
+      ]
+    },
+    {
+      "screenId": "W02-DONE",
+      "name": "주문 승인 & 레시피북 발급",
+      "depth": "Modal",
+      "components": [
+        "RECIPE-PDF-01",
+        "FORMULA-CERT-01",
+        "VOUCHER-01"
+      ],
+      "purposeIds": [
+        "목적 1",
+        "목적 2",
+        "목적 3",
+        "목적 4",
+        "목적 5"
+      ]
+    },
+    {
+      "screenId": "W02-COMM",
+      "name": "숏폼 챌린지 & 셰어링 랩",
+      "depth": "2-Depth",
+      "components": [
+        "REELS-CHALLENGE-01",
+        "VOTE-RANK-01",
+        "ROYALTY-DASH-01"
+      ],
+      "purposeIds": [
+        "목적 4",
+        "목적 5"
+      ]
+    }
+  ],
+  "curations": [
+    {
+      "secId": "SEC-01",
+      "name": "오로라 블루 버터플라이피 믹서",
+      "category": "0.1초 융해 스파클링 에이드",
+      "price": 39000
+    },
+    {
+      "secId": "SEC-02",
+      "name": "미드나잇 GABA 라벤더 올팩토리 티",
+      "category": "나이트 아로마 블렌드",
+      "price": 32000
+    },
+    {
+      "secId": "SEC-03",
+      "name": "스모키 오크 얼그레이 베이스 스틱",
+      "category": "0.1g 비스포크 조향 포뮬러",
+      "price": 28000
+    },
+    {
+      "secId": "SEC-04",
+      "name": "로즈 쿼츠 히비스커스 탄산 믹서",
+      "category": "0.1초 융해 스파클링 에이드",
+      "price": 27000
+    },
+    {
+      "secId": "SEC-05",
+      "name": "블루 캐모마일 & 바닐라 노트 팩",
+      "category": "나이트 아로마 블렌드",
+      "price": 26000
+    },
+    {
+      "secId": "SEC-06",
+      "name": "에메랄드 라임 마테 부스팅 스틱",
+      "category": "0.1초 융해 스파클링 에이드",
+      "price": 29000
+    },
+    {
+      "secId": "SEC-07",
+      "name": "바이올렛 루이보스 클린 포뮬러",
+      "category": "나이트 아로마 블렌드",
+      "price": 30000
+    },
+    {
+      "secId": "SEC-08",
+      "name": "루비 안토시아닌 베리 스파클링 믹서",
+      "category": "0.1초 융해 스파클링 에이드",
+      "price": 28500
+    },
+    {
+      "secId": "SEC-09",
+      "name": "옐로우 유자 진저 퀵 믹솔로지 스틱",
+      "category": "0.1g 비스포크 조향 포뮬러",
+      "price": 31000
+    },
+    {
+      "secId": "SEC-10",
+      "name": "믹솔로지 입문 키트 & 100% 페이백",
+      "category": "0.1g 비스포크 조향 포뮬러",
+      "price": 34000
+    },
+    {
+      "secId": "SEC-11",
+      "name": "믹솔로지 전용 더블월 칵테일 잔",
+      "category": "홈텐더 입문 바텐더 툴킷",
+      "price": 36000
+    },
+    {
+      "secId": "SEC-12",
+      "name": "스테인리스 바 지거 & 트위스트 머들러",
+      "category": "홈텐더 입문 바텐더 툴킷",
+      "price": 38000
+    },
+    {
+      "secId": "SEC-13",
+      "name": "VIP 아로마 틴케이스 믹솔로지 세트",
+      "category": "홈파티 60포 대용량 리필",
+      "price": 49000
+    },
+    {
+      "secId": "SEC-14",
+      "name": "공인 시험 성적서 보증 논알콜 팩",
+      "category": "나이트 아로마 블렌드",
+      "price": 35000
+    },
+    {
+      "secId": "SEC-15",
+      "name": "블라썸 피치 올팩토리 온수 팩",
+      "category": "0.1g 비스포크 조향 포뮬러",
+      "price": 42000
+    },
+    {
+      "secId": "SEC-16",
+      "name": "30일 나만의 맞춤 배합 정기구독 팩",
+      "category": "홈파티 60포 대용량 리필",
+      "price": 33150
+    },
+    {
+      "secId": "SEC-17",
+      "name": "0kcal 미네랄 아쿠아 전해질 토핑",
+      "category": "홈텐더 입문 바텐더 툴킷",
+      "price": 25000
+    },
+    {
+      "secId": "SEC-18",
+      "name": "60포 대용량 홈바 에코 리필 세트",
+      "category": "홈파티 60포 대용량 리필",
+      "price": 39900
+    },
+    {
+      "secId": "SEC-19",
+      "name": "릴스 챌린지 믹솔로지 스타터 킷",
+      "category": "홈텐더 입문 바텐더 툴킷",
+      "price": 31000
+    },
+    {
+      "secId": "SEC-20",
+      "name": "180초 아로마 디퓨징 사운드 타이머",
+      "category": "홈파티 60포 대용량 리필",
+      "price": 45000
+    }
+  ]
+}

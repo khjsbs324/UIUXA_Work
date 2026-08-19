@@ -1,0 +1,35 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef recipe fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef drop fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W05-HOME (드롭 진입)<br/>• [송아린 콜라보 500개 드롭] 클릭"]
+    RECIPE["02 W05-RECIPE (룩북 감상)<br/>• 홀로그램 틴케이스 화보 검토"]
+    DROP["03 W05-STUDIO (실시간 수량)<br/>• LIMITED-DROP-01 잔여 카운터"]
+    
+    DROP_CHECK{"04 선착순 잔여<br/>수량 검증"}
+    
+    DRAWER["05 W05-DRAWER (패스트 결제)<br/>• 1-Click 승인 & 시리얼 번호 발급"]
+    WAIT["04-B 취소분 대기 알림 (Fallback)<br/>• 알림톡 대기 큐 접수"]
+    DONE["06 W05-DONE (초대권 발급)<br/>• 라이브 팬미팅 모바일 티켓"]
+    COMM["F1 W05-COMM (라이브 알림)<br/>• D-Day 캘린더 등록"]
+
+    HOME --> RECIPE
+    RECIPE --> DROP
+    DROP --> DROP_CHECK
+    
+    DROP_CHECK -->|선착순 잔여 확보| DRAWER
+    DROP_CHECK -->|선착순 마감| WAIT
+    
+    DRAWER --> DONE
+    DONE --> COMM
+
+    class HOME home;
+    class RECIPE recipe;
+    class DROP,WAIT drop;
+    class DROP_CHECK decision;
+    class DRAWER,DONE drawer;
+    class COMM support;

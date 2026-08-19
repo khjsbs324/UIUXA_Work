@@ -1,0 +1,51 @@
+graph TD
+    classDef root fill:#0D47A1,stroke:#01579B,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef gnb fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef lnb fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef detail fill:#FFF8E1,stroke:#F57F17,stroke-width:1.5px,color:#E65100;
+    classDef aside fill:#E1F5FE,stroke:#0277BD,stroke-width:1.5px,color:#01579B;
+
+    ROOT["🏠 W11-HOME (20pt 큰글씨 다실)<br/>• SENIOR-FONT-01 활성화<br/>• 5대 시니어 퀵 버튼"]
+
+    GNB1["🍵 GNB-01: 발효티 도감<br/>(W11-CATALOG)"]
+    GNB2["🪵 GNB-02: 오동나무 선물<br/>(W11-BUILD)"]
+    GNB3["🧘 GNB-03: 10분 다도 묵상<br/>(W11-RITUAL)"]
+    GNB4["📅 GNB-04: 성수 1:1 예약<br/>(W11-ESTIMATE)"]
+
+    ROOT --> GNB1
+    ROOT --> GNB2
+    ROOT --> GNB3
+    ROOT --> GNB4
+
+    %% GNB1
+    TEA["🍵 지리산 야생 발효티"]
+    CERT["📜 HEALTH-CERT-01 무당 성적서"]
+    GNB1 --> TEA
+    GNB1 --> CERT
+
+    %% GNB2
+    WOOD["🪵 WOOD-BOX-01 3D 오동나무"]
+    CALLI["✍️ CALLI-CARD-01 붓글씨 카드"]
+    GNB2 --> WOOD
+    GNB2 --> CALLI
+
+    %% GNB3
+    SOUND["🧘 TEA-MEDITATION-01 가야금"]
+    DIARY["📝 TEA-DIARY-01 큰글씨 일기"]
+    GNB3 --> SOUND
+    GNB3 --> DIARY
+
+    %% GNB4
+    RESERVE["📅 SENIOR-RESERVE-01 캘린더"]
+    PASS["🎫 SENIOR-PASS-01 모바일 초대권"]
+    GNB4 --> RESERVE
+    GNB4 --> PASS
+
+    ORDER["📞 Aside: W11-ORDER<br/>• 온라인 큰 버튼 결제 / ☎️ 1588 전화 주문"]
+    ROOT -.-> ORDER
+
+    class ROOT root;
+    class GNB1,GNB2,GNB3,GNB4 gnb;
+    class TEA,CERT lnb;
+    class WOOD,CALLI,SOUND,DIARY,RESERVE,PASS detail;
+    class ORDER aside;

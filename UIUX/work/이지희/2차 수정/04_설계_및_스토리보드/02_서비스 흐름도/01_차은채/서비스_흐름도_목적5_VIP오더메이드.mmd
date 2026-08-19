@@ -1,0 +1,37 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef vip fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef essay fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef transact fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 카카오 알림톡 유입 ➔ W01-HOME<br/>• VIP-GATE-01 시크릿 코드 입력"]
+    
+    CODE_CHECK{"01-B 초대 코드<br/>일치 여부"}
+    
+    ABOUT["02 W01-ABOUT (세레머니 안내)<br/>• 디렉터 1:1 다과회 프로그램<br/>• VIP 등급 승인"]
+    ESSAY["03 W01-ESSAY (희귀 원료 저널)<br/>• 심야 침향 & 희귀 백차 스토리"]
+    BUILD["04 W01-BUILD (VIP 조향 아틀리에)<br/>• VIP-ATELIER-01 조향 빌더<br/>• 골드 포일 영문 각인"]
+    DRAWER["05 W01-DRAWER (VIP 결제)<br/>• VIP 우대 결제 & 배송 지정"]
+    DONE["06 W01-DONE (VIP 초대권)<br/>• 성수 쇼룸 1:1 다과회 초대권 발급"]
+    RETRY["01-C 재전송 요청 (Fallback)<br/>• VIP 고객센터 문의"]
+    COMM["F1 W01-COMM (VIP 컨시어지)<br/>• VIP 라운지 도슨트 & 1:1 채널"]
+
+    HOME --> CODE_CHECK
+    CODE_CHECK -->|인증 성공| ABOUT
+    CODE_CHECK -->|코드 불일치| RETRY
+    RETRY -.->|코드 재입력| HOME
+    
+    ABOUT --> ESSAY
+    ESSAY --> BUILD
+    BUILD --> DRAWER
+    DRAWER --> DONE
+    DONE --> COMM
+
+    class HOME home;
+    class CODE_CHECK decision;
+    class ABOUT,BUILD vip;
+    class ESSAY essay;
+    class DRAWER,DONE,RETRY transact;
+    class COMM support;

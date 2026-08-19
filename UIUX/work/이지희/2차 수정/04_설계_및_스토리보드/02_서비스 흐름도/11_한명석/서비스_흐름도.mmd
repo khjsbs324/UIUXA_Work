@@ -1,0 +1,54 @@
+flowchart TD
+    classDef discover fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef decide fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef pathA fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20;
+    classDef pathB fill:#FFF8E1,stroke:#F57F17,stroke-width:1.5px,color:#E65100;
+    classDef follow fill:#37474F,stroke:#263238,stroke-width:2px,color:#FFFFFF;
+
+    subgraph DISCOVER_CONSIDER ["Phase 1: DISCOVER & CONSIDER · 웰에이징 온수 안식처 탐색과 항산화 신뢰 형성"]
+        C01["01 시니어 홈 진입 (W11-HOME)<br/>• 사용자: 한옥 온수 다실 무드 & 20pt 큰 글씨 확인<br/>• 화면: HERO-11 시니어 웰에이징 캔버스<br/>• 반응: 큰 글씨 확대 모드 기본 적용 및 CALM-SENIOR-01 탐색 CTA 제공"]
+        C02["02 온수 발효 큐레이터 조작 (W11-HOME)<br/>• 사용자: CALM-SENIOR-01 큰 글씨 콘솔 조작<br/>• 화면: CALM-SENIOR-01 큐레이터 모듈<br/>• 반응: 70~80℃ 온수 전용 발효 블렌딩 및 소화 편안함 가이드 렌더링"]
+        C03["03 체온·건강 고민 진단 (W11-DIAG)<br/>• 사용자: 소화 부담 / 수면 뒤척임 / 체온 순환 다이얼 선택<br/>• 화면: Body Temperature & Care Dial 콘솔<br/>• 반응: 시니어 맞춤 웰에이징 온수 발효티 3안 도출"]
+        C04["04 발효 허브 스펙 탐색 (W11-MIX)<br/>• 사용자: 천연 식물성 폴리페놀 500mg 효능 도표 비교<br/>• 화면: Fermented Herb Explorer<br/>• 반응: 온수 80℃ 발효 추출 시 항산화 활성도 그래프 실시간 렌더링"]
+        C05["05 180초 한옥 다실 리추얼 (W11-RITUAL)<br/>• 사용자: 한옥 빗소리 연동 180초 온수 타이머 실행<br/>• 화면: Hanok 180s Warm Player<br/>• 반응: 은은한 가야금 앰비언트 음향 및 몸을 데우는 온수 티타임 가이드"]
+
+        C01 --> C02 --> C03 --> C04 --> C05
+    end
+
+    subgraph DECIDE_SELECT ["Phase 2: DECIDE · 전환 경로 선택"]
+        C06["06 전환 행동 결정 (W11-SHOP / BUILD)<br/>• 사용자: [30일 웰에이징 박스 정기구독] 또는 [1초 전화 주문 상담 신청] 선택<br/>• 화면: Primary / Secondary CTA 바<br/>• 반응: 선택한 전환 경로(PATH A 또는 PATH B) 즉시 분기"]
+    end
+
+    C05 --> C06
+
+    subgraph PATH_A ["Phase 3-A: PATH A · 30일 웰에이징 순환 박스 큰 글씨 정기구독 경로"]
+        A1["A1 웰에이징 도감 & 성분 확인 (W11-SHOP)<br/>• 사용자: 6대 LNB 카테고리 및 천연 폴리페놀 시험성적서 검토<br/>• 화면: Healthy Aging Archive (6대 LNB)<br/>• 반응: 위장 보호 온수 발효 인증 배지 및 월간 정기구독 할인 적용"]
+        A2["A2 안심 다기 세트 설계 (W11-BUILD)<br/>• 사용자: 손목 부담 없는 이중 단열 세라믹 보온병 + 발효티 선택<br/>• 화면: Easy-Grip Teaware Builder<br/>• 반응: 3D 보온병 실시간 렌더링 및 큰 글씨 주문서 작성"]
+        A3["A3 심리스 발주 & 결제 (W11-DONE)<br/>• 사용자: Large-Font Cart Drawer에서 1-Click 주문 완료<br/>• 화면: 슬라이드아웃 Large-Font Cart Drawer<br/>• 반응: 복잡한 인증 없는 간편 결제 완료 후 스크롤 위치 100% 복원"]
+
+        A1 --> A2 --> A3
+    end
+
+    subgraph PATH_B ["Phase 3-B: PATH B · 1초 전화 주문 상담 & 무료 샘플 신청 경로"]
+        B1["B1 전화 주문/샘플 선택 (W11-ABOUT)<br/>• 사용자: 1초 전화 주문(1588-XXXX) 연결 또는 무료 샘플 신청<br/>• 화면: Heritage Wellness Philosophy & Call CTA<br/>• 반응: 전문 영양 상담사 직통 전화 연결 및 샘플 신청 모달 구동"]
+        B2["B2 전화번호 입력 & 주소 확인 (W11-COMM)<br/>• 사용자: 전화번호 입력 및 샘플 수령 주소 음성/문자 확인<br/>• 화면: Phone Order & Sample Modal<br/>• 반응: 상담원 3분 이내 해피콜 접수 및 무료 체험 키트 발송"]
+        B3["B3 상담 접수 완료 & 샘플 발송 (W11-DONE)<br/>• 사용자: 전화 주문 접수 번호 확인 및 큰 글씨 문자 수신<br/>• 화면: Senior Box Delivered Modal<br/>• 반응: 주문 확인 큰 글씨 알림톡 발송 및 익일 택배 배송"]
+
+        B1 --> B2 --> B3
+    end
+
+    C06 -- "Senior 30-Day Sub / Easy Order" --> A1
+    C06 -- "Phone Order Call / Free Sample" --> B1
+
+    subgraph FOLLOW_UP ["Phase 4: 공통 후속 경험 · 실버 웰니스 클럽 아카이빙 & 건강 파트너십 지속"]
+        F1["F1 실버 웰니스 클럽 & 다도 모임 (W11-COMM)<br/>• 사용자: 건강 티타임 후기 작성 및 동호회 다도 모임 정보 확인<br/>• 화면: Silver Wellness Club & Footer<br/>• 반응: 계절별 맞춤 온수 한방차 가이드북 무료 우편 발송"]
+    end
+
+    A3 --> F1
+    B3 --> F1
+
+    class C01,C02,C03,C04,C05 discover;
+    class C06 decide;
+    class A1,A2,A3 pathA;
+    class B1,B2,B3 pathB;
+    class F1 follow;

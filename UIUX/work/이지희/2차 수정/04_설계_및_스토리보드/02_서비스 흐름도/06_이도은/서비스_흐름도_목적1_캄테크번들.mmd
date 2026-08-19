@@ -1,0 +1,36 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef catalog fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef build fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W06-HOME (미니멀 진입)<br/>• [공간 매칭 시작] 클릭"]
+    CATALOG["02 W06-CATALOG (틴 라인업)<br/>• 매트 블랙 & 무채색 스펙"]
+    BUILD["03 W06-BUILD (3D 공간 배치)<br/>• MINIMAL-SPACE-01 뷰어"]
+    
+    MATCH_CHECK{"04 공간 조화도<br/>검증 (95점 이상?)"}
+    
+    DRAWER["05 W06-DRAWER (번들 결제)<br/>• MONO-BUNDLE-01<br/>• 20% 세트 할인 & 결제"]
+    ADJUST["04-B 프리셋 보정 (Fallback)<br/>• 무채색 최적 배치 가이드"]
+    DONE["07 W06-DONE (가이드 발급)<br/>• 스타일링 PDF 증정"]
+    COMM["F1 W06-COMM (포트폴리오)<br/>• 인테리어 시공 피드 연동"]
+
+    HOME --> CATALOG
+    CATALOG --> BUILD
+    BUILD --> MATCH_CHECK
+    
+    MATCH_CHECK -->|조화도 우수| DRAWER
+    MATCH_CHECK -->|톤 부조화| ADJUST
+    ADJUST -.->|보정 후| DRAWER
+    
+    DRAWER --> DONE
+    DONE --> COMM
+
+    class HOME home;
+    class CATALOG catalog;
+    class BUILD,ADJUST build;
+    class MATCH_CHECK decision;
+    class DRAWER,DONE drawer;
+    class COMM support;

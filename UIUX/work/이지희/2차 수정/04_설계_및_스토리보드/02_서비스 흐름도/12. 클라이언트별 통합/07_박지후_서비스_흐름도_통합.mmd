@@ -1,0 +1,54 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef catalog fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef estimate fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["🏠 W07-HOME (오피스 웰니스 포털)<br/>• 3D 탕비실 대시보드<br/>• 5대 피플팀 콘솔"]
+
+    CATALOG["🏢 W07-CATALOG (오피스 찬물 스틱 도감)<br/>• 찬물 1초 스틱 4종<br/>• 아크릴 디스펜서 스펙"]
+    ESTIMATE["📑 W07-ESTIMATE (대용량 계산 & 엑셀)<br/>• PANTRY-BULK-01 120포 비율<br/>• EXCEL-SHIP-01 20명 업로더"]
+
+    PAY_CHECK{"법인카드 결제<br/>승인 여부"}
+    ADDR_CHECK{"주소지 100%<br/>유효성 검증"}
+
+    DRAWER["🛒 W07-DRAWER (법인 간편결제)<br/>• 1-Click 법인 결제 / 세금계산서 / 새벽배송"]
+    DONE["✅ W07-DONE (주문 승인)<br/>• 법인 영수증 PDF / 디스펜서 매뉴얼"]
+    COMM["🔄 W07-COMM (탕비실 재고 & QR 루프)<br/>• 문 앞 배송 사진 & QR 즉시 재발주"]
+
+    %% 연결
+    HOME -->|목적1: 120포 벌크| CATALOG
+    CATALOG --> ESTIMATE
+    ESTIMATE --> DRAWER
+
+    HOME -->|목적2: 240포 구독| CATALOG
+    CATALOG --> DRAWER
+
+    HOME -->|목적3: 웰컴 킷 20명| CATALOG
+    CATALOG --> ESTIMATE
+    ESTIMATE --> ADDR_CHECK
+    ADDR_CHECK -->|유효| DRAWER
+    ADDR_CHECK -->|오류 주소| ESTIMATE
+
+    HOME -->|목적4: QR 즉시 재발주| ESTIMATE
+    ESTIMATE --> DRAWER
+
+    HOME -->|목적5: 타운홀 50인분| CATALOG
+    CATALOG --> ESTIMATE
+    ESTIMATE --> DRAWER
+
+    DRAWER --> PAY_CHECK
+    PAY_CHECK -->|승인 완료| DONE
+    PAY_CHECK -->|한도 초과 시 세금계산서| DRAWER
+
+    DONE --> COMM
+    COMM -.->|스틱 소진 시 QR 스캔| HOME
+
+    class HOME home;
+    class CATALOG catalog;
+    class ESTIMATE estimate;
+    class PAY_CHECK,ADDR_CHECK decision;
+    class DRAWER,DONE drawer;
+    class COMM support;

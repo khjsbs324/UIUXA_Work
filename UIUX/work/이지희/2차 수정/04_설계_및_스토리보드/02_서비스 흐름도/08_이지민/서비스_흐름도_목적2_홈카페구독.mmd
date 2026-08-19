@@ -1,0 +1,32 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef catalog fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W08-HOME (구독 진입)<br/>• [Z세대 트렌드 팩 구독] 클릭"]
+    CATALOG["02 W08-CATALOG (믹서 선택)<br/>• TREND-MIXER-01 2종 조합"]
+    DRAWER["03 W08-DRAWER (구독 드로어)<br/>• TIKTOK-SUB-01 15% 할인"]
+    
+    PAY_CHECK{"04 정기결제<br/>승인 여부"}
+    
+    DONE["05 W08-DONE (굿즈 확인)<br/>• 틱톡 홀로그램 굿즈 증정"]
+    RETRY["04-B 결제 재시도 (Fallback)<br/>• 카드 정보 수정"]
+    COMM["F1 W08-COMM (챌린지 루프)<br/>• 매월 1일 자동 출고 루프"]
+
+    HOME --> CATALOG
+    CATALOG --> DRAWER
+    DRAWER --> PAY_CHECK
+    
+    PAY_CHECK -->|결제 성공| DONE
+    PAY_CHECK -->|결제 오류| RETRY
+    RETRY -.->|결제 수정| DRAWER
+    
+    DONE --> COMM
+
+    class HOME home;
+    class CATALOG catalog;
+    class DRAWER,DONE,RETRY drawer;
+    class PAY_CHECK decision;
+    class COMM support;

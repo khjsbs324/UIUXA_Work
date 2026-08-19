@@ -1,0 +1,53 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef catalog fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef estimate fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["🏠 W04-HOME (호텔 B2B 포털)<br/>• 3D 어메니티 쇼케이스<br/>• 5대 B2B 콘솔"]
+
+    CATALOG["🏢 W04-CATALOG (B2B 성분 카탈로그)<br/>• 463종 잔류농약 0% 성적서"]
+    ESTIMATE["📑 W04-ESTIMATE (견적 & 3D 각인)<br/>• B2B-ESTIMATE-01 5,000세트<br/>• HOTEL-ENGRAVER-01 로고 각인"]
+
+    CORP_CHECK{"사업자등록번호<br/>인증 검증"}
+    MOQ_CHECK{"MOQ 100세트<br/>검증"}
+
+    DRAWER["🛒 W04-DRAWER (B2B 계약 드로어)<br/>• 전자서명 / 세금계산서 / 납기 지정"]
+    DONE["✅ W04-DONE (발주 승인)<br/>• ERP 발주서 PDF / 품질보증서"]
+    COMM["🔄 W04-COMM (ERP 안전재고 모니터링)<br/>• 잔여 15% 재발주 루프 & 미슐랭 F&B"]
+
+    %% 연결
+    HOME -->|목적1: 5,000세트 계약| ESTIMATE
+    ESTIMATE --> CORP_CHECK
+    CORP_CHECK -->|법인 인증 완료| DRAWER
+    CORP_CHECK -->|오류 시| ESTIMATE
+
+    HOME -->|목적2: 0원 VIP 샘플| CATALOG
+    CATALOG --> ESTIMATE
+    ESTIMATE --> DONE
+
+    HOME -->|목적3: 로고 각인 틴| CATALOG
+    CATALOG --> ESTIMATE
+    ESTIMATE --> MOQ_CHECK
+    MOQ_CHECK -->|100세트 이상| DRAWER
+    MOQ_CHECK -->|미달 시| ESTIMATE
+
+    HOME -->|목적4: ERP 재발주| COMM
+    COMM --> DRAWER
+
+    HOME -->|목적5: 미슐랭 협업| CATALOG
+    CATALOG --> ESTIMATE
+    ESTIMATE --> DONE
+
+    DRAWER --> DONE
+    DONE --> COMM
+    COMM -.->|안전재고 소진 시 재발주| DRAWER
+
+    class HOME home;
+    class CATALOG catalog;
+    class ESTIMATE estimate;
+    class CORP_CHECK,MOQ_CHECK decision;
+    class DRAWER,DONE drawer;
+    class COMM support;

@@ -1,0 +1,54 @@
+flowchart TD
+    classDef discover fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef decide fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef pathA fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20;
+    classDef pathB fill:#FFF8E1,stroke:#F57F17,stroke-width:1.5px,color:#E65100;
+    classDef follow fill:#37474F,stroke:#263238,stroke-width:2px,color:#FFFFFF;
+
+    subgraph DISCOVER_CONSIDER ["Phase 1: DISCOVER & CONSIDER · 숏폼 릴스 피드 탐색과 바이럴 신뢰 형성"]
+        C01["01 릴스 피드 진입 (W05-HOME)<br/>• 사용자: 세로형 숏폼 영상 그리드 & 파스텔 수색 감상<br/>• 화면: HERO-05 세로형 숏폼 피드 캔버스<br/>• 반응: 자동 무음 재생 및 화면 터치 시 레시피 핫스팟 팝업"]
+        C02["02 릴스 피드 그리드 조작 (W05-HOME)<br/>• 사용자: REELS-FEED-01 스와이프 탐색<br/>• 화면: REELS-FEED-01 숏폼 인터랙티브 모듈<br/>• 반응: 15초 수색 번짐 영상 & 실시간 칵테일 레시피 레이어 노출"]
+        C03["03 트렌드 매칭 퀴즈 (W05-DIAG)<br/>• 사용자: 인기 음원 & 비주얼 컬러 취향 선택<br/>• 화면: Trend Matcher 퀴즈 콘솔<br/>• 반응: 나에게 어울리는 바이럴 믹솔로지 레시피 3안 도출"]
+        C04["04 3단 층분리 레시피 탐색 (W05-MIX)<br/>• 사용자: 비비드 파스텔 수색 그라데이션 비교<br/>• 화면: Viral Recipe Explorer<br/>• 반응: 카메라 필터 프리 3D 글래스 층분리 시뮬레이션"]
+        C05["05 15초 플래시 리추얼 체험 (W05-RITUAL)<br/>• 사용자: 15초 숏폼 타이머 실행 & 영상 프리뷰<br/>• 화면: 15s Flash Ritual Player<br/>• 반응: 숏폼 촬영용 15초 비트 음원 및 탄산 기포 애니메이션"]
+
+        C01 --> C02 --> C03 --> C04 --> C05
+    end
+
+    subgraph DECIDE_SELECT ["Phase 2: DECIDE · 전환 경로 선택"]
+        C06["06 전환 행동 결정 (W05-SHOP / BUILD)<br/>• 사용자: [영상 속 레시피 키트 주문] 또는 [챌린지 참가 신청] 선택<br/>• 화면: Primary / Secondary CTA 바<br/>• 반응: 선택한 전환 경로(PATH A 또는 PATH B) 즉시 분기"]
+    end
+
+    C05 --> C06
+
+    subgraph PATH_A ["Phase 3-A: PATH A · 영상 속 레시피 키트 1-Click 퀵 주문 경로"]
+        A1["A1 트렌딩 믹솔로지 도감 & 혜택 확인 (W05-SHOP)<br/>• 사용자: 6대 LNB 카테고리 및 0kcal 무가당 인증표 검토<br/>• 화면: Trending Mixology Archive (6대 LNB)<br/>• 반응: 0kcal 인증 배지 및 영상 속 사용 도구 퀵 담기"]
+        A2["A2 홈바 크리에이터 키트 설계 (W05-BUILD)<br/>• 사용자: 3단 레이어링 홈바 키트 + 전용 글래스 선택<br/>• 화면: Home Bar Creator Kit Builder<br/>• 반응: 3D 홈바 패키지 실시간 렌더링 및 세트 할인 적용"]
+        A3["A3 심리스 발주 & 결제 (W05-DONE)<br/>• 사용자: Quick Cart Drawer에서 1-Click 주문 완료<br/>• 화면: 슬라이드아웃 Quick Cart Drawer<br/>• 반응: 페이지 이탈 없이 결제 후 스크롤 위치 100% 복원"]
+
+        A1 --> A2 --> A3
+    end
+
+    subgraph PATH_B ["Phase 3-B: PATH B · 숏폼 믹솔로지 챌린지 참여 & 리워드 경로"]
+        B1["B1 챌린지 참가 선택 (W05-COMM)<br/>• 사용자: 틱톡/릴스 믹솔로지 챌린지 참가 신청<br/>• 화면: Reels Challenge Hub & Upload<br/>• 반응: 챌린지 가이드라인 및 전용 음원 다운로드 모달 구동"]
+        B2["B2 영상 링크 등록 & 닉네임 입력 (W05-COMM)<br/>• 사용자: SNS 영상 URL 및 인스타/틱톡 아이디 입력<br/>• 화면: Challenge Submission Modal<br/>• 반응: 실시간 투표 갤러리 등록 및 참가 인증 완료"]
+        B3["B3 참가 완료 & 웰컴 리워드 발급 (W05-DONE)<br/>• 사용자: 챌린지 패스 활성화 및 5,000원 쿠폰 확인<br/>• 화면: Challenge Pass Activated Modal<br/>• 반응: 카카오 알림톡 즉시 발송 및 인기 랭킹 노출 안내"]
+
+        B1 --> B2 --> B3
+    end
+
+    C06 -- "Quick Bundle Order / Creator Shop" --> A1
+    C06 -- "Join Challenge / Upload Reels" --> B1
+
+    subgraph FOLLOW_UP ["Phase 4: 공통 후속 경험 · 챌린지 아카이빙 & 크리에이터 생태계 지속"]
+        F1["F1 숏폼 챌린지 아카이브 & 월간 투표 (W05-COMM)<br/>• 사용자: 실시간 유저 영상 투표 참여 및 베스트 레시피 확인<br/>• 화면: Reels Challenge Archive & Footer<br/>• 반응: 매주 우수 영상 메인 팝업 노출 및 크리에이터 콜라보 기회 제공"]
+    end
+
+    A3 --> F1
+    B3 --> F1
+
+    class C01,C02,C03,C04,C05 discover;
+    class C06 decide;
+    class A1,A2,A3 pathA;
+    class B1,B2,B3 pathB;
+    class F1 follow;

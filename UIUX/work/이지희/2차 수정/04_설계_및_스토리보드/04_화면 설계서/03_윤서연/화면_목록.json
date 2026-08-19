@@ -1,0 +1,244 @@
+{
+  "clientId": "03",
+  "clientName": "윤서연",
+  "archetype": "A-2 감성 큐레이션 매거진형 (Aesthetic Deskterior)",
+  "integratedFlowFile": "03_윤서연_서비스_흐름도_통합.md",
+  "integratedSitemapFile": "03_윤서연_사이트맵_통합.md",
+  "screens": [
+    {
+      "screenId": "W03-HOME",
+      "name": "데스크테리어 매거진 메인 허브",
+      "depth": "1-Depth",
+      "components": [
+        "HERO-01",
+        "SLOGAN-01",
+        "5-QUICK-DOCK",
+        "DESK-SIMULATOR-01",
+        "CUR-01",
+        "CUR-02",
+        "CUR-03",
+        "RITUAL-01"
+      ],
+      "purposeIds": [
+        "목적 1",
+        "목적 2",
+        "목적 3",
+        "목적 4",
+        "목적 5"
+      ]
+    },
+    {
+      "screenId": "W03-LOOKBOOK",
+      "name": "데스크테리어 오브제 갤러리 & 페어링",
+      "depth": "2-Depth",
+      "components": [
+        "LOOKBOOK-VIEWER-01",
+        "LNB-FILTER-01",
+        "SEC-01~20-GRID",
+        "DESSERT-PAIRING-01"
+      ],
+      "purposeIds": [
+        "목적 2",
+        "목적 5"
+      ]
+    },
+    {
+      "screenId": "W03-BUILD",
+      "name": "3D 데스크 셋업 룸 & 린넨 포장실",
+      "depth": "2-Depth",
+      "components": [
+        "DESK-SIMULATOR-01",
+        "LINEN-WRAP-01",
+        "CARD-EDITOR-01"
+      ],
+      "purposeIds": [
+        "목적 1",
+        "목적 3",
+        "목적 5"
+      ]
+    },
+    {
+      "screenId": "W03-RITUAL",
+      "name": "나이트 리추얼 & 432Hz 빗소리",
+      "depth": "2-Depth",
+      "components": [
+        "432HZ-PLAYER-01",
+        "180S-TIMER-01",
+        "NIGHT-SUB-01"
+      ],
+      "purposeIds": [
+        "목적 2",
+        "목적 4"
+      ]
+    },
+    {
+      "screenId": "W03-DRAWER",
+      "name": "Slide-out 감성 결제 드로어",
+      "depth": "Aside Layer",
+      "components": [
+        "EASY-PAY-01",
+        "NIGHT-SUB-PLANNER-01",
+        "KAKAO-GIFT-01",
+        "SCROLL-RESTORE-01"
+      ],
+      "purposeIds": [
+        "목적 1",
+        "목적 2",
+        "목적 3",
+        "목적 5"
+      ]
+    },
+    {
+      "screenId": "W03-DONE",
+      "name": "주문 승인 & 스타일링 가이드 발급",
+      "depth": "Modal",
+      "components": [
+        "STYLING-PDF-01",
+        "MOBILE-CARD-01",
+        "CHALLENGE-COUPON-01"
+      ],
+      "purposeIds": [
+        "목적 1",
+        "목적 2",
+        "목적 3",
+        "목적 4",
+        "목적 5"
+      ]
+    },
+    {
+      "screenId": "W03-COMM",
+      "name": "데스크 챌린지 보드 & 데일리 저널",
+      "depth": "2-Depth",
+      "components": [
+        "DESK-CHALLENGE-01",
+        "VOTE-BOARD-01",
+        "30DAY-CALENDAR-01"
+      ],
+      "purposeIds": [
+        "목적 4"
+      ]
+    }
+  ],
+  "curations": [
+    {
+      "secId": "SEC-01",
+      "name": "소프트 샌드 매트 파스텔 틴 팩",
+      "category": "매트 파스텔 오브제 틴",
+      "price": 39000
+    },
+    {
+      "secId": "SEC-02",
+      "name": "미드나잇 GABA 0.00mg 무카페인 티",
+      "category": "미드나잇 GABA 무카페인",
+      "price": 32000
+    },
+    {
+      "secId": "SEC-03",
+      "name": "스모키 오크 더블월 글래스웨어",
+      "category": "빛 굴절 더블월 글래스웨어",
+      "price": 28000
+    },
+    {
+      "secId": "SEC-04",
+      "name": "오가닉 린넨 데스크 매트 & 코스터",
+      "category": "린넨 패브릭 매트 & 코스터",
+      "price": 27000
+    },
+    {
+      "secId": "SEC-05",
+      "name": "세이지 그린 매트 메탈 오브제 틴",
+      "category": "매트 파스텔 오브제 틴",
+      "price": 26000
+    },
+    {
+      "secId": "SEC-06",
+      "name": "블루 캐모마일 & 바닐라 티",
+      "category": "미드나잇 GABA 무카페인",
+      "price": 29000
+    },
+    {
+      "secId": "SEC-07",
+      "name": "베이지 린넨 보자기 기프트 파우치",
+      "category": "린넨 패브릭 매트 & 코스터",
+      "price": 30000
+    },
+    {
+      "secId": "SEC-08",
+      "name": "매트 피치 틴 & 아로마 티백 세트",
+      "category": "매트 파스텔 오브제 틴",
+      "price": 28500
+    },
+    {
+      "secId": "SEC-09",
+      "name": "라벤더 루이보스 무카페인 팩",
+      "category": "미드나잇 GABA 무카페인",
+      "price": 31000
+    },
+    {
+      "secId": "SEC-10",
+      "name": "3종 파스텔 틴 & 원목 트레이",
+      "category": "매트 파스텔 오브제 틴",
+      "price": 34000
+    },
+    {
+      "secId": "SEC-11",
+      "name": "크리스탈 컷 머들러 & 온더락 잔",
+      "category": "빛 굴절 더블월 글래스웨어",
+      "price": 36000
+    },
+    {
+      "secId": "SEC-12",
+      "name": "매트 골드 티 스푼 & 집게 툴",
+      "category": "빛 굴절 더블월 글래스웨어",
+      "price": 38000
+    },
+    {
+      "secId": "SEC-13",
+      "name": "린넨 포장 & 감성 엽서 기프트 세트",
+      "category": "린넨 패브릭 매트 & 코스터",
+      "price": 49000
+    },
+    {
+      "secId": "SEC-14",
+      "name": "100% 무표백 소창 찻수건 2종",
+      "category": "린넨 패브릭 매트 & 코스터",
+      "price": 35000
+    },
+    {
+      "secId": "SEC-15",
+      "name": "피낭시에 x 스모키 얼그레이 팩",
+      "category": "티 & 구움과자 디저트 페어링",
+      "price": 42000
+    },
+    {
+      "secId": "SEC-16",
+      "name": "30일 미드나잇 안식티 정기배송 팩",
+      "category": "티 & 구움과자 디저트 페어링",
+      "price": 33150
+    },
+    {
+      "secId": "SEC-17",
+      "name": "투명 내열유리 인퓨저 티 머그",
+      "category": "빛 굴절 더블월 글래스웨어",
+      "price": 25000
+    },
+    {
+      "secId": "SEC-18",
+      "name": "레몬 마들렌 x 시트러스 마테 세트",
+      "category": "티 & 구움과자 디저트 페어링",
+      "price": 39900
+    },
+    {
+      "secId": "SEC-19",
+      "name": "매트 도자기 디저트 접시 2종",
+      "category": "티 & 구움과자 디저트 페어링",
+      "price": 31000
+    },
+    {
+      "secId": "SEC-20",
+      "name": "432Hz 사운드 & 180초 펄스 타이머",
+      "category": "미드나잇 GABA 무카페인",
+      "price": 45000
+    }
+  ]
+}

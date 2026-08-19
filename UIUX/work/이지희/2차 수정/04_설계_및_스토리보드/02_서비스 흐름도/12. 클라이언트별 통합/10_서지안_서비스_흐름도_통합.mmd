@@ -1,0 +1,51 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef catalog fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef build fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["🏠 W10-HOME (온가족 웰니스 허브)<br/>• 안심 비주얼 캔버스<br/>• 5대 패밀리 콘솔"]
+
+    CATALOG["🏢 W10-CATALOG (클린 포뮬러 도감)<br/>• CLEAN-CERT-01 3無 성적서<br/>• 성장기 과일티 스펙"]
+    ESTIMATE["📑 W10-ESTIMATE (패밀리 & 구디백 계산)<br/>• FAMILY-BULK-01 120포 비율<br/>• KIDS-STICKER-01 3D 라벨러"]
+    BUILD["🛠️ W10-BUILD (3D 자수 라벨 에디터)<br/>• EMBROIDERY-VIEWER-01 아이 이름 자수"]
+    RITUAL["🌙 W10-RITUAL (밤 23:00 육퇴 힐링)<br/>• MOM-RITUAL-01 오르골 & 180초 타이머"]
+
+    TIME_CHECK{"180초 완주<br/>차임벨"}
+
+    DRAWER["🛒 W10-DRAWER (Slide-out 안심 결제)<br/>• 카카오페이 / 패밀리 구독 / 안심 새벽배송"]
+    DONE["✅ W10-DONE (주문 승인)<br/>• 건강 레시피 PDF / 생일 가랜드 PDF"]
+    COMM["🔄 W10-COMM (커뮤니티 & 육아 일기)<br/>• MOM-DIARY-01 1줄 일기 & 파티 후기"]
+
+    %% 연결
+    HOME -->|목적1: 패밀리 벌크| CATALOG
+    CATALOG --> ESTIMATE
+    ESTIMATE --> DRAWER
+
+    HOME -->|목적2: 패밀리 구독| CATALOG
+    CATALOG --> DRAWER
+
+    HOME -->|목적3: 자수 파우치 선물| CATALOG
+    CATALOG --> BUILD
+    BUILD --> DRAWER
+
+    HOME -->|목적4: 육퇴 힐링| RITUAL
+    RITUAL --> TIME_CHECK
+    TIME_CHECK -->|완주| COMM
+    COMM -.->|다음날 육퇴 시| RITUAL
+
+    HOME -->|목적5: 키즈 구디백| CATALOG
+    CATALOG --> ESTIMATE
+    ESTIMATE --> DRAWER
+
+    DRAWER --> DONE
+    DONE --> COMM
+
+    class HOME home;
+    class CATALOG catalog;
+    class ESTIMATE,BUILD,RITUAL build;
+    class TIME_CHECK decision;
+    class DRAWER,DONE drawer;
+    class COMM support;

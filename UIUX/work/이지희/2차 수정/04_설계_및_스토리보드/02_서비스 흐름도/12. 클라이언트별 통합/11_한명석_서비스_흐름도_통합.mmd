@@ -1,0 +1,56 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef catalog fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef order fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef build fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["🏠 W11-HOME (20pt 큰글씨 다실)<br/>• SENIOR-FONT-01 활성화<br/>• 5대 시니어 퀵 버튼"]
+
+    CATALOG["🍵 W11-CATALOG (발효티 도감)<br/>• 속 편한 야생 발효티<br/>• HEALTH-CERT-01 성적서"]
+    BUILD["🛠️ W11-BUILD (3D 오동나무 상자)<br/>• WOOD-BOX-01 뷰어<br/>• CALLI-CARD-01 붓글씨 카드"]
+    RITUAL["🧘 W11-RITUAL (10분 다도 묵상)<br/>• TEA-MEDITATION-01 가야금 음향"]
+    ESTIMATE["📅 W11-ESTIMATE (다도회 예약)<br/>• SENIOR-RESERVE-01 큰글씨 캘린더"]
+
+    ORDER_CHECK{"주문 방식<br/>선택"}
+    TIME_CHECK{"10분 완주<br/>종소리"}
+    SEAT_CHECK{"잔여석 여부<br/>검증"}
+
+    ORDER["📞 W11-ORDER (주문 접수)<br/>• 온라인 큰 버튼 1초 결제 / ☎️ 1588 전화 주문"]
+    DONE["✅ W11-DONE (주문/예약 완료)<br/>• 음성 안내 지원 & 큰글씨 영수증 / 초대권"]
+    COMM["🔄 W11-COMM (다도 캘린더 & 배송)<br/>• 붓글씨 출석 도장 & 우체국 안심 배달"]
+
+    %% 연결
+    HOME -->|목적1: 큰글씨 발효티| CATALOG
+    CATALOG --> ORDER_CHECK
+    ORDER_CHECK -->|온라인 결제| ORDER
+    ORDER_CHECK -->|전화 주문| ORDER
+
+    HOME -->|목적2: 백세 구독| CATALOG
+    CATALOG --> ORDER
+
+    HOME -->|목적3: 오동나무 선물| CATALOG
+    CATALOG --> BUILD
+    BUILD --> ORDER
+
+    HOME -->|목적4: 10분 다도 묵상| RITUAL
+    RITUAL --> TIME_CHECK
+    TIME_CHECK -->|완주| COMM
+    COMM -.->|내일 아침 순환| RITUAL
+
+    HOME -->|목적5: 1:1 다도회 예약| CATALOG
+    CATALOG --> ESTIMATE
+    ESTIMATE --> SEAT_CHECK
+    SEAT_CHECK -->|예약 가능| DONE
+    SEAT_CHECK -->|마감 시 전화 대기| ESTIMATE
+
+    ORDER --> DONE
+    DONE --> COMM
+
+    class HOME home;
+    class CATALOG catalog;
+    class BUILD,RITUAL,ESTIMATE build;
+    class ORDER_CHECK,TIME_CHECK,SEAT_CHECK decision;
+    class ORDER,DONE order;
+    class COMM support;

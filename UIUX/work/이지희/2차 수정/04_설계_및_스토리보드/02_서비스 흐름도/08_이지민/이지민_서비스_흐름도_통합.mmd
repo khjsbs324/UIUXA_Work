@@ -1,0 +1,62 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef explore fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef atelier fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef action fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    subgraph HUB ["HUB: WICKETA 이지민 감성 홈카페 메인 허브"]
+        HOME["01 W08-HOME (홈카페 메인)<br/>• 3D 오로라 수색 변환 캔버스<br/>• COLOR-SHIFT-01 퀵독<br/>• 학생증 20% 할인 배너"]
+    end
+
+    subgraph PATH1 ["경로 1: 수색 변환 에이드 & 글래스 구매"]
+        COLOR["02-A W08-COLOR<br/>수색 변환 시뮬레이터<br/>• 블루➔퍼플➔핑크 모션"]
+    end
+
+    subgraph PATH2 ["경로 2: 20% 학생 할인 홈카페 정기구독"]
+        SUB["02-B W08-SUB<br/>STUDENT-SUB-01 콘솔<br/>• 학생증 인증 & 20% 할인"]
+    end
+
+    subgraph PATH3 ["경로 3: 파스텔 틴케이스 카카오 선물하기"]
+        GIFT["02-C W08-GIFT<br/>PASTEL-GIFT-01 아틀리에<br/>• 마카롱 틴 & 축하 카드"]
+    end
+
+    subgraph PATH4 ["경로 4: 브이로그 챌린지 & 적립금 환급"]
+        COMM_IN["02-D W08-COMM (챌린지)<br/>VLOG-CHALLENGE-01<br/>• 영상 업로드 & 투표"]
+    end
+
+    subgraph PATH5 ["경로 5: 캠퍼스 축제 부스용 200잔 대용량"]
+        FEST["02-E W08-FEST<br/>FESTIVAL-KIT-01 콘솔<br/>• 200잔 베이스 + 컵 홀더"]
+    end
+
+    subgraph TRANSACT ["TRANSACT: 공통 장바구니 결제 & 완료 모달"]
+        DRAWER["W08-DRAWER (슬라이드아웃 Cart)<br/>• 토스/카카오페이 1초 간편결제<br/>• 가상 스크롤 100% 위치 복원"]
+        DONE["W08-DONE (통합 완료 모달)<br/>• 레시피 카드, 선물 링크 발급<br/>• 카카오 알림톡 즉시 발송"]
+        DRAWER --> DONE
+    end
+
+    subgraph LOOP ["LOOP: 감성 홈카페 챌린지 순환 루프"]
+        LOOP_NODE["W08-LOOP (적립금 순환)<br/>• 브이로그 업로드 ➔ 5,000P 적립 ➔ 신상 구매<br/>• 커뮤니티 투표 랭킹 갱신"]
+    end
+
+    HOME --> COLOR
+    HOME --> SUB
+    HOME --> GIFT
+    HOME --> COMM_IN
+    HOME --> FEST
+
+    COLOR --> DRAWER
+    SUB --> DRAWER
+    GIFT --> DRAWER
+    FEST --> DRAWER
+    COMM_IN --> LOOP_NODE
+    DONE --> LOOP_NODE
+
+    LOOP_NODE -.->|적립금으로 다음 달 신상 티 팩 재구매| HOME
+    DONE -.->|쇼핑 계속하기 스크롤 복원| HOME
+
+    class HOME home;
+    class COLOR,FEST explore;
+    class GIFT,SUB,COMM_IN atelier;
+    class DRAWER,DONE action;
+    class LOOP_NODE support;

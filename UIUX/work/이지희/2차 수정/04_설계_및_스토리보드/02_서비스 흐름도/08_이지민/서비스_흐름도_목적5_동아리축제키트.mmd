@@ -1,0 +1,29 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef catalog fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef estimate fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef done fill:#ECEFF1,stroke:#455A64,stroke-width:1.5px,color:#263238;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W08-HOME (축제 진입)<br/>• [대학 축제 100잔 키트] 클릭"]
+    CATALOG["02 W08-CATALOG (원료 확인)<br/>• 100잔 대용량 믹서 스펙"]
+    ESTIMATE["03 W08-ESTIMATE (계산기 조작)<br/>• FESTIVAL-CALC-01 30% 할인"]
+    BANNER["04 W08-ESTIMATE (배너 커스텀)<br/>• BANNER-PDF-01 동아리 배너"]
+    DRAWER["05 W08-DRAWER (단체 결제)<br/>• 축제 전일 도착 지정 결제"]
+    DONE["06 W08-DONE (발주 완료)<br/>• 인쇄용 X배너 PDF 발급"]
+    COMM["F1 W08-COMM (축제 셰어링)<br/>• 축제 부스 후기 피드"]
+
+    HOME --> CATALOG
+    CATALOG --> ESTIMATE
+    ESTIMATE --> BANNER
+    BANNER --> DRAWER
+    DRAWER --> DONE
+    DONE --> COMM
+
+    class HOME home;
+    class CATALOG catalog;
+    class ESTIMATE,BANNER estimate;
+    class DRAWER drawer;
+    class DONE done;
+    class COMM support;

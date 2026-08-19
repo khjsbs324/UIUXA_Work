@@ -1,0 +1,36 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef look fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef build fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W03-HOME (페어링 진입)<br/>• [주말 홈카페 페어링] 클릭"]
+    LOOK["02 W03-LOOKBOOK (디저트 선택)<br/>• PAIRING-MATRIX-01<br/>• 구움과자 ➔ 스모키 얼그레이"]
+    BUILD["03 W03-BUILD (3D 플레이팅)<br/>• 감성 홈카페 플레이팅 뷰어"]
+    DRAWER["04 W03-DRAWER (키트 담기)<br/>• 15% 세트 할인 적용"]
+    
+    PAY_CHECK{"05 결제 승인<br/>및 재고 확인"}
+    
+    DONE["06 W03-DONE (레시피 발급)<br/>• RECIPE-BOOK-01 PDF 증정"]
+    RETRY["05-B 대체 티 추천 (Fallback)<br/>• 시트러스 마테 자동 제안"]
+    COMM["F1 W03-COMM (주말 루프)<br/>• 홈카페 피드 연동"]
+
+    HOME --> LOOK
+    LOOK --> BUILD
+    BUILD --> DRAWER
+    DRAWER --> PAY_CHECK
+    
+    PAY_CHECK -->|결제 승인 완료| DONE
+    PAY_CHECK -->|재고 부족| RETRY
+    RETRY -.->|원료 변경| DRAWER
+    
+    DONE --> COMM
+
+    class HOME home;
+    class LOOK look;
+    class BUILD build;
+    class PAY_CHECK decision;
+    class DRAWER,DONE,RETRY drawer;
+    class COMM support;

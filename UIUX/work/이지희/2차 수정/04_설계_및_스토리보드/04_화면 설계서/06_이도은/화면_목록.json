@@ -1,0 +1,215 @@
+{
+  "clientId": "06",
+  "clientName": "이도은",
+  "archetype": "A-3 에디토리얼 뷰티 타임테이블형 (Inner Beauty Routine)",
+  "integratedFlowFile": "06_이도은_서비스_흐름도_통합.md",
+  "integratedSitemapFile": "06_이도은_사이트맵_통합.md",
+  "screens": [
+    {
+      "id": "W06-HOME",
+      "name": "24H 이너뷰티 메인 허브",
+      "depth": "1-Depth",
+      "purposes": [
+        "목적 1~5"
+      ]
+    },
+    {
+      "id": "W06-TIMETABLE",
+      "name": "24H 서카디언 뷰티 룸",
+      "depth": "2-Depth",
+      "purposes": [
+        "목적 1"
+      ]
+    },
+    {
+      "id": "W06-DIAGNOSIS",
+      "name": "1:1 수분/탄력 피부 진단기",
+      "depth": "2-Depth",
+      "purposes": [
+        "목적 2"
+      ]
+    },
+    {
+      "id": "W06-CATALOG",
+      "name": "24H 이너뷰티 아카이브 샵",
+      "depth": "2-Depth",
+      "purposes": [
+        "목적 1, 3, 5"
+      ]
+    },
+    {
+      "id": "W06-BUILD",
+      "name": "3D 뷰티 파우치 커스텀 아틀리에",
+      "depth": "2-Depth",
+      "purposes": [
+        "목적 3"
+      ]
+    },
+    {
+      "id": "W06-DRAWER",
+      "name": "Slide-out 30일 뷰티구독 드로어",
+      "depth": "Aside Layer",
+      "purposes": [
+        "목적 1~4"
+      ]
+    },
+    {
+      "id": "W06-DONE",
+      "name": "24H 뷰티 루틴 PDF & 구독 승인",
+      "depth": "Modal",
+      "purposes": [
+        "목적 1~5"
+      ]
+    },
+    {
+      "id": "W06-COMM",
+      "name": "30일 뷰티 저널 & 리뷰 라운지",
+      "depth": "2-Depth",
+      "purposes": [
+        "목적 4"
+      ]
+    }
+  ],
+  "curations": [
+    {
+      "secId": "SEC-01",
+      "productCode": "WK-P01",
+      "name": "⭐ [08:00 AM] 순수 글루타치온 백옥 브라이트닝 티",
+      "category": "☀️ 08:00 AM 글루타치온 브라이트닝 (4)",
+      "price": 38000
+    },
+    {
+      "secId": "SEC-02",
+      "productCode": "WK-P02",
+      "name": "💧 [14:00 PM] 5중 히알루론산 깊은 수분 충전 티",
+      "category": "💧 14:00 PM 히알루론산 수분 충전 (4)",
+      "price": 32000
+    },
+    {
+      "secId": "SEC-03",
+      "productCode": "WK-P03",
+      "name": "🌙 [22:00 PM] 300Da 저분자 피쉬 콜라겐 나이트 티",
+      "category": "🌙 22:00 PM 저분자 콜라겐 나이트 리페어 (4)",
+      "price": 36000
+    },
+    {
+      "secId": "SEC-04",
+      "productCode": "WK-P04",
+      "name": "👜 [골드 각인] 소프트 벨벳 뷰티 파우치 & 글래스 스틱",
+      "category": "👜 3D 뷰티 파우치 & 글래스 머들러 (4)",
+      "price": 29000
+    },
+    {
+      "secId": "SEC-05",
+      "productCode": "WK-P05",
+      "name": "📦 [서카디언 30일] 24H 3단 이너뷰티 풀세트 새벽배송",
+      "category": "📦 30일 서카디언 정기구독 팩 (4)",
+      "price": 89000
+    },
+    {
+      "secId": "SEC-06",
+      "productCode": "WK-P06",
+      "name": "☀️ [08:00 AM] 비타민C 1,000mg 화이트 토마토 팩",
+      "category": "☀️ 08:00 AM 글루타치온 브라이트닝 (4)",
+      "price": 34000
+    },
+    {
+      "secId": "SEC-07",
+      "productCode": "WK-P07",
+      "name": "💧 [14:00 PM] 세라마이드 피부 장벽 보호 미스트 티",
+      "category": "💧 14:00 PM 히알루론산 수분 충전 (4)",
+      "price": 31000
+    },
+    {
+      "secId": "SEC-08",
+      "productCode": "WK-P08",
+      "name": "🌙 [22:00 PM] 엘라스틴 & 히비스커스 탄력 리페어 팩",
+      "category": "🌙 22:00 PM 저분자 콜라겐 나이트 리페어 (4)",
+      "price": 35000
+    },
+    {
+      "secId": "SEC-09",
+      "productCode": "WK-P09",
+      "name": "👜 [글래스웨어] 로즈 쿼츠 더블월 뷰티 머그 잔",
+      "category": "👜 3D 뷰티 파우치 & 글래스 머들러 (4)",
+      "price": 28000
+    },
+    {
+      "secId": "SEC-10",
+      "productCode": "WK-P10",
+      "name": "📦 [탄력 구독] 30일 콜라겐 집중 정기배송 팩",
+      "category": "📦 30일 서카디언 정기구독 팩 (4)",
+      "price": 72000
+    },
+    {
+      "secId": "SEC-11",
+      "productCode": "WK-P11",
+      "name": "☀️ [08:00 AM] 붓기 완화 옥수수수염 & 단호박 팩",
+      "category": "☀️ 08:00 AM 글루타치온 브라이트닝 (4)",
+      "price": 26000
+    },
+    {
+      "secId": "SEC-12",
+      "productCode": "WK-P12",
+      "name": "💧 [14:00 PM] 병풀 추출물 시카 릴랙스 그린티",
+      "category": "💧 14:00 PM 히알루론산 수분 충전 (4)",
+      "price": 29000
+    },
+    {
+      "secId": "SEC-13",
+      "productCode": "WK-P13",
+      "name": "🌙 [22:00 PM] 비오틴 & 아연 모발/네일 영양 티",
+      "category": "🌙 22:00 PM 저분자 콜라겐 나이트 리페어 (4)",
+      "price": 33000
+    },
+    {
+      "secId": "SEC-14",
+      "productCode": "WK-P14",
+      "name": "👜 [미니 틴] 핸드백 쏙 3종 휴대용 뷰티 틴 세트",
+      "category": "👜 3D 뷰티 파우치 & 글래스 머들러 (4)",
+      "price": 24000
+    },
+    {
+      "secId": "SEC-15",
+      "productCode": "WK-P15",
+      "name": "📦 [수분 구독] 30일 히알루론산 데일리 정기배송",
+      "category": "📦 30일 서카디언 정기구독 팩 (4)",
+      "price": 65000
+    },
+    {
+      "secId": "SEC-16",
+      "productCode": "WK-P16",
+      "name": "☀️ [08:00 AM] 코엔자임 Q10 모닝 활력 티",
+      "category": "☀️ 08:00 AM 글루타치온 브라이트닝 (4)",
+      "price": 37000
+    },
+    {
+      "secId": "SEC-17",
+      "productCode": "WK-P17",
+      "name": "💧 [14:00 PM] 알로에베라 속보습 캄테크 티",
+      "category": "💧 14:00 PM 히알루론산 수분 충전 (4)",
+      "price": 27000
+    },
+    {
+      "secId": "SEC-18",
+      "productCode": "WK-P18",
+      "name": "🌙 [22:00 PM] 미드나잇 GABA 0.00mg 숙면 티",
+      "category": "🌙 22:00 PM 저분자 콜라겐 나이트 리페어 (4)",
+      "price": 30000
+    },
+    {
+      "secId": "SEC-19",
+      "productCode": "WK-P19",
+      "name": "👜 [스킨 괄사] 천연 백옥 페이셜 림프 괄사 툴",
+      "category": "👜 3D 뷰티 파우치 & 글래스 머들러 (4)",
+      "price": 22000
+    },
+    {
+      "secId": "SEC-20",
+      "productCode": "WK-P20",
+      "name": "📦 [VIP 뷰티 박스] 24H 전 라인업 + 괄사 기프트 세트",
+      "category": "📦 30일 서카디언 정기구독 팩 (4)",
+      "price": 110000
+    }
+  ]
+}

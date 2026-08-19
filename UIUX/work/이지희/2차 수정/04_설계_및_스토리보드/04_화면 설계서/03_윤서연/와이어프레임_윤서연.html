@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WICKETA 와이어프레임 - 03 윤서연 (A-2 Deskterior Moodboard)</title>
+  <style>
+    :root {
+      --bg-white: #FFFFFF; --bg-light: #F5F5F5; --bg-gray: #E5E5E5;
+      --border-dark: #111111; --border-gray: #CCCCCC; --border-dashed: #777777;
+      --text-dark: #111111; --text-muted: #555555;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Pretendard', sans-serif; background-color: var(--bg-light); color: var(--text-dark); min-height: 100vh; display: flex; flex-direction: column; }
+    .wf-top-helper { background: #111111; color: #FFFFFF; padding: 10px 32px; font-size: 11px; display: flex; justify-content: space-between; position: sticky; top: 0; z-index: 1000; }
+    .wf-top-helper button { background: #222222; color: #EEEEEE; border: 1px solid #444444; padding: 5px 12px; font-size: 11px; font-weight: 700; border-radius: 4px; cursor: pointer; }
+    .wf-top-helper button.active { background: #FFFFFF; color: #111111; }
+
+    header.desk-header { background: #FFFFFF; border-bottom: 2px solid var(--border-dark); padding: 18px 48px; display: flex; justify-content: space-between; align-items: center; }
+    .container { max-width: 1320px; margin: 0 auto; padding: 40px 24px; width: 100%; flex: 1; }
+    .page-view { display: none; }
+    .page-view.active { display: block; }
+
+    .desk-hero-split { display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px; margin-bottom: 40px; }
+    .stage-3d-box { border: 2px solid var(--border-dark); background: #FFFFFF; padding: 28px; border-radius: 8px; }
+    .canvas-3d { height: 320px; border: 1px dashed var(--border-dashed); background: var(--bg-gray); display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; margin-top: 16px; }
+    
+    .moodboard-sidebar { border: 2px solid var(--border-dark); background: #FFFFFF; padding: 28px; border-radius: 8px; display: flex; flex-direction: column; justify-content: space-between; }
+
+    .pinterest-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .pinterest-card { border: 1px solid var(--border-gray); background: #FFFFFF; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; }
+    .pin-img-box { height: 200px; border-bottom: 1px solid var(--border-gray); background: var(--bg-gray); position: relative; display: flex; justify-content: center; align-items: center; }
+    .pin-btn { position: absolute; top: 10px; right: 10px; background: #111111; color: #FFFFFF; border: none; font-size: 10px; font-weight: 700; padding: 4px 8px; border-radius: 4px; cursor: pointer; }
+    .pin-placeholder { font-size: 11px; font-weight: 700; color: var(--text-muted); text-align: center; }
+    .pin-body { padding: 16px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .color-chips { display: flex; align-items: center; gap: 4px; margin-bottom: 8px; }
+    .chip { width: 12px; height: 12px; border-radius: 50%; border: 1px solid #CCCCCC; }
+    .chip-name { font-size: 10px; color: var(--text-muted); margin-left: 4px; font-weight: 700; }
+    .pin-cat { font-size: 10px; font-weight: 700; color: var(--text-muted); }
+    .pin-name { font-size: 13px; font-weight: 900; margin: 2px 0 6px; }
+    .desk-match-score { font-size: 10px; color: var(--text-muted); background: var(--bg-light); padding: 4px 6px; border-radius: 3px; margin-bottom: 10px; }
+    .pin-bottom { display: flex; justify-content: space-between; align-items: center; }
+    .price { font-size: 14px; font-weight: 900; }
+
+    .btn-wf { background: #FFFFFF; border: 1px solid var(--border-dark); padding: 8px 16px; font-size: 12px; font-weight: 700; cursor: pointer; }
+    .btn-wf.primary { background: var(--border-dark); color: #FFFFFF; }
+
+    .cart-drawer { position: fixed; top: 0; right: -440px; width: 420px; height: 100vh; background: #FFFFFF; border-left: 2px solid var(--border-dark); z-index: 2000; transition: right 0.3s ease; display: flex; flex-direction: column; }
+    .cart-drawer.open { right: 0; }
+
+    footer.site-footer { background: #111111; color: #999999; padding: 48px 32px; font-size: 12px; margin-top: auto; }
+    .footer-content { max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; }
+  </style>
+</head>
+<body>
+  <div class="wf-top-helper">
+    <div><strong>[A-2 무채색 데스크테리어 와이어프레임]</strong> 03 윤서연 맞춤</div>
+    <div>
+      <button class="active" onclick="switchPage('home')">Page 1: 3D 데스크셋업 룸</button>
+      <button onclick="switchPage('catalog')">Page 2: 핀터레스트 무드보드 도감 (20종 전체)</button>
+      <button onclick="switchPage('about')">Page 3: 데스크 미학 & 세계관</button>
+      <button onclick="toggleDrawer()">🛒 1초 결제 드로어</button>
+    </div>
+  </div>
+
+  <header class="desk-header">
+    <div style="font-weight:900; font-size:20px;">WICKETA AESTHETIC DESKTERIOR</div>
+    <nav style="display:flex; gap:24px; font-size:13px; font-weight:700;">
+      <a href="javascript:void(0)" onclick="switchPage('home')">3D 데스크 셋업</a>
+      <a href="javascript:void(0)" onclick="switchPage('catalog')">무드보드 도감 (20)</a>
+      <a href="javascript:void(0)" onclick="switchPage('home')">린넨 보자기 선물</a>
+      <a href="javascript:void(0)" onclick="switchPage('home')">432Hz 빗소리 리추얼</a>
+      <a href="javascript:void(0)" onclick="switchPage('about')">성수 포토존</a>
+    </nav>
+    <button class="btn-wf primary" onclick="toggleDrawer()">장바구니 (2)</button>
+  </header>
+
+  <!-- PAGE 1 -->
+  <main id="page-home" class="page-view active container">
+    <div class="desk-hero-split">
+      <div class="stage-3d-box">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <span style="font-size:11px; font-weight:900;">3D DESK SIMULATOR</span>
+            <h1 style="font-size:22px; font-weight:900; margin-top:2px;">DESK-SIMULATOR-01: 3D 가상 데스크 인테리어 룸</h1>
+          </div>
+          <div style="display:flex; gap:6px;">
+            <button class="btn-wf">Day 감성 조도</button>
+            <button class="btn-wf primary">Night 432Hz 모드</button>
+          </div>
+        </div>
+        <div class="canvas-3d">
+          <strong>[3D 인터랙티브 가상 데스크 뷰포트 - 오브제 드래그 & 회전]</strong>
+          <span style="font-size:12px; margin-top:6px; color:var(--text-muted);">소프트 샌드 틴 + 오가닉 린넨 코스터 + 더블월 머그 실시간 렌더링</span>
+        </div>
+      </div>
+
+      <div class="moodboard-sidebar">
+        <div>
+          <h3 style="font-size:16px; font-weight:900; border-bottom:1px solid var(--border-gray); padding-bottom:8px;">오늘의 데스크테리어 무드</h3>
+          <div style="margin:16px 0; font-size:12px;">
+            <label style="font-weight:700;">1. 매트 파스텔 틴 컬러</label>
+            <button class="btn-wf primary" style="width:100%; margin-top:6px;">소프트 샌드 틴 (39,000원)</button>
+          </div>
+          <div style="margin-bottom:16px; font-size:12px;">
+            <label style="font-weight:700;">2. 린넨 패브릭 매트</label>
+            <button class="btn-wf" style="width:100%; margin-top:6px;">오가닉 린넨 코스터 (27,000원)</button>
+          </div>
+        </div>
+        <button class="btn-wf primary" style="width:100%; padding:12px;" onclick="toggleDrawer()">선택 조합 20% 세트 할인 담기</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- PAGE 2 -->
+  <main id="page-catalog" class="page-view container">
+    <div style="border-bottom:2px solid var(--border-dark); padding-bottom:16px; margin-bottom:36px; display:flex; justify-content:space-between; align-items:flex-end;">
+      <div>
+        <h1 style="font-size:26px; font-weight:900;">핀터레스트 무드보드 오브제 도감 (20종 전체)</h1>
+        <p style="color:var(--text-muted); font-size:13px;">무채색 톤 매칭과 데스크 인테리어 조화도가 표기된 핀터레스트형 카드 그리드</p>
+      </div>
+      <div style="display:flex; gap:8px;">
+        <button class="btn-wf primary" onclick="filterProducts('전체 데스크테리어 팩 (20)')">전체 데스크테리어 팩 (20)</button>
+        <button class="btn-wf " onclick="filterProducts('🎨 매트 파스텔 틴 티세트 (4)')">🎨 매트 파스텔 틴 티세트 (4)</button>
+        <button class="btn-wf " onclick="filterProducts('🪑 오가닉 린넨 데스크 매트 (4)')">🪑 오가닉 린넨 데스크 매트 (4)</button>
+        <button class="btn-wf " onclick="filterProducts('🎁 360도 린넨 보자기 선물 (4)')">🎁 360도 린넨 보자기 선물 (4)</button>
+        <button class="btn-wf " onclick="filterProducts('🕯️ 432Hz 앰비언트 캔들티 (4)')">🕯️ 432Hz 앰비언트 캔들티 (4)</button>
+        <button class="btn-wf " onclick="filterProducts('📦 30일 감성 데스크 구독 팩 (4)')">📦 30일 감성 데스크 구독 팩 (4)</button>
+        
+      </div>
+    </div>
+    <div class="pinterest-grid">
+        <div class="pinterest-card" data-cat="🎨 매트 파스텔 틴 티세트 (4)">
+          <div class="pin-img-box">
+            <button class="pin-btn">무드보드 핀</button>
+            <div class="pin-placeholder">[SEC-01 감성 오브제 1:1 정사각 컷]</div>
+          </div>
+          <div class="pin-body">
+            <div class="color-chips">
+              <span class="chip" style="background:#EEEEEE;"></span>
+              <span class="chip" style="background:#CCCCCC;"></span>
+              <span class="chip" style="background:#888888;"></span>
+              <span class="chip-name">무채색 톤 매칭</span>
+            </div>
+            <span class="pin-cat">🎨 매트 파스텔 틴 티세트 (4)</span>
+            <h4 class="pin-name">⭐ [소프트 샌드] 매트 파스텔 틴 오로라 블루 팩</h4>
+            <div class="desk-match-score">데스크 조화도: ★★★★★ (99%)</div>
+            <div class="pin-bottom">
+              <div class="price">39,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">책상 위 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="pinterest-card" data-cat="🪑 오가닉 린넨 데스크 매트 (4)">
+          <div class="pin-img-box">
+            <button class="pin-btn">무드보드 핀</button>
+            <div class="pin-placeholder">[SEC-02 감성 오브제 1:1 정사각 컷]</div>
+          </div>
+          <div class="pin-body">
+            <div class="color-chips">
+              <span class="chip" style="background:#EEEEEE;"></span>
+              <span class="chip" style="background:#CCCCCC;"></span>
+              <span class="chip" style="background:#888888;"></span>
+              <span class="chip-name">무채색 톤 매칭</span>
+            </div>
+            <span class="pin-cat">🪑 오가닉 린넨 데스크 매트 (4)</span>
+            <h4 class="pin-name">🪑 [내추럴 베이지] 오가닉 린넨 패브릭 데스크 매트</h4>
+            <div class="desk-match-score">데스크 조화도: ★★★★★ (99%)</div>
+            <div class="pin-bottom">
+              <div class="price">27,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">책상 위 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="pinterest-card" data-cat="🎁 360도 린넨 보자기 선물 (4)">
+          <div class="pin-img-box">
+            <button class="pin-btn">무드보드 핀</button>
+            <div class="pin-placeholder">[SEC-03 감성 오브제 1:1 정사각 컷]</div>
+          </div>
+          <div class="pin-body">
+            <div class="color-chips">
+              <span class="chip" style="background:#EEEEEE;"></span>
+              <span class="chip" style="background:#CCCCCC;"></span>
+              <span class="chip" style="background:#888888;"></span>
+              <span class="chip-name">무채색 톤 매칭</span>
+            </div>
+            <span class="pin-cat">🎁 360도 린넨 보자기 선물 (4)</span>
+            <h4 class="pin-name">🎁 [보자기 기프트] 린넨 보자기 & 감사 엽서 세트</h4>
+            <div class="desk-match-score">데스크 조화도: ★★★★★ (99%)</div>
+            <div class="pin-bottom">
+              <div class="price">45,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">책상 위 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="pinterest-card" data-cat="🕯️ 432Hz 앰비언트 캔들티 (4)">
+          <div class="pin-img-box">
+            <button class="pin-btn">무드보드 핀</button>
+            <div class="pin-placeholder">[SEC-04 감성 오브제 1:1 정사각 컷]</div>
+          </div>
+          <div class="pin-body">
+            <div class="color-chips">
+              <span class="chip" style="background:#EEEEEE;"></span>
+              <span class="chip" style="background:#CCCCCC;"></span>
+              <span class="chip" style="background:#888888;"></span>
+              <span class="chip-name">무채색 톤 매칭</span>
+            </div>
+            <span class="pin-cat">🕯️ 432Hz 앰비언트 캔들티 (4)</span>
+            <h4 class="pin-name">🕯️ [432Hz 캔들] 소이왁스 아로마 캔들 & 캐모마일 팩</h4>
+            <div class="desk-match-score">데스크 조화도: ★★★★★ (99%)</div>
+            <div class="pin-bottom">
+              <div class="price">32,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">책상 위 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="pinterest-card" data-cat="📦 30일 감성 데스크 구독 팩 (4)">
+          <div class="pin-img-box">
+            <button class="pin-btn">무드보드 핀</button>
+            <div class="pin-placeholder">[SEC-05 감성 오브제 1:1 정사각 컷]</div>
+          </div>
+          <div class="pin-body">
+            <div class="color-chips">
+              <span class="chip" style="background:#EEEEEE;"></span>
+              <span class="chip" style="background:#CCCCCC;"></span>
+              <span class="chip" style="background:#888888;"></span>
+              <span class="chip-name">무채색 톤 매칭</span>
+            </div>
+            <span class="pin-cat">📦 30일 감성 데스크 구독 팩 (4)</span>
+            <h4 class="pin-name">📦 [데스크 구독] 30일 감성 데스크테리어 정기배송</h4>
+            <div class="desk-match-score">데스크 조화도: ★★★★★ (99%)</div>
+            <div class="pin-bottom">
+              <div class="price">74,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">책상 위 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="pinterest-card" data-cat="🎨 매트 파스텔 틴 티세트 (4)">
+          <div class="pin-img-box">
+            <button class="pin-btn">무드보드 핀</button>
+            <div class="pin-placeholder">[SEC-06 감성 오브제 1:1 정사각 컷]</div>
+          </div>
+          <div class="pin-body">
+            <div class="color-chips">
+              <span class="chip" style="background:#EEEEEE;"></span>
+              <span class="chip" style="background:#CCCCCC;"></span>
+              <span class="chip" style="background:#888888;"></span>
+              <span class="chip-name">무채색 톤 매칭</span>
+            </div>
+            <span class="pin-cat">🎨 매트 파스텔 틴 티세트 (4)</span>
+            <h4 class="pin-name">🎨 [세이지 그린] 힐링 포레스트 그린티 파스텔 틴</h4>
+            <div class="desk-match-score">데스크 조화도: ★★★★★ (99%)</div>
+            <div class="pin-bottom">
+              <div class="price">38,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">책상 위 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="pinterest-card" data-cat="🪑 오가닉 린넨 데스크 매트 (4)">
+          <div class="pin-img-box">
+            <button class="pin-btn">무드보드 핀</button>
+            <div class="pin-placeholder">[SEC-07 감성 오브제 1:1 정사각 컷]</div>
+          </div>
+          <div class="pin-body">
+            <div class="color-chips">
+              <span class="chip" style="background:#EEEEEE;"></span>
+              <span class="chip" style="background:#CCCCCC;"></span>
+              <span class="chip" style="background:#888888;"></span>
+              <span class="chip-name">무채색 톤 매칭</span>
+            </div>
+            <span class="pin-cat">🪑 오가닉 린넨 데스크 매트 (4)</span>
+            <h4 class="pin-name">🪑 [차콜 그레이] 펠트 소재 논슬립 롱 마우스패드</h4>
+            <div class="desk-match-score">데스크 조화도: ★★★★★ (99%)</div>
+            <div class="pin-bottom">
+              <div class="price">24,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">책상 위 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="pinterest-card" data-cat="🎁 360도 린넨 보자기 선물 (4)">
+          <div class="pin-img-box">
+            <button class="pin-btn">무드보드 핀</button>
+            <div class="pin-placeholder">[SEC-08 감성 오브제 1:1 정사각 컷]</div>
+          </div>
+          <div class="pin-body">
+            <div class="color-chips">
+              <span class="chip" style="background:#EEEEEE;"></span>
+              <span class="chip" style="background:#CCCCCC;"></span>
+              <span class="chip" style="background:#888888;"></span>
+              <span class="chip-name">무채색 톤 매칭</span>
+            </div>
+            <span class="pin-cat">🎁 360도 린넨 보자기 선물 (4)</span>
+            <h4 class="pin-name">🎁 [축하 선물] 취업/생일 응원 캘리그라피 틴 세트</h4>
+            <div class="desk-match-score">데스크 조화도: ★★★★★ (99%)</div>
+            <div class="pin-bottom">
+              <div class="price">48,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">책상 위 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="pinterest-card" data-cat="🕯️ 432Hz 앰비언트 캔들티 (4)">
+          <div class="pin-img-box">
+            <button class="pin-btn">무드보드 핀</button>
+            <div class="pin-placeholder">[SEC-09 감성 오브제 1:1 정사각 컷]</div>
+          </div>
+          <div class="pin-body">
+            <div class="color-chips">
+              <span class="chip" style="background:#EEEEEE;"></span>
+              <span class="chip" style="background:#CCCCCC;"></span>
+              <span class="chip" style="background:#888888;"></span>
+              <span class="chip-name">무채색 톤 매칭</span>
+            </div>
+            <span class="pin-cat">🕯️ 432Hz 앰비언트 캔들티 (4)</span>
+            <h4 class="pin-name">🕯️ [빗소리 인센스] 편백나무 향 릴랙스 인센스 스틱</h4>
+            <div class="desk-match-score">데스크 조화도: ★★★★★ (99%)</div>
+            <div class="pin-bottom">
+              <div class="price">21,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">책상 위 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="pinterest-card" data-cat="📦 30일 감성 데스크 구독 팩 (4)">
+          <div class="pin-img-box">
+            <button class="pin-btn">무드보드 핀</button>
+            <div class="pin-placeholder">[SEC-10 감성 오브제 1:1 정사각 컷]</div>
+          </div>
+          <div class="pin-body">
+            <div class="color-chips">
+              <span class="chip" style="background:#EEEEEE;"></span>
+              <span class="chip" style="background:#CCCCCC;"></span>
+              <span class="chip" style="background:#888888;"></span>
+              <span class="chip-name">무채색 톤 매칭</span>
+            </div>
+            <span class="pin-cat">📦 30일 감성 데스크 구독 팩 (4)</span>
+            <h4 class="pin-name">📦 [오브제 번들] 매트 틴 2종 + 코스터 4P 세트</h4>
+            <div class="desk-match-score">데스크 조화도: ★★★★★ (99%)</div>
+            <div class="pin-bottom">
+              <div class="price">62,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">책상 위 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="pinterest-card" data-cat="🎨 매트 파스텔 틴 티세트 (4)">
+          <div class="pin-img-box">
+            <button class="pin-btn">무드보드 핀</button>
+            <div class="pin-placeholder">[SEC-11 감성 오브제 1:1 정사각 컷]</div>
+          </div>
+          <div class="pin-body">
+            <div class="color-chips">
+              <span class="chip" style="background:#EEEEEE;"></span>
+              <span class="chip" style="background:#CCCCCC;"></span>
+              <span class="chip" style="background:#888888;"></span>
+              <span class="chip-name">무채색 톤 매칭</span>
+            </div>
+            <span class="pin-cat">🎨 매트 파스텔 틴 티세트 (4)</span>
+            <h4 class="pin-name">🎨 [더스티 로즈] 피치 히비스커스 핑크 파스텔 틴</h4>
+            <div class="desk-match-score">데스크 조화도: ★★★★★ (99%)</div>
+            <div class="pin-bottom">
+              <div class="price">38,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">책상 위 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="pinterest-card" data-cat="🪑 오가닉 린넨 데스크 매트 (4)">
+          <div class="pin-img-box">
+            <button class="pin-btn">무드보드 핀</button>
+            <div class="pin-placeholder">[SEC-12 감성 오브제 1:1 정사각 컷]</div>
+          </div>
+          <div class="pin-body">
+            <div class="color-chips">
+              <span class="chip" style="background:#EEEEEE;"></span>
+              <span class="chip" style="background:#CCCCCC;"></span>
+              <span class="chip" style="background:#888888;"></span>
+              <span class="chip-name">무채색 톤 매칭</span>
+            </div>
+            <span class="pin-cat">🪑 오가닉 린넨 데스크 매트 (4)</span>
+            <h4 class="pin-name">🪑 [원목 트레이] 호두나무 원목 티스틱 오거나이저</h4>
+            <div class="desk-match-score">데스크 조화도: ★★★★★ (99%)</div>
+            <div class="pin-bottom">
+              <div class="price">35,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">책상 위 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="pinterest-card" data-cat="🎁 360도 린넨 보자기 선물 (4)">
+          <div class="pin-img-box">
+            <button class="pin-btn">무드보드 핀</button>
+            <div class="pin-placeholder">[SEC-13 감성 오브제 1:1 정사각 컷]</div>
+          </div>
+          <div class="pin-body">
+            <div class="color-chips">
+              <span class="chip" style="background:#EEEEEE;"></span>
+              <span class="chip" style="background:#CCCCCC;"></span>
+              <span class="chip" style="background:#888888;"></span>
+              <span class="chip-name">무채색 톤 매칭</span>
+            </div>
+            <span class="pin-cat">🎁 360도 린넨 보자기 선물 (4)</span>
+            <h4 class="pin-name">🎁 [예단 보자기] 고급 명주 실크 보자기 스페셜 포장</h4>
+            <div class="desk-match-score">데스크 조화도: ★★★★★ (99%)</div>
+            <div class="pin-bottom">
+              <div class="price">55,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">책상 위 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="pinterest-card" data-cat="🕯️ 432Hz 앰비언트 캔들티 (4)">
+          <div class="pin-img-box">
+            <button class="pin-btn">무드보드 핀</button>
+            <div class="pin-placeholder">[SEC-14 감성 오브제 1:1 정사각 컷]</div>
+          </div>
+          <div class="pin-body">
+            <div class="color-chips">
+              <span class="chip" style="background:#EEEEEE;"></span>
+              <span class="chip" style="background:#CCCCCC;"></span>
+              <span class="chip" style="background:#888888;"></span>
+              <span class="chip-name">무채색 톤 매칭</span>
+            </div>
+            <span class="pin-cat">🕯️ 432Hz 앰비언트 캔들티 (4)</span>
+            <h4 class="pin-name">🕯️ [조도 램프] 3단 무드 조절 무선 미니 버섯 램프</h4>
+            <div class="desk-match-score">데스크 조화도: ★★★★★ (99%)</div>
+            <div class="pin-bottom">
+              <div class="price">39,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">책상 위 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="pinterest-card" data-cat="📦 30일 감성 데스크 구독 팩 (4)">
+          <div class="pin-img-box">
+            <button class="pin-btn">무드보드 핀</button>
+            <div class="pin-placeholder">[SEC-15 감성 오브제 1:1 정사각 컷]</div>
+          </div>
+          <div class="pin-body">
+            <div class="color-chips">
+              <span class="chip" style="background:#EEEEEE;"></span>
+              <span class="chip" style="background:#CCCCCC;"></span>
+              <span class="chip" style="background:#888888;"></span>
+              <span class="chip-name">무채색 톤 매칭</span>
+            </div>
+            <span class="pin-cat">📦 30일 감성 데스크 구독 팩 (4)</span>
+            <h4 class="pin-name">📦 [계절 틴 구독] 분기별 새로운 컬러 틴 정기배송</h4>
+            <div class="desk-match-score">데스크 조화도: ★★★★★ (99%)</div>
+            <div class="pin-bottom">
+              <div class="price">82,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">책상 위 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="pinterest-card" data-cat="🎨 매트 파스텔 틴 티세트 (4)">
+          <div class="pin-img-box">
+            <button class="pin-btn">무드보드 핀</button>
+            <div class="pin-placeholder">[SEC-16 감성 오브제 1:1 정사각 컷]</div>
+          </div>
+          <div class="pin-body">
+            <div class="color-chips">
+              <span class="chip" style="background:#EEEEEE;"></span>
+              <span class="chip" style="background:#CCCCCC;"></span>
+              <span class="chip" style="background:#888888;"></span>
+              <span class="chip-name">무채색 톤 매칭</span>
+            </div>
+            <span class="pin-cat">🎨 매트 파스텔 틴 티세트 (4)</span>
+            <h4 class="pin-name">🎨 [미드나잇 네이비] 0.00mg 무카페인 GABA 틴</h4>
+            <div class="desk-match-score">데스크 조화도: ★★★★★ (99%)</div>
+            <div class="pin-bottom">
+              <div class="price">39,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">책상 위 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="pinterest-card" data-cat="🪑 오가닉 린넨 데스크 매트 (4)">
+          <div class="pin-img-box">
+            <button class="pin-btn">무드보드 핀</button>
+            <div class="pin-placeholder">[SEC-17 감성 오브제 1:1 정사각 컷]</div>
+          </div>
+          <div class="pin-body">
+            <div class="color-chips">
+              <span class="chip" style="background:#EEEEEE;"></span>
+              <span class="chip" style="background:#CCCCCC;"></span>
+              <span class="chip" style="background:#888888;"></span>
+              <span class="chip-name">무채색 톤 매칭</span>
+            </div>
+            <span class="pin-cat">🪑 오가닉 린넨 데스크 매트 (4)</span>
+            <h4 class="pin-name">🪑 [가죽 코스터] 베지터블 천연 가죽 컵받침 2P</h4>
+            <div class="desk-match-score">데스크 조화도: ★★★★★ (99%)</div>
+            <div class="pin-bottom">
+              <div class="price">18,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">책상 위 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="pinterest-card" data-cat="🎁 360도 린넨 보자기 선물 (4)">
+          <div class="pin-img-box">
+            <button class="pin-btn">무드보드 핀</button>
+            <div class="pin-placeholder">[SEC-18 감성 오브제 1:1 정사각 컷]</div>
+          </div>
+          <div class="pin-body">
+            <div class="color-chips">
+              <span class="chip" style="background:#EEEEEE;"></span>
+              <span class="chip" style="background:#CCCCCC;"></span>
+              <span class="chip" style="background:#888888;"></span>
+              <span class="chip-name">무채색 톤 매칭</span>
+            </div>
+            <span class="pin-cat">🎁 360도 린넨 보자기 선물 (4)</span>
+            <h4 class="pin-name">🎁 [집들이 세트] 틴 3종 + 린넨 타월 기프트 박스</h4>
+            <div class="desk-match-score">데스크 조화도: ★★★★★ (99%)</div>
+            <div class="pin-bottom">
+              <div class="price">69,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">책상 위 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="pinterest-card" data-cat="🕯️ 432Hz 앰비언트 캔들티 (4)">
+          <div class="pin-img-box">
+            <button class="pin-btn">무드보드 핀</button>
+            <div class="pin-placeholder">[SEC-19 감성 오브제 1:1 정사각 컷]</div>
+          </div>
+          <div class="pin-body">
+            <div class="color-chips">
+              <span class="chip" style="background:#EEEEEE;"></span>
+              <span class="chip" style="background:#CCCCCC;"></span>
+              <span class="chip" style="background:#888888;"></span>
+              <span class="chip-name">무채색 톤 매칭</span>
+            </div>
+            <span class="pin-cat">🕯️ 432Hz 앰비언트 캔들티 (4)</span>
+            <h4 class="pin-name">🕯️ [화이트 노이즈] 비/파도/모닥불 사운드 큐브</h4>
+            <div class="desk-match-score">데스크 조화도: ★★★★★ (99%)</div>
+            <div class="pin-bottom">
+              <div class="price">34,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">책상 위 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="pinterest-card" data-cat="📦 30일 감성 데스크 구독 팩 (4)">
+          <div class="pin-img-box">
+            <button class="pin-btn">무드보드 핀</button>
+            <div class="pin-placeholder">[SEC-20 감성 오브제 1:1 정사각 컷]</div>
+          </div>
+          <div class="pin-body">
+            <div class="color-chips">
+              <span class="chip" style="background:#EEEEEE;"></span>
+              <span class="chip" style="background:#CCCCCC;"></span>
+              <span class="chip" style="background:#888888;"></span>
+              <span class="chip-name">무채색 톤 매칭</span>
+            </div>
+            <span class="pin-cat">📦 30일 감성 데스크 구독 팩 (4)</span>
+            <h4 class="pin-name">📦 [데스크 마스터] 3D 데스크셋업 올인원 풀패키지</h4>
+            <div class="desk-match-score">데스크 조화도: ★★★★★ (99%)</div>
+            <div class="pin-bottom">
+              <div class="price">135,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">책상 위 담기</button>
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </main>
+
+  <!-- PAGE 3 -->
+  <main id="page-about" class="page-view container">
+    <section style="border:2px solid var(--border-dark); background:#FFFFFF; padding:36px; border-radius:8px;">
+      <span style="font-size:11px; font-weight:900; letter-spacing:2px;">AESTHETIC PHILOSOPHY & DESKTERIOR</span>
+      <h1 style="font-size:28px; font-weight:900; margin-top:4px;">윤서연의 감성 데스크테리어 룸 (Deskterior Sanctuary)</h1>
+      <p style="color:var(--text-muted); margin-top:4px;">내 책상 위에서 펼쳐지는 가장 아름답고 고요한 3분간의 티타임</p>
+
+      <div style="border-left:4px solid var(--border-dark); padding:20px 0 20px 28px; margin:24px 0; background:var(--bg-light);">
+        <h3 style="font-size:16px; font-weight:900;">"문을 열고, 현실에서 벗어나세요 (Open the Door, Escape Reality)"</h3>
+        <p style="font-size:13px; color:var(--text-muted); margin-top:6px; line-height:1.8;">
+          책상은 단순히 일하는 공간이 아니라, 나의 취향과 감성이 온전히 머무는 안식처입니다.<br/>
+          위케타 데스크테리어 에디션은 <strong>매트 틴의 시각적 안정감</strong>과 <strong>0.1초 융해 무카페인 티의 미각적 쉼</strong>을 통해 당신의 책상을 작은 휴식의 방으로 완성합니다.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <aside id="cart-drawer" class="cart-drawer">
+    <div style="padding:20px 24px; border-bottom:1px solid var(--border-gray); display:flex; justify-content:space-between;">
+      <h4>🛒 DESKTERIOR CART</h4>
+      <button class="btn-wf" onclick="toggleDrawer()">✕ 닫기</button>
+    </div>
+    <div style="flex:1; padding:24px;">
+      <div style="border:1px solid var(--border-gray); padding:16px; margin-bottom:16px;">
+        <strong>[소프트 샌드] 매트 파스텔 틴 오로라 블루 팩</strong>
+        <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">수량: 1개 / 39,000원</div>
+      </div>
+    </div>
+    <div style="padding:20px 24px; border-top:1px solid var(--border-gray); background:var(--bg-light);">
+      <button class="btn-wf primary" style="width:100%; padding:12px;">1-CLICK CHECKOUT</button>
+    </div>
+  </aside>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div>
+        <h5>WICKETA (위케타)</h5>
+        <p>문을 열고, 현실에서 벗어나세요 (Open the Door, Escape Reality)</p>
+        <p style="margin-top:6px;">고객센터: 1588-0000 | 서울시 성동구 성수이로 00 쇼룸</p>
+      </div>
+      <div>
+        <h5>인증 & 지원</h5>
+        <p>KTR 3無 공인 시험성적서</p>
+      </div>
+      <div>
+        <h5>공식 채널</h5>
+        <p>Instagram: @wicketa_official</p>
+        <p>© 2026 WICKETA All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function switchPage(p) {
+      document.querySelectorAll('.page-view').forEach(el => el.classList.remove('active'));
+      let t = document.getElementById('page-' + p);
+      if(!t) t = document.getElementById('page-catalog');
+      if(!t) t = document.getElementById('page-home');
+      if(t) t.classList.add('active');
+
+      document.querySelectorAll('.wf-top-helper button').forEach(b => b.classList.remove('active'));
+      const btns = document.querySelectorAll('.wf-top-helper button');
+      if(p==='home'&&btns[0]) btns[0].classList.add('active');
+      else if(p==='catalog'&&btns[1]) btns[1].classList.add('active');
+      else if(p==='about'&&btns[2]) btns[2].classList.add('active');
+      window.scrollTo(0,0);
+    }
+    function toggleDrawer() { document.getElementById('cart-drawer').classList.toggle('open'); }
+    function filterProducts(cat) {
+      document.querySelectorAll('#page-catalog .pinterest-card').forEach(c => {
+        if(cat.includes('전체') || c.getAttribute('data-cat') === cat) c.style.display = 'flex';
+        else c.style.display = 'none';
+      });
+      document.querySelectorAll('#page-catalog .btn-wf').forEach(b => b.classList.remove('primary'));
+      if(event && event.target) event.target.classList.add('primary');
+    }
+  </script>
+</body>
+</html>

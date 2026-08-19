@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WICKETA 와이어프레임 - 08 이지민 (C-1 Aurora Visual Lab)</title>
+  <style>
+    :root {
+      --bg-dark: #000000; --bg-card: #1A1A1A; --border-dark: #333333;
+      --text-main: #FFFFFF; --text-muted: #888888;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Pretendard', sans-serif; background-color: var(--bg-dark); color: var(--text-main); min-height: 100vh; display: flex; flex-direction: column; }
+    .wf-top-helper { background: #000000; color: #FFFFFF; padding: 10px 32px; font-size: 11px; display: flex; justify-content: space-between; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #333333; }
+    .wf-top-helper button { background: #222222; color: #EEEEEE; border: 1px solid #444444; padding: 5px 12px; font-size: 11px; font-weight: 700; border-radius: 4px; cursor: pointer; }
+    .wf-top-helper button.active { background: #FFFFFF; color: #000000; }
+
+    header.aurora-header { background: #000000; border-bottom: 1px solid #333333; padding: 18px 48px; display: flex; justify-content: space-between; align-items: center; }
+    .container { max-width: 1320px; margin: 0 auto; padding: 40px 24px; width: 100%; flex: 1; }
+    .page-view { display: none; }
+    .page-view.active { display: block; }
+
+    .reels-split-layout { display: grid; grid-template-columns: 380px 1fr; gap: 40px; margin-bottom: 40px; }
+    .phone-mockup { width: 380px; height: 640px; border: 4px solid #444444; border-radius: 32px; background: #000000; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; padding: 24px; }
+    .reels-sidebar-btns { position: absolute; right: 18px; bottom: 90px; display: flex; flex-direction: column; gap: 16px; align-items: center; }
+    .reels-action-circle { background: #222222; border: 1px solid #555555; color: #FFFFFF; border-radius: 50%; width: 44px; height: 44px; display: flex; justify-content: center; align-items: center; font-size: 11px; font-weight: 700; }
+
+    .reels-cards-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .reels-card-item { border: 1px solid var(--border-dark); background: var(--bg-card); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
+    .reels-video-thumb { height: 260px; background: #111111; position: relative; display: flex; justify-content: center; align-items: center; border-bottom: 1px solid var(--border-dark); }
+    .play-overlay { position: absolute; top: 12px; left: 12px; background: #000000; color: #FFFFFF; font-size: 10px; font-weight: 900; padding: 4px 8px; border-radius: 4px; border: 1px solid #444444; }
+    .views-badge { position: absolute; top: 12px; right: 12px; background: #333333; color: #FFFFFF; font-size: 10px; font-weight: 900; padding: 3px 8px; border-radius: 4px; }
+    .reels-video-preview { font-size: 11px; color: var(--text-muted); font-weight: 700; }
+    .reels-card-info { padding: 18px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .reels-cat { font-size: 10px; font-weight: 900; color: var(--text-muted); }
+    .reels-title { font-size: 14px; font-weight: 900; margin: 4px 0 8px; color: #FFFFFF; }
+    .reels-hashtags { font-size: 10px; color: var(--text-muted); margin-bottom: 12px; }
+    .reels-card-footer { display: flex; justify-content: space-between; align-items: center; }
+    .price { font-size: 14px; font-weight: 900; color: #FFFFFF; }
+
+    .btn-wf { background: #222222; border: 1px solid #444444; color: #FFFFFF; padding: 8px 16px; font-size: 12px; font-weight: 700; cursor: pointer; border-radius: 4px; }
+    .btn-wf.primary { background: #FFFFFF; color: #000000; }
+
+    .cart-drawer { position: fixed; top: 0; right: -440px; width: 420px; height: 100vh; background: #111111; border-left: 2px solid #333333; z-index: 2000; transition: right 0.3s ease; display: flex; flex-direction: column; }
+    .cart-drawer.open { right: 0; }
+
+    footer.site-footer { background: #000000; color: #777777; padding: 48px 32px; font-size: 12px; margin-top: auto; border-top: 1px solid #222222; }
+    .footer-content { max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; }
+  </style>
+</head>
+<body>
+  <div class="wf-top-helper">
+    <div><strong>[C-1 무채색 9:16 숏폼 릴스 와이어프레임]</strong> 08 이지민 크리에이터 맞춤</div>
+    <div>
+      <button class="active" onclick="switchPage('home')">Page 1: 9:16 릴스 피드 허브</button>
+      <button onclick="switchPage('catalog')">Page 2: 숏폼 바이럴 도감 (20종 전체)</button>
+      <button onclick="switchPage('about')">Page 3: 오로라 수색 연구소 & 세계관</button>
+      <button onclick="toggleDrawer()">🛒 1초 결제 드로어</button>
+    </div>
+  </div>
+
+  <header class="aurora-header">
+    <div style="font-weight:900; font-size:18px; letter-spacing:2px;">WICKETA AURORA VISUAL LAB</div>
+    <nav style="display:flex; gap:24px; font-size:13px; font-weight:700;">
+      <a href="javascript:void(0)" onclick="switchPage('home')">9:16 릴스 피드</a>
+      <a href="javascript:void(0)" onclick="switchPage('home')">pH 수색 변환기</a>
+      <a href="javascript:void(0)" onclick="switchPage('catalog')">숏폼 도감 (20)</a>
+      <a href="javascript:void(0)" onclick="switchPage('home')">홀로그램 각인실</a>
+      <a href="javascript:void(0)" onclick="switchPage('about')">크리에이터 랭킹</a>
+    </nav>
+    <button class="btn-wf primary" onclick="toggleDrawer()">1초 결제</button>
+  </header>
+
+  <!-- PAGE 1 -->
+  <main id="page-home" class="page-view active container">
+    <div class="reels-split-layout">
+      <div class="phone-mockup">
+        <div style="font-size:11px; color:#888888; text-align:center;">▶ LIVE 15s VIRAL REELS</div>
+        <div style="height:360px; border:1px dashed #444444; display:flex; justify-content:center; align-items:center; text-align:center; font-size:11px; color:#777777;">
+          [9:16 세로형 릴스 비디오 재생]<br/>탄산수 속 오로라 3단 변환 반응
+        </div>
+        <div class="reels-sidebar-btns">
+          <div class="reels-action-circle">2.4k</div>
+          <div class="reels-action-circle">450</div>
+          <div class="reels-action-circle" onclick="toggleDrawer()">담기</div>
+        </div>
+        <div>
+          <div style="font-size:12px; font-weight:700; color:#FFFFFF;">@jimin_aurora #15초오로라챌린지</div>
+          <button class="btn-wf primary" style="width:100%; margin-top:8px;" onclick="toggleDrawer()">영상 속 [오로라 믹서] 1초 구매</button>
+        </div>
+      </div>
+
+      <div style="border:1px solid var(--border-dark); background:var(--bg-card); padding:32px; border-radius:12px;">
+        <span style="font-size:11px; font-weight:900; color:var(--text-muted);">3D COLOR DISCOVERY</span>
+        <h1 style="font-size:22px; font-weight:900; margin-top:4px;">AURORA-FINDER-01: 실시간 3D pH 수색 변환기</h1>
+        <p style="font-size:12px; color:var(--text-muted); margin:8px 0 20px;">레몬즙(pH 3.0) ➔ 탄산수(pH 5.5) 첨가 시 실시간으로 변화하는 영롱한 수색</p>
+        
+        <div style="margin:20px 0;">
+          <label style="font-size:12px; font-weight:700;">pH 산도 조절 슬라이더</label>
+          <input type="range" style="width:100%; margin-top:8px;">
+          <div style="display:flex; justify-content:space-between; font-size:11px; color:#777777; margin-top:4px;">
+            <span>산성 (pH 2.5: 핫핑크)</span>
+            <span>중성 (pH 7.0: 갤럭시 블루)</span>
+            <span>알칼리 (pH 8.5: 에메랄드)</span>
+          </div>
+        </div>
+
+        <div style="height:200px; border:1px dashed #444444; background:#000000; display:flex; justify-content:center; align-items:center; margin-bottom:20px;">
+          [3D 홀로그램 글래스웨어 속 수색 그라데이션 시뮬레이션]
+        </div>
+
+        <button class="btn-wf primary" style="width:100%; padding:12px;" onclick="toggleDrawer()">오로라 3종 번들 + 홀로그램 잔 세트 담기 (49,000원)</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- PAGE 2 -->
+  <main id="page-catalog" class="page-view container">
+    <div style="border-bottom:1px solid var(--border-dark); padding-bottom:16px; margin-bottom:36px; display:flex; justify-content:space-between; align-items:flex-end;">
+      <div>
+        <h1 style="font-size:26px; font-weight:900;">9:16 숏폼 바이럴 비디오 도감 (20종 전체)</h1>
+        <p style="color:var(--text-muted); font-size:13px;">이지민 크리에이터 맞춤 재생 오버레이와 릴스 조회수 뱃지가 달린 비디오 카드</p>
+      </div>
+      <div style="display:flex; gap:8px;">
+        <button class="btn-wf primary" onclick="filterProducts('전체 오로라 팩 (20)')">전체 오로라 팩 (20)</button>
+        <button class="btn-wf " onclick="filterProducts('🌌 영롱한 오로라 버터플라이피 팩 (4)')">🌌 영롱한 오로라 버터플라이피 팩 (4)</button>
+        <button class="btn-wf " onclick="filterProducts('💖 로즈 쿼츠 핑크 히비스커스 팩 (4)')">💖 로즈 쿼츠 핑크 히비스커스 팩 (4)</button>
+        <button class="btn-wf " onclick="filterProducts('💚 에메랄드 시트러스 라임 팩 (4)')">💚 에메랄드 시트러스 라임 팩 (4)</button>
+        <button class="btn-wf " onclick="filterProducts('🥂 빛 굴절 홀로그램 더블월 글래스 (4)')">🥂 빛 굴절 홀로그램 더블월 글래스 (4)</button>
+        <button class="btn-wf " onclick="filterProducts('🎁 릴스 바이럴 스타터 킷 & 엽서 (4)')">🎁 릴스 바이럴 스타터 킷 & 엽서 (4)</button>
+        
+      </div>
+    </div>
+    <div class="reels-cards-grid">
+        <div class="reels-card-item" data-cat="🌌 영롱한 오로라 버터플라이피 팩 (4)">
+          <div class="reels-video-thumb">
+            <div class="play-overlay">▶ 15s</div>
+            <span class="views-badge">162k Views</span>
+            <div class="reels-video-preview">[SEC-01 9:16 숏폼 영상 컷]</div>
+          </div>
+          <div class="reels-card-info">
+            <span class="reels-cat">🌌 영롱한 오로라 버터플라이피 팩 (4)</span>
+            <h4 class="reels-title">⭐ [수색 시그니처] 갤럭시 블루 ➔ 바이올렛 변환 팩</h4>
+            <div class="reels-hashtags">#1초오로라챌린지 #pH수색변환 #홈카페바이럴</div>
+            <div class="reels-card-footer">
+              <div class="price">36,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">영상 속 믹서 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="reels-card-item" data-cat="💖 로즈 쿼츠 핑크 히비스커스 팩 (4)">
+          <div class="reels-video-thumb">
+            <div class="play-overlay">▶ 15s</div>
+            <span class="views-badge">204k Views</span>
+            <div class="reels-video-preview">[SEC-02 9:16 숏폼 영상 컷]</div>
+          </div>
+          <div class="reels-card-info">
+            <span class="reels-cat">💖 로즈 쿼츠 핑크 히비스커스 팩 (4)</span>
+            <h4 class="reels-title">💖 [핑크 오로라] 로즈 쿼츠 히비스커스 & 피치 블렌드</h4>
+            <div class="reels-hashtags">#1초오로라챌린지 #pH수색변환 #홈카페바이럴</div>
+            <div class="reels-card-footer">
+              <div class="price">29,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">영상 속 믹서 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="reels-card-item" data-cat="💚 에메랄드 시트러스 라임 팩 (4)">
+          <div class="reels-video-thumb">
+            <div class="play-overlay">▶ 15s</div>
+            <span class="views-badge">246k Views</span>
+            <div class="reels-video-preview">[SEC-03 9:16 숏폼 영상 컷]</div>
+          </div>
+          <div class="reels-card-info">
+            <span class="reels-cat">💚 에메랄드 시트러스 라임 팩 (4)</span>
+            <h4 class="reels-title">💚 [네온 에메랄드] 라임 마테 형광 그린 믹서 스틱</h4>
+            <div class="reels-hashtags">#1초오로라챌린지 #pH수색변환 #홈카페바이럴</div>
+            <div class="reels-card-footer">
+              <div class="price">28,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">영상 속 믹서 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="reels-card-item" data-cat="🥂 빛 굴절 홀로그램 더블월 글래스 (4)">
+          <div class="reels-video-thumb">
+            <div class="play-overlay">▶ 15s</div>
+            <span class="views-badge">288k Views</span>
+            <div class="reels-video-preview">[SEC-04 9:16 숏폼 영상 컷]</div>
+          </div>
+          <div class="reels-card-info">
+            <span class="reels-cat">🥂 빛 굴절 홀로그램 더블월 글래스 (4)</span>
+            <h4 class="reels-title">🥂 [빛 굴절 잔] 360도 오로라 빛 굴절 홀로그램 더블월 잔</h4>
+            <div class="reels-hashtags">#1초오로라챌린지 #pH수색변환 #홈카페바이럴</div>
+            <div class="reels-card-footer">
+              <div class="price">38,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">영상 속 믹서 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="reels-card-item" data-cat="🎁 릴스 바이럴 스타터 킷 & 엽서 (4)">
+          <div class="reels-video-thumb">
+            <div class="play-overlay">▶ 15s</div>
+            <span class="views-badge">330k Views</span>
+            <div class="reels-video-preview">[SEC-05 9:16 숏폼 영상 컷]</div>
+          </div>
+          <div class="reels-card-info">
+            <span class="reels-cat">🎁 릴스 바이럴 스타터 킷 & 엽서 (4)</span>
+            <h4 class="reels-title">🎁 [릴스 스타터] 9:16 바이럴 영상 촬영용 거치대 & 키트</h4>
+            <div class="reels-hashtags">#1초오로라챌린지 #pH수색변환 #홈카페바이럴</div>
+            <div class="reels-card-footer">
+              <div class="price">49,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">영상 속 믹서 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="reels-card-item" data-cat="🌌 영롱한 오로라 버터플라이피 팩 (4)">
+          <div class="reels-video-thumb">
+            <div class="play-overlay">▶ 15s</div>
+            <span class="views-badge">372k Views</span>
+            <div class="reels-video-preview">[SEC-06 9:16 숏폼 영상 컷]</div>
+          </div>
+          <div class="reels-card-info">
+            <span class="reels-cat">🌌 영롱한 오로라 버터플라이피 팩 (4)</span>
+            <h4 class="reels-title">🌌 [미드나잇 오로라] 밤하늘 별빛 반짝이 식용 글리터 티</h4>
+            <div class="reels-hashtags">#1초오로라챌린지 #pH수색변환 #홈카페바이럴</div>
+            <div class="reels-card-footer">
+              <div class="price">39,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">영상 속 믹서 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="reels-card-item" data-cat="💖 로즈 쿼츠 핑크 히비스커스 팩 (4)">
+          <div class="reels-video-thumb">
+            <div class="play-overlay">▶ 15s</div>
+            <span class="views-badge">414k Views</span>
+            <div class="reels-video-preview">[SEC-07 9:16 숏폼 영상 컷]</div>
+          </div>
+          <div class="reels-card-info">
+            <span class="reels-cat">💖 로즈 쿼츠 핑크 히비스커스 팩 (4)</span>
+            <h4 class="reels-title">💖 [루비 핑크] 비건 안토시아닌 라즈베리 탄산 스틱</h4>
+            <div class="reels-hashtags">#1초오로라챌린지 #pH수색변환 #홈카페바이럴</div>
+            <div class="reels-card-footer">
+              <div class="price">27,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">영상 속 믹서 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="reels-card-item" data-cat="💚 에메랄드 시트러스 라임 팩 (4)">
+          <div class="reels-video-thumb">
+            <div class="play-overlay">▶ 15s</div>
+            <span class="views-badge">456k Views</span>
+            <div class="reels-video-preview">[SEC-08 9:16 숏폼 영상 컷]</div>
+          </div>
+          <div class="reels-card-info">
+            <span class="reels-cat">💚 에메랄드 시트러스 라임 팩 (4)</span>
+            <h4 class="reels-title">💚 [그린 오로라] 민트 & 청포도 0kcal 스파클링 팩</h4>
+            <div class="reels-hashtags">#1초오로라챌린지 #pH수색변환 #홈카페바이럴</div>
+            <div class="reels-card-footer">
+              <div class="price">26,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">영상 속 믹서 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="reels-card-item" data-cat="🥂 빛 굴절 홀로그램 더블월 글래스 (4)">
+          <div class="reels-video-thumb">
+            <div class="play-overlay">▶ 15s</div>
+            <span class="views-badge">498k Views</span>
+            <div class="reels-video-preview">[SEC-09 9:16 숏폼 영상 컷]</div>
+          </div>
+          <div class="reels-card-info">
+            <span class="reels-cat">🥂 빛 굴절 홀로그램 더블월 글래스 (4)</span>
+            <h4 class="reels-title">🥂 [크리스탈 머들러] 빛 산란 크리스탈 컷팅 유리 머들러</h4>
+            <div class="reels-hashtags">#1초오로라챌린지 #pH수색변환 #홈카페바이럴</div>
+            <div class="reels-card-footer">
+              <div class="price">18,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">영상 속 믹서 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="reels-card-item" data-cat="🎁 릴스 바이럴 스타터 킷 & 엽서 (4)">
+          <div class="reels-video-thumb">
+            <div class="play-overlay">▶ 15s</div>
+            <span class="views-badge">540k Views</span>
+            <div class="reels-video-preview">[SEC-10 9:16 숏폼 영상 컷]</div>
+          </div>
+          <div class="reels-card-info">
+            <span class="reels-cat">🎁 릴스 바이럴 스타터 킷 & 엽서 (4)</span>
+            <h4 class="reels-title">🎁 [포토 엽서] 오로라 홀로그램 엽서 5종 세트</h4>
+            <div class="reels-hashtags">#1초오로라챌린지 #pH수색변환 #홈카페바이럴</div>
+            <div class="reels-card-footer">
+              <div class="price">12,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">영상 속 믹서 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="reels-card-item" data-cat="🌌 영롱한 오로라 버터플라이피 팩 (4)">
+          <div class="reels-video-thumb">
+            <div class="play-overlay">▶ 15s</div>
+            <span class="views-badge">582k Views</span>
+            <div class="reels-video-preview">[SEC-11 9:16 숏폼 영상 컷]</div>
+          </div>
+          <div class="reels-card-info">
+            <span class="reels-cat">🌌 영롱한 오로라 버터플라이피 팩 (4)</span>
+            <h4 class="reels-title">🌌 [선셋 바이올렛] 노을빛 그라데이션 3단 층분리 팩</h4>
+            <div class="reels-hashtags">#1초오로라챌린지 #pH수색변환 #홈카페바이럴</div>
+            <div class="reels-card-footer">
+              <div class="price">33,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">영상 속 믹서 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="reels-card-item" data-cat="💖 로즈 쿼츠 핑크 히비스커스 팩 (4)">
+          <div class="reels-video-thumb">
+            <div class="play-overlay">▶ 15s</div>
+            <span class="views-badge">624k Views</span>
+            <div class="reels-video-preview">[SEC-12 9:16 숏폼 영상 컷]</div>
+          </div>
+          <div class="reels-card-info">
+            <span class="reels-cat">💖 로즈 쿼츠 핑크 히비스커스 팩 (4)</span>
+            <h4 class="reels-title">💖 [코랄 핑크] 자몽 & 로즈페탈 감성 티백 세트</h4>
+            <div class="reels-hashtags">#1초오로라챌린지 #pH수색변환 #홈카페바이럴</div>
+            <div class="reels-card-footer">
+              <div class="price">31,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">영상 속 믹서 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="reels-card-item" data-cat="💚 에메랄드 시트러스 라임 팩 (4)">
+          <div class="reels-video-thumb">
+            <div class="play-overlay">▶ 15s</div>
+            <span class="views-badge">666k Views</span>
+            <div class="reels-video-preview">[SEC-13 9:16 숏폼 영상 컷]</div>
+          </div>
+          <div class="reels-card-info">
+            <span class="reels-cat">💚 에메랄드 시트러스 라임 팩 (4)</span>
+            <h4 class="reels-title">💚 [옐로우 그린] 유자 & 레몬그라스 비타민 스틱</h4>
+            <div class="reels-hashtags">#1초오로라챌린지 #pH수색변환 #홈카페바이럴</div>
+            <div class="reels-card-footer">
+              <div class="price">25,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">영상 속 믹서 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="reels-card-item" data-cat="🥂 빛 굴절 홀로그램 더블월 글래스 (4)">
+          <div class="reels-video-thumb">
+            <div class="play-overlay">▶ 15s</div>
+            <span class="views-badge">708k Views</span>
+            <div class="reels-video-preview">[SEC-14 9:16 숏폼 영상 컷]</div>
+          </div>
+          <div class="reels-card-info">
+            <span class="reels-cat">🥂 빛 굴절 홀로그램 더블월 글래스 (4)</span>
+            <h4 class="reels-title">🥂 [오로라 샷잔] 칵테일용 미니 홀로그램 샷잔 2P</h4>
+            <div class="reels-hashtags">#1초오로라챌린지 #pH수색변환 #홈카페바이럴</div>
+            <div class="reels-card-footer">
+              <div class="price">22,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">영상 속 믹서 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="reels-card-item" data-cat="🎁 릴스 바이럴 스타터 킷 & 엽서 (4)">
+          <div class="reels-video-thumb">
+            <div class="play-overlay">▶ 15s</div>
+            <span class="views-badge">750k Views</span>
+            <div class="reels-video-preview">[SEC-15 9:16 숏폼 영상 컷]</div>
+          </div>
+          <div class="reels-card-info">
+            <span class="reels-cat">🎁 릴스 바이럴 스타터 킷 & 엽서 (4)</span>
+            <h4 class="reels-title">🎁 [인플루언서 팩] 6종 컬러 풀세트 & 촬영 조명 킷</h4>
+            <div class="reels-hashtags">#1초오로라챌린지 #pH수색변환 #홈카페바이럴</div>
+            <div class="reels-card-footer">
+              <div class="price">65,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">영상 속 믹서 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="reels-card-item" data-cat="🌌 영롱한 오로라 버터플라이피 팩 (4)">
+          <div class="reels-video-thumb">
+            <div class="play-overlay">▶ 15s</div>
+            <span class="views-badge">792k Views</span>
+            <div class="reels-video-preview">[SEC-16 9:16 숏폼 영상 컷]</div>
+          </div>
+          <div class="reels-card-info">
+            <span class="reels-cat">🌌 영롱한 오로라 버터플라이피 팩 (4)</span>
+            <h4 class="reels-title">🌌 [새벽구독] 매월 새로운 수색 신제품 30일 구독 팩</h4>
+            <div class="reels-hashtags">#1초오로라챌린지 #pH수색변환 #홈카페바이럴</div>
+            <div class="reels-card-footer">
+              <div class="price">33,150원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">영상 속 믹서 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="reels-card-item" data-cat="💖 로즈 쿼츠 핑크 히비스커스 팩 (4)">
+          <div class="reels-video-thumb">
+            <div class="play-overlay">▶ 15s</div>
+            <span class="views-badge">834k Views</span>
+            <div class="reels-video-preview">[SEC-17 9:16 숏폼 영상 컷]</div>
+          </div>
+          <div class="reels-card-info">
+            <span class="reels-cat">💖 로즈 쿼츠 핑크 히비스커스 팩 (4)</span>
+            <h4 class="reels-title">💖 [펄 샤이닝] 식용 진주 펄이 흩날리는 샴페인 티</h4>
+            <div class="reels-hashtags">#1초오로라챌린지 #pH수색변환 #홈카페바이럴</div>
+            <div class="reels-card-footer">
+              <div class="price">42,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">영상 속 믹서 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="reels-card-item" data-cat="💚 에메랄드 시트러스 라임 팩 (4)">
+          <div class="reels-video-thumb">
+            <div class="play-overlay">▶ 15s</div>
+            <span class="views-badge">876k Views</span>
+            <div class="reels-video-preview">[SEC-18 9:16 숏폼 영상 컷]</div>
+          </div>
+          <div class="reels-card-info">
+            <span class="reels-cat">💚 에메랄드 시트러스 라임 팩 (4)</span>
+            <h4 class="reels-title">💚 [키위 에메랄드] 0kcal 키위 스파클링 토핑 스틱</h4>
+            <div class="reels-hashtags">#1초오로라챌린지 #pH수색변환 #홈카페바이럴</div>
+            <div class="reels-card-footer">
+              <div class="price">27,500원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">영상 속 믹서 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="reels-card-item" data-cat="🥂 빛 굴절 홀로그램 더블월 글래스 (4)">
+          <div class="reels-video-thumb">
+            <div class="play-overlay">▶ 15s</div>
+            <span class="views-badge">918k Views</span>
+            <div class="reels-video-preview">[SEC-19 9:16 숏폼 영상 컷]</div>
+          </div>
+          <div class="reels-card-info">
+            <span class="reels-cat">🥂 빛 굴절 홀로그램 더블월 글래스 (4)</span>
+            <h4 class="reels-title">🥂 [레인보우 코스터] LED 조명 내장 오로라 코스터</h4>
+            <div class="reels-hashtags">#1초오로라챌린지 #pH수색변환 #홈카페바이럴</div>
+            <div class="reels-card-footer">
+              <div class="price">20,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">영상 속 믹서 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="reels-card-item" data-cat="🎁 릴스 바이럴 스타터 킷 & 엽서 (4)">
+          <div class="reels-video-thumb">
+            <div class="play-overlay">▶ 15s</div>
+            <span class="views-badge">960k Views</span>
+            <div class="reels-video-preview">[SEC-20 9:16 숏폼 영상 컷]</div>
+          </div>
+          <div class="reels-card-info">
+            <span class="reels-cat">🎁 릴스 바이럴 스타터 킷 & 엽서 (4)</span>
+            <h4 class="reels-title">🎁 [바이럴 챌린지] 100% 페이백 보증 릴스 챌린지 팩</h4>
+            <div class="reels-hashtags">#1초오로라챌린지 #pH수색변환 #홈카페바이럴</div>
+            <div class="reels-card-footer">
+              <div class="price">35,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">영상 속 믹서 담기</button>
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </main>
+
+  <!-- PAGE 3 -->
+  <main id="page-about" class="page-view container">
+    <section style="border:1px solid var(--border-dark); background:var(--bg-card); padding:36px; border-radius:12px;">
+      <span style="font-size:11px; font-weight:900; letter-spacing:2px; color:var(--text-muted);">AURORA COLOR SCIENCE & CREATIVE LAB</span>
+      <h1 style="font-size:28px; font-weight:900; margin-top:4px;">이지민의 오로라 비주얼 랩 (Aurora Visual Discovery)</h1>
+      <p style="color:var(--text-muted); margin-top:4px;">빛과 산도에 따라 마법처럼 변하는 영롱한 3D 수색의 시각적 카타르시스</p>
+
+      <div style="border-left:4px solid #FFFFFF; padding:20px 0 20px 28px; margin:24px 0; background:#000000;">
+        <h3 style="font-size:16px; font-weight:900;">"문을 열고, 현실에서 벗어나세요 (Open the Door, Escape Reality)"</h3>
+        <p style="font-size:13px; color:var(--text-muted); margin-top:6px; line-height:1.8;">
+          차를 마시는 순간은 눈으로 즐기는 시각적 예술이어야 합니다.<br/>
+          위케타 오로라 라인은 <strong>천연 안토시아닌의 pH 반응 기술</strong>과 <strong>360도 빛 굴절 홀로그램 잔</strong>을 결합하여, 잔 안에서 펼쳐지는 작은 우주를 선물합니다.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <aside id="cart-drawer" class="cart-drawer">
+    <div style="padding:20px 24px; border-bottom:1px solid #333333; display:flex; justify-content:space-between;">
+      <h4>🛒 AURORA CART</h4>
+      <button class="btn-wf" onclick="toggleDrawer()">✕ 닫기</button>
+    </div>
+    <div style="flex:1; padding:24px;">
+      <div style="border:1px solid #333333; padding:16px; margin-bottom:16px; background:#000000;">
+        <strong>[수색 시그니처] 갤럭시 블루 ➔ 바이올렛 변환 팩</strong>
+        <div style="font-size:12px; color:#888888; margin-top:4px;">수량: 1개 / 36,000원</div>
+      </div>
+    </div>
+    <div style="padding:20px 24px; border-top:1px solid #333333; background:#000000;">
+      <button class="btn-wf primary" style="width:100%; padding:12px;">1-CLICK CHECKOUT</button>
+    </div>
+  </aside>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div>
+        <h5>WICKETA AURORA (위케타)</h5>
+        <p>문을 열고, 현실에서 벗어나세요 (Open the Door, Escape Reality)</p>
+        <p style="margin-top:6px;">고객센터: 1588-0000 | 서울시 성동구 성수이로 00 쇼룸</p>
+      </div>
+      <div>
+        <h5>인증 & 지원</h5>
+        <p>KTR 3無 천연 안토시아닌 공인 시험성적서</p>
+      </div>
+      <div>
+        <h5>공식 채널</h5>
+        <p>Instagram: @wicketa_official</p>
+        <p>© 2026 WICKETA All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function switchPage(p) {
+      document.querySelectorAll('.page-view').forEach(el => el.classList.remove('active'));
+      let t = document.getElementById('page-' + p);
+      if(!t) t = document.getElementById('page-catalog');
+      if(!t) t = document.getElementById('page-home');
+      if(t) t.classList.add('active');
+
+      document.querySelectorAll('.wf-top-helper button').forEach(b => b.classList.remove('active'));
+      const btns = document.querySelectorAll('.wf-top-helper button');
+      if(p==='home'&&btns[0]) btns[0].classList.add('active');
+      else if(p==='catalog'&&btns[1]) btns[1].classList.add('active');
+      else if(p==='about'&&btns[2]) btns[2].classList.add('active');
+      window.scrollTo(0,0);
+    }
+    function toggleDrawer() { document.getElementById('cart-drawer').classList.toggle('open'); }
+    function filterProducts(cat) {
+      document.querySelectorAll('#page-catalog .reels-card-item').forEach(c => {
+        if(cat.includes('전체') || c.getAttribute('data-cat') === cat) c.style.display = 'flex';
+        else c.style.display = 'none';
+      });
+      document.querySelectorAll('#page-catalog .btn-wf').forEach(b => b.classList.remove('primary'));
+      if(event && event.target) event.target.classList.add('primary');
+    }
+  </script>
+</body>
+</html>

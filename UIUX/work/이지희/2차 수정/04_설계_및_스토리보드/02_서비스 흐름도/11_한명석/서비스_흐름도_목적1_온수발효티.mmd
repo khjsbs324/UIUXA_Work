@@ -1,0 +1,34 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef catalog fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef order fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef done fill:#ECEFF1,stroke:#455A64,stroke-width:1.5px,color:#263238;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W11-HOME (큰글씨 진입)<br/>• SENIOR-FONT-01 20pt 활성화"]
+    CATALOG["02 W11-CATALOG (발효티 확인)<br/>• 속 편한 발효티 성분 도감"]
+    
+    ORDER_CHECK{"03 주문 방식<br/>선택"}
+    
+    ONLINE["03-A W11-ORDER (큰글씨 결제)<br/>• 20pt 큰 버튼 1초 결제"]
+    PHONE["03-B W11-ORDER (전화 주문)<br/>• PHONE-ORDER-01 1588 직통 연결"]
+    DONE["04 W11-DONE (주문 완료)<br/>• 음성 안내 & 큰글씨 영수증"]
+    COMM["F1 W11-COMM (우체국 배송)<br/>• 집배원 대면 안심 전달 알림"]
+
+    HOME --> CATALOG
+    CATALOG --> ORDER_CHECK
+    
+    ORDER_CHECK -->|온라인 결제| ONLINE
+    ORDER_CHECK -->|전화 주문| PHONE
+    
+    ONLINE --> DONE
+    PHONE --> DONE
+    DONE --> COMM
+
+    class HOME home;
+    class CATALOG catalog;
+    class ORDER_CHECK decision;
+    class ONLINE,PHONE order;
+    class DONE done;
+    class COMM support;

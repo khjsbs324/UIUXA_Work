@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WICKETA 와이어프레임 - 10 서지안 (A-4 Family Wellness)</title>
+  <style>
+    :root {
+      --bg-white: #FFFFFF; --bg-light: #F5F5F5; --bg-gray: #E5E5E5;
+      --border-dark: #111111; --border-gray: #CCCCCC;
+      --text-dark: #111111; --text-muted: #555555;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Pretendard', sans-serif; background-color: var(--bg-light); color: var(--text-dark); min-height: 100vh; display: flex; flex-direction: column; }
+    .wf-top-helper { background: #111111; color: #FFFFFF; padding: 10px 32px; font-size: 11px; display: flex; justify-content: space-between; position: sticky; top: 0; z-index: 1000; }
+    .wf-top-helper button { background: #222222; color: #EEEEEE; border: 1px solid #444444; padding: 5px 12px; font-size: 11px; font-weight: 700; border-radius: 4px; cursor: pointer; }
+    .wf-top-helper button.active { background: #FFFFFF; color: #111111; }
+
+    header.fam-header { background: #FFFFFF; border-bottom: 2px solid var(--border-dark); padding: 18px 48px; display: flex; justify-content: space-between; align-items: center; }
+    .container { max-width: 1320px; margin: 0 auto; padding: 40px 24px; width: 100%; flex: 1; }
+    .page-view { display: none; }
+    .page-view.active { display: block; }
+
+    .tier-builder-section { border: 2px solid var(--border-dark); background: #FFFFFF; padding: 36px; border-radius: 8px; margin-bottom: 36px; }
+    .tier-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 24px 0; }
+    .tier-card-box { border: 2px solid var(--border-dark); padding: 24px; background: var(--bg-light); border-radius: 8px; text-align: center; }
+
+    .goodie-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .family-goodie-card { border: 1px solid var(--border-gray); background: #FFFFFF; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; }
+    .goodie-hero-box { height: 190px; border-bottom: 1px solid var(--border-gray); background: var(--bg-gray); position: relative; display: flex; justify-content: center; align-items: center; }
+    .fam-target-badge { position: absolute; top: 10px; left: 10px; background: var(--border-dark); color: #FFFFFF; font-size: 11px; font-weight: 900; padding: 4px 10px; border-radius: 4px; }
+    .goodie-placeholder { font-size: 11px; font-weight: 700; color: var(--text-muted); }
+    .goodie-info { padding: 20px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .allergen-seal { font-size: 10px; font-weight: 900; color: var(--text-dark); background: #EEEEEE; padding: 4px 8px; border-radius: 4px; display: inline-block; margin-bottom: 6px; border: 1px solid #CCCCCC; }
+    .goodie-cat { font-size: 10px; font-weight: 900; color: var(--text-muted); }
+    .goodie-title { font-size: 15px; font-weight: 900; margin: 4px 0 8px; }
+    .mom-note { font-size: 11px; color: var(--text-muted); font-style: italic; background: var(--bg-light); padding: 8px 10px; border-left: 3px solid var(--border-dark); margin-bottom: 12px; }
+    .goodie-card-footer { display: flex; justify-content: space-between; align-items: center; }
+    .price { font-size: 15px; font-weight: 900; }
+
+    .btn-wf { background: #FFFFFF; border: 1px solid var(--border-dark); padding: 8px 16px; font-size: 12px; font-weight: 700; cursor: pointer; }
+    .btn-wf.primary { background: var(--border-dark); color: #FFFFFF; }
+
+    .cart-drawer { position: fixed; top: 0; right: -440px; width: 420px; height: 100vh; background: #FFFFFF; border-left: 2px solid var(--border-dark); z-index: 2000; transition: right 0.3s ease; display: flex; flex-direction: column; }
+    .cart-drawer.open { right: 0; }
+
+    footer.site-footer { background: #111111; color: #999999; padding: 48px 32px; font-size: 12px; margin-top: auto; }
+    .footer-content { max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; }
+  </style>
+</head>
+<body>
+  <div class="wf-top-helper">
+    <div><strong>[A-4 무채색 온가족 안심 웰니스 와이어프레임]</strong> 10 서지안 워킹맘 맞춤</div>
+    <div>
+      <button class="active" onclick="switchPage('home')">Page 1: 온가족 120포 빌더</button>
+      <button onclick="switchPage('catalog')">Page 2: 안심 구디백 도감 (20종 전체)</button>
+      <button onclick="switchPage('about')">Page 3: 패밀리 안심 육아 & 세계관</button>
+      <button onclick="toggleDrawer()">🛒 패밀리 구독 드로어</button>
+    </div>
+  </div>
+
+  <header class="fam-header">
+    <div style="font-weight:900; font-size:20px;">WICKETA FAMILY WELLNESS</div>
+    <nav style="display:flex; gap:24px; font-size:13px; font-weight:700;">
+      <a href="javascript:void(0)" onclick="switchPage('home')">120포 빌더</a>
+      <a href="javascript:void(0)" onclick="switchPage('catalog')">구디백 도감 (20)</a>
+      <a href="javascript:void(0)" onclick="switchPage('home')">자수 선물 랩</a>
+      <a href="javascript:void(0)" onclick="switchPage('about')">육퇴 힐링 룸</a>
+    </nav>
+    <button class="btn-wf primary" onclick="toggleDrawer()">장바구니 (3)</button>
+  </header>
+
+  <!-- PAGE 1 -->
+  <main id="page-home" class="page-view active container">
+    <section class="tier-builder-section">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <div>
+          <span style="font-size:11px; font-weight:900; letter-spacing:2px;">3-TIER FAMILY WELLNESS</span>
+          <h1 style="font-size:24px; font-weight:900; margin-top:2px;">FAMILY-BULK-01: 온가족 안심 120포 3단 번들 빌더</h1>
+        </div>
+        <button class="btn-wf primary" onclick="toggleDrawer()">온가족 120포 20% 할인 구독</button>
+      </div>
+
+      <div class="tier-grid-3">
+        <div class="tier-card-box">
+          <h4 style="font-size:16px; font-weight:900;">아이용 (40포)</h4>
+          <p style="font-size:12px; color:var(--text-muted); margin:4px 0 8px;">유기농 딸기 & 비타민C 과일티</p>
+          <div style="font-weight:900;">0.00mg 무카페인 안심</div>
+        </div>
+        <div class="tier-card-box">
+          <h4 style="font-size:16px; font-weight:900;">엄마용 (40포)</h4>
+          <p style="font-size:12px; color:var(--text-muted); margin:4px 0 8px;">미드나잇 캐모마일 & GABA 안식</p>
+          <div style="font-weight:900;">육퇴 후 180초 심신 이완</div>
+        </div>
+        <div class="tier-card-box">
+          <h4 style="font-size:16px; font-weight:900;">아빠용 (40포)</h4>
+          <p style="font-size:12px; color:var(--text-muted); margin:4px 0 8px;">에메랄드 라임 마테 부스터</p>
+          <div style="font-weight:900;">출근길 1초 활력 충전</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PAGE 2 -->
+  <main id="page-catalog" class="page-view container">
+    <div style="border-bottom:2px solid var(--border-dark); padding-bottom:16px; margin-bottom:36px; display:flex; justify-content:space-between; align-items:flex-end;">
+      <div>
+        <h1 style="font-size:26px; font-weight:900;">온가족 안심 구디백 & 패밀리 도감 (20종 전체)</h1>
+        <p style="color:var(--text-muted); font-size:13px;">서지안 워킹맘 맞춤 아이/엄마/아빠 3단 라벨과 알레르기 안심 마크가 달린 도감</p>
+      </div>
+      <div style="display:flex; gap:8px;">
+        <button class="btn-wf primary" onclick="filterProducts('전체 패밀리 팩 (20)')">전체 패밀리 팩 (20)</button>
+        <button class="btn-wf " onclick="filterProducts('🌿 0.00mg 무카페인/무설탕 클린티 (4)')">🌿 0.00mg 무카페인/무설탕 클린티 (4)</button>
+        <button class="btn-wf " onclick="filterProducts('👶 성장기 아이 맞춤 비타민 과일티 (4)')">👶 성장기 아이 맞춤 비타민 과일티 (4)</button>
+        <button class="btn-wf " onclick="filterProducts('🧵 3D 아이 이름 자수 오가닉 파우치 (4)')">🧵 3D 아이 이름 자수 오가닉 파우치 (4)</button>
+        <button class="btn-wf " onclick="filterProducts('🎈 유치원 생일파티 20인분 구디백 (4)')">🎈 유치원 생일파티 20인분 구디백 (4)</button>
+        <button class="btn-wf " onclick="filterProducts('🌙 맘스 나이트 안식 & 정기구독 팩 (4)')">🌙 맘스 나이트 안식 & 정기구독 팩 (4)</button>
+        
+      </div>
+    </div>
+    <div class="goodie-grid">
+        <div class="family-goodie-card" data-cat="🌿 0.00mg 무카페인/무설탕 클린티 (4)">
+          <div class="goodie-hero-box">
+            <span class="fam-target-badge">아이용 (비타민 과일티)</span>
+            <div class="goodie-placeholder">[SEC-01 안심 패밀리 뷰박스]</div>
+          </div>
+          <div class="goodie-info">
+            <div class="allergen-seal">8대 알레르기 유발물질 0% 안심 마크</div>
+            <span class="goodie-cat">🌿 0.00mg 무카페인/무설탕 클린티 (4)</span>
+            <h4 class="goodie-title">⭐ [맘스 베스트] 0.00mg 무카페인 블루베리 루이보스</h4>
+            <div class="mom-note">"성장기 아이에게 물 대신 먹여도 안심되는 0.00mg 무카페인 클린티입니다."</div>
+            <div class="goodie-card-footer">
+              <div class="price">32,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">구디백 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="family-goodie-card" data-cat="👶 성장기 아이 맞춤 비타민 과일티 (4)">
+          <div class="goodie-hero-box">
+            <span class="fam-target-badge">엄마용 (GABA 릴랙스)</span>
+            <div class="goodie-placeholder">[SEC-02 안심 패밀리 뷰박스]</div>
+          </div>
+          <div class="goodie-info">
+            <div class="allergen-seal">8대 알레르기 유발물질 0% 안심 마크</div>
+            <span class="goodie-cat">👶 성장기 아이 맞춤 비타민 과일티 (4)</span>
+            <h4 class="goodie-title">👶 [성장기 비타민] 유기농 딸기 & 비타민C 과일티 팩</h4>
+            <div class="mom-note">"성장기 아이에게 물 대신 먹여도 안심되는 0.00mg 무카페인 클린티입니다."</div>
+            <div class="goodie-card-footer">
+              <div class="price">28,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">구디백 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="family-goodie-card" data-cat="🌙 맘스 나이트 안식 & 정기구독 팩 (4)">
+          <div class="goodie-hero-box">
+            <span class="fam-target-badge">아빠용 (마테 부스터)</span>
+            <div class="goodie-placeholder">[SEC-03 안심 패밀리 뷰박스]</div>
+          </div>
+          <div class="goodie-info">
+            <div class="allergen-seal">8대 알레르기 유발물질 0% 안심 마크</div>
+            <span class="goodie-cat">🌙 맘스 나이트 안식 & 정기구독 팩 (4)</span>
+            <h4 class="goodie-title">🌙 [육퇴 안식] 밤 11시 미드나잇 캐모마일 & 테아닌 팩</h4>
+            <div class="mom-note">"성장기 아이에게 물 대신 먹여도 안심되는 0.00mg 무카페인 클린티입니다."</div>
+            <div class="goodie-card-footer">
+              <div class="price">34,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">구디백 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="family-goodie-card" data-cat="🌿 0.00mg 무카페인/무설탕 클린티 (4)">
+          <div class="goodie-hero-box">
+            <span class="fam-target-badge">아이용 (비타민 과일티)</span>
+            <div class="goodie-placeholder">[SEC-04 안심 패밀리 뷰박스]</div>
+          </div>
+          <div class="goodie-info">
+            <div class="allergen-seal">8대 알레르기 유발물질 0% 안심 마크</div>
+            <span class="goodie-cat">🌿 0.00mg 무카페인/무설탕 클린티 (4)</span>
+            <h4 class="goodie-title">🌿 [온가족 보리] 국산 무농약 발아보리 순차 대용량 팩</h4>
+            <div class="mom-note">"성장기 아이에게 물 대신 먹여도 안심되는 0.00mg 무카페인 클린티입니다."</div>
+            <div class="goodie-card-footer">
+              <div class="price">25,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">구디백 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="family-goodie-card" data-cat="🧵 3D 아이 이름 자수 오가닉 파우치 (4)">
+          <div class="goodie-hero-box">
+            <span class="fam-target-badge">엄마용 (GABA 릴랙스)</span>
+            <div class="goodie-placeholder">[SEC-05 안심 패밀리 뷰박스]</div>
+          </div>
+          <div class="goodie-info">
+            <div class="allergen-seal">8대 알레르기 유발물질 0% 안심 마크</div>
+            <span class="goodie-cat">🧵 3D 아이 이름 자수 오가닉 파우치 (4)</span>
+            <h4 class="goodie-title">🧵 [오가닉 자수] 아이 이름 커스텀 자수 코튼 파우치</h4>
+            <div class="mom-note">"성장기 아이에게 물 대신 먹여도 안심되는 0.00mg 무카페인 클린티입니다."</div>
+            <div class="goodie-card-footer">
+              <div class="price">22,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">구디백 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="family-goodie-card" data-cat="👶 성장기 아이 맞춤 비타민 과일티 (4)">
+          <div class="goodie-hero-box">
+            <span class="fam-target-badge">아빠용 (마테 부스터)</span>
+            <div class="goodie-placeholder">[SEC-06 안심 패밀리 뷰박스]</div>
+          </div>
+          <div class="goodie-info">
+            <div class="allergen-seal">8대 알레르기 유발물질 0% 안심 마크</div>
+            <span class="goodie-cat">👶 성장기 아이 맞춤 비타민 과일티 (4)</span>
+            <h4 class="goodie-title">👶 [면역 쑥쑥] 엘더베리 & 아연 튼튼 키즈티 팩</h4>
+            <div class="mom-note">"성장기 아이에게 물 대신 먹여도 안심되는 0.00mg 무카페인 클린티입니다."</div>
+            <div class="goodie-card-footer">
+              <div class="price">31,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">구디백 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="family-goodie-card" data-cat="🌿 0.00mg 무카페인/무설탕 클린티 (4)">
+          <div class="goodie-hero-box">
+            <span class="fam-target-badge">아이용 (비타민 과일티)</span>
+            <div class="goodie-placeholder">[SEC-07 안심 패밀리 뷰박스]</div>
+          </div>
+          <div class="goodie-info">
+            <div class="allergen-seal">8대 알레르기 유발물질 0% 안심 마크</div>
+            <span class="goodie-cat">🌿 0.00mg 무카페인/무설탕 클린티 (4)</span>
+            <h4 class="goodie-title">🌿 [임산부 안심] 루이보스 바닐라 순수 디카페인 팩</h4>
+            <div class="mom-note">"성장기 아이에게 물 대신 먹여도 안심되는 0.00mg 무카페인 클린티입니다."</div>
+            <div class="goodie-card-footer">
+              <div class="price">29,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">구디백 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="family-goodie-card" data-cat="👶 성장기 아이 맞춤 비타민 과일티 (4)">
+          <div class="goodie-hero-box">
+            <span class="fam-target-badge">엄마용 (GABA 릴랙스)</span>
+            <div class="goodie-placeholder">[SEC-08 안심 패밀리 뷰박스]</div>
+          </div>
+          <div class="goodie-info">
+            <div class="allergen-seal">8대 알레르기 유발물질 0% 안심 마크</div>
+            <span class="goodie-cat">👶 성장기 아이 맞춤 비타민 과일티 (4)</span>
+            <h4 class="goodie-title">👶 [물마시기 습관] 달콤 사과 & 비트 천연 수색 티스틱</h4>
+            <div class="mom-note">"성장기 아이에게 물 대신 먹여도 안심되는 0.00mg 무카페인 클린티입니다."</div>
+            <div class="goodie-card-footer">
+              <div class="price">27,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">구디백 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="family-goodie-card" data-cat="🎈 유치원 생일파티 20인분 구디백 (4)">
+          <div class="goodie-hero-box">
+            <span class="fam-target-badge">아빠용 (마테 부스터)</span>
+            <div class="goodie-placeholder">[SEC-09 안심 패밀리 뷰박스]</div>
+          </div>
+          <div class="goodie-info">
+            <div class="allergen-seal">8대 알레르기 유발물질 0% 안심 마크</div>
+            <span class="goodie-cat">🎈 유치원 생일파티 20인분 구디백 (4)</span>
+            <h4 class="goodie-title">🎈 [구디백 20인] 유치원 생일 답례용 개별 포장 20세트</h4>
+            <div class="mom-note">"성장기 아이에게 물 대신 먹여도 안심되는 0.00mg 무카페인 클린티입니다."</div>
+            <div class="goodie-card-footer">
+              <div class="price">48,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">구디백 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="family-goodie-card" data-cat="👶 성장기 아이 맞춤 비타민 과일티 (4)">
+          <div class="goodie-hero-box">
+            <span class="fam-target-badge">아이용 (비타민 과일티)</span>
+            <div class="goodie-placeholder">[SEC-10 안심 패밀리 뷰박스]</div>
+          </div>
+          <div class="goodie-info">
+            <div class="allergen-seal">8대 알레르기 유발물질 0% 안심 마크</div>
+            <span class="goodie-cat">👶 성장기 아이 맞춤 비타민 과일티 (4)</span>
+            <h4 class="goodie-title">👶 [키즈 보틀] 친환경 트라이탄 350ml 빨대 보틀</h4>
+            <div class="mom-note">"성장기 아이에게 물 대신 먹여도 안심되는 0.00mg 무카페인 클린티입니다."</div>
+            <div class="goodie-card-footer">
+              <div class="price">19,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">구디백 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="family-goodie-card" data-cat="🧵 3D 아이 이름 자수 오가닉 파우치 (4)">
+          <div class="goodie-hero-box">
+            <span class="fam-target-badge">엄마용 (GABA 릴랙스)</span>
+            <div class="goodie-placeholder">[SEC-11 안심 패밀리 뷰박스]</div>
+          </div>
+          <div class="goodie-info">
+            <div class="allergen-seal">8대 알레르기 유발물질 0% 안심 마크</div>
+            <span class="goodie-cat">🧵 3D 아이 이름 자수 오가닉 파우치 (4)</span>
+            <h4 class="goodie-title">🧵 [패밀리 세트] 엄마-아이 커플 자수 에코백 세트</h4>
+            <div class="mom-note">"성장기 아이에게 물 대신 먹여도 안심되는 0.00mg 무카페인 클린티입니다."</div>
+            <div class="goodie-card-footer">
+              <div class="price">38,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">구디백 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="family-goodie-card" data-cat="🎈 유치원 생일파티 20인분 구디백 (4)">
+          <div class="goodie-hero-box">
+            <span class="fam-target-badge">아빠용 (마테 부스터)</span>
+            <div class="goodie-placeholder">[SEC-12 안심 패밀리 뷰박스]</div>
+          </div>
+          <div class="goodie-info">
+            <div class="allergen-seal">8대 알레르기 유발물질 0% 안심 마크</div>
+            <span class="goodie-cat">🎈 유치원 생일파티 20인분 구디백 (4)</span>
+            <h4 class="goodie-title">🎈 [어린이집 30인] 소풍 & 생일파티 스티커 구디백 팩</h4>
+            <div class="mom-note">"성장기 아이에게 물 대신 먹여도 안심되는 0.00mg 무카페인 클린티입니다."</div>
+            <div class="goodie-card-footer">
+              <div class="price">68,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">구디백 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="family-goodie-card" data-cat="🧵 3D 아이 이름 자수 오가닉 파우치 (4)">
+          <div class="goodie-hero-box">
+            <span class="fam-target-badge">아이용 (비타민 과일티)</span>
+            <div class="goodie-placeholder">[SEC-13 안심 패밀리 뷰박스]</div>
+          </div>
+          <div class="goodie-info">
+            <div class="allergen-seal">8대 알레르기 유발물질 0% 안심 마크</div>
+            <span class="goodie-cat">🧵 3D 아이 이름 자수 오가닉 파우치 (4)</span>
+            <h4 class="goodie-title">🧵 [자수 네임택] 미아방지 자수 텀블러 스트랩</h4>
+            <div class="mom-note">"성장기 아이에게 물 대신 먹여도 안심되는 0.00mg 무카페인 클린티입니다."</div>
+            <div class="goodie-card-footer">
+              <div class="price">15,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">구디백 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="family-goodie-card" data-cat="🌿 0.00mg 무카페인/무설탕 클린티 (4)">
+          <div class="goodie-hero-box">
+            <span class="fam-target-badge">엄마용 (GABA 릴랙스)</span>
+            <div class="goodie-placeholder">[SEC-14 안심 패밀리 뷰박스]</div>
+          </div>
+          <div class="goodie-info">
+            <div class="allergen-seal">8대 알레르기 유발물질 0% 안심 마크</div>
+            <span class="goodie-cat">🌿 0.00mg 무카페인/무설탕 클린티 (4)</span>
+            <h4 class="goodie-title">🌿 [무설탕 스위트] 천연 스테비아 잎 복숭아 과일티</h4>
+            <div class="mom-note">"성장기 아이에게 물 대신 먹여도 안심되는 0.00mg 무카페인 클린티입니다."</div>
+            <div class="goodie-card-footer">
+              <div class="price">26,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">구디백 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="family-goodie-card" data-cat="🎈 유치원 생일파티 20인분 구디백 (4)">
+          <div class="goodie-hero-box">
+            <span class="fam-target-badge">아빠용 (마테 부스터)</span>
+            <div class="goodie-placeholder">[SEC-15 안심 패밀리 뷰박스]</div>
+          </div>
+          <div class="goodie-info">
+            <div class="allergen-seal">8대 알레르기 유발물질 0% 안심 마크</div>
+            <span class="goodie-cat">🎈 유치원 생일파티 20인분 구디백 (4)</span>
+            <h4 class="goodie-title">🎈 [선생님 선물] 감사 엽서 & 프리미엄 티 4종 세트</h4>
+            <div class="mom-note">"성장기 아이에게 물 대신 먹여도 안심되는 0.00mg 무카페인 클린티입니다."</div>
+            <div class="goodie-card-footer">
+              <div class="price">45,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">구디백 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="family-goodie-card" data-cat="🌙 맘스 나이트 안식 & 정기구독 팩 (4)">
+          <div class="goodie-hero-box">
+            <span class="fam-target-badge">아이용 (비타민 과일티)</span>
+            <div class="goodie-placeholder">[SEC-16 안심 패밀리 뷰박스]</div>
+          </div>
+          <div class="goodie-info">
+            <div class="allergen-seal">8대 알레르기 유발물질 0% 안심 마크</div>
+            <span class="goodie-cat">🌙 맘스 나이트 안식 & 정기구독 팩 (4)</span>
+            <h4 class="goodie-title">🌙 [새벽구독 120포] 온가족 30일 안심 패밀리 구독 팩</h4>
+            <div class="mom-note">"성장기 아이에게 물 대신 먹여도 안심되는 0.00mg 무카페인 클린티입니다."</div>
+            <div class="goodie-card-footer">
+              <div class="price">78,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">구디백 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="family-goodie-card" data-cat="🧵 3D 아이 이름 자수 오가닉 파우치 (4)">
+          <div class="goodie-hero-box">
+            <span class="fam-target-badge">엄마용 (GABA 릴랙스)</span>
+            <div class="goodie-placeholder">[SEC-17 안심 패밀리 뷰박스]</div>
+          </div>
+          <div class="goodie-info">
+            <div class="allergen-seal">8대 알레르기 유발물질 0% 안심 마크</div>
+            <span class="goodie-cat">🧵 3D 아이 이름 자수 오가닉 파우치 (4)</span>
+            <h4 class="goodie-title">🧵 [소창 손수건] 100% 무표백 아기 소창 손수건 3P</h4>
+            <div class="mom-note">"성장기 아이에게 물 대신 먹여도 안심되는 0.00mg 무카페인 클린티입니다."</div>
+            <div class="goodie-card-footer">
+              <div class="price">18,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">구디백 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="family-goodie-card" data-cat="🌙 맘스 나이트 안식 & 정기구독 팩 (4)">
+          <div class="goodie-hero-box">
+            <span class="fam-target-badge">아빠용 (마테 부스터)</span>
+            <div class="goodie-placeholder">[SEC-18 안심 패밀리 뷰박스]</div>
+          </div>
+          <div class="goodie-info">
+            <div class="allergen-seal">8대 알레르기 유발물질 0% 안심 마크</div>
+            <span class="goodie-cat">🌙 맘스 나이트 안식 & 정기구독 팩 (4)</span>
+            <h4 class="goodie-title">🌙 [맘스 릴랙스] 젖몸살/붓기 완화 펌프킨 팥차 팩</h4>
+            <div class="mom-note">"성장기 아이에게 물 대신 먹여도 안심되는 0.00mg 무카페인 클린티입니다."</div>
+            <div class="goodie-card-footer">
+              <div class="price">30,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">구디백 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="family-goodie-card" data-cat="🎈 유치원 생일파티 20인분 구디백 (4)">
+          <div class="goodie-hero-box">
+            <span class="fam-target-badge">아이용 (비타민 과일티)</span>
+            <div class="goodie-placeholder">[SEC-19 안심 패밀리 뷰박스]</div>
+          </div>
+          <div class="goodie-info">
+            <div class="allergen-seal">8대 알레르기 유발물질 0% 안심 마크</div>
+            <span class="goodie-cat">🎈 유치원 생일파티 20인분 구디백 (4)</span>
+            <h4 class="goodie-title">🎈 [홈파티 키즈] 어린이 무알콜 과일 칵테일 펀치 키트</h4>
+            <div class="mom-note">"성장기 아이에게 물 대신 먹여도 안심되는 0.00mg 무카페인 클린티입니다."</div>
+            <div class="goodie-card-footer">
+              <div class="price">39,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">구디백 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="family-goodie-card" data-cat="🌙 맘스 나이트 안식 & 정기구독 팩 (4)">
+          <div class="goodie-hero-box">
+            <span class="fam-target-badge">엄마용 (GABA 릴랙스)</span>
+            <div class="goodie-placeholder">[SEC-20 안심 패밀리 뷰박스]</div>
+          </div>
+          <div class="goodie-info">
+            <div class="allergen-seal">8대 알레르기 유발물질 0% 안심 마크</div>
+            <span class="goodie-cat">🌙 맘스 나이트 안식 & 정기구독 팩 (4)</span>
+            <h4 class="goodie-title">🌙 [오르골 타이머] 432Hz 자장가 사운드 180초 타이머</h4>
+            <div class="mom-note">"성장기 아이에게 물 대신 먹여도 안심되는 0.00mg 무카페인 클린티입니다."</div>
+            <div class="goodie-card-footer">
+              <div class="price">42,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">구디백 담기</button>
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </main>
+
+  <!-- PAGE 3 -->
+  <main id="page-about" class="page-view container">
+    <section class="tier-builder-section">
+      <span style="font-size:11px; font-weight:900; letter-spacing:2px;">FAMILY WELLNESS & ZERO-LABOR CARE</span>
+      <h1 style="font-size:28px; font-weight:900; margin-top:4px;">서지안의 온가족 안심 웰니스 (Family Wellness)</h1>
+      <p style="color:var(--text-muted); margin-top:4px;">아이에게는 건강한 성장을, 엄마에게는 고요한 육퇴의 안식을 선물합니다</p>
+
+      <div style="border-left:4px solid var(--border-dark); padding:20px 0 20px 28px; margin:24px 0; background:var(--bg-light);">
+        <h3 style="font-size:16px; font-weight:900;">"문을 열고, 현실에서 벗어나세요 (Open the Door, Escape Reality)"</h3>
+        <p style="font-size:13px; color:var(--text-muted); margin-top:6px; line-height:1.8;">
+          아이를 돌보고 일상을 꾸려가는 워킹맘에게 차를 끓이는 시간조차 부담이 되지 않아야 합니다.<br/>
+          위케타 패밀리 라인은 <strong>KTR 공인 3無(무카페인/무설탕/무합성향) 클린 포뮬러</strong>로 아이부터 임산부까지 안심하고 마실 수 있는 순수한 자연을 담았습니다.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <aside id="cart-drawer" class="cart-drawer">
+    <div style="padding:20px 24px; border-bottom:1px solid var(--border-gray); display:flex; justify-content:space-between;">
+      <h4>🛒 FAMILY WELLNESS CART</h4>
+      <button class="btn-wf" onclick="toggleDrawer()">✕ 닫기</button>
+    </div>
+    <div style="flex:1; padding:24px;">
+      <div style="border:1px solid var(--border-gray); padding:16px; margin-bottom:16px;">
+        <strong>[새벽구독 120포] 온가족 30일 안심 패밀리 구독 팩</strong>
+        <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">수량: 1개 / 78,000원</div>
+      </div>
+    </div>
+    <div style="padding:20px 24px; border-top:1px solid var(--border-gray); background:var(--bg-light);">
+      <button class="btn-wf primary" style="width:100%; padding:12px;">30일 안심 새벽구독 신청</button>
+    </div>
+  </aside>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div>
+        <h5>WICKETA FAMILY (위케타)</h5>
+        <p>문을 열고, 현실에서 벗어나세요 (Open the Door, Escape Reality)</p>
+        <p style="margin-top:6px;">고객센터: 1588-0000 | 서울시 성동구 성수이로 00 쇼룸</p>
+      </div>
+      <div>
+        <h5>인증 & 지원</h5>
+        <p>KTR 3無(무카페인/무설탕/무합성향) 공인 시험성적서</p>
+      </div>
+      <div>
+        <h5>공식 채널</h5>
+        <p>Instagram: @wicketa_family</p>
+        <p>© 2026 WICKETA All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function switchPage(p) {
+      document.querySelectorAll('.page-view').forEach(el => el.classList.remove('active'));
+      let t = document.getElementById('page-' + p);
+      if(!t) t = document.getElementById('page-catalog');
+      if(!t) t = document.getElementById('page-home');
+      if(t) t.classList.add('active');
+
+      document.querySelectorAll('.wf-top-helper button').forEach(b => b.classList.remove('active'));
+      const btns = document.querySelectorAll('.wf-top-helper button');
+      if(p==='home'&&btns[0]) btns[0].classList.add('active');
+      else if(p==='catalog'&&btns[1]) btns[1].classList.add('active');
+      else if(p==='about'&&btns[2]) btns[2].classList.add('active');
+      window.scrollTo(0,0);
+    }
+    function toggleDrawer() { document.getElementById('cart-drawer').classList.toggle('open'); }
+    function filterProducts(cat) {
+      document.querySelectorAll('#page-catalog .family-goodie-card').forEach(c => {
+        if(cat.includes('전체') || c.getAttribute('data-cat') === cat) c.style.display = 'flex';
+        else c.style.display = 'none';
+      });
+      document.querySelectorAll('#page-catalog .btn-wf').forEach(b => b.classList.remove('primary'));
+      if(event && event.target) event.target.classList.add('primary');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef explore fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef atelier fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef action fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    subgraph HUB ["HUB: WICKETA 신유진 믹솔로지 안식처 메인 허브"]
+        HOME["01 W02-HOME (믹솔로지 메인)<br/>• 3D 쉐이커 인터랙티브 캔버스<br/>• MIXOLOGY-BUILDER-01 퀵독<br/>• 실시간 인기 레시피 랭킹"]
+    end
+
+    subgraph PATH1 ["경로 1: 10인 홈파티 대용량 베이스 세트 구매"]
+        KIT1["02-A W02-KIT (대용량)<br/>10인 홈파티 베이스 & 글래스<br/>• 20% 번들 할인"]
+    end
+
+    subgraph PATH2 ["경로 2: 심야 수면 나이트 아로마 티 정기구독"]
+        SUB["02-B W02-SUB<br/>나이트 아로마 정기구독<br/>• 30일 배송 & 15% 할인"]
+    end
+
+    subgraph PATH3 ["경로 3: 스타터 쉐이커 & 지거 이니셜 각인 선물"]
+        KIT2["02-C W02-KIT (각인)<br/>STARTER-ENGRAVER-01 아틀리에<br/>• 3D 레이저 각인 & 포장"]
+    end
+
+    subgraph PATH4 ["경로 4: SNS 바이럴 15초 릴스 레시피 즉시 구매"]
+        FEED["02-D W02-FEED<br/>VIRAL-FEED-01 숏폼 피드<br/>• 15초 영상 & 원클릭 담기"]
+    end
+
+    subgraph PATH5 ["경로 5: 나만의 3층 포뮬러 개발 & 공식 등록"]
+        BUILD["02-E W02-BUILD<br/>3D 포뮬러 빌더<br/>• 3층 수색 층분리 시뮬레이션"]
+        REG["03-E W02-REG<br/>공식 포뮬러 등록 콘솔<br/>• REGISTRY-CERT-01 발급"]
+        BUILD --> REG
+    end
+
+    subgraph TRANSACT ["TRANSACT: 공통 장바구니 결제 & 완료 모달"]
+        DRAWER["W02-DRAWER (슬라이드아웃 Cart)<br/>• 일반/구독/선물/포뮬러 1초 간편결제<br/>• 가상 스크롤 100% 위치 복원"]
+        DONE["W02-DONE (통합 완료 모달)<br/>• 공식 라이선스 카드, 선물 바우처 발급<br/>• 카카오 알림톡 즉시 발송"]
+        DRAWER --> DONE
+    end
+
+    subgraph ARCHIVE ["ARCHIVE: 믹솔로지스트 커뮤니티 & 아카이브"]
+        COMM["W02-COMM (믹솔로지 아카이브)<br/>• 나만의 레시피 보관함 & 랭킹 투표<br/>• 실시간 선물 배송 추적 & 챌린지 후기"]
+    end
+
+    HOME --> KIT1
+    HOME --> SUB
+    HOME --> KIT2
+    HOME --> FEED
+    HOME --> BUILD
+
+    KIT1 --> DRAWER
+    SUB --> DRAWER
+    KIT2 --> DRAWER
+    FEED --> DRAWER
+    REG --> DRAWER
+    DONE --> COMM
+
+    COMM -.->|신규 포뮬러 제작 및 챌린지 순환| BUILD
+    DONE -.->|쇼핑 계속하기 스크롤 복원| HOME
+
+    class HOME home;
+    class FEED,KIT1 explore;
+    class BUILD,REG,KIT2,SUB atelier;
+    class DRAWER,DONE action;
+    class COMM support;

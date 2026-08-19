@@ -1,0 +1,50 @@
+flowchart TD
+    classDef root fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef main fill:#E8F5E9,stroke:#2E7D32,stroke-width:2px,color:#1B5E20,font-weight:bold;
+    classDef sub fill:#E1F5FE,stroke:#0277BD,stroke-width:1.5px,color:#01579B;
+    classDef act fill:#FFF8E1,stroke:#F57F17,stroke-width:1.5px,color:#E65100;
+    classDef common fill:#ECEFF1,stroke:#455A64,stroke-width:1.5px,color:#263238;
+    classDef exp fill:#FFEBEE,stroke:#C62828,stroke-width:1.5px,color:#B71C1C;
+
+    ROOT["WICKETA 이지민 플랫폼 루트<br/>(비주얼 홈카페)"]
+    HOME["W08-HOME<br/>비주얼 홈카페 홈"]
+    VIS["W08-VISUAL<br/>수색 시뮬레이터"]
+    SHOP["W08-SHOP<br/>홈카페 도감 (6대 LNB)"]
+    FEST["W08-FESTIVAL<br/>축제 벌크 키트"]
+    GIFT["W08-GIFT<br/>파스텔 각인 아틀리에"]
+    COMM["W08-COMM<br/>숏폼 챌린지"]
+    DONE["W08-DONE<br/>주문 완료"]
+    DRAWER["W08-DRAWER<br/>슬라이드아웃 장바구니"]
+
+    EXP1["EXP-01<br/>404 페이지 찾을 수 없음"]
+    EXP2["EXP-02<br/>품절 대체 안내"]
+    EXP3["EXP-03<br/>네트워크 오류 모달"]
+
+    ROOT --> HOME
+    HOME --> VIS
+    HOME --> SHOP
+    HOME --> FEST
+    HOME --> GIFT
+
+    VIS --> SHOP
+    SHOP --> FEST
+    SHOP --> GIFT
+    VIS --> DRAWER
+    FEST --> DRAWER
+    GIFT --> DRAWER
+
+    COMM --> HOME
+    DRAWER --> DONE
+    DONE --> COMM
+    DONE --> HOME
+
+    HOME -.-> EXP1
+    SHOP -.-> EXP2
+    GIFT -.-> EXP3
+
+    class ROOT root;
+    class HOME main;
+    class VIS,SHOP,FEST,GIFT sub;
+    class COMM,DONE act;
+    class DRAWER common;
+    class EXP1,EXP2,EXP3 exp;

@@ -1,0 +1,42 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef comm fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef done fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W08-HOME (챌린지 진입)<br/>• [#과제탈출믹솔로지] 클릭"]
+    FEED["02 W08-COMM (피드 감상 & 투표)<br/>• VLOG-FEED-01 투표 참여"]
+    UPLOAD["03 W08-COMM (브이로그 업로드)<br/>• 15초 영상 파일 등록"]
+    
+    FORMAT_CHECK{"04 영상 규격<br/>검증 (15초 이내?)"}
+    
+    RANK_CHECK{"05 랭킹 심사<br/>(1위 달성?)"}
+    
+    TRIM["04-B 영상 편집 (Fallback)<br/>• 15초 컷 편집기 보정"]
+    SCHOLAR["05-A 1위 장학금 수여<br/>• 500,000원 장학금 지급"]
+    POINTS["05-B 응원 포인트<br/>• 5,000P 즉시 적립"]
+    DONE["06 W08-DONE (정산 완료)<br/>• 포인트 보관함 적립"]
+    LOOP_NODE["F1 방학 챌린지 루프<br/>• 다음 시즌 알림 등록"]
+
+    HOME --> FEED
+    FEED --> UPLOAD
+    UPLOAD --> FORMAT_CHECK
+    
+    FORMAT_CHECK -->|규격 적합| RANK_CHECK
+    FORMAT_CHECK -->|길이 초과| TRIM
+    TRIM -.->|편집 후| RANK_CHECK
+    
+    RANK_CHECK -->|1위 등극| SCHOLAR
+    RANK_CHECK -->|참여 완료| POINTS
+    
+    SCHOLAR --> DONE
+    POINTS --> DONE
+    DONE --> LOOP_NODE
+    LOOP_NODE -.->|다음 챌린지 참여| FEED
+
+    class HOME home;
+    class FEED,UPLOAD comm;
+    class FORMAT_CHECK,RANK_CHECK decision;
+    class SCHOLAR,POINTS,DONE done;
+    class TRIM,LOOP_NODE support;

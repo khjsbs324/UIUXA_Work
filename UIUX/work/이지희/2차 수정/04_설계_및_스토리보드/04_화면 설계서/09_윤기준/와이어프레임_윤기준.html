@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WICKETA 와이어프레임 - 09 윤기준 (C-3 Precision Data Brewing)</title>
+  <style>
+    :root {
+      --bg-dark: #000000; --bg-card: #111111; --border-code: #333333;
+      --text-main: #EEEEEE; --text-muted: #888888;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'JetBrains Mono', 'Consolas', monospace; background-color: var(--bg-dark); color: var(--text-main); font-size: 12px; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
+    .wf-top-helper { background: #000000; color: #FFFFFF; padding: 10px 32px; font-size: 11px; display: flex; justify-content: space-between; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #222222; }
+    .wf-top-helper button { background: #222222; color: #EEEEEE; border: 1px solid var(--border-code); padding: 5px 12px; font-size: 11px; font-family: monospace; cursor: pointer; }
+    .wf-top-helper button.active { background: #FFFFFF; color: #000000; }
+
+    header.term-header { background: #111111; border-bottom: 1px solid var(--border-code); padding: 16px 40px; display: flex; justify-content: space-between; align-items: center; }
+    .container { max-width: 1320px; margin: 0 auto; padding: 36px 20px; width: 100%; flex: 1; }
+    .page-view { display: none; }
+    .page-view.active { display: block; }
+
+    .dashboard-grid { display: grid; grid-template-columns: 2fr 1.2fr; gap: 24px; margin-bottom: 36px; }
+    .dash-card { border: 1px solid var(--border-code); background: var(--bg-card); padding: 24px; border-radius: 6px; }
+    .chart-container { height: 280px; border: 1px dashed var(--border-code); background: #000000; display: flex; flex-direction: column; justify-content: center; align-items: center; margin: 16px 0; }
+    .code-box { background: #000000; border: 1px solid var(--border-code); padding: 14px; color: #EEEEEE; font-size: 11px; border-radius: 4px; overflow-x: auto; }
+
+    .datasheet-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 11px; }
+    .datasheet-table th, .datasheet-table td { border: 1px solid var(--border-code); padding: 12px 14px; text-align: left; }
+    .datasheet-table th { background: #000000; color: #FFFFFF; font-weight: 700; }
+    .data-row:hover { background: #222222; }
+    .code-badge { background: #222222; padding: 2px 6px; border-radius: 3px; font-size: 10px; color: #EEEEEE; }
+
+    .btn-term { background: #222222; border: 1px solid var(--border-code); color: #EEEEEE; padding: 8px 14px; font-family: monospace; cursor: pointer; font-size: 11px; font-weight: 700; }
+    .btn-term.primary { background: #FFFFFF; color: #000000; border-color: #FFFFFF; }
+
+    .cart-drawer { position: fixed; top: 0; right: -440px; width: 420px; height: 100vh; background: #111111; border-left: 2px solid var(--border-code); z-index: 2000; transition: right 0.3s ease; display: flex; flex-direction: column; }
+    .cart-drawer.open { right: 0; }
+
+    footer.site-footer { background: #000000; color: var(--text-muted); padding: 48px 32px; font-size: 11px; margin-top: auto; border-top: 1px solid var(--border-code); }
+    .footer-content { max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; }
+  </style>
+</head>
+<body>
+  <div class="wf-top-helper">
+    <div><strong>[C-3 무채색 엔지니어링 대시보드 와이어프레임]</strong> 09 윤기준 개발팀장 맞춤</div>
+    <div>
+      <button class="active" onclick="switchPage('home')">Page 1: TDS 대시보드 허브</button>
+      <button onclick="switchPage('catalog')">Page 2: HPLC 데이터시트 도감 (20종 전체)</button>
+      <button onclick="switchPage('about')">Page 3: 정밀 계측 공학 & 세계관</button>
+      <button onclick="toggleDrawer()">🛒 git commit [Drawer]</button>
+    </div>
+  </div>
+
+  <header class="term-header">
+    <div style="font-weight:900; font-size:15px; color:#FFFFFF;">WICKETA PRECISION DATA BREWING [v2.4]</div>
+    <nav style="display:flex; gap:20px;">
+      <a href="javascript:void(0)" onclick="switchPage('home')" style="color:var(--text-main); text-decoration:none;">TDS 수율 분석</a>
+      <a href="javascript:void(0)" onclick="switchPage('catalog')" style="color:var(--text-main); text-decoration:none;">HPLC 도감 (20)</a>
+      <a href="javascript:void(0)" onclick="switchPage('home')" style="color:var(--text-main); text-decoration:none;">Syntax 3D 각인</a>
+      <a href="javascript:void(0)" onclick="switchPage('about')" style="color:var(--text-main); text-decoration:none;">JSON 로그 허브</a>
+    </nav>
+    <button class="btn-term primary" onclick="toggleDrawer()">git commit (2)</button>
+  </header>
+
+  <!-- PAGE 1 -->
+  <main id="page-home" class="page-view active container">
+    <div class="dashboard-grid">
+      <div class="dash-card">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <h2 style="font-size:15px; color:#FFFFFF;">PRECISION-DASH-01: TDS 용출 수율 실시간 곡선 차트</h2>
+          <button class="btn-term">JSON Logs Export</button>
+        </div>
+        <div class="chart-container">
+          <strong>[SVG TDS 용출 곡선: 수온 85℃ | 추출 시간 180초 | 목표 농도 1.25%]</strong>
+          <span style="font-size:11px; color:var(--text-muted); margin-top:6px;">HPLC 유효 카테킨 & GABA 추출 수율 프로파일링 곡선 실시간 렌더링</span>
+        </div>
+      </div>
+      <div class="dash-card">
+        <h3 style="font-size:14px; color:#FFFFFF; margin-bottom:12px;">CODE-ENGRAVER-01: 터미널 텀블러 각인실</h3>
+        <div class="code-box">
+          &gt; const tea = new WicketaBrew({ temp: 85, tds: 1.25, noCaffeine: true });<br/>
+          &gt; tea.executeRitual(); // 180s Focus
+        </div>
+        <div style="margin-top:16px;">
+          <input type="text" value="git commit -m 'Bug Fixed & Tea Relax'" style="width:100%; padding:8px; background:#000000; border:1px solid var(--border-code); color:#FFFFFF; font-family:monospace;">
+          <button class="btn-term primary" style="width:100%; margin-top:10px;" onclick="toggleDrawer()">각인 텀블러 발주 (45,000원)</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- PAGE 2 -->
+  <main id="page-catalog" class="page-view container">
+    <div style="border-bottom:1px solid var(--border-code); padding-bottom:16px; margin-bottom:24px; display:flex; justify-content:space-between; align-items:flex-end;">
+      <div>
+        <h1 style="font-size:20px; font-weight:900; color:#FFFFFF;">HPLC 성분 데이터시트 & 정밀 기어 도감 (20종 전체)</h1>
+        <p style="color:var(--text-muted); font-size:12px;">윤기준 엔지니어 맞춤 6대 LNB 20대 전체 성분 분석 스펙트럼 데이터시트</p>
+      </div>
+      <div style="display:flex; gap:8px;">
+        <button class="btn-term primary" onclick="filterProducts('전체 정밀 기어 (20)')">전체 정밀 기어 (20)</button>
+        <button class="btn-term " onclick="filterProducts('💻 0.1g 정밀 계량 싱글 오리진 (4)')">💻 0.1g 정밀 계량 싱글 오리진 (4)</button>
+        <button class="btn-term " onclick="filterProducts('📊 TDS 수온/시간 최적화 프로파일 팩 (4)')">📊 TDS 수온/시간 최적화 프로파일 팩 (4)</button>
+        <button class="btn-term " onclick="filterProducts('⚙️ 티타늄 핀셋 & 정밀 계량 비커 (4)')">⚙️ 티타늄 핀셋 & 정밀 계량 비커 (4)</button>
+        <button class="btn-term " onclick="filterProducts('⚡ 심야 코딩 0.00mg 무카페인 GABA (4)')">⚡ 심야 코딩 0.00mg 무카페인 GABA (4)</button>
+        <button class="btn-term " onclick="filterProducts('🚀 해커톤 48H 집중력 팀팩 (4)')">🚀 해커톤 48H 집중력 팀팩 (4)</button>
+        
+      </div>
+    </div>
+    <table class="datasheet-table">
+      <thead>
+        <tr>
+          <th>SEC_ID</th>
+          <th>ITEM_CODE</th>
+          <th>PRODUCT_NAME</th>
+          <th>CATEGORY</th>
+          <th>PRICE</th>
+          <th>EXTRACTION_DATA</th>
+          <th>ACTION</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="data-row" data-cat="💻 0.1g 정밀 계량 싱글 오리진 (4)">
+          <td><code>SEC-01</code></td>
+          <td><code>WK-P01</code></td>
+          <td><strong>⭐ [0.1g 정밀] HPLC 검증 싱글 오리진 버터플라이피 팩</strong></td>
+          <td><span class="code-badge">💻 0.1g 정밀 계량 싱글 오리진 (4)</span></td>
+          <td><strong>39,000원</strong></td>
+          <td><code>TDS: 1.25% | HPLC 99.8% | 85.0°C</code></td>
+          <td><button class="btn-term" onclick="toggleDrawer()">git add</button></td>
+        </tr>
+        <tr class="data-row" data-cat="📊 TDS 수온/시간 최적화 프로파일 팩 (4)">
+          <td><code>SEC-02</code></td>
+          <td><code>WK-P02</code></td>
+          <td><strong>📊 [TDS 최적화] 45ppm 연수 전용 수온 프로파일 티백 팩</strong></td>
+          <td><span class="code-badge">📊 TDS 수온/시간 최적화 프로파일 팩 (4)</span></td>
+          <td><strong>32,000원</strong></td>
+          <td><code>TDS: 1.25% | HPLC 99.8% | 85.0°C</code></td>
+          <td><button class="btn-term" onclick="toggleDrawer()">git add</button></td>
+        </tr>
+        <tr class="data-row" data-cat="⚙️ 티타늄 핀셋 & 정밀 계량 비커 (4)">
+          <td><code>SEC-03</code></td>
+          <td><code>WK-P03</code></td>
+          <td><strong>⚙️ [티타늄 기어] 0.01g 초정밀 디지털 티 스케일 & 비커</strong></td>
+          <td><span class="code-badge">⚙️ 티타늄 핀셋 & 정밀 계량 비커 (4)</span></td>
+          <td><strong>58,000원</strong></td>
+          <td><code>TDS: 1.25% | HPLC 99.8% | 85.0°C</code></td>
+          <td><button class="btn-term" onclick="toggleDrawer()">git add</button></td>
+        </tr>
+        <tr class="data-row" data-cat="⚡ 심야 코딩 0.00mg 무카페인 GABA (4)">
+          <td><code>SEC-04</code></td>
+          <td><code>WK-P04</code></td>
+          <td><strong>⚡ [심야 코딩] 0.00mg 무카페인 GABA 라벤더 포뮬러</strong></td>
+          <td><span class="code-badge">⚡ 심야 코딩 0.00mg 무카페인 GABA (4)</span></td>
+          <td><strong>28,000원</strong></td>
+          <td><code>TDS: 1.25% | HPLC 99.8% | 85.0°C</code></td>
+          <td><button class="btn-term" onclick="toggleDrawer()">git add</button></td>
+        </tr>
+        <tr class="data-row" data-cat="🚀 해커톤 48H 집중력 팀팩 (4)">
+          <td><code>SEC-05</code></td>
+          <td><code>WK-P05</code></td>
+          <td><strong>🚀 [해커톤 48H] 개발팀 120포 올나잇 집중력 에너지 팩</strong></td>
+          <td><span class="code-badge">🚀 해커톤 48H 집중력 팀팩 (4)</span></td>
+          <td><strong>89,000원</strong></td>
+          <td><code>TDS: 1.25% | HPLC 99.8% | 85.0°C</code></td>
+          <td><button class="btn-term" onclick="toggleDrawer()">git add</button></td>
+        </tr>
+        <tr class="data-row" data-cat="💻 0.1g 정밀 계량 싱글 오리진 (4)">
+          <td><code>SEC-06</code></td>
+          <td><code>WK-P06</code></td>
+          <td><strong>💻 [파라미터 티] 산도(pH 5.5) 반응 수색 변환 티백 팩</strong></td>
+          <td><span class="code-badge">💻 0.1g 정밀 계량 싱글 오리진 (4)</span></td>
+          <td><strong>34,000원</strong></td>
+          <td><code>TDS: 1.25% | HPLC 99.8% | 85.0°C</code></td>
+          <td><button class="btn-term" onclick="toggleDrawer()">git add</button></td>
+        </tr>
+        <tr class="data-row" data-cat="📊 TDS 수온/시간 최적화 프로파일 팩 (4)">
+          <td><code>SEC-07</code></td>
+          <td><code>WK-P07</code></td>
+          <td><strong>📊 [데이터시트] 20종 원료 화학 분석 스펙트럼 리포트 팩</strong></td>
+          <td><span class="code-badge">📊 TDS 수온/시간 최적화 프로파일 팩 (4)</span></td>
+          <td><strong>42,000원</strong></td>
+          <td><code>TDS: 1.25% | HPLC 99.8% | 85.0°C</code></td>
+          <td><button class="btn-term" onclick="toggleDrawer()">git add</button></td>
+        </tr>
+        <tr class="data-row" data-cat="⚙️ 티타늄 핀셋 & 정밀 계량 비커 (4)">
+          <td><code>SEC-08</code></td>
+          <td><code>WK-P08</code></td>
+          <td><strong>⚙️ [각인 텀블러] 터미널 Syntax 하이라이트 레이저 각인 텀블러</strong></td>
+          <td><span class="code-badge">⚙️ 티타늄 핀셋 & 정밀 계량 비커 (4)</span></td>
+          <td><strong>45,000원</strong></td>
+          <td><code>TDS: 1.25% | HPLC 99.8% | 85.0°C</code></td>
+          <td><button class="btn-term" onclick="toggleDrawer()">git add</button></td>
+        </tr>
+        <tr class="data-row" data-cat="⚡ 심야 코딩 0.00mg 무카페인 GABA (4)">
+          <td><code>SEC-09</code></td>
+          <td><code>WK-P09</code></td>
+          <td><strong>⚡ [알고리즘] 디버깅 스트레스 완화 L-테아닌 200mg 팩</strong></td>
+          <td><span class="code-badge">⚡ 심야 코딩 0.00mg 무카페인 GABA (4)</span></td>
+          <td><strong>31,000원</strong></td>
+          <td><code>TDS: 1.25% | HPLC 99.8% | 85.0°C</code></td>
+          <td><button class="btn-term" onclick="toggleDrawer()">git add</button></td>
+        </tr>
+        <tr class="data-row" data-cat="🚀 해커톤 48H 집중력 팀팩 (4)">
+          <td><code>SEC-10</code></td>
+          <td><code>WK-P10</code></td>
+          <td><strong>🚀 [스크럼 팩] 10인 개발팀 2주 스프린트 데일리 리추얼 팩</strong></td>
+          <td><span class="code-badge">🚀 해커톤 48H 집중력 팀팩 (4)</span></td>
+          <td><strong>120,000원</strong></td>
+          <td><code>TDS: 1.25% | HPLC 99.8% | 85.0°C</code></td>
+          <td><button class="btn-term" onclick="toggleDrawer()">git add</button></td>
+        </tr>
+        <tr class="data-row" data-cat="💻 0.1g 정밀 계량 싱글 오리진 (4)">
+          <td><code>SEC-11</code></td>
+          <td><code>WK-P11</code></td>
+          <td><strong>💻 [정밀 추출] 내열 붕규산 유리 침출 비커 & 온도계</strong></td>
+          <td><span class="code-badge">💻 0.1g 정밀 계량 싱글 오리진 (4)</span></td>
+          <td><strong>36,000원</strong></td>
+          <td><code>TDS: 1.25% | HPLC 99.8% | 85.0°C</code></td>
+          <td><button class="btn-term" onclick="toggleDrawer()">git add</button></td>
+        </tr>
+        <tr class="data-row" data-cat="📊 TDS 수온/시간 최적화 프로파일 팩 (4)">
+          <td><code>SEC-12</code></td>
+          <td><code>WK-P12</code></td>
+          <td><strong>📊 [경도 매칭] 120ppm 경수 최적화 추출 포뮬러 팩</strong></td>
+          <td><span class="code-badge">📊 TDS 수온/시간 최적화 프로파일 팩 (4)</span></td>
+          <td><strong>33,000원</strong></td>
+          <td><code>TDS: 1.25% | HPLC 99.8% | 85.0°C</code></td>
+          <td><button class="btn-term" onclick="toggleDrawer()">git add</button></td>
+        </tr>
+        <tr class="data-row" data-cat="⚙️ 티타늄 핀셋 & 정밀 계량 비커 (4)">
+          <td><code>SEC-13</code></td>
+          <td><code>WK-P13</code></td>
+          <td><strong>⚙️ [티타늄 집게] 마이크로 티백 전용 티타늄 트위저</strong></td>
+          <td><span class="code-badge">⚙️ 티타늄 핀셋 & 정밀 계량 비커 (4)</span></td>
+          <td><strong>25,000원</strong></td>
+          <td><code>TDS: 1.25% | HPLC 99.8% | 85.0°C</code></td>
+          <td><button class="btn-term" onclick="toggleDrawer()">git add</button></td>
+        </tr>
+        <tr class="data-row" data-cat="⚡ 심야 코딩 0.00mg 무카페인 GABA (4)">
+          <td><code>SEC-14</code></td>
+          <td><code>WK-P14</code></td>
+          <td><strong>⚡ [제로 지터] 카페인 부작용 없는 천연 테오브로민 티</strong></td>
+          <td><span class="code-badge">⚡ 심야 코딩 0.00mg 무카페인 GABA (4)</span></td>
+          <td><strong>29,000원</strong></td>
+          <td><code>TDS: 1.25% | HPLC 99.8% | 85.0°C</code></td>
+          <td><button class="btn-term" onclick="toggleDrawer()">git add</button></td>
+        </tr>
+        <tr class="data-row" data-cat="🚀 해커톤 48H 집중력 팀팩 (4)">
+          <td><code>SEC-15</code></td>
+          <td><code>WK-P15</code></td>
+          <td><strong>🚀 [온콜 릴리프] 새벽 온콜 엔지니어 1분 진정 허브티 팩</strong></td>
+          <td><span class="code-badge">🚀 해커톤 48H 집중력 팀팩 (4)</span></td>
+          <td><strong>35,000원</strong></td>
+          <td><code>TDS: 1.25% | HPLC 99.8% | 85.0°C</code></td>
+          <td><button class="btn-term" onclick="toggleDrawer()">git add</button></td>
+        </tr>
+        <tr class="data-row" data-cat="💻 0.1g 정밀 계량 싱글 오리진 (4)">
+          <td><code>SEC-16</code></td>
+          <td><code>WK-P16</code></td>
+          <td><strong>💻 [자동화 구독] 30일 알고리즘 맞춤 데이터 정기배송 팩</strong></td>
+          <td><span class="code-badge">💻 0.1g 정밀 계량 싱글 오리진 (4)</span></td>
+          <td><strong>33,150원</strong></td>
+          <td><code>TDS: 1.25% | HPLC 99.8% | 85.0°C</code></td>
+          <td><button class="btn-term" onclick="toggleDrawer()">git add</button></td>
+        </tr>
+        <tr class="data-row" data-cat="📊 TDS 수온/시간 최적화 프로파일 팩 (4)">
+          <td><code>SEC-17</code></td>
+          <td><code>WK-P17</code></td>
+          <td><strong>📊 [수율 캘리브레이션] 골든 브루잉 1.25% TDS 보정 키트</strong></td>
+          <td><span class="code-badge">📊 TDS 수온/시간 최적화 프로파일 팩 (4)</span></td>
+          <td><strong>49,000원</strong></td>
+          <td><code>TDS: 1.25% | HPLC 99.8% | 85.0°C</code></td>
+          <td><button class="btn-term" onclick="toggleDrawer()">git add</button></td>
+        </tr>
+        <tr class="data-row" data-cat="⚙️ 티타늄 핀셋 & 정밀 계량 비커 (4)">
+          <td><code>SEC-18</code></td>
+          <td><code>WK-P18</code></td>
+          <td><strong>⚙️ [서버실 거치대] 매트 블랙 알루미늄 티백 디스펜서</strong></td>
+          <td><span class="code-badge">⚙️ 티타늄 핀셋 & 정밀 계량 비커 (4)</span></td>
+          <td><strong>38,000원</strong></td>
+          <td><code>TDS: 1.25% | HPLC 99.8% | 85.0°C</code></td>
+          <td><button class="btn-term" onclick="toggleDrawer()">git add</button></td>
+        </tr>
+        <tr class="data-row" data-cat="⚡ 심야 코딩 0.00mg 무카페인 GABA (4)">
+          <td><code>SEC-19</code></td>
+          <td><code>WK-P19</code></td>
+          <td><strong>⚡ [블루라이트] 안구 피로 회복 안토시아닌 루비 팩</strong></td>
+          <td><span class="code-badge">⚡ 심야 코딩 0.00mg 무카페인 GABA (4)</span></td>
+          <td><strong>27,500원</strong></td>
+          <td><code>TDS: 1.25% | HPLC 99.8% | 85.0°C</code></td>
+          <td><button class="btn-term" onclick="toggleDrawer()">git add</button></td>
+        </tr>
+        <tr class="data-row" data-cat="🚀 해커톤 48H 집중력 팀팩 (4)">
+          <td><code>SEC-20</code></td>
+          <td><code>WK-P20</code></td>
+          <td><strong>🚀 [JSON 로그] 추출 파라미터 블루투스 연동 스마트 타이머</strong></td>
+          <td><span class="code-badge">🚀 해커톤 48H 집중력 팀팩 (4)</span></td>
+          <td><strong>65,000원</strong></td>
+          <td><code>TDS: 1.25% | HPLC 99.8% | 85.0°C</code></td>
+          <td><button class="btn-term" onclick="toggleDrawer()">git add</button></td>
+        </tr>
+
+      </tbody>
+    </table>
+  </main>
+
+  <!-- PAGE 3 -->
+  <main id="page-about" class="page-view container">
+    <section class="dash-card">
+      <span style="font-size:11px; font-weight:900; letter-spacing:2px; color:var(--text-muted);">PRECISION EXTRACTION SCIENCE & OPEN-SOURCE HUB</span>
+      <h1 style="font-size:24px; font-weight:900; margin-top:4px; color:#FFFFFF;">윤기준의 정밀 데이터 브루잉 (Precision Data Brewing)</h1>
+      <p style="color:var(--text-muted); margin-top:4px;">오차 0% 정밀 계량과 과학적 데이터로 완성하는 엔지니어의 집중력 리추얼</p>
+
+      <div style="border-left:4px solid #FFFFFF; padding:20px 0 20px 28px; margin:24px 0; background:#000000;">
+        <h3 style="font-size:15px; font-weight:900; color:#FFFFFF;">"문을 열고, 현실에서 벗어나세요 (Open the Door, Escape Reality)"</h3>
+        <p style="font-size:12px; color:var(--text-main); margin-top:6px; line-height:1.8;">
+          복잡한 알고리즘과 디버깅 속에서 뇌의 과부하를 막는 것은 정밀하게 계산된 수분과 무카페인 전해질입니다.<br/>
+          위케타 엔지니어링 랩은 <strong>HPLC 성분 분석 데이터</strong>와 <strong>TDS 수율 캘리브레이션 기술</strong>을 통해 불필요한 카페인 지터 없이 완벽한 몰입 상태를 유지하도록 설계되었습니다.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <aside id="cart-drawer" class="cart-drawer">
+    <div style="padding:20px 24px; border-bottom:1px solid var(--border-code); display:flex; justify-content:space-between;">
+      <h4 style="color:#FFFFFF;">🛒 TERMINAL COMMIT CART</h4>
+      <button class="btn-term" onclick="toggleDrawer()">✕</button>
+    </div>
+    <div style="flex:1; padding:24px;">
+      <div style="border:1px solid var(--border-code); padding:16px; margin-bottom:16px; background:#000000;">
+        <strong style="color:#FFFFFF;">[0.1g 정밀] HPLC 싱글 오리진 팩</strong>
+        <div style="font-size:11px; color:var(--text-muted); margin-top:4px;">QTY: 1 / 39,000 KRW</div>
+      </div>
+    </div>
+    <div style="padding:20px 24px; border-top:1px solid var(--border-code); background:#000000;">
+      <button class="btn-term primary" style="width:100%; padding:12px;">git push origin order</button>
+    </div>
+  </aside>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div>
+        <h5 style="color:#FFFFFF;">WICKETA PRECISION (위케타)</h5>
+        <p>문을 열고, 현실에서 벗어나세요 (Open the Door, Escape Reality)</p>
+        <p style="margin-top:6px;">고객센터: 1588-0000 | 성수 데이터 랩</p>
+      </div>
+      <div>
+        <h5 style="color:#FFFFFF;">인증 & 지원</h5>
+        <p>HPLC 화학 분석 성적서</p>
+      </div>
+      <div>
+        <h5 style="color:#FFFFFF;">오픈소스</h5>
+        <p>GitHub: github.com/wicketa-brewing</p>
+        <p>© 2026 WICKETA All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function switchPage(p) {
+      document.querySelectorAll('.page-view').forEach(el => el.classList.remove('active'));
+      let t = document.getElementById('page-' + p);
+      if(!t) t = document.getElementById('page-catalog');
+      if(!t) t = document.getElementById('page-home');
+      if(t) t.classList.add('active');
+
+      document.querySelectorAll('.wf-top-helper button').forEach(b => b.classList.remove('active'));
+      const btns = document.querySelectorAll('.wf-top-helper button');
+      if(p==='home'&&btns[0]) btns[0].classList.add('active');
+      else if(p==='catalog'&&btns[1]) btns[1].classList.add('active');
+      else if(p==='about'&&btns[2]) btns[2].classList.add('active');
+      window.scrollTo(0,0);
+    }
+    function toggleDrawer() { document.getElementById('cart-drawer').classList.toggle('open'); }
+    function filterProducts(cat) {
+      document.querySelectorAll('#page-catalog .data-row').forEach(c => {
+        if(cat.includes('전체') || c.getAttribute('data-cat') === cat) c.style.display = 'table-row';
+        else c.style.display = 'none';
+      });
+      document.querySelectorAll('#page-catalog .btn-term').forEach(b => b.classList.remove('primary'));
+      if(event && event.target) event.target.classList.add('primary');
+    }
+  </script>
+</body>
+</html>

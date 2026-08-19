@@ -1,0 +1,51 @@
+graph TD
+    classDef root fill:#0D47A1,stroke:#01579B,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef gnb fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef lnb fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef detail fill:#FFF8E1,stroke:#F57F17,stroke-width:1.5px,color:#E65100;
+    classDef aside fill:#E1F5FE,stroke:#0277BD,stroke-width:1.5px,color:#01579B;
+
+    ROOT["🏠 W09-HOME (터미널 대시보드 메인)<br/>• 수율 곡선 캔버스<br/>• 5대 개발자 콘솔"]
+
+    GNB1["🏢 GNB-01: 성분 도감<br/>(W09-CATALOG)"]
+    GNB2["📐 GNB-02: 기어 & 각인실<br/>(W09-BUILD)"]
+    GNB3["⏱️ GNB-03: 0.1초 타이머<br/>(W09-RITUAL)"]
+    GNB4["📑 GNB-04: 해커톤 팀팩<br/>(W09-ESTIMATE)"]
+
+    ROOT --> GNB1
+    ROOT --> GNB2
+    ROOT --> GNB3
+    ROOT --> GNB4
+
+    %% GNB1
+    WATER["💧 WATER-MATCHER-01 120ppm"]
+    HPLC["📜 HPLC 463종 데이터시트"]
+    GNB1 --> WATER
+    GNB1 --> HPLC
+
+    %% GNB2
+    DASH["📐 PRECISION-DASH-01 수율"]
+    CODE["⚡ CODE-ENGRAVER-01 깃 잔디 각인"]
+    GNB2 --> DASH
+    GNB2 --> CODE
+
+    %% GNB3
+    TIMER["⏱️ TIMER-01S-01 밀리초 계측"]
+    JSON["💾 LOG-EXPORT-01 JSON 내보내기"]
+    GNB3 --> TIMER
+    GNB3 --> JSON
+
+    %% GNB4
+    HACK["📑 HACKATHON-CALC-01 25%"]
+    NIGHT["🚚 NIGHT-SHIP-01 2시간 퀵"]
+    GNB4 --> HACK
+    GNB4 --> NIGHT
+
+    DRAWER["🛒 Aside: W09-DRAWER<br/>• 1-Click 간편결제 / 심야 퀵배송"]
+    ROOT -.-> DRAWER
+
+    class ROOT root;
+    class GNB1,GNB2,GNB3,GNB4 gnb;
+    class WATER,HPLC lnb;
+    class DASH,CODE,TIMER,JSON,HACK,NIGHT detail;
+    class DRAWER aside;

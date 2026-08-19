@@ -1,0 +1,54 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef catalog fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef sim fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["🏠 W08-HOME (틱톡 믹솔로지 허브)<br/>• 9:16 틱톡 캔버스<br/>• 5대 목적 퀵독"]
+
+    CATALOG["🍹 W08-CATALOG (트렌디 믹서 도감)<br/>• 파스텔 홀로그램 틴<br/>• 100잔 대용량 믹서"]
+    SIM["🧪 W08-SIMULATE (3D 변색 뷰어)<br/>• MAGIC-COLOR-01 3단 수색"]
+    BUILD["🛠️ W08-BUILD (3D 이모지 각인)<br/>• EMOJI-ENGRAVER-01 틴 각인"]
+    ESTIMATE["📑 W08-ESTIMATE (축제 100잔 계산)<br/>• FESTIVAL-CALC-01 30% 할인<br/>• BANNER-PDF-01 X배너"]
+
+    PAY_CHECK{"학생할인 및<br/>결제 승인"}
+    RANK_CHECK{"브이로그 랭킹<br/>(1위 달성?)"}
+
+    DRAWER["🛒 W08-DRAWER (패스트 체크아웃)<br/>• 카카오페이 / 15% 학생할인 / 단체 결제"]
+    DONE["✅ W08-DONE (주문 승인)<br/>• 촬영 PDF / 장학금 50만원 / 배너 PDF"]
+    COMM["🔄 W08-COMM (브이로그 & 랭킹)<br/>• VLOG-FEED-01 실시간 투표"]
+
+    %% 연결
+    HOME -->|목적1: 변색 에이드| SIM
+    SIM --> DRAWER
+
+    HOME -->|목적2: 홈카페 구독| CATALOG
+    CATALOG --> DRAWER
+
+    HOME -->|목적3: 이모지 선물| CATALOG
+    CATALOG --> BUILD
+    BUILD --> DRAWER
+
+    HOME -->|목적4: 브이로그 챌린지| COMM
+    COMM --> RANK_CHECK
+    RANK_CHECK -->|1위| DONE
+    RANK_CHECK -->|참여상| DONE
+
+    HOME -->|목적5: 축제 100잔| CATALOG
+    CATALOG --> ESTIMATE
+    ESTIMATE --> DRAWER
+
+    DRAWER --> PAY_CHECK
+    PAY_CHECK -->|결제 성공| DONE
+    PAY_CHECK -->|오류 시| DRAWER
+
+    DONE --> COMM
+
+    class HOME home;
+    class CATALOG catalog;
+    class SIM,BUILD,ESTIMATE sim;
+    class PAY_CHECK,RANK_CHECK decision;
+    class DRAWER,DONE drawer;
+    class COMM support;

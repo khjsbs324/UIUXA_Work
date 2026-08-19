@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WICKETA 와이어프레임 - 01 차은채 (A-1 Editorial Sanctuary)</title>
+  <style>
+    :root {
+      --bg-white: #FFFFFF; --bg-light: #F5F5F5; --bg-gray: #E5E5E5;
+      --border-dark: #111111; --border-gray: #CCCCCC; --border-dashed: #777777;
+      --text-dark: #111111; --text-muted: #555555;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Pretendard', -apple-system, sans-serif; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.7; min-height: 100vh; display: flex; flex-direction: column;
+    }
+    .wf-top-helper {
+      background: #111111; color: #FFFFFF; padding: 10px 32px; font-size: 11px;
+      display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #333333;
+    }
+    .wf-top-helper button {
+      background: #222222; color: #EEEEEE; border: 1px solid #444444; padding: 5px 12px; font-size: 11px; font-weight: 700; border-radius: 4px; cursor: pointer;
+    }
+    .wf-top-helper button.active { background: #FFFFFF; color: #111111; }
+
+    header.editorial-header {
+      background: var(--bg-white); border-bottom: 2px solid var(--border-dark); padding: 22px 64px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .brand-title { font-size: 22px; font-weight: 900; letter-spacing: 3px; }
+    nav.editorial-nav { display: flex; gap: 32px; }
+    nav.editorial-nav a { text-decoration: none; color: var(--text-dark); font-size: 13px; font-weight: 700; }
+
+    .container { max-width: 1320px; margin: 0 auto; padding: 48px 32px; width: 100%; flex: 1; }
+    .page-view { display: none; }
+    .page-view.active { display: block; }
+
+    .hero-editorial-section { display: grid; grid-template-columns: 1.1fr 1.6fr; gap: 48px; margin-bottom: 56px; align-items: center; }
+    .hero-essay-card { border-left: 4px solid var(--border-dark); padding-left: 32px; }
+    .hero-canvas-card { height: 390px; border: 1px dashed var(--border-dashed); background: var(--bg-gray); display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 24px; text-align: center; }
+
+    .quick-dock-editorial { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-bottom: 56px; }
+    .dock-box-ed { border: 1px solid var(--border-gray); background: var(--bg-white); padding: 20px; text-align: center; cursor: pointer; }
+    .dock-box-ed:hover { border-color: var(--border-dark); background: #EEEEEE; }
+
+    .curation-split-module { border: 2px solid var(--border-dark); background: var(--bg-white); padding: 40px; margin-bottom: 56px; }
+    .curation-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 24px; }
+
+    .lookbook-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .lookbook-item { border: 1px solid var(--border-gray); background: var(--bg-white); display: flex; flex-direction: column; }
+    .lookbook-item.featured-look { grid-column: span 2; background: #F9F9F9; border: 2px solid var(--border-dark); }
+    .look-img-box { height: 240px; border-bottom: 1px solid var(--border-gray); background: var(--bg-gray); position: relative; display: flex; justify-content: center; align-items: center; }
+    .featured-look .look-img-box { height: 320px; }
+    .look-num { position: absolute; top: 12px; left: 12px; background: #111111; color: #FFFFFF; font-size: 10px; font-weight: 900; padding: 3px 8px; }
+    .look-placeholder { font-size: 12px; color: var(--text-muted); font-weight: 700; }
+    .look-desc { padding: 20px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .look-header { display: flex; justify-content: space-between; font-size: 11px; font-weight: 700; color: var(--text-muted); margin-bottom: 6px; }
+    .look-title { font-size: 15px; font-weight: 900; margin-bottom: 8px; line-height: 1.4; }
+    .look-essay { font-size: 12px; color: var(--text-muted); font-style: italic; background: var(--bg-light); padding: 10px 12px; border-left: 3px solid var(--border-dark); margin-bottom: 14px; }
+    .look-bottom { display: flex; justify-content: space-between; align-items: center; }
+    .look-price { font-size: 15px; font-weight: 900; }
+    .look-btns { display: flex; gap: 6px; }
+
+    .btn-wf { background: var(--bg-white); border: 1px solid var(--border-dark); color: var(--text-dark); padding: 8px 14px; font-size: 11px; font-weight: 700; cursor: pointer; }
+    .btn-wf.primary { background: var(--border-dark); color: #FFFFFF; }
+
+    .cart-drawer { position: fixed; top: 0; right: -440px; width: 420px; height: 100vh; background: var(--bg-white); border-left: 2px solid var(--border-dark); z-index: 2000; transition: right 0.3s ease; display: flex; flex-direction: column; }
+    .cart-drawer.open { right: 0; }
+
+    footer.site-footer { background: #111111; color: #999999; padding: 48px 32px; font-size: 12px; margin-top: auto; border-top: 1px solid #333333; }
+    .footer-content { max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; }
+  </style>
+</head>
+<body>
+  <div class="wf-top-helper">
+    <div><strong>[A-1 무채색 에디토리얼 와이어프레임]</strong> 01 차은채 디렉터 맞춤</div>
+    <div>
+      <button class="active" onclick="switchPage('home')">Page 1: 에디토리얼 안식처 허브</button>
+      <button onclick="switchPage('catalog')">Page 2: 디렉터스 룩북 아카이브 (20종 전체)</button>
+      <button onclick="switchPage('about')">Page 3: 성수 1:1 시향 쇼룸 & 세계관</button>
+      <button onclick="toggleDrawer()">🛒 1초 결제 드로어</button>
+    </div>
+  </div>
+
+  <header class="editorial-header">
+    <div class="brand-title">WICKETA <span>EDITORIAL SANCTUARY</span></div>
+    <nav class="editorial-nav">
+      <a href="javascript:void(0)" onclick="switchPage('about')">에세이 아카이브</a>
+      <a href="javascript:void(0)" onclick="switchPage('catalog')">디렉터스 룩북 (20)</a>
+      <a href="javascript:void(0)" onclick="switchPage('home')">2X 캔버스 편집기</a>
+      <a href="javascript:void(0)" onclick="switchPage('home')">180초 리추얼</a>
+      <a href="javascript:void(0)" onclick="switchPage('about')">성수 쇼룸 1:1</a>
+    </nav>
+    <button class="btn-wf primary" onclick="toggleDrawer()">BAG (2)</button>
+  </header>
+
+  <!-- PAGE 1 -->
+  <main id="page-home" class="page-view active container">
+    <section class="hero-editorial-section">
+      <div class="hero-essay-card">
+        <span style="font-size:11px; font-weight:900; letter-spacing:2px;">DIRECTOR'S ESSAY</span>
+        <h1 style="font-size:32px; font-weight:900; line-height:1.3; margin:10px 0 14px;">"문을 열고,<br/>현실에서 벗어나세요"</h1>
+        <p style="font-size:13px; color:var(--text-muted);">바쁜 일상에 지친 2030 세대에게 노동 없는 3분간의 초현실주의적 안식처를 제안합니다. 차를 우리는 과정 자체를 시각적 예술과 감정의 회복으로 승화시킨 디렉터스 컬렉션.</p>
+        <button class="btn-wf primary" style="margin-top:24px; padding:12px 24px;" onclick="switchPage('catalog')">LOOKBOOK ARCHIVE DISCOVER →</button>
+      </div>
+      <div class="hero-canvas-card">
+        <strong>[COLLECTION-EDITOR-01: 2X 시네마틱 비주얼 캔버스 (1200x390)]</strong>
+        <span style="font-size:12px; margin-top:6px; color:var(--text-muted);">디렉터스 론칭 시그니처 D2C 오로라 팩 & 빛 굴절 글래스웨어 3D 렌더링</span>
+      </div>
+    </section>
+
+    <div class="quick-dock-editorial">
+      <div class="dock-box-ed" onclick="switchPage('catalog')"><h4>목적 1</h4><strong>론칭 시그니처 팩</strong><div style="font-size:10px; color:var(--text-muted);">1초 융해 버터플라이피</div></div>
+      <div class="dock-box-ed" onclick="switchPage('catalog')"><h4>목적 2</h4><strong>2030 심신 안식 구독</strong><div style="font-size:10px; color:var(--text-muted);">0.00mg GABA 새벽배송</div></div>
+      <div class="dock-box-ed" onclick="switchPage('catalog')"><h4>목적 3</h4><strong>린넨 보자기 선물</strong><div style="font-size:10px; color:var(--text-muted);">빛 굴절 잔 & 엽서 각인</div></div>
+      <div class="dock-box-ed" onclick="switchPage('catalog')"><h4>목적 4</h4><strong>180초 사운드 리추얼</strong><div style="font-size:10px; color:var(--text-muted);">432Hz 빗소리 앰비언트</div></div>
+      <div class="dock-box-ed" onclick="switchPage('about')"><h4>목적 5</h4><strong>성수 쇼룸 1:1 예약</strong><div style="font-size:10px; color:var(--text-muted);">디렉터 프라이빗 시향</div></div>
+    </div>
+
+    <!-- CURATION MODULE -->
+    <section class="curation-split-module">
+      <div style="display:flex; justify-content:space-between; align-items:flex-end; border-bottom:2px solid var(--border-dark); padding-bottom:14px;">
+        <div>
+          <span style="font-size:11px; font-weight:900;">EDITORIAL CURATION</span>
+          <h2 style="font-size:22px; font-weight:900; margin-top:4px;">차은채 디렉터가 추천하는 3대 안식처 큐레이션</h2>
+        </div>
+        <button class="btn-wf primary" onclick="toggleDrawer()">선택 에디토리얼 번들 발주</button>
+      </div>
+      <div class="curation-grid-3">
+        <div style="border:1px solid var(--border-gray); padding:16px; background:var(--bg-light);">
+          <div style="height:140px; border:1px dashed var(--border-dashed); background:var(--bg-gray); display:flex; justify-content:center; align-items:center; font-size:11px;">[큐레이션 1 뷰박스]</div>
+          <h4 style="font-size:13px; font-weight:700; margin-top:10px;">[디렉터스 픽] D2C 론칭 오로라 팩</h4>
+          <div style="font-weight:900; margin:6px 0;">39,000원</div>
+          <button class="btn-wf primary" style="width:100%;" onclick="toggleDrawer()">1초 결제</button>
+        </div>
+        <div style="border:1px solid var(--border-gray); padding:16px; background:var(--bg-light);">
+          <div style="height:140px; border:1px dashed var(--border-dashed); background:var(--bg-gray); display:flex; justify-content:center; align-items:center; font-size:11px;">[큐레이션 2 뷰박스]</div>
+          <h4 style="font-size:13px; font-weight:700; margin-top:10px;">2030 심신 안식 GABA 티</h4>
+          <div style="font-weight:900; margin:6px 0;">36,000원</div>
+          <button class="btn-wf primary" style="width:100%;" onclick="toggleDrawer()">1초 결제</button>
+        </div>
+        <div style="border:1px solid var(--border-gray); padding:16px; background:var(--bg-light);">
+          <div style="height:140px; border:1px dashed var(--border-dashed); background:var(--bg-gray); display:flex; justify-content:center; align-items:center; font-size:11px;">[큐레이션 3 뷰박스]</div>
+          <h4 style="font-size:13px; font-weight:700; margin-top:10px;">린넨 보자기 & 빛 굴절 세트</h4>
+          <div style="font-weight:900; margin:6px 0;">48,000원</div>
+          <button class="btn-wf primary" style="width:100%;" onclick="toggleDrawer()">1초 결제</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PAGE 2 -->
+  <main id="page-catalog" class="page-view container">
+    <div style="border-bottom:2px solid var(--border-dark); padding-bottom:16px; margin-bottom:36px; display:flex; justify-content:space-between; align-items:flex-end;">
+      <div>
+        <h1 style="font-size:26px; font-weight:900;">디렉터스 룩북 아카이브 (20종 전체 도감)</h1>
+        <p style="color:var(--text-muted); font-size:13px;">에디토리얼 화보와 디렉터 에세이가 수록된 비대칭 매거진형 상품 리스팅</p>
+      </div>
+      <div style="display:flex; gap:8px;">
+        <button class="btn-wf primary" onclick="filterProducts('전체 디렉터스 팩 (20)')">전체 디렉터스 팩 (20)</button>
+        <button class="btn-wf " onclick="filterProducts('✨ 디렉터스 론칭 시그니처 팩 (4)')">✨ 디렉터스 론칭 시그니처 팩 (4)</button>
+        <button class="btn-wf " onclick="filterProducts('🌙 2030 심신 안식 & 캄테크 (4)')">🌙 2030 심신 안식 & 캄테크 (4)</button>
+        <button class="btn-wf " onclick="filterProducts('🌿 0.00mg 무카페인 데일리 (4)')">🌿 0.00mg 무카페인 데일리 (4)</button>
+        <button class="btn-wf " onclick="filterProducts('🥂 빛 굴절 글래스 & 다기 (4)')">🥂 빛 굴절 글래스 & 다기 (4)</button>
+        <button class="btn-wf " onclick="filterProducts('📦 30일 새벽배송 정기구독 (4)')">📦 30일 새벽배송 정기구독 (4)</button>
+        
+      </div>
+    </div>
+    <div class="lookbook-grid">
+        <div class="lookbook-item featured-look" data-cat="✨ 디렉터스 론칭 시그니처 팩 (4)">
+          <div class="look-img-box">
+            <span class="look-num">EDITORIAL #01</span>
+            <div class="look-placeholder">[SEC-01 시네마틱 화보 뷰박스]</div>
+          </div>
+          <div class="look-desc">
+            <div class="look-header">
+              <span class="look-cat">✨ 디렉터스 론칭 시그니처 팩 (4)</span>
+              <span class="look-code">WK-P01</span>
+            </div>
+            <h3 class="look-title">⭐ [디렉터스 시그니처] D2C 론칭 오로라 블루 팩</h3>
+            <div class="look-essay">"차가 주는 고요한 시각적 위로와 0.1초 만에 피어나는 오로라 수색을 담은 에디션입니다."</div>
+            <div class="look-bottom">
+              <div class="look-price">39,000원</div>
+              <div class="look-btns">
+                <button class="btn-wf">룩북 저장</button>
+                <button class="btn-wf primary" onclick="toggleDrawer()">컬렉션 담기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lookbook-item standard-look" data-cat="🌙 2030 심신 안식 & 캄테크 (4)">
+          <div class="look-img-box">
+            <span class="look-num">EDITORIAL #02</span>
+            <div class="look-placeholder">[SEC-02 시네마틱 화보 뷰박스]</div>
+          </div>
+          <div class="look-desc">
+            <div class="look-header">
+              <span class="look-cat">🌙 2030 심신 안식 & 캄테크 (4)</span>
+              <span class="look-code">WK-P02</span>
+            </div>
+            <h3 class="look-title">🌙 [나이트 안식] 미드나잇 GABA 0.00mg 무카페인</h3>
+            <div class="look-essay">"차가 주는 고요한 시각적 위로와 0.1초 만에 피어나는 오로라 수색을 담은 에디션입니다."</div>
+            <div class="look-bottom">
+              <div class="look-price">32,000원</div>
+              <div class="look-btns">
+                <button class="btn-wf">룩북 저장</button>
+                <button class="btn-wf primary" onclick="toggleDrawer()">컬렉션 담기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lookbook-item standard-look" data-cat="🥂 빛 굴절 글래스 & 다기 (4)">
+          <div class="look-img-box">
+            <span class="look-num">EDITORIAL #03</span>
+            <div class="look-placeholder">[SEC-03 시네마틱 화보 뷰박스]</div>
+          </div>
+          <div class="look-desc">
+            <div class="look-header">
+              <span class="look-cat">🥂 빛 굴절 글래스 & 다기 (4)</span>
+              <span class="look-code">WK-P03</span>
+            </div>
+            <h3 class="look-title">🥂 [빛 굴절] 더블월 시네마틱 글래스웨어 2P</h3>
+            <div class="look-essay">"차가 주는 고요한 시각적 위로와 0.1초 만에 피어나는 오로라 수색을 담은 에디션입니다."</div>
+            <div class="look-bottom">
+              <div class="look-price">28,000원</div>
+              <div class="look-btns">
+                <button class="btn-wf">룩북 저장</button>
+                <button class="btn-wf primary" onclick="toggleDrawer()">컬렉션 담기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lookbook-item standard-look" data-cat="🌿 0.00mg 무카페인 데일리 (4)">
+          <div class="look-img-box">
+            <span class="look-num">EDITORIAL #04</span>
+            <div class="look-placeholder">[SEC-04 시네마틱 화보 뷰박스]</div>
+          </div>
+          <div class="look-desc">
+            <div class="look-header">
+              <span class="look-cat">🌿 0.00mg 무카페인 데일리 (4)</span>
+              <span class="look-code">WK-P04</span>
+            </div>
+            <h3 class="look-title">🌿 [모닝 리프레시] 에메랄드 시트러스 라임 마테</h3>
+            <div class="look-essay">"차가 주는 고요한 시각적 위로와 0.1초 만에 피어나는 오로라 수색을 담은 에디션입니다."</div>
+            <div class="look-bottom">
+              <div class="look-price">29,000원</div>
+              <div class="look-btns">
+                <button class="btn-wf">룩북 저장</button>
+                <button class="btn-wf primary" onclick="toggleDrawer()">컬렉션 담기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lookbook-item standard-look" data-cat="📦 30일 새벽배송 정기구독 (4)">
+          <div class="look-img-box">
+            <span class="look-num">EDITORIAL #05</span>
+            <div class="look-placeholder">[SEC-05 시네마틱 화보 뷰박스]</div>
+          </div>
+          <div class="look-desc">
+            <div class="look-header">
+              <span class="look-cat">📦 30일 새벽배송 정기구독 (4)</span>
+              <span class="look-code">WK-P05</span>
+            </div>
+            <h3 class="look-title">📦 [에디토리얼 구독] 30일 새벽배송 안식 패키지</h3>
+            <div class="look-essay">"차가 주는 고요한 시각적 위로와 0.1초 만에 피어나는 오로라 수색을 담은 에디션입니다."</div>
+            <div class="look-bottom">
+              <div class="look-price">78,000원</div>
+              <div class="look-btns">
+                <button class="btn-wf">룩북 저장</button>
+                <button class="btn-wf primary" onclick="toggleDrawer()">컬렉션 담기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lookbook-item featured-look" data-cat="✨ 디렉터스 론칭 시그니처 팩 (4)">
+          <div class="look-img-box">
+            <span class="look-num">EDITORIAL #06</span>
+            <div class="look-placeholder">[SEC-06 시네마틱 화보 뷰박스]</div>
+          </div>
+          <div class="look-desc">
+            <div class="look-header">
+              <span class="look-cat">✨ 디렉터스 론칭 시그니처 팩 (4)</span>
+              <span class="look-code">WK-P06</span>
+            </div>
+            <h3 class="look-title">✨ [선셋 바이올렛] 3단 레이어링 론칭 팩</h3>
+            <div class="look-essay">"차가 주는 고요한 시각적 위로와 0.1초 만에 피어나는 오로라 수색을 담은 에디션입니다."</div>
+            <div class="look-bottom">
+              <div class="look-price">34,000원</div>
+              <div class="look-btns">
+                <button class="btn-wf">룩북 저장</button>
+                <button class="btn-wf primary" onclick="toggleDrawer()">컬렉션 담기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lookbook-item standard-look" data-cat="🌙 2030 심신 안식 & 캄테크 (4)">
+          <div class="look-img-box">
+            <span class="look-num">EDITORIAL #07</span>
+            <div class="look-placeholder">[SEC-07 시네마틱 화보 뷰박스]</div>
+          </div>
+          <div class="look-desc">
+            <div class="look-header">
+              <span class="look-cat">🌙 2030 심신 안식 & 캄테크 (4)</span>
+              <span class="look-code">WK-P07</span>
+            </div>
+            <h3 class="look-title">🌙 [딥 슬립] 발레리안 루트 & 라벤더 숙면 티</h3>
+            <div class="look-essay">"차가 주는 고요한 시각적 위로와 0.1초 만에 피어나는 오로라 수색을 담은 에디션입니다."</div>
+            <div class="look-bottom">
+              <div class="look-price">33,000원</div>
+              <div class="look-btns">
+                <button class="btn-wf">룩북 저장</button>
+                <button class="btn-wf primary" onclick="toggleDrawer()">컬렉션 담기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lookbook-item standard-look" data-cat="🥂 빛 굴절 글래스 & 다기 (4)">
+          <div class="look-img-box">
+            <span class="look-num">EDITORIAL #08</span>
+            <div class="look-placeholder">[SEC-08 시네마틱 화보 뷰박스]</div>
+          </div>
+          <div class="look-desc">
+            <div class="look-header">
+              <span class="look-cat">🥂 빛 굴절 글래스 & 다기 (4)</span>
+              <span class="look-code">WK-P08</span>
+            </div>
+            <h3 class="look-title">🥂 [크리스탈 스틱] 핸드메이드 유리 머들러 2종</h3>
+            <div class="look-essay">"차가 주는 고요한 시각적 위로와 0.1초 만에 피어나는 오로라 수색을 담은 에디션입니다."</div>
+            <div class="look-bottom">
+              <div class="look-price">19,000원</div>
+              <div class="look-btns">
+                <button class="btn-wf">룩북 저장</button>
+                <button class="btn-wf primary" onclick="toggleDrawer()">컬렉션 담기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lookbook-item standard-look" data-cat="🌿 0.00mg 무카페인 데일리 (4)">
+          <div class="look-img-box">
+            <span class="look-num">EDITORIAL #09</span>
+            <div class="look-placeholder">[SEC-09 시네마틱 화보 뷰박스]</div>
+          </div>
+          <div class="look-desc">
+            <div class="look-header">
+              <span class="look-cat">🌿 0.00mg 무카페인 데일리 (4)</span>
+              <span class="look-code">WK-P09</span>
+            </div>
+            <h3 class="look-title">🌿 [무설탕 베리] 유기농 히비스커스 앤 루비 베리</h3>
+            <div class="look-essay">"차가 주는 고요한 시각적 위로와 0.1초 만에 피어나는 오로라 수색을 담은 에디션입니다."</div>
+            <div class="look-bottom">
+              <div class="look-price">27,000원</div>
+              <div class="look-btns">
+                <button class="btn-wf">룩북 저장</button>
+                <button class="btn-wf primary" onclick="toggleDrawer()">컬렉션 담기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lookbook-item standard-look" data-cat="📦 30일 새벽배송 정기구독 (4)">
+          <div class="look-img-box">
+            <span class="look-num">EDITORIAL #10</span>
+            <div class="look-placeholder">[SEC-10 시네마틱 화보 뷰박스]</div>
+          </div>
+          <div class="look-desc">
+            <div class="look-header">
+              <span class="look-cat">📦 30일 새벽배송 정기구독 (4)</span>
+              <span class="look-code">WK-P10</span>
+            </div>
+            <h3 class="look-title">📦 [오피스 안식] 2주 스프린트 40포 번들</h3>
+            <div class="look-essay">"차가 주는 고요한 시각적 위로와 0.1초 만에 피어나는 오로라 수색을 담은 에디션입니다."</div>
+            <div class="look-bottom">
+              <div class="look-price">52,000원</div>
+              <div class="look-btns">
+                <button class="btn-wf">룩북 저장</button>
+                <button class="btn-wf primary" onclick="toggleDrawer()">컬렉션 담기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lookbook-item featured-look" data-cat="✨ 디렉터스 론칭 시그니처 팩 (4)">
+          <div class="look-img-box">
+            <span class="look-num">EDITORIAL #11</span>
+            <div class="look-placeholder">[SEC-11 시네마틱 화보 뷰박스]</div>
+          </div>
+          <div class="look-desc">
+            <div class="look-header">
+              <span class="look-cat">✨ 디렉터스 론칭 시그니처 팩 (4)</span>
+              <span class="look-code">WK-P11</span>
+            </div>
+            <h3 class="look-title">✨ [포토 틴케이스] 매트 블랙 한정판 시그니처 틴</h3>
+            <div class="look-essay">"차가 주는 고요한 시각적 위로와 0.1초 만에 피어나는 오로라 수색을 담은 에디션입니다."</div>
+            <div class="look-bottom">
+              <div class="look-price">42,000원</div>
+              <div class="look-btns">
+                <button class="btn-wf">룩북 저장</button>
+                <button class="btn-wf primary" onclick="toggleDrawer()">컬렉션 담기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lookbook-item standard-look" data-cat="🌙 2030 심신 안식 & 캄테크 (4)">
+          <div class="look-img-box">
+            <span class="look-num">EDITORIAL #12</span>
+            <div class="look-placeholder">[SEC-12 시네마틱 화보 뷰박스]</div>
+          </div>
+          <div class="look-desc">
+            <div class="look-header">
+              <span class="look-cat">🌙 2030 심신 안식 & 캄테크 (4)</span>
+              <span class="look-code">WK-P12</span>
+            </div>
+            <h3 class="look-title">🌙 [번아웃 케어] L-테아닌 200mg 릴랙스 그린티</h3>
+            <div class="look-essay">"차가 주는 고요한 시각적 위로와 0.1초 만에 피어나는 오로라 수색을 담은 에디션입니다."</div>
+            <div class="look-bottom">
+              <div class="look-price">31,000원</div>
+              <div class="look-btns">
+                <button class="btn-wf">룩북 저장</button>
+                <button class="btn-wf primary" onclick="toggleDrawer()">컬렉션 담기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lookbook-item standard-look" data-cat="🥂 빛 굴절 글래스 & 다기 (4)">
+          <div class="look-img-box">
+            <span class="look-num">EDITORIAL #13</span>
+            <div class="look-placeholder">[SEC-13 시네마틱 화보 뷰박스]</div>
+          </div>
+          <div class="look-desc">
+            <div class="look-header">
+              <span class="look-cat">🥂 빛 굴절 글래스 & 다기 (4)</span>
+              <span class="look-code">WK-P13</span>
+            </div>
+            <h3 class="look-title">🥂 [린넨 트레이] 천연 자작나무 & 린넨 코스터 세트</h3>
+            <div class="look-essay">"차가 주는 고요한 시각적 위로와 0.1초 만에 피어나는 오로라 수색을 담은 에디션입니다."</div>
+            <div class="look-bottom">
+              <div class="look-price">24,000원</div>
+              <div class="look-btns">
+                <button class="btn-wf">룩북 저장</button>
+                <button class="btn-wf primary" onclick="toggleDrawer()">컬렉션 담기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lookbook-item standard-look" data-cat="🌿 0.00mg 무카페인 데일리 (4)">
+          <div class="look-img-box">
+            <span class="look-num">EDITORIAL #14</span>
+            <div class="look-placeholder">[SEC-14 시네마틱 화보 뷰박스]</div>
+          </div>
+          <div class="look-desc">
+            <div class="look-header">
+              <span class="look-cat">🌿 0.00mg 무카페인 데일리 (4)</span>
+              <span class="look-code">WK-P14</span>
+            </div>
+            <h3 class="look-title">🌿 [클린 루이보스] 최고등급 그린 루이보스 순차</h3>
+            <div class="look-essay">"차가 주는 고요한 시각적 위로와 0.1초 만에 피어나는 오로라 수색을 담은 에디션입니다."</div>
+            <div class="look-bottom">
+              <div class="look-price">26,000원</div>
+              <div class="look-btns">
+                <button class="btn-wf">룩북 저장</button>
+                <button class="btn-wf primary" onclick="toggleDrawer()">컬렉션 담기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lookbook-item standard-look" data-cat="📦 30일 새벽배송 정기구독 (4)">
+          <div class="look-img-box">
+            <span class="look-num">EDITORIAL #15</span>
+            <div class="look-placeholder">[SEC-15 시네마틱 화보 뷰박스]</div>
+          </div>
+          <div class="look-desc">
+            <div class="look-header">
+              <span class="look-cat">📦 30일 새벽배송 정기구독 (4)</span>
+              <span class="look-code">WK-P15</span>
+            </div>
+            <h3 class="look-title">📦 [시즌 큐레이션] 계절별 디렉터스 셀렉션 팩</h3>
+            <div class="look-essay">"차가 주는 고요한 시각적 위로와 0.1초 만에 피어나는 오로라 수색을 담은 에디션입니다."</div>
+            <div class="look-bottom">
+              <div class="look-price">85,000원</div>
+              <div class="look-btns">
+                <button class="btn-wf">룩북 저장</button>
+                <button class="btn-wf primary" onclick="toggleDrawer()">컬렉션 담기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lookbook-item featured-look" data-cat="✨ 디렉터스 론칭 시그니처 팩 (4)">
+          <div class="look-img-box">
+            <span class="look-num">EDITORIAL #16</span>
+            <div class="look-placeholder">[SEC-16 시네마틱 화보 뷰박스]</div>
+          </div>
+          <div class="look-desc">
+            <div class="look-header">
+              <span class="look-cat">✨ 디렉터스 론칭 시그니처 팩 (4)</span>
+              <span class="look-code">WK-P16</span>
+            </div>
+            <h3 class="look-title">✨ [콜라보 에디션] 런던 아트 디렉터 협업 한정판</h3>
+            <div class="look-essay">"차가 주는 고요한 시각적 위로와 0.1초 만에 피어나는 오로라 수색을 담은 에디션입니다."</div>
+            <div class="look-bottom">
+              <div class="look-price">45,000원</div>
+              <div class="look-btns">
+                <button class="btn-wf">룩북 저장</button>
+                <button class="btn-wf primary" onclick="toggleDrawer()">컬렉션 담기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lookbook-item standard-look" data-cat="🌙 2030 심신 안식 & 캄테크 (4)">
+          <div class="look-img-box">
+            <span class="look-num">EDITORIAL #17</span>
+            <div class="look-placeholder">[SEC-17 시네마틱 화보 뷰박스]</div>
+          </div>
+          <div class="look-desc">
+            <div class="look-header">
+              <span class="look-cat">🌙 2030 심신 안식 & 캄테크 (4)</span>
+              <span class="look-code">WK-P17</span>
+            </div>
+            <h3 class="look-title">🌙 [사운드 타이머] 432Hz 앰비언트 모바일 리추얼 키트</h3>
+            <div class="look-essay">"차가 주는 고요한 시각적 위로와 0.1초 만에 피어나는 오로라 수색을 담은 에디션입니다."</div>
+            <div class="look-bottom">
+              <div class="look-price">22,000원</div>
+              <div class="look-btns">
+                <button class="btn-wf">룩북 저장</button>
+                <button class="btn-wf primary" onclick="toggleDrawer()">컬렉션 담기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lookbook-item standard-look" data-cat="🥂 빛 굴절 글래스 & 다기 (4)">
+          <div class="look-img-box">
+            <span class="look-num">EDITORIAL #18</span>
+            <div class="look-placeholder">[SEC-18 시네마틱 화보 뷰박스]</div>
+          </div>
+          <div class="look-desc">
+            <div class="look-header">
+              <span class="look-cat">🥂 빛 굴절 글래스 & 다기 (4)</span>
+              <span class="look-code">WK-P18</span>
+            </div>
+            <h3 class="look-title">🥂 [골드 스푼] 24K 골드 도금 티스푼 2P 세트</h3>
+            <div class="look-essay">"차가 주는 고요한 시각적 위로와 0.1초 만에 피어나는 오로라 수색을 담은 에디션입니다."</div>
+            <div class="look-bottom">
+              <div class="look-price">21,000원</div>
+              <div class="look-btns">
+                <button class="btn-wf">룩북 저장</button>
+                <button class="btn-wf primary" onclick="toggleDrawer()">컬렉션 담기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lookbook-item standard-look" data-cat="🌿 0.00mg 무카페인 데일리 (4)">
+          <div class="look-img-box">
+            <span class="look-num">EDITORIAL #19</span>
+            <div class="look-placeholder">[SEC-19 시네마틱 화보 뷰박스]</div>
+          </div>
+          <div class="look-desc">
+            <div class="look-header">
+              <span class="look-cat">🌿 0.00mg 무카페인 데일리 (4)</span>
+              <span class="look-code">WK-P19</span>
+            </div>
+            <h3 class="look-title">🌿 [비건 안토시아닌] 100% 천연 꽃잎 추출 티스틱</h3>
+            <div class="look-essay">"차가 주는 고요한 시각적 위로와 0.1초 만에 피어나는 오로라 수색을 담은 에디션입니다."</div>
+            <div class="look-bottom">
+              <div class="look-price">28,500원</div>
+              <div class="look-btns">
+                <button class="btn-wf">룩북 저장</button>
+                <button class="btn-wf primary" onclick="toggleDrawer()">컬렉션 담기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lookbook-item standard-look" data-cat="📦 30일 새벽배송 정기구독 (4)">
+          <div class="look-img-box">
+            <span class="look-num">EDITORIAL #20</span>
+            <div class="look-placeholder">[SEC-20 시네마틱 화보 뷰박스]</div>
+          </div>
+          <div class="look-desc">
+            <div class="look-header">
+              <span class="look-cat">📦 30일 새벽배송 정기구독 (4)</span>
+              <span class="look-code">WK-P20</span>
+            </div>
+            <h3 class="look-title">📦 [VIP 풀세트] 20종 전 품목 마스터 기프트 박스</h3>
+            <div class="look-essay">"차가 주는 고요한 시각적 위로와 0.1초 만에 피어나는 오로라 수색을 담은 에디션입니다."</div>
+            <div class="look-bottom">
+              <div class="look-price">150,000원</div>
+              <div class="look-btns">
+                <button class="btn-wf">룩북 저장</button>
+                <button class="btn-wf primary" onclick="toggleDrawer()">컬렉션 담기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </main>
+
+  <!-- PAGE 3 -->
+  <main id="page-about" class="page-view container">
+    <section class="curation-split-module">
+      <span style="font-size:11px; font-weight:900; letter-spacing:2px;">BRAND PHILOSOPHY & SANCTUARY</span>
+      <h1 style="font-size:28px; font-weight:900; margin-top:4px;">차은채의 비밀정원 다과회 (Editorial Sanctuary)</h1>
+      <p style="color:var(--text-muted); margin-top:4px;">위케타가 제안하는 노동 없는 3분간의 초현실주의적 안식처</p>
+
+      <div style="border-left:4px solid var(--border-dark); padding:20px 0 20px 28px; margin:24px 0; background:var(--bg-light);">
+        <h3 style="font-size:16px; font-weight:900;">"문을 열고, 현실에서 벗어나세요 (Open the Door, Escape Reality)"</h3>
+        <p style="font-size:13px; color:var(--text-muted); margin-top:6px; line-height:1.8;">
+          복잡한 일상과 번아웃에 지친 현대인에게 차를 우리고 마시는 행위는 더 이상 번거로운 노동이 아니어야 합니다.<br/>
+          위케타는 0.1초 만에 찬물과 탄산수에 녹아드는 <strong>1초 융해 기술</strong>과 <strong>0.00mg 무카페인 천연 원료</strong>를 결합하여,<br/>
+          문을 열면 펼쳐지는 신비로운 비밀정원의 티타임을 당신의 일상 속으로 배달합니다.
+        </p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; margin:32px 0;">
+        <div style="border:1px solid var(--border-gray); padding:20px; background:var(--bg-white);">
+          <h4 style="font-size:14px; font-weight:900;">1. 0.1초 융해 제로 레이버</h4>
+          <p style="font-size:12px; color:var(--text-muted); margin-top:4px;">동결건조 미세분쇄 공법으로 찬물과 탄산수에서도 0.1초 만에 완벽히 용출</p>
+        </div>
+        <div style="border:1px solid var(--border-gray); padding:20px; background:var(--bg-white);">
+          <h4 style="font-size:14px; font-weight:900;">2. 0.00mg 무카페인 심신 안식</h4>
+          <p style="font-size:12px; color:var(--text-muted); margin-top:4px;">KTR 3無(무카페인/무설탕/무합성향) 공인 시험성적서로 밤에도 안심 수면</p>
+        </div>
+        <div style="border:1px solid var(--border-gray); padding:20px; background:var(--bg-white);">
+          <h4 style="font-size:14px; font-weight:900;">3. 캄테크 웰니스 리추얼</h4>
+          <p style="font-size:12px; color:var(--text-muted); margin-top:4px;">432Hz 빗소리 앰비언트 음향과 180초 타이머로 즐기는 나만의 힐링 타임</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <aside id="cart-drawer" class="cart-drawer">
+    <div style="padding:20px 24px; border-bottom:1px solid var(--border-gray); display:flex; justify-content:space-between;">
+      <h4>🛒 EDITORIAL BAG</h4>
+      <button class="btn-wf" onclick="toggleDrawer()">✕ 닫기</button>
+    </div>
+    <div style="flex:1; padding:24px;">
+      <div style="border:1px solid var(--border-gray); padding:16px; margin-bottom:16px;">
+        <strong>[디렉터스 시그니처] D2C 론칭 오로라 팩</strong>
+        <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">수량: 1개 / 39,000원</div>
+      </div>
+    </div>
+    <div style="padding:20px 24px; border-top:1px solid var(--border-gray); background:var(--bg-light);">
+      <button class="btn-wf primary" style="width:100%; padding:12px;">1-CLICK CHECKOUT (39,000원)</button>
+    </div>
+  </aside>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div>
+        <h5>WICKETA (위케타)</h5>
+        <p>문을 열고, 현실에서 벗어나세요 (Open the Door, Escape Reality)</p>
+        <p style="margin-top:6px;">고객센터: 1588-0000 | 서울시 성동구 성수이로 00 쇼룸</p>
+      </div>
+      <div>
+        <h5>인증 & 지원</h5>
+        <p>KTR 3無 공인 시험성적서</p>
+        <p>30일 새벽배송 정기구독 관리</p>
+      </div>
+      <div>
+        <h5>공식 채널</h5>
+        <p>Instagram: @wicketa_official</p>
+        <p>© 2026 WICKETA All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function switchPage(p) {
+      document.querySelectorAll('.page-view').forEach(el => el.classList.remove('active'));
+      let t = document.getElementById('page-' + p);
+      if(!t) t = document.getElementById('page-catalog');
+      if(!t) t = document.getElementById('page-home');
+      if(t) t.classList.add('active');
+
+      document.querySelectorAll('.wf-top-helper button').forEach(b => b.classList.remove('active'));
+      const btns = document.querySelectorAll('.wf-top-helper button');
+      if(p==='home'&&btns[0]) btns[0].classList.add('active');
+      else if(p==='catalog'&&btns[1]) btns[1].classList.add('active');
+      else if(p==='about'&&btns[2]) btns[2].classList.add('active');
+      window.scrollTo(0,0);
+    }
+    function toggleDrawer() { document.getElementById('cart-drawer').classList.toggle('open'); }
+    function filterProducts(cat) {
+      document.querySelectorAll('#page-catalog .lookbook-item').forEach(c => {
+        if(cat.includes('전체') || c.getAttribute('data-cat') === cat) c.style.display = 'flex';
+        else c.style.display = 'none';
+      });
+      document.querySelectorAll('#page-catalog .btn-wf').forEach(b => b.classList.remove('primary'));
+      if(event && event.target) event.target.classList.add('primary');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef catalog fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W07-HOME (구독 진입)<br/>• [오피스 240포 구독] 클릭"]
+    CATALOG["02 W07-CATALOG (디스펜서 확인)<br/>• PANTRY-DISPENSER-01 0원 제공"]
+    DRAWER["03 W07-DRAWER (구독 설정)<br/>• OFFICE-SUB-01 25% 할인"]
+    
+    PAY_CHECK{"04 법인 정기결제<br/>승인 여부"}
+    
+    DONE["05 W07-DONE (구독 완료)<br/>• 디스펜서 조립 PDF 발급"]
+    RETRY["04-B 결제 재시도 (Fallback)<br/>• 카드 정보 수정"]
+    COMM["F1 W07-COMM (수량 관리)<br/>• 월간 수량 스왑 콘솔"]
+
+    HOME --> CATALOG
+    CATALOG --> DRAWER
+    DRAWER --> PAY_CHECK
+    
+    PAY_CHECK -->|결제 성공| DONE
+    PAY_CHECK -->|결제 오류| RETRY
+    RETRY -.->|결제 수정| DRAWER
+    
+    DONE --> COMM
+
+    class HOME home;
+    class CATALOG catalog;
+    class PAY_CHECK decision;
+    class DRAWER,DONE,RETRY drawer;
+    class COMM support;

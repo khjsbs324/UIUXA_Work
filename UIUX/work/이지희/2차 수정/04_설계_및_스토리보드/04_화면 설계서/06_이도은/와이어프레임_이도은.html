@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WICKETA 와이어프레임 - 06 이도은 (A-3 Circadian Vertical Timeline)</title>
+  <style>
+    :root {
+      --bg-white: #FFFFFF; --bg-light: #F5F5F5; --bg-gray: #E5E5E5;
+      --border-dark: #111111; --border-gray: #CCCCCC;
+      --text-dark: #111111; --text-muted: #555555;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Pretendard', sans-serif; background-color: var(--bg-light); color: var(--text-dark); min-height: 100vh; display: flex; flex-direction: column; }
+    .wf-top-helper { background: #111111; color: #FFFFFF; padding: 10px 32px; font-size: 11px; display: flex; justify-content: space-between; position: sticky; top: 0; z-index: 1000; }
+    .wf-top-helper button { background: #222222; color: #EEEEEE; border: 1px solid #444444; padding: 5px 12px; font-size: 11px; font-weight: 700; border-radius: 4px; cursor: pointer; }
+    .wf-top-helper button.active { background: #FFFFFF; color: #111111; }
+
+    header.beauty-header { background: #FFFFFF; border-bottom: 2px solid var(--border-dark); padding: 18px 48px; display: flex; justify-content: space-between; align-items: center; }
+    .container { max-width: 1320px; margin: 0 auto; padding: 40px 24px; width: 100%; flex: 1; }
+    .page-view { display: none; }
+    .page-view.active { display: block; }
+
+    .vertical-timeline-container { border: 2px solid var(--border-dark); background: #FFFFFF; padding: 36px; border-radius: 8px; margin-bottom: 36px; position: relative; }
+    .v-timeline { display: flex; flex-direction: column; gap: 24px; margin-top: 24px; position: relative; }
+    .v-timeline::before { content: ''; position: absolute; top: 10px; bottom: 10px; left: 24px; width: 3px; background: var(--border-dark); }
+    .timeline-node { display: grid; grid-template-columns: 60px 1fr; gap: 20px; align-items: center; position: relative; }
+    .node-icon { width: 50px; height: 50px; border-radius: 50%; background: var(--border-dark); color: #FFFFFF; display: flex; justify-content: center; align-items: center; font-size: 14px; font-weight: 900; z-index: 2; }
+    .node-content { border: 1px solid var(--border-gray); background: var(--bg-light); padding: 18px 24px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; }
+
+    .circadian-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .circadian-card { border: 1px solid var(--border-gray); background: #FFFFFF; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; }
+    .circadian-hero-box { height: 190px; border-bottom: 1px solid var(--border-gray); background: var(--bg-gray); position: relative; display: flex; justify-content: center; align-items: center; }
+    .time-slot-badge { position: absolute; top: 10px; left: 10px; background: var(--border-dark); color: #FFFFFF; font-size: 11px; font-weight: 900; padding: 4px 10px; border-radius: 4px; }
+    .beauty-placeholder { font-size: 11px; font-weight: 700; color: var(--text-muted); }
+    .beauty-info { padding: 20px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .beauty-cat { font-size: 10px; font-weight: 900; color: var(--text-muted); }
+    .beauty-title { font-size: 15px; font-weight: 900; margin: 4px 0 8px; }
+    .absorption-bar { font-size: 11px; color: var(--text-muted); background: var(--bg-light); padding: 8px 10px; border-radius: 4px; margin-bottom: 12px; }
+    .beauty-card-footer { display: flex; justify-content: space-between; align-items: center; }
+    .price { font-size: 15px; font-weight: 900; }
+
+    .btn-wf { background: #FFFFFF; border: 1px solid var(--border-dark); padding: 8px 16px; font-size: 12px; font-weight: 700; cursor: pointer; }
+    .btn-wf.primary { background: var(--border-dark); color: #FFFFFF; }
+
+    .cart-drawer { position: fixed; top: 0; right: -440px; width: 420px; height: 100vh; background: #FFFFFF; border-left: 2px solid var(--border-dark); z-index: 2000; transition: right 0.3s ease; display: flex; flex-direction: column; }
+    .cart-drawer.open { right: 0; }
+
+    footer.site-footer { background: #111111; color: #999999; padding: 48px 32px; font-size: 12px; margin-top: auto; }
+    .footer-content { max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; }
+  </style>
+</head>
+<body>
+  <div class="wf-top-helper">
+    <div><strong>[A-3 무채색 24H 서카디언 와이어프레임]</strong> 06 이도은 맞춤</div>
+    <div>
+      <button class="active" onclick="switchPage('home')">Page 1: 24H 수직 타임라인 허브</button>
+      <button onclick="switchPage('catalog')">Page 2: 이너뷰티 아카이브 (20종 전체)</button>
+      <button onclick="switchPage('about')">Page 3: 서카디언 과학 & 세계관</button>
+      <button onclick="toggleDrawer()">🛒 뷰티 구독 드로어</button>
+    </div>
+  </div>
+
+  <header class="beauty-header">
+    <div style="font-weight:900; font-size:20px; letter-spacing:1px;">WICKETA 24H CIRCADIAN BEAUTY</div>
+    <nav style="display:flex; gap:24px; font-size:13px; font-weight:700;">
+      <a href="javascript:void(0)" onclick="switchPage('home')">24H 수직 타임라인</a>
+      <a href="javascript:void(0)" onclick="switchPage('home')">1:1 피부 진단실</a>
+      <a href="javascript:void(0)" onclick="switchPage('catalog')">이너뷰티 샵 (20)</a>
+      <a href="javascript:void(0)" onclick="switchPage('home')">벨벳 파우치 각인</a>
+      <a href="javascript:void(0)" onclick="switchPage('about')">성수 뷰티 쇼룸</a>
+    </nav>
+    <button class="btn-wf primary" onclick="toggleDrawer()">장바구니 (3)</button>
+  </header>
+
+  <!-- PAGE 1 -->
+  <main id="page-home" class="page-view active container">
+    <section class="vertical-timeline-container">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <div>
+          <span style="font-size:11px; font-weight:900; letter-spacing:2px;">CIRCADIAN RHYTHM SCROLLER</span>
+          <h1 style="font-size:24px; font-weight:900; margin-top:2px;">CIRCADIAN-TABLE-01: 24시간 생체 시계 수직 타임라인</h1>
+        </div>
+        <button class="btn-wf primary" onclick="toggleDrawer()">24H 3단 풀세트 20% 할인 구독</button>
+      </div>
+
+      <div class="v-timeline">
+        <div class="timeline-node">
+          <div class="node-icon">08H</div>
+          <div class="node-content">
+            <div>
+              <span style="font-size:11px; font-weight:900; color:var(--text-muted);">08:00 AM MORNING RITUAL</span>
+              <h3 style="font-size:16px; font-weight:900; margin:2px 0;">순수 글루타치온 백옥 브라이트닝 티</h3>
+              <p style="font-size:12px; color:var(--text-muted);">외출 전 자외선 멜라닌 생성을 억제하는 항산화 방어막 형성</p>
+            </div>
+            <button class="btn-wf primary" onclick="toggleDrawer()">모닝 루틴 담기</button>
+          </div>
+        </div>
+
+        <div class="timeline-node">
+          <div class="node-icon">14H</div>
+          <div class="node-content">
+            <div>
+              <span style="font-size:11px; font-weight:900; color:var(--text-muted);">14:00 PM AFTERNOON MIST</span>
+              <h3 style="font-size:16px; font-weight:900; margin:2px 0;">5중 히알루론산 속보습 수분 충전 티</h3>
+              <p style="font-size:12px; color:var(--text-muted);">에어컨 및 히터 건조 환경에서 진피층 수분을 락킹하는 캄테크 티타임</p>
+            </div>
+            <button class="btn-wf primary" onclick="toggleDrawer()">오후 루틴 담기</button>
+          </div>
+        </div>
+
+        <div class="timeline-node">
+          <div class="node-icon">22H</div>
+          <div class="node-content">
+            <div>
+              <span style="font-size:11px; font-weight:900; color:var(--text-muted);">22:00 PM NIGHT SLEEP REPAIR</span>
+              <h3 style="font-size:16px; font-weight:900; margin:2px 0;">300Da 저분자 피쉬 콜라겐 나이트 리페어</h3>
+              <p style="font-size:12px; color:var(--text-muted);">수면 골든타임 진피 재생 촉진 및 GABA 0.00mg 무카페인 숙면</p>
+            </div>
+            <button class="btn-wf primary" onclick="toggleDrawer()">나이트 루틴 담기</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PAGE 2 -->
+  <main id="page-catalog" class="page-view container">
+    <div style="border-bottom:2px solid var(--border-dark); padding-bottom:16px; margin-bottom:36px; display:flex; justify-content:space-between; align-items:flex-end;">
+      <div>
+        <h1 style="font-size:26px; font-weight:900;">24H 서카디언 타임 뱃지 이너뷰티 샵 (20종 전체)</h1>
+        <p style="color:var(--text-muted); font-size:13px;">이도은 에디터 맞춤 08시/14시/22시 시간대별 뱃지와 진피 흡수율이 명시된 도감</p>
+      </div>
+      <div style="display:flex; gap:8px;">
+        <button class="btn-wf primary" onclick="filterProducts('전체 이너뷰티 팩 (20)')">전체 이너뷰티 팩 (20)</button>
+        <button class="btn-wf " onclick="filterProducts('☀️ 08:00 AM 글루타치온 브라이트닝 (4)')">☀️ 08:00 AM 글루타치온 브라이트닝 (4)</button>
+        <button class="btn-wf " onclick="filterProducts('💧 14:00 PM 히알루론산 수분 충전 (4)')">💧 14:00 PM 히알루론산 수분 충전 (4)</button>
+        <button class="btn-wf " onclick="filterProducts('🌙 22:00 PM 저분자 콜라겐 나이트 리페어 (4)')">🌙 22:00 PM 저분자 콜라겐 나이트 리페어 (4)</button>
+        <button class="btn-wf " onclick="filterProducts('👜 3D 뷰티 파우치 & 글래스 머들러 (4)')">👜 3D 뷰티 파우치 & 글래스 머들러 (4)</button>
+        <button class="btn-wf " onclick="filterProducts('📦 30일 서카디언 정기구독 팩 (4)')">📦 30일 서카디언 정기구독 팩 (4)</button>
+        
+      </div>
+    </div>
+    <div class="circadian-grid">
+        <div class="circadian-card" data-cat="☀️ 08:00 AM 글루타치온 브라이트닝 (4)">
+          <div class="circadian-hero-box">
+            <span class="time-slot-badge">08:00 AM (모닝)</span>
+            <div class="beauty-placeholder">[SEC-01 이너뷰티 뷰박스]</div>
+          </div>
+          <div class="beauty-info">
+            <span class="beauty-cat">☀️ 08:00 AM 글루타치온 브라이트닝 (4)</span>
+            <h4 class="beauty-title">⭐ [08:00 AM] 순수 글루타치온 백옥 브라이트닝 티</h4>
+            <div class="absorption-bar">피부 진피 생체 흡수율: <strong>98.4%</strong> (순수 글루타치온/저분자콜라겐)</div>
+            <div class="beauty-card-footer">
+              <div class="price">38,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">24H 루틴 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="circadian-card" data-cat="💧 14:00 PM 히알루론산 수분 충전 (4)">
+          <div class="circadian-hero-box">
+            <span class="time-slot-badge">14:00 PM (오피스)</span>
+            <div class="beauty-placeholder">[SEC-02 이너뷰티 뷰박스]</div>
+          </div>
+          <div class="beauty-info">
+            <span class="beauty-cat">💧 14:00 PM 히알루론산 수분 충전 (4)</span>
+            <h4 class="beauty-title">💧 [14:00 PM] 5중 히알루론산 깊은 수분 충전 티</h4>
+            <div class="absorption-bar">피부 진피 생체 흡수율: <strong>98.4%</strong> (순수 글루타치온/저분자콜라겐)</div>
+            <div class="beauty-card-footer">
+              <div class="price">32,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">24H 루틴 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="circadian-card" data-cat="🌙 22:00 PM 저분자 콜라겐 나이트 리페어 (4)">
+          <div class="circadian-hero-box">
+            <span class="time-slot-badge">22:00 PM (나이트)</span>
+            <div class="beauty-placeholder">[SEC-03 이너뷰티 뷰박스]</div>
+          </div>
+          <div class="beauty-info">
+            <span class="beauty-cat">🌙 22:00 PM 저분자 콜라겐 나이트 리페어 (4)</span>
+            <h4 class="beauty-title">🌙 [22:00 PM] 300Da 저분자 피쉬 콜라겐 나이트 티</h4>
+            <div class="absorption-bar">피부 진피 생체 흡수율: <strong>98.4%</strong> (순수 글루타치온/저분자콜라겐)</div>
+            <div class="beauty-card-footer">
+              <div class="price">36,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">24H 루틴 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="circadian-card" data-cat="👜 3D 뷰티 파우치 & 글래스 머들러 (4)">
+          <div class="circadian-hero-box">
+            <span class="time-slot-badge">08:00 AM (모닝)</span>
+            <div class="beauty-placeholder">[SEC-04 이너뷰티 뷰박스]</div>
+          </div>
+          <div class="beauty-info">
+            <span class="beauty-cat">👜 3D 뷰티 파우치 & 글래스 머들러 (4)</span>
+            <h4 class="beauty-title">👜 [골드 각인] 소프트 벨벳 뷰티 파우치 & 글래스 스틱</h4>
+            <div class="absorption-bar">피부 진피 생체 흡수율: <strong>98.4%</strong> (순수 글루타치온/저분자콜라겐)</div>
+            <div class="beauty-card-footer">
+              <div class="price">29,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">24H 루틴 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="circadian-card" data-cat="📦 30일 서카디언 정기구독 팩 (4)">
+          <div class="circadian-hero-box">
+            <span class="time-slot-badge">14:00 PM (오피스)</span>
+            <div class="beauty-placeholder">[SEC-05 이너뷰티 뷰박스]</div>
+          </div>
+          <div class="beauty-info">
+            <span class="beauty-cat">📦 30일 서카디언 정기구독 팩 (4)</span>
+            <h4 class="beauty-title">📦 [서카디언 30일] 24H 3단 이너뷰티 풀세트 새벽배송</h4>
+            <div class="absorption-bar">피부 진피 생체 흡수율: <strong>98.4%</strong> (순수 글루타치온/저분자콜라겐)</div>
+            <div class="beauty-card-footer">
+              <div class="price">89,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">24H 루틴 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="circadian-card" data-cat="☀️ 08:00 AM 글루타치온 브라이트닝 (4)">
+          <div class="circadian-hero-box">
+            <span class="time-slot-badge">22:00 PM (나이트)</span>
+            <div class="beauty-placeholder">[SEC-06 이너뷰티 뷰박스]</div>
+          </div>
+          <div class="beauty-info">
+            <span class="beauty-cat">☀️ 08:00 AM 글루타치온 브라이트닝 (4)</span>
+            <h4 class="beauty-title">☀️ [08:00 AM] 비타민C 1,000mg 화이트 토마토 팩</h4>
+            <div class="absorption-bar">피부 진피 생체 흡수율: <strong>98.4%</strong> (순수 글루타치온/저분자콜라겐)</div>
+            <div class="beauty-card-footer">
+              <div class="price">34,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">24H 루틴 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="circadian-card" data-cat="💧 14:00 PM 히알루론산 수분 충전 (4)">
+          <div class="circadian-hero-box">
+            <span class="time-slot-badge">08:00 AM (모닝)</span>
+            <div class="beauty-placeholder">[SEC-07 이너뷰티 뷰박스]</div>
+          </div>
+          <div class="beauty-info">
+            <span class="beauty-cat">💧 14:00 PM 히알루론산 수분 충전 (4)</span>
+            <h4 class="beauty-title">💧 [14:00 PM] 세라마이드 피부 장벽 보호 미스트 티</h4>
+            <div class="absorption-bar">피부 진피 생체 흡수율: <strong>98.4%</strong> (순수 글루타치온/저분자콜라겐)</div>
+            <div class="beauty-card-footer">
+              <div class="price">31,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">24H 루틴 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="circadian-card" data-cat="🌙 22:00 PM 저분자 콜라겐 나이트 리페어 (4)">
+          <div class="circadian-hero-box">
+            <span class="time-slot-badge">14:00 PM (오피스)</span>
+            <div class="beauty-placeholder">[SEC-08 이너뷰티 뷰박스]</div>
+          </div>
+          <div class="beauty-info">
+            <span class="beauty-cat">🌙 22:00 PM 저분자 콜라겐 나이트 리페어 (4)</span>
+            <h4 class="beauty-title">🌙 [22:00 PM] 엘라스틴 & 히비스커스 탄력 리페어 팩</h4>
+            <div class="absorption-bar">피부 진피 생체 흡수율: <strong>98.4%</strong> (순수 글루타치온/저분자콜라겐)</div>
+            <div class="beauty-card-footer">
+              <div class="price">35,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">24H 루틴 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="circadian-card" data-cat="👜 3D 뷰티 파우치 & 글래스 머들러 (4)">
+          <div class="circadian-hero-box">
+            <span class="time-slot-badge">22:00 PM (나이트)</span>
+            <div class="beauty-placeholder">[SEC-09 이너뷰티 뷰박스]</div>
+          </div>
+          <div class="beauty-info">
+            <span class="beauty-cat">👜 3D 뷰티 파우치 & 글래스 머들러 (4)</span>
+            <h4 class="beauty-title">👜 [글래스웨어] 로즈 쿼츠 더블월 뷰티 머그 잔</h4>
+            <div class="absorption-bar">피부 진피 생체 흡수율: <strong>98.4%</strong> (순수 글루타치온/저분자콜라겐)</div>
+            <div class="beauty-card-footer">
+              <div class="price">28,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">24H 루틴 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="circadian-card" data-cat="📦 30일 서카디언 정기구독 팩 (4)">
+          <div class="circadian-hero-box">
+            <span class="time-slot-badge">08:00 AM (모닝)</span>
+            <div class="beauty-placeholder">[SEC-10 이너뷰티 뷰박스]</div>
+          </div>
+          <div class="beauty-info">
+            <span class="beauty-cat">📦 30일 서카디언 정기구독 팩 (4)</span>
+            <h4 class="beauty-title">📦 [탄력 구독] 30일 콜라겐 집중 정기배송 팩</h4>
+            <div class="absorption-bar">피부 진피 생체 흡수율: <strong>98.4%</strong> (순수 글루타치온/저분자콜라겐)</div>
+            <div class="beauty-card-footer">
+              <div class="price">72,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">24H 루틴 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="circadian-card" data-cat="☀️ 08:00 AM 글루타치온 브라이트닝 (4)">
+          <div class="circadian-hero-box">
+            <span class="time-slot-badge">14:00 PM (오피스)</span>
+            <div class="beauty-placeholder">[SEC-11 이너뷰티 뷰박스]</div>
+          </div>
+          <div class="beauty-info">
+            <span class="beauty-cat">☀️ 08:00 AM 글루타치온 브라이트닝 (4)</span>
+            <h4 class="beauty-title">☀️ [08:00 AM] 붓기 완화 옥수수수염 & 단호박 팩</h4>
+            <div class="absorption-bar">피부 진피 생체 흡수율: <strong>98.4%</strong> (순수 글루타치온/저분자콜라겐)</div>
+            <div class="beauty-card-footer">
+              <div class="price">26,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">24H 루틴 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="circadian-card" data-cat="💧 14:00 PM 히알루론산 수분 충전 (4)">
+          <div class="circadian-hero-box">
+            <span class="time-slot-badge">22:00 PM (나이트)</span>
+            <div class="beauty-placeholder">[SEC-12 이너뷰티 뷰박스]</div>
+          </div>
+          <div class="beauty-info">
+            <span class="beauty-cat">💧 14:00 PM 히알루론산 수분 충전 (4)</span>
+            <h4 class="beauty-title">💧 [14:00 PM] 병풀 추출물 시카 릴랙스 그린티</h4>
+            <div class="absorption-bar">피부 진피 생체 흡수율: <strong>98.4%</strong> (순수 글루타치온/저분자콜라겐)</div>
+            <div class="beauty-card-footer">
+              <div class="price">29,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">24H 루틴 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="circadian-card" data-cat="🌙 22:00 PM 저분자 콜라겐 나이트 리페어 (4)">
+          <div class="circadian-hero-box">
+            <span class="time-slot-badge">08:00 AM (모닝)</span>
+            <div class="beauty-placeholder">[SEC-13 이너뷰티 뷰박스]</div>
+          </div>
+          <div class="beauty-info">
+            <span class="beauty-cat">🌙 22:00 PM 저분자 콜라겐 나이트 리페어 (4)</span>
+            <h4 class="beauty-title">🌙 [22:00 PM] 비오틴 & 아연 모발/네일 영양 티</h4>
+            <div class="absorption-bar">피부 진피 생체 흡수율: <strong>98.4%</strong> (순수 글루타치온/저분자콜라겐)</div>
+            <div class="beauty-card-footer">
+              <div class="price">33,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">24H 루틴 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="circadian-card" data-cat="👜 3D 뷰티 파우치 & 글래스 머들러 (4)">
+          <div class="circadian-hero-box">
+            <span class="time-slot-badge">14:00 PM (오피스)</span>
+            <div class="beauty-placeholder">[SEC-14 이너뷰티 뷰박스]</div>
+          </div>
+          <div class="beauty-info">
+            <span class="beauty-cat">👜 3D 뷰티 파우치 & 글래스 머들러 (4)</span>
+            <h4 class="beauty-title">👜 [미니 틴] 핸드백 쏙 3종 휴대용 뷰티 틴 세트</h4>
+            <div class="absorption-bar">피부 진피 생체 흡수율: <strong>98.4%</strong> (순수 글루타치온/저분자콜라겐)</div>
+            <div class="beauty-card-footer">
+              <div class="price">24,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">24H 루틴 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="circadian-card" data-cat="📦 30일 서카디언 정기구독 팩 (4)">
+          <div class="circadian-hero-box">
+            <span class="time-slot-badge">22:00 PM (나이트)</span>
+            <div class="beauty-placeholder">[SEC-15 이너뷰티 뷰박스]</div>
+          </div>
+          <div class="beauty-info">
+            <span class="beauty-cat">📦 30일 서카디언 정기구독 팩 (4)</span>
+            <h4 class="beauty-title">📦 [수분 구독] 30일 히알루론산 데일리 정기배송</h4>
+            <div class="absorption-bar">피부 진피 생체 흡수율: <strong>98.4%</strong> (순수 글루타치온/저분자콜라겐)</div>
+            <div class="beauty-card-footer">
+              <div class="price">65,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">24H 루틴 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="circadian-card" data-cat="☀️ 08:00 AM 글루타치온 브라이트닝 (4)">
+          <div class="circadian-hero-box">
+            <span class="time-slot-badge">08:00 AM (모닝)</span>
+            <div class="beauty-placeholder">[SEC-16 이너뷰티 뷰박스]</div>
+          </div>
+          <div class="beauty-info">
+            <span class="beauty-cat">☀️ 08:00 AM 글루타치온 브라이트닝 (4)</span>
+            <h4 class="beauty-title">☀️ [08:00 AM] 코엔자임 Q10 모닝 활력 티</h4>
+            <div class="absorption-bar">피부 진피 생체 흡수율: <strong>98.4%</strong> (순수 글루타치온/저분자콜라겐)</div>
+            <div class="beauty-card-footer">
+              <div class="price">37,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">24H 루틴 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="circadian-card" data-cat="💧 14:00 PM 히알루론산 수분 충전 (4)">
+          <div class="circadian-hero-box">
+            <span class="time-slot-badge">14:00 PM (오피스)</span>
+            <div class="beauty-placeholder">[SEC-17 이너뷰티 뷰박스]</div>
+          </div>
+          <div class="beauty-info">
+            <span class="beauty-cat">💧 14:00 PM 히알루론산 수분 충전 (4)</span>
+            <h4 class="beauty-title">💧 [14:00 PM] 알로에베라 속보습 캄테크 티</h4>
+            <div class="absorption-bar">피부 진피 생체 흡수율: <strong>98.4%</strong> (순수 글루타치온/저분자콜라겐)</div>
+            <div class="beauty-card-footer">
+              <div class="price">27,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">24H 루틴 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="circadian-card" data-cat="🌙 22:00 PM 저분자 콜라겐 나이트 리페어 (4)">
+          <div class="circadian-hero-box">
+            <span class="time-slot-badge">22:00 PM (나이트)</span>
+            <div class="beauty-placeholder">[SEC-18 이너뷰티 뷰박스]</div>
+          </div>
+          <div class="beauty-info">
+            <span class="beauty-cat">🌙 22:00 PM 저분자 콜라겐 나이트 리페어 (4)</span>
+            <h4 class="beauty-title">🌙 [22:00 PM] 미드나잇 GABA 0.00mg 숙면 티</h4>
+            <div class="absorption-bar">피부 진피 생체 흡수율: <strong>98.4%</strong> (순수 글루타치온/저분자콜라겐)</div>
+            <div class="beauty-card-footer">
+              <div class="price">30,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">24H 루틴 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="circadian-card" data-cat="👜 3D 뷰티 파우치 & 글래스 머들러 (4)">
+          <div class="circadian-hero-box">
+            <span class="time-slot-badge">08:00 AM (모닝)</span>
+            <div class="beauty-placeholder">[SEC-19 이너뷰티 뷰박스]</div>
+          </div>
+          <div class="beauty-info">
+            <span class="beauty-cat">👜 3D 뷰티 파우치 & 글래스 머들러 (4)</span>
+            <h4 class="beauty-title">👜 [스킨 괄사] 천연 백옥 페이셜 림프 괄사 툴</h4>
+            <div class="absorption-bar">피부 진피 생체 흡수율: <strong>98.4%</strong> (순수 글루타치온/저분자콜라겐)</div>
+            <div class="beauty-card-footer">
+              <div class="price">22,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">24H 루틴 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="circadian-card" data-cat="📦 30일 서카디언 정기구독 팩 (4)">
+          <div class="circadian-hero-box">
+            <span class="time-slot-badge">14:00 PM (오피스)</span>
+            <div class="beauty-placeholder">[SEC-20 이너뷰티 뷰박스]</div>
+          </div>
+          <div class="beauty-info">
+            <span class="beauty-cat">📦 30일 서카디언 정기구독 팩 (4)</span>
+            <h4 class="beauty-title">📦 [VIP 뷰티 박스] 24H 전 라인업 + 괄사 기프트 세트</h4>
+            <div class="absorption-bar">피부 진피 생체 흡수율: <strong>98.4%</strong> (순수 글루타치온/저분자콜라겐)</div>
+            <div class="beauty-card-footer">
+              <div class="price">110,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">24H 루틴 담기</button>
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </main>
+
+  <!-- PAGE 3 -->
+  <main id="page-about" class="page-view container">
+    <section class="vertical-timeline-container">
+      <span style="font-size:11px; font-weight:900; letter-spacing:2px;">CIRCADIAN INNER BEAUTY SCIENCE</span>
+      <h1 style="font-size:28px; font-weight:900; margin-top:4px;">이도은의 24H 서카디언 뷰티 (Inner Beauty Routine)</h1>
+      <p style="color:var(--text-muted); margin-top:4px;">피부의 생체 시계에 맞춘 시간대별 3단 이너뷰티 캄테크 웰니스</p>
+
+      <div style="border-left:4px solid var(--border-dark); padding:20px 0 20px 28px; margin:24px 0; background:var(--bg-light);">
+        <h3 style="font-size:16px; font-weight:900;">"문을 열고, 현실에서 벗어나세요 (Open the Door, Escape Reality)"</h3>
+        <p style="font-size:13px; color:var(--text-muted); margin-top:6px; line-height:1.8;">
+          피부는 하루 중 시간에 따라 요구하는 영양소가 완전히 다릅니다.<br/>
+          아침에는 활성산소를 막는 <strong>글루타치온</strong>, 오후에는 속건조를 채우는 <strong>히알루론산</strong>, 밤에는 재생을 돕는 <strong>저분자 콜라겐</strong>으로 24시간 완벽한 뷰티 리듬을 완성합니다.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <aside id="cart-drawer" class="cart-drawer">
+    <div style="padding:20px 24px; border-bottom:1px solid var(--border-gray); display:flex; justify-content:space-between;">
+      <h4>🛒 BEAUTY ROUTINE CART</h4>
+      <button class="btn-wf" onclick="toggleDrawer()">✕ 닫기</button>
+    </div>
+    <div style="flex:1; padding:24px;">
+      <div style="border:1px solid var(--border-gray); padding:16px; margin-bottom:16px;">
+        <strong>[08:00 AM] 순수 글루타치온 백옥 브라이트닝 티</strong>
+        <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">수량: 1개 / 38,000원</div>
+      </div>
+    </div>
+    <div style="padding:20px 24px; border-top:1px solid var(--border-gray); background:var(--bg-light);">
+      <button class="btn-wf primary" style="width:100%; padding:12px;">1-CLICK CHECKOUT</button>
+    </div>
+  </aside>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div>
+        <h5>WICKETA BEAUTY (위케타)</h5>
+        <p>문을 열고, 현실에서 벗어나세요 (Open the Door, Escape Reality)</p>
+        <p style="margin-top:6px;">고객센터: 1588-0000 | 서울시 성동구 성수이로 00 쇼룸</p>
+      </div>
+      <div>
+        <h5>인증 & 지원</h5>
+        <p>KTR 3無 공인 시험성적서</p>
+      </div>
+      <div>
+        <h5>공식 채널</h5>
+        <p>Instagram: @wicketa_official</p>
+        <p>© 2026 WICKETA All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function switchPage(p) {
+      document.querySelectorAll('.page-view').forEach(el => el.classList.remove('active'));
+      let t = document.getElementById('page-' + p);
+      if(!t) t = document.getElementById('page-catalog');
+      if(!t) t = document.getElementById('page-home');
+      if(t) t.classList.add('active');
+
+      document.querySelectorAll('.wf-top-helper button').forEach(b => b.classList.remove('active'));
+      const btns = document.querySelectorAll('.wf-top-helper button');
+      if(p==='home'&&btns[0]) btns[0].classList.add('active');
+      else if(p==='catalog'&&btns[1]) btns[1].classList.add('active');
+      else if(p==='about'&&btns[2]) btns[2].classList.add('active');
+      window.scrollTo(0,0);
+    }
+    function toggleDrawer() { document.getElementById('cart-drawer').classList.toggle('open'); }
+    function filterProducts(cat) {
+      document.querySelectorAll('#page-catalog .circadian-card').forEach(c => {
+        if(cat.includes('전체') || c.getAttribute('data-cat') === cat) c.style.display = 'flex';
+        else c.style.display = 'none';
+      });
+      document.querySelectorAll('#page-catalog .btn-wf').forEach(b => b.classList.remove('primary'));
+      if(event && event.target) event.target.classList.add('primary');
+    }
+  </script>
+</body>
+</html>

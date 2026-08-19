@@ -1,0 +1,40 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef ritual fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef comm fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W06-HOME (명상 진입)<br/>• 화면 조도 70% 딤드"]
+    RITUAL["02 W06-RITUAL (180초 타이머)<br/>• 432Hz 빗소리 & 원형 펄스"]
+    
+    TIMER_CHECK{"03 180초 완주<br/>여부 확인"}
+    
+    DIARY["04 W06-COMM (감정 일기)<br/>• MINIMAL-DIARY-01<br/>• 무채색 1줄 저널링"]
+    
+    GOAL_CHECK{"05 30일 연속<br/>달성 여부"}
+    
+    REWARD["05-A 인테리어 오브제 증정<br/>• 30일 챌린지 완주 리워드"]
+    STAMP["05-B 스탬프 갱신<br/>• 월간 캘린더 도장 누적"]
+    LOOP_NODE["F1 나이트 알림 루프<br/>• 매일 밤 22:00 카카오 푸시"]
+
+    HOME --> RITUAL
+    RITUAL --> TIMER_CHECK
+    
+    TIMER_CHECK -->|완주 차임벨| DIARY
+    TIMER_CHECK -->|중도 이탈| HOME
+    
+    DIARY --> GOAL_CHECK
+    
+    GOAL_CHECK -->|30일 달성| REWARD
+    GOAL_CHECK -->|진행 중| STAMP
+    
+    REWARD --> LOOP_NODE
+    STAMP --> LOOP_NODE
+    LOOP_NODE -.->|내일 밤 순환| RITUAL
+
+    class HOME home;
+    class RITUAL ritual;
+    class TIMER_CHECK,GOAL_CHECK decision;
+    class DIARY,REWARD,STAMP comm;
+    class LOOP_NODE support;

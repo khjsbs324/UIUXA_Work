@@ -1,0 +1,195 @@
+- generic [active] [ref=f13e1]:
+  - generic [ref=f13e4]:
+    - banner:
+      - link "콘텐츠로 건너뛰기":
+        - /url: "#"
+      - generic [ref=f13e15]:
+        - generic [ref=f13e17]:
+          - generic [ref=f13e18]:
+            - combobox "검색" [ref=f13e20]: w letter mark minimal logo monoline
+            - generic [ref=f13e21]:
+              - button "검색 입력 삭제" [ref=f13e24] [cursor=pointer]
+              - generic "이미지 업로드" [ref=f13e30]:
+                - button "Pinterest 렌즈" [ref=f13e31] [cursor=pointer]
+          - button "모든 핀 드롭다운" [ref=f13e38] [cursor=pointer]:
+            - generic [ref=f13e40]:
+              - generic [ref=f13e41]: 모든 핀
+              - img "드롭다운" [ref=f13e43]
+        - link "내 프로필" [ref=f13e49] [cursor=pointer]:
+          - /url: /victoryjhl/
+          - img [ref=f13e56]:
+            - generic [ref=f13e57]: 이
+        - button "계정" [ref=f13e61] [cursor=pointer]
+    - navigation [ref=f13e66]:
+      - generic [ref=f13e68]:
+        - generic [ref=f13e69]:
+          - generic "홈" [ref=f13e73]:
+            - link "홈" [ref=f13e74] [cursor=pointer]:
+              - /url: /
+          - generic "홈" [ref=f13e81]:
+            - link "홈" [ref=f13e82] [cursor=pointer]:
+              - /url: /
+          - generic "내 보드" [ref=f13e89]:
+            - link "내 보드" [ref=f13e90] [cursor=pointer]:
+              - /url: /victoryjhl/
+          - generic "만들기" [ref=f13e97]:
+            - button "만들기" [ref=f13e98] [cursor=pointer]
+          - generic "업데이트" [ref=f13e107]:
+            - button "업데이트" [ref=f13e108] [cursor=pointer]
+          - generic "메시지" [ref=f13e117]:
+            - button "메시지" [ref=f13e118] [cursor=pointer]
+        - generic "설정 및 지원" [ref=f13e126]:
+          - button "설정 및 지원" [ref=f13e127] [cursor=pointer]
+    - generic:
+      - complementary "꼬리말 부동 버튼"
+    - main [ref=f13e132]:
+      - generic [ref=f13e134]:
+        - heading "검색 결과 페이지" [level=1] [ref=f13e136]
+        - region "필터 및 세분화 검색" [ref=f13e140]:
+          - generic [ref=f13e143]:
+            - button "필터 표시" [ref=f13e149] [cursor=pointer]
+            - button "Design" [ref=f13e160] [cursor=pointer]
+            - button "Design ideas" [ref=f13e176] [cursor=pointer]
+            - button "Ideas" [ref=f13e192] [cursor=pointer]
+            - button "Contoh" [ref=f13e208] [cursor=pointer]
+            - button "Abstract" [ref=f13e224] [cursor=pointer]
+            - button "Design typography" [ref=f13e240] [cursor=pointer]
+            - button "Design creative" [ref=f13e256] [cursor=pointer]
+        - generic [ref=f13e272]:
+          - generic [ref=f13e273]: w letter mark minimal logo monoline 검색 결과를 추가로 표시
+          - list [ref=f13e278]:
+            - listitem [ref=f13e279]:
+              - button [ref=f13e281] [cursor=pointer]:
+                - group "핀 카드" [ref=f13e284]:
+                  - generic [ref=f13e286]:
+                    - link "Logo W 핀 페이지" [ref=f13e288]:
+                      - /url: /pin/AY2ppQvJsHaTf400g2snW2bEYZqF2KihSIfOPIsmYfb8kpYglQYR8wU/
+                      - 'img "포함된 이미지: Logo W" [ref=f13e298]'
+                    - generic [ref=f13e303]:
+                      - heading [level=2] [ref=f13e309]:
+                        - link "Logo W 핀 페이지" [ref=f13e311]:
+                          - /url: /pin/AY2ppQvJsHaTf400g2snW2bEYZqF2KihSIfOPIsmYfb8kpYglQYR8wU/
+                          - text: Logo W
+                      - generic "추가 작업" [ref=f13e314]:
+                        - button "추가 작업" [ref=f13e315]
+            - listitem [ref=f13e320]:
+              - button [ref=f13e322] [cursor=pointer]:
+                - group "핀 카드" [ref=f13e325]:
+                  - generic [ref=f13e327]:
+                    - link "Wire Logo | SVG | Real Company | Alphabet, Le 핀 페이지" [ref=f13e329]:
+                      - /url: /pin/1148910555076411906/
+                      - 'img "포함된 내용: Ultimate Logo Design Ideas. Creative logo concepts. Modern logo inspiration. Distinctive branding styles. Minimalist logo designs. Bold typography concepts. Vibrant color palettes. Vintage logo inspiration. Custom logo graphics." [ref=f13e339]'
+                    - generic [ref=f13e344]:
+                      - heading [level=2] [ref=f13e350]:
+                        - link "Wire Logo | SVG | Real Company | Alphabet, Le 핀 페이지" [ref=f13e352]:
+                          - /url: /pin/1148910555076411906/
+                          - text: Wire Logo | SVG | Real Company | Alphabet, Le
+                      - generic "추가 작업" [ref=f13e355]:
+                        - button "추가 작업" [ref=f13e356]
+            - listitem [ref=f13e361]:
+              - button [ref=f13e363] [cursor=pointer]:
+                - group "핀 카드" [ref=f13e366]:
+                  - generic [ref=f13e368]:
+                    - link "제목 없음 핀 페이지" [ref=f13e370]:
+                      - /url: /pin/23573598047710227/
+                      - img "포함된 이미지:" [ref=f13e380]
+                    - generic "추가 작업" [ref=f13e389]:
+                      - button "추가 작업" [ref=f13e390]
+            - listitem [ref=f13e395]:
+              - button [ref=f13e397] [cursor=pointer]:
+                - group "핀 카드" [ref=f13e400]:
+                  - generic [ref=f13e402]:
+                    - link "Workland - Michel Abajoli 핀 페이지" [ref=f13e404]:
+                      - /url: /pin/57280226507517063/
+                      - 'img "포함된 이미지: Workland - Michel Abajoli" [ref=f13e414]'
+                    - generic [ref=f13e419]:
+                      - generic [ref=f13e420]:
+                        - heading [level=2] [ref=f13e425]:
+                          - link "Workland - Michel Abajoli 핀 페이지" [ref=f13e427]:
+                            - /url: /pin/57280226507517063/
+                            - text: Workland
+                        - link "Behance" [ref=f13e430]:
+                          - /url: /behance/
+                          - generic "Behance" [ref=f13e437]
+                      - generic "추가 작업" [ref=f13e440]:
+                        - button "추가 작업" [ref=f13e441]
+            - listitem [ref=f13e446]:
+              - button [ref=f13e448] [cursor=pointer]:
+                - group "핀 카드" [ref=f13e451]:
+                  - generic [ref=f13e453]:
+                    - link "제목 없음 핀 페이지" [ref=f13e455]:
+                      - /url: /pin/985231163827136/
+                      - img "포함된 이미지:" [ref=f13e465]
+                    - generic "추가 작업" [ref=f13e474]:
+                      - button "추가 작업" [ref=f13e475]
+            - listitem [ref=f13e480]:
+              - button [ref=f13e482] [cursor=pointer]:
+                - group "핀 카드" [ref=f13e485]:
+                  - generic [ref=f13e487]:
+                    - link "제목 없음 핀 페이지" [ref=f13e489]:
+                      - /url: /pin/88946161387635631/
+                      - img "포함된 이미지:" [ref=f13e499]
+                    - generic "추가 작업" [ref=f13e508]:
+                      - button "추가 작업" [ref=f13e509]
+            - listitem [ref=f13e514]:
+              - button [ref=f13e516] [cursor=pointer]:
+                - group "핀 카드" [ref=f13e519]:
+                  - generic [ref=f13e521]:
+                    - link "제목 없음 핀 페이지" [ref=f13e523]:
+                      - /url: /pin/21884748180983807/
+                      - img "포함된 이미지:" [ref=f13e533]
+                    - generic "추가 작업" [ref=f13e542]:
+                      - button "추가 작업" [ref=f13e543]
+            - listitem [ref=f13e548]:
+              - button [ref=f13e550] [cursor=pointer]:
+                - group "핀 카드" [ref=f13e553]:
+                  - generic [ref=f13e555]:
+                    - link "W Letter Design 핀 페이지" [ref=f13e557]:
+                      - /url: /pin/26880929021051511/
+                      - 'img "포함된 이미지: W Letter Design" [ref=f13e567]'
+                    - generic [ref=f13e572]:
+                      - heading [level=2] [ref=f13e578]:
+                        - link "W Letter Design 핀 페이지" [ref=f13e580]:
+                          - /url: /pin/26880929021051511/
+                          - text: W Letter Design
+                      - generic "추가 작업" [ref=f13e583]:
+                        - button "추가 작업" [ref=f13e584]
+            - listitem [ref=f13e589]:
+              - button [ref=f13e591] [cursor=pointer]:
+                - group "핀 카드" [ref=f13e594]:
+                  - generic [ref=f13e596]:
+                    - link "W Letter Logo 핀 페이지" [ref=f13e598]:
+                      - /url: /pin/4611334245941905472/
+                      - 'img "포함된 이미지: W Letter Logo" [ref=f13e608]'
+                    - generic [ref=f13e613]:
+                      - generic [ref=f13e615]:
+                        - generic [ref=f13e617]:
+                          - img "쇼핑 가능한 핀 표시기" [ref=f13e619]
+                          - heading [level=2] [ref=f13e622]:
+                            - link "W Letter Logo 핀 페이지" [ref=f13e624]:
+                              - /url: /pin/4611334245941905472/
+                              - text: W Letter Logo
+                        - link "W Letter Logo 핀 페이지" [ref=f13e626]:
+                          - /url: /pin/4611334245941905472/
+                          - generic "Scalebranding" [ref=f13e630]
+                      - generic "추가 작업" [ref=f13e633]:
+                        - button "추가 작업" [ref=f13e634]
+            - listitem [ref=f13e639]:
+              - button [ref=f13e641] [cursor=pointer]:
+                - group "핀 카드" [ref=f13e644]:
+                  - generic [ref=f13e646]:
+                    - link "WV Mark 핀 페이지" [ref=f13e648]:
+                      - /url: /pin/9218374232932755/
+                      - 'img "포함된 이미지: WV Mark" [ref=f13e658]'
+                    - generic [ref=f13e663]:
+                      - heading [level=2] [ref=f13e669]:
+                        - link "WV Mark 핀 페이지" [ref=f13e671]:
+                          - /url: /pin/9218374232932755/
+                          - text: WV Mark
+                      - generic "추가 작업" [ref=f13e674]:
+                        - button "추가 작업" [ref=f13e675]
+    - generic:
+      - contentinfo "꼬리말"
+  - generic:
+    - generic:
+      - region "Toast notification"

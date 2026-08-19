@@ -1,0 +1,51 @@
+flowchart TD
+    classDef root fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef main fill:#E8F5E9,stroke:#2E7D32,stroke-width:2px,color:#1B5E20,font-weight:bold;
+    classDef sub fill:#E1F5FE,stroke:#0277BD,stroke-width:1.5px,color:#01579B;
+    classDef act fill:#FFF8E1,stroke:#F57F17,stroke-width:1.5px,color:#E65100;
+    classDef common fill:#ECEFF1,stroke:#455A64,stroke-width:1.5px,color:#263238;
+    classDef exp fill:#FFEBEE,stroke:#C62828,stroke-width:1.5px,color:#B71C1C;
+
+    ROOT["WICKETA 임태경 플랫폼 루트<br/>(스포츠 뉴트리션)"]
+    HOME["W04-HOME<br/>스포츠 뉴트리션 홈"]
+    CALC["W04-CALC<br/>부스팅 계산기"]
+    BOOST["W04-BOOST<br/>에슬릿 도감 (6대 LNB)"]
+    HYDRATE["W04-HYDRATE<br/>전해질 하이드레이션"]
+    RECOVER["W04-RECOVER<br/>쿨다운 리커버리"]
+    GEAR["W04-GEAR<br/>쉐이커 & 각인 아틀리에"]
+    COMM["W04-COMM<br/>크루 커뮤니티"]
+    DONE["W04-DONE<br/>주문 및 발주 완료"]
+    DRAWER["W04-DRAWER<br/>슬라이드아웃 장바구니"]
+
+    EXP1["EXP-01<br/>404 페이지 찾을 수 없음"]
+    EXP2["EXP-02<br/>품절 대체 안내"]
+    EXP3["EXP-03<br/>네트워크 오류 모달"]
+
+    ROOT --> HOME
+    HOME --> CALC
+    HOME --> BOOST
+    HOME --> HYDRATE
+    HOME --> RECOVER
+
+    CALC --> BOOST
+    BOOST --> HYDRATE
+    BOOST --> GEAR
+    HYDRATE --> DRAWER
+    GEAR --> DRAWER
+
+    RECOVER --> COMM
+    COMM --> HOME
+    DRAWER --> DONE
+    DONE --> COMM
+    DONE --> HOME
+
+    HOME -.-> EXP1
+    BOOST -.-> EXP2
+    CALC -.-> EXP3
+
+    class ROOT root;
+    class HOME main;
+    class CALC,BOOST,HYDRATE,RECOVER,GEAR sub;
+    class COMM,DONE act;
+    class DRAWER common;
+    class EXP1,EXP2,EXP3 exp;

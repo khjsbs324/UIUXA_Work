@@ -1,0 +1,35 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef stock fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W04-HOME (재고 알림 진입)<br/>• 카카오 B2B 재고 15% 알림 클릭"]
+    STOCK["02 W04-ESTIMATE (안전재고 현황)<br/>• SAFETY-STOCK-01 현황판 확인"]
+    REORDER["03 W04-ESTIMATE (1초 템플릿)<br/>• AUTO-REORDER-01 계약 동기화"]
+    
+    QTY_CHECK{"04 수량 및 단가<br/>검증"}
+    
+    DRAWER["05 W04-DRAWER (ERP 자동 승인)<br/>• 세금계산서 자동 발행 & 하역장 출고"]
+    ADJUST["04-B 성수기 증량 조정 (Fallback)<br/>• 7,500세트 수량 변경"]
+    DONE["06 W04-DONE (입고증 발급)<br/>• 전자 입고 바코드 생성"]
+    LOOP_NODE["F1 안전재고 알림 루프<br/>• 재고 100% 갱신 & 다음 알림 예약"]
+
+    HOME --> STOCK
+    STOCK --> REORDER
+    REORDER --> QTY_CHECK
+    
+    QTY_CHECK -->|5,000세트 유지| DRAWER
+    QTY_CHECK -->|수량 변경 필요| ADJUST
+    ADJUST --> DRAWER
+    
+    DRAWER --> DONE
+    DONE --> LOOP_NODE
+    LOOP_NODE -.->|안전재고 20% 도달 시| STOCK
+
+    class HOME home;
+    class STOCK,REORDER,ADJUST stock;
+    class QTY_CHECK decision;
+    class DRAWER,DONE drawer;
+    class LOOP_NODE support;

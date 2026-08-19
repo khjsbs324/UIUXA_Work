@@ -1,0 +1,86 @@
+{
+  "clientId": 1,
+  "clientName": "차은채",
+  "persona": "WONDERSCAPE / WICKETA 브랜드 총괄 디렉터 (34세)",
+  "concept": "에디토리얼 안식처 (Editorial Sanctuary)",
+  "layoutArchetype": "A-1 에디토리얼 스토리텔링형 (Editorial Sanctuary)",
+  "killerFeature": "디렉터의 선택 근거를 보여주는 컬렉션 편집기 & 2X 캔버스",
+  "killerId": "COLLECTION-EDITOR-01",
+  "brandPurpose": "바쁜 일상에 지친 2030 세대에게 노동 없는 3분간의 초현실주의적인 휴식(길티프리 리추얼) 공간을 제공하는 것입니다. 차를 마시는 행위 자체를 환상 공간으로 입장하는 특별한 의식으로 재해석하여, 일상과의 완벽한 단절 및 마법 같은 휴식을 선사하는 것을 목표로 합니다.",
+  "slogan": "문을 열고, 현실에서 벗어나세요 (Open the Door, Escape Reality)",
+  "worldview": "비밀정원 다과회 (WONDERSCAPE 캄테크 디지털 웰니스)",
+  "coreValues": [
+    "1. 감정 맞춤 추천 (Emotion Dial)",
+    "2. DIY 믹솔로지 & 블렌딩 (Mixology)",
+    "3. 노동 없는 3분의 초현실 휴식 (Zero-Labor)"
+  ],
+  "theme": "100% 모노크롬 3대 웹사이트 페이지 (디렉터스 아카이브 & 에디토리얼 컬렉션 (Director's Archive & Editorial Collection) 특화)",
+  "pagesCount": 3,
+  "sectionsCount": 20,
+  "updatedAt": "2026-08-14",
+  "pages": [
+    {
+      "id": "P1",
+      "name": "에디토리얼 안식처 (Editorial Sanctuary) (Home)",
+      "url": "#home",
+      "curations": [
+        "✨ 1. [디렉터스 시그니처] D2C 론칭 오로라 팩",
+        "📖 2. [에디토리얼 안식] 미드나잇 GABA & 캐모마일 에디션",
+        "🎁 3. [D2C 리미티드] 디렉터스 스타터 기프트 세트"
+      ],
+      "keyFeatures": [
+        "HERO-01 2배 확장된 시네마틱 3D 비주얼 캔버스 (1200x380)",
+        "SLOGAN-01 브랜드 슬로건 섹션",
+        "COLLECTION-EDITOR-01 디렉터의 선택 근거를 보여주는 컬렉션 편집기 & 2X 캔버스 (메인 상단 60% 비중)",
+        "메인 3대 맞춤 큐레이션 그리드",
+        "디렉터스 아카이브 & 에디토리얼 컬렉션 (Director's Archive & Editorial Collection) 바로가기 CTA 배너",
+        "RITUAL-01 180초 시네마틱 브루잉 타이머 & 앰비언트 사운드"
+      ]
+    },
+    {
+      "id": "P2",
+      "name": "디렉터스 아카이브 & 에디토리얼 컬렉션 (Director's Archive & Editorial Collection)",
+      "url": "#category",
+      "totalProducts": 20,
+      "categories": [
+        "전체 아카이브 (20)",
+        "✨ 디렉터스 론칭 시그니처 (4)",
+        "📖 에디토리얼 심신 안식티 (4)",
+        "🌿 캄테크 0kcal 클린티 (4)",
+        "🥂 빛 굴절 더블월 다기 & 머들러 (4)",
+        "🎁 D2C 리미티드 기프트 & 정기구독 (4)"
+      ]
+    },
+    {
+      "id": "P3",
+      "name": "브랜드 스토리 (About WICKETA)",
+      "url": "#about",
+      "worldview": "비밀정원 다과회 (WONDERSCAPE 캄테크 디지털 웰니스)",
+      "coreValues": [
+        "1. 감정 맞춤 추천 (Emotion Dial)",
+        "2. DIY 믹솔로지 & 블렌딩 (Mixology)",
+        "3. 노동 없는 3분의 초현실 휴식 (Zero-Labor)"
+      ],
+      "offlineFeature": "성수 플래그십 쇼룸 디렉터스 프라이빗 1:1 시향 룸 예약"
+    }
+  ],
+  "requirementsMapping": {
+    "REQ-01": "2배 확장 시네마틱 3D 비주얼 캔버스 - 히어로 영역 1200x380 스케일 및 직하단 공식 슬로건 배치",
+    "REQ-02": "디렉터 선택 근거 컬렉션 편집기 - 3대 테마별 디렉터 코멘터리와 배합 근거 실시간 인터랙션",
+    "REQ-03": "디렉터스 아카이브 20대 상품 도감 - D2C 전용 6대 카테고리 필터 및 20종 상세 명세",
+    "REQ-04": "180초 브루잉 타이머 & 앰비언트 사운드 - 초 단위 카운트다운 타이머 및 수색 융해 가이드",
+    "REQ-05": "1-Click 장바구니/찜목록 상시 연동 - GNB 뱃지 카운트 실시간 갱신 및 모달 팝업"
+  },
+  "ecommerceFeatures": {
+    "cart": {
+      "enabled": true,
+      "location": "GNB 우측 상단",
+      "hasModal": true
+    },
+    "wishlist": {
+      "enabled": true,
+      "location": "GNB 우측 상단 & 상품 카드별 🤍",
+      "hasModal": true
+    }
+  }
+}

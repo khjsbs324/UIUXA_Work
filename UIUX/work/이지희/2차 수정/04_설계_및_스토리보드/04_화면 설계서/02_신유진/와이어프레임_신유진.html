@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WICKETA 와이어프레임 - 02 신유진 (B-1 Mixology Lab)</title>
+  <style>
+    :root {
+      --bg-white: #FFFFFF; --bg-light: #F5F5F5; --bg-gray: #E5E5E5;
+      --border-dark: #111111; --border-gray: #CCCCCC; --border-dashed: #777777;
+      --text-dark: #111111; --text-muted: #555555;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Pretendard', sans-serif; background-color: var(--bg-light); color: var(--text-dark); min-height: 100vh; display: flex; flex-direction: column; }
+    .wf-top-helper { background: #111111; color: #FFFFFF; padding: 10px 32px; font-size: 11px; display: flex; justify-content: space-between; position: sticky; top: 0; z-index: 1000; }
+    .wf-top-helper button { background: #222222; color: #EEEEEE; border: 1px solid #444444; padding: 5px 12px; font-size: 11px; font-weight: 700; border-radius: 4px; cursor: pointer; }
+    .wf-top-helper button.active { background: #FFFFFF; color: #111111; }
+
+    header.mixology-header { background: #FFFFFF; border-bottom: 2px solid var(--border-dark); padding: 18px 48px; display: flex; justify-content: space-between; align-items: center; }
+    .container { max-width: 1320px; margin: 0 auto; padding: 40px 24px; width: 100%; flex: 1; }
+    .page-view { display: none; }
+    .page-view.active { display: block; }
+
+    .pipeline-container { border: 2px solid var(--border-dark); background: #FFFFFF; padding: 36px; margin-bottom: 40px; border-radius: 8px; }
+    .pipeline-steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 28px 0; }
+    .step-card { border: 2px solid var(--border-dark); background: var(--bg-light); padding: 24px; border-radius: 6px; }
+    .step-badge { background: var(--border-dark); color: #FFFFFF; font-size: 11px; font-weight: 900; padding: 4px 10px; border-radius: 4px; display: inline-block; margin-bottom: 12px; }
+    .step-card h3 { font-size: 16px; font-weight: 900; margin-bottom: 8px; }
+    
+    .pipeline-output-banner { background: #111111; color: #FFFFFF; padding: 24px 32px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; margin-top: 24px; }
+
+    .formula-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .formula-card { border: 1px solid var(--border-gray); background: #FFFFFF; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; }
+    .formula-beaker-box { height: 200px; border-bottom: 1px solid var(--border-gray); background: var(--bg-gray); position: relative; display: flex; justify-content: center; align-items: center; }
+    .formula-badge { position: absolute; top: 10px; left: 10px; background: #111111; color: #FFFFFF; font-size: 10px; font-weight: 900; padding: 3px 8px; border-radius: 3px; }
+    .beaker-preview { font-size: 11px; font-weight: 700; color: var(--text-muted); text-align: center; padding: 12px; }
+    .formula-info { padding: 20px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .formula-cat { font-size: 10px; font-weight: 900; color: var(--text-muted); }
+    .formula-name { font-size: 14px; font-weight: 900; margin: 4px 0 12px; line-height: 1.4; }
+    .formula-gauges { background: var(--bg-light); border: 1px solid var(--border-gray); padding: 10px 14px; border-radius: 4px; margin-bottom: 12px; }
+    .gauge-bar { display: flex; align-items: center; gap: 8px; font-size: 10px; font-weight: 700; margin-bottom: 4px; }
+    .gauge-bar label { width: 40px; }
+    .bar-fill { background: #111111; color: #FFFFFF; font-size: 9px; padding: 2px 6px; border-radius: 2px; text-align: right; }
+    .recommend-mix { font-size: 11px; color: var(--text-muted); margin-bottom: 14px; }
+    .formula-footer { display: flex; justify-content: space-between; align-items: center; }
+    .price { font-size: 15px; font-weight: 900; }
+
+    .btn-wf { background: #FFFFFF; border: 1px solid var(--border-dark); padding: 8px 16px; font-size: 12px; font-weight: 700; cursor: pointer; }
+    .btn-wf.primary { background: var(--border-dark); color: #FFFFFF; }
+
+    .cart-drawer { position: fixed; top: 0; right: -440px; width: 420px; height: 100vh; background: #FFFFFF; border-left: 2px solid var(--border-dark); z-index: 2000; transition: right 0.3s ease; display: flex; flex-direction: column; }
+    .cart-drawer.open { right: 0; }
+
+    footer.site-footer { background: #111111; color: #999999; padding: 48px 32px; font-size: 12px; margin-top: auto; }
+    .footer-content { max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; }
+  </style>
+</head>
+<body>
+  <div class="wf-top-helper">
+    <div><strong>[B-1 무채색 믹솔로지 실험실 와이어프레임]</strong> 02 신유진 조향사 맞춤</div>
+    <div>
+      <button class="active" onclick="switchPage('home')">Page 1: 믹솔로지 3단계 파이프라인</button>
+      <button onclick="switchPage('catalog')">Page 2: 포뮬러 & 레시피 상점 (20종 전체)</button>
+      <button onclick="switchPage('about')">Page 3: R&D 조향 연구소 & 세계관</button>
+      <button onclick="toggleDrawer()">🛒 1초 결제 드로어</button>
+    </div>
+  </div>
+
+  <header class="mixology-header">
+    <div style="font-weight:900; font-size:20px; letter-spacing:1px;">WICKETA VIRAL MIXOLOGY PIPELINE</div>
+    <nav style="display:flex; gap:24px; font-size:13px; font-weight:700;">
+      <a href="javascript:void(0)" onclick="switchPage('home')">3단계 믹싱 파이프라인</a>
+      <a href="javascript:void(0)" onclick="switchPage('catalog')">포뮬러 도감 (20)</a>
+      <a href="javascript:void(0)" onclick="switchPage('home')">홈파티 60포 계산기</a>
+      <a href="javascript:void(0)" onclick="switchPage('home')">15초 융해 챌린지</a>
+      <a href="javascript:void(0)" onclick="switchPage('about')">성수 조향 스튜디오</a>
+    </nav>
+    <button class="btn-wf primary" onclick="toggleDrawer()">장바구니 (3)</button>
+  </header>
+
+  <!-- PAGE 1 -->
+  <main id="page-home" class="page-view active container">
+    <section class="pipeline-container">
+      <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+        <div>
+          <span style="font-size:11px; font-weight:900; letter-spacing:2px;">INTERACTIVE DIY MIXOLOGY CONSOLE</span>
+          <h1 style="font-size:24px; font-weight:900; margin-top:2px;">수평 3단계 실시간 믹솔로지 조향 파이프라인</h1>
+        </div>
+        <button class="btn-wf primary" onclick="toggleDrawer()">완성 포뮬러 즉시 주문하기</button>
+      </div>
+
+      <div class="pipeline-steps-grid">
+        <div class="step-card">
+          <span class="step-badge">STEP 01. 베이스 티 선택</span>
+          <h3>베이스 티 추출</h3>
+          <p style="font-size:12px; color:var(--text-muted); margin-bottom:12px;">찬물 0.1초 융해 마이크로 파우더</p>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <button class="btn-wf primary" style="text-align:left;">[버터플라이피 팩]</button>
+            <button class="btn-wf" style="text-align:left;">[히비스커스 팩]</button>
+            <button class="btn-wf" style="text-align:left;">[캐모마일 골드 팩]</button>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <span class="step-badge">STEP 02. 8대 향미 다이얼</span>
+          <h3>후각 파라미터 조율</h3>
+          <p style="font-size:12px; color:var(--text-muted); margin-bottom:12px;">시트러스 vs 플로럴 밸런스</p>
+          <div style="font-size:11px; display:flex; flex-direction:column; gap:8px;">
+            <div><label>산미 (시트러스): 75%</label><input type="range" value="75" style="width:100%;"></div>
+            <div><label>향기 (라벤더): 80%</label><input type="range" value="80" style="width:100%;"></div>
+            <div><label>스모키 (오크): 30%</label><input type="range" value="30" style="width:100%;"></div>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <span class="step-badge">STEP 03. 3단 수색 비커</span>
+          <h3>3D 층분리 반응기</h3>
+          <div style="height:140px; border:1px dashed var(--border-dashed); background:var(--bg-gray); display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; font-size:10px; margin-top:8px;">
+            [3D 비커 층분리 반응 렌더링]<br/>상층: 융해 블루 | 중층: 탄산 버블 | 하층: 핑크
+          </div>
+        </div>
+      </div>
+
+      <div class="pipeline-output-banner">
+        <div>
+          <h3 style="font-size:16px; font-weight:900;">[신유진 시그니처 0.1초 블루 스파클링 포뮬러]</h3>
+          <p style="font-size:12px; color:#CCCCCC; margin-top:4px;">버터플라이피 베이스 + 시트러스 75% + 0.00% 논알콜 탄산수 믹서</p>
+        </div>
+        <button class="btn-wf primary" style="background:#FFFFFF; color:#111111; font-size:13px; padding:12px 24px;" onclick="toggleDrawer()">배합 세트 주문 (36,000원)</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- PAGE 2 -->
+  <main id="page-catalog" class="page-view container">
+    <div style="border-bottom:2px solid var(--border-dark); padding-bottom:16px; margin-bottom:36px; display:flex; justify-content:space-between; align-items:flex-end;">
+      <div>
+        <h1 style="font-size:26px; font-weight:900;">믹솔로지 포뮬러 & 홈바 스토어 (20종 전체)</h1>
+        <p style="color:var(--text-muted); font-size:13px;">신유진 조향사 맞춤 도수/산미/탄산감 게이지가 수록된 포뮬러 도감</p>
+      </div>
+      <div style="display:flex; gap:8px;">
+        <button class="btn-wf primary" onclick="filterProducts('전체 믹솔로지 팩 (20)')">전체 믹솔로지 팩 (20)</button>
+        <button class="btn-wf " onclick="filterProducts('🍹 0.1초 탄산 믹서 스틱 (4)')">🍹 0.1초 탄산 믹서 스틱 (4)</button>
+        <button class="btn-wf " onclick="filterProducts('🧪 8대 향미 에센스 블렌드 (4)')">🧪 8대 향미 에센스 블렌드 (4)</button>
+        <button class="btn-wf " onclick="filterProducts('🎉 홈파티 60포 대용량 벌크 (4)')">🎉 홈파티 60포 대용량 벌크 (4)</button>
+        <button class="btn-wf " onclick="filterProducts('🍸 바텐더 지거 & 글래스 (4)')">🍸 바텐더 지거 & 글래스 (4)</button>
+        <button class="btn-wf " onclick="filterProducts('📦 30일 홈바 정기구독 팩 (4)')">📦 30일 홈바 정기구독 팩 (4)</button>
+        
+      </div>
+    </div>
+    <div class="formula-grid">
+        <div class="formula-card" data-cat="🍹 0.1초 탄산 믹서 스틱 (4)">
+          <div class="formula-beaker-box">
+            <span class="formula-badge">RECIPE #01</span>
+            <div class="beaker-preview">[SEC-01 믹솔로지 비커 3단 수색 반응 뷰박스]</div>
+          </div>
+          <div class="formula-info">
+            <span class="formula-cat">🍹 0.1초 탄산 믹서 스틱 (4)</span>
+            <h4 class="formula-name">⭐ [수석 조향사 픽] 블루 스파클링 버터플라이피 팩</h4>
+            <div class="formula-gauges">
+              <div class="gauge-bar"><label>도수</label><div class="bar-fill" style="width:10%;">0.0% Non-Alc</div></div>
+              <div class="gauge-bar"><label>산미</label><div class="bar-fill" style="width:75%;">pH 3.2</div></div>
+              <div class="gauge-bar"><label>탄산감</label><div class="bar-fill" style="width:90%;">Sparkling 90%</div></div>
+            </div>
+            <div class="recommend-mix">추천 페어링: 플레인 탄산수 250ml + 레몬 가니쉬</div>
+            <div class="formula-footer">
+              <div class="price">36,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">레시피 포뮬러 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="formula-card" data-cat="🧪 8대 향미 에센스 블렌드 (4)">
+          <div class="formula-beaker-box">
+            <span class="formula-badge">RECIPE #02</span>
+            <div class="beaker-preview">[SEC-02 믹솔로지 비커 3단 수색 반응 뷰박스]</div>
+          </div>
+          <div class="formula-info">
+            <span class="formula-cat">🧪 8대 향미 에센스 블렌드 (4)</span>
+            <h4 class="formula-name">🧪 [8대 향미] 시트러스 & 라벤더 아로마 에센스 팩</h4>
+            <div class="formula-gauges">
+              <div class="gauge-bar"><label>도수</label><div class="bar-fill" style="width:10%;">0.0% Non-Alc</div></div>
+              <div class="gauge-bar"><label>산미</label><div class="bar-fill" style="width:75%;">pH 3.2</div></div>
+              <div class="gauge-bar"><label>탄산감</label><div class="bar-fill" style="width:90%;">Sparkling 90%</div></div>
+            </div>
+            <div class="recommend-mix">추천 페어링: 플레인 탄산수 250ml + 레몬 가니쉬</div>
+            <div class="formula-footer">
+              <div class="price">34,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">레시피 포뮬러 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="formula-card" data-cat="🎉 홈파티 60포 대용량 벌크 (4)">
+          <div class="formula-beaker-box">
+            <span class="formula-badge">RECIPE #03</span>
+            <div class="beaker-preview">[SEC-03 믹솔로지 비커 3단 수색 반응 뷰박스]</div>
+          </div>
+          <div class="formula-info">
+            <span class="formula-cat">🎉 홈파티 60포 대용량 벌크 (4)</span>
+            <h4 class="formula-name">🎉 [홈파티 60포] 10인 홈바 전용 대용량 리필 박스</h4>
+            <div class="formula-gauges">
+              <div class="gauge-bar"><label>도수</label><div class="bar-fill" style="width:10%;">0.0% Non-Alc</div></div>
+              <div class="gauge-bar"><label>산미</label><div class="bar-fill" style="width:75%;">pH 3.2</div></div>
+              <div class="gauge-bar"><label>탄산감</label><div class="bar-fill" style="width:90%;">Sparkling 90%</div></div>
+            </div>
+            <div class="recommend-mix">추천 페어링: 플레인 탄산수 250ml + 레몬 가니쉬</div>
+            <div class="formula-footer">
+              <div class="price">75,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">레시피 포뮬러 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="formula-card" data-cat="🍸 바텐더 지거 & 글래스 (4)">
+          <div class="formula-beaker-box">
+            <span class="formula-badge">RECIPE #04</span>
+            <div class="beaker-preview">[SEC-04 믹솔로지 비커 3단 수색 반응 뷰박스]</div>
+          </div>
+          <div class="formula-info">
+            <span class="formula-cat">🍸 바텐더 지거 & 글래스 (4)</span>
+            <h4 class="formula-name">🍸 [바텐더 툴] 3D 레이저 각인 스테인리스 지거 & 쉐이커</h4>
+            <div class="formula-gauges">
+              <div class="gauge-bar"><label>도수</label><div class="bar-fill" style="width:10%;">0.0% Non-Alc</div></div>
+              <div class="gauge-bar"><label>산미</label><div class="bar-fill" style="width:75%;">pH 3.2</div></div>
+              <div class="gauge-bar"><label>탄산감</label><div class="bar-fill" style="width:90%;">Sparkling 90%</div></div>
+            </div>
+            <div class="recommend-mix">추천 페어링: 플레인 탄산수 250ml + 레몬 가니쉬</div>
+            <div class="formula-footer">
+              <div class="price">38,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">레시피 포뮬러 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="formula-card" data-cat="📦 30일 홈바 정기구독 팩 (4)">
+          <div class="formula-beaker-box">
+            <span class="formula-badge">RECIPE #05</span>
+            <div class="beaker-preview">[SEC-05 믹솔로지 비커 3단 수색 반응 뷰박스]</div>
+          </div>
+          <div class="formula-info">
+            <span class="formula-cat">📦 30일 홈바 정기구독 팩 (4)</span>
+            <h4 class="formula-name">📦 [홈바 구독] 매월 새로운 4종 믹서 정기배송 팩</h4>
+            <div class="formula-gauges">
+              <div class="gauge-bar"><label>도수</label><div class="bar-fill" style="width:10%;">0.0% Non-Alc</div></div>
+              <div class="gauge-bar"><label>산미</label><div class="bar-fill" style="width:75%;">pH 3.2</div></div>
+              <div class="gauge-bar"><label>탄산감</label><div class="bar-fill" style="width:90%;">Sparkling 90%</div></div>
+            </div>
+            <div class="recommend-mix">추천 페어링: 플레인 탄산수 250ml + 레몬 가니쉬</div>
+            <div class="formula-footer">
+              <div class="price">68,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">레시피 포뮬러 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="formula-card" data-cat="🍹 0.1초 탄산 믹서 스틱 (4)">
+          <div class="formula-beaker-box">
+            <span class="formula-badge">RECIPE #06</span>
+            <div class="beaker-preview">[SEC-06 믹솔로지 비커 3단 수색 반응 뷰박스]</div>
+          </div>
+          <div class="formula-info">
+            <span class="formula-cat">🍹 0.1초 탄산 믹서 스틱 (4)</span>
+            <h4 class="formula-name">🍹 [루비 핑크] 히비스커스 & 피치 탄산 에이드 스틱</h4>
+            <div class="formula-gauges">
+              <div class="gauge-bar"><label>도수</label><div class="bar-fill" style="width:10%;">0.0% Non-Alc</div></div>
+              <div class="gauge-bar"><label>산미</label><div class="bar-fill" style="width:75%;">pH 3.2</div></div>
+              <div class="gauge-bar"><label>탄산감</label><div class="bar-fill" style="width:90%;">Sparkling 90%</div></div>
+            </div>
+            <div class="recommend-mix">추천 페어링: 플레인 탄산수 250ml + 레몬 가니쉬</div>
+            <div class="formula-footer">
+              <div class="price">28,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">레시피 포뮬러 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="formula-card" data-cat="🧪 8대 향미 에센스 블렌드 (4)">
+          <div class="formula-beaker-box">
+            <span class="formula-badge">RECIPE #07</span>
+            <div class="beaker-preview">[SEC-07 믹솔로지 비커 3단 수색 반응 뷰박스]</div>
+          </div>
+          <div class="formula-info">
+            <span class="formula-cat">🧪 8대 향미 에센스 블렌드 (4)</span>
+            <h4 class="formula-name">🧪 [스모키 우드] 오크 배럴 숙성 홍차 포뮬러</h4>
+            <div class="formula-gauges">
+              <div class="gauge-bar"><label>도수</label><div class="bar-fill" style="width:10%;">0.0% Non-Alc</div></div>
+              <div class="gauge-bar"><label>산미</label><div class="bar-fill" style="width:75%;">pH 3.2</div></div>
+              <div class="gauge-bar"><label>탄산감</label><div class="bar-fill" style="width:90%;">Sparkling 90%</div></div>
+            </div>
+            <div class="recommend-mix">추천 페어링: 플레인 탄산수 250ml + 레몬 가니쉬</div>
+            <div class="formula-footer">
+              <div class="price">37,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">레시피 포뮬러 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="formula-card" data-cat="🎉 홈파티 60포 대용량 벌크 (4)">
+          <div class="formula-beaker-box">
+            <span class="formula-badge">RECIPE #08</span>
+            <div class="beaker-preview">[SEC-08 믹솔로지 비커 3단 수색 반응 뷰박스]</div>
+          </div>
+          <div class="formula-info">
+            <span class="formula-cat">🎉 홈파티 60포 대용량 벌크 (4)</span>
+            <h4 class="formula-name">🎉 [논알콜 바] 무알콜 칵테일 펀치 파티 세트</h4>
+            <div class="formula-gauges">
+              <div class="gauge-bar"><label>도수</label><div class="bar-fill" style="width:10%;">0.0% Non-Alc</div></div>
+              <div class="gauge-bar"><label>산미</label><div class="bar-fill" style="width:75%;">pH 3.2</div></div>
+              <div class="gauge-bar"><label>탄산감</label><div class="bar-fill" style="width:90%;">Sparkling 90%</div></div>
+            </div>
+            <div class="recommend-mix">추천 페어링: 플레인 탄산수 250ml + 레몬 가니쉬</div>
+            <div class="formula-footer">
+              <div class="price">82,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">레시피 포뮬러 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="formula-card" data-cat="🍸 바텐더 지거 & 글래스 (4)">
+          <div class="formula-beaker-box">
+            <span class="formula-badge">RECIPE #09</span>
+            <div class="beaker-preview">[SEC-09 믹솔로지 비커 3단 수색 반응 뷰박스]</div>
+          </div>
+          <div class="formula-info">
+            <span class="formula-cat">🍸 바텐더 지거 & 글래스 (4)</span>
+            <h4 class="formula-name">🍸 [더블월 믹싱잔] 450ml 크리스탈 믹싱 글래스</h4>
+            <div class="formula-gauges">
+              <div class="gauge-bar"><label>도수</label><div class="bar-fill" style="width:10%;">0.0% Non-Alc</div></div>
+              <div class="gauge-bar"><label>산미</label><div class="bar-fill" style="width:75%;">pH 3.2</div></div>
+              <div class="gauge-bar"><label>탄산감</label><div class="bar-fill" style="width:90%;">Sparkling 90%</div></div>
+            </div>
+            <div class="recommend-mix">추천 페어링: 플레인 탄산수 250ml + 레몬 가니쉬</div>
+            <div class="formula-footer">
+              <div class="price">29,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">레시피 포뮬러 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="formula-card" data-cat="📦 30일 홈바 정기구독 팩 (4)">
+          <div class="formula-beaker-box">
+            <span class="formula-badge">RECIPE #10</span>
+            <div class="beaker-preview">[SEC-10 믹솔로지 비커 3단 수색 반응 뷰박스]</div>
+          </div>
+          <div class="formula-info">
+            <span class="formula-cat">📦 30일 홈바 정기구독 팩 (4)</span>
+            <h4 class="formula-name">📦 [스파클링 구독] 토닉워터 24캔 + 믹서 40포 번들</h4>
+            <div class="formula-gauges">
+              <div class="gauge-bar"><label>도수</label><div class="bar-fill" style="width:10%;">0.0% Non-Alc</div></div>
+              <div class="gauge-bar"><label>산미</label><div class="bar-fill" style="width:75%;">pH 3.2</div></div>
+              <div class="gauge-bar"><label>탄산감</label><div class="bar-fill" style="width:90%;">Sparkling 90%</div></div>
+            </div>
+            <div class="recommend-mix">추천 페어링: 플레인 탄산수 250ml + 레몬 가니쉬</div>
+            <div class="formula-footer">
+              <div class="price">59,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">레시피 포뮬러 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="formula-card" data-cat="🍹 0.1초 탄산 믹서 스틱 (4)">
+          <div class="formula-beaker-box">
+            <span class="formula-badge">RECIPE #11</span>
+            <div class="beaker-preview">[SEC-11 믹솔로지 비커 3단 수색 반응 뷰박스]</div>
+          </div>
+          <div class="formula-info">
+            <span class="formula-cat">🍹 0.1초 탄산 믹서 스틱 (4)</span>
+            <h4 class="formula-name">🍹 [네온 에메랄드] 라임 & 모히또 민트 믹서 스틱</h4>
+            <div class="formula-gauges">
+              <div class="gauge-bar"><label>도수</label><div class="bar-fill" style="width:10%;">0.0% Non-Alc</div></div>
+              <div class="gauge-bar"><label>산미</label><div class="bar-fill" style="width:75%;">pH 3.2</div></div>
+              <div class="gauge-bar"><label>탄산감</label><div class="bar-fill" style="width:90%;">Sparkling 90%</div></div>
+            </div>
+            <div class="recommend-mix">추천 페어링: 플레인 탄산수 250ml + 레몬 가니쉬</div>
+            <div class="formula-footer">
+              <div class="price">27,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">레시피 포뮬러 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="formula-card" data-cat="🧪 8대 향미 에센스 블렌드 (4)">
+          <div class="formula-beaker-box">
+            <span class="formula-badge">RECIPE #12</span>
+            <div class="beaker-preview">[SEC-12 믹솔로지 비커 3단 수색 반응 뷰박스]</div>
+          </div>
+          <div class="formula-info">
+            <span class="formula-cat">🧪 8대 향미 에센스 블렌드 (4)</span>
+            <h4 class="formula-name">🧪 [바닐라 앰버] 마다가스카르 바닐라 빈 티 에센스</h4>
+            <div class="formula-gauges">
+              <div class="gauge-bar"><label>도수</label><div class="bar-fill" style="width:10%;">0.0% Non-Alc</div></div>
+              <div class="gauge-bar"><label>산미</label><div class="bar-fill" style="width:75%;">pH 3.2</div></div>
+              <div class="gauge-bar"><label>탄산감</label><div class="bar-fill" style="width:90%;">Sparkling 90%</div></div>
+            </div>
+            <div class="recommend-mix">추천 페어링: 플레인 탄산수 250ml + 레몬 가니쉬</div>
+            <div class="formula-footer">
+              <div class="price">35,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">레시피 포뮬러 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="formula-card" data-cat="🎉 홈파티 60포 대용량 벌크 (4)">
+          <div class="formula-beaker-box">
+            <span class="formula-badge">RECIPE #13</span>
+            <div class="beaker-preview">[SEC-13 믹솔로지 비커 3단 수색 반응 뷰박스]</div>
+          </div>
+          <div class="formula-info">
+            <span class="formula-cat">🎉 홈파티 60포 대용량 벌크 (4)</span>
+            <h4 class="formula-name">🎉 [게더링 100포] 20인 대형 파티용 올인원 키트</h4>
+            <div class="formula-gauges">
+              <div class="gauge-bar"><label>도수</label><div class="bar-fill" style="width:10%;">0.0% Non-Alc</div></div>
+              <div class="gauge-bar"><label>산미</label><div class="bar-fill" style="width:75%;">pH 3.2</div></div>
+              <div class="gauge-bar"><label>탄산감</label><div class="bar-fill" style="width:90%;">Sparkling 90%</div></div>
+            </div>
+            <div class="recommend-mix">추천 페어링: 플레인 탄산수 250ml + 레몬 가니쉬</div>
+            <div class="formula-footer">
+              <div class="price">118,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">레시피 포뮬러 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="formula-card" data-cat="🍸 바텐더 지거 & 글래스 (4)">
+          <div class="formula-beaker-box">
+            <span class="formula-badge">RECIPE #14</span>
+            <div class="beaker-preview">[SEC-14 믹솔로지 비커 3단 수색 반응 뷰박스]</div>
+          </div>
+          <div class="formula-info">
+            <span class="formula-cat">🍸 바텐더 지거 & 글래스 (4)</span>
+            <h4 class="formula-name">🍸 [칵테일 머들러] 스월링 전용 나선형 바스푼 2P</h4>
+            <div class="formula-gauges">
+              <div class="gauge-bar"><label>도수</label><div class="bar-fill" style="width:10%;">0.0% Non-Alc</div></div>
+              <div class="gauge-bar"><label>산미</label><div class="bar-fill" style="width:75%;">pH 3.2</div></div>
+              <div class="gauge-bar"><label>탄산감</label><div class="bar-fill" style="width:90%;">Sparkling 90%</div></div>
+            </div>
+            <div class="recommend-mix">추천 페어링: 플레인 탄산수 250ml + 레몬 가니쉬</div>
+            <div class="formula-footer">
+              <div class="price">16,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">레시피 포뮬러 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="formula-card" data-cat="📦 30일 홈바 정기구독 팩 (4)">
+          <div class="formula-beaker-box">
+            <span class="formula-badge">RECIPE #15</span>
+            <div class="beaker-preview">[SEC-15 믹솔로지 비커 3단 수색 반응 뷰박스]</div>
+          </div>
+          <div class="formula-info">
+            <span class="formula-cat">📦 30일 홈바 정기구독 팩 (4)</span>
+            <h4 class="formula-name">📦 [마스터 패스] 신유진 조향 시크릿 포뮬러 30일 구독</h4>
+            <div class="formula-gauges">
+              <div class="gauge-bar"><label>도수</label><div class="bar-fill" style="width:10%;">0.0% Non-Alc</div></div>
+              <div class="gauge-bar"><label>산미</label><div class="bar-fill" style="width:75%;">pH 3.2</div></div>
+              <div class="gauge-bar"><label>탄산감</label><div class="bar-fill" style="width:90%;">Sparkling 90%</div></div>
+            </div>
+            <div class="recommend-mix">추천 페어링: 플레인 탄산수 250ml + 레몬 가니쉬</div>
+            <div class="formula-footer">
+              <div class="price">89,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">레시피 포뮬러 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="formula-card" data-cat="🍹 0.1초 탄산 믹서 스틱 (4)">
+          <div class="formula-beaker-box">
+            <span class="formula-badge">RECIPE #16</span>
+            <div class="beaker-preview">[SEC-16 믹솔로지 비커 3단 수색 반응 뷰박스]</div>
+          </div>
+          <div class="formula-info">
+            <span class="formula-cat">🍹 0.1초 탄산 믹서 스틱 (4)</span>
+            <h4 class="formula-name">🍹 [선셋 그라데이션] 3단 변색 오렌지 블렌드</h4>
+            <div class="formula-gauges">
+              <div class="gauge-bar"><label>도수</label><div class="bar-fill" style="width:10%;">0.0% Non-Alc</div></div>
+              <div class="gauge-bar"><label>산미</label><div class="bar-fill" style="width:75%;">pH 3.2</div></div>
+              <div class="gauge-bar"><label>탄산감</label><div class="bar-fill" style="width:90%;">Sparkling 90%</div></div>
+            </div>
+            <div class="recommend-mix">추천 페어링: 플레인 탄산수 250ml + 레몬 가니쉬</div>
+            <div class="formula-footer">
+              <div class="price">31,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">레시피 포뮬러 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="formula-card" data-cat="🧪 8대 향미 에센스 블렌드 (4)">
+          <div class="formula-beaker-box">
+            <span class="formula-badge">RECIPE #17</span>
+            <div class="beaker-preview">[SEC-17 믹솔로지 비커 3단 수색 반응 뷰박스]</div>
+          </div>
+          <div class="formula-info">
+            <span class="formula-cat">🧪 8대 향미 에센스 블렌드 (4)</span>
+            <h4 class="formula-name">🧪 [얼그레이 베이스] 천연 베르가못 오일 고농축 티백</h4>
+            <div class="formula-gauges">
+              <div class="gauge-bar"><label>도수</label><div class="bar-fill" style="width:10%;">0.0% Non-Alc</div></div>
+              <div class="gauge-bar"><label>산미</label><div class="bar-fill" style="width:75%;">pH 3.2</div></div>
+              <div class="gauge-bar"><label>탄산감</label><div class="bar-fill" style="width:90%;">Sparkling 90%</div></div>
+            </div>
+            <div class="recommend-mix">추천 페어링: 플레인 탄산수 250ml + 레몬 가니쉬</div>
+            <div class="formula-footer">
+              <div class="price">33,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">레시피 포뮬러 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="formula-card" data-cat="🎉 홈파티 60포 대용량 벌크 (4)">
+          <div class="formula-beaker-box">
+            <span class="formula-badge">RECIPE #18</span>
+            <div class="beaker-preview">[SEC-18 믹솔로지 비커 3단 수색 반응 뷰박스]</div>
+          </div>
+          <div class="formula-info">
+            <span class="formula-cat">🎉 홈파티 60포 대용량 벌크 (4)</span>
+            <h4 class="formula-name">🎉 [캠핑 홈바] 아웃도어 방수 파우치 30포 키트</h4>
+            <div class="formula-gauges">
+              <div class="gauge-bar"><label>도수</label><div class="bar-fill" style="width:10%;">0.0% Non-Alc</div></div>
+              <div class="gauge-bar"><label>산미</label><div class="bar-fill" style="width:75%;">pH 3.2</div></div>
+              <div class="gauge-bar"><label>탄산감</label><div class="bar-fill" style="width:90%;">Sparkling 90%</div></div>
+            </div>
+            <div class="recommend-mix">추천 페어링: 플레인 탄산수 250ml + 레몬 가니쉬</div>
+            <div class="formula-footer">
+              <div class="price">49,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">레시피 포뮬러 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="formula-card" data-cat="🍸 바텐더 지거 & 글래스 (4)">
+          <div class="formula-beaker-box">
+            <span class="formula-badge">RECIPE #19</span>
+            <div class="beaker-preview">[SEC-19 믹솔로지 비커 3단 수색 반응 뷰박스]</div>
+          </div>
+          <div class="formula-info">
+            <span class="formula-cat">🍸 바텐더 지거 & 글래스 (4)</span>
+            <h4 class="formula-name">🍸 [LED 코스터] 칵테일 발광 라이팅 코스터 4P</h4>
+            <div class="formula-gauges">
+              <div class="gauge-bar"><label>도수</label><div class="bar-fill" style="width:10%;">0.0% Non-Alc</div></div>
+              <div class="gauge-bar"><label>산미</label><div class="bar-fill" style="width:75%;">pH 3.2</div></div>
+              <div class="gauge-bar"><label>탄산감</label><div class="bar-fill" style="width:90%;">Sparkling 90%</div></div>
+            </div>
+            <div class="recommend-mix">추천 페어링: 플레인 탄산수 250ml + 레몬 가니쉬</div>
+            <div class="formula-footer">
+              <div class="price">22,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">레시피 포뮬러 담기</button>
+            </div>
+          </div>
+        </div>
+        <div class="formula-card" data-cat="📦 30일 홈바 정기구독 팩 (4)">
+          <div class="formula-beaker-box">
+            <span class="formula-badge">RECIPE #20</span>
+            <div class="beaker-preview">[SEC-20 믹솔로지 비커 3단 수색 반응 뷰박스]</div>
+          </div>
+          <div class="formula-info">
+            <span class="formula-cat">📦 30일 홈바 정기구독 팩 (4)</span>
+            <h4 class="formula-name">📦 [조향사 풀키트] 비커+다이얼+20종 원료 마스터 킷</h4>
+            <div class="formula-gauges">
+              <div class="gauge-bar"><label>도수</label><div class="bar-fill" style="width:10%;">0.0% Non-Alc</div></div>
+              <div class="gauge-bar"><label>산미</label><div class="bar-fill" style="width:75%;">pH 3.2</div></div>
+              <div class="gauge-bar"><label>탄산감</label><div class="bar-fill" style="width:90%;">Sparkling 90%</div></div>
+            </div>
+            <div class="recommend-mix">추천 페어링: 플레인 탄산수 250ml + 레몬 가니쉬</div>
+            <div class="formula-footer">
+              <div class="price">140,000원</div>
+              <button class="btn-wf primary" onclick="toggleDrawer()">레시피 포뮬러 담기</button>
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </main>
+
+  <!-- PAGE 3 -->
+  <main id="page-about" class="page-view container">
+    <section class="pipeline-container">
+      <span style="font-size:11px; font-weight:900; letter-spacing:2px;">R&D PHILOSOPHY & MIXOLOGY LAB</span>
+      <h1 style="font-size:28px; font-weight:900; margin-top:4px;">신유진의 믹솔로지 랩 (Mixology & DIY Lab)</h1>
+      <p style="color:var(--text-muted); margin-top:4px;">찬물과 탄산수에 0.1초 만에 융해되는 신개념 감각 조향 티 솔루션</p>
+
+      <div style="border-left:4px solid var(--border-dark); padding:20px 0 20px 28px; margin:24px 0; background:var(--bg-light);">
+        <h3 style="font-size:16px; font-weight:900;">"문을 열고, 현실에서 벗어나세요 (Open the Door, Escape Reality)"</h3>
+        <p style="font-size:13px; color:var(--text-muted); margin-top:6px; line-height:1.8;">
+          차는 정적이고 지루하다는 편견을 깨고, 탄산수와 칵테일 쉐이커 속에서 0.1초 만에 폭발하는 수색과 향미의 마법을 제안합니다.<br/>
+          위케타 믹솔로지 랩은 홈파티와 릴스 바이럴에 최적화된 <strong>1초 융해 믹서 기술</strong>과 <strong>8대 향미 조향 포뮬러</strong>로 당신만의 홈바를 완성합니다.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <aside id="cart-drawer" class="cart-drawer">
+    <div style="padding:20px 24px; border-bottom:1px solid var(--border-gray); display:flex; justify-content:space-between;">
+      <h4>🛒 LAB RECIPE CART</h4>
+      <button class="btn-wf" onclick="toggleDrawer()">✕ 닫기</button>
+    </div>
+    <div style="flex:1; padding:24px;">
+      <div style="border:1px solid var(--border-gray); padding:16px; margin-bottom:16px;">
+        <strong>[수석 조향사 픽] 블루 스파클링 버터플라이피 팩</strong>
+        <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">수량: 1개 / 36,000원</div>
+      </div>
+    </div>
+    <div style="padding:20px 24px; border-top:1px solid var(--border-gray); background:var(--bg-light);">
+      <button class="btn-wf primary" style="width:100%; padding:12px;">1-CLICK CHECKOUT</button>
+    </div>
+  </aside>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div>
+        <h5>WICKETA (위케타)</h5>
+        <p>문을 열고, 현실에서 벗어나세요 (Open the Door, Escape Reality)</p>
+        <p style="margin-top:6px;">고객센터: 1588-0000 | 서울시 성동구 성수이로 00 쇼룸</p>
+      </div>
+      <div>
+        <h5>인증 & 지원</h5>
+        <p>KTR 3無 공인 시험성적서</p>
+      </div>
+      <div>
+        <h5>공식 채널</h5>
+        <p>Instagram: @wicketa_official</p>
+        <p>© 2026 WICKETA All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function switchPage(p) {
+      document.querySelectorAll('.page-view').forEach(el => el.classList.remove('active'));
+      let t = document.getElementById('page-' + p);
+      if(!t) t = document.getElementById('page-catalog');
+      if(!t) t = document.getElementById('page-home');
+      if(t) t.classList.add('active');
+
+      document.querySelectorAll('.wf-top-helper button').forEach(b => b.classList.remove('active'));
+      const btns = document.querySelectorAll('.wf-top-helper button');
+      if(p==='home'&&btns[0]) btns[0].classList.add('active');
+      else if(p==='catalog'&&btns[1]) btns[1].classList.add('active');
+      else if(p==='about'&&btns[2]) btns[2].classList.add('active');
+      window.scrollTo(0,0);
+    }
+    function toggleDrawer() { document.getElementById('cart-drawer').classList.toggle('open'); }
+    function filterProducts(cat) {
+      document.querySelectorAll('#page-catalog .formula-card').forEach(c => {
+        if(cat.includes('전체') || c.getAttribute('data-cat') === cat) c.style.display = 'flex';
+        else c.style.display = 'none';
+      });
+      document.querySelectorAll('#page-catalog .btn-wf').forEach(b => b.classList.remove('primary'));
+      if(event && event.target) event.target.classList.add('primary');
+    }
+  </script>
+</body>
+</html>

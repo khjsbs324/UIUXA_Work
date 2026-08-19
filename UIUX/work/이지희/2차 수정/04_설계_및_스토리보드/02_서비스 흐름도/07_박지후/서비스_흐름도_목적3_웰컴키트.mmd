@@ -1,0 +1,38 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef catalog fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef estimate fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W07-HOME (웰컴 진입)<br/>• [신규 입사자 웰컴 킷] 클릭"]
+    CATALOG["02 W07-CATALOG (구성 확인)<br/>• 텀블러 & 찬물 스틱 4종"]
+    UPLOAD["03 W07-ESTIMATE (엑셀 업로드)<br/>• EXCEL-SHIP-01 20명 명단 첨부"]
+    
+    ADDR_CHECK{"04 주소지 유효성<br/>100% 검증"}
+    
+    CARD["04-A W07-ESTIMATE (웰컴 카드)<br/>• WELCOME-CARD-01 문구 작성"]
+    CORRECT["04-B 주소 수동 수정 (Fallback)<br/>• 오류 주소지 즉시 보정"]
+    DRAWER["05 W07-DRAWER (일괄 결제)<br/>• 20명 일괄 법인 결제 승인"]
+    DONE["06 W07-DONE (발주 완료)<br/>• 대량 발송 접수증 발급"]
+    COMM["F1 W07-COMM (배송 트래킹)<br/>• 20명 개별 배송 현황 모니터링"]
+
+    HOME --> CATALOG
+    CATALOG --> UPLOAD
+    UPLOAD --> ADDR_CHECK
+    
+    ADDR_CHECK -->|주소 정상| CARD
+    ADDR_CHECK -->|오류 주소| CORRECT
+    CORRECT --> CARD
+    
+    CARD --> DRAWER
+    DRAWER --> DONE
+    DONE --> COMM
+
+    class HOME home;
+    class CATALOG catalog;
+    class UPLOAD,CARD,CORRECT estimate;
+    class ADDR_CHECK decision;
+    class DRAWER,DONE drawer;
+    class COMM support;

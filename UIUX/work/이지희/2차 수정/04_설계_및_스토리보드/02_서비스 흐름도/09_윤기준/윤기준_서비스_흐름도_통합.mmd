@@ -1,0 +1,62 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef explore fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef atelier fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef action fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    subgraph HUB ["HUB: WICKETA 윤기준 정밀 데이터 메인 콘솔"]
+        HOME["01 W09-HOME (데이터 메인)<br/>• 터미널 스타일 텔레메트리 캔버스<br/>• TDS-PROFILE-01 실시간 위젯<br/>• 해커톤 부스팅 팩 배너"]
+    end
+
+    subgraph PATH1 ["경로 1: 0.1g 정밀 기어 & 스마트 타이머 번들"]
+        GEAR["02-A W09-GEAR<br/>0.1g 스케일 & 타이머 뷰어<br/>• 3축 추출 파라미터 그래프"]
+    end
+
+    subgraph PATH2 ["경로 2: HPLC 463종 검증 티 & TDS 구독"]
+        SUB["02-B W09-SUB<br/>HPLC-SUB-01 정기구독<br/>• 463종 검증 & TDS 미네랄"]
+    end
+
+    subgraph PATH3 ["경로 3: GitHub 코드 이니셜 각인 선물"]
+        GIFT["02-C W09-GIFT<br/>CODE-ENGRAVER-01 아틀리에<br/>• 소스코드 각인 & 마크다운 카드"]
+    end
+
+    subgraph PATH4 ["경로 4: 브루잉 JSON 로그 & GitHub 뱃지"]
+        LOG["02-D W09-LOG<br/>BREW-LOG-01 콘솔<br/>• JSON 내보내기 & 깃 Webhook"]
+    end
+
+    subgraph PATH5 ["경로 5: 해커톤 밤샘 코딩 부스팅 팩 대량 발주"]
+        HACK["02-E W09-HACK<br/>HACKATHON-PACK-01<br/>• 테아닌 100포 + 세금계산서"]
+    end
+
+    subgraph TRANSACT ["TRANSACT: 공통 장바구니 결제 & 완료 모달"]
+        DRAWER["W09-DRAWER (슬라이드아웃 Cart)<br/>• 개인/법인 1초 간편결제<br/>• 가상 스크롤 100% 위치 복원"]
+        DONE["W09-DONE (통합 완료 모달)<br/>• 브루잉 API 토큰 발급<br/>• 카카오 알림톡 즉시 발송"]
+        DRAWER --> DONE
+    end
+
+    subgraph ARCHIVE ["ARCHIVE: GitHub 커밋 & 데이터 순환"]
+        COMM["W09-COMM (GitHub 아카이브)<br/>• 30일 잔디 뱃지 갱신 & JSON 보관<br/>• 실시간 배송 추적 & 23시 알림 루프"]
+    end
+
+    HOME --> GEAR
+    HOME --> SUB
+    HOME --> GIFT
+    HOME --> LOG
+    HOME --> HACK
+
+    GEAR --> DRAWER
+    SUB --> DRAWER
+    GIFT --> DRAWER
+    HACK --> DRAWER
+    LOG --> COMM
+    DONE --> COMM
+
+    COMM -.->|내일 밤 야간 코딩 브루잉 순환| GEAR
+    DONE -.->|쇼핑 계속하기 스크롤 복원| HOME
+
+    class HOME home;
+    class GEAR,HACK explore;
+    class GIFT,SUB,LOG atelier;
+    class DRAWER,DONE action;
+    class COMM support;

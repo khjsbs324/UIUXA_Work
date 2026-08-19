@@ -1,0 +1,215 @@
+{
+  "clientId": "11",
+  "clientName": "한명석",
+  "archetype": "A-5 전통 시니어 고대비 큰글씨형 (Senior Well-Aging)",
+  "integratedFlowFile": "11_한명석_서비스_흐름도_통합.md",
+  "integratedSitemapFile": "11_한명석_사이트맵_통합.md",
+  "screens": [
+    {
+      "id": "W11-HOME",
+      "name": "20pt 큰글씨 다실 메인 허브",
+      "depth": "1-Depth",
+      "purposes": [
+        "목적 1~5"
+      ]
+    },
+    {
+      "id": "W11-CATALOG",
+      "name": "80℃ 발효티 도감",
+      "depth": "2-Depth",
+      "purposes": [
+        "목적 1, 2"
+      ]
+    },
+    {
+      "id": "W11-BUILD",
+      "name": "3D 오동나무 선물실",
+      "depth": "2-Depth",
+      "purposes": [
+        "목적 3"
+      ]
+    },
+    {
+      "id": "W11-RITUAL",
+      "name": "아침 10분 다도 묵상실",
+      "depth": "2-Depth",
+      "purposes": [
+        "목적 4"
+      ]
+    },
+    {
+      "id": "W11-ESTIMATE",
+      "name": "성수 명원 1:1 예약실",
+      "depth": "2-Depth",
+      "purposes": [
+        "목적 5"
+      ]
+    },
+    {
+      "id": "W11-DRAWER",
+      "name": "Slide-out 큰글씨 간편주문/전화 드로어",
+      "depth": "Aside Layer",
+      "purposes": [
+        "목적 1~4"
+      ]
+    },
+    {
+      "id": "W11-DONE",
+      "name": "발효티 품질보증서 & 주문 완료",
+      "depth": "Modal",
+      "purposes": [
+        "목적 1~5"
+      ]
+    },
+    {
+      "id": "W11-COMM",
+      "name": "출석 도장 & 캘린더",
+      "depth": "2-Depth",
+      "purposes": [
+        "목적 4"
+      ]
+    }
+  ],
+  "curations": [
+    {
+      "secId": "SEC-01",
+      "productCode": "WK-P01",
+      "name": "⭐ [명인 특화] 지리산 야생 80℃ 온수 발효 황차 팩",
+      "category": "🍵 지리산 야생 80℃ 온수 발효티 (4)",
+      "price": 45000
+    },
+    {
+      "secId": "SEC-02",
+      "productCode": "WK-P02",
+      "name": "🌿 [혈당 안심] 공인 성적서 검증 무당 구기자 발효티",
+      "category": "🌿 혈당/혈압 안심 무당 성적서 팩 (4)",
+      "price": 38000
+    },
+    {
+      "secId": "SEC-03",
+      "productCode": "WK-P03",
+      "name": "🪵 [명품 예단] 오동나무 함 발효차 2종 & 비단 보자기 세트",
+      "category": "🪵 전통 명품 오동나무 선물세트 (4)",
+      "price": 95000
+    },
+    {
+      "secId": "SEC-04",
+      "productCode": "WK-P04",
+      "name": "🏺 [장인 다기] 문경 백자 80℃ 온수 숙우 & 찻잔 2인 세트",
+      "category": "🏺 장인 수제 분청사기 다기 세트 (4)",
+      "price": 78000
+    },
+    {
+      "secId": "SEC-05",
+      "productCode": "WK-P05",
+      "name": "📖 [백세 건강] 60일 주기 우체국 안심 배달 정기구독 팩",
+      "category": "📖 백세 건강 다이어리 & 60일 구독 (4)",
+      "price": 68000
+    },
+    {
+      "secId": "SEC-06",
+      "productCode": "WK-P06",
+      "name": "🍵 [위장 편한] 지리산 3년 숙성 온수 발효 흑차 팩",
+      "category": "🍵 지리산 야생 80℃ 온수 발효티 (4)",
+      "price": 42000
+    },
+    {
+      "secId": "SEC-07",
+      "productCode": "WK-P07",
+      "name": "🌿 [혈압 순환] 은행잎 & 블루베리 항산화 건강티",
+      "category": "🌿 혈당/혈압 안심 무당 성적서 팩 (4)",
+      "price": 35000
+    },
+    {
+      "secId": "SEC-08",
+      "productCode": "WK-P08",
+      "name": "🪵 [스승의날] 오동나무 각인 감사 틴케이스 세트",
+      "category": "🪵 전통 명품 오동나무 선물세트 (4)",
+      "price": 58000
+    },
+    {
+      "secId": "SEC-09",
+      "productCode": "WK-P09",
+      "name": "🏺 [분청사기] 손물레 분청 찻사발 & 대나무 차선",
+      "category": "🏺 장인 수제 분청사기 다기 세트 (4)",
+      "price": 62000
+    },
+    {
+      "secId": "SEC-10",
+      "productCode": "WK-P10",
+      "name": "📖 [다도 일기] 한지 장정 백세 건강 다도 묵상 노트",
+      "category": "📖 백세 건강 다이어리 & 60일 구독 (4)",
+      "price": 25000
+    },
+    {
+      "secId": "SEC-11",
+      "productCode": "WK-P11",
+      "name": "🍵 [아침 묵상] 80℃ 황금침출 연잎 발효 맑은티",
+      "category": "🍵 지리산 야생 80℃ 온수 발효티 (4)",
+      "price": 36000
+    },
+    {
+      "secId": "SEC-12",
+      "productCode": "WK-P12",
+      "name": "🌿 [관절 웰빙] 우슬 & 당귀 시니어 활력 발효티",
+      "category": "🌿 혈당/혈압 안심 무당 성적서 팩 (4)",
+      "price": 39000
+    },
+    {
+      "secId": "SEC-13",
+      "productCode": "WK-P13",
+      "name": "🪵 [팔순 축하] 수놓은 한지 보자기 & 발효차 4종 세트",
+      "category": "🪵 전통 명품 오동나무 선물세트 (4)",
+      "price": 130000
+    },
+    {
+      "secId": "SEC-14",
+      "productCode": "WK-P14",
+      "name": "🏺 [보온 다포] 무명 누비 다포 & 찻잔 받침 4P",
+      "category": "🏺 장인 수제 분청사기 다기 세트 (4)",
+      "price": 30000
+    },
+    {
+      "secId": "SEC-15",
+      "productCode": "WK-P15",
+      "name": "📖 [온가족 다도] 손주와 함께 마시는 무카페인 보리 순차",
+      "category": "📖 백세 건강 다이어리 & 60일 구독 (4)",
+      "price": 28000
+    },
+    {
+      "secId": "SEC-16",
+      "productCode": "WK-P16",
+      "name": "🍵 [심신 안정] 산조인 & 대추 수면 이완 발효티",
+      "category": "🍵 지리산 야생 80℃ 온수 발효티 (4)",
+      "price": 37000
+    },
+    {
+      "secId": "SEC-17",
+      "productCode": "WK-P17",
+      "name": "🌿 [눈 건강] 결명자 & 국화 맑은 시야 발효티",
+      "category": "🌿 혈당/혈압 안심 무당 성적서 팩 (4)",
+      "price": 33000
+    },
+    {
+      "secId": "SEC-18",
+      "productCode": "WK-P18",
+      "name": "🪵 [자개 포인트] 나전칠기 포인트 오동나무 다도함",
+      "category": "🪵 전통 명품 오동나무 선물세트 (4)",
+      "price": 150000
+    },
+    {
+      "secId": "SEC-19",
+      "productCode": "WK-P19",
+      "name": "🏺 [도예 찻잔] 김해 요장 장인 수제 덤벙이 찻잔",
+      "category": "🏺 장인 수제 분청사기 다기 세트 (4)",
+      "price": 45000
+    },
+    {
+      "secId": "SEC-20",
+      "productCode": "WK-P20",
+      "name": "📖 [시니어 케어] 분기별 한의사 다도 처방 리포트 구독 팩",
+      "category": "📖 백세 건강 다이어리 & 60일 구독 (4)",
+      "price": 85000
+    }
+  ]
+}

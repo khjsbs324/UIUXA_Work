@@ -1,0 +1,66 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef explore fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef build fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["🏠 W01-HOME (에디토리얼 안식처 허브)<br/>• HERO-01 시네마틱 캔버스<br/>• COLLECTION-EDITOR-01 큐레이션"]
+
+    %% 경로 1: 시향 예약
+    SPACE["🏛️ W01-SPACE (3D 가상 쇼룸)"]
+    ESSAY["📖 W01-ESSAY (브랜드 저널)"]
+    RESERVE["📅 W01-RESERVE (1:1 시향 캘린더)"]
+    SEAT_CHECK{"좌석 잔여<br/>검증"}
+
+    %% 경로 2: 감정 진단 & 구독
+    DIAG["🎛️ W01-DIAG (3축 감정 진단)"]
+    MIX["🧪 W01-MIX (1초 융해 탐색)"]
+
+    %% 경로 3: 각인 선물
+    COLLECT["🍵 W01-COLLECT (컬렉션 룩북)"]
+    BUILD["🛠️ W01-BUILD (3D 레이저 각인)"]
+
+    %% 경로 4: 180초 리추얼
+    RITUAL["⏱️ W01-RITUAL (180초 플레이어)"]
+    TIME_CHECK{"180초 완주<br/>검증"}
+
+    %% 공통 결제 & 완료 & 순환
+    DRAWER["🛒 W01-DRAWER (Slide-out Cart)<br/>• 1-Click 간편결제 / 정기구독 / 선물"]
+    DONE["✅ W01-DONE (완료 모달)<br/>• 초대권 / 바우처 / 승인증"]
+    COMM["🔄 W01-COMM (리추얼 아카이브)<br/>• 감정 일기 / 챌린지 뱃지 / 트래킹"]
+
+    %% 흐름 연결
+    HOME -->|목적1: 공간/예약| SPACE
+    SPACE --> ESSAY
+    ESSAY --> RESERVE
+    RESERVE --> SEAT_CHECK
+    SEAT_CHECK -->|예약 가능| DONE
+    SEAT_CHECK -->|마감 시| RESERVE
+
+    HOME -->|목적2: 진단/구독| DIAG
+    DIAG --> MIX
+    MIX --> DRAWER
+
+    HOME -->|목적3: 각인 선물| COLLECT
+    COLLECT --> BUILD
+    BUILD --> DRAWER
+
+    HOME -->|목적4: 180초 리추얼| RITUAL
+    RITUAL --> TIME_CHECK
+    TIME_CHECK -->|완주 차임벨| COMM
+    COMM -.->|다음날 알림| RITUAL
+
+    HOME -->|목적5: VIP 오더메이드| ESSAY
+    ESSAY --> BUILD
+
+    DRAWER --> DONE
+    DONE --> COMM
+
+    class HOME home;
+    class SPACE,ESSAY,COLLECT,MIX explore;
+    class DIAG,BUILD,RESERVE,RITUAL build;
+    class SEAT_CHECK,TIME_CHECK decision;
+    class DRAWER,DONE drawer;
+    class COMM support;
