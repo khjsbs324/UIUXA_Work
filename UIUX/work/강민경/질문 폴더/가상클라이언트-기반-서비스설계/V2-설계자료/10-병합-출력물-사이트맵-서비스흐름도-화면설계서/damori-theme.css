@@ -1,0 +1,84 @@
+/* ==========================================================================
+   DAMORI (다모리) V6 Unified Design System & Theme Tokens
+   Standard: WCAG 2.1 AA Compliant | Responsive Breakpoints: 1200px / 768px / 360px
+   ========================================================================== */
+
+:root {
+  /* Color Palette */
+  --damori-charcoal: #1a1918;
+  --damori-ink-muted: #2c2a29;
+  --damori-graphite: #4a4644;
+  --damori-paper-ivory: #fbf9f5;
+  --damori-paper-warm: #f5f2eb;
+  --damori-card-surface: #ffffff;
+  --damori-dark-surface: #1f1e1d;
+  --damori-seal-vermilion: #c84b31;
+  --damori-seal-gold: #bfa15f;
+  --damori-soft-sage: #8b9a82;
+  --damori-warm-taupe: #8c827a;
+  --damori-border-subtle: #e6e2d8;
+  --damori-border-regular: #d5d0c5;
+  --damori-focus-ring: #1a1918;
+  --damori-hold-badge: #d97706;
+  --damori-local-cache: #059669;
+  --damori-error: #dc2626;
+
+  /* Typography */
+  --damori-font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --damori-font-serif: 'Noto Serif KR', 'Batang', serif;
+  --damori-font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Spacing */
+  --damori-space-xs: 4px;
+  --damori-space-sm: 8px;
+  --damori-space-md: 16px;
+  --damori-space-lg: 24px;
+  --damori-space-xl: 32px;
+  --damori-space-xxl: 48px;
+  --damori-space-hero: 64px;
+
+  /* Layout */
+  --damori-max-width: 1200px;
+  --damori-header-height: 76px;
+  --damori-radius-sm: 4px;
+  --damori-radius-md: 8px;
+  --damori-radius-lg: 12px;
+
+  /* Shadows */
+  --damori-shadow-sm: 0 1px 3px rgba(26, 25, 24, 0.05);
+  --damori-shadow-md: 0 4px 12px rgba(26, 25, 24, 0.08);
+  --damori-shadow-lg: 0 12px 32px rgba(26, 25, 24, 0.12);
+
+  /* Transitions */
+  --damori-transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --damori-transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base Accessibility & Focus */
+.skip-link {
+  position: absolute;
+  top: -9999px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--damori-charcoal);
+  color: var(--damori-paper-ivory);
+  padding: 12px 24px;
+  z-index: 10000;
+  border-radius: var(--damori-radius-sm);
+  font-weight: 600;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 16px;
+  outline: 3px solid var(--damori-seal-gold);
+}
+
+*:focus-visible {
+  outline: 3px solid var(--damori-focus-ring) !important;
+  outline-offset: 2px !important;
+}
+
+button, a, input, select {
+  min-height: 44px;
+  min-width: 44px;
+}

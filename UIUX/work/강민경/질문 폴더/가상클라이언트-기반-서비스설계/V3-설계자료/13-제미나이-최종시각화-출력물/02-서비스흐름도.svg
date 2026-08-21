@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 950" width="100%" height="100%">
+  <defs>
+    <style>
+      .bg { fill: #fcfbf9; }
+      .header-bg { fill: #1e2522; rx: 8px; }
+      .header-text { fill: #ffffff; font-family: 'Pretendard', sans-serif; font-size: 20px; font-weight: 800; }
+      .badge-bg { fill: #9e7b66; rx: 4px; }
+      .badge-text { fill: #ffffff; font-family: 'Pretendard', sans-serif; font-size: 11px; font-weight: 700; }
+      
+      .start-node { fill: #1e2522; stroke: #4a5d55; stroke-width: 2.5; rx: 24px; }
+      .process-node { fill: #ffffff; stroke: #4a5d55; stroke-width: 2; rx: 8px; }
+      .decision-node { fill: #f4f0eb; stroke: #9e7b66; stroke-width: 2; }
+      .end-node { fill: #4a5d55; stroke: #1e2522; stroke-width: 2; rx: 24px; }
+      
+      .text-start { fill: #ffffff; font-family: 'Pretendard', sans-serif; font-size: 14px; font-weight: 800; }
+      .text-process { fill: #2b302d; font-family: 'Pretendard', sans-serif; font-size: 12px; font-weight: 700; }
+      .text-decision { fill: #1e2522; font-family: 'Pretendard', sans-serif; font-size: 12px; font-weight: 800; }
+      
+      .flow-line { stroke: #4a5d55; stroke-width: 2; marker-end: url(#arrow); }
+      .flow-line-alt { stroke: #9e7b66; stroke-width: 2; stroke-dasharray: 4 2; marker-end: url(#arrow-alt); }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4a5d55" />
+    </marker>
+    <marker id="arrow-alt" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9e7b66" />
+    </marker>
+  </defs>
+
+  <rect width="1400" height="950" class="bg" />
+
+  <!-- Header Banner -->
+  <rect x="50" y="30" width="1300" height="64" class="header-bg" />
+  <text x="80" y="70" class="header-text">[LOGO] DAMORI 브랜드 50개 가상 클라이언트 서비스 흐름도 (Service Flowchart)</text>
+  <rect x="1080" y="48" width="240" height="28" class="badge-bg" />
+  <text x="1100" y="66" class="badge-text">User Flows A ~ E 시각화</text>
+
+  <!-- Start Point -->
+  <rect x="575" y="130" width="250" height="52" class="start-node" />
+  <text x="700" y="161" text-anchor="middle" class="text-start">[진입] PAGE-001 메인페이지 진입</text>
+
+  <!-- Product Scroll Rail Interaction -->
+  <rect x="550" y="210" width="300" height="48" class="process-node" />
+  <text x="700" y="239" text-anchor="middle" class="text-process">001-PRODUCTS: 15~50개 전수 라인업 스크롤 탐색</text>
+
+  <!-- Decision Node: Flow Choice -->
+  <polygon points="700,280 820,330 700,380 580,330" class="decision-node" />
+  <text x="700" y="334" text-anchor="middle" class="text-decision">사용자 목표 선택?</text>
+
+  <!-- Flow A: Analog -->
+  <path d="M 600 330 L 180 330 L 180 430" class="flow-line" />
+  <rect x="80" y="430" width="200" height="48" class="process-node" />
+  <text x="180" y="459" text-anchor="middle" class="text-process">PAGE-004 아날로그 수기 물성</text>
+  <path d="M 180 478 L 180 520" class="flow-line" />
+  <rect x="80" y="520" width="200" height="48" class="process-node" />
+  <text x="180" y="549" text-anchor="middle" class="text-process">PAGE-005 180도 평산지 내지 결정</text>
+
+  <!-- Flow B: Digital -->
+  <path d="M 650 355 L 430 355 L 430 430" class="flow-line" />
+  <rect x="330" y="430" width="200" height="48" class="process-node" />
+  <text x="430" y="459" text-anchor="middle" class="text-process">PAGE-009 디지털 시간축 통제</text>
+  <path d="M 430 478 L 430 520" class="flow-line" />
+  <rect x="330" y="520" width="200" height="48" class="process-node" />
+  <text x="430" y="549" text-anchor="middle" class="text-process">PAGE-011 주간/일간 시간대 배분</text>
+
+  <!-- Flow C: Quick Entry -->
+  <path d="M 700 380 L 700 430" class="flow-line" />
+  <rect x="600" y="430" width="200" height="48" class="process-node" />
+  <text x="700" y="459" text-anchor="middle" class="text-process">001-START: 10초 팝업 모달</text>
+  <path d="M 700 478 L 700 520" class="flow-line" />
+  <rect x="600" y="520" width="200" height="48" class="process-node" />
+  <text x="700" y="549" text-anchor="middle" class="text-process">PAGE-010 사진/1줄/음성/감정 폼</text>
+
+  <!-- Flow D: Template & Asset -->
+  <path d="M 750 355 L 970 355 L 970 430" class="flow-line" />
+  <rect x="870" y="430" width="200" height="48" class="process-node" />
+  <text x="970" y="459" text-anchor="middle" class="text-process">PAGE-013 입력구조/표현자산</text>
+  <path d="M 970 478 L 970 520" class="flow-line" />
+  <rect x="870" y="520" width="200" height="48" class="process-node" />
+  <text x="970" y="549" text-anchor="middle" class="text-process">PAGE-014 사본 템플릿 서식</text>
+
+  <!-- Flow E: Guide Return -->
+  <path d="M 800 330 L 1220 330 L 1220 430" class="flow-line-alt" />
+  <rect x="1120" y="430" width="200" height="48" class="process-node" />
+  <text x="1220" y="459" text-anchor="middle" class="text-process">PAGE-016 기록 가이드 센터</text>
+  <path d="M 1220 478 L 1220 520" class="flow-line-alt" />
+  <rect x="1120" y="520" width="200" height="48" class="process-node" />
+  <text x="1220" y="549" text-anchor="middle" class="text-process">PAGE-018 미안함 없는 복귀</text>
+
+  <!-- Decision Node 2: Exception Check -->
+  <polygon points="700,600 820,645 700,690 580,645" class="decision-node" />
+  <text x="700" y="649" text-anchor="middle" class="text-decision">예외/오류 발생?</text>
+
+  <!-- Exception paths -->
+  <path d="M 580 645 L 300 645 L 300 700" class="flow-line-alt" />
+  <rect x="200" y="700" width="200" height="42" fill="#fffbeb" stroke="#d97706" stroke-width="1.5" rx="6px" />
+  <text x="300" y="725" text-anchor="middle" fill="#92400e" font-family="Pretendard" font-size="12px" font-weight="700">외부연동 HOLD / 로컬 백업</text>
+
+  <!-- Normal Path to Completion -->
+  <path d="M 700 690 L 700 740" class="flow-line" />
+
+  <!-- End Node -->
+  <rect x="575" y="740" width="250" height="52" class="end-node" />
+  <text x="700" y="771" text-anchor="middle" class="text-start">[종료] 나만의 서재 소장 &amp; 안심 지속</text>
+</svg>

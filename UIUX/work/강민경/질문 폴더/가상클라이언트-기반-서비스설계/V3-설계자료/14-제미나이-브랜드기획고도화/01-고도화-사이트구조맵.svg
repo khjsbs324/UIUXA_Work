@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1100" width="100%" height="100%">
+  <defs>
+    <style>
+      .bg { fill: #fcfbf9; }
+      .header-bg { fill: #1e2522; rx: 8px; }
+      .header-text { fill: #ffffff; font-family: 'Pretendard', sans-serif; font-size: 22px; font-weight: 800; }
+      .badge-bg { fill: #4a5d55; rx: 4px; }
+      .badge-text { fill: #ffffff; font-family: 'Pretendard', sans-serif; font-size: 12px; font-weight: 700; }
+      
+      .node-root { fill: #1e2522; stroke: #4a5d55; stroke-width: 3; rx: 10px; }
+      .node-gnb { fill: #4a5d55; stroke: #2b302d; stroke-width: 2; rx: 8px; }
+      .node-p2 { fill: #9e7b66; stroke: #1e2522; stroke-width: 1.5; rx: 6px; }
+      .node-p3 { fill: #ffffff; stroke: #e2ddd7; stroke-width: 1.5; rx: 6px; }
+      .node-p4 { fill: #f4f0eb; stroke: #cbd5e1; stroke-width: 1; rx: 4px; }
+      
+      .text-root { fill: #ffffff; font-family: 'Pretendard', sans-serif; font-size: 15px; font-weight: 800; }
+      .text-gnb { fill: #ffffff; font-family: 'Pretendard', sans-serif; font-size: 13px; font-weight: 700; }
+      .text-p2 { fill: #ffffff; font-family: 'Pretendard', sans-serif; font-size: 12px; font-weight: 700; }
+      .text-p3 { fill: #2b302d; font-family: 'Pretendard', sans-serif; font-size: 11px; font-weight: 700; }
+      .text-p4 { fill: #5c635f; font-family: 'Pretendard', sans-serif; font-size: 10px; font-weight: 600; }
+      
+      .line { stroke: #9e7b66; stroke-width: 1.5; stroke-dasharray: 4 2; }
+      .line-solid { stroke: #4a5d55; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1100" class="bg" />
+
+  <!-- Top Header Banner -->
+  <rect x="50" y="30" width="1500" height="68" class="header-bg" />
+  <text x="80" y="72" class="header-text">[LOGO] DAMORI 브랜드 기획 기반 4-Depth 고도화 사이트구조맵 (IA)</text>
+  <rect x="1260" y="48" width="260" height="32" class="badge-bg" />
+  <text x="1280" y="69" class="badge-text">4계층 세분화 &amp; 50 VC 매핑</text>
+
+  <!-- Root Node (Depth 1 Root): PAGE-001 Home -->
+  <rect x="650" y="130" width="300" height="68" class="node-root" />
+  <text x="800" y="158" text-anchor="middle" class="text-root">SCR-001 / PAGE-001 홈 메인페이지</text>
+  <text x="800" y="180" text-anchor="middle" fill="#e2ddd7" font-size="11px" font-family="Pretendard">상품 15~50개 전수 가로 스크롤 카드 레일 수록</text>
+
+  <!-- Main Trunk Lines -->
+  <path d="M 800 198 L 800 240 M 150 240 L 1450 240" class="line-solid" />
+  <path d="M 150 240 L 150 270" class="line-solid" />
+  <path d="M 475 240 L 475 270" class="line-solid" />
+  <path d="M 800 240 L 800 270" class="line-solid" />
+  <path d="M 1125 240 L 1125 270" class="line-solid" />
+  <path d="M 1450 240 L 1450 270" class="line-solid" />
+
+  <!-- Column 1: GNB 1 (방식 찾기) -->
+  <rect x="50" y="270" width="200" height="44" class="node-gnb" />
+  <text x="150" y="297" text-anchor="middle" class="text-gnb">Depth 1: GNB 1 방식 찾기</text>
+  
+  <path d="M 150 314 L 150 340" class="line" />
+  <rect x="50" y="340" width="200" height="38" class="node-p2" />
+  <text x="150" y="364" text-anchor="middle" class="text-p2">Depth 2: PAGE-002 (SCR-002)</text>
+  
+  <path d="M 150 378 L 150 400" class="line" />
+  <rect x="50" y="400" width="200" height="36" class="node-p3" />
+  <text x="150" y="422" text-anchor="middle" class="text-p3">Depth 3: 4대 자율 필터 칩</text>
+  
+  <path d="M 150 436 L 150 455" class="line" />
+  <rect x="50" y="455" width="200" height="34" class="node-p4" />
+  <text x="150" y="476" text-anchor="middle" class="text-p4">Depth 4: VC-08 다온 / VC-23 도윤</text>
+
+  <!-- Column 2: GNB 2 (아날로그) -->
+  <rect x="375" y="270" width="200" height="44" class="node-gnb" />
+  <text x="475" y="297" text-anchor="middle" class="text-gnb">Depth 1: GNB 2 아날로그</text>
+  
+  <path d="M 475 314 L 475 340" class="line" />
+  <rect x="375" y="340" width="200" height="38" class="node-p2" />
+  <text x="475" y="364" text-anchor="middle" class="text-p2">Depth 2: PAGE-004~008</text>  
+  
+  <path d="M 475 378 L 475 400" class="line" />
+  <rect x="375" y="400" width="200" height="36" class="node-p3" />
+  <text x="475" y="422" text-anchor="middle" class="text-p3">Depth 3: 180도 평면 / 120gsm</text>
+  
+  <path d="M 475 436 L 475 455" class="line" />
+  <rect x="375" y="455" width="200" height="34" class="node-p4" />
+  <text x="475" y="476" text-anchor="middle" class="text-p4">Depth 4: VC-01 은재 / VC-17 채운</text>
+
+  <!-- Column 3: GNB 3 (디지털) -->
+  <rect x="700" y="270" width="200" height="44" class="node-gnb" />
+  <text x="800" y="297" text-anchor="middle" class="text-gnb">Depth 1: GNB 3 디지털</text>
+  
+  <path d="M 800 314 L 800 340" class="line" />
+  <rect x="700" y="340" width="200" height="38" class="node-p2" />
+  <text x="800" y="364" text-anchor="middle" class="text-p2">Depth 2: PAGE-009~012</text>
+  
+  <path d="M 800 378 L 800 400" class="line" />
+  <rect x="700" y="400" width="200" height="36" class="node-p3" />
+  <text x="800" y="422" text-anchor="middle" class="text-p3">Depth 3: 10초 폼 &amp; 시간축</text>
+  
+  <path d="M 800 436 L 800 455" class="line" />
+  <rect x="700" y="455" width="200" height="34" class="node-p4" />
+  <text x="800" y="476" text-anchor="middle" class="text-p4">Depth 4: VC-02 지안 / VC-03 하람</text>
+
+  <!-- Column 4: GNB 4 (템플릿/꾸미기) -->
+  <rect x="1025" y="270" width="200" height="44" class="node-gnb" />
+  <text x="1125" y="297" text-anchor="middle" class="text-gnb">Depth 1: GNB 4 템플릿</text>  
+  
+  <path d="M 1125 314 L 1125 340" class="line" />
+  <rect x="1025" y="340" width="200" height="38" class="node-p2" />
+  <text x="1125" y="364" text-anchor="middle" class="text-p2">Depth 2: PAGE-013~015</text>
+  
+  <path d="M 1125 378 L 1125 400" class="line" />
+  <rect x="1025" y="400" width="200" height="36" class="node-p3" />
+  <text x="1125" y="422" text-anchor="middle" class="text-p3">Depth 3: 원본보호 입력구조</text>
+  
+  <path d="M 1125 436 L 1125 455" class="line" />
+  <rect x="1025" y="455" width="200" height="34" class="node-p4" />
+  <text x="1125" y="476" text-anchor="middle" class="text-p4">Depth 4: VC-04 소담 / VC-06 나린</text>
+
+  <!-- Column 5: GNB 5 (기록 가이드) -->
+  <rect x="1350" y="270" width="200" height="44" class="node-gnb" />
+  <text x="1450" y="297" text-anchor="middle" class="text-gnb">Depth 1: GNB 5 가이드</text>
+  
+  <path d="M 1450 314 L 1450 340" class="line" />
+  <rect x="1350" y="340" width="200" height="38" class="node-p2" />
+  <text x="1450" y="364" text-anchor="middle" class="text-p2">Depth 2: PAGE-016~019</text>
+  
+  <path d="M 1450 378 L 1450 400" class="line" />
+  <rect x="1350" y="400" width="200" height="36" class="node-p3" />
+  <text x="1450" y="422" text-anchor="middle" class="text-p3">Depth 3: 미안함 해소 복귀</text>
+  
+  <path d="M 1450 436 L 1450 455" class="line" />
+  <rect x="1350" y="455" width="200" height="34" class="node-p4" />
+  <text x="1450" y="476" text-anchor="middle" class="text-p4">Depth 4: VC-07 이준 / VC-13 여울</text>
+
+  <!-- Footer Banner -->
+  <rect x="50" y="540" width="1500" height="50" fill="#f4f0eb" stroke="#9e7b66" stroke-width="1.5" rx="6px" />
+  <text x="800" y="571" text-anchor="middle" fill="#1e2522" font-family="Pretendard" font-size="14px" font-weight="700">전역 푸터: PAGE-019 이동·보존·도움말 | PAGE-020 브랜드 소개 (기억의 서재) | PAGE-001 홈</text>
+</svg>

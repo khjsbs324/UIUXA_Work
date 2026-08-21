@@ -1,0 +1,2461 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAMORI (다모리) — 카테고리 솔루션 허브 (200개 인벤토리)</title>
+  <link rel="stylesheet" href="damori-theme.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--damori-font-sans); background: var(--damori-paper-ivory); color: var(--damori-charcoal); line-height: 1.6; padding-bottom: 120px; }
+    
+    .gnb { position: sticky; top: 0; z-index: 1000; height: var(--damori-header-height); background: rgba(251, 249, 245, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--damori-border-subtle); display: flex; align-items: center; justify-content: space-between; padding: 0 40px; }
+    .gnb-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--damori-charcoal); font-weight: 700; font-size: 1.25rem; }
+    .gnb-brand .logo-badge { background: var(--damori-charcoal); color: var(--damori-paper-ivory); width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 4px; font-family: var(--damori-font-serif); }
+    .gnb-nav { display: flex; gap: 28px; list-style: none; }
+    .gnb-nav a { text-decoration: none; color: var(--damori-ink-muted); font-size: 0.95rem; font-weight: 500; }
+    .gnb-nav a.active { color: var(--damori-seal-vermilion); font-weight: 600; }
+
+    .container { max-width: var(--damori-max-width); margin: 0 auto; padding: 0 24px; }
+    
+    /* Visual Hero */
+    .hub-hero { background: var(--damori-dark-surface); color: #fff; padding: 48px 32px; border-radius: var(--damori-radius-md); margin: 24px 0 32px; text-align: center; }
+    .hub-hero h1 { font-family: var(--damori-font-serif); font-size: 2rem; margin-bottom: 12px; color: var(--damori-paper-ivory); }
+    .hub-hero p { color: var(--damori-border-subtle); font-size: 1rem; }
+
+    /* Category Tabs */
+    .cat-tabs { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 12px; margin-bottom: 24px; border-bottom: 1px solid var(--damori-border-subtle); }
+    .cat-tab { background: #fff; border: 1px solid var(--damori-border-regular); padding: 10px 18px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; white-space: nowrap; cursor: pointer; transition: all var(--damori-transition-fast); }
+    .cat-tab.active { background: var(--damori-seal-vermilion); color: #fff; border-color: var(--damori-seal-vermilion); }
+
+    /* 1:1 Side by Side comparison banner */
+    .compare-side-by-side { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px; }
+    .compare-card { background: #fff; border: 1px solid var(--damori-border-subtle); border-radius: var(--damori-radius-md); padding: 24px; box-shadow: var(--damori-shadow-sm); }
+    .compare-card.analog { border-top: 4px solid #C84B31; }
+    .compare-card.digital { border-top: 4px solid #1A1918; }
+    .compare-card h3 { font-size: 1.1rem; margin-bottom: 8px; }
+
+    /* Products Grid */
+    .products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .product-card { background: #fff; border: 1px solid var(--damori-border-subtle); border-radius: var(--damori-radius-sm); padding: 20px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--damori-shadow-sm); transition: transform var(--damori-transition-fast); }
+    .product-card:hover { transform: translateY(-2px); box-shadow: var(--damori-shadow-md); }
+    .product-card .cat-badge { font-size: 0.75rem; background: var(--damori-paper-warm); color: var(--damori-charcoal); padding: 3px 8px; border-radius: 3px; display: inline-block; margin-bottom: 8px; font-weight: 600; }
+    .product-card h4 { font-size: 0.95rem; margin-bottom: 6px; }
+    .product-card .client-tag { font-size: 0.75rem; color: #C84B31; margin-bottom: 8px; font-weight: 600; }
+    .product-card p { font-size: 0.8rem; color: var(--damori-graphite); margin-bottom: 16px; flex-grow: 1; }
+    .product-card .btn-tray-add { background: #fff; border: 1px solid var(--damori-charcoal); color: var(--damori-charcoal); padding: 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 600; cursor: pointer; width: 100%; }
+    .product-card .btn-tray-add.active { background: var(--damori-seal-vermilion); border-color: var(--damori-seal-vermilion); color: #fff; }
+
+    /* Floating Compare Tray */
+    .floating-tray { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: calc(100% - 48px); max-width: 900px; background: var(--damori-charcoal); color: #fff; padding: 16px 24px; border-radius: 8px; box-shadow: var(--damori-shadow-lg); display: flex; justify-content: space-between; align-items: center; z-index: 1500; }
+    .tray-items { display: flex; gap: 12px; }
+    .tray-pill { background: rgba(255,255,255,0.15); padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; display: flex; align-items: center; gap: 6px; }
+    .btn-tray-modal { background: var(--damori-seal-vermilion); color: #fff; border: none; padding: 10px 20px; border-radius: 4px; font-weight: 600; cursor: pointer; }
+
+    /* Comparison Modal */
+    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); display: none; align-items: center; justify-content: center; z-index: 2500; }
+    .modal-overlay.open { display: flex; }
+    .compare-modal-content { background: #fff; border-radius: 8px; max-width: 960px; width: 95%; max-height: 85vh; overflow-y: auto; padding: 32px; }
+    .compare-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 0.85rem; }
+    .compare-table th, .compare-table td { border: 1px solid var(--damori-border-regular); padding: 12px; text-align: left; }
+    .compare-table th { background: var(--damori-paper-warm); font-weight: 700; width: 20%; }
+
+    @media (max-width: 1024px) {
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+      .compare-side-by-side { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .products-grid { grid-template-columns: 1fr; }
+      .gnb { padding: 0 16px; }
+      .gnb-nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="gnb">
+    <a href="PAGE-001-메인랜딩.html" class="gnb-brand">
+      <span class="logo-badge">多</span>
+      <span>DAMORI</span>
+    </a>
+    <ul class="gnb-nav">
+      <li><a href="PAGE-001-메인랜딩.html">기록 방식 찾기</a></li>
+      <li><a href="PAGE-021-카테고리솔루션허브.html" class="active">카테고리 솔루션 (200종)</a></li>
+      <li><a href="PAGE-020-브랜드소개.html">브랜드 소개 (기억의 서재)</a></li>
+    </ul>
+    <div style="font-size:0.85rem;color:var(--damori-local-cache);font-weight:600;">
+      ● ST-LOCAL 오프라인 캐시 연동
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hub-hero">
+      <h1>10대 카테고리 200개 솔루션 허브</h1>
+      <p>단순 판매가 아닌, 51인 클라이언트의 기록 목적·물성·차이를 1:1로 실측 대조하는 포트폴리오 허브</p>
+    </section>
+
+    <!-- Side by Side Example -->
+    <div class="compare-side-by-side">
+      <div class="compare-card analog">
+        <span style="color:#C84B31;font-size:0.75rem;font-weight:700;">아날로그 물성 솔루션</span>
+        <h3>120gsm 미유광 평산지 Smyth Sewn 노구</h3>
+        <p style="font-size:0.85rem;color:var(--damori-graphite);margin-bottom:12px;">손목 통증 없는 180도 완전 평면 펼침과 잉크 번짐률 0.0% 보증.</p>
+        <button class="btn-primary" style="padding:6px 14px;font-size:0.8rem;" onclick="addToTrayById('PROD-001')">+ PROD-001 Compare 담기</button>
+      </div>
+      <div class="compare-card digital">
+        <span style="color:#1A1918;font-size:0.75rem;font-weight:700;">디지털 시간축 솔루션</span>
+        <h3>24시간 일간 타임라인 플래너</h3>
+        <p style="font-size:0.85rem;color:var(--damori-graphite);margin-bottom:12px;">원치 않는 덮어쓰기 완전 차단(ST-HOLD) 및 3단 디바이스 비율 고정.</p>
+        <button class="btn-secondary" style="padding:6px 14px;font-size:0.8rem;" onclick="addToTrayById('PROD-041')">+ PROD-041 Compare 담기</button>
+      </div>
+    </div>
+
+    <!-- 10 Category Tabs -->
+    <div class="cat-tabs" id="category-tabs">
+      <button class="cat-tab active" onclick="filterCategory('ALL', this)">전체 솔루션 (200개)</button>
+      <button class="cat-tab" onclick="filterCategory('ANALOG-NOTE', this)">1. 아날로그 노트 (20)</button>
+      <button class="cat-tab" onclick="filterCategory('REFILL-PAPER', this)">2. 리필 속지 (20)</button>
+      <button class="cat-tab" onclick="filterCategory('DIGITAL-PLANNER', this)">3. 디지털 플래너 (20)</button>
+      <button class="cat-tab" onclick="filterCategory('QUICK-FORM', this)">4. 10초 빠른 폼 (20)</button>
+      <button class="cat-tab" onclick="filterCategory('TEMPLATE-STRUCTURE', this)">5. 템플릿 서식 (20)</button>
+      <button class="cat-tab" onclick="filterCategory('DECO-ASSET', this)">6. 꾸미기 자산 (20)</button>
+      <button class="cat-tab" onclick="filterCategory('ARCHIVE-CASE', this)">7. 아카이빙 바인더 (20)</button>
+      <button class="cat-tab" onclick="filterCategory('BRASS-SEAL', this)">8. 황동 실링 왁스 (20)</button>
+      <button class="cat-tab" onclick="filterCategory('STARTER-KIT', this)">9. 스타터 세트 (20)</button>
+      <button class="cat-tab" onclick="filterCategory('CARE-TOOL', this)">10. 케어 툴킷 (20)</button>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="products-grid" id="products-grid">
+      <!-- Injected via JS -->
+    </div>
+  </main>
+
+  <!-- Floating Compare Tray -->
+  <div class="floating-tray" id="floating-tray">
+    <div style="display:flex;align-items:center;gap:16px;">
+      <span style="font-weight:700;font-size:0.9rem;color:var(--damori-seal-gold);">1:1 Compare Tray (<span id="tray-count-display">0</span>/3)</span>
+      <div class="tray-items" id="tray-items-box">
+        <span style="color:#8C827A;font-size:0.8rem;">대조할 제품을 아래 카드에서 담아보세요.</span>
+      </div>
+    </div>
+    <button class="btn-tray-modal" onclick="openCompareModal()">실측 1:1 대조창 열기</button>
+  </div>
+
+  <!-- Compare Modal -->
+  <div class="modal-overlay" id="compare-modal">
+    <div class="compare-modal-content">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <h2 style="font-size:1.3rem;font-family:var(--damori-font-serif);">1:1 실측 스펙 정밀 대조표 (Compare Tray)</h2>
+        <button onclick="closeCompareModal()" style="background:none;border:none;font-size:1.5rem;cursor:pointer;">&times;</button>
+      </div>
+      <div id="compare-modal-body">
+        <!-- Render compare table via JS -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const productsData = [
+  {
+    "id": "PROD-001",
+    "name": "아날로그 노트 001호 (은재 맞춤 솔루션)",
+    "category": "아날로그 노트 & 실물 노구 (`ANALOG-NOTE`)",
+    "context": "은재의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "120gsm 미유광 평산지, 180도 Smyth Sewn 실제본 노구, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "은재의 고유 과업(아날로그 장문 기록)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-01 은재` (아날로그 장문 기록)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-002",
+    "name": "아날로그 노트 002호 (지안 맞춤 솔루션)",
+    "category": "아날로그 노트 & 실물 노구 (`ANALOG-NOTE`)",
+    "context": "지안의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "120gsm 미유광 평산지, 180도 Smyth Sewn 실제본 노구, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "지안의 고유 과업(미래 일정 흐름 통제)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-02 지안` (미래 일정 흐름 통제)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-003",
+    "name": "아날로그 노트 003호 (하람 맞춤 솔루션)",
+    "category": "아날로그 노트 & 실물 노구 (`ANALOG-NOTE`)",
+    "context": "하람의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "120gsm 미유광 평산지, 180도 Smyth Sewn 실제본 노구, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "하람의 고유 과업(저부담 시각 회고)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-03 하람` (저부담 시각 회고)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-004",
+    "name": "아날로그 노트 004호 (소담 맞춤 솔루션)",
+    "category": "아날로그 노트 & 실물 노구 (`ANALOG-NOTE`)",
+    "context": "소담의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "120gsm 미유광 평산지, 180도 Smyth Sewn 실제본 노구, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "소담의 고유 과업(주제별 기록 탐색)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-04 소담` (주제별 기록 탐색)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-005",
+    "name": "아날로그 노트 005호 (태오 맞춤 솔루션)",
+    "category": "아날로그 노트 & 실물 노구 (`ANALOG-NOTE`)",
+    "context": "태오의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "120gsm 미유광 평산지, 180도 Smyth Sewn 실제본 노구, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "태오의 고유 과업(다기기 연속성 검증)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-05 태오` (다기기 연속성 검증)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-006",
+    "name": "아날로그 노트 006호 (나린 맞춤 솔루션)",
+    "category": "아날로그 노트 & 실물 노구 (`ANALOG-NOTE`)",
+    "context": "나린의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "120gsm 미유광 평산지, 180도 Smyth Sewn 실제본 노구, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "나린의 고유 과업(꾸미기 자산 재사용)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-06 나린` (꾸미기 자산 재사용)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-007",
+    "name": "아날로그 노트 007호 (이준 맞춤 솔루션)",
+    "category": "아날로그 노트 & 실물 노구 (`ANALOG-NOTE`)",
+    "context": "이준의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "120gsm 미유광 평산지, 180도 Smyth Sewn 실제본 노구, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "이준의 고유 과업(중단 후 재시작)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-07 이준` (중단 후 재시작)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-008",
+    "name": "아날로그 노트 008호 (다온 맞춤 솔루션)",
+    "category": "아날로그 노트 & 실물 노구 (`ANALOG-NOTE`)",
+    "context": "다온의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "120gsm 미유광 평산지, 180도 Smyth Sewn 실제본 노구, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "다온의 고유 과업(첫 선택 부담)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-08 다온` (첫 선택 부담)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-009",
+    "name": "아날로그 노트 009호 (윤슬 맞춤 솔루션)",
+    "category": "아날로그 노트 & 실물 노구 (`ANALOG-NOTE`)",
+    "context": "윤슬의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "120gsm 미유광 평산지, 180도 Smyth Sewn 실제본 노구, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "윤슬의 고유 과업(카테고리·제품 비교)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-09 윤슬` (카테고리·제품 비교)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-010",
+    "name": "아날로그 노트 010호 (온유 맞춤 솔루션)",
+    "category": "아날로그 노트 & 실물 노구 (`ANALOG-NOTE`)",
+    "context": "온유의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "120gsm 미유광 평산지, 180도 Smyth Sewn 실제본 노구, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "온유의 고유 과업(선물 패키지 선택)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-10 온유` (선물 패키지 선택)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-011",
+    "name": "아날로그 노트 011호 (가람 맞춤 솔루션)",
+    "category": "아날로그 노트 & 실물 노구 (`ANALOG-NOTE`)",
+    "context": "가람의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "120gsm 미유광 평산지, 180도 Smyth Sewn 실제본 노구, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "가람의 고유 과업(브랜드 신뢰)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-11 가람` (브랜드 신뢰)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-012",
+    "name": "아날로그 노트 012호 (해솔 맞춤 솔루션)",
+    "category": "아날로그 노트 & 실물 노구 (`ANALOG-NOTE`)",
+    "context": "해솔의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "120gsm 미유광 평산지, 180도 Smyth Sewn 실제본 노구, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "해솔의 고유 과업(개인정보·보존 통제)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-12 해솔` (개인정보·보존 통제)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-013",
+    "name": "아날로그 노트 013호 (여울 맞춤 솔루션)",
+    "category": "아날로그 노트 & 실물 노구 (`ANALOG-NOTE`)",
+    "context": "여울의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "120gsm 미유광 평산지, 180도 Smyth Sewn 실제본 노구, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "여울의 고유 과업(접근성)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-13 여울` (접근성)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-014",
+    "name": "아날로그 노트 014호 (마루 맞춤 솔루션)",
+    "category": "아날로그 노트 & 실물 노구 (`ANALOG-NOTE`)",
+    "context": "마루의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "120gsm 미유광 평산지, 180도 Smyth Sewn 실제본 노구, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "마루의 고유 과업(탐색 재개)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-14 마루` (탐색 재개)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-015",
+    "name": "아날로그 노트 015호 (새봄 맞춤 솔루션)",
+    "category": "아날로그 노트 & 실물 노구 (`ANALOG-NOTE`)",
+    "context": "새봄의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "120gsm 미유광 평산지, 180도 Smyth Sewn 실제본 노구, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "새봄의 고유 과업(재료·지속가능성 정보)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-15 새봄` (재료·지속가능성 정보)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-016",
+    "name": "아날로그 노트 016호 (한결 맞춤 솔루션)",
+    "category": "아날로그 노트 & 실물 노구 (`ANALOG-NOTE`)",
+    "context": "한결의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "120gsm 미유광 평산지, 180도 Smyth Sewn 실제본 노구, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "한결의 고유 과업(반복 설정 피로)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-16 한결` (반복 설정 피로)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-017",
+    "name": "아날로그 노트 017호 (채운 맞춤 솔루션)",
+    "category": "아날로그 노트 & 실물 노구 (`ANALOG-NOTE`)",
+    "context": "채운의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "120gsm 미유광 평산지, 180도 Smyth Sewn 실제본 노구, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "채운의 고유 과업(아날로그 정보 부족)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-17 채운` (아날로그 정보 부족)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-018",
+    "name": "아날로그 노트 018호 (서우 맞춤 솔루션)",
+    "category": "아날로그 노트 & 실물 노구 (`ANALOG-NOTE`)",
+    "context": "서우의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "120gsm 미유광 평산지, 180도 Smyth Sewn 실제본 노구, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "서우의 고유 과업(디지털 내보내기 판단)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-18 서우` (디지털 내보내기 판단)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-019",
+    "name": "아날로그 노트 019호 (초아 맞춤 솔루션)",
+    "category": "아날로그 노트 & 실물 노구 (`ANALOG-NOTE`)",
+    "context": "초아의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "120gsm 미유광 평산지, 180도 Smyth Sewn 실제본 노구, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "초아의 고유 과업(가족 공동 기록 경계)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-19 초아` (가족 공동 기록 경계)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-020",
+    "name": "아날로그 노트 020호 (주원 맞춤 솔루션)",
+    "category": "아날로그 노트 & 실물 노구 (`ANALOG-NOTE`)",
+    "context": "주원의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "120gsm 미유광 평산지, 180도 Smyth Sewn 실제본 노구, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "주원의 고유 과업(기록 방식 전환)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-20 주원` (기록 방식 전환)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-021",
+    "name": "리필 속지 021호 (민서 맞춤 솔루션)",
+    "category": "리필 속지 & 내지 라인업 (`REFILL-PAPER`)",
+    "context": "민서의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "무지/방안/줄글/도트 리필 속지 팩 및 교체형 내지, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "민서의 고유 과업(예산 미정 탐색)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-21 민서` (예산 미정 탐색)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-022",
+    "name": "리필 속지 022호 (선율 맞춤 솔루션)",
+    "category": "리필 속지 & 내지 라인업 (`REFILL-PAPER`)",
+    "context": "선율의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "무지/방안/줄글/도트 리필 속지 팩 및 교체형 내지, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "선율의 고유 과업(기록 공개 부담)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-22 선율` (기록 공개 부담)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-023",
+    "name": "리필 속지 023호 (도윤 맞춤 솔루션)",
+    "category": "리필 속지 & 내지 라인업 (`REFILL-PAPER`)",
+    "context": "도윤의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "무지/방안/줄글/도트 리필 속지 팩 및 교체형 내지, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "도윤의 고유 과업(복잡한 필터 회피)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-23 도윤` (복잡한 필터 회피)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-024",
+    "name": "리필 속지 024호 (아라 맞춤 솔루션)",
+    "category": "리필 속지 & 내지 라인업 (`REFILL-PAPER`)",
+    "context": "아라의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "무지/방안/줄글/도트 리필 속지 팩 및 교체형 내지, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "아라의 고유 과업(근거 시점 확인)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-24 아라` (근거 시점 확인)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-025",
+    "name": "리필 속지 025호 (재희 맞춤 솔루션)",
+    "category": "리필 속지 & 내지 라인업 (`REFILL-PAPER`)",
+    "context": "재희의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "무지/방안/줄글/도트 리필 속지 팩 및 교체형 내지, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "재희의 고유 과업(선물 실패 회피)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-25 재희` (선물 실패 회피)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-026",
+    "name": "리필 속지 026호 (지후 맞춤 솔루션)",
+    "category": "리필 속지 & 내지 라인업 (`REFILL-PAPER`)",
+    "context": "지후의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "무지/방안/줄글/도트 리필 속지 팩 및 교체형 내지, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "지후의 고유 과업(중단 후 비교 맥락)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-26 지후` (중단 후 비교 맥락)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-027",
+    "name": "리필 속지 027호 (예린 맞춤 솔루션)",
+    "category": "리필 속지 & 내지 라인업 (`REFILL-PAPER`)",
+    "context": "예린의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "무지/방안/줄글/도트 리필 속지 팩 및 교체형 내지, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "예린의 고유 과업(브랜드 주장 검증)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-27 예린` (브랜드 주장 검증)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-028",
+    "name": "리필 속지 028호 (수현 맞춤 솔루션)",
+    "category": "리필 속지 & 내지 라인업 (`REFILL-PAPER`)",
+    "context": "수현의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "무지/방안/줄글/도트 리필 속지 팩 및 교체형 내지, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "수현의 고유 과업(오래된 기록 재탐색)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-28 수현` (오래된 기록 재탐색)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-029",
+    "name": "리필 속지 029호 (건우 맞춤 솔루션)",
+    "category": "리필 속지 & 내지 라인업 (`REFILL-PAPER`)",
+    "context": "건우의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "무지/방안/줄글/도트 리필 속지 팩 및 교체형 내지, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "건우의 고유 과업(실물 보관 공간 제약)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-29 건우` (실물 보관 공간 제약)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-030",
+    "name": "리필 속지 030호 (서진 맞춤 솔루션)",
+    "category": "리필 속지 & 내지 라인업 (`REFILL-PAPER`)",
+    "context": "서진의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "무지/방안/줄글/도트 리필 속지 팩 및 교체형 내지, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "서진의 고유 과업(커스터마이징 후회 방지)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-30 서진` (커스터마이징 후회 방지)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-031",
+    "name": "리필 속지 031호 (지민 맞춤 솔루션)",
+    "category": "리필 속지 & 내지 라인업 (`REFILL-PAPER`)",
+    "context": "지민의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "무지/방안/줄글/도트 리필 속지 팩 및 교체형 내지, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "지민의 고유 과업(알림 피로 회피)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-31 지민` (알림 피로 회피)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-032",
+    "name": "리필 속지 032호 (유진 맞춤 솔루션)",
+    "category": "리필 속지 & 내지 라인업 (`REFILL-PAPER`)",
+    "context": "유진의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "무지/방안/줄글/도트 리필 속지 팩 및 교체형 내지, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "유진의 고유 과업(빠른 기록의 의미 선택)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-32 유진` (빠른 기록의 의미 선택)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-033",
+    "name": "리필 속지 033호 (연우 맞춤 솔루션)",
+    "category": "리필 속지 & 내지 라인업 (`REFILL-PAPER`)",
+    "context": "연우의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "무지/방안/줄글/도트 리필 속지 팩 및 교체형 내지, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "연우의 고유 과업(기존 기록 이전 판단)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-33 연우` (기존 기록 이전 판단)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-034",
+    "name": "리필 속지 034호 (하윤 맞춤 솔루션)",
+    "category": "리필 속지 & 내지 라인업 (`REFILL-PAPER`)",
+    "context": "하윤의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "무지/방안/줄글/도트 리필 속지 팩 및 교체형 내지, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "하윤의 고유 과업(선물 수령자의 접근성)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-34 하윤` (선물 수령자의 접근성)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-035",
+    "name": "리필 속지 035호 (시온 맞춤 솔루션)",
+    "category": "리필 속지 & 내지 라인업 (`REFILL-PAPER`)",
+    "context": "시온의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "무지/방안/줄글/도트 리필 속지 팩 및 교체형 내지, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "시온의 고유 과업(생활 변화에 따른 방식 수정)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-35 시온` (생활 변화에 따른 방식 수정)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-036",
+    "name": "리필 속지 036호 (나윤 맞춤 솔루션)",
+    "category": "리필 속지 & 내지 라인업 (`REFILL-PAPER`)",
+    "context": "나윤의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "무지/방안/줄글/도트 리필 속지 팩 및 교체형 내지, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "나윤의 고유 과업(리필·수리 가능성)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-36 나윤` (리필·수리 가능성)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-037",
+    "name": "리필 속지 037호 (태윤 맞춤 솔루션)",
+    "category": "리필 속지 & 내지 라인업 (`REFILL-PAPER`)",
+    "context": "태윤의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "무지/방안/줄글/도트 리필 속지 팩 및 교체형 내지, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "태윤의 고유 과업(콘텐츠와 제품 탐색 구분)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-37 태윤` (콘텐츠와 제품 탐색 구분)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-038",
+    "name": "리필 속지 038호 (라온 맞춤 솔루션)",
+    "category": "리필 속지 & 내지 라인업 (`REFILL-PAPER`)",
+    "context": "라온의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "무지/방안/줄글/도트 리필 속지 팩 및 교체형 내지, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "라온의 고유 과업(가칭 브랜드 인지)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-38 라온` (가칭 브랜드 인지)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-039",
+    "name": "리필 속지 039호 (은호 맞춤 솔루션)",
+    "category": "리필 속지 & 내지 라인업 (`REFILL-PAPER`)",
+    "context": "은호의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "무지/방안/줄글/도트 리필 속지 팩 및 교체형 내지, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "은호의 고유 과업(포트폴리오 과정 검증)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-39 은호` (포트폴리오 과정 검증)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-040",
+    "name": "리필 속지 040호 (세아 맞춤 솔루션)",
+    "category": "리필 속지 & 내지 라인업 (`REFILL-PAPER`)",
+    "context": "세아의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "무지/방안/줄글/도트 리필 속지 팩 및 교체형 내지, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "세아의 고유 과업(긴 랜딩 서사 탐색)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-40 세아` (긴 랜딩 서사 탐색)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-041",
+    "name": "디지털 플래너 041호 (유나 맞춤 솔루션)",
+    "category": "디지털 플래너 & 시간축 서식 (`DIGITAL-PLANNER`)",
+    "context": "유나의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "24시간 시간축 통제, 주간/일간 전환 인터랙티브 서식, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "유나의 고유 과업(200개 후보군 전체 방향 감각)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-41 유나` (200개 후보군 전체 방향 감각)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-042",
+    "name": "디지털 플래너 042호 (현서 맞춤 솔루션)",
+    "category": "디지털 플래너 & 시간축 서식 (`DIGITAL-PLANNER`)",
+    "context": "현서의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "24시간 시간축 통제, 주간/일간 전환 인터랙티브 서식, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "현서의 고유 과업(시각적 Hero와 탐색 균형)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-42 현서` (시각적 Hero와 탐색 균형)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-043",
+    "name": "디지털 플래너 043호 (다빈 맞춤 솔루션)",
+    "category": "디지털 플래너 & 시간축 서식 (`DIGITAL-PLANNER`)",
+    "context": "다빈의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "24시간 시간축 통제, 주간/일간 전환 인터랙티브 서식, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "다빈의 고유 과업(비판매 포트폴리오 인지)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-43 다빈` (비판매 포트폴리오 인지)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-044",
+    "name": "디지털 플래너 044호 (로운 맞춤 솔루션)",
+    "category": "디지털 플래너 & 시간축 서식 (`DIGITAL-PLANNER`)",
+    "context": "로운의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "24시간 시간축 통제, 주간/일간 전환 인터랙티브 서식, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "로운의 고유 과업(이미지 실패 상황의 제품 판단)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-44 로운` (이미지 실패 상황의 제품 판단)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-045",
+    "name": "디지털 플래너 045호 (해나 맞춤 솔루션)",
+    "category": "디지털 플래너 & 시간축 서식 (`DIGITAL-PLANNER`)",
+    "context": "해나의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "24시간 시간축 통제, 주간/일간 전환 인터랙티브 서식, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "해나의 고유 과업(한국적 정서의 진정성)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-45 해나` (한국적 정서의 진정성)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-046",
+    "name": "디지털 플래너 046호 (지율 맞춤 솔루션)",
+    "category": "디지털 플래너 & 시간축 서식 (`DIGITAL-PLANNER`)",
+    "context": "지율의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "24시간 시간축 통제, 주간/일간 전환 인터랙티브 서식, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "지율의 고유 과업(긴 페이지의 스크린리더 탐색)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-46 지율` (긴 페이지의 스크린리더 탐색)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-047",
+    "name": "디지털 플래너 047호 (주하 맞춤 솔루션)",
+    "category": "디지털 플래너 & 시간축 서식 (`DIGITAL-PLANNER`)",
+    "context": "주하의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "24시간 시간축 통제, 주간/일간 전환 인터랙티브 서식, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "주하의 고유 과업(모바일 제품 레일 발견)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-47 주하` (모바일 제품 레일 발견)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-048",
+    "name": "디지털 플래너 048호 (태린 맞춤 솔루션)",
+    "category": "디지털 플래너 & 시간축 서식 (`DIGITAL-PLANNER`)",
+    "context": "태린의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "24시간 시간축 통제, 주간/일간 전환 인터랙티브 서식, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "태린의 고유 과업(대표 15개 선정 이유 확인)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-48 태린` (대표 15개 선정 이유 확인)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-049",
+    "name": "디지털 플래너 049호 (윤재 맞춤 솔루션)",
+    "category": "디지털 플래너 & 시간축 서식 (`DIGITAL-PLANNER`)",
+    "context": "윤재의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "24시간 시간축 통제, 주간/일간 전환 인터랙티브 서식, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "윤재의 고유 과업(브랜드와 제품의 일관성)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-49 윤재` (브랜드와 제품의 일관성)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-050",
+    "name": "디지털 플래너 050호 (아인 맞춤 솔루션)",
+    "category": "디지털 플래너 & 시간축 서식 (`DIGITAL-PLANNER`)",
+    "context": "아인의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "24시간 시간축 통제, 주간/일간 전환 인터랙티브 서식, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "아인의 고유 과업(카테고리 경계 이해)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-50 아인` (카테고리 경계 이해)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-051",
+    "name": "디지털 플래너 051호 (이솔 맞춤 솔루션)",
+    "category": "디지털 플래너 & 시간축 서식 (`DIGITAL-PLANNER`)",
+    "context": "이솔의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "24시간 시간축 통제, 주간/일간 전환 인터랙티브 서식, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "이솔의 고유 과업(저연결성 긴 페이지 복귀)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-51 이솔` (저연결성 긴 페이지 복귀)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-052",
+    "name": "디지털 플래너 052호 (은재 맞춤 솔루션)",
+    "category": "디지털 플래너 & 시간축 서식 (`DIGITAL-PLANNER`)",
+    "context": "은재의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "24시간 시간축 통제, 주간/일간 전환 인터랙티브 서식, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "은재의 고유 과업(아날로그 장문 기록)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-01 은재` (아날로그 장문 기록)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-053",
+    "name": "디지털 플래너 053호 (지안 맞춤 솔루션)",
+    "category": "디지털 플래너 & 시간축 서식 (`DIGITAL-PLANNER`)",
+    "context": "지안의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "24시간 시간축 통제, 주간/일간 전환 인터랙티브 서식, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "지안의 고유 과업(미래 일정 흐름 통제)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-02 지안` (미래 일정 흐름 통제)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-054",
+    "name": "디지털 플래너 054호 (하람 맞춤 솔루션)",
+    "category": "디지털 플래너 & 시간축 서식 (`DIGITAL-PLANNER`)",
+    "context": "하람의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "24시간 시간축 통제, 주간/일간 전환 인터랙티브 서식, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "하람의 고유 과업(저부담 시각 회고)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-03 하람` (저부담 시각 회고)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-055",
+    "name": "디지털 플래너 055호 (소담 맞춤 솔루션)",
+    "category": "디지털 플래너 & 시간축 서식 (`DIGITAL-PLANNER`)",
+    "context": "소담의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "24시간 시간축 통제, 주간/일간 전환 인터랙티브 서식, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "소담의 고유 과업(주제별 기록 탐색)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-04 소담` (주제별 기록 탐색)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-056",
+    "name": "디지털 플래너 056호 (태오 맞춤 솔루션)",
+    "category": "디지털 플래너 & 시간축 서식 (`DIGITAL-PLANNER`)",
+    "context": "태오의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "24시간 시간축 통제, 주간/일간 전환 인터랙티브 서식, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "태오의 고유 과업(다기기 연속성 검증)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-05 태오` (다기기 연속성 검증)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-057",
+    "name": "디지털 플래너 057호 (나린 맞춤 솔루션)",
+    "category": "디지털 플래너 & 시간축 서식 (`DIGITAL-PLANNER`)",
+    "context": "나린의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "24시간 시간축 통제, 주간/일간 전환 인터랙티브 서식, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "나린의 고유 과업(꾸미기 자산 재사용)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-06 나린` (꾸미기 자산 재사용)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-058",
+    "name": "디지털 플래너 058호 (이준 맞춤 솔루션)",
+    "category": "디지털 플래너 & 시간축 서식 (`DIGITAL-PLANNER`)",
+    "context": "이준의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "24시간 시간축 통제, 주간/일간 전환 인터랙티브 서식, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "이준의 고유 과업(중단 후 재시작)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-07 이준` (중단 후 재시작)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-059",
+    "name": "디지털 플래너 059호 (다온 맞춤 솔루션)",
+    "category": "디지털 플래너 & 시간축 서식 (`DIGITAL-PLANNER`)",
+    "context": "다온의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "24시간 시간축 통제, 주간/일간 전환 인터랙티브 서식, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "다온의 고유 과업(첫 선택 부담)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-08 다온` (첫 선택 부담)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-060",
+    "name": "디지털 플래너 060호 (윤슬 맞춤 솔루션)",
+    "category": "디지털 플래너 & 시간축 서식 (`DIGITAL-PLANNER`)",
+    "context": "윤슬의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "24시간 시간축 통제, 주간/일간 전환 인터랙티브 서식, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "윤슬의 고유 과업(카테고리·제품 비교)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-09 윤슬` (카테고리·제품 비교)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-061",
+    "name": "10초 저부담 빠른 기록 폼 061호 (온유 맞춤 솔루션)",
+    "category": "10초 저부담 빠른 기록 폼 (`QUICK-FORM`)",
+    "context": "온유의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "10초 스냅샷, 사진 1장+1줄 회고 무설정 퀵 폼, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "온유의 고유 과업(선물 패키지 선택)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-10 온유` (선물 패키지 선택)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-062",
+    "name": "10초 저부담 빠른 기록 폼 062호 (가람 맞춤 솔루션)",
+    "category": "10초 저부담 빠른 기록 폼 (`QUICK-FORM`)",
+    "context": "가람의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "10초 스냅샷, 사진 1장+1줄 회고 무설정 퀵 폼, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "가람의 고유 과업(브랜드 신뢰)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-11 가람` (브랜드 신뢰)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-063",
+    "name": "10초 저부담 빠른 기록 폼 063호 (해솔 맞춤 솔루션)",
+    "category": "10초 저부담 빠른 기록 폼 (`QUICK-FORM`)",
+    "context": "해솔의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "10초 스냅샷, 사진 1장+1줄 회고 무설정 퀵 폼, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "해솔의 고유 과업(개인정보·보존 통제)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-12 해솔` (개인정보·보존 통제)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-064",
+    "name": "10초 저부담 빠른 기록 폼 064호 (여울 맞춤 솔루션)",
+    "category": "10초 저부담 빠른 기록 폼 (`QUICK-FORM`)",
+    "context": "여울의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "10초 스냅샷, 사진 1장+1줄 회고 무설정 퀵 폼, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "여울의 고유 과업(접근성)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-13 여울` (접근성)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-065",
+    "name": "10초 저부담 빠른 기록 폼 065호 (마루 맞춤 솔루션)",
+    "category": "10초 저부담 빠른 기록 폼 (`QUICK-FORM`)",
+    "context": "마루의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "10초 스냅샷, 사진 1장+1줄 회고 무설정 퀵 폼, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "마루의 고유 과업(탐색 재개)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-14 마루` (탐색 재개)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-066",
+    "name": "10초 저부담 빠른 기록 폼 066호 (새봄 맞춤 솔루션)",
+    "category": "10초 저부담 빠른 기록 폼 (`QUICK-FORM`)",
+    "context": "새봄의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "10초 스냅샷, 사진 1장+1줄 회고 무설정 퀵 폼, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "새봄의 고유 과업(재료·지속가능성 정보)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-15 새봄` (재료·지속가능성 정보)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-067",
+    "name": "10초 저부담 빠른 기록 폼 067호 (한결 맞춤 솔루션)",
+    "category": "10초 저부담 빠른 기록 폼 (`QUICK-FORM`)",
+    "context": "한결의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "10초 스냅샷, 사진 1장+1줄 회고 무설정 퀵 폼, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "한결의 고유 과업(반복 설정 피로)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-16 한결` (반복 설정 피로)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-068",
+    "name": "10초 저부담 빠른 기록 폼 068호 (채운 맞춤 솔루션)",
+    "category": "10초 저부담 빠른 기록 폼 (`QUICK-FORM`)",
+    "context": "채운의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "10초 스냅샷, 사진 1장+1줄 회고 무설정 퀵 폼, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "채운의 고유 과업(아날로그 정보 부족)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-17 채운` (아날로그 정보 부족)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-069",
+    "name": "10초 저부담 빠른 기록 폼 069호 (서우 맞춤 솔루션)",
+    "category": "10초 저부담 빠른 기록 폼 (`QUICK-FORM`)",
+    "context": "서우의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "10초 스냅샷, 사진 1장+1줄 회고 무설정 퀵 폼, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "서우의 고유 과업(디지털 내보내기 판단)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-18 서우` (디지털 내보내기 판단)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-070",
+    "name": "10초 저부담 빠른 기록 폼 070호 (초아 맞춤 솔루션)",
+    "category": "10초 저부담 빠른 기록 폼 (`QUICK-FORM`)",
+    "context": "초아의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "10초 스냅샷, 사진 1장+1줄 회고 무설정 퀵 폼, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "초아의 고유 과업(가족 공동 기록 경계)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-19 초아` (가족 공동 기록 경계)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-071",
+    "name": "10초 저부담 빠른 기록 폼 071호 (주원 맞춤 솔루션)",
+    "category": "10초 저부담 빠른 기록 폼 (`QUICK-FORM`)",
+    "context": "주원의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "10초 스냅샷, 사진 1장+1줄 회고 무설정 퀵 폼, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "주원의 고유 과업(기록 방식 전환)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-20 주원` (기록 방식 전환)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-072",
+    "name": "10초 저부담 빠른 기록 폼 072호 (민서 맞춤 솔루션)",
+    "category": "10초 저부담 빠른 기록 폼 (`QUICK-FORM`)",
+    "context": "민서의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "10초 스냅샷, 사진 1장+1줄 회고 무설정 퀵 폼, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "민서의 고유 과업(예산 미정 탐색)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-21 민서` (예산 미정 탐색)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-073",
+    "name": "10초 저부담 빠른 기록 폼 073호 (선율 맞춤 솔루션)",
+    "category": "10초 저부담 빠른 기록 폼 (`QUICK-FORM`)",
+    "context": "선율의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "10초 스냅샷, 사진 1장+1줄 회고 무설정 퀵 폼, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "선율의 고유 과업(기록 공개 부담)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-22 선율` (기록 공개 부담)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-074",
+    "name": "10초 저부담 빠른 기록 폼 074호 (도윤 맞춤 솔루션)",
+    "category": "10초 저부담 빠른 기록 폼 (`QUICK-FORM`)",
+    "context": "도윤의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "10초 스냅샷, 사진 1장+1줄 회고 무설정 퀵 폼, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "도윤의 고유 과업(복잡한 필터 회피)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-23 도윤` (복잡한 필터 회피)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-075",
+    "name": "10초 저부담 빠른 기록 폼 075호 (아라 맞춤 솔루션)",
+    "category": "10초 저부담 빠른 기록 폼 (`QUICK-FORM`)",
+    "context": "아라의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "10초 스냅샷, 사진 1장+1줄 회고 무설정 퀵 폼, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "아라의 고유 과업(근거 시점 확인)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-24 아라` (근거 시점 확인)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-076",
+    "name": "10초 저부담 빠른 기록 폼 076호 (재희 맞춤 솔루션)",
+    "category": "10초 저부담 빠른 기록 폼 (`QUICK-FORM`)",
+    "context": "재희의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "10초 스냅샷, 사진 1장+1줄 회고 무설정 퀵 폼, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "재희의 고유 과업(선물 실패 회피)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-25 재희` (선물 실패 회피)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-077",
+    "name": "10초 저부담 빠른 기록 폼 077호 (지후 맞춤 솔루션)",
+    "category": "10초 저부담 빠른 기록 폼 (`QUICK-FORM`)",
+    "context": "지후의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "10초 스냅샷, 사진 1장+1줄 회고 무설정 퀵 폼, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "지후의 고유 과업(중단 후 비교 맥락)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-26 지후` (중단 후 비교 맥락)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-078",
+    "name": "10초 저부담 빠른 기록 폼 078호 (예린 맞춤 솔루션)",
+    "category": "10초 저부담 빠른 기록 폼 (`QUICK-FORM`)",
+    "context": "예린의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "10초 스냅샷, 사진 1장+1줄 회고 무설정 퀵 폼, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "예린의 고유 과업(브랜드 주장 검증)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-27 예린` (브랜드 주장 검증)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-079",
+    "name": "10초 저부담 빠른 기록 폼 079호 (수현 맞춤 솔루션)",
+    "category": "10초 저부담 빠른 기록 폼 (`QUICK-FORM`)",
+    "context": "수현의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "10초 스냅샷, 사진 1장+1줄 회고 무설정 퀵 폼, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "수현의 고유 과업(오래된 기록 재탐색)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-28 수현` (오래된 기록 재탐색)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-080",
+    "name": "10초 저부담 빠른 기록 폼 080호 (건우 맞춤 솔루션)",
+    "category": "10초 저부담 빠른 기록 폼 (`QUICK-FORM`)",
+    "context": "건우의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "10초 스냅샷, 사진 1장+1줄 회고 무설정 퀵 폼, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "건우의 고유 과업(실물 보관 공간 제약)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-29 건우` (실물 보관 공간 제약)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-081",
+    "name": "템플릿 081호 (서진 맞춤 솔루션)",
+    "category": "템플릿 & 구획 서식 (`TEMPLATE-STRUCTURE`)",
+    "context": "서진의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독서/재정/프로젝트/루틴 데이터 보존 구획 템플릿, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "서진의 고유 과업(커스터마이징 후회 방지)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-30 서진` (커스터마이징 후회 방지)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-082",
+    "name": "템플릿 082호 (지민 맞춤 솔루션)",
+    "category": "템플릿 & 구획 서식 (`TEMPLATE-STRUCTURE`)",
+    "context": "지민의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독서/재정/프로젝트/루틴 데이터 보존 구획 템플릿, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "지민의 고유 과업(알림 피로 회피)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-31 지민` (알림 피로 회피)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-083",
+    "name": "템플릿 083호 (유진 맞춤 솔루션)",
+    "category": "템플릿 & 구획 서식 (`TEMPLATE-STRUCTURE`)",
+    "context": "유진의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독서/재정/프로젝트/루틴 데이터 보존 구획 템플릿, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "유진의 고유 과업(빠른 기록의 의미 선택)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-32 유진` (빠른 기록의 의미 선택)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-084",
+    "name": "템플릿 084호 (연우 맞춤 솔루션)",
+    "category": "템플릿 & 구획 서식 (`TEMPLATE-STRUCTURE`)",
+    "context": "연우의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독서/재정/프로젝트/루틴 데이터 보존 구획 템플릿, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "연우의 고유 과업(기존 기록 이전 판단)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-33 연우` (기존 기록 이전 판단)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-085",
+    "name": "템플릿 085호 (하윤 맞춤 솔루션)",
+    "category": "템플릿 & 구획 서식 (`TEMPLATE-STRUCTURE`)",
+    "context": "하윤의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독서/재정/프로젝트/루틴 데이터 보존 구획 템플릿, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "하윤의 고유 과업(선물 수령자의 접근성)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-34 하윤` (선물 수령자의 접근성)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-086",
+    "name": "템플릿 086호 (시온 맞춤 솔루션)",
+    "category": "템플릿 & 구획 서식 (`TEMPLATE-STRUCTURE`)",
+    "context": "시온의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독서/재정/프로젝트/루틴 데이터 보존 구획 템플릿, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "시온의 고유 과업(생활 변화에 따른 방식 수정)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-35 시온` (생활 변화에 따른 방식 수정)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-087",
+    "name": "템플릿 087호 (나윤 맞춤 솔루션)",
+    "category": "템플릿 & 구획 서식 (`TEMPLATE-STRUCTURE`)",
+    "context": "나윤의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독서/재정/프로젝트/루틴 데이터 보존 구획 템플릿, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "나윤의 고유 과업(리필·수리 가능성)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-36 나윤` (리필·수리 가능성)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-088",
+    "name": "템플릿 088호 (태윤 맞춤 솔루션)",
+    "category": "템플릿 & 구획 서식 (`TEMPLATE-STRUCTURE`)",
+    "context": "태윤의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독서/재정/프로젝트/루틴 데이터 보존 구획 템플릿, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "태윤의 고유 과업(콘텐츠와 제품 탐색 구분)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-37 태윤` (콘텐츠와 제품 탐색 구분)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-089",
+    "name": "템플릿 089호 (라온 맞춤 솔루션)",
+    "category": "템플릿 & 구획 서식 (`TEMPLATE-STRUCTURE`)",
+    "context": "라온의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독서/재정/프로젝트/루틴 데이터 보존 구획 템플릿, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "라온의 고유 과업(가칭 브랜드 인지)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-38 라온` (가칭 브랜드 인지)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-090",
+    "name": "템플릿 090호 (은호 맞춤 솔루션)",
+    "category": "템플릿 & 구획 서식 (`TEMPLATE-STRUCTURE`)",
+    "context": "은호의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독서/재정/프로젝트/루틴 데이터 보존 구획 템플릿, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "은호의 고유 과업(포트폴리오 과정 검증)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-39 은호` (포트폴리오 과정 검증)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-091",
+    "name": "템플릿 091호 (세아 맞춤 솔루션)",
+    "category": "템플릿 & 구획 서식 (`TEMPLATE-STRUCTURE`)",
+    "context": "세아의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독서/재정/프로젝트/루틴 데이터 보존 구획 템플릿, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "세아의 고유 과업(긴 랜딩 서사 탐색)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-40 세아` (긴 랜딩 서사 탐색)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-092",
+    "name": "템플릿 092호 (유나 맞춤 솔루션)",
+    "category": "템플릿 & 구획 서식 (`TEMPLATE-STRUCTURE`)",
+    "context": "유나의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독서/재정/프로젝트/루틴 데이터 보존 구획 템플릿, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "유나의 고유 과업(200개 후보군 전체 방향 감각)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-41 유나` (200개 후보군 전체 방향 감각)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-093",
+    "name": "템플릿 093호 (현서 맞춤 솔루션)",
+    "category": "템플릿 & 구획 서식 (`TEMPLATE-STRUCTURE`)",
+    "context": "현서의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독서/재정/프로젝트/루틴 데이터 보존 구획 템플릿, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "현서의 고유 과업(시각적 Hero와 탐색 균형)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-42 현서` (시각적 Hero와 탐색 균형)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-094",
+    "name": "템플릿 094호 (다빈 맞춤 솔루션)",
+    "category": "템플릿 & 구획 서식 (`TEMPLATE-STRUCTURE`)",
+    "context": "다빈의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독서/재정/프로젝트/루틴 데이터 보존 구획 템플릿, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "다빈의 고유 과업(비판매 포트폴리오 인지)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-43 다빈` (비판매 포트폴리오 인지)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-095",
+    "name": "템플릿 095호 (로운 맞춤 솔루션)",
+    "category": "템플릿 & 구획 서식 (`TEMPLATE-STRUCTURE`)",
+    "context": "로운의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독서/재정/프로젝트/루틴 데이터 보존 구획 템플릿, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "로운의 고유 과업(이미지 실패 상황의 제품 판단)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-44 로운` (이미지 실패 상황의 제품 판단)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-096",
+    "name": "템플릿 096호 (해나 맞춤 솔루션)",
+    "category": "템플릿 & 구획 서식 (`TEMPLATE-STRUCTURE`)",
+    "context": "해나의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독서/재정/프로젝트/루틴 데이터 보존 구획 템플릿, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "해나의 고유 과업(한국적 정서의 진정성)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-45 해나` (한국적 정서의 진정성)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-097",
+    "name": "템플릿 097호 (지율 맞춤 솔루션)",
+    "category": "템플릿 & 구획 서식 (`TEMPLATE-STRUCTURE`)",
+    "context": "지율의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독서/재정/프로젝트/루틴 데이터 보존 구획 템플릿, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "지율의 고유 과업(긴 페이지의 스크린리더 탐색)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-46 지율` (긴 페이지의 스크린리더 탐색)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-098",
+    "name": "템플릿 098호 (주하 맞춤 솔루션)",
+    "category": "템플릿 & 구획 서식 (`TEMPLATE-STRUCTURE`)",
+    "context": "주하의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독서/재정/프로젝트/루틴 데이터 보존 구획 템플릿, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "주하의 고유 과업(모바일 제품 레일 발견)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-47 주하` (모바일 제품 레일 발견)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-099",
+    "name": "템플릿 099호 (태린 맞춤 솔루션)",
+    "category": "템플릿 & 구획 서식 (`TEMPLATE-STRUCTURE`)",
+    "context": "태린의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독서/재정/프로젝트/루틴 데이터 보존 구획 템플릿, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "태린의 고유 과업(대표 15개 선정 이유 확인)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-48 태린` (대표 15개 선정 이유 확인)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-100",
+    "name": "템플릿 100호 (윤재 맞춤 솔루션)",
+    "category": "템플릿 & 구획 서식 (`TEMPLATE-STRUCTURE`)",
+    "context": "윤재의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독서/재정/프로젝트/루틴 데이터 보존 구획 템플릿, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "윤재의 고유 과업(브랜드와 제품의 일관성)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-49 윤재` (브랜드와 제품의 일관성)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-101",
+    "name": "꾸미기 101호 (아인 맞춤 솔루션)",
+    "category": "꾸미기 & 표현 자산 (`DECO-ASSET`)",
+    "context": "아인의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독립 레이어 라인아트 스티커, 모노톤 마스킹 테이프, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "아인의 고유 과업(카테고리 경계 이해)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-50 아인` (카테고리 경계 이해)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-102",
+    "name": "꾸미기 102호 (이솔 맞춤 솔루션)",
+    "category": "꾸미기 & 표현 자산 (`DECO-ASSET`)",
+    "context": "이솔의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독립 레이어 라인아트 스티커, 모노톤 마스킹 테이프, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "이솔의 고유 과업(저연결성 긴 페이지 복귀)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-51 이솔` (저연결성 긴 페이지 복귀)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-103",
+    "name": "꾸미기 103호 (은재 맞춤 솔루션)",
+    "category": "꾸미기 & 표현 자산 (`DECO-ASSET`)",
+    "context": "은재의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독립 레이어 라인아트 스티커, 모노톤 마스킹 테이프, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "은재의 고유 과업(아날로그 장문 기록)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-01 은재` (아날로그 장문 기록)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-104",
+    "name": "꾸미기 104호 (지안 맞춤 솔루션)",
+    "category": "꾸미기 & 표현 자산 (`DECO-ASSET`)",
+    "context": "지안의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독립 레이어 라인아트 스티커, 모노톤 마스킹 테이프, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "지안의 고유 과업(미래 일정 흐름 통제)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-02 지안` (미래 일정 흐름 통제)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-105",
+    "name": "꾸미기 105호 (하람 맞춤 솔루션)",
+    "category": "꾸미기 & 표현 자산 (`DECO-ASSET`)",
+    "context": "하람의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독립 레이어 라인아트 스티커, 모노톤 마스킹 테이프, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "하람의 고유 과업(저부담 시각 회고)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-03 하람` (저부담 시각 회고)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-106",
+    "name": "꾸미기 106호 (소담 맞춤 솔루션)",
+    "category": "꾸미기 & 표현 자산 (`DECO-ASSET`)",
+    "context": "소담의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독립 레이어 라인아트 스티커, 모노톤 마스킹 테이프, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "소담의 고유 과업(주제별 기록 탐색)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-04 소담` (주제별 기록 탐색)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-107",
+    "name": "꾸미기 107호 (태오 맞춤 솔루션)",
+    "category": "꾸미기 & 표현 자산 (`DECO-ASSET`)",
+    "context": "태오의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독립 레이어 라인아트 스티커, 모노톤 마스킹 테이프, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "태오의 고유 과업(다기기 연속성 검증)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-05 태오` (다기기 연속성 검증)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-108",
+    "name": "꾸미기 108호 (나린 맞춤 솔루션)",
+    "category": "꾸미기 & 표현 자산 (`DECO-ASSET`)",
+    "context": "나린의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독립 레이어 라인아트 스티커, 모노톤 마스킹 테이프, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "나린의 고유 과업(꾸미기 자산 재사용)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-06 나린` (꾸미기 자산 재사용)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-109",
+    "name": "꾸미기 109호 (이준 맞춤 솔루션)",
+    "category": "꾸미기 & 표현 자산 (`DECO-ASSET`)",
+    "context": "이준의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독립 레이어 라인아트 스티커, 모노톤 마스킹 테이프, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "이준의 고유 과업(중단 후 재시작)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-07 이준` (중단 후 재시작)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-110",
+    "name": "꾸미기 110호 (다온 맞춤 솔루션)",
+    "category": "꾸미기 & 표현 자산 (`DECO-ASSET`)",
+    "context": "다온의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독립 레이어 라인아트 스티커, 모노톤 마스킹 테이프, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "다온의 고유 과업(첫 선택 부담)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-08 다온` (첫 선택 부담)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-111",
+    "name": "꾸미기 111호 (윤슬 맞춤 솔루션)",
+    "category": "꾸미기 & 표현 자산 (`DECO-ASSET`)",
+    "context": "윤슬의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독립 레이어 라인아트 스티커, 모노톤 마스킹 테이프, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "윤슬의 고유 과업(카테고리·제품 비교)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-09 윤슬` (카테고리·제품 비교)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-112",
+    "name": "꾸미기 112호 (온유 맞춤 솔루션)",
+    "category": "꾸미기 & 표현 자산 (`DECO-ASSET`)",
+    "context": "온유의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독립 레이어 라인아트 스티커, 모노톤 마스킹 테이프, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "온유의 고유 과업(선물 패키지 선택)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-10 온유` (선물 패키지 선택)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-113",
+    "name": "꾸미기 113호 (가람 맞춤 솔루션)",
+    "category": "꾸미기 & 표현 자산 (`DECO-ASSET`)",
+    "context": "가람의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독립 레이어 라인아트 스티커, 모노톤 마스킹 테이프, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "가람의 고유 과업(브랜드 신뢰)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-11 가람` (브랜드 신뢰)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-114",
+    "name": "꾸미기 114호 (해솔 맞춤 솔루션)",
+    "category": "꾸미기 & 표현 자산 (`DECO-ASSET`)",
+    "context": "해솔의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독립 레이어 라인아트 스티커, 모노톤 마스킹 테이프, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "해솔의 고유 과업(개인정보·보존 통제)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-12 해솔` (개인정보·보존 통제)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-115",
+    "name": "꾸미기 115호 (여울 맞춤 솔루션)",
+    "category": "꾸미기 & 표현 자산 (`DECO-ASSET`)",
+    "context": "여울의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독립 레이어 라인아트 스티커, 모노톤 마스킹 테이프, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "여울의 고유 과업(접근성)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-13 여울` (접근성)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-116",
+    "name": "꾸미기 116호 (마루 맞춤 솔루션)",
+    "category": "꾸미기 & 표현 자산 (`DECO-ASSET`)",
+    "context": "마루의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독립 레이어 라인아트 스티커, 모노톤 마스킹 테이프, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "마루의 고유 과업(탐색 재개)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-14 마루` (탐색 재개)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-117",
+    "name": "꾸미기 117호 (새봄 맞춤 솔루션)",
+    "category": "꾸미기 & 표현 자산 (`DECO-ASSET`)",
+    "context": "새봄의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독립 레이어 라인아트 스티커, 모노톤 마스킹 테이프, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "새봄의 고유 과업(재료·지속가능성 정보)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-15 새봄` (재료·지속가능성 정보)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-118",
+    "name": "꾸미기 118호 (한결 맞춤 솔루션)",
+    "category": "꾸미기 & 표현 자산 (`DECO-ASSET`)",
+    "context": "한결의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독립 레이어 라인아트 스티커, 모노톤 마스킹 테이프, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "한결의 고유 과업(반복 설정 피로)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-16 한결` (반복 설정 피로)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-119",
+    "name": "꾸미기 119호 (채운 맞춤 솔루션)",
+    "category": "꾸미기 & 표현 자산 (`DECO-ASSET`)",
+    "context": "채운의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독립 레이어 라인아트 스티커, 모노톤 마스킹 테이프, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "채운의 고유 과업(아날로그 정보 부족)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-17 채운` (아날로그 정보 부족)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-120",
+    "name": "꾸미기 120호 (서우 맞춤 솔루션)",
+    "category": "꾸미기 & 표현 자산 (`DECO-ASSET`)",
+    "context": "서우의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "독립 레이어 라인아트 스티커, 모노톤 마스킹 테이프, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "서우의 고유 과업(디지털 내보내기 판단)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-18 서우` (디지털 내보내기 판단)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-121",
+    "name": "아카이빙 바인더 121호 (초아 맞춤 솔루션)",
+    "category": "아카이빙 바인더 & 보존 케이스 (`ARCHIVE-CASE`)",
+    "context": "초아의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "15mm 슬림 바인더, 연간 서재 보존 모듈 케이스, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "초아의 고유 과업(가족 공동 기록 경계)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-19 초아` (가족 공동 기록 경계)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-122",
+    "name": "아카이빙 바인더 122호 (주원 맞춤 솔루션)",
+    "category": "아카이빙 바인더 & 보존 케이스 (`ARCHIVE-CASE`)",
+    "context": "주원의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "15mm 슬림 바인더, 연간 서재 보존 모듈 케이스, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "주원의 고유 과업(기록 방식 전환)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-20 주원` (기록 방식 전환)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-123",
+    "name": "아카이빙 바인더 123호 (민서 맞춤 솔루션)",
+    "category": "아카이빙 바인더 & 보존 케이스 (`ARCHIVE-CASE`)",
+    "context": "민서의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "15mm 슬림 바인더, 연간 서재 보존 모듈 케이스, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "민서의 고유 과업(예산 미정 탐색)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-21 민서` (예산 미정 탐색)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-124",
+    "name": "아카이빙 바인더 124호 (선율 맞춤 솔루션)",
+    "category": "아카이빙 바인더 & 보존 케이스 (`ARCHIVE-CASE`)",
+    "context": "선율의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "15mm 슬림 바인더, 연간 서재 보존 모듈 케이스, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "선율의 고유 과업(기록 공개 부담)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-22 선율` (기록 공개 부담)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-125",
+    "name": "아카이빙 바인더 125호 (도윤 맞춤 솔루션)",
+    "category": "아카이빙 바인더 & 보존 케이스 (`ARCHIVE-CASE`)",
+    "context": "도윤의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "15mm 슬림 바인더, 연간 서재 보존 모듈 케이스, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "도윤의 고유 과업(복잡한 필터 회피)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-23 도윤` (복잡한 필터 회피)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-126",
+    "name": "아카이빙 바인더 126호 (아라 맞춤 솔루션)",
+    "category": "아카이빙 바인더 & 보존 케이스 (`ARCHIVE-CASE`)",
+    "context": "아라의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "15mm 슬림 바인더, 연간 서재 보존 모듈 케이스, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "아라의 고유 과업(근거 시점 확인)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-24 아라` (근거 시점 확인)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-127",
+    "name": "아카이빙 바인더 127호 (재희 맞춤 솔루션)",
+    "category": "아카이빙 바인더 & 보존 케이스 (`ARCHIVE-CASE`)",
+    "context": "재희의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "15mm 슬림 바인더, 연간 서재 보존 모듈 케이스, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "재희의 고유 과업(선물 실패 회피)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-25 재희` (선물 실패 회피)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-128",
+    "name": "아카이빙 바인더 128호 (지후 맞춤 솔루션)",
+    "category": "아카이빙 바인더 & 보존 케이스 (`ARCHIVE-CASE`)",
+    "context": "지후의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "15mm 슬림 바인더, 연간 서재 보존 모듈 케이스, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "지후의 고유 과업(중단 후 비교 맥락)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-26 지후` (중단 후 비교 맥락)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-129",
+    "name": "아카이빙 바인더 129호 (예린 맞춤 솔루션)",
+    "category": "아카이빙 바인더 & 보존 케이스 (`ARCHIVE-CASE`)",
+    "context": "예린의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "15mm 슬림 바인더, 연간 서재 보존 모듈 케이스, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "예린의 고유 과업(브랜드 주장 검증)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-27 예린` (브랜드 주장 검증)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-130",
+    "name": "아카이빙 바인더 130호 (수현 맞춤 솔루션)",
+    "category": "아카이빙 바인더 & 보존 케이스 (`ARCHIVE-CASE`)",
+    "context": "수현의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "15mm 슬림 바인더, 연간 서재 보존 모듈 케이스, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "수현의 고유 과업(오래된 기록 재탐색)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-28 수현` (오래된 기록 재탐색)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-131",
+    "name": "아카이빙 바인더 131호 (건우 맞춤 솔루션)",
+    "category": "아카이빙 바인더 & 보존 케이스 (`ARCHIVE-CASE`)",
+    "context": "건우의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "15mm 슬림 바인더, 연간 서재 보존 모듈 케이스, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "건우의 고유 과업(실물 보관 공간 제약)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-29 건우` (실물 보관 공간 제약)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-132",
+    "name": "아카이빙 바인더 132호 (서진 맞춤 솔루션)",
+    "category": "아카이빙 바인더 & 보존 케이스 (`ARCHIVE-CASE`)",
+    "context": "서진의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "15mm 슬림 바인더, 연간 서재 보존 모듈 케이스, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "서진의 고유 과업(커스터마이징 후회 방지)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-30 서진` (커스터마이징 후회 방지)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-133",
+    "name": "아카이빙 바인더 133호 (지민 맞춤 솔루션)",
+    "category": "아카이빙 바인더 & 보존 케이스 (`ARCHIVE-CASE`)",
+    "context": "지민의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "15mm 슬림 바인더, 연간 서재 보존 모듈 케이스, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "지민의 고유 과업(알림 피로 회피)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-31 지민` (알림 피로 회피)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-134",
+    "name": "아카이빙 바인더 134호 (유진 맞춤 솔루션)",
+    "category": "아카이빙 바인더 & 보존 케이스 (`ARCHIVE-CASE`)",
+    "context": "유진의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "15mm 슬림 바인더, 연간 서재 보존 모듈 케이스, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "유진의 고유 과업(빠른 기록의 의미 선택)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-32 유진` (빠른 기록의 의미 선택)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-135",
+    "name": "아카이빙 바인더 135호 (연우 맞춤 솔루션)",
+    "category": "아카이빙 바인더 & 보존 케이스 (`ARCHIVE-CASE`)",
+    "context": "연우의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "15mm 슬림 바인더, 연간 서재 보존 모듈 케이스, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "연우의 고유 과업(기존 기록 이전 판단)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-33 연우` (기존 기록 이전 판단)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-136",
+    "name": "아카이빙 바인더 136호 (하윤 맞춤 솔루션)",
+    "category": "아카이빙 바인더 & 보존 케이스 (`ARCHIVE-CASE`)",
+    "context": "하윤의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "15mm 슬림 바인더, 연간 서재 보존 모듈 케이스, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "하윤의 고유 과업(선물 수령자의 접근성)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-34 하윤` (선물 수령자의 접근성)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-137",
+    "name": "아카이빙 바인더 137호 (시온 맞춤 솔루션)",
+    "category": "아카이빙 바인더 & 보존 케이스 (`ARCHIVE-CASE`)",
+    "context": "시온의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "15mm 슬림 바인더, 연간 서재 보존 모듈 케이스, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "시온의 고유 과업(생활 변화에 따른 방식 수정)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-35 시온` (생활 변화에 따른 방식 수정)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-138",
+    "name": "아카이빙 바인더 138호 (나윤 맞춤 솔루션)",
+    "category": "아카이빙 바인더 & 보존 케이스 (`ARCHIVE-CASE`)",
+    "context": "나윤의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "15mm 슬림 바인더, 연간 서재 보존 모듈 케이스, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "나윤의 고유 과업(리필·수리 가능성)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-36 나윤` (리필·수리 가능성)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-139",
+    "name": "아카이빙 바인더 139호 (태윤 맞춤 솔루션)",
+    "category": "아카이빙 바인더 & 보존 케이스 (`ARCHIVE-CASE`)",
+    "context": "태윤의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "15mm 슬림 바인더, 연간 서재 보존 모듈 케이스, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "태윤의 고유 과업(콘텐츠와 제품 탐색 구분)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-37 태윤` (콘텐츠와 제품 탐색 구분)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-140",
+    "name": "아카이빙 바인더 140호 (라온 맞춤 솔루션)",
+    "category": "아카이빙 바인더 & 보존 케이스 (`ARCHIVE-CASE`)",
+    "context": "라온의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "15mm 슬림 바인더, 연간 서재 보존 모듈 케이스, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "라온의 고유 과업(가칭 브랜드 인지)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-38 라온` (가칭 브랜드 인지)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-141",
+    "name": "황동 실링 왁스 각인 세트 141호 (은호 맞춤 솔루션)",
+    "category": "황동 실링 왁스 각인 세트 (`BRASS-SEAL`)",
+    "context": "은호의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "황동 인장, 흑백 모노톤 왁스, 커스텀 이니셜 각인, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "은호의 고유 과업(포트폴리오 과정 검증)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-39 은호` (포트폴리오 과정 검증)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-142",
+    "name": "황동 실링 왁스 각인 세트 142호 (세아 맞춤 솔루션)",
+    "category": "황동 실링 왁스 각인 세트 (`BRASS-SEAL`)",
+    "context": "세아의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "황동 인장, 흑백 모노톤 왁스, 커스텀 이니셜 각인, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "세아의 고유 과업(긴 랜딩 서사 탐색)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-40 세아` (긴 랜딩 서사 탐색)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-143",
+    "name": "황동 실링 왁스 각인 세트 143호 (유나 맞춤 솔루션)",
+    "category": "황동 실링 왁스 각인 세트 (`BRASS-SEAL`)",
+    "context": "유나의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "황동 인장, 흑백 모노톤 왁스, 커스텀 이니셜 각인, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "유나의 고유 과업(200개 후보군 전체 방향 감각)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-41 유나` (200개 후보군 전체 방향 감각)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-144",
+    "name": "황동 실링 왁스 각인 세트 144호 (현서 맞춤 솔루션)",
+    "category": "황동 실링 왁스 각인 세트 (`BRASS-SEAL`)",
+    "context": "현서의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "황동 인장, 흑백 모노톤 왁스, 커스텀 이니셜 각인, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "현서의 고유 과업(시각적 Hero와 탐색 균형)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-42 현서` (시각적 Hero와 탐색 균형)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-145",
+    "name": "황동 실링 왁스 각인 세트 145호 (다빈 맞춤 솔루션)",
+    "category": "황동 실링 왁스 각인 세트 (`BRASS-SEAL`)",
+    "context": "다빈의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "황동 인장, 흑백 모노톤 왁스, 커스텀 이니셜 각인, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "다빈의 고유 과업(비판매 포트폴리오 인지)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-43 다빈` (비판매 포트폴리오 인지)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-146",
+    "name": "황동 실링 왁스 각인 세트 146호 (로운 맞춤 솔루션)",
+    "category": "황동 실링 왁스 각인 세트 (`BRASS-SEAL`)",
+    "context": "로운의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "황동 인장, 흑백 모노톤 왁스, 커스텀 이니셜 각인, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "로운의 고유 과업(이미지 실패 상황의 제품 판단)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-44 로운` (이미지 실패 상황의 제품 판단)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-147",
+    "name": "황동 실링 왁스 각인 세트 147호 (해나 맞춤 솔루션)",
+    "category": "황동 실링 왁스 각인 세트 (`BRASS-SEAL`)",
+    "context": "해나의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "황동 인장, 흑백 모노톤 왁스, 커스텀 이니셜 각인, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "해나의 고유 과업(한국적 정서의 진정성)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-45 해나` (한국적 정서의 진정성)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-148",
+    "name": "황동 실링 왁스 각인 세트 148호 (지율 맞춤 솔루션)",
+    "category": "황동 실링 왁스 각인 세트 (`BRASS-SEAL`)",
+    "context": "지율의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "황동 인장, 흑백 모노톤 왁스, 커스텀 이니셜 각인, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "지율의 고유 과업(긴 페이지의 스크린리더 탐색)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-46 지율` (긴 페이지의 스크린리더 탐색)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-149",
+    "name": "황동 실링 왁스 각인 세트 149호 (주하 맞춤 솔루션)",
+    "category": "황동 실링 왁스 각인 세트 (`BRASS-SEAL`)",
+    "context": "주하의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "황동 인장, 흑백 모노톤 왁스, 커스텀 이니셜 각인, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "주하의 고유 과업(모바일 제품 레일 발견)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-47 주하` (모바일 제품 레일 발견)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-150",
+    "name": "황동 실링 왁스 각인 세트 150호 (태린 맞춤 솔루션)",
+    "category": "황동 실링 왁스 각인 세트 (`BRASS-SEAL`)",
+    "context": "태린의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "황동 인장, 흑백 모노톤 왁스, 커스텀 이니셜 각인, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "태린의 고유 과업(대표 15개 선정 이유 확인)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-48 태린` (대표 15개 선정 이유 확인)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-151",
+    "name": "황동 실링 왁스 각인 세트 151호 (윤재 맞춤 솔루션)",
+    "category": "황동 실링 왁스 각인 세트 (`BRASS-SEAL`)",
+    "context": "윤재의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "황동 인장, 흑백 모노톤 왁스, 커스텀 이니셜 각인, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "윤재의 고유 과업(브랜드와 제품의 일관성)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-49 윤재` (브랜드와 제품의 일관성)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-152",
+    "name": "황동 실링 왁스 각인 세트 152호 (아인 맞춤 솔루션)",
+    "category": "황동 실링 왁스 각인 세트 (`BRASS-SEAL`)",
+    "context": "아인의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "황동 인장, 흑백 모노톤 왁스, 커스텀 이니셜 각인, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "아인의 고유 과업(카테고리 경계 이해)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-50 아인` (카테고리 경계 이해)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-153",
+    "name": "황동 실링 왁스 각인 세트 153호 (이솔 맞춤 솔루션)",
+    "category": "황동 실링 왁스 각인 세트 (`BRASS-SEAL`)",
+    "context": "이솔의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "황동 인장, 흑백 모노톤 왁스, 커스텀 이니셜 각인, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "이솔의 고유 과업(저연결성 긴 페이지 복귀)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-51 이솔` (저연결성 긴 페이지 복귀)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-154",
+    "name": "황동 실링 왁스 각인 세트 154호 (은재 맞춤 솔루션)",
+    "category": "황동 실링 왁스 각인 세트 (`BRASS-SEAL`)",
+    "context": "은재의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "황동 인장, 흑백 모노톤 왁스, 커스텀 이니셜 각인, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "은재의 고유 과업(아날로그 장문 기록)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-01 은재` (아날로그 장문 기록)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-155",
+    "name": "황동 실링 왁스 각인 세트 155호 (지안 맞춤 솔루션)",
+    "category": "황동 실링 왁스 각인 세트 (`BRASS-SEAL`)",
+    "context": "지안의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "황동 인장, 흑백 모노톤 왁스, 커스텀 이니셜 각인, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "지안의 고유 과업(미래 일정 흐름 통제)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-02 지안` (미래 일정 흐름 통제)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-156",
+    "name": "황동 실링 왁스 각인 세트 156호 (하람 맞춤 솔루션)",
+    "category": "황동 실링 왁스 각인 세트 (`BRASS-SEAL`)",
+    "context": "하람의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "황동 인장, 흑백 모노톤 왁스, 커스텀 이니셜 각인, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "하람의 고유 과업(저부담 시각 회고)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-03 하람` (저부담 시각 회고)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-157",
+    "name": "황동 실링 왁스 각인 세트 157호 (소담 맞춤 솔루션)",
+    "category": "황동 실링 왁스 각인 세트 (`BRASS-SEAL`)",
+    "context": "소담의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "황동 인장, 흑백 모노톤 왁스, 커스텀 이니셜 각인, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "소담의 고유 과업(주제별 기록 탐색)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-04 소담` (주제별 기록 탐색)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-158",
+    "name": "황동 실링 왁스 각인 세트 158호 (태오 맞춤 솔루션)",
+    "category": "황동 실링 왁스 각인 세트 (`BRASS-SEAL`)",
+    "context": "태오의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "황동 인장, 흑백 모노톤 왁스, 커스텀 이니셜 각인, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "태오의 고유 과업(다기기 연속성 검증)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-05 태오` (다기기 연속성 검증)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-159",
+    "name": "황동 실링 왁스 각인 세트 159호 (나린 맞춤 솔루션)",
+    "category": "황동 실링 왁스 각인 세트 (`BRASS-SEAL`)",
+    "context": "나린의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "황동 인장, 흑백 모노톤 왁스, 커스텀 이니셜 각인, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "나린의 고유 과업(꾸미기 자산 재사용)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-06 나린` (꾸미기 자산 재사용)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-160",
+    "name": "황동 실링 왁스 각인 세트 160호 (이준 맞춤 솔루션)",
+    "category": "황동 실링 왁스 각인 세트 (`BRASS-SEAL`)",
+    "context": "이준의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "황동 인장, 흑백 모노톤 왁스, 커스텀 이니셜 각인, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "이준의 고유 과업(중단 후 재시작)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-07 이준` (중단 후 재시작)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-161",
+    "name": "하이브리드 스타터 입문 패키지 161호 (다온 맞춤 솔루션)",
+    "category": "하이브리드 스타터 입문 패키지 (`STARTER-KIT`)",
+    "context": "다온의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "아날로그 노구 + 디지털 서식 결합 선물형 입문 세트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "다온의 고유 과업(첫 선택 부담)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-08 다온` (첫 선택 부담)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-162",
+    "name": "하이브리드 스타터 입문 패키지 162호 (윤슬 맞춤 솔루션)",
+    "category": "하이브리드 스타터 입문 패키지 (`STARTER-KIT`)",
+    "context": "윤슬의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "아날로그 노구 + 디지털 서식 결합 선물형 입문 세트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "윤슬의 고유 과업(카테고리·제품 비교)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-09 윤슬` (카테고리·제품 비교)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-163",
+    "name": "하이브리드 스타터 입문 패키지 163호 (온유 맞춤 솔루션)",
+    "category": "하이브리드 스타터 입문 패키지 (`STARTER-KIT`)",
+    "context": "온유의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "아날로그 노구 + 디지털 서식 결합 선물형 입문 세트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "온유의 고유 과업(선물 패키지 선택)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-10 온유` (선물 패키지 선택)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-164",
+    "name": "하이브리드 스타터 입문 패키지 164호 (가람 맞춤 솔루션)",
+    "category": "하이브리드 스타터 입문 패키지 (`STARTER-KIT`)",
+    "context": "가람의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "아날로그 노구 + 디지털 서식 결합 선물형 입문 세트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "가람의 고유 과업(브랜드 신뢰)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-11 가람` (브랜드 신뢰)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-165",
+    "name": "하이브리드 스타터 입문 패키지 165호 (해솔 맞춤 솔루션)",
+    "category": "하이브리드 스타터 입문 패키지 (`STARTER-KIT`)",
+    "context": "해솔의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "아날로그 노구 + 디지털 서식 결합 선물형 입문 세트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "해솔의 고유 과업(개인정보·보존 통제)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-12 해솔` (개인정보·보존 통제)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-166",
+    "name": "하이브리드 스타터 입문 패키지 166호 (여울 맞춤 솔루션)",
+    "category": "하이브리드 스타터 입문 패키지 (`STARTER-KIT`)",
+    "context": "여울의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "아날로그 노구 + 디지털 서식 결합 선물형 입문 세트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "여울의 고유 과업(접근성)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-13 여울` (접근성)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-167",
+    "name": "하이브리드 스타터 입문 패키지 167호 (마루 맞춤 솔루션)",
+    "category": "하이브리드 스타터 입문 패키지 (`STARTER-KIT`)",
+    "context": "마루의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "아날로그 노구 + 디지털 서식 결합 선물형 입문 세트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "마루의 고유 과업(탐색 재개)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-14 마루` (탐색 재개)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-168",
+    "name": "하이브리드 스타터 입문 패키지 168호 (새봄 맞춤 솔루션)",
+    "category": "하이브리드 스타터 입문 패키지 (`STARTER-KIT`)",
+    "context": "새봄의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "아날로그 노구 + 디지털 서식 결합 선물형 입문 세트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "새봄의 고유 과업(재료·지속가능성 정보)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-15 새봄` (재료·지속가능성 정보)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-169",
+    "name": "하이브리드 스타터 입문 패키지 169호 (한결 맞춤 솔루션)",
+    "category": "하이브리드 스타터 입문 패키지 (`STARTER-KIT`)",
+    "context": "한결의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "아날로그 노구 + 디지털 서식 결합 선물형 입문 세트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "한결의 고유 과업(반복 설정 피로)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-16 한결` (반복 설정 피로)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-170",
+    "name": "하이브리드 스타터 입문 패키지 170호 (채운 맞춤 솔루션)",
+    "category": "하이브리드 스타터 입문 패키지 (`STARTER-KIT`)",
+    "context": "채운의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "아날로그 노구 + 디지털 서식 결합 선물형 입문 세트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "채운의 고유 과업(아날로그 정보 부족)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-17 채운` (아날로그 정보 부족)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-171",
+    "name": "하이브리드 스타터 입문 패키지 171호 (서우 맞춤 솔루션)",
+    "category": "하이브리드 스타터 입문 패키지 (`STARTER-KIT`)",
+    "context": "서우의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "아날로그 노구 + 디지털 서식 결합 선물형 입문 세트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "서우의 고유 과업(디지털 내보내기 판단)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-18 서우` (디지털 내보내기 판단)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-172",
+    "name": "하이브리드 스타터 입문 패키지 172호 (초아 맞춤 솔루션)",
+    "category": "하이브리드 스타터 입문 패키지 (`STARTER-KIT`)",
+    "context": "초아의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "아날로그 노구 + 디지털 서식 결합 선물형 입문 세트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "초아의 고유 과업(가족 공동 기록 경계)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-19 초아` (가족 공동 기록 경계)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-173",
+    "name": "하이브리드 스타터 입문 패키지 173호 (주원 맞춤 솔루션)",
+    "category": "하이브리드 스타터 입문 패키지 (`STARTER-KIT`)",
+    "context": "주원의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "아날로그 노구 + 디지털 서식 결합 선물형 입문 세트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "주원의 고유 과업(기록 방식 전환)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-20 주원` (기록 방식 전환)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-174",
+    "name": "하이브리드 스타터 입문 패키지 174호 (민서 맞춤 솔루션)",
+    "category": "하이브리드 스타터 입문 패키지 (`STARTER-KIT`)",
+    "context": "민서의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "아날로그 노구 + 디지털 서식 결합 선물형 입문 세트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "민서의 고유 과업(예산 미정 탐색)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-21 민서` (예산 미정 탐색)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-175",
+    "name": "하이브리드 스타터 입문 패키지 175호 (선율 맞춤 솔루션)",
+    "category": "하이브리드 스타터 입문 패키지 (`STARTER-KIT`)",
+    "context": "선율의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "아날로그 노구 + 디지털 서식 결합 선물형 입문 세트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "선율의 고유 과업(기록 공개 부담)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-22 선율` (기록 공개 부담)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-176",
+    "name": "하이브리드 스타터 입문 패키지 176호 (도윤 맞춤 솔루션)",
+    "category": "하이브리드 스타터 입문 패키지 (`STARTER-KIT`)",
+    "context": "도윤의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "아날로그 노구 + 디지털 서식 결합 선물형 입문 세트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "도윤의 고유 과업(복잡한 필터 회피)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-23 도윤` (복잡한 필터 회피)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-177",
+    "name": "하이브리드 스타터 입문 패키지 177호 (아라 맞춤 솔루션)",
+    "category": "하이브리드 스타터 입문 패키지 (`STARTER-KIT`)",
+    "context": "아라의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "아날로그 노구 + 디지털 서식 결합 선물형 입문 세트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "아라의 고유 과업(근거 시점 확인)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-24 아라` (근거 시점 확인)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-178",
+    "name": "하이브리드 스타터 입문 패키지 178호 (재희 맞춤 솔루션)",
+    "category": "하이브리드 스타터 입문 패키지 (`STARTER-KIT`)",
+    "context": "재희의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "아날로그 노구 + 디지털 서식 결합 선물형 입문 세트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "재희의 고유 과업(선물 실패 회피)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-25 재희` (선물 실패 회피)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-179",
+    "name": "하이브리드 스타터 입문 패키지 179호 (지후 맞춤 솔루션)",
+    "category": "하이브리드 스타터 입문 패키지 (`STARTER-KIT`)",
+    "context": "지후의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "아날로그 노구 + 디지털 서식 결합 선물형 입문 세트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "지후의 고유 과업(중단 후 비교 맥락)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-26 지후` (중단 후 비교 맥락)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-180",
+    "name": "하이브리드 스타터 입문 패키지 180호 (예린 맞춤 솔루션)",
+    "category": "하이브리드 스타터 입문 패키지 (`STARTER-KIT`)",
+    "context": "예린의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "아날로그 노구 + 디지털 서식 결합 선물형 입문 세트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "예린의 고유 과업(브랜드 주장 검증)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-27 예린` (브랜드 주장 검증)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-181",
+    "name": "케어 181호 (수현 맞춤 솔루션)",
+    "category": "케어 & 보화 툴킷 (`CARE-TOOL`)",
+    "context": "수현의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "천연 가죽 왁스, 펜촉 클리너, 노구 장기 보존 수리 키트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "수현의 고유 과업(오래된 기록 재탐색)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-28 수현` (오래된 기록 재탐색)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-182",
+    "name": "케어 182호 (건우 맞춤 솔루션)",
+    "category": "케어 & 보화 툴킷 (`CARE-TOOL`)",
+    "context": "건우의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "천연 가죽 왁스, 펜촉 클리너, 노구 장기 보존 수리 키트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "건우의 고유 과업(실물 보관 공간 제약)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-29 건우` (실물 보관 공간 제약)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-183",
+    "name": "케어 183호 (서진 맞춤 솔루션)",
+    "category": "케어 & 보화 툴킷 (`CARE-TOOL`)",
+    "context": "서진의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "천연 가죽 왁스, 펜촉 클리너, 노구 장기 보존 수리 키트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "서진의 고유 과업(커스터마이징 후회 방지)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-30 서진` (커스터마이징 후회 방지)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-184",
+    "name": "케어 184호 (지민 맞춤 솔루션)",
+    "category": "케어 & 보화 툴킷 (`CARE-TOOL`)",
+    "context": "지민의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "천연 가죽 왁스, 펜촉 클리너, 노구 장기 보존 수리 키트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "지민의 고유 과업(알림 피로 회피)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-31 지민` (알림 피로 회피)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-185",
+    "name": "케어 185호 (유진 맞춤 솔루션)",
+    "category": "케어 & 보화 툴킷 (`CARE-TOOL`)",
+    "context": "유진의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "천연 가죽 왁스, 펜촉 클리너, 노구 장기 보존 수리 키트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "유진의 고유 과업(빠른 기록의 의미 선택)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-32 유진` (빠른 기록의 의미 선택)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-186",
+    "name": "케어 186호 (연우 맞춤 솔루션)",
+    "category": "케어 & 보화 툴킷 (`CARE-TOOL`)",
+    "context": "연우의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "천연 가죽 왁스, 펜촉 클리너, 노구 장기 보존 수리 키트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "연우의 고유 과업(기존 기록 이전 판단)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-33 연우` (기존 기록 이전 판단)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-187",
+    "name": "케어 187호 (하윤 맞춤 솔루션)",
+    "category": "케어 & 보화 툴킷 (`CARE-TOOL`)",
+    "context": "하윤의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "천연 가죽 왁스, 펜촉 클리너, 노구 장기 보존 수리 키트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "하윤의 고유 과업(선물 수령자의 접근성)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-34 하윤` (선물 수령자의 접근성)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-188",
+    "name": "케어 188호 (시온 맞춤 솔루션)",
+    "category": "케어 & 보화 툴킷 (`CARE-TOOL`)",
+    "context": "시온의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "천연 가죽 왁스, 펜촉 클리너, 노구 장기 보존 수리 키트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "시온의 고유 과업(생활 변화에 따른 방식 수정)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-35 시온` (생활 변화에 따른 방식 수정)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-189",
+    "name": "케어 189호 (나윤 맞춤 솔루션)",
+    "category": "케어 & 보화 툴킷 (`CARE-TOOL`)",
+    "context": "나윤의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "천연 가죽 왁스, 펜촉 클리너, 노구 장기 보존 수리 키트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "나윤의 고유 과업(리필·수리 가능성)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-36 나윤` (리필·수리 가능성)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-190",
+    "name": "케어 190호 (태윤 맞춤 솔루션)",
+    "category": "케어 & 보화 툴킷 (`CARE-TOOL`)",
+    "context": "태윤의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "천연 가죽 왁스, 펜촉 클리너, 노구 장기 보존 수리 키트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "태윤의 고유 과업(콘텐츠와 제품 탐색 구분)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-37 태윤` (콘텐츠와 제품 탐색 구분)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-191",
+    "name": "케어 191호 (라온 맞춤 솔루션)",
+    "category": "케어 & 보화 툴킷 (`CARE-TOOL`)",
+    "context": "라온의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "천연 가죽 왁스, 펜촉 클리너, 노구 장기 보존 수리 키트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "라온의 고유 과업(가칭 브랜드 인지)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-38 라온` (가칭 브랜드 인지)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-192",
+    "name": "케어 192호 (은호 맞춤 솔루션)",
+    "category": "케어 & 보화 툴킷 (`CARE-TOOL`)",
+    "context": "은호의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "천연 가죽 왁스, 펜촉 클리너, 노구 장기 보존 수리 키트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "은호의 고유 과업(포트폴리오 과정 검증)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-39 은호` (포트폴리오 과정 검증)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-193",
+    "name": "케어 193호 (세아 맞춤 솔루션)",
+    "category": "케어 & 보화 툴킷 (`CARE-TOOL`)",
+    "context": "세아의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "천연 가죽 왁스, 펜촉 클리너, 노구 장기 보존 수리 키트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "세아의 고유 과업(긴 랜딩 서사 탐색)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-40 세아` (긴 랜딩 서사 탐색)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-194",
+    "name": "케어 194호 (유나 맞춤 솔루션)",
+    "category": "케어 & 보화 툴킷 (`CARE-TOOL`)",
+    "context": "유나의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "천연 가죽 왁스, 펜촉 클리너, 노구 장기 보존 수리 키트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "유나의 고유 과업(200개 후보군 전체 방향 감각)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-41 유나` (200개 후보군 전체 방향 감각)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-195",
+    "name": "케어 195호 (현서 맞춤 솔루션)",
+    "category": "케어 & 보화 툴킷 (`CARE-TOOL`)",
+    "context": "현서의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "천연 가죽 왁스, 펜촉 클리너, 노구 장기 보존 수리 키트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "현서의 고유 과업(시각적 Hero와 탐색 균형)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-42 현서` (시각적 Hero와 탐색 균형)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-196",
+    "name": "케어 196호 (다빈 맞춤 솔루션)",
+    "category": "케어 & 보화 툴킷 (`CARE-TOOL`)",
+    "context": "다빈의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "천연 가죽 왁스, 펜촉 클리너, 노구 장기 보존 수리 키트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "다빈의 고유 과업(비판매 포트폴리오 인지)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-43 다빈` (비판매 포트폴리오 인지)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-197",
+    "name": "케어 197호 (로운 맞춤 솔루션)",
+    "category": "케어 & 보화 툴킷 (`CARE-TOOL`)",
+    "context": "로운의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "천연 가죽 왁스, 펜촉 클리너, 노구 장기 보존 수리 키트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "로운의 고유 과업(이미지 실패 상황의 제품 판단)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-44 로운` (이미지 실패 상황의 제품 판단)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-198",
+    "name": "케어 198호 (해나 맞춤 솔루션)",
+    "category": "케어 & 보화 툴킷 (`CARE-TOOL`)",
+    "context": "해나의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "천연 가죽 왁스, 펜촉 클리너, 노구 장기 보존 수리 키트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "해나의 고유 과업(한국적 정서의 진정성)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-45 해나` (한국적 정서의 진정성)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-199",
+    "name": "케어 199호 (지율 맞춤 솔루션)",
+    "category": "케어 & 보화 툴킷 (`CARE-TOOL`)",
+    "context": "지율의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "천연 가죽 왁스, 펜촉 클리너, 노구 장기 보존 수리 키트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "지율의 고유 과업(긴 페이지의 스크린리더 탐색)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-46 지율` (긴 페이지의 스크린리더 탐색)",
+    "isMainRail": true
+  },
+  {
+    "id": "PROD-200",
+    "name": "케어 200호 (주하 맞춤 솔루션)",
+    "category": "케어 & 보화 툴킷 (`CARE-TOOL`)",
+    "context": "주하의 기록 상황: 을 방지하고 일상 속 기록 몰입 환경 제공",
+    "specs": "천연 가죽 왁스, 펜촉 클리너, 노구 장기 보존 수리 키트, 정밀 수치 검증 라벨 부착, 무손실 데이터 스키마 연동",
+    "differentiator": "주하의 고유 과업(모바일 제품 레일 발견)을 100% 수용하여 ",
+    "brandFit": "다모리 애착공방 기억의 서재: 아날로그 물성과 디지털 시간축 통제의 완벽한 조화",
+    "mappedClient": "`VC-47 주하` (모바일 제품 레일 발견)",
+    "isMainRail": true
+  }
+];
+    let currentCategory = 'ALL';
+    let compareTray = JSON.parse(localStorage.getItem('damori_compare_tray') || '[]');
+
+    function renderProducts() {
+      const grid = document.getElementById('products-grid');
+      const filtered = currentCategory === 'ALL' 
+        ? productsData 
+        : productsData.filter(p => p.category.includes(currentCategory) || p.id.startsWith('PROD-'));
+      
+      grid.innerHTML = filtered.map(p => `
+        <div class="product-card">
+          <div>
+            <span class="cat-badge">${p.category.split('&')[0]}</span>
+            <h4>${p.id}: ${p.name}</h4>
+            <div class="client-tag">${p.mappedClient}</div>
+            <p>${p.specs}</p>
+          </div>
+          <button class="btn-tray-add ${compareTray.includes(p.id) ? 'active' : ''}" onclick="toggleCompare('${p.id}')">
+            ${compareTray.includes(p.id) ? '✓ Compare 담김' : '+ Compare 대조 담기'}
+          </button>
+        </div>
+      `).join('');
+      updateTrayUI();
+    }
+
+    function filterCategory(cat, btn) {
+      currentCategory = cat;
+      document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+      renderProducts();
+    }
+
+    function toggleCompare(id) {
+      if (compareTray.includes(id)) {
+        compareTray = compareTray.filter(x => x !== id);
+      } else {
+        if (compareTray.length >= 3) {
+          alert('Compare Tray에는 최대 3개까지 담을 수 있습니다.');
+          return;
+        }
+        compareTray.push(id);
+      }
+      localStorage.setItem('damori_compare_tray', JSON.stringify(compareTray));
+      renderProducts();
+    }
+
+    function addToTrayById(id) {
+      if (!compareTray.includes(id)) {
+        if (compareTray.length >= 3) {
+          alert('Compare Tray에는 최대 3개까지 담을 수 있습니다.');
+          return;
+        }
+        compareTray.push(id);
+        localStorage.setItem('damori_compare_tray', JSON.stringify(compareTray));
+        renderProducts();
+      }
+    }
+
+    function updateTrayUI() {
+      document.getElementById('tray-count-display').innerText = compareTray.length;
+      const box = document.getElementById('tray-items-box');
+      if (compareTray.length === 0) {
+        box.innerHTML = '<span style="color:#8C827A;font-size:0.8rem;">대조할 제품을 아래 카드에서 담아보세요.</span>';
+      } else {
+        box.innerHTML = compareTray.map(id => `
+          <span class="tray-pill">${id} <button onclick="toggleCompare('${id}')" style="background:none;border:none;color:#fff;cursor:pointer;">&times;</button></span>
+        `).join('');
+      }
+    }
+
+    function openCompareModal() {
+      if (compareTray.length === 0) {
+        alert('대조할 제품을 먼저 선택해 주세요 (최소 1개 이상).');
+        return;
+      }
+      const selected = productsData.filter(p => compareTray.includes(p.id));
+      const body = document.getElementById('compare-modal-body');
+      
+      let html = '<table class="compare-table"><thead><tr><th>속성 항목</th>';
+      selected.forEach(p => html += `<th>${p.id}<br><span style="font-weight:400;">${p.name}</span></th>`);
+      html += '</tr></thead><tbody>';
+      
+      html += '<tr><th>카테고리</th>' + selected.map(p => `<td>${p.category}</td>`).join('') + '</tr>';
+      html += '<tr><th>실측 스펙</th>' + selected.map(p => `<td>${p.specs}</td>`).join('') + '</tr>';
+      html += '<tr><th>차별점</th>' + selected.map(p => `<td>${p.differentiator}</td>`).join('') + '</tr>';
+      html += '<tr><th>매핑 페르소나</th>' + selected.map(p => `<td>${p.mappedClient}</td>`).join('') + '</tr>';
+      html += '<tr><th>브랜드 적합성</th>' + selected.map(p => `<td>${p.brandFit}</td>`).join('') + '</tr>';
+      html += '<tr><th>소장/상태</th>' + selected.map(p => `<td><span style="color:#059669;font-weight:700;">비상업 포트폴리오 가상 스펙 확인 완료</span></td>`).join('') + '</tr>';
+      html += '</tbody></table>';
+
+      body.innerHTML = html;
+      document.getElementById('compare-modal').classList.add('open');
+    }
+
+    function closeCompareModal() {
+      document.getElementById('compare-modal').classList.remove('open');
+    }
+
+    renderProducts();
+  </script>
+</body>
+</html>

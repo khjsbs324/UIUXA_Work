@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAMORI — 아날로그 기록과 노트 물성</title>
+  <style>
+    :root {
+      --bg-paper: #fcfbf9;
+      --bg-card: #ffffff;
+      --bg-subtle: #f4f0eb;
+      --bg-dark: #1e2522;
+      --text-main: #2b302d;
+      --text-sub: #5c635f;
+      --accent-sage: #4a5d55;
+      --border-subtle: #e2ddd7;
+      --focus-ring: #2457A7;
+      --font-main: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-paper); color: var(--text-main); font-family: var(--font-main); line-height: 1.65; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; }
+
+    header { height: 76px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border-subtle); position: sticky; top: 0; z-index: 100; }
+    .header-container { max-width: 1240px; margin: 0 auto; height: 100%; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; }
+    .brand-logo-group { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-stamp { width: 36px; height: 36px; border-radius: 50%; background: var(--accent-sage); color: white; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 800; }
+    .brand-name { font-size: 20px; font-weight: 800; color: var(--text-main); }
+    .gnb-menu { display: flex; gap: 28px; list-style: none; }
+    .gnb-menu a { text-decoration: none; color: var(--text-sub); font-size: 15px; font-weight: 600; padding: 8px 12px; border-radius: 6px; }
+    .gnb-menu a[aria-current="page"] { color: var(--accent-sage); background-color: var(--bg-subtle); }
+
+    .hero-section { max-width: 1240px; margin: 0 auto; padding: 64px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .hero-badge { display: inline-block; padding: 4px 12px; background: var(--bg-subtle); border-radius: 4px; font-size: 12px; font-weight: 700; color: var(--accent-sage); margin-bottom: 16px; }
+    .hero-title { font-size: 38px; font-weight: 800; margin-bottom: 16px; letter-spacing: -1px; }
+    .hero-desc { font-size: 18px; color: var(--text-sub); margin-bottom: 28px; }
+
+    .section-wrapper { max-width: 1240px; margin: 0 auto; padding: 48px 24px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .card { background: var(--bg-card); border: 1.5px solid var(--border-subtle); border-radius: 14px; padding: 28px; }
+
+    footer { background: var(--bg-dark); color: #94a3b8; padding: 60px 24px; margin-top: 80px; }
+    .footer-inner { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; }
+
+    @media (max-width: 1023px) { .hero-section, .grid-3 { grid-template-columns: 1fr; } .footer-inner { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <a href="PAGE-001-메인페이지-반응형와이어프레임.html" class="brand-logo-group">
+        <div class="logo-stamp">多</div>
+        <span class="brand-name">DAMORI (다모리)</span>
+      </a>
+      <nav>
+        <ul class="gnb-menu">
+          <li><a href="PAGE-001-메인페이지-반응형와이어프레임.html">홈</a></li>
+          <li><a href="PAGE-002-기록방식찾기-반응형와이어프레임.html">기록 방식 찾기</a></li>
+          <li><a href="#" aria-current="page">아날로그 기록</a></li>
+          <li><a href="PAGE-009-디지털기록-반응형와이어프레임.html">디지털 기록</a></li>
+          <li><a href="PAGE-013-템플릿과꾸미기-반응형와이어프레임.html">템플릿과 꾸미기</a></li>
+          <li><a href="PAGE-016-기록가이드-반응형와이어프레임.html">기록 가이드</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <div>
+        <span class="hero-badge">은재(VC-01) 추천 아날로그 물성</span>
+        <h1 class="hero-title">손 끝으로 느껴지는 온기,<br>종이 위에 스미는 삶의 기록</h1>
+        <p class="hero-desc">속도에 쫓기지 않고 자신만의 템포로 장문을 써내려가는 아날로그 노트의 촉감과 소장 가치를 만끽하세요.</p>
+        <button style="min-height:48px; padding:0 24px; background:var(--accent-sage); color:white; border:none; border-radius:8px; font-weight:700; cursor:pointer;" onclick="alert('노트 180도 펼침 사양을 확인했습니다.')">180도 펼침 사양 보기</button>
+      </div>
+      <div style="height:340px; background:var(--bg-subtle); border-radius:14px; border:1.5px solid var(--border-subtle); display:flex; flex-direction:column; align-items:center; justify-content:center;">
+        <div style="font-size:56px;">📓</div>
+        <div style="font-size:16px; font-weight:700; margin-top:12px;">180도 완전 평면 펼침 바운드 노트</div>
+        <div style="font-size:13px; color:var(--text-sub);">120gsm 미유광 평산지 / 만년필 번짐 방지</div>
+      </div>
+    </section>
+
+    <section class="section-wrapper">
+      <h2 style="font-size:26px; font-weight:800; margin-bottom:12px;">정교하게 검증된 3대 아날로그 물성 스펙</h2>
+      <p style="color:var(--text-sub); margin-bottom:32px;">은재(VC-01)와 채운(VC-17)의 잉크 피복성 및 제본 검증 사양입니다.</p>
+
+      <div class="grid-3">
+        <div class="card">
+          <span class="hero-badge">제본 공학</span>
+          <h3 style="font-size:20px; margin-bottom:12px;">180도 평면 펼침 제본</h3>
+          <p style="color:var(--text-sub); font-size:14px;">노트 중앙 들뜸 없이 책상 위에 완전히 평평하게 펼쳐져 장시간 필기에도 손목 피로가 전혀 없습니다.</p>
+        </div>
+        <div class="card">
+          <span class="hero-badge">종이 품질 라벨</span>
+          <h3 style="font-size:20px; margin-bottom:12px;">120gsm 미유광 평산지</h3>
+          <p style="color:var(--text-sub); font-size:14px;">눈의 피로를 낮추는 자연 우유빛 미유광 종이로 만년필 잉크 뒤번짐 및 비침을 최소화했습니다.</p>
+        </div>
+        <div class="card">
+          <span class="hero-badge">소장 가치</span>
+          <h3 style="font-size:20px; margin-bottom:12px;">실링 왁스 엠블럼 키트</h3>
+          <p style="color:var(--text-sub); font-size:14px;">노트 커버에 황동 인장과 펠릿 왁스로 오프라인 아카이브 서재의 시그니처 소장 가치를 만듭니다.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div style="color:white; font-size:18px; font-weight:800; margin-bottom:16px;">[LOGO] DAMORI (다모리)</div>
+        <p>종이와 물성의 아카이브 가치를 소중히 다룹니다.</p>
+      </div>
+      <div>
+        <h4 style="color:white; margin-bottom:16px;">아날로그</h4>
+        <ul style="list-style:none;">
+          <li><a href="#" style="color:#94a3b8; text-decoration:none;">180도 펼침 노트</a></li>
+          <li><a href="#" style="color:#94a3b8; text-decoration:none;">실링 왁스 키트</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color:white; margin-bottom:16px;">도움말</h4>
+        <ul style="list-style:none;">
+          <li><a href="PAGE-016-기록가이드-반응형와이어프레임.html" style="color:#94a3b8; text-decoration:none;">기록 가이드</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color:white; margin-bottom:16px;">브랜드</h4>
+        <ul style="list-style:none;">
+          <li><a href="#" style="color:#94a3b8; text-decoration:none;">브랜드 소개</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

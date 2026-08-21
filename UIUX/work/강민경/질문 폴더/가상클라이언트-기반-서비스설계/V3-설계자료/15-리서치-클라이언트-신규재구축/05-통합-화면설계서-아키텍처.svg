@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 950" width="100%" height="100%">
+  <defs>
+    <style>
+      .bg { fill: #fcfbf9; }
+      .header-bg { fill: #1e2522; rx: 8px; }
+      .header-text { fill: #ffffff; font-family: 'Pretendard', sans-serif; font-size: 20px; font-weight: 800; }
+      .badge-bg { fill: #4a5d55; rx: 4px; }
+      .badge-text { fill: #ffffff; font-family: 'Pretendard', sans-serif; font-size: 11px; font-weight: 700; }
+      
+      .box-frame { fill: #ffffff; stroke: #4a5d55; stroke-width: 2; rx: 8px; }
+      .box-header { fill: #4a5d55; rx: 6px; }
+      .box-sub { fill: #f4f0eb; stroke: #e2ddd7; stroke-width: 1.5; rx: 6px; }
+      
+      .text-title { fill: #ffffff; font-family: 'Pretendard', sans-serif; font-size: 14px; font-weight: 800; }
+      .text-dark { fill: #2b302d; font-family: 'Pretendard', sans-serif; font-size: 12px; font-weight: 700; }
+    </style>
+  </defs>
+
+  <rect width="1400" height="950" class="bg" />
+
+  <!-- Header -->
+  <rect x="50" y="30" width="1300" height="64" class="header-bg" />
+  <text x="80" y="70" class="header-text">[LOGO] DAMORI 신규 리서치 기반 화면설계서 아키텍처 (Screen Architecture)</text>
+  <rect x="1080" y="48" width="240" height="28" class="badge-bg" />
+  <text x="1100" y="66" class="badge-text">데스크톱 / 태블릿 / 모바일 브레이크포인트</text>
+
+  <!-- Desktop Frame -->
+  <rect x="50" y="120" width="400" height="760" class="box-frame" />
+  <rect x="60" y="130" width="380" height="36" class="box-header" />
+  <text x="250" y="153" text-anchor="middle" class="text-title">데스크톱 (Desktop 1200px+)</text>
+  <rect x="70" y="180" width="360" height="40" class="box-sub" />
+  <text x="250" y="205" text-anchor="middle" class="text-dark">001-HEADER (76px sticky GNB)</text>
+  <rect x="70" y="230" width="360" height="120" class="box-sub" />
+  <text x="250" y="285" text-anchor="middle" class="text-dark">001-01 HERO (6:6 2열 비주얼 + 2대 CTA)</text>
+  <rect x="70" y="360" width="360" height="140" fill="#fcfbf9" stroke="#9e7b66" stroke-width="2" rx="6px" />
+  <text x="250" y="415" text-anchor="middle" fill="#1e2522" font-family="Pretendard" font-size="13px" font-weight="800">001-PRODUCTS (대표 라인업 상품 15~50개)</text>
+  <rect x="70" y="510" width="360" height="100" class="box-sub" />
+  <text x="250" y="560" text-anchor="middle" class="text-dark">001-02 과업 5종 (3+2 그리드 카드)</text>
+
+  <!-- Tablet Frame -->
+  <rect x="500" y="120" width="400" height="760" class="box-frame" />
+  <rect x="510" y="130" width="380" height="36" class="box-header" />
+  <text x="700" y="153" text-anchor="middle" class="text-title">태블릿 (Tablet 768px~1023px)</text>
+  <rect x="520" y="180" width="360" height="40" class="box-sub" />
+  <text x="700" y="205" text-anchor="middle" class="text-dark">001-HEADER (GNB 탭 스크롤)</text>
+  <rect x="520" y="230" width="360" height="150" class="box-sub" />
+  <text x="700" y="305" text-anchor="middle" class="text-dark">001-01 HERO (1열 세로 순차 배치)</text>
+
+  <!-- Mobile Frame -->
+  <rect x="950" y="120" width="400" height="760" class="box-frame" />
+  <rect x="960" y="130" width="380" height="36" class="box-header" />
+  <text x="1150" y="153" text-anchor="middle" class="text-title">모바일 (Mobile 360px~767px)</text>
+  <rect x="970" y="180" width="360" height="40" class="box-sub" />
+  <text x="1150" y="205" text-anchor="middle" class="text-dark">001-HEADER (44px 햄버거 메뉴)</text>
+</svg>

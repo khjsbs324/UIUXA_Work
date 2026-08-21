@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 1000" width="1600" height="1000" style="background:#FAF9F5;">
+  <defs>
+    <style>
+      text { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; }
+    </style>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#6B7F5E" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Title &amp; Header (bright olive green: #6B7F5E) -->
+  <rect x="40" y="30" width="1520" height="70" rx="8" fill="#6B7F5E"/>
+  <text x="70" y="73" fill="#FFFFFF" font-size="22" font-weight="700" letter-spacing="1">DAMORI (다모리) V6 통합 사이트구조맵 (Information Architecture)</text>
+  <text x="1350" y="73" fill="#E8F0E3" font-size="14" font-weight="600">51 CLIENTS · 200 PRODS</text>
+
+  <!-- Root: PAGE-001 -->
+  <g filter="url(#shadow)">
+    <rect x="550" y="130" width="500" height="80" rx="8" fill="#FFFFFF" stroke="#6B7F5E" stroke-width="2"/>
+    <rect x="550" y="130" width="12" height="80" rx="4" fill="#6B7F5E"/>
+    <text x="580" y="162" fill="#2D3328" font-size="18" font-weight="700">PAGE-001: 메인 랜딩 페이지 (Main Landing)</text>
+    <text x="580" y="190" fill="#756A5B" font-size="13">Hero 6:6 · 대표 15선 레일 · 4대 필터 칩 · 10초 폼 · 24시간 타임라인 · 복귀 밴드</text>
+  </g>
+
+  <!-- Branch lines -->
+  <path d="M 800 210 L 800 260 M 260 260 L 1340 260" stroke="#A3B299" stroke-width="2" fill="none"/>
+  <path d="M 260 260 L 260 300" stroke="#A3B299" stroke-width="2" fill="none"/>
+  <path d="M 620 260 L 620 300" stroke="#A3B299" stroke-width="2" fill="none"/>
+  <path d="M 980 260 L 980 300" stroke="#A3B299" stroke-width="2" fill="none"/>
+  <path d="M 1340 260 L 1340 300" stroke="#A3B299" stroke-width="2" fill="none"/>
+
+  <!-- Branch 1: PAGE-002~003 -->
+  <g filter="url(#shadow)">
+    <rect x="100" y="300" width="320" height="110" rx="6" fill="#FFFFFF" stroke="#DCD6CD" stroke-width="1.5"/>
+    <rect x="100" y="300" width="320" height="28" rx="4" fill="#F3EFEA"/>
+    <text x="115" y="320" fill="#4A5840" font-size="14" font-weight="700">1. 기록 방식 자율 탐색 (GNB 1)</text>
+    <text x="115" y="350" fill="#2D3328" font-size="13">├─ PAGE-002: 4대 자율 필터 허브</text>
+    <text x="115" y="375" fill="#2D3328" font-size="13">├─ PAGE-003: 맞춤 추천 결과</text>
+    <text x="115" y="398" fill="#756A5B" font-size="11">VC-08 다온, VC-21 민서 (무설정 매핑)</text>
+  </g>
+
+  <!-- Branch 2: PAGE-021 (Core Deliverable) -->
+  <g filter="url(#shadow)">
+    <rect x="460" y="300" width="320" height="110" rx="6" fill="#FFFFFF" stroke="#6B7F5E" stroke-width="2"/>
+    <rect x="460" y="300" width="320" height="28" rx="4" fill="#6B7F5E"/>
+    <text x="475" y="320" fill="#FFFFFF" font-size="14" font-weight="700">[핵심 2] PAGE-021: 카테고리 솔루션 허브</text>
+    <text x="475" y="350" fill="#2D3328" font-size="13">├─ 10대 카테고리 200개 제품 그리드</text>
+    <text x="475" y="375" fill="#2D3328" font-size="13">├─ 1:1 Compare Tray (실시간 실측 대조)</text>
+    <text x="475" y="398" fill="#6B7F5E" font-size="11" font-weight="700">PROD-001 ~ PROD-200 전수 수용</text>
+  </g>
+
+  <!-- Branch 3: PAGE-020 (Core Deliverable) -->
+  <g filter="url(#shadow)">
+    <rect x="820" y="300" width="320" height="110" rx="6" fill="#FFFFFF" stroke="#A88B77" stroke-width="2"/>
+    <rect x="820" y="300" width="320" height="28" rx="4" fill="#A88B77"/>
+    <text x="835" y="320" fill="#FFFFFF" font-size="14" font-weight="700">[핵심 3] PAGE-020: 브랜드 소개 및 철학</text>
+    <text x="835" y="350" fill="#2D3328" font-size="13">├─ 애착공방 기억의 서재 3대 철학</text>
+    <text x="835" y="375" fill="#2D3328" font-size="13">├─ 120gsm 평산지 &amp; 180도 실제본 공정</text>
+    <text x="835" y="398" fill="#756A5B" font-size="11">VC-01 은재, VC-15 새봄 (물성 검증)</text>
+  </g>
+
+  <!-- Branch 4: Common/Fallback Modules -->
+  <g filter="url(#shadow)">
+    <rect x="1180" y="300" width="320" height="110" rx="6" fill="#FFFFFF" stroke="#DCD6CD" stroke-width="1.5"/>
+    <rect x="1180" y="300" width="320" height="28" rx="4" fill="#E9ECE6"/>
+    <text x="1195" y="320" fill="#4A5840" font-size="14" font-weight="700">4. 공통 복귀 및 예외 모듈</text>
+    <text x="1195" y="350" fill="#2D3328" font-size="13">├─ PAGE-018: 죄책감 없는 복귀 밴드</text>
+    <text x="1195" y="375" fill="#2D3328" font-size="13">├─ ST-HOLD: 연동 미검증 안전 보류</text>
+    <text x="1195" y="398" fill="#6B7F5E" font-size="11" font-weight="700">ST-LOCAL: 오프라인 IndexedDB 캐시</text>
+  </g>
+
+  <!-- 10 Categories Grid Box -->
+  <rect x="100" y="440" width="1400" height="520" rx="8" fill="#FFFFFF" stroke="#DCD6CD" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="100" y="440" width="1400" height="36" rx="4" fill="#6B7F5E"/>
+  <text x="120" y="464" fill="#FFFFFF" font-size="15" font-weight="700">PAGE-021 연동: 10대 제품 카테고리 (10 x 20 = 200개 인벤토리 체계)</text>
+
+  <!-- 10 Category Cards -->
+  <g transform="translate(120, 490)">
+    <!-- Row 1 -->
+    <rect x="0" y="0" width="250" height="95" rx="6" fill="#FAF9F5" stroke="#E6E0D8"/>
+    <text x="15" y="25" fill="#2D3328" font-size="13" font-weight="700">CAT-01. 아날로그 노트 (20종)</text>
+    <text x="15" y="48" fill="#756A5B" font-size="11">PROD-001 ~ PROD-020</text>
+    <text x="15" y="70" fill="#6B7F5E" font-size="11" font-weight="600">VC-01 은재 (180도 평면 제본)</text>
+
+    <rect x="275" y="0" width="250" height="95" rx="6" fill="#FAF9F5" stroke="#E6E0D8"/>
+    <text x="290" y="25" fill="#2D3328" font-size="13" font-weight="700">CAT-02. 리필 속지 &amp; 내지 (20종)</text>
+    <text x="290" y="48" fill="#756A5B" font-size="11">PROD-021 ~ PROD-040</text>
+    <text x="290" y="70" fill="#6B7F5E" font-size="11" font-weight="600">VC-17 채운 (120gsm 평산지 팩)</text>
+
+    <rect x="550" y="0" width="250" height="95" rx="6" fill="#FAF9F5" stroke="#E6E0D8"/>
+    <text x="565" y="25" fill="#2D3328" font-size="13" font-weight="700">CAT-03. 디지털 플래너 (20종)</text>
+    <text x="565" y="48" fill="#756A5B" font-size="11">PROD-041 ~ PROD-060</text>
+    <text x="565" y="70" fill="#6B7F5E" font-size="11" font-weight="600">VC-02 지안 (24시간 시간축 서식)</text>
+
+    <rect x="825" y="0" width="250" height="95" rx="6" fill="#FAF9F5" stroke="#E6E0D8"/>
+    <text x="840" y="25" fill="#2D3328" font-size="13" font-weight="700">CAT-04. 10초 빠른 기록 폼 (20종)</text>
+    <text x="840" y="48" fill="#756A5B" font-size="11">PROD-061 ~ PROD-080</text>
+    <text x="840" y="70" fill="#6B7F5E" font-size="11" font-weight="600">VC-03 하람 (무설정 스냅샷)</text>
+
+    <rect x="1100" y="0" width="250" height="95" rx="6" fill="#FAF9F5" stroke="#E6E0D8"/>
+    <text x="1115" y="25" fill="#2D3328" font-size="13" font-weight="700">CAT-05. 템플릿 구획 서식 (20종)</text>
+    <text x="1115" y="48" fill="#756A5B" font-size="11">PROD-081 ~ PROD-100</text>
+    <text x="1115" y="70" fill="#6B7F5E" font-size="11" font-weight="600">VC-04 소담 (원본 보존 캔버스)</text>
+
+    <!-- Row 2 -->
+    <rect x="0" y="115" width="250" height="95" rx="6" fill="#FAF9F5" stroke="#E6E0D8"/>
+    <text x="15" y="140" fill="#2D3328" font-size="13" font-weight="700">CAT-06. 꾸미기 표현 자산 (20종)</text>
+    <text x="15" y="163" fill="#756A5B" font-size="11">PROD-101 ~ PROD-120</text>
+    <text x="15" y="185" fill="#6B7F5E" font-size="11" font-weight="600">VC-06 나린 (독립 레이어 스티커)</text>
+
+    <rect x="275" y="115" width="250" height="95" rx="6" fill="#FAF9F5" stroke="#E6E0D8"/>
+    <text x="290" y="140" fill="#2D3328" font-size="13" font-weight="700">CAT-07. 아카이빙 바인더 (20종)</text>
+    <text x="290" y="163" fill="#756A5B" font-size="11">PROD-121 ~ PROD-140</text>
+    <text x="290" y="185" fill="#6B7F5E" font-size="11" font-weight="600">VC-29 건우 (15mm 슬림 보관함)</text>
+
+    <rect x="550" y="115" width="250" height="95" rx="6" fill="#FAF9F5" stroke="#E6E0D8"/>
+    <text x="565" y="140" fill="#2D3328" font-size="13" font-weight="700">CAT-08. 황동 실링 왁스 (20종)</text>
+    <text x="565" y="163" fill="#756A5B" font-size="11">PROD-141 ~ PROD-160</text>
+    <text x="565" y="185" fill="#6B7F5E" font-size="11" font-weight="600">VC-10 온유 (선물 시그니처 각인)</text>
+
+    <rect x="825" y="115" width="250" height="95" rx="6" fill="#FAF9F5" stroke="#E6E0D8"/>
+    <text x="840" y="140" fill="#2D3328" font-size="13" font-weight="700">CAT-09. 하이브리드 스타터 (20종)</text>
+    <text x="840" y="163" fill="#756A5B" font-size="11">PROD-161 ~ PROD-180</text>
+    <text x="840" y="185" fill="#6B7F5E" font-size="11" font-weight="600">VC-25 재희 (입문 스타터 세트)</text>
+
+    <rect x="1100" y="115" width="250" height="95" rx="6" fill="#FAF9F5" stroke="#E6E0D8"/>
+    <text x="1115" y="140" fill="#2D3328" font-size="13" font-weight="700">CAT-10. 케어 &amp; 보화 툴킷 (20종)</text>
+    <text x="1115" y="163" fill="#756A5B" font-size="11">PROD-181 ~ PROD-200</text>
+    <text x="1115" y="185" fill="#6B7F5E" font-size="11" font-weight="600">VC-05 태오 (장기 보존 수리 키트)</text>
+  </g>
+
+  <!-- Client Access Banner -->
+  <rect x="120" y="730" width="1360" height="200" rx="6" fill="#FFFFFF" stroke="#DCD6CD"/>
+  <text x="140" y="760" fill="#6B7F5E" font-size="14" font-weight="700">51인 가상 클라이언트 (VC-01 ~ VC-51) 전체 동기화 현황</text>
+  <text x="140" y="790" fill="#444444" font-size="12">VC-01 은재 · VC-02 지안 · VC-03 하람 · VC-04 소담 · VC-05 태오 · VC-06 나린 · VC-07 이준 · VC-08 다온 · VC-09 윤슬 · VC-10 온유 · VC-11 가람 · VC-12 해솔 · VC-13 여울 · VC-14 마루 · VC-15 새봄</text>
+  <text x="140" y="820" fill="#444444" font-size="12">VC-16 한결 · VC-17 채운 · VC-18 서우 · VC-19 초아 · VC-20 주원 · VC-21 민서 · VC-22 선율 · VC-23 도윤 · VC-24 아라 · VC-25 재희 · VC-26 지후 · VC-27 예린 · VC-28 수현 · VC-29 건우 · VC-30 서진</text>
+  <text x="140" y="850" fill="#444444" font-size="12">VC-31 지민 · VC-32 유진 · VC-33 연우 · VC-34 하윤 · VC-35 시온 · VC-36 나윤 · VC-37 태윤 · VC-38 라온 · VC-39 은호 · VC-40 세아 · VC-41 유나 · VC-42 현서 · VC-43 다빈 · VC-44 로운 · VC-45 해나</text>
+  <text x="140" y="880" fill="#444444" font-size="12">VC-46 지율 · VC-47 태은 · VC-48 정원 · VC-49 준영 · VC-50 보람 · VC-51 이솔 (51명 전원 100% 매핑 및 검증 완료)</text>
+</svg>

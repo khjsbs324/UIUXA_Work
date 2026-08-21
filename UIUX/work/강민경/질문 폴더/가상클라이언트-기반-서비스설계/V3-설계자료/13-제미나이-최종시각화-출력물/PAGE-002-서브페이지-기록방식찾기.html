@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAMORI (다모리) — 서브페이지 (기록 방식 찾기)</title>
+  <style>
+    :root {
+      --bg-paper: #fcfbf9;
+      --bg-card: #ffffff;
+      --bg-subtle: #f4f0eb;
+      --bg-dark: #1e2522;
+      --text-main: #2b302d;
+      --text-sub: #5c635f;
+      --accent-sage: #4a5d55;
+      --accent-clay: #9e7b66;
+      --border-subtle: #e2ddd7;
+      --focus-ring: #2457A7;
+      --font-main: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-paper); color: var(--text-main); font-family: var(--font-main); line-height: 1.65; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; }
+
+    header { height: 76px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border-subtle); position: sticky; top: 0; z-index: 100; }
+    .header-container { max-width: 1240px; margin: 0 auto; height: 100%; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; }
+    .brand-logo-group { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-stamp { width: 38px; height: 38px; border-radius: 50%; background: var(--accent-sage); color: white; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 800; }
+    .brand-name { font-size: 20px; font-weight: 800; color: var(--text-main); }
+    .gnb-menu { display: flex; gap: 28px; list-style: none; }
+    .gnb-menu a { text-decoration: none; color: var(--text-sub); font-size: 15px; font-weight: 600; padding: 8px 12px; border-radius: 6px; }
+    .gnb-menu a[aria-current="page"] { color: var(--accent-sage); background-color: var(--bg-subtle); }
+
+    .hero-section { max-width: 1240px; margin: 0 auto; padding: 60px 24px 40px; text-align: center; }
+    .hero-title { font-size: 38px; font-weight: 800; margin-bottom: 16px; letter-spacing: -1px; }
+    .hero-desc { font-size: 18px; color: var(--text-sub); margin-bottom: 32px; }
+
+    .filter-chips { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
+    .chip-btn { min-height: 44px; padding: 0 20px; border: 1.5px solid var(--border-subtle); border-radius: 22px; background: var(--bg-card); color: var(--text-main); font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+    .chip-btn.active, .chip-btn:hover { background: var(--accent-sage); color: white; border-color: var(--accent-sage); }
+
+    .section-wrapper { max-width: 1240px; margin: 0 auto; padding: 40px 24px; }
+    .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .compare-card { background: var(--bg-card); border: 1.5px solid var(--border-subtle); border-radius: 16px; padding: 36px; box-shadow: 0 8px 24px rgba(0,0,0,0.03); }
+    .compare-card h3 { font-size: 24px; font-weight: 800; margin-bottom: 12px; }
+
+    .attr-row { display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--bg-subtle); font-size: 15px; }
+    .attr-label { color: var(--text-sub); font-weight: 600; }
+    .attr-val { font-weight: 700; color: var(--text-main); }
+
+    .btn-primary { min-height: 48px; width: 100%; background: var(--accent-sage); color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; }
+
+    footer { background: var(--bg-dark); color: #94a3b8; padding: 60px 24px; margin-top: 80px; }
+    .footer-inner { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; }
+
+    @media (max-width: 1023px) { .compare-grid { grid-template-columns: 1fr; } .footer-inner { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <a href="PAGE-001-메인페이지.html" class="brand-logo-group">
+        <div class="logo-stamp">多</div>
+        <span class="brand-name">DAMORI (다모리)</span>
+      </a>
+      <nav>
+        <ul class="gnb-menu">
+          <li><a href="PAGE-001-메인페이지.html">홈</a></li>
+          <li><a href="#" aria-current="page">기록 방식 찾기</a></li>
+          <li><a href="#">아날로그 기록</a></li>
+          <li><a href="#">디지털 기록</a></li>
+          <li><a href="#">템플릿과 꾸미기</a></li>
+          <li><a href="#">기록 가이드</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <h1 class="hero-title">나에게 맞는 기록 방식을 찾아보세요</h1>
+      <p class="hero-desc">목적, 분량, 장소, 보존 방식에 따라 아날로그와 디지털의 가치를 자율적으로 비교해보세요.</p>
+
+      <div class="filter-chips">
+        <button class="chip-btn active" onclick="setFilter('purpose', this)">목적별 비교</button>
+        <button class="chip-btn" onclick="setFilter('length', this)">분량별 비교</button>
+        <button class="chip-btn" onclick="setFilter('location', this)">장소별 비교</button>
+        <button class="chip-btn" onclick="setFilter('archive', this)">보존별 비교</button>
+      </div>
+    </section>
+
+    <section class="section-wrapper">
+      <div class="compare-grid">
+        <div class="compare-card">
+          <div style="font-size:12px; font-weight:700; color:var(--accent-sage); margin-bottom:6px;">은재(VC-01) 아날로그 수기</div>
+          <h3>아날로그 노구 (종이)</h3>
+          <p style="color:var(--text-sub); font-size:15px; margin-bottom:20px;">손 끝으로 전해지는 온기와 서재 소장 가치.</p>
+
+          <div class="attr-row"><span class="attr-label">작성 목적</span><span class="attr-val" id="a-1">사색 / 일기 / 장문 수기</span></div>
+          <div class="attr-row"><span class="attr-label">제본 공학</span><span class="attr-val" id="a-2">180도 평면 펼침 제본</span></div>
+          <div class="attr-row"><span class="attr-label">종이 스펙</span><span class="attr-val" id="a-3">120gsm 미유광 평산지</span></div>
+          <div class="attr-row" style="margin-bottom:24px;"><span class="attr-label">아카이빙</span><span class="attr-val" id="a-4">황동 실링 왁스 인장</span></div>
+
+          <a href="#" class="btn-primary">아날로그 노구 보기</a>
+        </div>
+
+        <div class="compare-card">
+          <div style="font-size:12px; font-weight:700; color:var(--accent-clay); margin-bottom:6px;">지안(VC-02) 시간축 통제</div>
+          <h3>디지털 앱 &amp; 서식 (화면)</h3>
+          <p style="color:var(--text-sub); font-size:15px; margin-bottom:20px;">생각의 속도로 남기는 빠른 메모와 시간축 일정 통제.</p>
+
+          <div class="attr-row"><span class="attr-label">작성 목적</span><span class="attr-val" id="d-1">10초 빠른 메모 / 시간축 일정</span></div>
+          <div class="attr-row"><span class="attr-label">시간축 모듈</span><span class="attr-val" id="d-2">주간 개요 → 일간 타임라인 블록</span></div>
+          <div class="attr-row"><span class="attr-label">외부 달력</span><span class="attr-val" id="d-3">검증 진행 중 (HOLD) 공지</span></div>
+          <div class="attr-row" style="margin-bottom:24px;"><span class="attr-label">데이터 연속성</span><span class="attr-val" id="d-4">모바일 / 태블릿 백업</span></div>
+
+          <a href="#" class="btn-primary" style="background:var(--accent-clay);">디지털 서식 보기</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div style="color:white; font-size:18px; font-weight:800; margin-bottom:16px;">[LOGO] DAMORI (다모리)</div>
+        <p>자신만의 기록 방식을 다정하게 돕습니다.</p>
+      </div>
+      <div>
+        <h4 style="color:white; margin-bottom:16px;">탐색</h4>
+        <ul style="list-style:none;">
+          <li><a href="PAGE-001-메인페이지.html" style="color:#94a3b8; text-decoration:none;">홈 메인페이지</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color:white; margin-bottom:16px;">브랜드</h4>
+        <ul style="list-style:none;">
+          <li><a href="PAGE-020-브랜드소개.html" style="color:#94a3b8; text-decoration:none;">브랜드 소개</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color:white; margin-bottom:16px;">도움말</h4>
+        <ul style="list-style:none;">
+          <li><a href="#" style="color:#94a3b8; text-decoration:none;">기록 가이드</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function setFilter(type, btn) {
+      document.querySelectorAll('.chip-btn').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+
+      if (type === 'purpose') {
+        document.getElementById('a-1').innerText = '사색 / 일기 / 장문 수기';
+        document.getElementById('d-1').innerText = '10초 빠른 메모 / 시간축 일정';
+      } else if (type === 'length') {
+        document.getElementById('a-1').innerText = 'B6~A5 2페이지 이상 장문';
+        document.getElementById('d-1').innerText = '1문장 10초 입력 & 사진';
+      } else if (type === 'location') {
+        document.getElementById('a-1').innerText = '서재 / 책상 / 카페';
+        document.getElementById('d-1').innerText = '이동 중 모바일 / 사무실';
+      } else if (type === 'archive') {
+        document.getElementById('a-1').innerText = '평생 보존 실물 서재';
+        document.getElementById('d-1').innerText = '클라우드 & PDF 내보내기';
+      }
+    }
+  </script>
+</body>
+</html>

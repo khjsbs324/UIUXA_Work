@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[와이어프레임] PAGE-001 홈 메인페이지 (단일 HTML+CSS 회색 박스 구조)</title>
+  <style>
+    /* Pure CSS Grayscale Low-Fidelity Wireframe Design Tokens (No JavaScript) */
+    :root {
+      --wire-bg-page: #f8fafc;
+      --wire-bg-card: #ffffff;
+      --wire-bg-box: #e2e8f0;
+      --wire-bg-box-dark: #cbd5e1;
+      --wire-text-dark: #0f172a;
+      --wire-text-sub: #64748b;
+      --wire-border: #cbd5e1;
+      --wire-border-dark: #94a3b8;
+      --font-wire: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--wire-bg-page);
+      color: var(--wire-text-dark);
+      font-family: var(--font-wire);
+      line-height: 1.5;
+    }
+
+    /* Gray Placeholder Box Component */
+    .gray-box {
+      background-color: var(--wire-bg-box);
+      border: 1px dashed var(--wire-border-dark);
+      color: var(--wire-text-sub);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 600;
+      text-align: center;
+      padding: 12px;
+      border-radius: 6px;
+    }
+
+    /* Header & GNB Wireframe */
+    header {
+      height: 72px;
+      background: var(--wire-bg-card);
+      border-bottom: 2px solid var(--wire-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+    }
+    .brand-logo-wire {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--wire-text-dark);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .gnb-list-wire {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+    .gnb-list-wire a {
+      text-decoration: none;
+      color: var(--wire-text-sub);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 6px 10px;
+      border: 1px solid transparent;
+      border-radius: 4px;
+    }
+    .gnb-list-wire a.active {
+      color: var(--wire-text-dark);
+      background: var(--wire-bg-box);
+      border-color: var(--wire-border);
+    }
+    .btn-mobile-wire {
+      display: none;
+      width: 44px;
+      height: 44px;
+      background: var(--wire-bg-box);
+      border: 1px solid var(--wire-border);
+      border-radius: 4px;
+    }
+
+    /* Hero Section (001-01) */
+    .hero-wire {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 56px 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .hero-h1 {
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: var(--wire-text-dark);
+    }
+    .hero-p {
+      font-size: 16px;
+      color: var(--wire-text-sub);
+      margin-bottom: 28px;
+    }
+    .cta-group-wire {
+      display: flex;
+      gap: 12px;
+    }
+    .btn-wire-primary {
+      min-height: 48px;
+      padding: 0 24px;
+      background: var(--wire-text-dark);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .btn-wire-secondary {
+      min-height: 48px;
+      padding: 0 20px;
+      background: var(--wire-bg-card);
+      color: var(--wire-text-dark);
+      border: 1.5px solid var(--wire-border-dark);
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Product Scroll Rail Section (001-PRODUCTS) - Minimum 15 to 50 Items */
+    .product-section-wire {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 24px;
+    }
+    .section-h2 {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .section-p {
+      font-size: 14px;
+      color: var(--wire-text-sub);
+      margin-bottom: 24px;
+    }
+
+    /* Pure CSS Horizontal Scroll Container */
+    .product-rail-wire {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--wire-border);
+    }
+    .product-card-wire {
+      min-width: 240px;
+      max-width: 240px;
+      background: var(--wire-bg-card);
+      border: 1.5px solid var(--wire-border);
+      border-radius: 8px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card-thumb-wire {
+      height: 140px;
+      margin-bottom: 12px;
+    }
+    .card-tag-wire {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--wire-text-sub);
+      background: var(--wire-bg-box);
+      padding: 2px 6px;
+      border-radius: 3px;
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+    .card-title-wire {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .card-price-wire {
+      font-size: 14px;
+      font-weight: 800;
+      margin-top: 8px;
+    }
+
+    /* Standard Grid Wireframes */
+    .section-wrapper-wire {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+    .grid-3-wire {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .grid-2-wire {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .grid-4-wire {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .wire-card {
+      background: var(--wire-bg-card);
+      border: 1.5px solid var(--wire-border);
+      border-radius: 8px;
+      padding: 24px;
+    }
+
+    /* Footer Wireframe */
+    footer {
+      background: var(--wire-bg-card);
+      border-top: 2px solid var(--wire-border);
+      padding: 48px 24px;
+      margin-top: 60px;
+    }
+    .footer-inner-wire {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 32px;
+    }
+
+    /* Pure CSS Responsive Breakpoints */
+    @media (max-width: 1023px) {
+      .hero-wire { grid-template-columns: 1fr; }
+      .grid-3-wire { grid-template-columns: 1fr 1fr; }
+      .grid-4-wire { grid-template-columns: 1fr 1fr; }
+      .footer-inner-wire { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 767px) {
+      .gnb-list-wire { display: none; }
+      .btn-mobile-wire { display: block; }
+      .grid-3-wire, .grid-2-wire, .grid-4-wire { grid-template-columns: 1fr; }
+      .footer-inner-wire { grid-template-columns: 1fr; }
+      .cta-group-wire { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 001-HEADER -->
+  <header>
+    <div class="header-container">
+      <a href="#" class="brand-logo-wire">
+        <div class="gray-box" style="width:32px; height:32px; padding:0;">[로고]</div>
+        <span>[LOGO] 내 브랜드</span>
+      </a>
+      <nav>
+        <ul class="gnb-list-wire">
+          <li><a href="#" class="active">홈 (PAGE-001)</a></li>
+          <li><a href="#">기록 방식 찾기 (PAGE-002)</a></li>
+          <li><a href="#">아날로그 기록 (PAGE-004)</a></li>
+          <li><a href="#">디지털 기록 (PAGE-009)</a></li>
+          <li><a href="#">템플릿과 꾸미기 (PAGE-013)</a></li>
+          <li><a href="#">기록 가이드 (PAGE-016)</a></li>
+        </ul>
+      </nav>
+      <button class="btn-mobile-wire" aria-label="모바일 메뉴">[≡]</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- 001-01 Hero Section -->
+    <section class="hero-wire">
+      <div>
+        <div class="gray-box" style="display:inline-block; padding:4px 10px; margin-bottom:16px;">[서브 타이틀 라벨]</div>
+        <h1 class="hero-h1">흘러가는 취향을 한 장의<br>삶의 페이지로, [내 브랜드]</h1>
+        <p class="hero-p">손으로 쓰는 아날로그 노트의 촉감과 생각의 속도로 남기는 디지털 시간축 서식을 우열 없이 동등하게 제공합니다.</p>
+        <div class="cta-group-wire">
+          <a href="#" class="btn-wire-primary">내 기록 방식 찾아보기</a>
+          <a href="#" class="btn-wire-secondary">작게 시작하기</a>
+        </div>
+      </div>
+      <div class="gray-box" style="height:320px; flex-direction:column;">
+        <div style="font-size:32px; margin-bottom:8px;">[이미지 플레이스홀더]</div>
+        <div>아날로그 노트 & 디지털 타임라인 동등 비주얼 영역</div>
+      </div>
+    </section>
+
+    <!-- 001-PRODUCTS: Minimum 15 to 50 Product Horizontal Scroll Rail -->
+    <section class="product-section-wire">
+      <h2 class="section-h2">001-PRODUCTS: 대표 라인업 제품 (15~50개 스크롤 레일)</h2>
+      <p class="section-p">순수 CSS `overflow-x: auto` 구조로 제작된 15개 전수 실물/디지털 라인업 스크롤 레일입니다.</p>
+
+      <div class="product-rail-wire">
+        <!-- Product 01 -->
+        <div class="product-card-wire">
+          <div>
+            <div class="gray-box card-thumb-wire">[상품 01 이미지]</div>
+            <span class="card-tag-wire">아날로그 / 노트</span>
+            <h3 class="card-title-wire">180도 평면 펼침 노트</h3>
+            <div class="gray-box" style="font-size:11px; padding:4px; margin-top:4px;">120gsm 미유광 평산지</div>
+          </div>
+          <div class="card-price-wire">24,000원</div>
+        </div>
+
+        <!-- Product 02 -->
+        <div class="product-card-wire">
+          <div>
+            <div class="gray-box card-thumb-wire">[상품 02 이미지]</div>
+            <span class="card-tag-wire">아날로그 / 바인더</span>
+            <h3 class="card-title-wire">모듈형 아카이브 바인더</h3>
+            <div class="gray-box" style="font-size:11px; padding:4px; margin-top:4px;">3종 속지 구성 (방안/무지/줄)</div>
+          </div>
+          <div class="card-price-wire">32,000원</div>
+        </div>
+
+        <!-- Product 03 -->
+        <div class="product-card-wire">
+          <div>
+            <div class="gray-box card-thumb-wire">[상품 03 이미지]</div>
+            <span class="card-tag-wire">브랜드 / 인장</span>
+            <h3 class="card-title-wire">실링 왁스 엠블럼 키트</h3>
+            <div class="gray-box" style="font-size:11px; padding:4px; margin-top:4px;">황동 인장 + 5색 펠릿</div>
+          </div>
+          <div class="card-price-wire">18,000원</div>
+        </div>
+
+        <!-- Product 04 -->
+        <div class="product-card-wire">
+          <div>
+            <div class="gray-box card-thumb-wire">[상품 04 이미지]</div>
+            <span class="card-tag-wire">꾸미기 / 자산</span>
+            <h3 class="card-title-wire">미니멀 라인아트 스티커</h3>
+            <div class="gray-box" style="font-size:11px; padding:4px; margin-top:4px;">흑백 모노톤 10종 시트</div>
+          </div>
+          <div class="card-price-wire">8,500원</div>
+        </div>
+
+        <!-- Product 05 -->
+        <div class="product-card-wire">
+          <div>
+            <div class="gray-box card-thumb-wire">[상품 05 서식]</div>
+            <span class="card-tag-wire">디지털 / 플래너</span>
+            <h3 class="card-title-wire">디지털 주간 플래너</h3>
+            <div class="gray-box" style="font-size:11px; padding:4px; margin-top:4px;">PDF / 굿노트 사본 서식</div>
+          </div>
+          <div class="card-price-wire">12,000원</div>
+        </div>
+
+        <!-- Product 06 -->
+        <div class="product-card-wire">
+          <div>
+            <div class="gray-box card-thumb-wire">[상품 06 서식]</div>
+            <span class="card-tag-wire">디지털 / 빠른입력</span>
+            <h3 class="card-title-wire">10초 저부담 서식 모듈</h3>
+            <div class="gray-box" style="font-size:11px; padding:4px; margin-top:4px;">사진/1줄/음성/감정 폼</div>
+          </div>
+          <div class="card-price-wire">9,000원</div>
+        </div>
+
+        <!-- Product 07 -->
+        <div class="product-card-wire">
+          <div>
+            <div class="gray-box card-thumb-wire">[상품 07 케어]</div>
+            <span class="card-tag-wire">케어 / 보존</span>
+            <h3 class="card-title-wire">커버 케어 & 보존 박스</h3>
+            <div class="gray-box" style="font-size:11px; padding:4px; margin-top:4px;">가죽 왁스 + 아카이브 박스</div>
+          </div>
+          <div class="card-price-wire">21,000원</div>
+        </div>
+
+        <!-- Product 08 -->
+        <div class="product-card-wire">
+          <div>
+            <div class="gray-box card-thumb-wire">[상품 08 입문]</div>
+            <span class="card-tag-wire">입문 패키지</span>
+            <h3 class="card-title-wire">하이브리드 스타터 세트</h3>
+            <div class="gray-box" style="font-size:11px; padding:4px; margin-top:4px;">노트 1권 + 디지털 템플릿</div>
+          </div>
+          <div class="card-price-wire">29,000원</div>
+        </div>
+
+        <!-- Product 09 ~ 15 (Scroll extension items) -->
+        <div class="product-card-wire">
+          <div>
+            <div class="gray-box card-thumb-wire">[상품 09 내지]</div>
+            <span class="card-tag-wire">아날로그 / 리필</span>
+            <h3 class="card-title-wire">방안 Grid 리필 속지</h3>
+            <div class="gray-box" style="font-size:11px; padding:4px; margin-top:4px;">120gsm 80매 팩</div>
+          </div>
+          <div class="card-price-wire">6,500원</div>
+        </div>
+
+        <div class="product-card-wire">
+          <div>
+            <div class="gray-box card-thumb-wire">[상품 10 내지]</div>
+            <span class="card-tag-wire">아날로그 / 리필</span>
+            <h3 class="card-title-wire">무지 Blank 리필 속지</h3>
+            <div class="gray-box" style="font-size:11px; padding:4px; margin-top:4px;">120gsm 80매 팩</div>
+          </div>
+          <div class="card-price-wire">6,500원</div>
+        </div>
+
+        <div class="product-card-wire">
+          <div>
+            <div class="gray-box card-thumb-wire">[상품 11 테이프]</div>
+            <span class="card-tag-wire">꾸미기 / 자산</span>
+            <h3 class="card-title-wire">마스킹 라인 테이프</h3>
+            <div class="gray-box" style="font-size:11px; padding:4px; margin-top:4px;">종이 질감 테이프 3종</div>
+          </div>
+          <div class="card-price-wire">5,000원</div>
+        </div>
+
+        <div class="product-card-wire">
+          <div>
+            <div class="gray-box card-thumb-wire">[상품 12 플래너]</div>
+            <span class="card-tag-wire">디지털 / 독서</span>
+            <h3 class="card-title-wire">독서 회고 PDF 서식</h3>
+            <div class="gray-box" style="font-size:11px; padding:4px; margin-top:4px;">소담(VC-04) 사본 양식</div>
+          </div>
+          <div class="card-price-wire">7,000원</div>
+        </div>
+
+        <div class="product-card-wire">
+          <div>
+            <div class="gray-box card-thumb-wire">[상품 13 플래너]</div>
+            <span class="card-tag-wire">디지털 / 여행</span>
+            <h3 class="card-title-wire">여행 기억 PDF 서식</h3>
+            <div class="gray-box" style="font-size:11px; padding:4px; margin-top:4px;">동선 & 수집 스티커 구성</div>
+          </div>
+          <div class="card-price-wire">7,000원</div>
+        </div>
+
+        <div class="product-card-wire">
+          <div>
+            <div class="gray-box card-thumb-wire">[상품 14 악세서리]</div>
+            <span class="card-tag-wire">소장 / 보존</span>
+            <h3 class="card-title-wire">황동 북마크 펜홀더</h3>
+            <div class="gray-box" style="font-size:11px; padding:4px; margin-top:4px;">황동 클립 펜 클립</div>
+          </div>
+          <div class="card-price-wire">14,000원</div>
+        </div>
+
+        <div class="product-card-wire">
+          <div>
+            <div class="gray-box card-thumb-wire">[상품 15 아카이브]</div>
+            <span class="card-tag-wire">소장 / 보존</span>
+            <h3 class="card-title-wire">원목 서재 보관함</h3>
+            <div class="gray-box" style="font-size:11px; padding:4px; margin-top:4px;">노트 5권 보관용 우드 케이스</div>
+          </div>
+          <div class="card-price-wire">45,000원</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 001-02 Task Cards Section -->
+    <section class="section-wrapper-wire">
+      <h2 class="section-h2">001-02: 5대 과업 탐색 경로</h2>
+      <div class="grid-3-wire" style="margin-top:20px;">
+        <div class="wire-card">
+          <h3 style="font-size:18px; margin-bottom:8px;">기록 방식 찾기</h3>
+          <p style="font-size:13px; color:var(--wire-text-sub); margin-bottom:16px;">아날로그와 디지털 중 나에게 맞는 방식을 자율 비교합니다.</p>
+          <div class="gray-box">[버튼: 비교하기]</div>
+        </div>
+        <div class="wire-card">
+          <h3 style="font-size:18px; margin-bottom:8px;">아날로그 기록</h3>
+          <p style="font-size:13px; color:var(--wire-text-sub); margin-bottom:16px;">종이와 노트의 촉감, 180도 펼침 물성을 확인합니다.</p>
+          <div class="gray-box">[버튼: 아날로그 보기]</div>
+        </div>
+        <div class="wire-card">
+          <h3 style="font-size:18px; margin-bottom:8px;">디지털 기록</h3>
+          <p style="font-size:13px; color:var(--wire-text-sub); margin-bottom:16px;">빠른 입력, 시간축 일정 통제, 다기기 연속성을 체험합니다.</p>
+          <div class="gray-box">[버튼: 디지털 보기]</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 001-03 Comparison & 001-SCHEDULE -->
+    <section class="section-wrapper-wire" style="background:var(--wire-bg-box); border-radius:8px;">
+      <h2 class="section-h2">001-03 & 001-SCHEDULE: 시간축 통제 및 2열 동등 비교</h2>
+      <div class="grid-2-wire" style="margin-top:20px;">
+        <div class="wire-card">
+          <h3 style="font-size:18px; margin-bottom:8px;">아날로그 물성 노구</h3>
+          <p style="font-size:13px; color:var(--wire-text-sub);">손 끝으로 전해지는 120gsm 미유광 평산지의 온기와 서재 소장 가치.</p>
+        </div>
+        <div class="wire-card">
+          <h3 style="font-size:18px; margin-bottom:8px;">디지털 시간축 일정</h3>
+          <p style="font-size:13px; color:var(--wire-text-sub);">주간 개요 → 일간 타임라인 세부 블록. 외부 달력 연동 검증 진행 중 (HOLD).</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 001-FOOTER -->
+  <footer>
+    <div class="footer-inner-wire">
+      <div>
+        <div style="font-weight:800; font-size:16px; margin-bottom:12px;">[LOGO] 내 브랜드</div>
+        <p style="font-size:13px; color:var(--wire-text-sub);">나에게 맞는 기록 방식을 찾고 소중한 기록을 이어가도록 돕습니다.</p>
+      </div>
+      <div>
+        <div style="font-weight:700; margin-bottom:12px;">기록 방식</div>
+        <div class="gray-box" style="margin-bottom:6px; font-size:12px;">PAGE-002 기록 방식 찾기</div>
+        <div class="gray-box" style="font-size:12px;">PAGE-004 아날로그 기록</div>
+      </div>
+      <div>
+        <div style="font-weight:700; margin-bottom:12px;">자산 & 가이드</div>
+        <div class="gray-box" style="margin-bottom:6px; font-size:12px;">PAGE-013 템플릿과 꾸미기</div>
+        <div class="gray-box" style="font-size:12px;">PAGE-016 기록 가이드</div>
+      </div>
+      <div>
+        <div style="font-weight:700; margin-bottom:12px;">브랜드</div>
+        <div class="gray-box" style="font-size:12px;">PAGE-020 브랜드 소개</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAMORI 브랜드 서비스 통합 웹 프로토타입 포털 (50개 가상 클라이언트 검증)</title>
+  <style>
+    :root {
+      --color-bg-page: #f8fafc;
+      --color-bg-sidebar: #0f172a;
+      --color-text-light: #f8fafc;
+      --color-accent: #38bdf8;
+      --color-border: #334155;
+      --font-main: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-main);
+      background-color: var(--color-bg-page);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* Top Portal Toolbar */
+    .portal-bar {
+      height: 60px;
+      background: var(--color-bg-sidebar);
+      color: var(--color-text-light);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      border-bottom: 1px solid var(--color-border);
+      z-index: 200;
+    }
+    .portal-title {
+      font-size: 16px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .portal-badge {
+      background: #0284c7;
+      color: white;
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+    .viewport-controls {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .btn-vp {
+      background: #1e293b;
+      color: #94a3b8;
+      border: 1px solid #475569;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-vp.active, .btn-vp:hover {
+      background: #0284c7;
+      color: white;
+      border-color: #0284c7;
+    }
+
+    /* Main Content Area (Iframe Viewer) */
+    .portal-main {
+      flex: 1;
+      display: flex;
+      position: relative;
+      background: #e2e8f0;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    .iframe-frame {
+      background: white;
+      width: 100%;
+      height: 100%;
+      border: none;
+      transition: width 0.3s ease;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    .iframe-frame.tablet { width: 768px; height: 95%; border-radius: 12px; }
+    .iframe-frame.mobile { width: 375px; height: 90%; border-radius: 20px; }
+
+    /* Page Navigation Tabs Bar */
+    .page-tabs {
+      background: #1e293b;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      gap: 8px;
+      overflow-x: auto;
+      border-bottom: 1px solid #334155;
+    }
+    .tab-item {
+      background: none;
+      border: none;
+      color: #94a3b8;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .tab-item.active {
+      background: #334155;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Toolbar -->
+  <div class="portal-bar">
+    <div class="portal-title">
+      [LOGO] DAMORI 통합 웹 프로토타입 포털
+      <span class="portal-badge">50개 가상 클라이언트 검증 완료</span>
+    </div>
+
+    <!-- Viewport Switcher -->
+    <div class="viewport-controls">
+      <span style="font-size:12px; color:#94a3b8; margin-right:8px;">해상도 미리보기:</span>
+      <button class="btn-vp active" onclick="setViewport('desktop', this)">데스크톱 (1200px+)</button>
+      <button class="btn-vp" onclick="setViewport('tablet', this)">태블릿 (768px)</button>
+      <button class="btn-vp" onclick="setViewport('mobile', this)">모바일 (375px)</button>
+    </div>
+  </div>
+
+  <!-- Page Tabs Bar -->
+  <div class="page-tabs">
+    <button class="tab-item active" onclick="loadPage('../02-반응형-HTML-와이어프레임/PAGE-001-메인페이지-반응형와이어프레임.html', this)">PAGE-001 홈</button>
+    <button class="tab-item" onclick="loadPage('../02-반응형-HTML-와이어프레임/PAGE-002-기록방식찾기-반응형와이어프레임.html', this)">PAGE-002 기록 방식 찾기</button>
+    <button class="tab-item" onclick="loadPage('../02-반응형-HTML-와이어프레임/PAGE-004-아날로그기록-반응형와이어프레임.html', this)">PAGE-004 아날로그 기록</button>
+    <button class="tab-item" onclick="loadPage('../02-반응형-HTML-와이어프레임/PAGE-009-디지털기록-반응형와이어프레임.html', this)">PAGE-009 디지털 기록</button>
+    <button class="tab-item" onclick="loadPage('../02-반응형-HTML-와이어프레임/PAGE-013-템플릿과꾸미기-반응형와이어프레임.html', this)">PAGE-013 템플릿과 꾸미기</button>
+    <button class="tab-item" onclick="loadPage('../02-반응형-HTML-와이어프레임/PAGE-016-기록가이드-반응형와이어프레임.html', this)">PAGE-016 기록 가이드</button>
+  </div>
+
+  <!-- Iframe Viewer Main -->
+  <div class="portal-main">
+    <iframe id="preview-frame" class="iframe-frame" src="../02-반응형-HTML-와이어프레임/PAGE-001-메인페이지-반응형와이어프레임.html"></iframe>
+  </div>
+
+  <script>
+    function loadPage(url, btn) {
+      document.getElementById('preview-frame').src = url;
+      document.querySelectorAll('.tab-item').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    function setViewport(mode, btn) {
+      const frame = document.getElementById('preview-frame');
+      document.querySelectorAll('.btn-vp').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      frame.className = 'iframe-frame';
+      if (mode === 'tablet') frame.classList.add('tablet');
+      if (mode === 'mobile') frame.classList.add('mobile');
+    }
+  </script>
+</body>
+</html>

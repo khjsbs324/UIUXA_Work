@@ -1,0 +1,7 @@
+flowchart LR
+ A[긴 페이지]-->B[Section 실패]
+ B-->C[기존 내용 유지]
+ C-->D{다음}
+ D--재시도-->E[Section 복구]
+ D--건너뛰기-->F[다음 Section]
+ F-->G[원래 위치 복귀]

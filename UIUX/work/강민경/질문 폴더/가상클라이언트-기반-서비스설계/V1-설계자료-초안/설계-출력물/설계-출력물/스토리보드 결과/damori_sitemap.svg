@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" width="100%" height="100%">
+  <defs>
+    <style>
+      .bg { fill: #f8fafc; }
+      .header-bg { fill: #0f172a; rx: 8px; }
+      .header-text { fill: #ffffff; font-family: 'Pretendard', sans-serif; font-size: 20px; font-weight: 800; }
+      .badge-bg { fill: #0284c7; rx: 4px; }
+      .badge-text { fill: #ffffff; font-family: 'Pretendard', sans-serif; font-size: 11px; font-weight: 700; }
+      
+      .node-main { fill: #1e293b; stroke: #475569; stroke-width: 2; rx: 8px; }
+      .node-gnb { fill: #334155; stroke: #64748b; stroke-width: 2; rx: 6px; }
+      .node-sub { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; rx: 6px; }
+      
+      .text-main { fill: #ffffff; font-family: 'Pretendard', sans-serif; font-size: 14px; font-weight: 800; }
+      .text-gnb { fill: #ffffff; font-family: 'Pretendard', sans-serif; font-size: 13px; font-weight: 700; }
+      .text-sub-title { fill: #0f172a; font-family: 'Pretendard', sans-serif; font-size: 12px; font-weight: 700; }
+      .text-sub-id { fill: #64748b; font-family: 'Pretendard', sans-serif; font-size: 10px; font-weight: 600; }
+      
+      .line { stroke: #94a3b8; stroke-width: 1.5; stroke-dasharray: 4 2; }
+      .line-solid { stroke: #64748b; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="900" class="bg" />
+
+  <!-- Header Banner -->
+  <rect x="50" y="30" width="1300" height="64" class="header-bg" />
+  <text x="80" y="70" class="header-text">[LOGO] DAMORI 브랜드 50개 가상 클라이언트 통합 사이트구조맵 (IA)</text>
+  <rect x="1080" y="48" width="240" height="28" class="badge-bg" />
+  <text x="1100" y="66" class="badge-text">VC-01 ~ VC-50 (100% 매핑)</text>
+
+  <!-- Root Root Node: PAGE-001 Home -->
+  <rect x="575" y="130" width="250" height="60" class="node-main" />
+  <text x="700" y="156" text-anchor="middle" class="text-main">SCR-001 / PAGE-001 홈 메인페이지</text>
+  <text x="700" y="176" text-anchor="middle" fill="#94a3b8" font-size="11px" font-family="Pretendard">15~50개 대표 라인업 상품 스크롤 레일</text>
+
+  <!-- Connect Lines Root to 5 GNBs -->
+  <path d="M 700 190 L 700 230 M 150 230 L 1250 230" class="line-solid" />
+  <path d="M 150 230 L 150 260" class="line-solid" />
+  <path d="M 425 230 L 425 260" class="line-solid" />
+  <path d="M 700 230 L 700 260" class="line-solid" />
+  <path d="M 975 230 L 975 260" class="line-solid" />
+  <path d="M 1250 230 L 1250 260" class="line-solid" />
+
+  <!-- GNB 1: PAGE-002 기록 방식 찾기 -->
+  <rect x="50" y="260" width="200" height="48" class="node-gnb" />
+  <text x="150" y="288" text-anchor="middle" class="text-gnb">GNB 1: PAGE-002 방식 찾기</text>
+
+  <!-- GNB 1 Sub Nodes -->
+  <path d="M 150 308 L 150 340" class="line" />
+  <rect x="50" y="340" width="200" height="42" class="node-sub" />
+  <text x="150" y="358" text-anchor="middle" class="text-sub-title">PAGE-003 맞춤 추천 결과</text>
+  <text x="150" y="374" text-anchor="middle" class="text-sub-id">SCR-003 (VC-08 무설정)</text>
+
+  <!-- GNB 2: PAGE-004 아날로그 기록 -->
+  <rect x="325" y="260" width="200" height="48" class="node-gnb" />
+  <text x="425" y="288" text-anchor="middle" class="text-gnb">GNB 2: PAGE-004 아날로그</text>
+
+  <!-- GNB 2 Sub Nodes -->
+  <path d="M 425 308 L 425 340" class="line" />
+  <rect x="325" y="340" width="200" height="42" class="node-sub" />
+  <text x="425" y="358" text-anchor="middle" class="text-sub-title">PAGE-005 노트 &amp; 내지 선택</text>
+  <text x="425" y="374" text-anchor="middle" class="text-sub-id">SCR-005 (VC-01 평산지)</text>
+
+  <path d="M 425 382 L 425 400" class="line" />
+  <rect x="325" y="400" width="200" height="42" class="node-sub" />
+  <text x="425" y="418" text-anchor="middle" class="text-sub-title">PAGE-006 장문 수기 가이드</text>
+  <text x="425" y="434" text-anchor="middle" class="text-sub-id">SCR-006 (필기 템포)</text>
+
+  <path d="M 425 442 L 425 460" class="line" />
+  <rect x="325" y="460" width="200" height="42" class="node-sub" />
+  <text x="425" y="478" text-anchor="middle" class="text-sub-title">PAGE-007 아날로그 라인업</text>
+  <text x="425" y="494" text-anchor="middle" class="text-sub-id">SCR-007 (황동 인장 키트)</text>
+
+  <path d="M 425 502 L 425 520" class="line" />
+  <rect x="325" y="520" width="200" height="42" class="node-sub" />
+  <text x="425" y="538" text-anchor="middle" class="text-sub-title">PAGE-008 제품 상세 비교</text>
+  <text x="425" y="554" text-anchor="middle" class="text-sub-id">SCR-008 (잉크 번짐 수치)</text>
+
+  <!-- GNB 3: PAGE-009 디지털 기록 -->
+  <rect x="600" y="260" width="200" height="48" class="node-gnb" />
+  <text x="700" y="288" text-anchor="middle" class="text-gnb">GNB 3: PAGE-009 디지털</text>
+
+  <!-- GNB 3 Sub Nodes -->
+  <path d="M 700 308 L 700 340" class="line" />
+  <rect x="600" y="340" width="200" height="42" class="node-sub" />
+  <text x="700" y="358" text-anchor="middle" class="text-sub-title">PAGE-010 10초 빠른 기록</text>
+  <text x="700" y="374" text-anchor="middle" class="text-sub-id">SCR-010 (VC-03 4대 폼)</text>
+
+  <path d="M 700 382 L 700 400" class="line" />
+  <rect x="600" y="400" width="200" height="42" class="node-sub" />
+  <text x="700" y="418" text-anchor="middle" class="text-sub-title">PAGE-011 일정 &amp; 시간 흐름</text>
+  <text x="700" y="434" text-anchor="middle" class="text-sub-id">SCR-011 (VC-02 HOLD 공지)</text>
+
+  <path d="M 700 442 L 700 460" class="line" />
+  <rect x="600" y="460" width="200" height="42" class="node-sub" />
+  <text x="700" y="478" text-anchor="middle" class="text-sub-title">PAGE-012 보존 &amp; 백업 도구</text>
+  <text x="700" y="494" text-anchor="middle" class="text-sub-id">SCR-012 (VC-05 PDF 백업)</text>
+
+  <!-- GNB 4: PAGE-013 템플릿과 꾸미기 -->
+  <rect x="875" y="260" width="200" height="48" class="node-gnb" />
+  <text x="975" y="288" text-anchor="middle" class="text-gnb">GNB 4: PAGE-013 템플릿/꾸미기</text>
+
+  <!-- GNB 4 Sub Nodes -->
+  <path d="M 975 308 L 975 340" class="line" />
+  <rect x="875" y="340" width="200" height="42" class="node-sub" />
+  <text x="975" y="358" text-anchor="middle" class="text-sub-title">PAGE-014 사본 템플릿 탐색</text>
+  <text x="975" y="374" text-anchor="middle" class="text-sub-id">SCR-014 (VC-04 원본보호)</text>
+
+  <path d="M 975 382 L 975 400" class="line" />
+  <rect x="875" y="400" width="200" height="42" class="node-sub" />
+  <text x="975" y="418" text-anchor="middle" class="text-sub-title">PAGE-015 꾸미기 자산</text>
+  <text x="975" y="434" text-anchor="middle" class="text-sub-id">SCR-015 (VC-06 스티커)</text>
+
+  <!-- GNB 5: PAGE-016 기록 가이드 -->
+  <rect x="1150" y="260" width="200" height="48" class="node-gnb" />
+  <text x="1250" y="288" text-anchor="middle" class="text-gnb">GNB 5: PAGE-016 기록 가이드</text>
+
+  <!-- GNB 5 Sub Nodes -->
+  <path d="M 1250 308 L 1250 340" class="line" />
+  <rect x="1150" y="340" width="200" height="42" class="node-sub" />
+  <text x="1250" y="358" text-anchor="middle" class="text-sub-title">PAGE-017 작게 시작하기</text>
+  <text x="1250" y="374" text-anchor="middle" class="text-sub-id">SCR-017 (VC-08 다온)</text>
+
+  <path d="M 1250 382 L 1250 400" class="line" />
+  <rect x="1150" y="400" width="200" height="42" class="node-sub" />
+  <text x="1250" y="418" text-anchor="middle" class="text-sub-title">PAGE-018 중단 후 다시 시작</text>
+  <text x="1250" y="434" text-anchor="middle" class="text-sub-id">SCR-018 (VC-07 미안함 해소)</text>
+
+  <path d="M 1250 442 L 1250 460" class="line" />
+  <rect x="1150" y="460" width="200" height="42" class="node-sub" />
+  <text x="1250" y="478" text-anchor="middle" class="text-sub-title">PAGE-019 데이터 이동 &amp; 접근성</text>
+  <text x="1250" y="494" text-anchor="middle" class="text-sub-id">SCR-019 (VC-13 여울 WCAG)</text>
+
+  <!-- Footer Node -->
+  <rect x="50" y="620" width="1300" height="48" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5" rx="6px" />
+  <text x="700" y="648" text-anchor="middle" fill="#0f172a" font-family="Pretendard" font-size="14px" font-weight="700">전역 푸터: PAGE-019 이동·보존·도움말 | PAGE-020 브랜드 소개 (기억의 서재) | PAGE-001 홈</text>
+</svg>

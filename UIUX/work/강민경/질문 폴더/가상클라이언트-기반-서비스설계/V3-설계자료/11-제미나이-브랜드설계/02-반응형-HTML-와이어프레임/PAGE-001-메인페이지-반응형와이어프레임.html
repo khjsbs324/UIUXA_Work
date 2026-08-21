@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAMORI (다모리) — 나만의 애착공방 기억의 서재</title>
+  <style>
+    :root {
+      --bg-paper: #fcfbf9;
+      --bg-card: #ffffff;
+      --bg-subtle: #f4f0eb;
+      --bg-dark: #1e2522;
+      --text-main: #2b302d;
+      --text-sub: #5c635f;
+      --accent-sage: #4a5d55;
+      --accent-clay: #9e7b66;
+      --accent-clay-light: #f7f2ee;
+      --border-subtle: #e2ddd7;
+      --border-dark: #3a4440;
+      --focus-ring: #2457A7;
+      --font-main: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-paper);
+      color: var(--text-main);
+      font-family: var(--font-main);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 3px solid var(--focus-ring);
+      outline-offset: 2px;
+    }
+
+    /* Top Announcement Bar */
+    .top-notice-bar {
+      background-color: var(--accent-sage);
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 500;
+      text-align: center;
+      padding: 8px 16px;
+      letter-spacing: -0.2px;
+    }
+    .top-notice-bar strong { color: #f2e9e1; font-weight: 700; }
+
+    /* Header & Navigation */
+    header {
+      height: 76px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-subtle);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+    }
+    .brand-logo-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .logo-stamp {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--accent-sage);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 800;
+      box-shadow: inset 0 0 0 2px rgba(255,255,255,0.2);
+    }
+    .brand-name {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.5px;
+    }
+    .gnb-menu {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .gnb-menu a {
+      text-decoration: none;
+      color: var(--text-sub);
+      font-size: 15px;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .gnb-menu a:hover, .gnb-menu a[aria-current="page"] {
+      color: var(--accent-sage);
+      background-color: var(--bg-subtle);
+    }
+
+    /* Hero Section */
+    .hero-section {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 72px 24px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      background: var(--accent-clay-light);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent-clay);
+      margin-bottom: 20px;
+    }
+    .hero-title {
+      font-size: 42px;
+      line-height: 1.25;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 20px;
+      letter-spacing: -1.5px;
+    }
+    .hero-title span { color: var(--accent-sage); }
+    .hero-desc {
+      font-size: 18px;
+      color: var(--text-sub);
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+    .btn-primary {
+      min-height: 52px;
+      padding: 0 32px;
+      background-color: var(--accent-sage);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+      box-shadow: 0 4px 12px rgba(74, 93, 85, 0.2);
+    }
+    .btn-primary:hover { background-color: var(--action-hover); }
+    .btn-secondary {
+      min-height: 52px;
+      padding: 0 28px;
+      background: var(--bg-card);
+      color: var(--text-main);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--accent-sage); }
+
+    .hero-visual-card {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.04);
+      position: relative;
+    }
+    .visual-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+    .visual-tab-btn {
+      padding: 6px 14px;
+      border-radius: 6px;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-subtle);
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .visual-tab-btn.active {
+      background: var(--accent-sage);
+      color: white;
+      border-color: var(--accent-sage);
+    }
+
+    /* Product Carousel Section */
+    .section-wrapper {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 72px 24px;
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 32px;
+    }
+    .section-header h2 {
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .section-header p { color: var(--text-sub); font-size: 16px; }
+
+    .product-carousel {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 20px;
+    }
+    .product-card {
+      min-width: 300px;
+      max-width: 300px;
+      scroll-snap-align: start;
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-sage);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+    }
+    .product-img-box {
+      height: 200px;
+      background: var(--bg-subtle);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      position: relative;
+    }
+    .product-badge-spec {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(255,255,255,0.9);
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent-sage);
+      border: 1px solid var(--border-subtle);
+    }
+    .product-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+    .product-desc {
+      font-size: 14px;
+      color: var(--text-sub);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .product-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--bg-subtle);
+      padding-top: 16px;
+    }
+    .product-price {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    /* Live Interactive Quick Note Modal */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-backdrop.open { display: flex; }
+    .modal-content {
+      background: white;
+      width: 90%;
+      max-width: 520px;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .modal-header h3 { font-size: 20px; font-weight: 800; }
+    .close-btn { background: none; border: none; font-size: 24px; cursor: pointer; color: var(--text-sub); }
+    .note-input {
+      width: 100%;
+      height: 120px;
+      padding: 16px;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: 8px;
+      font-size: 15px;
+      font-family: inherit;
+      resize: none;
+      margin-bottom: 20px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--bg-dark);
+      color: #94a3b8;
+      padding: 72px 24px 40px;
+    }
+    .footer-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+    }
+    .footer-brand { color: white; font-size: 20px; font-weight: 800; margin-bottom: 16px; }
+    .footer-col h4 { color: white; font-size: 15px; font-weight: 700; margin-bottom: 18px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 12px; }
+    .footer-col a { color: #94a3b8; text-decoration: none; font-size: 14px; }
+    .footer-col a:hover { color: white; }
+
+    @media (max-width: 1023px) {
+      .hero-section { grid-template-columns: 1fr; gap: 40px; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 767px) {
+      .gnb-menu { display: none; }
+      .footer-inner { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Notice Bar -->
+  <div class="top-notice-bar">
+    <strong>DAMORI 브랜드 오픈</strong> — 50개 가상 클라이언트 요구사항 100% 매핑 완료 (아날로그 & 디지털 지원)
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="#" class="brand-logo-group">
+        <div class="logo-stamp">多</div>
+        <span class="brand-name">DAMORI (다모리)</span>
+      </a>
+      <nav>
+        <ul class="gnb-menu">
+          <li><a href="#" aria-current="page">홈</a></li>
+          <li><a href="PAGE-002-기록방식찾기-반응형와이어프레임.html">기록 방식 찾기</a></li>
+          <li><a href="PAGE-004-아날로그기록-반응형와이어프레임.html">아날로그 기록</a></li>
+          <li><a href="PAGE-009-디지털기록-반응형와이어프레임.html">디지털 기록</a></li>
+          <li><a href="PAGE-013-템플릿과꾸미기-반응형와이어프레임.html">템플릿과 꾸미기</a></li>
+          <li><a href="PAGE-016-기록가이드-반응형와이어프레임.html">기록 가이드</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div>
+        <div class="hero-badge">나만의 애착공방 · 기억의 서재</div>
+        <h1 class="hero-title">흘러가는 취향을 한 장의<br>삶의 페이지로, <span>다모리</span></h1>
+        <p class="hero-desc">손으로 쓰는 아날로그 노트의 온기와 생각의 속도로 기록하는 디지털 타임라인의 편리함. 정답을 강요하지 않고 나만의 기록 라이프를 함께 만들어갑니다.</p>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="PAGE-002-기록방식찾기-반응형와이어프레임.html" class="btn-primary">내 기록 방식 찾아보기</a>
+          <button class="btn-secondary" onclick="openQuickNoteModal()">작게 1줄 시작하기</button>
+        </div>
+      </div>
+
+      <!-- Live Interactive Visual Card -->
+      <div class="hero-visual-card">
+        <div class="visual-header">
+          <div style="font-weight:700; font-size:15px; color:var(--text-main);">라이브 미리보기 인터랙션</div>
+          <div>
+            <button class="visual-tab-btn active" onclick="switchVisualTab('analog', this)">아날로그 물성</button>
+            <button class="visual-tab-btn" onclick="switchVisualTab('digital', this)">디지털 시간축</button>
+          </div>
+        </div>
+
+        <div id="tab-analog-view" style="display:block;">
+          <div style="background:var(--bg-subtle); padding:20px; border-radius:10px; margin-bottom:16px;">
+            <div style="font-size:12px; font-weight:700; color:var(--accent-sage); margin-bottom:6px;">은재(VC-01) 추천 노트</div>
+            <div style="font-size:17px; font-weight:800; margin-bottom:6px;">180도 평면 펼침 아날로그 바운드 노트</div>
+            <div style="font-size:13px; color:var(--text-sub);">120gsm 미유광 평산지 / 만년필 잉크 번짐 방지 테스트 통과</div>
+          </div>
+          <div style="font-size:13px; color:var(--text-sub);">손 끝으로 전해지는 미유광 종이의 촉감과 실링 왁스 브랜드 인장의 소장 가치를 만끽하세요.</div>
+        </div>
+
+        <div id="tab-digital-view" style="display:none;">
+          <div style="background:var(--bg-subtle); padding:20px; border-radius:10px; margin-bottom:16px;">
+            <div style="font-size:12px; font-weight:700; color:var(--accent-clay); margin-bottom:6px;">지안(VC-02) 추천 타임라인</div>
+            <div style="font-size:17px; font-weight:800; margin-bottom:6px;">주간 개요 → 일간 시간축 통제 리스트</div>
+            <div style="font-size:13px; color:var(--text-sub);">외부 달력 연동 검증 중(HOLD) / 직접 입력 우선 통제 지원</div>
+          </div>
+          <div style="font-size:13px; color:var(--text-sub);">생각의 속도로 빠르게 기록하고 주간 및 일간 시간대를 주도적으로 배분하세요.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Carousel Section (001-PRODUCTS) -->
+    <section class="section-wrapper">
+      <div class="section-header">
+        <div>
+          <h2>실전 라인업 대표 제품</h2>
+          <p>가로 스크롤을 통해 50명 클라이언트 맞춤형 아날로그 노트 및 디지털 서식을 확인하세요.</p>
+        </div>
+        <div style="display:flex; gap:8px;">
+          <button class="btn-secondary" style="min-height:40px; padding:0 16px;" onclick="scrollProductRail(-320)">← 이전</button>
+          <button class="btn-secondary" style="min-height:40px; padding:0 16px;" onclick="scrollProductRail(320)">다음 →</button>
+        </div>
+      </div>
+
+      <div class="product-carousel" id="productCarousel">
+        <!-- Card 1 -->
+        <div class="product-card">
+          <div>
+            <div class="product-img-box">
+              <span class="product-badge-spec">120gsm 미유광지</span>
+              📖
+            </div>
+            <span class="product-tag">아날로그 / 바운드</span>
+            <h3 class="product-title">180도 평면 펼침 아날로그 노트</h3>
+            <p class="product-desc">중앙이 들뜨지 않아 장문 필기 시 손목 피로가 없는 평면 펼침 제본 노구.</p>
+          </div>
+          <div class="product-meta">
+            <span class="product-price">24,000원</span>
+            <a href="PAGE-004-아날로그기록-반응형와이어프레임.html" class="btn-secondary" style="min-height:36px; padding:0 14px; font-size:13px;">상세보기</a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="product-card">
+          <div>
+            <div class="product-img-box">
+              <span class="product-badge-spec">3종 속지 구성</span>
+              📂
+            </div>
+            <span class="product-tag">아날로그 / 바인더</span>
+            <h3 class="product-title">모듈형 아카이브 바인더 세트</h3>
+            <p class="product-desc">방안, 무지, 줄글 속지를 자유롭게 교체하여 보존하는 오프라인 바인더.</p>
+          </div>
+          <div class="product-meta">
+            <span class="product-price">32,000원</span>
+            <a href="PAGE-004-아날로그기록-반응형와이어프레임.html" class="btn-secondary" style="min-height:36px; padding:0 14px; font-size:13px;">상세보기</a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="product-card">
+          <div>
+            <div class="product-img-box">
+              <span class="product-badge-spec">황동 인장 키트</span>
+              🏷️
+            </div>
+            <span class="product-tag">브랜드 자산</span>
+            <h3 class="product-title">클래식 실링 왁스 엠블럼 키트</h3>
+            <p class="product-desc">황동 인장과 5색 왁스 펠릿으로 소장 아카이브 가치를 만드는 시그니처 키트.</p>
+          </div>
+          <div class="product-meta">
+            <span class="product-price">18,000원</span>
+            <a href="#" class="btn-secondary" style="min-height:36px; padding:0 14px; font-size:13px;">상세보기</a>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="product-card">
+          <div>
+            <div class="product-img-box">
+              <span class="product-badge-spec">PDF / 굿노트</span>
+              📊
+            </div>
+            <span class="product-tag">디지털 / 플래너</span>
+            <h3 class="product-title">디지털 주간 타임라인 플래너</h3>
+            <p class="product-desc">지안(VC-02)을 위한 주간 개요 및 일간 시간축 통제 서식 패키지.</p>
+          </div>
+          <div class="product-meta">
+            <span class="product-price">12,000원</span>
+            <a href="PAGE-009-디지털기록-반응형와이어프레임.html" class="btn-secondary" style="min-height:36px; padding:0 14px; font-size:13px;">상세보기</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Live Quick Note Modal -->
+  <div class="modal-backdrop" id="quickNoteModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>하람(VC-03) 저부담 1줄 기록</h3>
+        <button class="close-btn" onclick="closeQuickNoteModal()">×</button>
+      </div>
+      <p style="font-size:14px; color:var(--text-sub); margin-bottom:16px;">부담 없이 지금 머릿속에 떠오른 생각이나 한 줄을 남겨보세요.</p>
+      <textarea class="note-input" id="quickNoteText" placeholder="오늘 내 마음에 스친 한 단어나 문장을 써보세요..."></textarea>
+      <div style="display:flex; justify-content:flex-end; gap:12px;">
+        <button class="btn-secondary" style="min-height:40px; padding:0 16px;" onclick="closeQuickNoteModal()">취소</button>
+        <button class="btn-primary" style="min-height:40px; padding:0 20px;" onclick="saveQuickNote()">저장하기</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">[LOGO] DAMORI (다모리)</div>
+        <p>나에게 맞는 기록 방식을 찾고 소중한 삶의 페이지를 이어가도록 돕습니다.</p>
+      </div>
+      <div class="footer-col">
+        <h4>탐색 메뉴</h4>
+        <ul>
+          <li><a href="PAGE-002-기록방식찾기-반응형와이어프레임.html">기록 방식 찾기</a></li>
+          <li><a href="PAGE-004-아날로그기록-반응형와이어프레임.html">아날로그 기록</a></li>
+          <li><a href="PAGE-009-디지털기록-반응형와이어프레임.html">디지털 기록</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>자산 & 가이드</h4>
+        <ul>
+          <li><a href="PAGE-013-템플릿과꾸미기-반응형와이어프레임.html">템플릿과 꾸미기</a></li>
+          <li><a href="PAGE-016-기록가이드-반응형와이어프레임.html">기록 가이드</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>브랜드 철학</h4>
+        <ul>
+          <li><a href="#">기억의 서재 소장가치</a></li>
+          <li><a href="#">웹 접근성 방침</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function switchVisualTab(tab, btn) {
+      document.querySelectorAll('.visual-tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-analog-view').style.display = (tab === 'analog') ? 'block' : 'none';
+      document.getElementById('tab-digital-view').style.display = (tab === 'digital') ? 'block' : 'none';
+    }
+
+    function scrollProductRail(amount) {
+      document.getElementById('productCarousel').scrollBy({ left: amount, behavior: 'smooth' });
+    }
+
+    function openQuickNoteModal() {
+      document.getElementById('quickNoteModal').classList.add('open');
+    }
+    function closeQuickNoteModal() {
+      document.getElementById('quickNoteModal').classList.remove('open');
+    }
+    function saveQuickNote() {
+      const text = document.getElementById('quickNoteText').value;
+      if (text.trim() === '') {
+        alert('한 줄 메모 내용을 입력해 주세요.');
+        return;
+      }
+      alert('저장되었습니다! "' + text + '"');
+      closeQuickNoteModal();
+      document.getElementById('quickNoteText').value = '';
+    }
+  </script>
+</body>
+</html>

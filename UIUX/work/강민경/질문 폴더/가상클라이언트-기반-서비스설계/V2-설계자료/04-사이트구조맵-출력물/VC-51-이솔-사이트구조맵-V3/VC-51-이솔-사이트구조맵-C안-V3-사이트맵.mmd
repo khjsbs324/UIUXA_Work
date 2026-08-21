@@ -1,0 +1,6 @@
+flowchart LR
+ A[Section 진입]-->B[Offline/Error]
+ B-->C[읽기 유지]
+ C-->D{다음}
+ D--보류-->E[복귀 메모]
+ D--재시도-->F[Section 복구]
