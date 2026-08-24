@@ -1,0 +1,42 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef ritual fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef diary fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W01-HOME (나이트 진입)<br/>• 나이트 다크 앰비언트 모드<br/>• [180초 안식 의식 시작] 클릭"]
+    RITUAL["02 W01-RITUAL (180초 플레이어)<br/>• 432Hz 뇌파 사운드<br/>• 원형 펄스 호흡 가이드"]
+    
+    TIMER_CHECK{"02-B 180초<br/>완주 여부"}
+    
+    DIARY["03 W01-COMM (감정 일기)<br/>• 5색 감정 컬러 선택<br/>• 1줄 마이크로 저널링"]
+    CALENDAR["04 W01-COMM (마이 캘린더)<br/>• 월간 감정 컬러 누적 태깅"]
+    
+    GOAL_CHECK{"05 30일<br/>연속 달성?"}
+    
+    BADGE["05-A VIP 뱃지 획득<br/>• 디렉터 다과회 초대권 발급"]
+    STAMP["05-B 스탬프 갱신<br/>• 출석 도장 누적"]
+    LOOP_NODE["F1 나이트 알림 루프<br/>• 매일 밤 22:00 카카오 푸시"]
+
+    HOME --> RITUAL
+    RITUAL --> TIMER_CHECK
+    
+    TIMER_CHECK -->|완주 차임벨| DIARY
+    TIMER_CHECK -->|중도 이탈| HOME
+    
+    DIARY --> CALENDAR
+    CALENDAR --> GOAL_CHECK
+    
+    GOAL_CHECK -->|30일 달성| BADGE
+    GOAL_CHECK -->|진행 중| STAMP
+    
+    BADGE --> LOOP_NODE
+    STAMP --> LOOP_NODE
+    LOOP_NODE -.->|내일 밤 22:00 순환| RITUAL
+
+    class HOME home;
+    class RITUAL ritual;
+    class TIMER_CHECK,GOAL_CHECK decision;
+    class DIARY,CALENDAR diary;
+    class BADGE,STAMP,LOOP_NODE support;

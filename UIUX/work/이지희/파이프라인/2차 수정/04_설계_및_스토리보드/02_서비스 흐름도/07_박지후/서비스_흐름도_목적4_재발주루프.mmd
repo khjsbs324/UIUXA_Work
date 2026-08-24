@@ -1,0 +1,33 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef estimate fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W07-HOME (QR 스캔 진입)<br/>• 탕비실 PANTRY-QR-01 스캔"]
+    SYNC["02 W07-ESTIMATE (내역 동기화)<br/>• 이전 120포 주문 1초 로딩"]
+    
+    QTY_CHECK{"03 수량 변경<br/>필요 여부"}
+    
+    DRAWER["03-A W07-DRAWER (1-Click 승인)<br/>• AUTO-PANTRY-01 1초 결제"]
+    INCREASE["03-B 240포 증량 (Fallback)<br/>• 수량 변경 선택"]
+    DONE["04 W07-DONE (영수증 발급)<br/>• 회계팀 영수증 자동 전송"]
+    LOOP_NODE["F1 탕비실 입고 루프<br/>• 익일 07:00 문 앞 배송"]
+
+    HOME --> SYNC
+    SYNC --> QTY_CHECK
+    
+    QTY_CHECK -->|120포 유지| DRAWER
+    QTY_CHECK -->|증량 필요| INCREASE
+    INCREASE --> DRAWER
+    
+    DRAWER --> DONE
+    DONE --> LOOP_NODE
+    LOOP_NODE -.->|스틱 소진 시| HOME
+
+    class HOME home;
+    class SYNC,INCREASE estimate;
+    class QTY_CHECK decision;
+    class DRAWER,DONE drawer;
+    class LOOP_NODE support;

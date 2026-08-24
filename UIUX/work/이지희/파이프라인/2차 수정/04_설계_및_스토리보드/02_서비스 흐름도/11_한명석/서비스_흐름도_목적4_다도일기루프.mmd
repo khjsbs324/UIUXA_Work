@@ -1,0 +1,31 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef ritual fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef comm fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W11-HOME (아침 다실 진입)<br/>• [10분 다도 묵상] 큰 버튼 클릭"]
+    RITUAL["02 W11-RITUAL (10분 다도 명상)<br/>• TEA-MEDITATION-01 가야금 음향"]
+    
+    TIMER_CHECK{"03 10분 완주<br/>여부 확인"}
+    
+    DIARY["04 W11-COMM (큰글씨 일기)<br/>• TEA-DIARY-01<br/>• 20pt 1줄 묵상 기록"]
+    STAMP["05 W11-COMM (도장 누적)<br/>• 월간 붓글씨 출석 도장"]
+    LOOP_NODE["F1 아침 알림 루프<br/>• 매일 아침 07:00 카카오 알림"]
+
+    HOME --> RITUAL
+    RITUAL --> TIMER_CHECK
+    
+    TIMER_CHECK -->|완주 종소리| DIARY
+    TIMER_CHECK -->|중도 정지| HOME
+    
+    DIARY --> STAMP
+    STAMP --> LOOP_NODE
+    LOOP_NODE -.->|내일 아침 순환| RITUAL
+
+    class HOME home;
+    class RITUAL ritual;
+    class TIMER_CHECK decision;
+    class DIARY,STAMP comm;
+    class LOOP_NODE support;

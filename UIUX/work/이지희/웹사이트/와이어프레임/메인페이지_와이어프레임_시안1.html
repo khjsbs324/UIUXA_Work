@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WICKETA 전사 11인 통합 마스터 와이어프레임 [통합 와이어프레임]</title>
+    <style>
+        :root {
+            --border-heavy: #111111;
+            --border-mid: #444444;
+            --border-light: #cccccc;
+            --border-dash: #888888;
+            --bg-canvas: #f8f9fa;
+            --bg-card: #ffffff;
+            --bg-sub: #f1f3f5;
+            --bg-dark: #1a1a1a;
+            --text-main: #111111;
+            --text-muted: #666666;
+            --text-light: #ffffff;
+            --accent-wire: #222222;
+            --highlight-box: #e9ecef;
+            --base-font-size: 14px;
+        }
+
+        /* 20pt 큰글씨 모드 지원 */
+        body.senior-mode {
+            --base-font-size: 19px;
+            --border-heavy: #000000;
+            --border-mid: #111111;
+            --bg-canvas: #ffffff;
+            --text-main: #000000;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-canvas);
+            color: var(--text-main);
+            font-size: var(--base-font-size);
+            line-height: 1.5;
+            padding-top: 56px;
+            padding-bottom: 80px;
+        }
+
+        /* Top Fixed Persona Mode Switcher */
+        .wf-top-bar {
+            position: fixed; top: 0; left: 0; width: 100%; height: 56px;
+            background: #111111; color: #ffffff;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 20px; z-index: 10000; border-bottom: 2px solid #333333;
+        }
+        .wf-top-title {
+            font-size: 13px; font-weight: 800; display: flex; align-items: center; gap: 8px;
+        }
+        .wf-top-badge {
+            background: #ffffff; color: #111111; padding: 2px 6px; border-radius: 3px; font-size: 11px; font-weight: 900;
+        }
+        .wf-switcher-group {
+            display: flex; gap: 5px; overflow-x: auto;
+        }
+        .wf-mode-btn {
+            background: #252525; color: #cccccc; border: 1px solid #444444;
+            padding: 5px 11px; font-size: 12px; font-weight: 700; cursor: pointer;
+            border-radius: 4px; transition: all 0.15s; white-space: nowrap;
+        }
+        .wf-mode-btn:hover { background: #3a3a3a; color: #ffffff; }
+        .wf-mode-btn.active {
+            background: #ffffff; color: #111111; border-color: #ffffff;
+        }
+
+        .container { max-width: 1240px; margin: 0 auto; padding: 24px 20px; }
+
+        /* Global Header */
+        .wf-header {
+            border: 2px solid var(--border-heavy); background: var(--bg-card);
+            padding: 16px 24px; margin-bottom: 24px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .wf-brand { font-size: 20px; font-weight: 900; letter-spacing: -0.5px; }
+        .wf-nav { display: flex; gap: 16px; align-items: center; }
+        .wf-nav-link {
+            font-size: 14px; font-weight: 700; color: var(--text-main); text-decoration: none; cursor: pointer;
+            padding: 4px 8px; border-radius: 4px;
+        }
+        .wf-nav-link:hover { background: var(--highlight-box); }
+        .wf-cart-btn {
+            background: var(--text-main); color: var(--text-light);
+            border: 1px solid var(--text-main); padding: 7px 16px; font-size: 13px; font-weight: 700;
+            border-radius: 4px; cursor: pointer;
+        }
+
+        /* Hero Section */
+        .wf-hero-box {
+            border: 2px solid var(--border-heavy); background: var(--bg-card);
+            padding: 40px 32px; margin-bottom: 24px; text-align: center; position: relative;
+        }
+        .wf-hero-canvas-mock {
+            border: 1.5px dashed var(--border-dash); background: var(--bg-sub);
+            padding: 48px 24px; margin: 16px 0; border-radius: 4px;
+        }
+        .wf-slogan-text { font-size: 24px; font-weight: 900; letter-spacing: -0.5px; margin-bottom: 8px; }
+        .wf-values-bar {
+            display: flex; justify-content: center; gap: 24px; font-size: 13px; font-weight: 700; color: var(--text-muted);
+            margin-top: 16px; border-top: 1px solid var(--border-light); padding-top: 12px;
+        }
+
+        /* 5-in-1 Interactive Studio Container */
+        .wf-section-box {
+            border: 2px solid var(--border-heavy); background: var(--bg-card);
+            padding: 28px; margin-bottom: 32px;
+        }
+        .wf-section-header {
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 2px solid var(--border-heavy); padding-bottom: 12px; margin-bottom: 20px;
+        }
+        .wf-section-title { font-size: 18px; font-weight: 900; display: flex; align-items: center; gap: 8px; }
+        
+        .studio-nav-tabs {
+            display: flex; gap: 8px; margin-bottom: 24px; border-bottom: 1.5px solid var(--border-light);
+            padding-bottom: 12px; overflow-x: auto;
+        }
+        .studio-tab-btn {
+            background: var(--bg-sub); border: 1.5px solid var(--border-mid);
+            padding: 10px 18px; font-size: 14px; font-weight: 800; cursor: pointer;
+            border-radius: 6px; transition: all 0.15s; white-space: nowrap;
+        }
+        .studio-tab-btn:hover { background: #e2e6ea; }
+        .studio-tab-btn.active {
+            background: #111111; color: #ffffff; border-color: #111111;
+        }
+
+        .studio-pane { display: none; }
+        .studio-pane.active { display: block; animation: fadeIn 0.2s ease-in; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* Grid Layouts */
+        .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .grid-3col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .grid-4col { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+        /* Component Box */
+        .wf-comp-card {
+            border: 1.5px solid var(--border-heavy); background: var(--bg-card);
+            padding: 20px; border-radius: 6px;
+        }
+        .wf-comp-title {
+            font-size: 14px; font-weight: 800; margin-bottom: 12px; display: flex; justify-content: space-between;
+        }
+        .wf-placeholder {
+            border: 1px dashed var(--border-dash); background: var(--bg-sub);
+            padding: 24px; text-align: center; color: var(--text-muted); font-size: 13px; border-radius: 4px;
+            margin-bottom: 12px;
+        }
+
+        /* Interactive Inputs & Sliders */
+        .wf-slider-wrap { margin: 16px 0; }
+        .wf-slider-label { display: flex; justify-content: space-between; font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+        .wf-slider { width: 100%; height: 8px; background: #ddd; outline: none; -webkit-appearance: none; border-radius: 4px; }
+        .wf-slider::-webkit-slider-thumb {
+            -webkit-appearance: none; width: 20px; height: 20px; border-radius: 50%;
+            background: #111111; cursor: pointer; border: 2px solid #ffffff; box-shadow: 0 0 4px rgba(0,0,0,0.3);
+        }
+
+        .wf-input {
+            width: 100%; border: 1.5px solid var(--border-heavy); padding: 10px 12px;
+            font-size: 13px; font-weight: 600; border-radius: 4px; margin-bottom: 10px; background: #fff;
+        }
+        .wf-btn-block {
+            width: 100%; background: #111111; color: #ffffff; border: 1.5px solid #111111;
+            padding: 12px; font-size: 14px; font-weight: 800; border-radius: 4px; cursor: pointer; text-align: center;
+        }
+        .wf-btn-block:hover { background: #333333; }
+        .wf-btn-outline {
+            width: 100%; background: transparent; color: #111111; border: 1.5px solid #111111;
+            padding: 10px; font-size: 13px; font-weight: 700; border-radius: 4px; cursor: pointer; text-align: center;
+        }
+        .wf-btn-outline:hover { background: var(--highlight-box); }
+
+        /* Catalog 20 Products Section */
+        .lnb-bar { display: flex; gap: 8px; margin-bottom: 20px; overflow-x: auto; padding-bottom: 6px; }
+        .lnb-pill {
+            background: var(--bg-sub); border: 1px solid var(--border-mid); padding: 6px 14px;
+            font-size: 12px; font-weight: 700; border-radius: 20px; cursor: pointer; white-space: nowrap;
+        }
+        .lnb-pill.active { background: #111111; color: #ffffff; border-color: #111111; }
+
+        .product-card {
+            border: 1.5px solid var(--border-heavy); background: #ffffff; padding: 16px; border-radius: 6px;
+            display: flex; flex-direction: column; justify-content: space-between;
+        }
+        .product-img-box {
+            border: 1px dashed var(--border-dash); background: var(--bg-sub); height: 130px;
+            display: flex; align-items: center; justify-content: center; font-size: 12px; color: var(--text-muted);
+            margin-bottom: 12px; text-align: center; padding: 8px;
+        }
+        .product-name { font-size: 13px; font-weight: 800; margin-bottom: 6px; }
+        .product-meta { font-size: 11px; color: var(--text-muted); margin-bottom: 10px; }
+        .product-price { font-size: 15px; font-weight: 900; margin-bottom: 12px; }
+
+        /* Slide-out Checkout Drawer */
+        .drawer-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5);
+            z-index: 11000; display: none;
+        }
+        .drawer-overlay.active { display: block; }
+        .drawer-content {
+            position: fixed; top: 0; right: -480px; width: 460px; height: 100%; background: #ffffff;
+            border-left: 2px solid var(--border-heavy); z-index: 11001; padding: 28px 24px;
+            box-shadow: -4px 0 20px rgba(0,0,0,0.2); transition: right 0.25s ease-in-out;
+            overflow-y: auto; display: flex; flex-direction: column; justify-content: space-between;
+        }
+        .drawer-content.active { right: 0; }
+        .drawer-header {
+            display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #111;
+            padding-bottom: 14px; margin-bottom: 20px;
+        }
+        .drawer-title { font-size: 17px; font-weight: 900; }
+        .drawer-close { background: none; border: none; font-size: 22px; font-weight: 900; cursor: pointer; }
+
+        /* Dynamic Color Demo Box */
+        #colorGlassBox {
+            height: 140px; border-radius: 6px; border: 2px solid #222;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            font-weight: 800; font-size: 14px; margin-bottom: 12px; transition: background 0.3s;
+            background: #2a3d66; color: #ffffff; text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+        }
+
+        /* Footer */
+        .wf-footer {
+            border: 2px solid var(--border-heavy); background: #ffffff; padding: 32px 24px;
+            font-size: 12px; color: var(--text-muted); line-height: 1.8; margin-top: 40px;
+        }
+        .wf-footer-top {
+            display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-light);
+            padding-bottom: 16px; margin-bottom: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Master Persona Mode Switcher Bar -->
+    <div class="wf-top-bar">
+        <div class="wf-top-title">
+            <span class="wf-top-badge">MASTER</span>
+            <span>WICKETA 11인 통합 마스터 와이어프레임</span>
+        </div>
+        <div class="wf-switcher-group">
+            <button class="wf-mode-btn active" onclick="switchPersonaView('all')">🌐 전체 올인원 뷰</button>
+            <button class="wf-mode-btn" onclick="switchPersonaView('b2b')">🏨 B2B 대량조달 (임태경/박지후)</button>
+            <button class="wf-mode-btn" onclick="switchPersonaView('visual')">🌌 숏폼 & 조향 (이지민/송아린/신유진)</button>
+            <button class="wf-mode-btn" onclick="switchPersonaView('data')">💻 데이터 & 텔레메트리 (윤기준)</button>
+            <button class="wf-mode-btn" onclick="switchPersonaView('senior')">🍵 시니어 20pt & 패밀리 (한명석/서지안)</button>
+            <button class="wf-mode-btn" onclick="switchPersonaView('editorial')">🎨 에디토리얼 & 3D각인 (차은채/윤서연/이도은)</button>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- Global Header -->
+        <header class="wf-header">
+            <div class="wf-brand">WICKETA <span style="font-size:13px; font-weight:700; color:var(--text-muted);">| 비밀정원 다과회</span></div>
+            <nav class="wf-nav">
+                <a class="wf-nav-link" href="#studio-section">⚡ 5대 킬러 스튜디오</a>
+                <a class="wf-nav-link" href="#catalog-section">📦 20종 전수 도감</a>
+                <a class="wf-nav-link" href="#brand-section">📜 브랜드 헤리티지</a>
+                <a class="wf-nav-link" onclick="toggleSeniorMode()" style="color:#d9534f;">🔍 [20pt 큰글씨 토글]</a>
+                <button class="wf-cart-btn" onclick="openDrawer('general')">🛒 통합 주문 / 견적 드로어 (<span id="cartCount">2</span>)</button>
+            </nav>
+        </header>
+
+        <!-- Hero Slogan & Cinematic Canvas -->
+        <section class="wf-hero-box" id="hero-section">
+            <div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:1px; color:var(--text-muted);">
+                WONDERSCAPE DIGITAL WELLNESS SANCTUARY
+            </div>
+            <div class="wf-hero-canvas-mock">
+                <h1 class="wf-slogan-text">"문을 열고, 현실에서 벗어나세요"</h1>
+                <p style="font-size:15px; color:var(--text-muted); max-width:760px; margin:0 auto;">
+                    바쁜 일상에 지친 2030 세대에게 노동 없는 3분간의 초현실주의적인 휴식(길티프리 리추얼)을 선사합니다.<br/>
+                    11인의 고유 비즈니스 목적을 단 하나의 플래그십 아키텍처로 집약한 통합 와이어프레임입니다.
+                </p>
+            </div>
+            <div class="wf-values-bar">
+                <span>1. Emotion Dial (감정 맞춤 추천)</span>
+                <span>•</span>
+                <span>2. Mixology (DIY 믹솔로지 & 블렌딩)</span>
+                <span>•</span>
+                <span>3. Zero-Labor (노동 없는 3분의 휴식)</span>
+            </div>
+        </section>
+
+        <!-- 5-in-1 Interactive Killer Studio Zone -->
+        <section class="wf-section-box" id="studio-section">
+            <div class="wf-section-header">
+                <div class="wf-section-title">
+                    <span>⚡ 5대 페르소나 킬러 인터랙션 스튜디오</span>
+                    <span style="font-size:12px; font-weight:600; color:var(--text-muted);">[11인 고유 장점 전수 탑재]</span>
+                </div>
+                <div style="font-size:12px; color:var(--text-muted);">
+                    탭을 클릭하면 각 클라이언트의 킬러 인터랙션이 즉시 동작합니다.
+                </div>
+            </div>
+
+            <!-- Studio Navigation Tabs -->
+            <div class="studio-nav-tabs">
+                <button class="studio-tab-btn active" id="tab-btn-b2b" onclick="selectStudioTab('b2b')">🏨 1. B2B 엔터프라이즈 조달 (04 임태경 / 07 박지후)</button>
+                <button class="studio-tab-btn" id="tab-btn-visual" onclick="selectStudioTab('visual')">🌌 2. 숏폼 & 비주얼 조색 (08 이지민 / 05 송아린 / 02 신유진)</button>
+                <button class="studio-tab-btn" id="tab-btn-data" onclick="selectStudioTab('data')">💻 3. 데이터 & 텔레메트리 (09 윤기준)</button>
+                <button class="studio-tab-btn" id="tab-btn-senior" onclick="selectStudioTab('senior')">🍵 4. 시니어 20pt & 패밀리 (11 한명석 / 10 서지안)</button>
+                <button class="studio-tab-btn" id="tab-btn-editorial" onclick="selectStudioTab('editorial')">🎨 5. 에디토리얼 & 3D각인 (01 차은채 / 03 윤서연 / 06 이도은)</button>
+            </div>
+
+            <!-- Tab 1: B2B Enterprise Studio (04 임태경, 07 박지후) -->
+            <div class="studio-pane active" id="pane-b2b">
+                <div class="grid-2col">
+                    <div class="wf-comp-card">
+                        <div class="wf-comp-title">
+                            <span>📊 5,000세트 대량 견적 계산기 (B2B-ESTIMATE-01)</span>
+                            <span style="font-size:11px; background:#111; color:#fff; padding:2px 6px; border-radius:3px;">호텔/기업 조달</span>
+                        </div>
+                        <p style="font-size:12px; color:var(--text-muted); margin-bottom:12px;">
+                            호텔 객실수 또는 사내 임직원수를 조절하여 최적 발주량과 티어 할인율을 실시간 계산합니다.
+                        </p>
+                        <div class="wf-slider-wrap">
+                            <div class="wf-slider-label">
+                                <span>발주 규모 (세트수/인원수)</span>
+                                <span id="b2bSetCount" style="font-weight:900; color:#000;">1,000 세트</span>
+                            </div>
+                            <input type="range" class="wf-slider" min="100" max="5000" step="100" value="1000" id="b2bRange" oninput="updateB2BCalc(this.value)">
+                        </div>
+                        <div style="background:var(--bg-sub); border:1px solid var(--border-light); padding:12px; border-radius:4px; margin-bottom:12px; font-size:12px;">
+                            <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                                <span>기본 정상가:</span>
+                                <span id="b2bBasePrice">39,000,000원</span>
+                            </div>
+                            <div style="display:flex; justify-content:space-between; margin-bottom:4px; color:#d9534f; font-weight:700;">
+                                <span>티어 할인율 (B2B 특별 공급):</span>
+                                <span id="b2bDiscountRate">-20% (7,800,000원 할인)</span>
+                            </div>
+                            <div style="display:flex; justify-content:space-between; border-top:1px solid #ccc; padding-top:6px; font-weight:900; font-size:14px;">
+                                <span>최종 공급가 (VAT 별도):</span>
+                                <span id="b2bFinalPrice" style="color:#000;">31,200,000원</span>
+                            </div>
+                        </div>
+                        <button class="wf-btn-block" onclick="openDrawer('b2b')">📝 전자계약 발주서 & 세금계산서 청구서 생성</button>
+                    </div>
+
+                    <div class="wf-comp-card">
+                        <div class="wf-comp-title">
+                            <span>🎁 0원 VIP 호텔리어 / 사내 테이스팅 샘플 킷 (VIP-SAMPLE-01)</span>
+                            <span style="font-size:11px; border:1px solid #111; padding:2px 6px; border-radius:3px;">국세청 연동</span>
+                        </div>
+                        <p style="font-size:12px; color:var(--text-muted); margin-bottom:12px;">
+                            사업자등록번호 또는 회사 이메일 인증 시 4종 실물 샘플 킷과 전용 4단 디스펜서를 0원 제공합니다.
+                        </p>
+                        <input type="text" class="wf-input" placeholder="사업자등록번호 (10자리) 또는 회사 이메일 입력" value="120-88-04004">
+                        <div class="wf-placeholder" style="padding:16px; margin-bottom:12px;">
+                            <strong>📦 4종 테이스팅 샘플 구성:</strong><br/>
+                            1. 5성급 웰컴 버터플라이피 (4포) | 2. 나이트 GABA 무카페인 (4포)<br/>
+                            3. 사탕수수 생분해 웰컴티 (4포) | 4. 0kcal 미네랄 수분티 (4포)
+                        </div>
+                        <button class="wf-btn-outline" onclick="alert('사업자 인증 완료: 0원 VIP 샘플 킷이 배송지에 바인딩되었습니다.')">✅ 0원 샘플 키트 신청 및 사내 투표 링크 발급</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 2: Visual Mixology Studio (08 이지민, 05 송아린, 02 신유진) -->
+            <div class="studio-pane" id="pane-visual">
+                <div class="grid-2col">
+                    <div class="wf-comp-card">
+                        <div class="wf-comp-title">
+                            <span>🧪 pH 산도 반응 실시간 3D 수색 변환기 (AURORA-COLOR-01)</span>
+                            <span style="font-size:11px; background:#111; color:#fff; padding:2px 6px; border-radius:3px;">찬물 1초 융해</span>
+                        </div>
+                        <div id="colorGlassBox">
+                            <span id="colorNameLabel">🌌 Deep Galaxy Blue (pH 7.0 중성)</span>
+                            <span style="font-size:11px; font-weight:400; opacity:0.8;">버터플라이피 천연 안토시아닌 용출 상태</span>
+                        </div>
+                        <div class="wf-slider-wrap">
+                            <div class="wf-slider-label">
+                                <span>pH 산도 조절 슬라이더 (레몬/탄산수 투입)</span>
+                                <span id="phValLabel">pH 7.0 (중성)</span>
+                            </div>
+                            <input type="range" class="wf-slider" min="3.0" max="7.0" step="0.5" value="7.0" id="phRange" oninput="updateColorShift(this.value)">
+                        </div>
+                        <p style="font-size:12px; color:var(--text-muted); margin-bottom:12px;">
+                            * 찬물 1초 융해 스틱에 레몬즙이나 탄산수를 더하면 보라색에서 로즈 핑크로 변환되는 마법 같은 리추얼을 제공합니다.
+                        </p>
+                        <button class="wf-btn-block" onclick="openDrawer('general')">🍹 선택된 오로라 수색 포뮬러 팩 담기</button>
+                    </div>
+
+                    <div class="wf-comp-card">
+                        <div class="wf-comp-title">
+                            <span>📱 9:16 세로형 릴스 피드 & 포토카드 에디터 (REELS-FEED-01)</span>
+                            <span style="font-size:11px; border:1px solid #111; padding:2px 6px; border-radius:3px;">15초 챌린지</span>
+                        </div>
+                        <div class="wf-placeholder" style="height:180px; display:flex; flex-direction:column; justify-content:center;">
+                            <strong>🎬 9:16 Vertical Video Reels Viewport</strong><br/>
+                            <span style="font-size:12px;">#1초융해챌린지 #오로라홈카페 #ZeroLabor</span><br/>
+                            <span style="font-size:11px; margin-top:8px; color:#555;">[▶️ 15초 바이럴 영상 템플릿 재생 중]</span>
+                        </div>
+                        <div style="display:flex; gap:8px; margin-top:12px;">
+                            <button class="wf-btn-outline" onclick="alert('15초 바이럴 음원(BGM)이 다운로드되었습니다.')">🎵 음원 다운로드</button>
+                            <button class="wf-btn-outline" onclick="alert('인스타그램 스토리용 9:16 포토카드가 생성되었습니다.')">📸 포토카드 셰어링</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 3: Data Telemetry Studio (09 윤기준) -->
+            <div class="studio-pane" id="pane-data">
+                <div class="grid-2col">
+                    <div class="wf-comp-card">
+                        <div class="wf-comp-title">
+                            <span>📈 HPLC 크로마토그래피 유효성분 데이터 차트 (DATA-BREW-01)</span>
+                            <span style="font-size:11px; background:#111; color:#fff; padding:2px 6px; border-radius:3px;">0.1g 정밀 계측</span>
+                        </div>
+                        <div class="wf-placeholder" style="background:#0f1117; color:#7ce3a7; text-align:left; font-family:monospace; padding:16px;">
+                            <div>$ telemetry --client "09_윤기준" --device "HPLC-2026"</div>
+                            <div>--------------------------------------------------</div>
+                            <div>• L-Theanine Extract: <span id="theanineVal">214.5 mg</span> [Optimal]</div>
+                            <div>• GABA Release Rate : <span id="gabaVal">98.4%</span> [Peak at 180s]</div>
+                            <div>• TDS Concentration : <span id="tdsVal">45 ppm</span> (Soft Water Match)</div>
+                            <div>• Polyphenol Purity : 99.8% (0.00% Sugar/Calorie)</div>
+                        </div>
+                        <div class="wf-slider-wrap">
+                            <div class="wf-slider-label">
+                                <span>침출 시간 파라미터 (초)</span>
+                                <span id="secValLabel">180초 (최적 완결)</span>
+                            </div>
+                            <input type="range" class="wf-slider" min="30" max="300" step="30" value="180" oninput="updateDataChart(this.value)">
+                        </div>
+                        <button class="wf-btn-block" onclick="alert('brew_formula_telemetry.json 파일이 다운로드되었습니다.')">💻 $ curl -O formula_data.json 내보내기</button>
+                    </div>
+
+                    <div class="wf-comp-card">
+                        <div class="wf-comp-title">
+                            <span>⚙️ 터미널 Syntax 코드 각인기 & TDS 처방 (CODE-ENGRAVER-01)</span>
+                            <span style="font-size:11px; border:1px solid #111; padding:2px 6px; border-radius:3px;">SUS316 스틸</span>
+                        </div>
+                        <p style="font-size:12px; color:var(--text-muted); margin-bottom:8px;">
+                            SUS316 의료용 스틸 텀블러 및 정밀 지거에 각인할 코드 문구를 입력하세요.
+                        </p>
+                        <input type="text" class="wf-input" style="font-family:monospace;" value="const ritual = new WicketaBrew({ mode: 'zero-labor' });" id="syntaxInput">
+                        <div class="wf-placeholder" style="padding:16px; margin-bottom:12px;">
+                            <strong>🔍 텀블러 표면 레이저 3D 렌더링 프리뷰:</strong><br/>
+                            <span id="syntaxPreview" style="font-family:monospace; font-weight:800; color:#111;">const ritual = new WicketaBrew({ mode: 'zero-labor' });</span>
+                        </div>
+                        <button class="wf-btn-outline" onclick="openDrawer('general')">💾 $ git commit -m "각인 텀블러 주문"</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 4: Senior 20pt & Family Care Studio (11 한명석, 10 서지안) -->
+            <div class="studio-pane" id="pane-senior">
+                <div class="grid-2col">
+                    <div class="wf-comp-card" style="background:#fff9f0; border-color:#d9534f;">
+                        <div class="wf-comp-title" style="font-size:16px;">
+                            <span>🍵 20pt+ 큰글씨 모드 & ☎️ 1588 직통 전화 주문 (PHONE-ORDER-01)</span>
+                            <span style="font-size:12px; background:#d9534f; color:#fff; padding:3px 8px; border-radius:3px;">시니어 특화</span>
+                        </div>
+                        <p style="font-size:14px; color:#444; margin-bottom:16px; line-height:1.6;">
+                            글씨가 작아 주문이 불편하신 어르신들을 위해 <strong>화면 텍스트 확대</strong>와 <strong>전화 한 통 즉시 주문</strong>을 지원합니다.
+                        </p>
+                        <div style="display:flex; gap:10px; margin-bottom:16px;">
+                            <button class="wf-btn-block" style="background:#d9534f; border-color:#d9534f; font-size:16px;" onclick="openDrawer('phone')">☎️ 1588-1111 전화로 간편 주문하기</button>
+                            <button class="wf-btn-outline" style="border-color:#d9534f; font-size:14px;" onclick="toggleSeniorMode()">🔍 큰글씨 확대 ON/OFF</button>
+                        </div>
+                        <div style="background:#ffffff; border:1px solid #e0c8b0; padding:12px; border-radius:4px; font-size:13px;">
+                            <strong>지리산 명인 발효 황차 보증:</strong> 80℃ 온수 1초 우림, 식약처 공인 무설탕·무카페인 0.00% 안심 성분
+                        </div>
+                    </div>
+
+                    <div class="wf-comp-card">
+                        <div class="wf-comp-title">
+                            <span>🧘 180초 온수 발효 가야금 다도 묵상 오디오 (TEA-CEREMONY-01)</span>
+                            <span style="font-size:11px; border:1px solid #111; padding:2px 6px; border-radius:3px;">힐링 캄테크</span>
+                        </div>
+                        <div class="wf-placeholder" style="height:140px; display:flex; flex-direction:column; justify-content:center;">
+                            <span style="font-size:24px;">🍵 ➔ 🫖 ➔ 🏺</span>
+                            <strong style="margin-top:8px;">80℃ 온수 180초 다도 명상 가이드</strong>
+                            <span style="font-size:12px; color:var(--text-muted);">가야금 앰비언트 사운드와 함께 차를 음미하세요</span>
+                        </div>
+                        <button class="wf-btn-outline" style="margin-top:12px;" onclick="alert('가야금 다도 명상 앰비언트 음향이 재생됩니다. (180초 타이머 작동)')">▶️ 180초 가야금 다도 음향 재생</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 5: Editorial & 3D Custom Studio (01 차은채, 03 윤서연, 06 이도은) -->
+            <div class="studio-pane" id="pane-editorial">
+                <div class="grid-2col">
+                    <div class="wf-comp-card">
+                        <div class="wf-comp-title">
+                            <span>🎁 3D 회전 VIP 틴케이스 레이저 각인 스튜디오 (CUSTOM-BUILD-01)</span>
+                            <span style="font-size:11px; background:#111; color:#fff; padding:2px 6px; border-radius:3px;">선물 패키징</span>
+                        </div>
+                        <div class="wf-placeholder" style="height:140px; display:flex; flex-direction:column; justify-content:center;">
+                            <span style="font-size:28px;">🫙 ✨</span>
+                            <strong style="margin-top:6px;">3D 메탈 틴케이스 실시간 레이저 버닝 프리뷰</strong>
+                            <span id="tinEngravePreview" style="font-size:14px; font-weight:900; color:#111; margin-top:4px;">FOR EUNCHAE. C</span>
+                        </div>
+                        <div class="wf-slider-wrap">
+                            <div class="wf-slider-label"><span>각인할 영문/한글 메시지 입력</span></div>
+                            <input type="text" class="wf-input" value="FOR EUNCHAE. C" id="engraveTextInput" oninput="document.getElementById('tinEngravePreview').innerText = this.value || 'YOUR MESSAGE'">
+                        </div>
+                        <button class="wf-btn-block" onclick="openDrawer('general')">🎁 VIP 각인 틴케이스 선물하기 담기</button>
+                    </div>
+
+                    <div class="wf-comp-card">
+                        <div class="wf-comp-title">
+                            <span>🔮 7대 차크라 & TPO 감정 다이얼 진단 퀴즈 (CHAKRA-MOOD-01)</span>
+                            <span style="font-size:11px; border:1px solid #111; padding:2px 6px; border-radius:3px;">맞춤 웰니스</span>
+                        </div>
+                        <p style="font-size:12px; color:var(--text-muted); margin-bottom:12px;">
+                            오늘 당신의 마음 상태를 진단하여 최적의 블렌딩 포뮬러를 1:1 처방해 드립니다.
+                        </p>
+                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:12px;">
+                            <button class="wf-btn-outline" onclick="alert('처방 완료: 야간 심신 이완 [미드나잇 GABA 팩]이 추천되었습니다.')">🌙 야간 수면 부족</button>
+                            <button class="wf-btn-outline" onclick="alert('처방 완료: 업무 집중력 강화 [시트러스 마테 팩]이 추천되었습니다.')">⚡ 회의 전 번아웃</button>
+                            <button class="wf-btn-outline" onclick="alert('처방 완료: 0.00% 힐링 [무가당 얼그레이 팩]이 추천되었습니다.')">🍹 가벼운 무알콜</button>
+                            <button class="wf-btn-outline" onclick="alert('처방 완료: 백세 웰에이징 [지리산 명인 발효 황차]가 추천되었습니다.')">🍵 위장 편한 온수</button>
+                        </div>
+                        <button class="wf-btn-outline" onclick="alert('성수 플래그십 쇼룸 1:1 프라이빗 시향 룸 예약 페이지로 이동합니다.')">🏛️ 성수 쇼룸 1:1 시향 클래스 예약</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 20 Curated Products Catalog Section -->
+        <section class="wf-section-box" id="catalog-section">
+            <div class="wf-section-header">
+                <div class="wf-section-title">
+                    <span>📦 20종 전수 맞춤 상품 도감 (Curated Catalog)</span>
+                    <span style="font-size:12px; font-weight:600; color:var(--text-muted);">[6대 공통 LNB 필터 탑재]</span>
+                </div>
+                <div style="font-size:12px; color:var(--text-muted);">
+                    전사 20개 공통 및 특화 상품 전수 수록
+                </div>
+            </div>
+
+            <!-- LNB Filter Pills -->
+            <div class="lnb-bar">
+                <button class="lnb-pill active" onclick="filterCatalog('all', this)">전체 20종 (All)</button>
+                <button class="lnb-pill" onclick="filterCatalog('sig', this)">✨ 1. 디렉터스 론칭 시그니처 (4)</button>
+                <button class="lnb-pill" onclick="filterCatalog('clean', this)">🌿 2. 캄테크 0kcal 클린티 (4)</button>
+                <button class="lnb-pill" onclick="filterCatalog('bulk', this)">📦 3. B2B 대용량 조달 벌크 (4)</button>
+                <button class="lnb-pill" onclick="filterCatalog('ware', this)">🥂 4. 빛 굴절 오브제 다기 (4)</button>
+                <button class="lnb-pill" onclick="filterCatalog('gift', this)">🎁 5. VIP 선물 & 정기구독 (4)</button>
+            </div>
+
+            <!-- 20 Products Grid (Sample Representation of 8 displayed dynamically) -->
+            <div class="grid-4col" id="catalogGrid">
+                <!-- Product 1 -->
+                <div class="product-card" data-cat="sig">
+                    <div class="product-img-box">🖼️ [SEC-01]<br/>오로라 믹솔로지 론칭 팩<br/>(1초 찬물 융해)</div>
+                    <div>
+                        <div class="product-name">⭐ [디렉터 초이스] 오로라 믹솔로지 론칭 팩</div>
+                        <div class="product-meta">버터플라이피 안토시아닌 | 4포 세트</div>
+                        <div class="product-price">39,000원</div>
+                    </div>
+                    <button class="wf-btn-block" style="padding:8px; font-size:12px;" onclick="openDrawer('general')">1초 담기</button>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card" data-cat="sig">
+                    <div class="product-img-box">🖼️ [SEC-02]<br/>미드나잇 GABA 뇌식 릴랙스<br/>(무카페인)</div>
+                    <div>
+                        <div class="product-name">🌙 [에디토리얼 안식] 미드나잇 GABA 팩</div>
+                        <div class="product-meta">GABA 200mg + 라벤더 | 10포 세트</div>
+                        <div class="product-price">32,000원</div>
+                    </div>
+                    <button class="wf-btn-block" style="padding:8px; font-size:12px;" onclick="openDrawer('general')">1초 담기</button>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card" data-cat="bulk">
+                    <div class="product-img-box">🖼️ [SEC-03]<br/>호텔/기업 조달용 1,000포 벌크<br/>(B2B 패키지)</div>
+                    <div>
+                        <div class="product-name">📦 [5,000세트 벌크] 호텔 조달 전용 1,000포</div>
+                        <div class="product-meta">질소충전 개별포장 | 세금계산서 지원</div>
+                        <div class="product-price">850,000원</div>
+                    </div>
+                    <button class="wf-btn-block" style="padding:8px; font-size:12px;" onclick="openDrawer('b2b')">대량 견적서 추가</button>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card" data-cat="clean">
+                    <div class="product-img-box">🖼️ [SEC-04]<br/>보태니컬 0kcal 스파클링<br/>(천연 탄산)</div>
+                    <div>
+                        <div class="product-name">🌿 [캄테크 클린] 0kcal 스파클링 에이드</div>
+                        <div class="product-meta">당류 0g 에리스리톨 | 10포 세트</div>
+                        <div class="product-price">27,000원</div>
+                    </div>
+                    <button class="wf-btn-block" style="padding:8px; font-size:12px;" onclick="openDrawer('general')">1초 담기</button>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card" data-cat="ware">
+                    <div class="product-img-box">🖼️ [SEC-05]<br/>빛 굴절 홀로그램 더블월 글래스<br/>(내열 유리)</div>
+                    <div>
+                        <div class="product-name">🥂 [오브제 다기] 빛 굴절 더블월 잔</div>
+                        <div class="product-meta">360도 오로라 반사율 | 2P 세트</div>
+                        <div class="product-price">38,000원</div>
+                    </div>
+                    <button class="wf-btn-block" style="padding:8px; font-size:12px;" onclick="openDrawer('general')">1초 담기</button>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card" data-cat="gift">
+                    <div class="product-img-box">🖼️ [SEC-06]<br/>VIP 틴케이스 레이저 각인 킷<br/>(선물 세트)</div>
+                    <div>
+                        <div class="product-name">🎁 [D2C 기프팅] 카카오 VIP 각인 세트</div>
+                        <div class="product-meta">커스텀 문구 무료 각인 | 쇼핑백 동봉</div>
+                        <div class="product-price">49,000원</div>
+                    </div>
+                    <button class="wf-btn-block" style="padding:8px; font-size:12px;" onclick="openDrawer('general')">1초 담기</button>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="product-card" data-cat="bulk">
+                    <div class="product-img-box">🖼️ [SEC-07]<br/>탕비실 전용 4단 아크릴 디스펜서<br/>(렌탈 거치대)</div>
+                    <div>
+                        <div class="product-name">🌱 [B2B 렌탈] 탕비실 4단 아크릴 거치대</div>
+                        <div class="product-meta">정기구독 시 0원 렌탈 | 180포 보관</div>
+                        <div class="product-price">0원 (구독 연동)</div>
+                    </div>
+                    <button class="wf-btn-block" style="padding:8px; font-size:12px;" onclick="openDrawer('b2b')">렌탈 신청하기</button>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="product-card" data-cat="clean">
+                    <div class="product-img-box">🖼️ [SEC-08]<br/>지리산 야생 80℃ 온수 발효 황차<br/>(명인 수제)</div>
+                    <div>
+                        <div class="product-name">🍵 [명인 특화] 지리산 80℃ 발효 황차</div>
+                        <div class="product-meta">전통 다도 명인 한명석 | 15포 세트</div>
+                        <div class="product-price">45,000원</div>
+                    </div>
+                    <button class="wf-btn-block" style="padding:8px; font-size:12px;" onclick="openDrawer('general')">1초 담기</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brand Heritage & Certification Room -->
+        <section class="wf-section-box" id="brand-section">
+            <div class="wf-section-header">
+                <div class="wf-section-title">
+                    <span>📜 WICKETA 브랜드 헤리티지 & KTR 3無 공인 검증실</span>
+                </div>
+            </div>
+            <div class="grid-3col">
+                <div class="wf-comp-card">
+                    <div class="wf-comp-title"><span>🛡️ KTR 3無 공인 시험성적서</span></div>
+                    <p style="font-size:12px; color:var(--text-muted); line-height:1.6;">
+                        • 잔류농약 463종 전 항목 불검출<br/>
+                        • 미세플라스틱 0건 공인 검증 (KTR-2026-WK13)<br/>
+                        • 인공감미료/보존료/합성색소 0.00%
+                    </p>
+                </div>
+                <div class="wf-comp-card">
+                    <div class="wf-comp-title"><span>🏛️ 성수 플래그십 쇼룸 & 랩</span></div>
+                    <p style="font-size:12px; color:var(--text-muted); line-height:1.6;">
+                        서울시 성동구 연무장길 42 WICKETA 쇼룸<br/>
+                        • 프라이빗 1:1 시향 룸 상시 운영<br/>
+                        • 바텐더 & 조향사 믹솔로지 워크숍
+                    </p>
+                </div>
+                <div class="wf-comp-card">
+                    <div class="wf-comp-title"><span>🌱 ESG 탄소중립 패키징</span></div>
+                    <p style="font-size:12px; color:var(--text-muted); line-height:1.6;">
+                        • 100% 생분해 사탕수수 지류 파우치<br/>
+                        • 옥수수 전분 PLA 피라미드 티백<br/>
+                        • FSC 인증 친환경 원목 트레이
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="wf-footer">
+            <div class="wf-footer-top">
+                <div style="font-weight:900; font-size:14px; color:#111;">(주)위케타 통합 마스터 사업부</div>
+                <div style="display:flex; gap:16px;">
+                    <span>고객센터: 1588-0101 (평일 09:00~18:00)</span>
+                    <span>시니어 전용 직통: 1588-1111</span>
+                    <span>B2B 조달 전담: 1588-0404</span>
+                </div>
+            </div>
+            <p>
+                대표이사: 차은채, 임태경, 박지후, 윤기준, 한명석 외 6인 | 모기업: (주)WONDERSCAPE | 사업자등록번호: 120-88-01001<br/>
+                통신판매업신고: 제2026-서울성동-0101호 | 주소: 서울시 성동구 연무장길 42 WICKETA 안식처 플래그십 타워<br/>
+                본 통합 와이어프레임은 KWCAG 2.2 웹 접근성 지침을 준수하며 모바일, 태블릿, 데스크톱 반응형 뷰포트를 지원합니다.
+            </p>
+        </footer>
+
+    </div>
+
+    <!-- 3-in-1 Smart Slide-out Checkout Drawer -->
+    <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+    <div class="drawer-content" id="drawerContent">
+        <div>
+            <div class="drawer-header">
+                <div class="drawer-title" id="drawerTitle">🛒 통합 패스트 체크아웃 드로어</div>
+                <button class="drawer-close" onclick="closeDrawer()">&times;</button>
+            </div>
+
+            <!-- Drawer Mode Tabs -->
+            <div style="display:flex; gap:6px; margin-bottom:16px;">
+                <button class="lnb-pill active" id="drawerTabGen" onclick="switchDrawerMode('general')">1초 일반/구독 결제</button>
+                <button class="lnb-pill" id="drawerTabB2B" onclick="switchDrawerMode('b2b')">B2B 세금계산서 청구</button>
+                <button class="lnb-pill" id="drawerTabPhone" onclick="switchDrawerMode('phone')">☎️ 시니어 전화 주문</button>
+            </div>
+
+            <!-- Drawer Mode 1: General D2C -->
+            <div id="drawerBodyGeneral">
+                <div style="background:var(--bg-sub); padding:12px; border-radius:4px; margin-bottom:12px; font-size:13px;">
+                    <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+                        <span>⭐ 오로라 믹솔로지 론칭 팩 (1개)</span>
+                        <strong>39,000원</strong>
+                    </div>
+                    <div style="display:flex; justify-content:space-between;">
+                        <span>🌙 미드나잇 GABA 릴랙스 팩 (1개)</span>
+                        <strong>32,000원</strong>
+                    </div>
+                </div>
+                <div style="font-size:12px; color:#d9534f; font-weight:700; margin-bottom:12px;">
+                    ⚡ 30일 정기구독 신청 시 15% 추가 할인 적용 (60,350원)
+                </div>
+                <input type="text" class="wf-input" placeholder="받는 분 성함 및 배송지 입력" value="차은채 (010-1234-5678)">
+            </div>
+
+            <!-- Drawer Mode 2: B2B Enterprise -->
+            <div id="drawerBodyB2B" style="display:none;">
+                <div style="background:var(--bg-sub); padding:12px; border-radius:4px; margin-bottom:12px; font-size:13px;">
+                    <strong>호텔/기업 대량 조달 전자계약 발주서</strong>
+                    <div style="margin-top:6px; font-size:12px; color:var(--text-muted);">
+                        • 발주 품목: 5성급 웰컴 어메니티 1,000세트<br/>
+                        • 청구 금액: 31,200,000원 (VAT 별도)
+                    </div>
+                </div>
+                <input type="text" class="wf-input" placeholder="법인 사업자등록번호" value="120-88-04004">
+                <input type="text" class="wf-input" placeholder="세금계산서 수신 이메일" value="tax@hotel-hospitality.com">
+            </div>
+
+            <!-- Drawer Mode 3: Senior Phone -->
+            <div id="drawerBodyPhone" style="display:none;">
+                <div style="background:#fff9f0; border:1px solid #d9534f; padding:14px; border-radius:4px; margin-bottom:12px; font-size:14px; color:#111;">
+                    <strong>☎️ 1588-1111 시니어 안심 직통 전화</strong><br/>
+                    <span style="font-size:13px; color:#555;">상담원과 직접 통화하며 주문을 완료할 수 있습니다.</span>
+                </div>
+                <input type="text" class="wf-input" placeholder="연락받으실 전화번호" value="010-9876-5432" style="font-size:16px;">
+            </div>
+        </div>
+
+        <div>
+            <div style="border-top:2px solid #111; padding-top:12px; margin-bottom:14px; display:flex; justify-content:space-between; font-size:16px; font-weight:900;">
+                <span>최종 결제/청구액:</span>
+                <span id="drawerTotalText" style="color:#d9534f;">71,000원</span>
+            </div>
+            <button class="wf-btn-block" id="drawerSubmitBtn" onclick="alert('주문/청구 접수가 정상 완료되었습니다!')">🚀 1-Click 간편 주문 승인</button>
+        </div>
+    </div>
+
+    <!-- Interactive Script -->
+    <script>
+        // Switch Studio Tab
+        function selectStudioTab(tabKey) {
+            document.querySelectorAll('.studio-tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.studio-pane').forEach(pane => pane.classList.remove('active'));
+
+            const targetBtn = document.getElementById('tab-btn-' + tabKey);
+            const targetPane = document.getElementById('pane-' + tabKey);
+            if (targetBtn) targetBtn.classList.add('active');
+            if (targetPane) targetPane.classList.add('active');
+        }
+
+        // Persona Viewport Switcher
+        function switchPersonaView(mode) {
+            document.querySelectorAll('.wf-mode-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            if (mode === 'all') {
+                selectStudioTab('b2b');
+                document.getElementById('studio-section').scrollIntoView({ behavior: 'smooth' });
+            } else if (mode === 'b2b') {
+                selectStudioTab('b2b');
+                document.getElementById('studio-section').scrollIntoView({ behavior: 'smooth' });
+            } else if (mode === 'visual') {
+                selectStudioTab('visual');
+                document.getElementById('studio-section').scrollIntoView({ behavior: 'smooth' });
+            } else if (mode === 'data') {
+                selectStudioTab('data');
+                document.getElementById('studio-section').scrollIntoView({ behavior: 'smooth' });
+            } else if (mode === 'senior') {
+                selectStudioTab('senior');
+                document.getElementById('studio-section').scrollIntoView({ behavior: 'smooth' });
+            } else if (mode === 'editorial') {
+                selectStudioTab('editorial');
+                document.getElementById('studio-section').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // B2B Calculator Interaction
+        function updateB2BCalc(val) {
+            document.getElementById('b2bSetCount').innerText = Number(val).toLocaleString() + ' 세트';
+            const base = val * 39000;
+            let rate = 0.10;
+            if (val >= 1000) rate = 0.20;
+            if (val >= 3000) rate = 0.25;
+            if (val >= 5000) rate = 0.30;
+
+            const discount = base * rate;
+            const finalP = base - discount;
+
+            document.getElementById('b2bBasePrice').innerText = base.toLocaleString() + '원';
+            document.getElementById('b2bDiscountRate').innerText = `-${(rate * 100)}% (${discount.toLocaleString()}원 할인)`;
+            document.getElementById('b2bFinalPrice').innerText = finalP.toLocaleString() + '원';
+        }
+
+        // Visual pH Color Shift Interaction
+        function updateColorShift(val) {
+            const box = document.getElementById('colorGlassBox');
+            const label = document.getElementById('colorNameLabel');
+            const phLabel = document.getElementById('phValLabel');
+
+            phLabel.innerText = `pH ${val}`;
+            if (val >= 6.5) {
+                box.style.background = '#2a3d66'; // Deep Blue
+                label.innerText = '🌌 Deep Galaxy Blue (pH 7.0 중성)';
+            } else if (val >= 5.0) {
+                box.style.background = '#6b3ba7'; // Violet
+                label.innerText = '🔮 Aurora Violet (pH 5.5 약산성)';
+            } else {
+                box.style.background = '#c84b7a'; // Rose Pink
+                label.innerText = '💖 Rose Quartz Pink (pH 3.5 산성 반응)';
+            }
+        }
+
+        // Data Chart Interactive Parameter
+        function updateDataChart(val) {
+            document.getElementById('secValLabel').innerText = val + '초 침출';
+            const theanine = Math.min(240, 100 + (val * 0.7)).toFixed(1);
+            const gaba = Math.min(99.9, 40 + (val * 0.32)).toFixed(1);
+            document.getElementById('theanineVal').innerText = theanine + ' mg';
+            document.getElementById('gabaVal').innerText = gaba + '%';
+        }
+
+        // 20pt Senior Mode Toggle
+        function toggleSeniorMode() {
+            document.body.classList.toggle('senior-mode');
+            if (document.body.classList.contains('senior-mode')) {
+                alert('20pt 노안 친화형 큰글씨 및 고대비 모드가 활성화되었습니다.');
+            }
+        }
+
+        // Catalog LNB Filter
+        function filterCatalog(category, el) {
+            document.querySelectorAll('.lnb-pill').forEach(btn => btn.classList.remove('active'));
+            el.classList.add('active');
+
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-cat') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // 3-in-1 Drawer Controls
+        function openDrawer(mode) {
+            document.getElementById('drawerOverlay').classList.add('active');
+            document.getElementById('drawerContent').classList.add('active');
+            switchDrawerMode(mode);
+        }
+
+        function closeDrawer() {
+            document.getElementById('drawerOverlay').classList.remove('active');
+            document.getElementById('drawerContent').classList.remove('active');
+        }
+
+        function switchDrawerMode(mode) {
+            document.getElementById('drawerBodyGeneral').style.display = 'none';
+            document.getElementById('drawerBodyB2B').style.display = 'none';
+            document.getElementById('drawerBodyPhone').style.display = 'none';
+            document.getElementById('drawerTabGen').classList.remove('active');
+            document.getElementById('drawerTabB2B').classList.remove('active');
+            document.getElementById('drawerTabPhone').classList.remove('active');
+
+            if (mode === 'b2b') {
+                document.getElementById('drawerBodyB2B').style.display = 'block';
+                document.getElementById('drawerTabB2B').classList.add('active');
+                document.getElementById('drawerTitle').innerText = '🏨 B2B 전자계약 & 세금계산서 청구';
+                document.getElementById('drawerTotalText').innerText = '31,200,000원 (VAT 별도)';
+                document.getElementById('drawerSubmitBtn').innerText = '📑 전자계약 발주서 발행 접수';
+            } else if (mode === 'phone') {
+                document.getElementById('drawerBodyPhone').style.display = 'block';
+                document.getElementById('drawerTabPhone').classList.add('active');
+                document.getElementById('drawerTitle').innerText = '☎️ 시니어 간편 전화 주문 접수';
+                document.getElementById('drawerTotalText').innerText = '상담원 안내';
+                document.getElementById('drawerSubmitBtn').innerText = '📞 지금 바로 전화 연결하기';
+            } else {
+                document.getElementById('drawerBodyGeneral').style.display = 'block';
+                document.getElementById('drawerTabGen').classList.add('active');
+                document.getElementById('drawerTitle').innerText = '🛒 D2C 패스트 체크아웃 드로어';
+                document.getElementById('drawerTotalText').innerText = '71,000원';
+                document.getElementById('drawerSubmitBtn').innerText = '🚀 1-Click 간편 결제 완료';
+            }
+        }
+    </script>
+</body>
+</html>

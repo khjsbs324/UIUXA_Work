@@ -1,0 +1,27 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef catalog fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef estimate fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef done fill:#ECEFF1,stroke:#455A64,stroke-width:1.5px,color:#263238;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W09-HOME (해커톤 진입)<br/>• [밤샘 해커톤 팀팩] 클릭"]
+    CATALOG["02 W09-CATALOG (포뮬러 확인)<br/>• 0.00mg 무카페인 100포 스펙"]
+    ESTIMATE["03 W09-ESTIMATE (팀팩 계산)<br/>• HACKATHON-CALC-01 25% 할인"]
+    DRAWER["04 W09-DRAWER (심야 퀵 결제)<br/>• NIGHT-SHIP-01 2시간 퀵 배차"]
+    DONE["05 W09-DONE (발주 완료)<br/>• 주문 영수증 & 배차 번호 발급"]
+    COMM["F1 W09-COMM (GPS 트래킹)<br/>• 라이더 실시간 위치 지도"]
+
+    HOME --> CATALOG
+    CATALOG --> ESTIMATE
+    ESTIMATE --> DRAWER
+    DRAWER --> DONE
+    DONE --> COMM
+
+    class HOME home;
+    class CATALOG catalog;
+    class ESTIMATE estimate;
+    class DRAWER drawer;
+    class DONE done;
+    class COMM support;

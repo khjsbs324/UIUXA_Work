@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>와이어프레임 - 임태경 (5성급 호텔 & B2B 어메니티 스위트)</title>
+    <style>
+
+:root {
+    --border: #111111;
+    --border-light: #CCCCCC;
+    --border-dash: #999999;
+    --bg: #FFFFFF;
+    --bg-sub: #F8F9FA;
+    --bg-alt: #F1F3F5;
+    --text: #111111;
+    --text-muted: #666666;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: "Pretendard", -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding-top: 56px;
+    line-height: 1.5;
+}
+.wf-top-helper {
+    position: fixed; top: 0; left: 0; width: 100%; height: 56px;
+    background: #111111; color: #FFFFFF; display: flex; align-items: center;
+    justify-content: space-between; padding: 0 24px; z-index: 9999; font-size: 13px;
+}
+.wf-top-helper button {
+    background: #222222; color: #FFFFFF; border: 1px solid #444444;
+    padding: 5px 12px; font-size: 12px; cursor: pointer; border-radius: 4px; margin-left: 6px;
+    transition: all 0.15s; white-space: nowrap;
+}
+.wf-top-helper button.active, .wf-top-helper button:hover {
+    background: #FFFFFF; color: #111111; font-weight: bold; border-color: #FFFFFF;
+}
+.wf-header {
+    border-bottom: 2px solid var(--border); padding: 18px 32px;
+    display: flex; justify-content: space-between; align-items: center; background: #FFFFFF;
+}
+.wf-header .logo { font-size: 18px; font-weight: 900; letter-spacing: 0.5px; }
+.wf-header nav { display: flex; gap: 20px; }
+.wf-header nav a {
+    font-size: 14px; font-weight: 700; color: #111111; text-decoration: none; cursor: pointer;
+}
+.wf-header nav a:hover { text-decoration: underline; }
+.container { max-width: 1200px; margin: 0 auto; padding: 40px 24px; }
+.page-view { display: none; }
+.page-view.active { display: block; }
+.section-card {
+    border: 2px solid var(--border); background: #FFFFFF;
+    padding: 32px 28px; margin-bottom: 48px;
+}
+.section-title {
+    font-size: 17px; font-weight: 800; margin-bottom: 20px;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 1px solid var(--border-light); padding-bottom: 10px;
+}
+.status-badge {
+    font-size: 11px; font-weight: 700; padding: 2px 8px; border: 1px solid #111111; background: #F1F3F5;
+}
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.img-box {
+    background: var(--bg-alt); border: 1.5px dashed var(--border-dash);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text-muted); font-size: 13px; font-weight: 600; text-align: center; padding: 16px; min-height: 140px;
+}
+.custom-product-card {
+    border: 1.5px solid var(--border); padding: 16px; background: #FFFFFF;
+    display: flex; flex-direction: column; justify-content: space-between;
+}
+.wf-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 9px 18px; font-size: 13px; font-weight: 700; cursor: pointer;
+    border: 2px solid #111111; background: #FFFFFF; color: #111111;
+    transition: all 0.15s; text-decoration: none;
+}
+.wf-btn:hover { background: #111111; color: #FFFFFF; }
+.wf-btn-dark { background: #111111; color: #FFFFFF; }
+.wf-btn-dark:hover { background: #333333; }
+.wf-btn-sm { padding: 5px 10px; font-size: 12px; }
+.cart-drawer {
+    position: fixed; top: 0; right: -540px; width: 480px; height: 100%;
+    background: #FFFFFF; border-left: 2px solid #111111; z-index: 10000;
+    transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1); padding: 28px 24px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+}
+.cart-drawer.open { right: 0; }
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6); display: none; align-items: center; justify-content: center;
+    z-index: 10001;
+}
+.modal-overlay.open { display: flex; }
+.modal-card {
+    background: #FFFFFF; border: 2px solid #111111; padding: 36px 30px;
+    max-width: 520px; width: 90%; text-align: center;
+}
+.site-footer {
+    border-top: 2px solid var(--border); padding: 40px 32px;
+    background: #F8F9FA; font-size: 12px; color: var(--text-muted);
+}
+.site-footer .footer-cols { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 28px; margin-bottom: 24px; }
+.site-footer .footer-btm { border-top: 1px solid var(--border-light); padding-top: 16px; display: flex; justify-content: space-between; }
+
+    </style>
+</head>
+<body>
+
+    <!-- 1. Top Helper Bar (3-Tier Status Navigation) -->
+    <div class="wf-top-helper">
+        <div style="font-weight:700;">위케티 WICKETA | [04] 임태경 (5성급 호텔 & B2B 어메니티 스위트)</div>
+        <div style="display:flex; overflow-x:auto;">
+            <button class="active" onclick="switchPage('W04-HOME')">📐 W04-HOME (호텔 어메니티 허브 메인)</button>
+<button class="" onclick="switchPage('W04-CATALOG')">📐 W04-CATALOG (20종 호텔 어메니티 전수 스토어)</button>
+<button class="" onclick="switchPage('W04-ABOUT')">📐 W04-ABOUT (ESG 생분해 성적서 & 호텔 파트너십)</button>
+<button class="" onclick="switchPage('W04-SAMPLE')">🎯 W04-SAMPLE (0원 VIP 총지배인 샘플 킷 신청)</button>
+<button class="" onclick="switchPage('W04-DISPENSER')">🎯 W04-DISPENSER (원목 웰컴 트레이 렌탈 시뮬레이터)</button>
+<button class="" onclick="switchPage('W04-DRAWER')">🎯 W04-DRAWER (호텔 법인 세금계산서 청구 드로어)</button>
+<button class="" onclick="switchPage('W04-DONE')">📐 W04-DONE (호텔 조달 계약 접수 확인증)</button>
+
+        </div>
+    </div>
+
+    <!-- 2. Header (GNB) -->
+    <header class="wf-header">
+        <div class="logo">HOTEL AMENITY SUITE</div>
+        <nav>
+            <a onclick="switchPage('W04-HOME')">호텔 어메니티 허브</a>
+<a onclick="switchPage('W04-CATALOG')">20종 어메니티 스위트</a>
+<a onclick="switchPage('W04-ABOUT')">ESG 생분해 철학 & 성적서</a>
+<a onclick="switchPage('W04-SAMPLE')">VIP 샘플 신청</a>
+<a onclick="switchPage('W04-DISPENSER')">웰컴 트레이 렌탈</a>
+
+        </nav>
+        <div>
+            <button class="wf-btn wf-btn-sm wf-btn-dark" onclick="toggleDrawer()">호텔 B2B 견적 / 계산서</button>
+        </div>
+    </header>
+
+    <!-- 3. Mandatory Page 1: Main Home (WXX-HOME) -->
+    <main id="W04-HOME" class="page-view active container">
+        <div class="section-card">
+            <div class="section-title">
+                <span>🏛️ [W04-HOME] 임태경 메인 비주얼 캔버스</span>
+                <span class="status-badge">📐 설계 기준</span>
+            </div>
+            <div class="img-box" style="min-height:300px; font-size:16px; margin-bottom:20px;">
+                🖼️ [1200x380 시네마틱 3D 비주얼 캔버스: 5성급 호텔 & B2B 어메니티 스위트]
+            </div>
+            <div style="text-align:center;">
+                <h2 style="font-size:22px; font-weight:900; margin-bottom:8px;">"문을 열고, 현실에서 벗어나세요 (Open the Door, Escape Reality)"</h2>
+                <p style="font-size:14px; color:#555555;">바쁜 일상에 지친 2030 세대에게 노동 없는 3분간의 초현실주의적인 휴식(길티프리 리추얼) 공간을 제공합니다.</p>
+            </div>
+        </div>
+
+        <!-- Killer Feature Module on Main -->
+        
+        <section id="W04-CALCULATOR" data-feature-id="HOTEL-CALC-01" class="section-card">
+            <div class="section-title">
+                <span>🏨 [HOTEL-CALC-01] 객실 수(100~1,000실) 맞춤 호텔 B2B 대용량 조달 견적기</span>
+                <span class="status-badge">🎯 반영 목표</span>
+            </div>
+            <div class="grid-2">
+                <div>
+                    <div style="margin-bottom:14px;">
+                        <label style="font-size:13px; font-weight:700;">운영 객실 수: <strong id="roomCountVal" style="font-size:18px;">300</strong>실</label>
+                        <input type="range" id="roomRange" min="100" max="1000" value="300" step="50" style="width:100%;" oninput="calcHotel()">
+                    </div>
+                    <div style="margin-bottom:14px;">
+                        <label style="font-size:13px; font-weight:700;">어메니티 구성 등급:</label>
+                        <select id="hotelGradeSelect" style="width:100%; padding:8px; border:1.5px solid #111111;" onchange="calcHotel()">
+                            <option value="5star">5성급 스위트 패키지 (생분해 파우치 + 우드 트레이 0원)</option>
+                            <option value="boutique">부티크 호텔 웰컴 팩 (인룸 웰컴티 4종)</option>
+                        </select>
+                    </div>
+                    <p style="font-size:12px; color:#666666;">• 100% 생분해 PLA 친환경 포장재 & 식약처 HACCP 위생 인증</p>
+                </div>
+                <div style="background:#F1F3F5; padding:20px; border:1.5px solid #111111; display:flex; flex-direction:column; justify-content:space-between;">
+                    <div>
+                        <div style="font-size:12px; color:#666666;">월간 어메니티 세트 공급량 (객실 가동률 80% 기준)</div>
+                        <div style="font-size:24px; font-weight:900; margin:6px 0;" id="hotelTotalSets">7,200 세트</div>
+                        <div style="font-size:13px; color:#111111;">예상 월 공급가액: <strong style="font-size:22px; font-weight:900;" id="hotelTotalPrice">1,728,000</strong>원 (B2B 단체특가)</div>
+                    </div>
+                    <button class="wf-btn wf-btn-dark" style="margin-top:16px;" onclick="openOrder('호텔 어메니티 조달 계약', '1,728,000원')">B2B 세금계산서 청구 & 계약서 발급</button>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- 3 Signature Curations -->
+        <section class="section-card">
+            <div class="section-title">
+                <span>✨ 대표 시그니처 3대 큐레이션</span>
+                <span class="status-badge">📐 설계 기준</span>
+            </div>
+            <div class="grid-3">
+                
+        <div class="custom-product-card">
+            <div class="img-box">🖼️ [이미지: SEC-01 ⭐ [5성급 시그니처] 인룸 웰컴 버터플라이피 티 팩 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#111111; margin-top:8px;">✨ 대표 시그니처 큐레이션</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0;">⭐ [5성급 시그니처] 인룸 웰컴 버터플라이피 티 팩</div>
+            <div style="font-size:16px; font-weight:900; margin-bottom:10px;">39,000원</div>
+            <button class="wf-btn wf-btn-sm wf-btn-dark" style="width:100%;" onclick="openOrder('⭐ [5성급 시그니처] 인룸 웰컴 버터플라이피 티 팩', '39,000원')">바로 주문</button>
+        </div>
+        
+        <div class="custom-product-card">
+            <div class="img-box">🖼️ [이미지: SEC-02 📦 [5,000세트 벌크] 호텔 조달 전용 1초 융해 티 1,000포 번들 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#111111; margin-top:8px;">✨ 대표 시그니처 큐레이션</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0;">📦 [5,000세트 벌크] 호텔 조달 전용 1초 융해 티 1,000포 번들</div>
+            <div style="font-size:16px; font-weight:900; margin-bottom:10px;">850,000원</div>
+            <button class="wf-btn wf-btn-sm wf-btn-dark" style="width:100%;" onclick="openOrder('📦 [5,000세트 벌크] 호텔 조달 전용 1초 융해 티 1,000포 번들', '850,000원')">바로 주문</button>
+        </div>
+        
+        <div class="custom-product-card">
+            <div class="img-box">🖼️ [이미지: SEC-03 🌱 [ESG 생분해] 친환경 사탕수수 파우치 웰컴티 팩 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#111111; margin-top:8px;">✨ 대표 시그니처 큐레이션</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0;">🌱 [ESG 생분해] 친환경 사탕수수 파우치 웰컴티 팩</div>
+            <div style="font-size:16px; font-weight:900; margin-bottom:10px;">32,000원</div>
+            <button class="wf-btn wf-btn-sm wf-btn-dark" style="width:100%;" onclick="openOrder('🌱 [ESG 생분해] 친환경 사탕수수 파우치 웰컴티 팩', '32,000원')">바로 주문</button>
+        </div>
+        
+            </div>
+        </section>
+    </main>
+
+    <!-- 4. Mandatory Page 2: 20 Products Catalog (WXX-CATALOG) -->
+    <section id="W04-CATALOG" class="page-view container">
+        <div class="section-card">
+            <div class="section-title">
+                <span>📖 [W04-CATALOG] 20종 전수 상품 도감 & 6대 맞춤 LNB 필터</span>
+                <span class="status-badge">📐 설계 기준</span>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:24px;">
+                <button class="wf-btn wf-btn-sm wf-btn-dark" onclick="filterLNB('전체 어메니티 팩 (20)')">전체 어메니티 팩 (20)</button>
+<button class="wf-btn wf-btn-sm " onclick="filterLNB('🏨 5성급 호텔 인룸 웰컴티 팩 (4)')">🏨 5성급 호텔 인룸 웰컴티 팩 (4)</button>
+<button class="wf-btn wf-btn-sm " onclick="filterLNB('📦 5,000세트 B2B 벌크 조달 팩 (4)')">📦 5,000세트 B2B 벌크 조달 팩 (4)</button>
+<button class="wf-btn wf-btn-sm " onclick="filterLNB('🌱 ESG 생분해 파우치 & 우드 트레이 (4)')">🌱 ESG 생분해 파우치 & 우드 트레이 (4)</button>
+<button class="wf-btn wf-btn-sm " onclick="filterLNB('🛁 나이트 스파 & 릴랙스 허브티 (4)')">🛁 나이트 스파 & 릴랙스 허브티 (4)</button>
+<button class="wf-btn wf-btn-sm " onclick="filterLNB('💎 VIP 스위트 룸 맞춤 기프트 (4)')">💎 VIP 스위트 룸 맞춤 기프트 (4)</button>
+
+            </div>
+            <div class="grid-4">
+                
+        <div class="custom-product-card" data-sec-id="SEC-01">
+            <div class="img-box">🖼️ [이미지: SEC-01 ⭐ [5성급 시그니처] 인룸 웰컴 버터플라이피 티 팩 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🏨 5성급 호텔 인룸 웰컴티 팩 (4) | 코드: WK-P01</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">⭐ [5성급 시그니처] 인룸 웰컴 버터플라이피 티 팩</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">39,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('⭐ [5성급 시그니처] 인룸 웰컴 버터플라이피 티 팩', '39,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-02">
+            <div class="img-box">🖼️ [이미지: SEC-02 📦 [5,000세트 벌크] 호텔 조달 전용 1초 융해 티 1,000포 번들 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">📦 5,000세트 B2B 벌크 조달 팩 (4) | 코드: WK-P02</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">📦 [5,000세트 벌크] 호텔 조달 전용 1초 융해 티 1,000포 번들</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">850,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('📦 [5,000세트 벌크] 호텔 조달 전용 1초 융해 티 1,000포 번들', '850,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-03">
+            <div class="img-box">🖼️ [이미지: SEC-03 🌱 [ESG 생분해] 친환경 사탕수수 파우치 웰컴티 팩 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🌱 ESG 생분해 파우치 & 우드 트레이 (4) | 코드: WK-P03</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🌱 [ESG 생분해] 친환경 사탕수수 파우치 웰컴티 팩</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">32,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🌱 [ESG 생분해] 친환경 사탕수수 파우치 웰컴티 팩', '32,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-04">
+            <div class="img-box">🖼️ [이미지: SEC-04 🛁 [나이트 스파] 딥 릴랙스 캐모마일 & 바닐라 스파 팩 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🛁 나이트 스파 & 릴랙스 허브티 (4) | 코드: WK-P04</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🛁 [나이트 스파] 딥 릴랙스 캐모마일 & 바닐라 스파 팩</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">28,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🛁 [나이트 스파] 딥 릴랙스 캐모마일 & 바닐라 스파 팩', '28,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-05">
+            <div class="img-box">🖼️ [이미지: SEC-05 💎 [VIP 스위트] 자작나무 인룸 트레이 & 티 6종 기프트 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">💎 VIP 스위트 룸 맞춤 기프트 (4) | 코드: WK-P05</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">💎 [VIP 스위트] 자작나무 인룸 트레이 & 티 6종 기프트</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">65,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('💎 [VIP 스위트] 자작나무 인룸 트레이 & 티 6종 기프트', '65,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-06">
+            <div class="img-box">🖼️ [이미지: SEC-06 🏨 [조식 라운지] 상쾌한 모닝 시트러스 라임 마테 팩 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🏨 5성급 호텔 인룸 웰컴티 팩 (4) | 코드: WK-P06</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🏨 [조식 라운지] 상쾌한 모닝 시트러스 라임 마테 팩</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">29,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🏨 [조식 라운지] 상쾌한 모닝 시트러스 라임 마테 팩', '29,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-07">
+            <div class="img-box">🖼️ [이미지: SEC-07 📦 [3,000세트 벌크] 스위트룸 전용 프리미엄 블렌드 벌크 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">📦 5,000세트 B2B 벌크 조달 팩 (4) | 코드: WK-P07</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">📦 [3,000세트 벌크] 스위트룸 전용 프리미엄 블렌드 벌크</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">560,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('📦 [3,000세트 벌크] 스위트룸 전용 프리미엄 블렌드 벌크', '560,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-08">
+            <div class="img-box">🖼️ [이미지: SEC-08 🌱 [우드 트레이] 호텔 로고 레이저 각인 원목 트레이 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🌱 ESG 생분해 파우치 & 우드 트레이 (4) | 코드: WK-P08</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🌱 [우드 트레이] 호텔 로고 레이저 각인 원목 트레이</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">45,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🌱 [우드 트레이] 호텔 로고 레이저 각인 원목 트레이', '45,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-09">
+            <div class="img-box">🖼️ [이미지: SEC-09 🛁 [사우나 & 스파] 0kcal 미네랄 아쿠아 수분 충전 티 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🛁 나이트 스파 & 릴랙스 허브티 (4) | 코드: WK-P09</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🛁 [사우나 & 스파] 0kcal 미네랄 아쿠아 수분 충전 티</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">27,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🛁 [사우나 & 스파] 0kcal 미네랄 아쿠아 수분 충전 티', '27,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-10">
+            <div class="img-box">🖼️ [이미지: SEC-10 💎 [프레지덴셜] 옻칠 웰컴 박스 & 하이엔드 다기 세트 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">💎 VIP 스위트 룸 맞춤 기프트 (4) | 코드: WK-P10</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">💎 [프레지덴셜] 옻칠 웰컴 박스 & 하이엔드 다기 세트</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">120,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('💎 [프레지덴셜] 옻칠 웰컴 박스 & 하이엔드 다기 세트', '120,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-11">
+            <div class="img-box">🖼️ [이미지: SEC-11 🏨 [체크인 컨시어지] 웰컴 드링크 스파클링 에이드 팩 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🏨 5성급 호텔 인룸 웰컴티 팩 (4) | 코드: WK-P11</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🏨 [체크인 컨시어지] 웰컴 드링크 스파클링 에이드 팩</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">34,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🏨 [체크인 컨시어지] 웰컴 드링크 스파클링 에이드 팩', '34,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-12">
+            <div class="img-box">🖼️ [이미지: SEC-12 📦 [10,000세트 엔터프라이즈] 리조트 체인 전용 어메니티 벌크 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">📦 5,000세트 B2B 벌크 조달 팩 (4) | 코드: WK-P12</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">📦 [10,000세트 엔터프라이즈] 리조트 체인 전용 어메니티 벌크</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">1,600,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('📦 [10,000세트 엔터프라이즈] 리조트 체인 전용 어메니티 벌크', '1,600,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-13">
+            <div class="img-box">🖼️ [이미지: SEC-13 🌱 [PLA 티백] 100% 옥수수 전분 생분해 피라미드 티백 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🌱 ESG 생분해 파우치 & 우드 트레이 (4) | 코드: WK-P13</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🌱 [PLA 티백] 100% 옥수수 전분 생분해 피라미드 티백</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">31,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🌱 [PLA 티백] 100% 옥수수 전분 생분해 피라미드 티백', '31,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-14">
+            <div class="img-box">🖼️ [이미지: SEC-14 🛁 [아로마 테라피] 라벤더 GABA 0.00mg 무카페인 티 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🛁 나이트 스파 & 릴랙스 허브티 (4) | 코드: WK-P14</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🛁 [아로마 테라피] 라벤더 GABA 0.00mg 무카페인 티</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">35,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🛁 [아로마 테라피] 라벤더 GABA 0.00mg 무카페인 티', '35,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-15">
+            <div class="img-box">🖼️ [이미지: SEC-15 💎 [기프트 틴] 호텔 자체 PB 틴케이스 제작 솔루션 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">💎 VIP 스위트 룸 맞춤 기프트 (4) | 코드: WK-P15</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">💎 [기프트 틴] 호텔 자체 PB 틴케이스 제작 솔루션</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">48,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('💎 [기프트 틴] 호텔 자체 PB 틴케이스 제작 솔루션', '48,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-16">
+            <div class="img-box">🖼️ [이미지: SEC-16 🏨 [호텔 바텐더] 인룸 논알콜 하이볼 스모키 얼그레이 팩 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🏨 5성급 호텔 인룸 웰컴티 팩 (4) | 코드: WK-P16</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🏨 [호텔 바텐더] 인룸 논알콜 하이볼 스모키 얼그레이 팩</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">33,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🏨 [호텔 바텐더] 인룸 논알콜 하이볼 스모키 얼그레이 팩', '33,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-17">
+            <div class="img-box">🖼️ [이미지: SEC-17 📦 [정기납품] 매월 1일 지정일 객실 자동 납품 패키지 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">📦 5,000세트 B2B 벌크 조달 팩 (4) | 코드: WK-P17</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">📦 [정기납품] 매월 1일 지정일 객실 자동 납품 패키지</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">420,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('📦 [정기납품] 매월 1일 지정일 객실 자동 납품 패키지', '420,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-18">
+            <div class="img-box">🖼️ [이미지: SEC-18 🌱 [친환경 코스터] 천연 코르크 & 린넨 인룸 코스터 4P (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🌱 ESG 생분해 파우치 & 우드 트레이 (4) | 코드: WK-P18</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🌱 [친환경 코스터] 천연 코르크 & 린넨 인룸 코스터 4P</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">18,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🌱 [친환경 코스터] 천연 코르크 & 린넨 인룸 코스터 4P', '18,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-19">
+            <div class="img-box">🖼️ [이미지: SEC-19 🛁 [피트니스] 운동 후 전해질 보충 클린티 팩 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🛁 나이트 스파 & 릴랙스 허브티 (4) | 코드: WK-P19</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🛁 [피트니스] 운동 후 전해질 보충 클린티 팩</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">29,500원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🛁 [피트니스] 운동 후 전해질 보충 클린티 팩', '29,500원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-20">
+            <div class="img-box">🖼️ [이미지: SEC-20 💎 [멤버십 바우처] 호텔 멤버십 전용 웰컴티 바우처 팩 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">💎 VIP 스위트 룸 맞춤 기프트 (4) | 코드: WK-P20</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">💎 [멤버십 바우처] 호텔 멤버십 전용 웰컴티 바우처 팩</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">50,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('💎 [멤버십 바우처] 호텔 멤버십 전용 웰컴티 바우처 팩', '50,000원')">1초 담기 / 주문</button>
+        </div>
+        
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Mandatory Page 3: Brand Story & Philosophy (WXX-ABOUT) -->
+    <section id="W04-ABOUT" class="page-view container">
+        <div class="section-card">
+            <div class="section-title">
+                <span>🌱 [W04-ABOUT] 위케티 WICKETA 공식 브랜드 스토리 & 임태경 특화 철학</span>
+                <span class="status-badge">📐 설계 기준</span>
+            </div>
+            <div class="grid-2" style="margin-bottom:28px;">
+                <div class="img-box" style="min-height:260px;">
+                    🖼️ [비밀정원 다과회 세계관 & WONDERSCAPE 캄테크 디지털 웰니스 아카이브]
+                </div>
+                <div>
+                    <h3 style="font-size:18px; font-weight:900; margin-bottom:10px;">"문을 열고, 현실에서 벗어나세요 (Open the Door, Escape Reality)"</h3>
+                    <p style="font-size:13px; color:#444444; line-height:1.8; margin-bottom:14px;">
+                        <strong>브랜드 목적:</strong> 바쁜 일상에 지친 2030 세대에게 노동 없는 3분간의 초현실주의적인 휴식(길티프리 리추얼) 공간을 제공하는 것입니다. 차를 마시는 행위 자체를 환상 공간으로 입장하는 특별한 의식으로 재해석하여, 일상과의 완벽한 단절 및 마법 같은 휴식을 선사합니다. (모기업: WONDERSCAPE)
+                    </p>
+                    <p style="font-size:13px; color:#444444; line-height:1.8; margin-bottom:14px;">
+                        <strong>브랜드 세계관:</strong> '비밀정원 다과회' - 문을 열고 들어서는 순간 일상과 완벽히 단절되는 신비롭고 몽환적인 환상 안식처
+                    </p>
+                    <div style="background:#F1F3F5; padding:14px; border:1px solid #CCCCCC; font-size:12px; line-height:1.7;">
+                        <strong>3대 핵심 가치</strong><br/>
+                        • <strong>1. 감정 맞춤 추천 (Emotion Dial):</strong> 감정 다이얼 입력을 통해 오늘의 내면 상태에 맞춘 1:1 티 레시피 제공<br/>
+                        • <strong>2. DIY 믹솔로지 & 블렌딩 (Mixology):</strong> 베이스 티와 서브 아이템을 조합해 나만의 초현실 음료 완성<br/>
+                        • <strong>3. 노동 없는 3분의 초현실 휴식 (Zero-Labor):</strong> 찬물/탄산수에 1초 만에 녹아드는 즉각 융해와 180초 브루잉 타이머
+                    </div>
+                </div>
+            </div>
+            <div style="border-top:1px solid #CCCCCC; padding-top:20px;">
+                <h4 style="font-size:15px; font-weight:800; margin-bottom:8px;">💎 [임태경] 특화 운영 철학 및 안심 성적서</h4>
+                <p style="font-size:13px; color:#555555; margin-bottom:12px;">• 5성급 호텔 인룸 웰컴티 조달 철학 & 100% 생분해 PLA ESG 친환경 성적서</p>
+                <div style="background:#F8F9FA; padding:12px; border:1px solid #CCCCCC; font-size:12px;">
+                    <strong>KTR 한국화학융합시험연구원 3無 공인 시험성적서 획득</strong> | 무설탕 (0.0g) | 무카페인 (0.00%) | 무색소 (100% 천연 원료)
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Unique Sub-Pages -->
+    
+        <section id="W04-SAMPLE" data-feature-id="VIP-SAMPLE-01" class="page-view container">
+            <div class="section-card">
+                <div class="section-title">
+                    <span>📦 [VIP-SAMPLE-01] 0원 호텔 총지배인 VIP 테이스팅 박스 신청</span>
+                    <span class="status-badge">🎯 반영 목표</span>
+                </div>
+                <div class="grid-2">
+                    <div class="img-box">🖼️ [5성급 호텔 VIP 어메니티 샘플 박스 뷰]</div>
+                    <div>
+                        <div style="margin-bottom:12px;">
+                            <label style="font-size:12px; font-weight:700;">호텔명 / 리조트명</label>
+                            <input type="text" placeholder="예: 파르나스 호텔 제주" style="width:100%; padding:8px; border:1.5px solid #111111;">
+                        </div>
+                        <button class="wf-btn wf-btn-dark" onclick="alert('VIP 샘플 킷 신청이 완료되었습니다.')">총지배인 전용 샘플 킷 즉시 발송</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="W04-DISPENSER" data-feature-id="DISPENSER-3D-01" class="page-view container">
+            <div class="section-card">
+                <div class="section-title">
+                    <span>🌱 [DISPENSER-3D-01] 원목 웰컴 트레이 & 생분해 티 파우치 렌탈 시뮬레이터</span>
+                    <span class="status-badge">🎯 반영 목표</span>
+                </div>
+                <div class="grid-2">
+                    <div class="img-box">🖼️ [객실 비치용 월넛 우드 웰컴 트레이 3D 뷰]</div>
+                    <div>
+                        <p style="font-size:14px; margin-bottom:16px;">월 3,000세트 이상 조달 계약 시 친환경 월넛 우드 어메니티 트레이를 0원에 무상 공급합니다.</p>
+                        <button class="wf-btn wf-btn-dark" onclick="openOrder('어메니티 정기 조달 계약', '1,728,000원')">트레이 무상 포함 계약 신청</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+    <!-- 7. Drawer Layer -->
+    
+        <aside id="W04-DRAWER" data-feature-id="TAX-INVOICE-01" class="cart-drawer">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+                <h3 style="font-size:16px; font-weight:800;">📄 호텔 B2B 세금계산서 청구</h3>
+                <button class="wf-btn wf-btn-sm" onclick="toggleDrawer()">✕</button>
+            </div>
+            <div style="flex:1; overflow-y:auto;">
+                <div style="margin-bottom:12px;">
+                    <label style="font-size:12px; font-weight:700;">호텔 사업자등록번호</label>
+                    <input type="text" placeholder="000-00-00000" style="width:100%; padding:8px; border:1.5px solid #111111;">
+                </div>
+            </div>
+            <button class="wf-btn wf-btn-dark" style="width:100%;" onclick="openModal('W04-DONE'); toggleDrawer();">전자세금계산서 청구 및 발주 확정</button>
+        </aside>
+        
+
+    <!-- 8. Modal Overlay -->
+    
+        <div id="W04-DONE" data-feature-id="HOTEL-DONE-01" class="modal-overlay">
+            <div class="modal-card">
+                <div style="font-size:36px; margin-bottom:8px;">🏨</div>
+                <h3 style="font-size:18px; font-weight:800; margin-bottom:8px;">호텔 조달 계약 접수 완료</h3>
+                <p style="font-size:13px; color:#555555; margin-bottom:16px;">담당 B2B 호스피탈리티 매니저가 배정되었습니다.</p>
+                <button class="wf-btn wf-btn-dark" onclick="closeModal()">확인 및 닫기</button>
+            </div>
+        </div>
+        
+
+    <!-- 9. Mandatory Footer (100% Client Bespoke) -->
+    <footer class="site-footer">
+        <div class="container" style="padding:0;">
+            <div class="footer-cols">
+                <div>
+                    <strong style="font-size:14px; color:#111111;">(주)위케타 호스피탈리티 B2B 조달 사업부</strong><br/>
+                    대표이사: <strong>임태경</strong> | 사업자등록번호: 120-88-04004 | 통신판매업신고: 제2026-서울성수-0142호<br/>
+                    사업장 주소: 서울시 중구 을지로 100 WICKETA 호텔 어메니티 솔루션 센터<br/>
+                    모기업: WONDERSCAPE (원더스케이프) 캄테크 디지털 웰니스 플랫폼
+                </div>
+                <div>
+                    <strong style="font-size:13px; color:#111111;">고객 안심 센터</strong><br/>
+                    직통전화: 1588-0404 (평일 09:00 ~ 18:00)<br/>
+                    문의이메일: b2b_hotel@wicketa.com
+                </div>
+                <div>
+                    <strong style="font-size:13px; color:#111111;">품질 및 인증</strong><br/>
+                    KTR 3無 공인 시험성적서 획득<br/>
+                    식약처 HACCP 위생 인증 시설 제조
+                </div>
+            </div>
+            <div class="footer-btm">
+                <div>© 2026 WICKETA Inc. (임태경). All rights reserved. 100% Monochrome Low-Fi Wireframe.</div>
+                <div>이용약관 | 개인정보처리방침 | 사업자정보확인</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Handlers -->
+    <script>
+        function switchPage(pageId) {
+            document.querySelectorAll('.page-view').forEach(function(v) { v.classList.remove('active'); });
+            var target = document.getElementById(pageId);
+            if(target) target.classList.add('active');
+            document.querySelectorAll('.wf-top-helper button').forEach(function(b) {
+                if(b.innerText.indexOf(pageId) !== -1) b.classList.add('active');
+                else b.classList.remove('active');
+            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        function toggleDrawer() {
+            document.querySelectorAll('.cart-drawer').forEach(function(d) { d.classList.toggle('open'); });
+        }
+        function openOrder(item, price) {
+            var di = document.getElementById('drawerItem');
+            var dp = document.getElementById('drawerPrice');
+            if(di) di.innerText = item;
+            if(dp) dp.innerText = price;
+            toggleDrawer();
+        }
+        function openModal(id) {
+            var m = document.getElementById(id);
+            if(m) m.classList.add('open');
+        }
+        function closeModal() {
+            document.querySelectorAll('.modal-overlay').forEach(function(m) { m.classList.remove('open'); });
+        }
+        function filterLNB(cat) {
+            alert(cat + ' 카테고리 필터가 적용되었습니다.');
+        }
+        
+        function calcHotel() {
+            var r = parseInt(document.getElementById('roomRange').value);
+            document.getElementById('roomCountVal').innerText = r;
+            var sets = r * 24;
+            document.getElementById('hotelTotalSets').innerText = sets.toLocaleString() + ' 세트';
+            var p = sets * 240;
+            document.getElementById('hotelTotalPrice').innerText = p.toLocaleString();
+        }
+        
+    </script>
+</body>
+</html>

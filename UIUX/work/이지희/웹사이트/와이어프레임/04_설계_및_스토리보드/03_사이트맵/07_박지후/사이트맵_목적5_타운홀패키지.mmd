@@ -1,0 +1,43 @@
+flowchart TD
+    classDef root fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef gnb fill:#E8EAF6,stroke:#3F51B5,stroke-width:1.5px,color:#1A237E,font-weight:bold;
+    classDef p1 fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef p2 fill:#FFF3E0,stroke:#E65100,stroke-width:1.5px,color:#E65100,font-weight:bold;
+    classDef util fill:#ECEFF1,stroke:#455A64,stroke-width:1px,color:#37474F;
+
+    ROOT["WICKETA 박지후 [목적 5: 타운홀패키지]<br/>• 페르소나 맞춤 계층형 사이트맵"]
+
+    GNB1["🏛️ GNB 1: 코어 허브 (Core Hub)<br/>• 1-Depth 메인 및 대표 비전"]
+    GNB2["⚡ GNB 2: 목적 특화 솔루션 (Target Solution)<br/>• 2-Depth TOWNHALL-EVENT-01"]
+    GNB3["📖 GNB 3: 20종 카탈로그 & 아카이브 (Catalog Archive)<br/>• 2-Depth 6대 LNB 도감"]
+    GNB4["🛒 Aside / Drawer: 1-Click 전환 (Checkout Layer)<br/>• 맞춤 결제 및 청구"]
+
+    ROOT --> GNB1
+    ROOT --> GNB2
+    ROOT --> GNB3
+    ROOT --> GNB4
+
+    G1_1["W07-HOME: 메인 허브<br/>• 시네마틱 캔버스 & 앰비언트"]
+    G1_2["W07-ABOUT: 브랜드 철학 & 비전<br/>• 신뢰 성분 및 안심 보증"]
+    GNB1 --> G1_1
+    GNB1 --> G1_2
+
+    G2_1["W07-FEAT: 전사 타운홀 미팅 & 사내 행사용 케이터링 패키지<br/>• [TOWNHALL-EVENT-01] 인터랙티브 조작"]
+    G2_2["W07-BUILD: 맞춤 커스텀 빌더<br/>• 3D 시뮬레이션 & 즉시 견적"]
+    GNB2 --> G2_1
+    GNB2 --> G2_2
+
+    G3_1["W07-CATALOG: 20종 전수 도감<br/>• 페르소나 맞춤 6대 LNB 카테고리"]
+    G3_2["W07-DETAIL: 상품 상세 명세<br/>• 100% 무채색 스펙 & 1-Click 주문"]
+    GNB3 --> G3_1
+    GNB3 --> G3_2
+
+    G4_1["W07-DRAWER: 주문/청구 드로어<br/>• 페르소나별 체크아웃 분기"]
+    G4_2["W07-DONE: 완료 피드백 레이어<br/>• 주문서/영수증/계약서 발급"]
+    GNB4 --> G4_1
+    GNB4 --> G4_2
+
+    class ROOT root;
+    class GNB1,GNB2,GNB3,GNB4 gnb;
+    class G1_1,G1_2,G2_1,G2_2 p1;
+    class G3_1,G3_2,G4_1,G4_2 p2;

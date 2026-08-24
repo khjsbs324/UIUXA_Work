@@ -1,0 +1,146 @@
+- generic [ref=f10e4]:
+  - banner [ref=f10e5]:
+    - link "콘텐츠로 건너뛰기":
+      - /url: "#"
+    - generic [ref=f10e11]:
+      - generic [ref=f10e12]:
+        - link "Pinterest 홈" [ref=f10e14] [cursor=pointer]:
+          - /url: /
+        - button "탐색" [ref=f10e34] [cursor=pointer]:
+          - generic "탐색" [ref=f10e37]
+      - generic [ref=f10e44]:
+        - combobox "검색" [ref=f10e46]: w letterform continuous line art logo mark
+        - button "검색 입력 삭제" [ref=f10e50] [cursor=pointer]
+      - generic [ref=f10e55]:
+        - button "로그인" [ref=f10e57] [cursor=pointer]
+        - button "가입하기" [ref=f10e61] [cursor=pointer]
+        - button "설정" [ref=f10e66] [cursor=pointer]
+  - main [ref=f10e72]:
+    - generic [ref=f10e74]:
+      - generic [ref=f10e77]:
+        - heading "검색" [level=1] [ref=f10e79]
+        - region "필터 및 세분화 검색" [ref=f10e81]:
+          - generic [ref=f10e84]:
+            - button "필터 표시" [ref=f10e90] [cursor=pointer]
+            - button "Deco" [ref=f10e101] [cursor=pointer]
+            - button "Design abstract" [ref=f10e112] [cursor=pointer]
+            - button "Nouveau" [ref=f10e128] [cursor=pointer]
+      - list [ref=f10e146]:
+        - listitem [ref=f10e147]:
+          - button [ref=f10e151] [cursor=pointer]:
+            - img "핀" [ref=f10e156]
+        - listitem [ref=f10e157]:
+          - button [ref=f10e161] [cursor=pointer]:
+            - img "핀" [ref=f10e166]
+        - listitem [ref=f10e167]:
+          - button [ref=f10e171] [cursor=pointer]:
+            - img "핀" [ref=f10e176]
+        - listitem [ref=f10e177]:
+          - button [ref=f10e181] [cursor=pointer]:
+            - img "핀" [ref=f10e186]
+        - listitem [ref=f10e187]:
+          - button [ref=f10e191] [cursor=pointer]:
+            - img "핀" [ref=f10e196]
+        - listitem [ref=f10e197]:
+          - button [ref=f10e201] [cursor=pointer]:
+            - img "핀" [ref=f10e206]
+        - listitem [ref=f10e207]:
+          - button [ref=f10e211] [cursor=pointer]:
+            - img "핀" [ref=f10e216]
+        - listitem [ref=f10e217]:
+          - button [ref=f10e221] [cursor=pointer]:
+            - img "핀" [ref=f10e226]
+        - listitem [ref=f10e227]:
+          - button [ref=f10e231] [cursor=pointer]:
+            - img "핀" [ref=f10e236]
+        - listitem [ref=f10e237]:
+          - button [ref=f10e241] [cursor=pointer]:
+            - img "핀" [ref=f10e246]
+        - listitem [ref=f10e247]:
+          - button [ref=f10e251] [cursor=pointer]:
+            - img "핀" [ref=f10e256]
+        - listitem [ref=f10e257]:
+          - button [ref=f10e261] [cursor=pointer]:
+            - img "핀" [ref=f10e266]
+  - generic:
+    - dialog "Hybrid banner gift wrap":
+      - generic [ref=f10e267]:
+        - button "오른쪽 하단 업셀 닫기" [ref=f10e269] [cursor=pointer]
+        - generic [ref=f10e275]:
+          - heading "로그아웃된 상태입니다" [level=2] [ref=f10e277]
+          - generic [ref=f10e278]: 로그인해서 최상의 서비스를 경험해 보세요
+        - generic [ref=f10e279]:
+          - button "이메일로 계속하기" [ref=f10e281] [cursor=pointer]
+          - generic [ref=f10e285]:
+            - iframe [ref=f10e288]:
+              - button "Google 계정으로 계속하기. 새 탭에서 열림" [ref=f14e3] [cursor=pointer]:
+                - generic [ref=f14e5]: Google 계정으로 계속하기
+            - generic:
+              - generic:
+                - button:
+                  - generic: Google로 계속하기
+          - generic [ref=f10e291]:
+            - text: 계속하면 Pinterest의
+            - link "서비스 약관" [ref=f10e292] [cursor=pointer]:
+              - /url: /_/_/policy/terms-of-service/
+            - text: 에 동의하고
+            - link "개인정보 보호정책" [ref=f10e293] [cursor=pointer]:
+              - /url: https://www.pinterest.com/_/_/policy/privacy-policy/
+            - text: 을 읽었음을 인정한 것으로 간주합니다.
+            - link "컬렉션 알림" [ref=f10e294] [cursor=pointer]:
+              - /url: https://policy.pinterest.com/notice-at-collection
+            - text: .
+  - dialog "modal" [ref=f10e296]:
+    - generic [ref=f10e299]:
+      - generic [ref=f10e300]:
+        - img "Pinterest" [ref=f10e303]
+        - heading "Pinterest에 오신 것을 환영합니다" [level=1] [ref=f10e305]
+        - generic [ref=f10e306]: 회원님만을 위한 더 많은 아이디어를 찾아보려면 로그인하세요.
+      - generic [ref=f10e310]:
+        - form "login form" [ref=f10e311]:
+          - generic [ref=f10e312]:
+            - generic [ref=f10e314]:
+              - generic [ref=f10e316]:
+                - generic [ref=f10e317]: 이메일
+                - textbox "이메일" [active] [ref=f10e319]:
+                  - /placeholder: ""
+              - generic: 이메일
+            - generic [ref=f10e321]:
+              - generic [ref=f10e322]:
+                - generic [ref=f10e324]:
+                  - generic [ref=f10e325]: 비밀번호
+                  - textbox "비밀번호" [ref=f10e327]:
+                    - /placeholder: ""
+                  - generic "비밀번호 보기" [ref=f10e330]:
+                    - switch "비밀번호 보기" [ref=f10e331] [cursor=pointer]
+                - generic: 비밀번호
+              - link "비밀번호를 잊으셨나요?" [ref=f10e337] [cursor=pointer]:
+                - /url: /password/reset/
+            - button "로그인" [ref=f10e340] [cursor=pointer]
+        - generic [ref=f10e343]: 또는
+        - generic [ref=f10e347]:
+          - iframe [ref=f10e350]:
+            - button "Google 계정으로 계속하기. 새 탭에서 열림" [ref=f15e3] [cursor=pointer]:
+              - generic [ref=f15e5]: Google 계정으로 계속하기
+          - generic:
+            - generic:
+              - button:
+                - generic: Google로 계속하기
+        - button "QR code login button" [ref=f10e351] [cursor=pointer]:
+          - generic [ref=f10e352]: QR 코드로 계속하기
+      - generic [ref=f10e362]:
+        - heading "즉시 로그인" [level=4] [ref=f10e364]
+        - generic [ref=f10e365]: 휴대폰으로 이 QR 코드를 스캔하여 앱에 로그인하세요.
+      - generic [ref=f10e377]:
+        - text: Pinterest에 처음 오셨나요?
+        - link "무료로 가입" [ref=f10e378] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=f10e380]:
+        - link "서비스 약관" [ref=f10e381] [cursor=pointer]:
+          - /url: /_/_/policy/terms-of-service/
+        - text: ·
+        - link "개인정보 보호정책" [ref=f10e382] [cursor=pointer]:
+          - /url: https://www.pinterest.com/_/_/policy/privacy-policy/
+        - text: ·
+        - link "컬렉션 알림" [ref=f10e383] [cursor=pointer]:
+          - /url: https://policy.pinterest.com/notice-at-collection

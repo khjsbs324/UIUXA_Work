@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>와이어프레임 - 신유진 (바이럴 믹솔로지 & 홈텐더 실험실)</title>
+    <style>
+
+:root {
+    --border: #111111;
+    --border-light: #CCCCCC;
+    --border-dash: #999999;
+    --bg: #FFFFFF;
+    --bg-sub: #F8F9FA;
+    --bg-alt: #F1F3F5;
+    --text: #111111;
+    --text-muted: #666666;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: "Pretendard", -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding-top: 56px;
+    line-height: 1.5;
+}
+.wf-top-helper {
+    position: fixed; top: 0; left: 0; width: 100%; height: 56px;
+    background: #111111; color: #FFFFFF; display: flex; align-items: center;
+    justify-content: space-between; padding: 0 24px; z-index: 9999; font-size: 13px;
+}
+.wf-top-helper button {
+    background: #222222; color: #FFFFFF; border: 1px solid #444444;
+    padding: 5px 12px; font-size: 12px; cursor: pointer; border-radius: 4px; margin-left: 6px;
+    transition: all 0.15s; white-space: nowrap;
+}
+.wf-top-helper button.active, .wf-top-helper button:hover {
+    background: #FFFFFF; color: #111111; font-weight: bold; border-color: #FFFFFF;
+}
+.wf-header {
+    border-bottom: 2px solid var(--border); padding: 18px 32px;
+    display: flex; justify-content: space-between; align-items: center; background: #FFFFFF;
+}
+.wf-header .logo { font-size: 18px; font-weight: 900; letter-spacing: 0.5px; }
+.wf-header nav { display: flex; gap: 20px; }
+.wf-header nav a {
+    font-size: 14px; font-weight: 700; color: #111111; text-decoration: none; cursor: pointer;
+}
+.wf-header nav a:hover { text-decoration: underline; }
+.container { max-width: 1200px; margin: 0 auto; padding: 40px 24px; }
+.page-view { display: none; }
+.page-view.active { display: block; }
+.section-card {
+    border: 2px solid var(--border); background: #FFFFFF;
+    padding: 32px 28px; margin-bottom: 48px;
+}
+.section-title {
+    font-size: 17px; font-weight: 800; margin-bottom: 20px;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 1px solid var(--border-light); padding-bottom: 10px;
+}
+.status-badge {
+    font-size: 11px; font-weight: 700; padding: 2px 8px; border: 1px solid #111111; background: #F1F3F5;
+}
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.img-box {
+    background: var(--bg-alt); border: 1.5px dashed var(--border-dash);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text-muted); font-size: 13px; font-weight: 600; text-align: center; padding: 16px; min-height: 140px;
+}
+.custom-product-card {
+    border: 1.5px solid var(--border); padding: 16px; background: #FFFFFF;
+    display: flex; flex-direction: column; justify-content: space-between;
+}
+.wf-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 9px 18px; font-size: 13px; font-weight: 700; cursor: pointer;
+    border: 2px solid #111111; background: #FFFFFF; color: #111111;
+    transition: all 0.15s; text-decoration: none;
+}
+.wf-btn:hover { background: #111111; color: #FFFFFF; }
+.wf-btn-dark { background: #111111; color: #FFFFFF; }
+.wf-btn-dark:hover { background: #333333; }
+.wf-btn-sm { padding: 5px 10px; font-size: 12px; }
+.cart-drawer {
+    position: fixed; top: 0; right: -540px; width: 480px; height: 100%;
+    background: #FFFFFF; border-left: 2px solid #111111; z-index: 10000;
+    transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1); padding: 28px 24px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+}
+.cart-drawer.open { right: 0; }
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6); display: none; align-items: center; justify-content: center;
+    z-index: 10001;
+}
+.modal-overlay.open { display: flex; }
+.modal-card {
+    background: #FFFFFF; border: 2px solid #111111; padding: 36px 30px;
+    max-width: 520px; width: 90%; text-align: center;
+}
+.site-footer {
+    border-top: 2px solid var(--border); padding: 40px 32px;
+    background: #F8F9FA; font-size: 12px; color: var(--text-muted);
+}
+.site-footer .footer-cols { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 28px; margin-bottom: 24px; }
+.site-footer .footer-btm { border-top: 1px solid var(--border-light); padding-top: 16px; display: flex; justify-content: space-between; }
+
+    </style>
+</head>
+<body>
+
+    <!-- 1. Top Helper Bar (3-Tier Status Navigation) -->
+    <div class="wf-top-helper">
+        <div style="font-weight:700;">위케티 WICKETA | [02] 신유진 (바이럴 믹솔로지 & 홈텐더 실험실)</div>
+        <div style="display:flex; overflow-x:auto;">
+            <button class="active" onclick="switchPage('W02-HOME')">📐 W02-HOME (믹솔로지 실험실 메인)</button>
+<button class="" onclick="switchPage('W02-CATALOG')">📐 W02-CATALOG (20종 믹솔로지 전수 도감)</button>
+<button class="" onclick="switchPage('W02-ABOUT')">📐 W02-ABOUT (조향 포뮬러 KTR 성적서 & 철학)</button>
+<button class="" onclick="switchPage('W02-BUILD')">🎯 W02-BUILD (레이저 각인 바텐더 툴킷 빌더)</button>
+<button class="" onclick="switchPage('W02-RECIPE')">🎯 W02-RECIPE (0.1g 비스포크 조향 포뮬러 룸)</button>
+<button class="" onclick="switchPage('W02-DRAWER')">🎯 W02-DRAWER (홈바 믹솔로지 패스트 체크아웃)</button>
+<button class="" onclick="switchPage('W02-DONE')">📐 W02-DONE (주문 완료 & 나만의 포뮬러 QR 발급)</button>
+
+        </div>
+    </div>
+
+    <!-- 2. Header (GNB) -->
+    <header class="wf-header">
+        <div class="logo">VIRAL MIXOLOGY LAB</div>
+        <nav>
+            <a onclick="switchPage('W02-HOME')">믹솔로지 실험실</a>
+<a onclick="switchPage('W02-CATALOG')">20종 믹솔로지 팩</a>
+<a onclick="switchPage('W02-ABOUT')">조향 포뮬러 & 인증</a>
+<a onclick="switchPage('W02-BUILD')">바텐더 각인 킷</a>
+<a onclick="switchPage('W02-RECIPE')">홈바 레시피</a>
+
+        </nav>
+        <div>
+            <button class="wf-btn wf-btn-sm wf-btn-dark" onclick="toggleDrawer()">믹솔로지 장바구니</button>
+        </div>
+    </header>
+
+    <!-- 3. Mandatory Page 1: Main Home (WXX-HOME) -->
+    <main id="W02-HOME" class="page-view active container">
+        <div class="section-card">
+            <div class="section-title">
+                <span>🏛️ [W02-HOME] 신유진 메인 비주얼 캔버스</span>
+                <span class="status-badge">📐 설계 기준</span>
+            </div>
+            <div class="img-box" style="min-height:300px; font-size:16px; margin-bottom:20px;">
+                🖼️ [1200x380 시네마틱 3D 비주얼 캔버스: 바이럴 믹솔로지 & 홈텐더 실험실]
+            </div>
+            <div style="text-align:center;">
+                <h2 style="font-size:22px; font-weight:900; margin-bottom:8px;">"문을 열고, 현실에서 벗어나세요 (Open the Door, Escape Reality)"</h2>
+                <p style="font-size:14px; color:#555555;">바쁜 일상에 지친 2030 세대에게 노동 없는 3분간의 초현실주의적인 휴식(길티프리 리추얼) 공간을 제공합니다.</p>
+            </div>
+        </div>
+
+        <!-- Killer Feature Module on Main -->
+        
+        <section id="W02-SIMULATOR" data-feature-id="MIXOLOGY-SIM-01" class="section-card">
+            <div class="section-title">
+                <span>🍹 [MIXOLOGY-SIM-01] 3단계 홈텐더 믹솔로지 칵테일 배합 시뮬레이터</span>
+                <span class="status-badge">🎯 반영 목표</span>
+            </div>
+            <div class="grid-2">
+                <div>
+                    <div style="margin-bottom:12px;">
+                        <label style="font-size:12px; font-weight:700;">1단계: 베이스 티 스틱 선택</label>
+                        <select id="mixBaseSelect" style="width:100%; padding:8px; border:1.5px solid #111111;" onchange="updateMix()">
+                            <option value="earlgrey">스모키 얼그레이 하이볼 스틱 (1초 찬물 융해)</option>
+                            <option value="berry">루비 베리 안토시아닌 에이드 스틱</option>
+                            <option value="lavender">미드나잇 라벤더 GABA 릴랙서</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom:12px;">
+                        <label style="font-size:12px; font-weight:700;">2단계: 믹서 음료 선택</label>
+                        <select id="mixDrinkSelect" style="width:100%; padding:8px; border:1.5px solid #111111;" onchange="updateMix()">
+                            <option value="tonic">제로 토닉워터 (탄산 100%)</option>
+                            <option value="sparkling">초정 탄산수 (pH 5.5)</option>
+                            <option value="warm">80℃ 온수 (부드러운 티 브루잉)</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom:12px;">
+                        <label style="font-size:12px; font-weight:700;">3단계: 가니시 토핑 선택</label>
+                        <select id="mixGarnishSelect" style="width:100%; padding:8px; border:1.5px solid #111111;" onchange="updateMix()">
+                            <option value="lemon">건조 레몬 휠 & 로즈마리</option>
+                            <option value="cinnamon">훈연 시나몬 스틱</option>
+                            <option value="mint">애플민트 잎</option>
+                        </select>
+                    </div>
+                </div>
+                <div style="background:#F1F3F5; padding:20px; border:1.5px solid #111111; display:flex; flex-direction:column; justify-content:space-between;">
+                    <div>
+                        <div style="font-size:12px; color:#666666;">배합된 비스포크 레시피 명세</div>
+                        <div style="font-size:18px; font-weight:900; margin:8px 0;" id="mixRecipeTitle">스모키 얼그레이 제로 하이볼</div>
+                        <div style="font-size:12px; color:#555555;" id="mixRecipeDesc">• 0.00% 논알콜 | 0.0g 무가당 | 1초 탄산수 융해 배합</div>
+                    </div>
+                    <button class="wf-btn wf-btn-dark" style="margin-top:16px;" onclick="openOrder('믹솔로지 DIY 팩', '34,000원')">배합 레시피 재료 1초 담기 (34,000원)</button>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- 3 Signature Curations -->
+        <section class="section-card">
+            <div class="section-title">
+                <span>✨ 대표 시그니처 3대 큐레이션</span>
+                <span class="status-badge">📐 설계 기준</span>
+            </div>
+            <div class="grid-3">
+                
+        <div class="custom-product-card">
+            <div class="img-box">🖼️ [이미지: SEC-01 오로라 블루 믹서 (1:1 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#111111; margin-top:8px;">✨ 대표 시그니처 큐레이션</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0;">⭐ [조향사 시그니처] 오로라 블루 버터플라이피 믹서</div>
+            <div style="font-size:16px; font-weight:900; margin-bottom:10px;">39,000원</div>
+            <button class="wf-btn wf-btn-sm wf-btn-dark" style="width:100%;" onclick="openOrder('⭐ [조향사 시그니처] 오로라 블루 버터플라이피 믹서', '39,000원')">바로 주문</button>
+        </div>
+        
+        <div class="custom-product-card">
+            <div class="img-box">🖼️ [이미지: SEC-02 미드나잇 GABA 티 (1:1 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#111111; margin-top:8px;">✨ 대표 시그니처 큐레이션</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0;">🌙 [나이트 아로마] 미드나잇 GABA 라벤더 올팩토리 티</div>
+            <div style="font-size:16px; font-weight:900; margin-bottom:10px;">32,000원</div>
+            <button class="wf-btn wf-btn-sm wf-btn-dark" style="width:100%;" onclick="openOrder('🌙 [나이트 아로마] 미드나잇 GABA 라벤더 올팩토리 티', '32,000원')">바로 주문</button>
+        </div>
+        
+        <div class="custom-product-card">
+            <div class="img-box">🖼️ [이미지: SEC-03 스모키 오크 베이스 (1:1 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#111111; margin-top:8px;">✨ 대표 시그니처 큐레이션</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0;">🍹 [논알콜 하이볼] 스모키 오크 얼그레이 베이스 스틱</div>
+            <div style="font-size:16px; font-weight:900; margin-bottom:10px;">28,000원</div>
+            <button class="wf-btn wf-btn-sm wf-btn-dark" style="width:100%;" onclick="openOrder('🍹 [논알콜 하이볼] 스모키 오크 얼그레이 베이스 스틱', '28,000원')">바로 주문</button>
+        </div>
+        
+            </div>
+        </section>
+    </main>
+
+    <!-- 4. Mandatory Page 2: 20 Products Catalog (WXX-CATALOG) -->
+    <section id="W02-CATALOG" class="page-view container">
+        <div class="section-card">
+            <div class="section-title">
+                <span>📖 [W02-CATALOG] 20종 전수 상품 도감 & 6대 맞춤 LNB 필터</span>
+                <span class="status-badge">📐 설계 기준</span>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:24px;">
+                <button class="wf-btn wf-btn-sm wf-btn-dark" onclick="filterLNB('전체 믹솔로지 팩 (20)')">전체 믹솔로지 팩 (20)</button>
+<button class="wf-btn wf-btn-sm " onclick="filterLNB('🍹 0.1초 융해 스파클링 에이드 (4)')">🍹 0.1초 융해 스파클링 에이드 (4)</button>
+<button class="wf-btn wf-btn-sm " onclick="filterLNB('🌙 나이트 아로마 & 수면 이완 블렌드 (4)')">🌙 나이트 아로마 & 수면 이완 블렌드 (4)</button>
+<button class="wf-btn wf-btn-sm " onclick="filterLNB('🍸 홈텐더 입문 바텐더 툴킷 (4)')">🍸 홈텐더 입문 바텐더 툴킷 (4)</button>
+<button class="wf-btn wf-btn-sm " onclick="filterLNB('🧪 0.1g 비스포크 조향 포뮬러 킷 (4)')">🧪 0.1g 비스포크 조향 포뮬러 킷 (4)</button>
+<button class="wf-btn wf-btn-sm " onclick="filterLNB('🎉 홈파티 60포 대용량 리필 벌크 (4)')">🎉 홈파티 60포 대용량 리필 벌크 (4)</button>
+
+            </div>
+            <div class="grid-4">
+                
+        <div class="custom-product-card" data-sec-id="SEC-01">
+            <div class="img-box">🖼️ [이미지: SEC-01 오로라 블루 믹서 (1:1 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🍹 0.1초 융해 스파클링 에이드 (4) | 코드: WK-P01</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">⭐ [조향사 시그니처] 오로라 블루 버터플라이피 믹서</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">39,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('⭐ [조향사 시그니처] 오로라 블루 버터플라이피 믹서', '39,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-02">
+            <div class="img-box">🖼️ [이미지: SEC-02 미드나잇 GABA 티 (1:1 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🌙 나이트 아로마 블렌드 (4) | 코드: WK-P02</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🌙 [나이트 아로마] 미드나잇 GABA 라벤더 올팩토리 티</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">32,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🌙 [나이트 아로마] 미드나잇 GABA 라벤더 올팩토리 티', '32,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-03">
+            <div class="img-box">🖼️ [이미지: SEC-03 스모키 오크 베이스 (1:1 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🧪 0.1g 비스포크 조향 포뮬러 (4) | 코드: WK-P03</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🍹 [논알콜 하이볼] 스모키 오크 얼그레이 베이스 스틱</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">28,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🍹 [논알콜 하이볼] 스모키 오크 얼그레이 베이스 스틱', '28,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-04">
+            <div class="img-box">🖼️ [이미지: SEC-04 로즈 쿼츠 믹서 (1:1 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🍹 0.1초 융해 스파클링 에이드 (4) | 코드: WK-P04</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">💖 [스파클링 토핑] 로즈 쿼츠 히비스커스 탄산 믹서</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">27,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('💖 [스파클링 토핑] 로즈 쿼츠 히비스커스 탄산 믹서', '27,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-05">
+            <div class="img-box">🖼️ [이미지: SEC-05 블루 캐모마일 (1:1 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🌙 나이트 아로마 블렌드 (4) | 코드: WK-P05</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">💙 [온수 아로마] 블루 캐모마일 & 바닐라 노트 팩</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">26,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('💙 [온수 아로마] 블루 캐모마일 & 바닐라 노트 팩', '26,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-06">
+            <div class="img-box">🖼️ [이미지: SEC-06 라임 마테 스틱 (1:1 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🍹 0.1초 융해 스파클링 에이드 (4) | 코드: WK-P06</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">💚 [시트러스 믹서] 에메랄드 라임 마테 부스팅 스틱</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">29,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('💚 [시트러스 믹서] 에메랄드 라임 마테 부스팅 스틱', '29,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-07">
+            <div class="img-box">🖼️ [이미지: SEC-07 루이보스 포뮬러 (1:1 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🌙 나이트 아로마 블렌드 (4) | 코드: WK-P07</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">💜 [무카페인 베이스] 바이올렛 루이보스 클린 포뮬러</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">30,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('💜 [무카페인 베이스] 바이올렛 루이보스 클린 포뮬러', '30,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-08">
+            <div class="img-box">🖼️ [이미지: SEC-08 루비 베리 믹서 (1:1 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🍹 0.1초 융해 스파클링 에이드 (4) | 코드: WK-P08</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🍓 [비건 토닉] 루비 안토시아닌 베리 스파클링 믹서</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">28,500원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🍓 [비건 토닉] 루비 안토시아닌 베리 스파클링 믹서', '28,500원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-09">
+            <div class="img-box">🖼️ [이미지: SEC-09 유자 진저 스틱 (1:1 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🧪 0.1g 비스포크 조향 포뮬러 (4) | 코드: WK-P09</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🍋 [1초 융해] 옐로우 유자 진저 퀵 믹솔로지 스틱</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">31,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🍋 [1초 융해] 옐로우 유자 진저 퀵 믹솔로지 스틱', '31,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-10">
+            <div class="img-box">🖼️ [이미지: SEC-10 입문 스타터 킷 (1:1 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🧪 0.1g 비스포크 조향 포뮬러 (4) | 코드: WK-P10</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🎓 [4+2 스타터] 믹솔로지 입문 키트 & 100% 페이백</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">34,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🎓 [4+2 스타터] 믹솔로지 입문 키트 & 100% 페이백', '34,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-11">
+            <div class="img-box">🖼️ [이미지: SEC-11 더블월 칵테일 잔 (1:1 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🍸 홈텐더 입문 바텐더 툴킷 (4) | 코드: WK-P11</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🍸 [바텐더 글래스] 믹솔로지 전용 더블월 칵테일 잔</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">36,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🍸 [바텐더 글래스] 믹솔로지 전용 더블월 칵테일 잔', '36,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-12">
+            <div class="img-box">🖼️ [이미지: SEC-12 바 지거 머들러 (1:1 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🍸 홈텐더 입문 바텐더 툴킷 (4) | 코드: WK-P12</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🥄 [정밀 계량] 스테인리스 바 지거 & 트위스트 머들러</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">38,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🥄 [정밀 계량] 스테인리스 바 지거 & 트위스트 머들러', '38,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-13">
+            <div class="img-box">🖼️ [이미지: SEC-13 VIP 아로마 틴 세트 (4:3 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🎉 홈파티 60포 대용량 리필 (4) | 코드: WK-P13</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🎁 [조향사 셀렉션] VIP 아로마 틴케이스 믹솔로지 세트</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">49,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🎁 [조향사 셀렉션] VIP 아로마 틴케이스 믹솔로지 세트', '49,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-14">
+            <div class="img-box">🖼️ [이미지: SEC-14 논알콜 보증 팩 (3:4 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🌙 나이트 아로마 블렌드 (4) | 코드: WK-P14</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🛡️ [0.00% 알콜] 공인 시험 성적서 보증 논알콜 팩</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">35,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🛡️ [0.00% 알콜] 공인 시험 성적서 보증 논알콜 팩', '35,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-15">
+            <div class="img-box">🖼️ [이미지: SEC-15 피치 아로마 팩 (1:1 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🧪 0.1g 비스포크 조향 포뮬러 (4) | 코드: WK-P15</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🍑 [피치 아로마] 블라썸 피치 올팩토리 온수 팩</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">42,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🍑 [피치 아로마] 블라썸 피치 올팩토리 온수 팩', '42,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-16">
+            <div class="img-box">🖼️ [이미지: SEC-16 30일 맞춤 구독 팩 (16:9 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🎉 홈파티 60포 대용량 리필 (4) | 코드: WK-P16</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">📦 [DIY 구독] 30일 나만의 맞춤 배합 정기구독 팩</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">33,150원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('📦 [DIY 구독] 30일 나만의 맞춤 배합 정기구독 팩', '33,150원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-17">
+            <div class="img-box">🖼️ [이미지: SEC-17 미네랄 아쿠아 (1:1 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🍸 홈텐더 입문 바텐더 툴킷 (4) | 코드: WK-P17</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">💧 [이온 부스터] 0kcal 미네랄 아쿠아 전해질 토핑</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">25,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('💧 [이온 부스터] 0kcal 미네랄 아쿠아 전해질 토핑', '25,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-18">
+            <div class="img-box">🖼️ [이미지: SEC-18 60포 벌크 리필 세트 (1:1 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🎉 홈파티 60포 대용량 리필 (4) | 코드: WK-P18</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🌱 [벌크 파우치] 60포 대용량 홈바 에코 리필 세트</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">39,900원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🌱 [벌크 파우치] 60포 대용량 홈바 에코 리필 세트', '39,900원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-19">
+            <div class="img-box">🖼️ [이미지: SEC-19 릴스 챌린지 킷 (9:16 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🍸 홈텐더 입문 바텐더 툴킷 (4) | 코드: WK-P19</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🎥 [숏폼 레시피] 릴스 챌린지 믹솔로지 스타터 킷</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">31,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🎥 [숏폼 레시피] 릴스 챌린지 믹솔로지 스타터 킷', '31,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-20">
+            <div class="img-box">🖼️ [이미지: SEC-20 180초 조향 타이머 (1:1 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🎉 홈파티 60포 대용량 리필 (4) | 코드: WK-P20</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">⏱️ [조향 타이머] 180초 아로마 디퓨징 사운드 타이머</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">45,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('⏱️ [조향 타이머] 180초 아로마 디퓨징 사운드 타이머', '45,000원')">1초 담기 / 주문</button>
+        </div>
+        
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Mandatory Page 3: Brand Story & Philosophy (WXX-ABOUT) -->
+    <section id="W02-ABOUT" class="page-view container">
+        <div class="section-card">
+            <div class="section-title">
+                <span>🌱 [W02-ABOUT] 위케티 WICKETA 공식 브랜드 스토리 & 신유진 특화 철학</span>
+                <span class="status-badge">📐 설계 기준</span>
+            </div>
+            <div class="grid-2" style="margin-bottom:28px;">
+                <div class="img-box" style="min-height:260px;">
+                    🖼️ [비밀정원 다과회 세계관 & WONDERSCAPE 캄테크 디지털 웰니스 아카이브]
+                </div>
+                <div>
+                    <h3 style="font-size:18px; font-weight:900; margin-bottom:10px;">"문을 열고, 현실에서 벗어나세요 (Open the Door, Escape Reality)"</h3>
+                    <p style="font-size:13px; color:#444444; line-height:1.8; margin-bottom:14px;">
+                        <strong>브랜드 목적:</strong> 바쁜 일상에 지친 2030 세대에게 노동 없는 3분간의 초현실주의적인 휴식(길티프리 리추얼) 공간을 제공하는 것입니다. 차를 마시는 행위 자체를 환상 공간으로 입장하는 특별한 의식으로 재해석하여, 일상과의 완벽한 단절 및 마법 같은 휴식을 선사합니다. (모기업: WONDERSCAPE)
+                    </p>
+                    <p style="font-size:13px; color:#444444; line-height:1.8; margin-bottom:14px;">
+                        <strong>브랜드 세계관:</strong> '비밀정원 다과회' - 문을 열고 들어서는 순간 일상과 완벽히 단절되는 신비롭고 몽환적인 환상 안식처
+                    </p>
+                    <div style="background:#F1F3F5; padding:14px; border:1px solid #CCCCCC; font-size:12px; line-height:1.7;">
+                        <strong>3대 핵심 가치</strong><br/>
+                        • <strong>1. 감정 맞춤 추천 (Emotion Dial):</strong> 감정 다이얼 입력을 통해 오늘의 내면 상태에 맞춘 1:1 티 레시피 제공<br/>
+                        • <strong>2. DIY 믹솔로지 & 블렌딩 (Mixology):</strong> 베이스 티와 서브 아이템을 조합해 나만의 초현실 음료 완성<br/>
+                        • <strong>3. 노동 없는 3분의 초현실 휴식 (Zero-Labor):</strong> 찬물/탄산수에 1초 만에 녹아드는 즉각 융해와 180초 브루잉 타이머
+                    </div>
+                </div>
+            </div>
+            <div style="border-top:1px solid #CCCCCC; padding-top:20px;">
+                <h4 style="font-size:15px; font-weight:800; margin-bottom:8px;">💎 [신유진] 특화 운영 철학 및 안심 성적서</h4>
+                <p style="font-size:13px; color:#555555; margin-bottom:12px;">• 0.1g 비스포크 조향 포뮬러 등록 시스템 & 홍대 홈텐더 믹솔로지 아카데미 안내</p>
+                <div style="background:#F8F9FA; padding:12px; border:1px solid #CCCCCC; font-size:12px;">
+                    <strong>KTR 한국화학융합시험연구원 3無 공인 시험성적서 획득</strong> | 무설탕 (0.0g) | 무카페인 (0.00%) | 무색소 (100% 천연 원료)
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Unique Sub-Pages -->
+    
+        <section id="W02-BUILD" data-feature-id="GLASS-ENGRAVE-01" class="page-view container">
+            <div class="section-card">
+                <div class="section-title">
+                    <span>🍸 [GLASS-ENGRAVE-01] 레이저 각인 바텐더 쉐이커 & 머들러 커스텀</span>
+                    <span class="status-badge">🎯 반영 목표</span>
+                </div>
+                <div class="grid-2">
+                    <div class="img-box">🖼️ [스테인리스 바텐더 쉐이커 각인 시뮬레이션 뷰]</div>
+                    <div>
+                        <div style="margin-bottom:12px;">
+                            <label style="font-size:12px; font-weight:700;">홈바 이름 또는 닉네임 입력</label>
+                            <input type="text" placeholder="YUJIN'S HOME BAR" style="width:100%; padding:8px; border:1.5px solid #111111;">
+                        </div>
+                        <button class="wf-btn wf-btn-dark" onclick="openOrder('각인 바텐더 쉐이커 세트', '38,000원')">각인 세트 주문하기 (38,000원)</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="W02-RECIPE" data-feature-id="FORMULA-REGISTER-01" class="page-view container">
+            <div class="section-card">
+                <div class="section-title">
+                    <span>🧪 [FORMULA-REGISTER-01] 0.1g 비스포크 조향 포뮬러 등록 & QR 발급</span>
+                    <span class="status-badge">🎯 반영 목표</span>
+                </div>
+                <div style="text-align:center; padding:32px;">
+                    <p style="font-size:14px; margin-bottom:16px;">나만의 배합 비율을 등록하면 언제든 재주문 가능한 포뮬러 QR 코드를 생성합니다.</p>
+                    <button class="wf-btn wf-btn-dark" onclick="alert('포뮬러 QR 코드가 생성되었습니다.')">포뮬러 등록 및 QR 코드 발급</button>
+                </div>
+            </div>
+        </section>
+        
+
+    <!-- 7. Drawer Layer -->
+    
+        <aside id="W02-DRAWER" data-feature-id="MIX-CHECKOUT-01" class="cart-drawer">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+                <h3 style="font-size:16px; font-weight:800;">🍹 홈텐더 믹솔로지 장바구니</h3>
+                <button class="wf-btn wf-btn-sm" onclick="toggleDrawer()">✕</button>
+            </div>
+            <div style="flex:1; overflow-y:auto;">
+                <div style="background:#F1F3F5; padding:16px; border:1px solid #CCCCCC; margin-bottom:16px;">
+                    <div style="font-weight:700; font-size:14px;" id="drawerItem">홈텐더 믹솔로지 스타터 팩</div>
+                    <div style="font-size:16px; font-weight:800; margin-top:6px;" id="drawerPrice">34,000원</div>
+                </div>
+            </div>
+            <button class="wf-btn wf-btn-dark" style="width:100%;" onclick="openModal('W02-DONE'); toggleDrawer();">간편 결제 및 포뮬러 저장</button>
+        </aside>
+        
+
+    <!-- 8. Modal Overlay -->
+    
+        <div id="W02-DONE" data-feature-id="FORMULA-QR-01" class="modal-overlay">
+            <div class="modal-card">
+                <div style="font-size:36px; margin-bottom:8px;">🍸</div>
+                <h3 style="font-size:18px; font-weight:800; margin-bottom:8px;">주문 완료 & 비스포크 포뮬러 등록</h3>
+                <div class="img-box" style="margin:16px 0;">🖼️ [나만의 홈바 조향 포뮬러 QR 코드]</div>
+                <button class="wf-btn wf-btn-dark" onclick="closeModal()">확인 및 닫기</button>
+            </div>
+        </div>
+        
+
+    <!-- 9. Mandatory Footer (100% Client Bespoke) -->
+    <footer class="site-footer">
+        <div class="container" style="padding:0;">
+            <div class="footer-cols">
+                <div>
+                    <strong style="font-size:14px; color:#111111;">(주)위케타 믹솔로지 랩</strong><br/>
+                    대표이사: <strong>신유진</strong> | 사업자등록번호: 120-88-02002 | 통신판매업신고: 제2026-서울성수-0142호<br/>
+                    사업장 주소: 서울시 마포구 와우산로 29 WICKETA 홈텐더 스튜디오<br/>
+                    모기업: WONDERSCAPE (원더스케이프) 캄테크 디지털 웰니스 플랫폼
+                </div>
+                <div>
+                    <strong style="font-size:13px; color:#111111;">고객 안심 센터</strong><br/>
+                    직통전화: 1588-0202 (평일 10:00 ~ 19:00)<br/>
+                    문의이메일: yujin@wicketa.com
+                </div>
+                <div>
+                    <strong style="font-size:13px; color:#111111;">품질 및 인증</strong><br/>
+                    KTR 3無 공인 시험성적서 획득<br/>
+                    식약처 HACCP 위생 인증 시설 제조
+                </div>
+            </div>
+            <div class="footer-btm">
+                <div>© 2026 WICKETA Inc. (신유진). All rights reserved. 100% Monochrome Low-Fi Wireframe.</div>
+                <div>이용약관 | 개인정보처리방침 | 사업자정보확인</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Handlers -->
+    <script>
+        function switchPage(pageId) {
+            document.querySelectorAll('.page-view').forEach(function(v) { v.classList.remove('active'); });
+            var target = document.getElementById(pageId);
+            if(target) target.classList.add('active');
+            document.querySelectorAll('.wf-top-helper button').forEach(function(b) {
+                if(b.innerText.indexOf(pageId) !== -1) b.classList.add('active');
+                else b.classList.remove('active');
+            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        function toggleDrawer() {
+            document.querySelectorAll('.cart-drawer').forEach(function(d) { d.classList.toggle('open'); });
+        }
+        function openOrder(item, price) {
+            var di = document.getElementById('drawerItem');
+            var dp = document.getElementById('drawerPrice');
+            if(di) di.innerText = item;
+            if(dp) dp.innerText = price;
+            toggleDrawer();
+        }
+        function openModal(id) {
+            var m = document.getElementById(id);
+            if(m) m.classList.add('open');
+        }
+        function closeModal() {
+            document.querySelectorAll('.modal-overlay').forEach(function(m) { m.classList.remove('open'); });
+        }
+        function filterLNB(cat) {
+            alert(cat + ' 카테고리 필터가 적용되었습니다.');
+        }
+        
+        function updateMix() {
+            var b = document.getElementById('mixBaseSelect').value;
+            var t = document.getElementById('mixRecipeTitle');
+            if(b === 'earlgrey') t.innerText = "스모키 얼그레이 제로 하이볼";
+            else if(b === 'berry') t.innerText = "루비 베리 스파클링 칵테일";
+            else t.innerText = "미드나잇 라벤더 나이트 캡";
+        }
+        
+    </script>
+</body>
+</html>

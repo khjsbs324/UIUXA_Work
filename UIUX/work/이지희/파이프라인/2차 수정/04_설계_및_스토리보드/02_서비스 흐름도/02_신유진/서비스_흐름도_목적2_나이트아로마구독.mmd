@@ -1,0 +1,39 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef diag fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef base fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W02-HOME (나이트 진입)<br/>• [나이트 아로마 진단] 클릭"]
+    DIAG["02 W02-OLFACTORY (후각 다이얼)<br/>• 8대 향미 슬라이더 조작<br/>• GABA 라벤더 처방"]
+    BASE["03 W02-BASE (성분 검증)<br/>• 0.00mg 무카페인 성적서"]
+    RITUAL["04 W02-RITUAL (인퓨전 프리뷰)<br/>• 180초 3단계 발향 모션"]
+    DRAWER["05 W02-DRAWER (구독 드로어)<br/>• 15% 정기할인 & 30일 배송"]
+    
+    PAY_CHECK{"06 정기결제<br/>승인 여부"}
+    
+    DONE["07 W02-DONE (구독 승인)<br/>• 알림톡 발송 & 스크롤 100% 복원"]
+    RETRY["06-B 대체 결제 (Fallback)<br/>• 카드 변경 안내"]
+    COMM["F1 W02-COMM (월간 케어)<br/>• 다음달 티 스왑 예약"]
+
+    HOME --> DIAG
+    DIAG --> BASE
+    BASE --> RITUAL
+    RITUAL --> DRAWER
+    DRAWER --> PAY_CHECK
+    
+    PAY_CHECK -->|결제 성공| DONE
+    PAY_CHECK -->|결제 실패| RETRY
+    RETRY -.->|결제 수단 변경| DRAWER
+    
+    DONE --> COMM
+    DONE -.->|가상 스크롤 100% 복원| DIAG
+
+    class HOME home;
+    class DIAG diag;
+    class BASE,RITUAL base;
+    class PAY_CHECK decision;
+    class DRAWER,DONE,RETRY drawer;
+    class COMM support;

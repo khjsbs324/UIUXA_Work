@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>와이어프레임 - 송아린 (0kcal 헬스 & 다이어트 스파클링 랩)</title>
+    <style>
+
+:root {
+    --border: #111111;
+    --border-light: #CCCCCC;
+    --border-dash: #999999;
+    --bg: #FFFFFF;
+    --bg-sub: #F8F9FA;
+    --bg-alt: #F1F3F5;
+    --text: #111111;
+    --text-muted: #666666;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: "Pretendard", -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding-top: 56px;
+    line-height: 1.5;
+}
+.wf-top-helper {
+    position: fixed; top: 0; left: 0; width: 100%; height: 56px;
+    background: #111111; color: #FFFFFF; display: flex; align-items: center;
+    justify-content: space-between; padding: 0 24px; z-index: 9999; font-size: 13px;
+}
+.wf-top-helper button {
+    background: #222222; color: #FFFFFF; border: 1px solid #444444;
+    padding: 5px 12px; font-size: 12px; cursor: pointer; border-radius: 4px; margin-left: 6px;
+    transition: all 0.15s; white-space: nowrap;
+}
+.wf-top-helper button.active, .wf-top-helper button:hover {
+    background: #FFFFFF; color: #111111; font-weight: bold; border-color: #FFFFFF;
+}
+.wf-header {
+    border-bottom: 2px solid var(--border); padding: 18px 32px;
+    display: flex; justify-content: space-between; align-items: center; background: #FFFFFF;
+}
+.wf-header .logo { font-size: 18px; font-weight: 900; letter-spacing: 0.5px; }
+.wf-header nav { display: flex; gap: 20px; }
+.wf-header nav a {
+    font-size: 14px; font-weight: 700; color: #111111; text-decoration: none; cursor: pointer;
+}
+.wf-header nav a:hover { text-decoration: underline; }
+.container { max-width: 1200px; margin: 0 auto; padding: 40px 24px; }
+.page-view { display: none; }
+.page-view.active { display: block; }
+.section-card {
+    border: 2px solid var(--border); background: #FFFFFF;
+    padding: 32px 28px; margin-bottom: 48px;
+}
+.section-title {
+    font-size: 17px; font-weight: 800; margin-bottom: 20px;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 1px solid var(--border-light); padding-bottom: 10px;
+}
+.status-badge {
+    font-size: 11px; font-weight: 700; padding: 2px 8px; border: 1px solid #111111; background: #F1F3F5;
+}
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.img-box {
+    background: var(--bg-alt); border: 1.5px dashed var(--border-dash);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text-muted); font-size: 13px; font-weight: 600; text-align: center; padding: 16px; min-height: 140px;
+}
+.custom-product-card {
+    border: 1.5px solid var(--border); padding: 16px; background: #FFFFFF;
+    display: flex; flex-direction: column; justify-content: space-between;
+}
+.wf-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 9px 18px; font-size: 13px; font-weight: 700; cursor: pointer;
+    border: 2px solid #111111; background: #FFFFFF; color: #111111;
+    transition: all 0.15s; text-decoration: none;
+}
+.wf-btn:hover { background: #111111; color: #FFFFFF; }
+.wf-btn-dark { background: #111111; color: #FFFFFF; }
+.wf-btn-dark:hover { background: #333333; }
+.wf-btn-sm { padding: 5px 10px; font-size: 12px; }
+.cart-drawer {
+    position: fixed; top: 0; right: -540px; width: 480px; height: 100%;
+    background: #FFFFFF; border-left: 2px solid #111111; z-index: 10000;
+    transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1); padding: 28px 24px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+}
+.cart-drawer.open { right: 0; }
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6); display: none; align-items: center; justify-content: center;
+    z-index: 10001;
+}
+.modal-overlay.open { display: flex; }
+.modal-card {
+    background: #FFFFFF; border: 2px solid #111111; padding: 36px 30px;
+    max-width: 520px; width: 90%; text-align: center;
+}
+.site-footer {
+    border-top: 2px solid var(--border); padding: 40px 32px;
+    background: #F8F9FA; font-size: 12px; color: var(--text-muted);
+}
+.site-footer .footer-cols { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 28px; margin-bottom: 24px; }
+.site-footer .footer-btm { border-top: 1px solid var(--border-light); padding-top: 16px; display: flex; justify-content: space-between; }
+
+    </style>
+</head>
+<body>
+
+    <!-- 1. Top Helper Bar (3-Tier Status Navigation) -->
+    <div class="wf-top-helper">
+        <div style="font-weight:700;">위케티 WICKETA | [05] 송아린 (0kcal 헬스 & 다이어트 스파클링 랩)</div>
+        <div style="display:flex; overflow-x:auto;">
+            <button class="active" onclick="switchPage('W05-HOME')">📐 W05-HOME (0kcal 다이어트 랩 메인)</button>
+<button class="" onclick="switchPage('W05-CATALOG')">📐 W05-CATALOG (20종 0kcal 클린 스토어)</button>
+<button class="" onclick="switchPage('W05-ABOUT')">📐 W05-ABOUT (0kcal KTR 성분 분석 리포트)</button>
+<button class="" onclick="switchPage('W05-REELS')">🎯 W05-REELS (9:16 세로형 홈트 융해 릴스 피드)</button>
+<button class="" onclick="switchPage('W05-BUILD')">🎯 W05-BUILD (30일 바디 체인지 보틀 빌더)</button>
+<button class="" onclick="switchPage('W05-DRAWER')">🎯 W05-DRAWER (0kcal 1-Click 패스트 체크아웃)</button>
+<button class="" onclick="switchPage('W05-DONE')">📐 W05-DONE (주문 완료 & 30일 식단 캘린더 발급)</button>
+
+        </div>
+    </div>
+
+    <!-- 2. Header (GNB) -->
+    <header class="wf-header">
+        <div class="logo">0KCAL DIET SPA LAB</div>
+        <nav>
+            <a onclick="switchPage('W05-HOME')">0kcal 다이어트 랩</a>
+<a onclick="switchPage('W05-CATALOG')">20종 클린 팩</a>
+<a onclick="switchPage('W05-ABOUT')">0kcal 성분 분석 & 성적서</a>
+<a onclick="switchPage('W05-REELS')">9:16 릴스 샵</a>
+<a onclick="switchPage('W05-BUILD')">30일 챌린지 보틀</a>
+
+        </nav>
+        <div>
+            <button class="wf-btn wf-btn-sm wf-btn-dark" onclick="toggleDrawer()">다이어트 장바구니</button>
+        </div>
+    </header>
+
+    <!-- 3. Mandatory Page 1: Main Home (WXX-HOME) -->
+    <main id="W05-HOME" class="page-view active container">
+        <div class="section-card">
+            <div class="section-title">
+                <span>🏛️ [W05-HOME] 송아린 메인 비주얼 캔버스</span>
+                <span class="status-badge">📐 설계 기준</span>
+            </div>
+            <div class="img-box" style="min-height:300px; font-size:16px; margin-bottom:20px;">
+                🖼️ [1200x380 시네마틱 3D 비주얼 캔버스: 0kcal 헬스 & 다이어트 스파클링 랩]
+            </div>
+            <div style="text-align:center;">
+                <h2 style="font-size:22px; font-weight:900; margin-bottom:8px;">"문을 열고, 현실에서 벗어나세요 (Open the Door, Escape Reality)"</h2>
+                <p style="font-size:14px; color:#555555;">바쁜 일상에 지친 2030 세대에게 노동 없는 3분간의 초현실주의적인 휴식(길티프리 리추얼) 공간을 제공합니다.</p>
+            </div>
+        </div>
+
+        <!-- Killer Feature Module on Main -->
+        
+        <section id="W05-CALCULATOR" data-feature-id="CALORIE-CALC-01" class="section-card">
+            <div class="section-title">
+                <span>💪 [CALORIE-CALC-01] 일일 칼로리 버닝 & 제로슈거 0kcal 스파클링 계산기</span>
+                <span class="status-badge">🎯 반영 목표</span>
+            </div>
+            <div class="grid-2">
+                <div>
+                    <div style="margin-bottom:14px;">
+                        <label style="font-size:13px; font-weight:700;">주간 운동 시간: <strong id="workoutVal" style="font-size:18px;">4</strong>시간</label>
+                        <input type="range" id="workoutRange" min="1" max="14" value="4" style="width:100%;" oninput="calcDiet()">
+                    </div>
+                    <p style="font-size:12px; color:#666666;">• 당류 0.0g, 지방 0.0g, 천연 L-카르니틴 500mg 함유 보증</p>
+                </div>
+                <div style="background:#F1F3F5; padding:20px; border:1.5px solid #111111; display:flex; flex-direction:column; justify-content:space-between;">
+                    <div>
+                        <div style="font-size:12px; color:#666666;">일반 탄산음료 대비 당류 절감량</div>
+                        <div style="font-size:24px; font-weight:900; margin:6px 0;" id="sugarSavedText">당류 180g (720 kcal 절감)</div>
+                    </div>
+                    <button class="wf-btn wf-btn-dark" style="margin-top:16px;" onclick="openOrder('0kcal 부스팅 30일 팩', '32,000원')">0kcal 부스팅 팩 1초 담기 (32,000원)</button>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- 3 Signature Curations -->
+        <section class="section-card">
+            <div class="section-title">
+                <span>✨ 대표 시그니처 3대 큐레이션</span>
+                <span class="status-badge">📐 설계 기준</span>
+            </div>
+            <div class="grid-3">
+                
+        <div class="custom-product-card">
+            <div class="img-box">🖼️ [이미지: SEC-01 ⭐ [0kcal 시그니처] 블루 오로라 버터플라이피 스파클링 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#111111; margin-top:8px;">✨ 대표 시그니처 큐레이션</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0;">⭐ [0kcal 시그니처] 블루 오로라 버터플라이피 스파클링</div>
+            <div style="font-size:16px; font-weight:900; margin-bottom:10px;">34,000원</div>
+            <button class="wf-btn wf-btn-sm wf-btn-dark" style="width:100%;" onclick="openOrder('⭐ [0kcal 시그니처] 블루 오로라 버터플라이피 스파클링', '34,000원')">바로 주문</button>
+        </div>
+        
+        <div class="custom-product-card">
+            <div class="img-box">🖼️ [이미지: SEC-02 💪 [부스팅 마테] 운동 전 버닝 에메랄드 라임 마테 팩 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#111111; margin-top:8px;">✨ 대표 시그니처 큐레이션</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0;">💪 [부스팅 마테] 운동 전 버닝 에메랄드 라임 마테 팩</div>
+            <div style="font-size:16px; font-weight:900; margin-bottom:10px;">29,000원</div>
+            <button class="wf-btn wf-btn-sm wf-btn-dark" style="width:100%;" onclick="openOrder('💪 [부스팅 마테] 운동 전 버닝 에메랄드 라임 마테 팩', '29,000원')">바로 주문</button>
+        </div>
+        
+        <div class="custom-product-card">
+            <div class="img-box">🖼️ [이미지: SEC-03 🌙 [야식 방어] 야식 충동 차단 GABA 루이보스 팩 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#111111; margin-top:8px;">✨ 대표 시그니처 큐레이션</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0;">🌙 [야식 방어] 야식 충동 차단 GABA 루이보스 팩</div>
+            <div style="font-size:16px; font-weight:900; margin-bottom:10px;">28,000원</div>
+            <button class="wf-btn wf-btn-sm wf-btn-dark" style="width:100%;" onclick="openOrder('🌙 [야식 방어] 야식 충동 차단 GABA 루이보스 팩', '28,000원')">바로 주문</button>
+        </div>
+        
+            </div>
+        </section>
+    </main>
+
+    <!-- 4. Mandatory Page 2: 20 Products Catalog (WXX-CATALOG) -->
+    <section id="W05-CATALOG" class="page-view container">
+        <div class="section-card">
+            <div class="section-title">
+                <span>📖 [W05-CATALOG] 20종 전수 상품 도감 & 6대 맞춤 LNB 필터</span>
+                <span class="status-badge">📐 설계 기준</span>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:24px;">
+                <button class="wf-btn wf-btn-sm wf-btn-dark" onclick="filterLNB('전체 0kcal 클린팩 (20)')">전체 0kcal 클린팩 (20)</button>
+<button class="wf-btn wf-btn-sm " onclick="filterLNB('🍹 0kcal 버터플라이피 스파클링 (4)')">🍹 0kcal 버터플라이피 스파클링 (4)</button>
+<button class="wf-btn wf-btn-sm " onclick="filterLNB('💪 운동 전 부스팅 에메랄드 마테 (4)')">💪 운동 전 부스팅 에메랄드 마테 (4)</button>
+<button class="wf-btn wf-btn-sm " onclick="filterLNB('🌙 야식 방어 0.00mg 무카페인 GABA (4)')">🌙 야식 방어 0.00mg 무카페인 GABA (4)</button>
+<button class="wf-btn wf-btn-sm " onclick="filterLNB('🏋️ 30일 챌린지 보틀 번들 팩 (4)')">🏋️ 30일 챌린지 보틀 번들 팩 (4)</button>
+<button class="wf-btn wf-btn-sm " onclick="filterLNB('🍓 비건 안토시아닌 루비 베리 믹서 (4)')">🍓 비건 안토시아닌 루비 베리 믹서 (4)</button>
+
+            </div>
+            <div class="grid-4">
+                
+        <div class="custom-product-card" data-sec-id="SEC-01">
+            <div class="img-box">🖼️ [이미지: SEC-01 ⭐ [0kcal 시그니처] 블루 오로라 버터플라이피 스파클링 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🍹 0kcal 버터플라이피 스파클링 (4) | 코드: WK-P01</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">⭐ [0kcal 시그니처] 블루 오로라 버터플라이피 스파클링</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">34,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('⭐ [0kcal 시그니처] 블루 오로라 버터플라이피 스파클링', '34,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-02">
+            <div class="img-box">🖼️ [이미지: SEC-02 💪 [부스팅 마테] 운동 전 버닝 에메랄드 라임 마테 팩 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">💪 운동 전 부스팅 에메랄드 마테 (4) | 코드: WK-P02</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">💪 [부스팅 마테] 운동 전 버닝 에메랄드 라임 마테 팩</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">29,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('💪 [부스팅 마테] 운동 전 버닝 에메랄드 라임 마테 팩', '29,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-03">
+            <div class="img-box">🖼️ [이미지: SEC-03 🌙 [야식 방어] 야식 충동 차단 GABA 루이보스 팩 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🌙 야식 방어 0.00mg 무카페인 GABA (4) | 코드: WK-P03</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🌙 [야식 방어] 야식 충동 차단 GABA 루이보스 팩</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">28,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🌙 [야식 방어] 야식 충동 차단 GABA 루이보스 팩', '28,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-04">
+            <div class="img-box">🖼️ [이미지: SEC-04 🏋️ [30일 챌린지] 바디프로필 30일 1일 1포 챌린지 박스 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🏋️ 30일 챌린지 보틀 번들 팩 (4) | 코드: WK-P04</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🏋️ [30일 챌린지] 바디프로필 30일 1일 1포 챌린지 박스</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">68,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🏋️ [30일 챌린지] 바디프로필 30일 1일 1포 챌린지 박스', '68,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-05">
+            <div class="img-box">🖼️ [이미지: SEC-05 🍓 [루비 베리] 안토시아닌 비건 스파클링 탄산 믹서 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🍓 비건 안토시아닌 루비 베리 믹서 (4) | 코드: WK-P05</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🍓 [루비 베리] 안토시아닌 비건 스파클링 탄산 믹서</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">27,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🍓 [루비 베리] 안토시아닌 비건 스파클링 탄산 믹서', '27,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-06">
+            <div class="img-box">🖼️ [이미지: SEC-06 🍹 [트리플 레몬] 0kcal 비타민C 레몬 스파클링 스틱 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🍹 0kcal 버터플라이피 스파클링 (4) | 코드: WK-P06</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🍹 [트리플 레몬] 0kcal 비타민C 레몬 스파클링 스틱</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">26,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🍹 [트리플 레몬] 0kcal 비타민C 레몬 스파클링 스틱', '26,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-07">
+            <div class="img-box">🖼️ [이미지: SEC-07 💪 [L-카르니틴] 체지방 분해 부스팅 자몽 블렌드 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">💪 운동 전 부스팅 에메랄드 마테 (4) | 코드: WK-P07</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">💪 [L-카르니틴] 체지방 분해 부스팅 자몽 블렌드</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">32,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('💪 [L-카르니틴] 체지방 분해 부스팅 자몽 블렌드', '32,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-08">
+            <div class="img-box">🖼️ [이미지: SEC-08 🌙 [붓기 제로] 호박 & 옥수수수염 0kcal 클린티 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🌙 야식 방어 0.00mg 무카페인 GABA (4) | 코드: WK-P08</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🌙 [붓기 제로] 호박 & 옥수수수염 0kcal 클린티</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">25,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🌙 [붓기 제로] 호박 & 옥수수수염 0kcal 클린티', '25,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-09">
+            <div class="img-box">🖼️ [이미지: SEC-09 🏋️ [각인 쉐이커] BPA-Free 트라이탄 500ml 각인 보틀 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🏋️ 30일 챌린지 보틀 번들 팩 (4) | 코드: WK-P09</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🏋️ [각인 쉐이커] BPA-Free 트라이탄 500ml 각인 보틀</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">19,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🏋️ [각인 쉐이커] BPA-Free 트라이탄 500ml 각인 보틀', '19,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-10">
+            <div class="img-box">🖼️ [이미지: SEC-10 🍓 [석류 콜라겐] 0kcal 저분자 피쉬 콜라겐 믹서 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🍓 비건 안토시아닌 루비 베리 믹서 (4) | 코드: WK-P10</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🍓 [석류 콜라겐] 0kcal 저분자 피쉬 콜라겐 믹서</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">33,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🍓 [석류 콜라겐] 0kcal 저분자 피쉬 콜라겐 믹서', '33,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-11">
+            <div class="img-box">🖼️ [이미지: SEC-11 🍹 [민트 쿨링] 갈증 해소 페퍼민트 스파클링 스틱 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🍹 0kcal 버터플라이피 스파클링 (4) | 코드: WK-P11</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🍹 [민트 쿨링] 갈증 해소 페퍼민트 스파클링 스틱</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">24,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🍹 [민트 쿨링] 갈증 해소 페퍼민트 스파클링 스틱', '24,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-12">
+            <div class="img-box">🖼️ [이미지: SEC-12 💪 [BCAA 에너지] 무설탕 타우린 & 그린티 에너지 팩 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">💪 운동 전 부스팅 에메랄드 마테 (4) | 코드: WK-P12</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">💪 [BCAA 에너지] 무설탕 타우린 & 그린티 에너지 팩</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">35,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('💪 [BCAA 에너지] 무설탕 타우린 & 그린티 에너지 팩', '35,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-13">
+            <div class="img-box">🖼️ [이미지: SEC-13 🌙 [수면 릴랙스] 심야 숙면 돕는 타트체리 무당 티 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🌙 야식 방어 0.00mg 무카페인 GABA (4) | 코드: WK-P13</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🌙 [수면 릴랙스] 심야 숙면 돕는 타트체리 무당 티</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">31,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🌙 [수면 릴랙스] 심야 숙면 돕는 타트체리 무당 티', '31,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-14">
+            <div class="img-box">🖼️ [이미지: SEC-14 🏋️ [덤벨 머들러] 스테인리스 덤벨 디자인 바 머들러 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🏋️ 30일 챌린지 보틀 번들 팩 (4) | 코드: WK-P14</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🏋️ [덤벨 머들러] 스테인리스 덤벨 디자인 바 머들러</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">15,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🏋️ [덤벨 머들러] 스테인리스 덤벨 디자인 바 머들러', '15,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-15">
+            <div class="img-box">🖼️ [이미지: SEC-15 🍓 [히비스커스] HCA 가르시니아 함유 다이어트 팩 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🍓 비건 안토시아닌 루비 베리 믹서 (4) | 코드: WK-P15</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🍓 [히비스커스] HCA 가르시니아 함유 다이어트 팩</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">29,500원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🍓 [히비스커스] HCA 가르시니아 함유 다이어트 팩', '29,500원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-16">
+            <div class="img-box">🖼️ [이미지: SEC-16 🍹 [새벽구독] 30일 다이어터 맞춤 스파클링 정기배송 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🍹 0kcal 버터플라이피 스파클링 (4) | 코드: WK-P16</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🍹 [새벽구독] 30일 다이어터 맞춤 스파클링 정기배송</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">33,150원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🍹 [새벽구독] 30일 다이어터 맞춤 스파클링 정기배송', '33,150원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-17">
+            <div class="img-box">🖼️ [이미지: SEC-17 💪 [전해질 보충] 0kcal 이온 미네랄 솔트 스틱 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">💪 운동 전 부스팅 에메랄드 마테 (4) | 코드: WK-P17</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">💪 [전해질 보충] 0kcal 이온 미네랄 솔트 스틱</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">22,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('💪 [전해질 보충] 0kcal 이온 미네랄 솔트 스틱', '22,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-18">
+            <div class="img-box">🖼️ [이미지: SEC-18 🌙 [디톡스] 유기농 모링가 & 레몬밤 클렌즈 팩 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🌙 야식 방어 0.00mg 무카페인 GABA (4) | 코드: WK-P18</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🌙 [디톡스] 유기농 모링가 & 레몬밤 클렌즈 팩</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">27,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🌙 [디톡스] 유기농 모링가 & 레몬밤 클렌즈 팩', '27,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-19">
+            <div class="img-box">🖼️ [이미지: SEC-19 🏋️ [피트니스 키트] 보틀 + 밴드 + 4종 믹서 스타터 킷 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🏋️ 30일 챌린지 보틀 번들 팩 (4) | 코드: WK-P19</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🏋️ [피트니스 키트] 보틀 + 밴드 + 4종 믹서 스타터 킷</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">45,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🏋️ [피트니스 키트] 보틀 + 밴드 + 4종 믹서 스타터 킷', '45,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-20">
+            <div class="img-box">🖼️ [이미지: SEC-20 🍓 [KTR 인증] 0.00kcal 공인 시험성적서 보증 팩 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🍓 비건 안토시아닌 루비 베리 믹서 (4) | 코드: WK-P20</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🍓 [KTR 인증] 0.00kcal 공인 시험성적서 보증 팩</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">30,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🍓 [KTR 인증] 0.00kcal 공인 시험성적서 보증 팩', '30,000원')">1초 담기 / 주문</button>
+        </div>
+        
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Mandatory Page 3: Brand Story & Philosophy (WXX-ABOUT) -->
+    <section id="W05-ABOUT" class="page-view container">
+        <div class="section-card">
+            <div class="section-title">
+                <span>🌱 [W05-ABOUT] 위케티 WICKETA 공식 브랜드 스토리 & 송아린 특화 철학</span>
+                <span class="status-badge">📐 설계 기준</span>
+            </div>
+            <div class="grid-2" style="margin-bottom:28px;">
+                <div class="img-box" style="min-height:260px;">
+                    🖼️ [비밀정원 다과회 세계관 & WONDERSCAPE 캄테크 디지털 웰니스 아카이브]
+                </div>
+                <div>
+                    <h3 style="font-size:18px; font-weight:900; margin-bottom:10px;">"문을 열고, 현실에서 벗어나세요 (Open the Door, Escape Reality)"</h3>
+                    <p style="font-size:13px; color:#444444; line-height:1.8; margin-bottom:14px;">
+                        <strong>브랜드 목적:</strong> 바쁜 일상에 지친 2030 세대에게 노동 없는 3분간의 초현실주의적인 휴식(길티프리 리추얼) 공간을 제공하는 것입니다. 차를 마시는 행위 자체를 환상 공간으로 입장하는 특별한 의식으로 재해석하여, 일상과의 완벽한 단절 및 마법 같은 휴식을 선사합니다. (모기업: WONDERSCAPE)
+                    </p>
+                    <p style="font-size:13px; color:#444444; line-height:1.8; margin-bottom:14px;">
+                        <strong>브랜드 세계관:</strong> '비밀정원 다과회' - 문을 열고 들어서는 순간 일상과 완벽히 단절되는 신비롭고 몽환적인 환상 안식처
+                    </p>
+                    <div style="background:#F1F3F5; padding:14px; border:1px solid #CCCCCC; font-size:12px; line-height:1.7;">
+                        <strong>3대 핵심 가치</strong><br/>
+                        • <strong>1. 감정 맞춤 추천 (Emotion Dial):</strong> 감정 다이얼 입력을 통해 오늘의 내면 상태에 맞춘 1:1 티 레시피 제공<br/>
+                        • <strong>2. DIY 믹솔로지 & 블렌딩 (Mixology):</strong> 베이스 티와 서브 아이템을 조합해 나만의 초현실 음료 완성<br/>
+                        • <strong>3. 노동 없는 3분의 초현실 휴식 (Zero-Labor):</strong> 찬물/탄산수에 1초 만에 녹아드는 즉각 융해와 180초 브루잉 타이머
+                    </div>
+                </div>
+            </div>
+            <div style="border-top:1px solid #CCCCCC; padding-top:20px;">
+                <h4 style="font-size:15px; font-weight:800; margin-bottom:8px;">💎 [송아린] 특화 운영 철학 및 안심 성적서</h4>
+                <p style="font-size:13px; color:#555555; margin-bottom:12px;">• 제로슈거 0kcal 성분 분석 리포트 & 30일 바디 체인지 챌린지 환급 정책</p>
+                <div style="background:#F8F9FA; padding:12px; border:1px solid #CCCCCC; font-size:12px;">
+                    <strong>KTR 한국화학융합시험연구원 3無 공인 시험성적서 획득</strong> | 무설탕 (0.0g) | 무카페인 (0.00%) | 무색소 (100% 천연 원료)
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Unique Sub-Pages -->
+    
+        <section id="W05-REELS" data-feature-id="REELS-PLAYER-01" class="page-view container">
+            <div class="section-card">
+                <div class="section-title">
+                    <span>🎬 [REELS-PLAYER-01] 9:16 세로형 홈트 융해 릴스 피드</span>
+                    <span class="status-badge">🎯 반영 목표</span>
+                </div>
+                <div class="grid-2">
+                    <div style="background:#111111; color:#FFFFFF; height:420px; padding:20px; border-radius:10px; display:flex; flex-direction:column; justify-content:space-between;">
+                        <div>@송아린_홈트 • 15초 러닝 전 부스팅 샷</div>
+                        <div style="text-align:center; font-weight:700;">▶️ [9:16 비디오: 텀블러 찬물 1초 융해]</div>
+                        <button class="wf-btn wf-btn-sm" style="background:#FFFFFF; color:#111111; border-color:#FFFFFF;" onclick="openOrder('영상 속 부스팅 샷', '28,000원')">영상 속 스틱 담기 (28,000원)</button>
+                    </div>
+                    <div>
+                        <h4 style="font-size:15px; font-weight:800; margin-bottom:12px;">인기 다이어트 릴스</h4>
+                        <div style="border:1px solid #CCCCCC; padding:12px; margin-bottom:8px;">1. 러닝 30분 전 마시는 에메랄드 부스터</div>
+                        <div style="border:1px solid #CCCCCC; padding:12px;">2. 야식 충동 잠재우는 0.00mg GABA 리추얼</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="W05-BUILD" data-feature-id="BOTTLE-ENGRAVER-01" class="page-view container">
+            <div class="section-card">
+                <div class="section-title">
+                    <span>🏋️ [BOTTLE-ENGRAVER-01] 30일 바디 체인지 보틀 빌더</span>
+                    <span class="status-badge">🎯 반영 목표</span>
+                </div>
+                <div class="grid-2">
+                    <div class="img-box">🖼️ [트라이탄 500ml 눈금 보틀 각인 뷰]</div>
+                    <div>
+                        <div style="margin-bottom:12px;">
+                            <label style="font-size:12px; font-weight:700;">목표 체중 또는 다짐 각인</label>
+                            <input type="text" placeholder="GOAL -5KG" style="width:100%; padding:8px; border:1.5px solid #111111;">
+                        </div>
+                        <button class="wf-btn wf-btn-dark" onclick="openOrder('30일 챌린지 번들', '39,000원')">챌린지 세트 담기 (39,000원)</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+    <!-- 7. Drawer Layer -->
+    
+        <aside id="W05-DRAWER" data-feature-id="REELS-CHECKOUT-01" class="cart-drawer">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+                <h3 style="font-size:16px; font-weight:800;">🛒 0kcal 클린 장바구니</h3>
+                <button class="wf-btn wf-btn-sm" onclick="toggleDrawer()">✕</button>
+            </div>
+            <div style="flex:1; overflow-y:auto;">
+                <div style="background:#F1F3F5; padding:16px; border:1px solid #CCCCCC; margin-bottom:16px;">
+                    <div style="font-weight:700; font-size:14px;" id="drawerItem">0kcal 부스팅 30일 팩</div>
+                    <div style="font-size:16px; font-weight:800; margin-top:6px;" id="drawerPrice">32,000원</div>
+                </div>
+            </div>
+            <button class="wf-btn wf-btn-dark" style="width:100%;" onclick="openModal('W05-DONE'); toggleDrawer();">1초 간편결제</button>
+        </aside>
+        
+
+    <!-- 8. Modal Overlay -->
+    
+        <div id="W05-DONE" data-feature-id="CALENDAR-DONE-01" class="modal-overlay">
+            <div class="modal-card">
+                <div style="font-size:36px; margin-bottom:8px;">🥗</div>
+                <h3 style="font-size:18px; font-weight:800; margin-bottom:8px;">결제 완료 & 30일 식단 캘린더 발급</h3>
+                <div class="img-box" style="margin:16px 0;">🖼️ [30일 제로슈거 챌린지 캘린더 PDF 다운로드]</div>
+                <button class="wf-btn wf-btn-dark" onclick="closeModal()">확인 및 닫기</button>
+            </div>
+        </div>
+        
+
+    <!-- 9. Mandatory Footer (100% Client Bespoke) -->
+    <footer class="site-footer">
+        <div class="container" style="padding:0;">
+            <div class="footer-cols">
+                <div>
+                    <strong style="font-size:14px; color:#111111;">(주)위케타 0kcal 헬스 & 다이어트 랩</strong><br/>
+                    대표이사: <strong>송아린</strong> | 사업자등록번호: 120-88-05005 | 통신판매업신고: 제2026-서울성수-0142호<br/>
+                    사업장 주소: 서울시 강남구 압구정로 12 WICKETA 0kcal 웰니스 스파<br/>
+                    모기업: WONDERSCAPE (원더스케이프) 캄테크 디지털 웰니스 플랫폼
+                </div>
+                <div>
+                    <strong style="font-size:13px; color:#111111;">고객 안심 센터</strong><br/>
+                    직통전화: 1588-0505 (평일 09:00 ~ 18:00)<br/>
+                    문의이메일: arin@wicketa.com
+                </div>
+                <div>
+                    <strong style="font-size:13px; color:#111111;">품질 및 인증</strong><br/>
+                    KTR 3無 공인 시험성적서 획득<br/>
+                    식약처 HACCP 위생 인증 시설 제조
+                </div>
+            </div>
+            <div class="footer-btm">
+                <div>© 2026 WICKETA Inc. (송아린). All rights reserved. 100% Monochrome Low-Fi Wireframe.</div>
+                <div>이용약관 | 개인정보처리방침 | 사업자정보확인</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Handlers -->
+    <script>
+        function switchPage(pageId) {
+            document.querySelectorAll('.page-view').forEach(function(v) { v.classList.remove('active'); });
+            var target = document.getElementById(pageId);
+            if(target) target.classList.add('active');
+            document.querySelectorAll('.wf-top-helper button').forEach(function(b) {
+                if(b.innerText.indexOf(pageId) !== -1) b.classList.add('active');
+                else b.classList.remove('active');
+            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        function toggleDrawer() {
+            document.querySelectorAll('.cart-drawer').forEach(function(d) { d.classList.toggle('open'); });
+        }
+        function openOrder(item, price) {
+            var di = document.getElementById('drawerItem');
+            var dp = document.getElementById('drawerPrice');
+            if(di) di.innerText = item;
+            if(dp) dp.innerText = price;
+            toggleDrawer();
+        }
+        function openModal(id) {
+            var m = document.getElementById(id);
+            if(m) m.classList.add('open');
+        }
+        function closeModal() {
+            document.querySelectorAll('.modal-overlay').forEach(function(m) { m.classList.remove('open'); });
+        }
+        function filterLNB(cat) {
+            alert(cat + ' 카테고리 필터가 적용되었습니다.');
+        }
+        
+        function calcDiet() {
+            var h = parseInt(document.getElementById('workoutRange').value);
+            document.getElementById('workoutVal').innerText = h;
+            var sugar = h * 45;
+            var kcal = sugar * 4;
+            document.getElementById('sugarSavedText').innerText = '당류 ' + sugar + 'g (' + kcal + ' kcal 절감)';
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef sim fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W08-HOME (틱톡 진입)<br/>• [매직 에이드 키트 구매] 클릭"]
+    SIM["02 W08-SIMULATE (3D 변색 검증)<br/>• MAGIC-COLOR-01 3단 수색"]
+    DRAWER["03 W08-DRAWER (학생할인 결제)<br/>• TIKTOK-PAY-01 15% 할인"]
+    
+    PAY_CHECK{"04 결제 승인<br/>여부 확인"}
+    
+    DONE["05 W08-DONE (가이드 발급)<br/>• 틱톡 15초 촬영 PDF 증정"]
+    RETRY["04-B 토스페이 전환 (Fallback)<br/>• 대체 결제창 오버레이"]
+    COMM["F1 W08-COMM (챌린지 연동)<br/>• 틱톡 랭킹 투표 연동"]
+
+    HOME --> SIM
+    SIM --> DRAWER
+    DRAWER --> PAY_CHECK
+    
+    PAY_CHECK -->|결제 성공| DONE
+    PAY_CHECK -->|결제 오류| RETRY
+    RETRY -.->|결제 수정| DRAWER
+    
+    DONE --> COMM
+
+    class HOME home;
+    class SIM sim;
+    class DRAWER,DONE,RETRY drawer;
+    class PAY_CHECK decision;
+    class COMM support;

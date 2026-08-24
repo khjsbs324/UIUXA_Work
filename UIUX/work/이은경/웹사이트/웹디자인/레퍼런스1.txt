@@ -1,0 +1,20 @@
+[메인페이지]
+이미지와 영상으로 브랜드와 제품의 감성이 표현됨
+https://framacph.com  
+https://fredericia.com/craftsmanship 
+https://newworks.dk/en 
+https://ormaie.com 
+
+
+[서브페이지]
+https://prose.com/products/custom-serum : 고객 맞춤 커스텀 예시를 보여주는 슬라이드 영역
+https://teklafabrics.com/bed : 카테고리 페이지에서 상품 이미지에 마우스를 올리면 제품의 상세 이미지 확인 가능, 제품을 유형별로 파악하기 쉬움
+https://engold.com.au/collections/all :  : 카테고리 페이지에서 상품 이미지에 마우스를 올리면 제품의 상세 이미지와 제품을 활용한 인테리어 확인 가능
+https://softservices.com/products/buffing-bar : 제품 상세페이지에서 제품의 효과를 확인할 수 있는 이미지와, 추천/비추천 이유 
+https://flamingoestate.com/pages/gifting-guide : 선물 세트 가이드 페이지에서 카테고리 별로 다양한 상품 구성 추천 
+
+
+[브랜드 소개]
+https://www.trysuri.com/pages/our-story : 기존 제품의 문제를 해결한다는 서사가 비슷함
+https://hinok.life/about/story : 슬라이드 형식이라 보기 지루하지 않아보임
+https://aromatica.co/about : 스크롤 동작에 맞춰 화면 속 그래픽, 텍스처, 텍스트, 제품 이미지가 변화하며 브랜드의 이야기를 전달

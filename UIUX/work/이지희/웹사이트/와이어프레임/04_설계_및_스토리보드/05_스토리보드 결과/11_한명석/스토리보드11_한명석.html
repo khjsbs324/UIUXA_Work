@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WICKETA 통합 마스터 스토리보드 - 한명석 (A-5 시니어 웰에이징 & 큰글씨 캄테크형 (Healthy Aging))</title>
+  <style>
+    :root {
+      --bg: #0d0e12;
+      --card-bg: #16181f;
+      --card-border: #262936;
+      --card-hover: #323647;
+      --text: #f0f2f5;
+      --text-muted: #8c93a4;
+      --primary: #ffffff;
+      --accent: #d4af37;
+      --highlight: #2a3147;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+    header {
+      background: #111217;
+      border-bottom: 1px solid var(--card-border);
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .brand-title {
+      font-size: 16px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .badge {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 12px;
+      background: #252836;
+      color: #b0b8cc;
+      border: 1px solid #363b4e;
+    }
+    .tabs-bar {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+    }
+    .tab-btn {
+      background: transparent;
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .tab-btn:hover {
+      background: var(--card-bg);
+      color: var(--text);
+      border-color: #434961;
+    }
+    .tab-btn.active {
+      background: #ffffff;
+      color: #000000;
+      border-color: #ffffff;
+      font-weight: 700;
+    }
+    .main-container {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+    #sidebar {
+      width: 260px;
+      background: #12131a;
+      border-right: 1px solid var(--card-border);
+      padding: 16px;
+      overflow-y: auto;
+      flex-shrink: 0;
+    }
+    .nav-group-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #656c80;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .screen-nav-item {
+      padding: 9px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      color: var(--text-muted);
+      cursor: pointer;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.15s;
+    }
+    .screen-nav-item:hover {
+      background: var(--card-bg);
+      color: var(--text);
+    }
+    .screen-nav-item.active {
+      background: var(--highlight);
+      color: #ffffff;
+      font-weight: 700;
+      border-left: 3px solid #ffffff;
+    }
+    .split-view {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+    .wireframe-pane {
+      flex: 1.1;
+      background: #000000;
+      border-right: 1px solid var(--card-border);
+      padding: 24px;
+      overflow-y: auto;
+    }
+    .spec-pane {
+      flex: 1.3;
+      background: var(--bg);
+      padding: 24px;
+      overflow-y: auto;
+    }
+    .wf-box {
+      background: #111111;
+      border: 1.5px solid #333333;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 20px;
+      transition: all 0.2s;
+    }
+    .wf-box.highlight {
+      border-color: #ffffff;
+      box-shadow: 0 0 15px rgba(255,255,255,0.2);
+    }
+    .wf-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .wf-img-placeholder {
+      background: #1a1a1a;
+      border: 1px dashed #555555;
+      padding: 24px;
+      text-align: center;
+      color: #888888;
+      font-size: 13px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+    .spec-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 18px;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .spec-card:hover, .spec-card.active {
+      border-color: #ffffff;
+      background: #1c1f2a;
+    }
+    .spec-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 8px;
+    }
+    .spec-id {
+      font-size: 13px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+    .spec-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .spec-table {
+      width: 100%;
+      font-size: 12px;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    .spec-table th, .spec-table td {
+      padding: 6px 8px;
+      border: 1px solid var(--card-border);
+      text-align: left;
+    }
+    .spec-table th {
+      background: #1e212b;
+      color: #b0b8cc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header & 5-Goal Switcher -->
+  <header>
+    <div class="brand-title">
+      <span>WICKETA STORYBOARD</span>
+      <span class="badge">11 한명석 (A-5 시니어 웰에이징 & 큰글씨 캄테크형 (Healthy Aging))</span>
+    </div>
+    <div class="tabs-bar">
+<button class="tab-btn active" onclick="filterGoal('all')">전체 5대 목적 (All)</button>
+      <button class="tab-btn" onclick="filterGoal('goal1')">목적 1: 지리산 명인 발효 황차 큰글씨 주문</button>
+      <button class="tab-btn" onclick="filterGoal('goal2')">목적 2: 60일 혈당/혈압 백세 안식 정기구독</button>
+      <button class="tab-btn" onclick="filterGoal('goal3')">목적 3: 효도 선물 오동나무 함 각인 세트</button>
+      <button class="tab-btn" onclick="filterGoal('goal4')">목적 4: 180초 온수 발효 지리산 다도 리추얼</button>
+      <button class="tab-btn" onclick="filterGoal('goal5')">목적 5: 전화 한 통으로 끝나는 안심 상담</button>
+
+    </div>
+  </header>
+
+  <div class="main-container">
+    <!-- Left Sidebar: Screen Registry -->
+    <nav id="sidebar">
+      <div class="nav-group-title">전체 화면 목록</div>
+      <div class="screen-nav-item" onclick="switchScreen('W11-HOME')">
+        <span>🏛️ W11-HOME</span>
+        <span class="badge">지리산 </span>
+      </div>
+      <div class="screen-nav-item" onclick="switchScreen('W11-CATALOG')">
+        <span>🏛️ W11-CATALOG</span>
+        <span class="badge">지리산 </span>
+      </div>
+      <div class="screen-nav-item" onclick="switchScreen('W11-ABOUT')">
+        <span>🏛️ W11-ABOUT</span>
+        <span class="badge">명인 소</span>
+      </div>
+      <div class="screen-nav-item" onclick="switchScreen('W11-BUILD')">
+        <span>🏛️ W11-BUILD</span>
+        <span class="badge">오동나무</span>
+      </div>
+      <div class="screen-nav-item" onclick="switchScreen('W11-SUB')">
+        <span>🏛️ W11-SUB</span>
+        <span class="badge">60일 </span>
+      </div>
+      <div class="screen-nav-item" onclick="switchScreen('W11-COMM')">
+        <span>🏛️ W11-COMM</span>
+        <span class="badge">전통 다</span>
+      </div>
+      <div class="screen-nav-item" onclick="switchScreen('W11-DRAWER')">
+        <span>🏛️ W11-DRAWER</span>
+        <span class="badge">Asid</span>
+      </div>
+      <div class="screen-nav-item" onclick="switchScreen('W11-DONE')">
+        <span>🏛️ W11-DONE</span>
+        <span class="badge">주문 완</span>
+      </div>
+
+    </nav>
+
+    <!-- Split Pane: Left Wireframe, Right Spec -->
+    <div class="split-view">
+      <!-- Left Wireframe View -->
+      <div class="wireframe-pane">
+        <h3 style="font-size:15px; margin-bottom:16px; color:#ffffff;">🖼️ 모노크롬 와이어프레임 뷰 (W11-HOME)</h3>
+        
+        <!-- Interactive Killer Module on Wireframe -->
+        <div class="wf-box" id="wf-killer">
+          <div class="wf-title">
+            <span>⭐ 큰글씨(18pt) & 1-Click 간편 전화 주문 지원 지리산 80℃ 온수 발효 황차 도감 (SENIOR-EASY-01)</span>
+            <span class="badge">킬러 기능</span>
+          </div>
+          <div class="wf-img-placeholder" style="background:#111; color:#fff;">
+            [큰글씨(18pt) & 1-Click 간편 전화 주문 지원 지리산 80℃ 온수 발효 황차 도감 (SENIOR-EASY-01): 100% 무채색 인터랙티브 콘솔]
+          </div>
+          <div style="font-size:12px; color:#aaa; line-height:1.6;">
+            • 클라이언트 맞춤형 핵심 인터랙션 & 5대 목적 연동<br/>
+            • 1-Click 패스트 체크아웃 및 가상 스크롤 복원
+          </div>
+        </div>
+
+        <!-- 15 Section Wireframe Placeholders -->
+        <div id="wf-sections-container">
+          <!-- Will be rendered via JS -->
+        </div>
+      </div>
+
+      <!-- Right Spec View -->
+      <div class="spec-pane">
+        <h3 style="font-size:15px; margin-bottom:16px; color:#ffffff;">📋 15대 상품 큐레이션 섹션 스토리보드 상세 명세</h3>
+        <div id="spec-cards-container">
+          <!-- Will be rendered via JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var sectionsData = [{"id": "SEC-01", "code": "WK-P01", "name": "⭐ [명인 특화] 지리산 야생 80℃ 온수 발효 황차 팩", "category": "🍵 지리산 야생 80℃ 온수 발효티 (4)", "price": "45,000원", "goalId": "goal1", "uiComponent": "⭐ [명인 특화] 지리산 야생 80℃ 온수 발효 황차 팩 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-01 ⭐ [명인 특화] 지리산 야생 80℃ 온수 발효 황차 팩 (100% 무채색 뷰박스)]", "displayData": "⭐ [명인 특화] 지리산 야생 80℃ 온수 발효 황차 팩 핵심 성분, 가격 45,000원, 🍵 지리산 야생 80℃ 온수 발효티 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 1: 지리산 명인 발효 황차 큰글씨 주문 연계", "systemLogic": "선택 시 W11-CATALOG 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W11-CATALOG", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-02", "code": "WK-P02", "name": "🌿 [혈당 안심] 공인 성적서 검증 무당 구기자 발효티", "category": "🌿 혈당/혈압 안심 무당 성적서 팩 (4)", "price": "38,000원", "goalId": "goal2", "uiComponent": "🌿 [혈당 안심] 공인 성적서 검증 무당 구기자 발효티 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-02 🌿 [혈당 안심] 공인 성적서 검증 무당 구기자 발효티 (100% 무채색 뷰박스)]", "displayData": "🌿 [혈당 안심] 공인 성적서 검증 무당 구기자 발효티 핵심 성분, 가격 38,000원, 🌿 혈당/혈압 안심 무당 성적서 팩 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 2: 60일 혈당/혈압 백세 안식 정기구독 연계", "systemLogic": "선택 시 W11-ABOUT 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W11-ABOUT", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-03", "code": "WK-P03", "name": "🪵 [명품 예단] 오동나무 함 발효차 2종 & 비단 보자기 세트", "category": "🪵 전통 명품 오동나무 선물세트 (4)", "price": "95,000원", "goalId": "goal3", "uiComponent": "🪵 [명품 예단] 오동나무 함 발효차 2종 & 비단 보자기 세트 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-03 🪵 [명품 예단] 오동나무 함 발효차 2종 & 비단 보자기 세트 (100% 무채색 뷰박스)]", "displayData": "🪵 [명품 예단] 오동나무 함 발효차 2종 & 비단 보자기 세트 핵심 성분, 가격 95,000원, 🪵 전통 명품 오동나무 선물세트 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 3: 효도 선물 오동나무 함 각인 세트 연계", "systemLogic": "선택 시 W11-BUILD 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W11-BUILD", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-04", "code": "WK-P04", "name": "🏺 [장인 다기] 문경 백자 80℃ 온수 숙우 & 찻잔 2인 세트", "category": "🏺 장인 수제 분청사기 다기 세트 (4)", "price": "78,000원", "goalId": "goal4", "uiComponent": "🏺 [장인 다기] 문경 백자 80℃ 온수 숙우 & 찻잔 2인 세트 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-04 🏺 [장인 다기] 문경 백자 80℃ 온수 숙우 & 찻잔 2인 세트 (100% 무채색 뷰박스)]", "displayData": "🏺 [장인 다기] 문경 백자 80℃ 온수 숙우 & 찻잔 2인 세트 핵심 성분, 가격 78,000원, 🏺 장인 수제 분청사기 다기 세트 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 4: 180초 온수 발효 지리산 다도 리추얼 연계", "systemLogic": "선택 시 W11-SUB 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W11-SUB", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-05", "code": "WK-P05", "name": "📖 [백세 건강] 60일 주기 우체국 안심 배달 정기구독 팩", "category": "📖 백세 건강 다이어리 & 60일 구독 (4)", "price": "68,000원", "goalId": "goal5", "uiComponent": "📖 [백세 건강] 60일 주기 우체국 안심 배달 정기구독 팩 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-05 📖 [백세 건강] 60일 주기 우체국 안심 배달 정기구독 팩 (100% 무채색 뷰박스)]", "displayData": "📖 [백세 건강] 60일 주기 우체국 안심 배달 정기구독 팩 핵심 성분, 가격 68,000원, 📖 백세 건강 다이어리 & 60일 구독 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 5: 전화 한 통으로 끝나는 안심 상담 연계", "systemLogic": "선택 시 W11-COMM 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W11-COMM", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-06", "code": "WK-P06", "name": "🍵 [위장 편한] 지리산 3년 숙성 온수 발효 흑차 팩", "category": "🍵 지리산 야생 80℃ 온수 발효티 (4)", "price": "42,000원", "goalId": "goal1", "uiComponent": "🍵 [위장 편한] 지리산 3년 숙성 온수 발효 흑차 팩 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-06 🍵 [위장 편한] 지리산 3년 숙성 온수 발효 흑차 팩 (100% 무채색 뷰박스)]", "displayData": "🍵 [위장 편한] 지리산 3년 숙성 온수 발효 흑차 팩 핵심 성분, 가격 42,000원, 🍵 지리산 야생 80℃ 온수 발효티 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 1: 지리산 명인 발효 황차 큰글씨 주문 연계", "systemLogic": "선택 시 W11-DRAWER 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W11-DRAWER", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-07", "code": "WK-P07", "name": "🌿 [혈압 순환] 은행잎 & 블루베리 항산화 건강티", "category": "🌿 혈당/혈압 안심 무당 성적서 팩 (4)", "price": "35,000원", "goalId": "goal2", "uiComponent": "🌿 [혈압 순환] 은행잎 & 블루베리 항산화 건강티 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-07 🌿 [혈압 순환] 은행잎 & 블루베리 항산화 건강티 (100% 무채색 뷰박스)]", "displayData": "🌿 [혈압 순환] 은행잎 & 블루베리 항산화 건강티 핵심 성분, 가격 35,000원, 🌿 혈당/혈압 안심 무당 성적서 팩 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 2: 60일 혈당/혈압 백세 안식 정기구독 연계", "systemLogic": "선택 시 W11-DONE 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W11-DONE", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-08", "code": "WK-P08", "name": "🪵 [스승의날] 오동나무 각인 감사 틴케이스 세트", "category": "🪵 전통 명품 오동나무 선물세트 (4)", "price": "58,000원", "goalId": "goal3", "uiComponent": "🪵 [스승의날] 오동나무 각인 감사 틴케이스 세트 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-08 🪵 [스승의날] 오동나무 각인 감사 틴케이스 세트 (100% 무채색 뷰박스)]", "displayData": "🪵 [스승의날] 오동나무 각인 감사 틴케이스 세트 핵심 성분, 가격 58,000원, 🪵 전통 명품 오동나무 선물세트 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 3: 효도 선물 오동나무 함 각인 세트 연계", "systemLogic": "선택 시 W11-CATALOG 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W11-CATALOG", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-09", "code": "WK-P09", "name": "🏺 [분청사기] 손물레 분청 찻사발 & 대나무 차선", "category": "🏺 장인 수제 분청사기 다기 세트 (4)", "price": "62,000원", "goalId": "goal4", "uiComponent": "🏺 [분청사기] 손물레 분청 찻사발 & 대나무 차선 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-09 🏺 [분청사기] 손물레 분청 찻사발 & 대나무 차선 (100% 무채색 뷰박스)]", "displayData": "🏺 [분청사기] 손물레 분청 찻사발 & 대나무 차선 핵심 성분, 가격 62,000원, 🏺 장인 수제 분청사기 다기 세트 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 4: 180초 온수 발효 지리산 다도 리추얼 연계", "systemLogic": "선택 시 W11-ABOUT 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W11-ABOUT", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-10", "code": "WK-P10", "name": "📖 [다도 일기] 한지 장정 백세 건강 다도 묵상 노트", "category": "📖 백세 건강 다이어리 & 60일 구독 (4)", "price": "25,000원", "goalId": "goal5", "uiComponent": "📖 [다도 일기] 한지 장정 백세 건강 다도 묵상 노트 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-10 📖 [다도 일기] 한지 장정 백세 건강 다도 묵상 노트 (100% 무채색 뷰박스)]", "displayData": "📖 [다도 일기] 한지 장정 백세 건강 다도 묵상 노트 핵심 성분, 가격 25,000원, 📖 백세 건강 다이어리 & 60일 구독 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 5: 전화 한 통으로 끝나는 안심 상담 연계", "systemLogic": "선택 시 W11-BUILD 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W11-BUILD", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-11", "code": "WK-P11", "name": "🍵 [아침 묵상] 80℃ 황금침출 연잎 발효 맑은티", "category": "🍵 지리산 야생 80℃ 온수 발효티 (4)", "price": "36,000원", "goalId": "goal1", "uiComponent": "🍵 [아침 묵상] 80℃ 황금침출 연잎 발효 맑은티 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-11 🍵 [아침 묵상] 80℃ 황금침출 연잎 발효 맑은티 (100% 무채색 뷰박스)]", "displayData": "🍵 [아침 묵상] 80℃ 황금침출 연잎 발효 맑은티 핵심 성분, 가격 36,000원, 🍵 지리산 야생 80℃ 온수 발효티 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 1: 지리산 명인 발효 황차 큰글씨 주문 연계", "systemLogic": "선택 시 W11-SUB 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W11-SUB", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-12", "code": "WK-P12", "name": "🌿 [관절 웰빙] 우슬 & 당귀 시니어 활력 발효티", "category": "🌿 혈당/혈압 안심 무당 성적서 팩 (4)", "price": "39,000원", "goalId": "goal2", "uiComponent": "🌿 [관절 웰빙] 우슬 & 당귀 시니어 활력 발효티 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-12 🌿 [관절 웰빙] 우슬 & 당귀 시니어 활력 발효티 (100% 무채색 뷰박스)]", "displayData": "🌿 [관절 웰빙] 우슬 & 당귀 시니어 활력 발효티 핵심 성분, 가격 39,000원, 🌿 혈당/혈압 안심 무당 성적서 팩 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 2: 60일 혈당/혈압 백세 안식 정기구독 연계", "systemLogic": "선택 시 W11-COMM 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W11-COMM", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-13", "code": "WK-P13", "name": "🪵 [팔순 축하] 수놓은 한지 보자기 & 발효차 4종 세트", "category": "🪵 전통 명품 오동나무 선물세트 (4)", "price": "130,000원", "goalId": "goal3", "uiComponent": "🪵 [팔순 축하] 수놓은 한지 보자기 & 발효차 4종 세트 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-13 🪵 [팔순 축하] 수놓은 한지 보자기 & 발효차 4종 세트 (100% 무채색 뷰박스)]", "displayData": "🪵 [팔순 축하] 수놓은 한지 보자기 & 발효차 4종 세트 핵심 성분, 가격 130,000원, 🪵 전통 명품 오동나무 선물세트 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 3: 효도 선물 오동나무 함 각인 세트 연계", "systemLogic": "선택 시 W11-DRAWER 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W11-DRAWER", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-14", "code": "WK-P14", "name": "🏺 [보온 다포] 무명 누비 다포 & 찻잔 받침 4P", "category": "🏺 장인 수제 분청사기 다기 세트 (4)", "price": "30,000원", "goalId": "goal4", "uiComponent": "🏺 [보온 다포] 무명 누비 다포 & 찻잔 받침 4P 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-14 🏺 [보온 다포] 무명 누비 다포 & 찻잔 받침 4P (100% 무채색 뷰박스)]", "displayData": "🏺 [보온 다포] 무명 누비 다포 & 찻잔 받침 4P 핵심 성분, 가격 30,000원, 🏺 장인 수제 분청사기 다기 세트 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 4: 180초 온수 발효 지리산 다도 리추얼 연계", "systemLogic": "선택 시 W11-DONE 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W11-DONE", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-15", "code": "WK-P15", "name": "📖 [온가족 다도] 손주와 함께 마시는 무카페인 보리 순차", "category": "📖 백세 건강 다이어리 & 60일 구독 (4)", "price": "28,000원", "goalId": "goal5", "uiComponent": "📖 [온가족 다도] 손주와 함께 마시는 무카페인 보리 순차 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-15 📖 [온가족 다도] 손주와 함께 마시는 무카페인 보리 순차 (100% 무채색 뷰박스)]", "displayData": "📖 [온가족 다도] 손주와 함께 마시는 무카페인 보리 순차 핵심 성분, 가격 28,000원, 📖 백세 건강 다이어리 & 60일 구독 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 5: 전화 한 통으로 끝나는 안심 상담 연계", "systemLogic": "선택 시 W11-CATALOG 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W11-CATALOG", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}];
+
+    function renderComponents() {
+      var wfContainer = document.getElementById('wf-sections-container');
+      var specContainer = document.getElementById('spec-cards-container');
+      wfContainer.innerHTML = '';
+      specContainer.innerHTML = '';
+
+      sectionsData.forEach(function(sec) {
+        // Render Left Wireframe Box
+        var wfDiv = document.createElement('div');
+        wfDiv.className = 'wf-box';
+        wfDiv.id = 'wf-' + sec.id;
+        wfDiv.setAttribute('data-goal', sec.goalId);
+        wfDiv.innerHTML = `
+          <div class="wf-title">
+            <span>${sec.id}: ${sec.name}</span>
+            <span class="badge">${sec.category}</span>
+          </div>
+          <div class="wf-img-placeholder">${sec.imgSpec}</div>
+          <div style="display:flex; justify-content:space-between; font-size:12px; color:#aaa;">
+            <span>가격: ${sec.price}</span>
+            <span>이동: ${sec.targetScreen}</span>
+          </div>
+        `;
+        wfContainer.appendChild(wfDiv);
+
+        // Render Right Spec Card
+        var specDiv = document.createElement('div');
+        specDiv.className = 'spec-card';
+        specDiv.id = 'spec-' + sec.id;
+        specDiv.setAttribute('data-goal', sec.goalId);
+        specDiv.onclick = function() { highlightSection(sec.id); };
+        specDiv.innerHTML = `
+          <div class="spec-header">
+            <div class="spec-id">${sec.id} | ${sec.name}</div>
+            <span class="badge">${sec.goalId.toUpperCase()}</span>
+          </div>
+          <div class="spec-meta">
+            <strong>카테고리:</strong> ${sec.category} | <strong>가격:</strong> ${sec.price}<br/>
+            <strong>UI 컴포넌트:</strong> ${sec.uiComponent}
+          </div>
+          <table class="spec-table">
+            <tr><th style="width:28%;">표시 데이터</th><td>${sec.displayData}</td></tr>
+            <tr><th>사용자 행동</th><td>${sec.userAction}</td></tr>
+            <tr><th>시스템 처리/모션</th><td>${sec.systemLogic}</td></tr>
+            <tr><th>이동 대상 화면</th><td><strong>${sec.targetScreen}</strong></td></tr>
+            <tr><th>상태별 변화</th><td>${sec.stateChange}</td></tr>
+          </table>
+        `;
+        specContainer.appendChild(specDiv);
+      });
+    }
+
+    function highlightSection(id) {
+      document.querySelectorAll('.wf-box').forEach(function(b) { b.classList.remove('highlight'); });
+      document.querySelectorAll('.spec-card').forEach(function(c) { c.classList.remove('active'); });
+
+      var wfTarget = document.getElementById('wf-' + id);
+      var specTarget = document.getElementById('spec-' + id);
+      if(wfTarget) {
+        wfTarget.classList.add('highlight');
+        wfTarget.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      if(specTarget) {
+        specTarget.classList.add('active');
+        specTarget.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+
+    function filterGoal(goal) {
+      document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+      event.target.classList.add('active');
+
+      document.querySelectorAll('.wf-box').forEach(function(b) {
+        if(b.id === 'wf-killer') return;
+        if(goal === 'all' || b.getAttribute('data-goal') === goal) b.style.display = 'block';
+        else b.style.display = 'none';
+      });
+
+      document.querySelectorAll('.spec-card').forEach(function(c) {
+        if(goal === 'all' || c.getAttribute('data-goal') === goal) c.style.display = 'block';
+        else c.style.display = 'none';
+      });
+    }
+
+    function switchScreen(screenId) {
+      document.querySelectorAll('.screen-nav-item').forEach(function(i) { i.classList.remove('active'); });
+      event.currentTarget.classList.add('active');
+      alert(screenId + ' 화면 상세 스토리보드로 전환되었습니다.');
+    }
+
+    renderComponents();
+  </script>
+</body>
+</html>

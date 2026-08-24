@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WICKETA 통합 마스터 스토리보드 - 임태경 (Luxury Hospitality B2B)</title>
+  <style>
+    :root {
+      --bg: #0d0e12;
+      --card-bg: #16181f;
+      --card-border: #262936;
+      --card-hover: #323647;
+      --text: #f0f2f5;
+      --text-muted: #8c93a4;
+      --primary: #ffffff;
+      --accent: #d4af37;
+      --highlight: #2a3147;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+    header {
+      background: #111217;
+      border-bottom: 1px solid var(--card-border);
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .brand-title {
+      font-size: 16px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .badge {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 12px;
+      background: #252836;
+      color: #b0b8cc;
+      border: 1px solid #363b4e;
+    }
+    .tabs-bar {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+    }
+    .tab-btn {
+      background: transparent;
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .tab-btn:hover {
+      background: var(--card-bg);
+      color: var(--text);
+      border-color: #434961;
+    }
+    .tab-btn.active {
+      background: #ffffff;
+      color: #000000;
+      border-color: #ffffff;
+      font-weight: 700;
+    }
+    .main-container {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+    #sidebar {
+      width: 260px;
+      background: #12131a;
+      border-right: 1px solid var(--card-border);
+      padding: 16px;
+      overflow-y: auto;
+      flex-shrink: 0;
+    }
+    .nav-group-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #656c80;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .screen-nav-item {
+      padding: 9px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      color: var(--text-muted);
+      cursor: pointer;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.15s;
+    }
+    .screen-nav-item:hover {
+      background: var(--card-bg);
+      color: var(--text);
+    }
+    .screen-nav-item.active {
+      background: var(--highlight);
+      color: #ffffff;
+      font-weight: 700;
+      border-left: 3px solid #ffffff;
+    }
+    .split-view {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+    .wireframe-pane {
+      flex: 1.1;
+      background: #000000;
+      border-right: 1px solid var(--card-border);
+      padding: 24px;
+      overflow-y: auto;
+    }
+    .spec-pane {
+      flex: 1.3;
+      background: var(--bg);
+      padding: 24px;
+      overflow-y: auto;
+    }
+    .wf-box {
+      background: #111111;
+      border: 1.5px solid #333333;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 20px;
+      transition: all 0.2s;
+    }
+    .wf-box.highlight {
+      border-color: #ffffff;
+      box-shadow: 0 0 15px rgba(255,255,255,0.2);
+    }
+    .wf-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .wf-img-placeholder {
+      background: #1a1a1a;
+      border: 1px dashed #555555;
+      padding: 24px;
+      text-align: center;
+      color: #888888;
+      font-size: 13px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+    .spec-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 18px;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .spec-card:hover, .spec-card.active {
+      border-color: #ffffff;
+      background: #1c1f2a;
+    }
+    .spec-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 8px;
+    }
+    .spec-id {
+      font-size: 13px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+    .spec-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .spec-table {
+      width: 100%;
+      font-size: 12px;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    .spec-table th, .spec-table td {
+      padding: 6px 8px;
+      border: 1px solid var(--card-border);
+      text-align: left;
+    }
+    .spec-table th {
+      background: #1e212b;
+      color: #b0b8cc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header & 5-Goal Switcher -->
+  <header>
+    <div class="brand-title">
+      <span>WICKETA STORYBOARD</span>
+      <span class="badge">04 임태경 (Luxury Hospitality B2B)</span>
+    </div>
+    <div class="tabs-bar">
+      <button class="tab-btn active" onclick="filterGoal('all')">전체 5대 목적 (All)</button>
+      <button class="tab-btn" onclick="filterGoal('goal1')">목적 1: 5,000세트 B2B 견적</button>
+      <button class="tab-btn" onclick="filterGoal('goal2')">목적 2: 0원 VIP 샘플 신청</button>
+      <button class="tab-btn" onclick="filterGoal('goal3')">목적 3: 호텔 로고 3D 각인</button>
+      <button class="tab-btn" onclick="filterGoal('goal4')">목적 4: ERP 1초 자동 재발주</button>
+      <button class="tab-btn" onclick="filterGoal('goal5')">목적 5: 라운지 F&B 시즌 공급</button>
+    </div>
+  </header>
+
+  <div class="main-container">
+    <!-- Left Sidebar: Screen Registry -->
+    <nav id="sidebar">
+      <div class="nav-group-title">공통 필수 3대 페이지</div>
+      <div class="screen-nav-item active" onclick="switchScreen('W04-HOME')">
+        <span>🏛️ W04-HOME</span>
+        <span class="badge">메인</span>
+      </div>
+      <div class="screen-nav-item" onclick="switchScreen('W04-CATALOG')">
+        <span>📖 W04-CATALOG</span>
+        <span class="badge">카탈로그</span>
+      </div>
+      <div class="screen-nav-item" onclick="switchScreen('W04-ABOUT')">
+        <span>🌱 W04-ABOUT</span>
+        <span class="badge">호텔B2B</span>
+      </div>
+
+      <div class="nav-group-title" style="margin-top:16px;">고유 킬러 서브 화면</div>
+      <div class="screen-nav-item" onclick="switchScreen('W04-ESTIMATE')">
+        <span>📑 W04-ESTIMATE</span>
+        <span class="badge">대량견적</span>
+      </div>
+      <div class="screen-nav-item" onclick="switchScreen('W04-BUILD')">
+        <span>💎 W04-BUILD</span>
+        <span class="badge">3D로고각인</span>
+      </div>
+      <div class="screen-nav-item" onclick="switchScreen('W04-COMM')">
+        <span>🔄 W04-COMM</span>
+        <span class="badge">ERP재발주</span>
+      </div>
+      <div class="screen-nav-item" onclick="switchScreen('W04-DRAWER')">
+        <span>🛒 W04-DRAWER</span>
+        <span class="badge">Aside</span>
+      </div>
+      <div class="screen-nav-item" onclick="switchScreen('W04-DONE')">
+        <span>✅ W04-DONE</span>
+        <span class="badge">Modal</span>
+      </div>
+    </nav>
+
+    <!-- Split Pane: Left Wireframe, Right Spec -->
+    <div class="split-view">
+      <!-- Left Wireframe View -->
+      <div class="wireframe-pane">
+        <h3 style="font-size:15px; margin-bottom:16px; color:#ffffff;">🖼️ 모노크롬 와이어프레임 뷰 (W04-HOME)</h3>
+        
+        <!-- Interactive Killer Module on Wireframe -->
+        <div class="wf-box" id="wf-killer">
+          <div class="wf-title">
+            <span>📑 [B2B-ESTIMATE-01] 5,000세트 B2B 대량 견적 계산기 & 전자계약 포털</span>
+            <span class="badge">킬러 기능</span>
+          </div>
+          <div class="wf-img-placeholder" style="background:#111; color:#fff;">
+            [객실수(50~500실) x 투숙률 슬라이더 + 463종 KTR 시험성적서 + 국세청 API 사업자 인증]
+          </div>
+          <div style="font-size:12px; color:#aaa; line-height:1.6;">
+            • 계단식 대량 단가 자동 산출 & 1-Page PDF 견적서 발급<br/>
+            • 0원 VIP 샘플 신청실 & 3D 호텔 로고 레이저 각인 콘솔
+          </div>
+        </div>
+
+        <!-- 15 Section Wireframe Placeholders -->
+        <div id="wf-sections-container">
+          <!-- Will be rendered via JS -->
+        </div>
+      </div>
+
+      <!-- Right Spec View -->
+      <div class="spec-pane">
+        <h3 style="font-size:15px; margin-bottom:16px; color:#ffffff;">📋 15대 B2B 어메니티 섹션 스토리보드 상세 명세</h3>
+        <div id="spec-cards-container">
+          <!-- Will be rendered via JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var sectionsData = [{"id": "SEC-01", "code": "WK-P01", "name": "⭐ [5성급 시그니처] 인룸 웰컴 버터플라이피 티 팩", "category": "🏨 5성급 호텔 인룸 웰컴티 팩 (4)", "price": "39,000원", "goalId": "goal1", "uiComponent": "5성급 시그니처 웰컴티 3D 카드", "imgSpec": "🖼️ [이미지: SEC-01 ⭐ [5성급 시그니처] 인룸 웰컴 버터플라이피 티 팩 (100% 무채색 뷰박스)]", "displayData": "오로라 블루 찬물 1초 융해, 웰컴 카드 연동, 호텔 전용 4포 팩", "userAction": "객실 수량별 단가 슬라이더 조절", "systemLogic": "100~1,000세트 구간별 대량 할인율(최대 30%) 실시간 렌더링", "targetScreen": "W04-ESTIMATE", "stateChange": "수량 선택 시 세트당 단가 실시간 변환 (39,000원 ➔ 27,300원)"}, {"id": "SEC-02", "code": "WK-P02", "name": "📦 [5,000세트 벌크] 호텔 조달 전용 1초 융해 티 1,000포 번들", "category": "📦 5,000세트 B2B 벌크 조달 팩 (4)", "price": "850,000원", "goalId": "goal1", "uiComponent": "B2B 대용량 벌크 조달 카드", "imgSpec": "🖼️ [이미지: SEC-02 📦 [5,000세트 벌크] 호텔 조달 전용 1초 융해 티 1,000포 번들 (100% 무채색 뷰박스)]", "displayData": "1,000포 개별 질소충전 포장, 보관 수명 24개월, 위생 개별 파우치", "userAction": "1-Click 전자계약 발주서 생성 클릭", "systemLogic": "국세청 사업자 등록번호 연동 세금계산서 청구서 자동 발행", "targetScreen": "W04-DRAWER", "stateChange": "발주서 버튼 클릭 시 Drawer 오픈 및 사업자 정보 자동 바인딩"}, {"id": "SEC-03", "code": "WK-P03", "name": "🌱 [ESG 생분해] 친환경 사탕수수 파우치 웰컴티 팩", "category": "🌱 ESG 생분해 파우치 & 우드 트레이 (4)", "price": "32,000원", "goalId": "goal1", "uiComponent": "친환경 ESG 그린 호텔 카드", "imgSpec": "🖼️ [이미지: SEC-03 🌱 [ESG 생분해] 친환경 사탕수수 파우치 웰컴티 팩 (100% 무채색 뷰박스)]", "displayData": "100% 생분해 사탕수수 지류, 친환경 소이잉크 인쇄, 탄소중립 인증", "userAction": "ESG 성적서 PDF 다운로드 클릭", "systemLogic": "한국환경산업기술원 공인 생분해 인증서 라이트박스 팝업", "targetScreen": "W04-ABOUT", "stateChange": "다운로드 완료 시 'ESG 인증 마크' 배지 하이라이트"}, {"id": "SEC-04", "code": "WK-P04", "name": "🛁 [나이트 스파] 딥 릴랙스 캐모마일 & 바닐라 스파 팩", "category": "🛁 나이트 스파 & 릴랙스 허브티 (4)", "price": "28,000원", "goalId": "goal2", "uiComponent": "스파 어메니티 릴랙스 카드", "imgSpec": "🖼️ [이미지: SEC-04 🛁 [나이트 스파] 딥 릴랙스 캐모마일 & 바닐라 스파 팩 (100% 무채색 뷰박스)]", "displayData": "0.00mg 무카페인, 스위트 욕실 배스 티 겸용, 온수 80℃ 아로마 휠", "userAction": "0원 VIP 샘플 신청 클릭", "systemLogic": "호텔리어 4종 샘플 키트 바구니에 자동 추가", "targetScreen": "W04-CATALOG", "stateChange": "샘플 신청 폼에 선택된 상품 뱃지 활성화"}, {"id": "SEC-05", "code": "WK-P05", "name": "💎 [VIP 스위트] 자작나무 인룸 트레이 & 티 6종 기프트", "category": "💎 VIP 스위트 룸 맞춤 기프트 (4)", "price": "65,000원", "goalId": "goal3", "uiComponent": "자작나무 인룸 트레이 3D 뷰어 카드", "imgSpec": "🖼️ [이미지: SEC-05 💎 [VIP 스위트] 자작나무 인룸 트레이 & 티 6종 기프트 (100% 무채색 뷰박스)]", "displayData": "북유럽산 자작나무 원목 트레이, 티 6종 큐레이션, 호텔 로고 각인", "userAction": "호텔 로고 SVG 파일 업로드", "systemLogic": "3D 원목 트레이 표면에 레이저 버닝 로고 실시간 합성", "targetScreen": "W04-BUILD", "stateChange": "업로드 즉시 3D 트레이 중앙에 골드 각인 시뮬레이션"}, {"id": "SEC-06", "code": "WK-P06", "name": "🏨 [조식 라운지] 상쾌한 모닝 시트러스 라임 마테 팩", "category": "🏨 5성급 호텔 인룸 웰컴티 팩 (4)", "price": "29,000원", "goalId": "goal5", "uiComponent": "호텔 조식 뷔페 공급 카드", "imgSpec": "🖼️ [이미지: SEC-06 🏨 [조식 라운지] 상쾌한 모닝 시트러스 라임 마테 팩 (100% 무채색 뷰박스)]", "displayData": "비타민C 500mg, 당류 0g 천연 부스팅, 조식 디스펜서 호환 규격", "userAction": "라운지 잔수별 소요량 계산", "systemLogic": "일일 투숙객 300인 기준 월간 소요 박스 산출 알고리즘", "targetScreen": "W04-HOME", "stateChange": "투숙객 슬라이더 이동 시 월간 권장 공급량 그래프 변동"}, {"id": "SEC-07", "code": "WK-P07", "name": "📦 [3,000세트 벌크] 스위트룸 전용 프리미엄 블렌드 벌크", "category": "📦 5,000세트 B2B 벌크 조달 팩 (4)", "price": "560,000원", "goalId": "goal1", "uiComponent": "분기 분할 납품 계산 카드", "imgSpec": "🖼️ [이미지: SEC-07 📦 [3,000세트 벌크] 스위트룸 전용 프리미엄 블렌드 벌크 (100% 무채색 뷰박스)]", "displayData": "3,000세트 4분기 분할 납품, 안전재고 보관 서비스, 물류비 무료", "userAction": "분기별 분할 배송 일정 선택", "systemLogic": "분기별 정기 출고 스케줄러 자동 생성", "targetScreen": "W04-ESTIMATE", "stateChange": "일정 지정 시 캘린더에 납품 D-Day 핀 표시"}, {"id": "SEC-08", "code": "WK-P08", "name": "🌱 [우드 트레이] 호텔 로고 레이저 각인 원목 트레이", "category": "🌱 ESG 생분해 파우치 & 우드 트레이 (4)", "price": "45,000원", "goalId": "goal3", "uiComponent": "원목 트레이 커스텀 카드", "imgSpec": "🖼️ [이미지: SEC-08 🌱 [우드 트레이] 호텔 로고 레이저 각인 원목 트레이 (100% 무채색 뷰박스)]", "displayData": "FSC 인증 친환경 원목, 내수 우레탄 코팅, 객실 컵받침 일체형", "userAction": "MOQ 100세트 견적 확인", "systemLogic": "100세트 이상 발주 시 각인 동판비 0원 자동 할인", "targetScreen": "W04-BUILD", "stateChange": "MOQ 충족 시 '동판비 무료' 뱃지 점등"}, {"id": "SEC-09", "code": "WK-P09", "name": "🛁 [사우나 & 스파] 0kcal 미네랄 아쿠아 수분 충전 티", "category": "🛁 나이트 스파 & 릴랙스 허브티 (4)", "price": "27,000원", "goalId": "goal4", "uiComponent": "호텔 피트니스 & 스파 전용 카드", "imgSpec": "🖼️ [이미지: SEC-09 🛁 [사우나 & 스파] 0kcal 미네랄 아쿠아 수분 충전 티 (100% 무채색 뷰박스)]", "displayData": "천연 전해질 이온 함유, 무가당 0kcal, 냉음용 1초 용해 스틱", "userAction": "ERP 자동 재발주 루프 등록", "systemLogic": "월간 고정 수량 20박스 정기 자동 결제 스케줄러 등록", "targetScreen": "W04-COMM", "stateChange": "등록 시 'ERP 연동 활성화' 토글 ON"}, {"id": "SEC-10", "code": "WK-P10", "name": "💎 [프레지덴셜] 옻칠 웰컴 박스 & 하이엔드 다기 세트", "category": "💎 VIP 스위트 룸 맞춤 기프트 (4)", "price": "120,000원", "goalId": "goal3", "uiComponent": "VVIP 프레지덴셜 스위트 전용 카드", "imgSpec": "🖼️ [이미지: SEC-10 💎 [프레지덴셜] 옻칠 웰컴 박스 & 하이엔드 다기 세트 (100% 무채색 뷰박스)]", "displayData": "무형문화재 장인 옻칠 오동나무 함, 비단 보자기, 수제 유리 다기", "userAction": "VVIP 1:1 컨시어지 상담 요청", "systemLogic": "호스피탈리티 총괄 디렉터 1:1 방문 상담 티켓 생성", "targetScreen": "W04-ABOUT", "stateChange": "상담 요청 즉시 전담 매니저 배정 알림 노출"}, {"id": "SEC-11", "code": "WK-P11", "name": "🏨 [체크인 컨시어지] 웰컴 드링크 스파클링 에이드 팩", "category": "🏨 5성급 호텔 인룸 웰컴티 팩 (4)", "price": "34,000원", "goalId": "goal5", "uiComponent": "호텔 로비 웰컴 드링크 카드", "imgSpec": "🖼️ [이미지: SEC-11 🏨 [체크인 컨시어지] 웰컴 드링크 스파클링 에이드 팩 (100% 무채색 뷰박스)]", "displayData": "로즈 쿼츠 탄산 믹서, 웰컴 글래스웨어 서빙 매뉴얼 동봉", "userAction": "바텐더 5종 레시피북 PDF 다운로드", "systemLogic": "호텔 F&B 바텐더 전용 디지털 레시피 가이드 발급", "targetScreen": "W04-CATALOG", "stateChange": "다운로드 버튼 클릭 시 고해상도 PDF 렌더링"}, {"id": "SEC-12", "code": "WK-P12", "name": "📦 [10,000세트 엔터프라이즈] 리조트 체인 전용 어메니티 벌크", "category": "📦 5,000세트 B2B 벌크 조달 팩 (4)", "price": "1,600,000원", "goalId": "goal1", "uiComponent": "엔터프라이즈 대규모 체인 조달 카드", "imgSpec": "🖼️ [이미지: SEC-12 📦 [10,000세트 엔터프라이즈] 리조트 체인 전용 어메니티 벌크 (100% 무채색 뷰박스)]", "displayData": "전국 10개 체인 지점별 분할 직배송, 연간 단가 고정 계약", "userAction": "체인 호텔 지점별 배송지 엑셀 업로드", "systemLogic": "다중 배송지 일괄 분기 배송 스케줄 매핑 엔진", "targetScreen": "W04-ESTIMATE", "stateChange": "엑셀 업로드 시 지점별 납품 수량 자동 분할"}, {"id": "SEC-13", "code": "WK-P13", "name": "🌱 [PLA 티백] 100% 옥수수 전분 생분해 피라미드 티백", "category": "🌱 ESG 생분해 파우치 & 우드 트레이 (4)", "price": "31,000원", "goalId": "goal1", "uiComponent": "미세플라스틱 0% 안심 티백 카드", "imgSpec": "🖼️ [이미지: SEC-13 🌱 [PLA 티백] 100% 옥수수 전분 생분해 피라미드 티백 (100% 무채색 뷰박스)]", "displayData": "미세플라스틱 검출 0건 KTR 성적서, 초음파 융착 무접착제 공법", "userAction": "KTR 미세플라스틱 불검출 성적서 확인", "systemLogic": "시험성적서 번호 KTR-2026-WK13 원본 뷰어 팝업", "targetScreen": "W04-ABOUT", "stateChange": "팝업 내에서 성분 분석 스펙트럼 확대 뷰 제공"}, {"id": "SEC-14", "code": "WK-P14", "name": "🛁 [아로마 테라피] 라벤더 GABA 0.00mg 무카페인 티", "category": "🛁 나이트 스파 & 릴랙스 허브티 (4)", "price": "35,000원", "goalId": "goal4", "uiComponent": "야간 턴다운 서비스 전용 카드", "imgSpec": "🖼️ [이미지: SEC-14 🛁 [아로마 테라피] 라벤더 GABA 0.00mg 무카페인 티 (100% 무채색 뷰박스)]", "displayData": "하우스키핑 턴다운 베개 위 세팅 규격, 심야 수면 릴랙스", "userAction": "턴다운 서비스 세팅 매뉴얼 보기", "systemLogic": "객실 턴다운 트레이 세팅 가이드 3D 뷰어 노출", "targetScreen": "W04-CATALOG", "stateChange": "3D 객실 베드사이드 테이블 회전 뷰어 활성화"}, {"id": "SEC-15", "code": "WK-P15", "name": "💎 [기프트 틴] 호텔 자체 PB 틴케이스 제작 솔루션", "category": "💎 VIP 스위트 룸 맞춤 기프트 (4)", "price": "48,000원", "goalId": "goal3", "uiComponent": "호텔 PB 독점 브랜드 개발 카드", "imgSpec": "🖼️ [이미지: SEC-15 💎 [기프트 틴] 호텔 자체 PB 틴케이스 제작 솔루션 (100% 무채색 뷰박스)]", "displayData": "호텔 고유 컬러 팬톤 지정, 풀 커스텀 슬리브, 시그니처 조향", "userAction": "PB 브랜딩 샘플 3D 커스텀 빌드", "systemLogic": "팬톤 컬러 코드 입력 시 3D 틴케이스 실시간 조색", "targetScreen": "W04-BUILD", "stateChange": "컬러 칩 선택 시 3D 틴 질감 및 색상 즉시 교체"}];
+
+    function renderComponents() {
+      var wfContainer = document.getElementById('wf-sections-container');
+      var specContainer = document.getElementById('spec-cards-container');
+      wfContainer.innerHTML = '';
+      specContainer.innerHTML = '';
+
+      sectionsData.forEach(function(sec) {
+        // Render Left Wireframe Box
+        var wfDiv = document.createElement('div');
+        wfDiv.className = 'wf-box';
+        wfDiv.id = 'wf-' + sec.id;
+        wfDiv.setAttribute('data-goal', sec.goalId);
+        wfDiv.innerHTML = `
+          <div class="wf-title">
+            <span>${sec.id}: ${sec.name}</span>
+            <span class="badge">${sec.category}</span>
+          </div>
+          <div class="wf-img-placeholder">${sec.imgSpec}</div>
+          <div style="display:flex; justify-content:space-between; font-size:12px; color:#aaa;">
+            <span>가격: ${sec.price}</span>
+            <span>이동: ${sec.targetScreen}</span>
+          </div>
+        `;
+        wfContainer.appendChild(wfDiv);
+
+        // Render Right Spec Card
+        var specDiv = document.createElement('div');
+        specDiv.className = 'spec-card';
+        specDiv.id = 'spec-' + sec.id;
+        specDiv.setAttribute('data-goal', sec.goalId);
+        specDiv.onclick = function() { highlightSection(sec.id); };
+        specDiv.innerHTML = `
+          <div class="spec-header">
+            <div class="spec-id">${sec.id} | ${sec.name}</div>
+            <span class="badge">${sec.goalId.toUpperCase()}</span>
+          </div>
+          <div class="spec-meta">
+            <strong>카테고리:</strong> ${sec.category} | <strong>가격:</strong> ${sec.price}<br/>
+            <strong>UI 컴포넌트:</strong> ${sec.uiComponent}
+          </div>
+          <table class="spec-table">
+            <tr><th style="width:28%;">표시 데이터</th><td>${sec.displayData}</td></tr>
+            <tr><th>사용자 행동</th><td>${sec.userAction}</td></tr>
+            <tr><th>시스템 처리/모션</th><td>${sec.systemLogic}</td></tr>
+            <tr><th>이동 대상 화면</th><td><strong>${sec.targetScreen}</strong></td></tr>
+            <tr><th>상태별 변화</th><td>${sec.stateChange}</td></tr>
+          </table>
+        `;
+        specContainer.appendChild(specDiv);
+      });
+    }
+
+    function highlightSection(id) {
+      document.querySelectorAll('.wf-box').forEach(function(b) { b.classList.remove('highlight'); });
+      document.querySelectorAll('.spec-card').forEach(function(c) { c.classList.remove('active'); });
+
+      var wfTarget = document.getElementById('wf-' + id);
+      var specTarget = document.getElementById('spec-' + id);
+      if(wfTarget) {
+        wfTarget.classList.add('highlight');
+        wfTarget.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      if(specTarget) {
+        specTarget.classList.add('active');
+        specTarget.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+
+    function filterGoal(goal) {
+      document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+      event.target.classList.add('active');
+
+      document.querySelectorAll('.wf-box').forEach(function(b) {
+        if(b.id === 'wf-killer') return;
+        if(goal === 'all' || b.getAttribute('data-goal') === goal) b.style.display = 'block';
+        else b.style.display = 'none';
+      });
+
+      document.querySelectorAll('.spec-card').forEach(function(c) {
+        if(goal === 'all' || c.getAttribute('data-goal') === goal) c.style.display = 'block';
+        else c.style.display = 'none';
+      });
+    }
+
+    function switchScreen(screenId) {
+      document.querySelectorAll('.screen-nav-item').forEach(function(i) { i.classList.remove('active'); });
+      event.currentTarget.classList.add('active');
+      alert(screenId + ' 화면 상세 스토리보드로 전환되었습니다.');
+    }
+
+    renderComponents();
+  </script>
+</body>
+</html>

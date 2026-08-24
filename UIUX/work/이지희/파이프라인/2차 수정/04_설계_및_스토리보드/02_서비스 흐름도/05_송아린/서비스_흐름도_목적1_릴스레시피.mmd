@@ -1,0 +1,32 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef recipe fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W05-HOME (릴스 진입)<br/>• REELS-PLAYER-01<br/>• [영상 속 재료 3초 구매] 클릭"]
+    RECIPE["02 W05-RECIPE (레시피 확인)<br/>• 3단 변색 배합 스펙 검토"]
+    DRAWER["03 W05-DRAWER (3초 패스트 결제)<br/>• FAST-CHECKOUT-01<br/>• 15% 세트 할인"]
+    
+    STOCK_CHECK{"04 재고 및<br/>결제 승인"}
+    
+    DONE["05 W05-DONE (가이드 발급)<br/>• 촬영 노하우 PDF & BGM 발급"]
+    RETRY["04-B 대체 키트 추천 (Fallback)<br/>• 루비 탄산 키트 전환"]
+    COMM["F1 W05-COMM (챌린지 연동)<br/>• 실시간 랭킹 투표 참여"]
+
+    HOME --> RECIPE
+    RECIPE --> DRAWER
+    DRAWER --> STOCK_CHECK
+    
+    STOCK_CHECK -->|재고 확보 & 승인| DONE
+    STOCK_CHECK -->|품절| RETRY
+    RETRY -.->|키트 변경| DRAWER
+    
+    DONE --> COMM
+
+    class HOME home;
+    class RECIPE recipe;
+    class DRAWER,DONE,RETRY drawer;
+    class STOCK_CHECK decision;
+    class COMM support;

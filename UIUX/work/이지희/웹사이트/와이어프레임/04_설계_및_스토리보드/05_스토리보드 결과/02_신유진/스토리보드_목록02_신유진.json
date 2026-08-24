@@ -1,0 +1,324 @@
+{
+  "clientId": "02",
+  "clientName": "신유진",
+  "role": "총괄 조향사 & 홈텐더 인플루언서 (32세)",
+  "archetype": "B-1 인터랙티브 쇼케이스형 (Viral Mixology Lab)",
+  "killerFeature": "3단계 홈텐더 믹솔로지 칵테일 배합 시뮬레이터 & 0.1g 조향 포뮬러 등록기 (MIXOLOGY-SIM-01)",
+  "company": "(주)위케타 믹솔로지 랩",
+  "ceo": "신유진",
+  "bizNum": "120-88-02002",
+  "address": "서울시 마포구 와우산로 29 WICKETA 홈텐더 스튜디오",
+  "csPhone": "1588-0202 (평일 10:00 ~ 19:00)",
+  "csEmail": "yujin@wicketa.com",
+  "goals": [
+    {
+      "goalId": "goal1",
+      "name": "목적 1: 홈파티 대용량 번들 발주",
+      "sitemap": "02_신유진_사이트맵_통합.md (GNB-04)",
+      "serviceFlow": "02_신유진_서비스_흐름도_통합.md (목적 1)",
+      "keyFeature": "60포 홈파티 벌크 계산기 & 바텐더 툴 20% 번들 할인 (PARTY-BULK-01)",
+      "conversionGoal": "홈파티 믹솔로지 바텐더 풀 패키지 일괄 발주 & 세금계산서/간편결제"
+    },
+    {
+      "goalId": "goal2",
+      "name": "목적 2: 무카페인 나이트 아로마 구독",
+      "sitemap": "02_신유진_사이트맵_통합.md (GNB-02)",
+      "serviceFlow": "02_신유진_서비스_흐름도_통합.md (목적 2)",
+      "keyFeature": "8대 후각 다이얼 수면 처방기 & 0.00mg 무카페인 30일 정기배송 (OLFACTORY-DIAL-01)",
+      "conversionGoal": "나이트 아로마 30일 정기구독 15% 할인 체결 및 웰니스 멤버십 등록"
+    },
+    {
+      "goalId": "goal3",
+      "name": "목적 3: 바텐더 스타터 각인 선물",
+      "sitemap": "02_신유진_사이트맵_통합.md (GNB-03)",
+      "serviceFlow": "02_신유진_서비스_흐름도_통합.md (목적 3)",
+      "keyFeature": "바텐더 쉐이커/지거 3D 레이저 각인 아틀리에 & 카카오 1초 선물 (STARTER-ENGRAVER-01)",
+      "conversionGoal": "3D 맞춤 각인 스타터 키트 주문 & 카카오톡 선물하기 결제"
+    },
+    {
+      "goalId": "goal4",
+      "name": "목적 4: SNS 릴스 레시피 탐색 및 구매",
+      "sitemap": "02_신유진_사이트맵_통합.md (GNB-05)",
+      "serviceFlow": "02_신유진_서비스_흐름도_통합.md (목적 4)",
+      "keyFeature": "15초 릴스 숏폼 피드 & 찬물 1초 융해 3D 수색 레이어링 뷰어 (REELS-CHALLENGE-01)",
+      "conversionGoal": "영상 속 레시피 재료 1-Click 담기 & 3초 패스트 체크아웃"
+    },
+    {
+      "goalId": "goal5",
+      "name": "목적 5: 0.1g 조향 포뮬러 공식 등록",
+      "sitemap": "02_신유진_사이트맵_통합.md (GNB-02)",
+      "serviceFlow": "02_신유진_서비스_흐름도_통합.md (목적 5)",
+      "keyFeature": "0.1g 비스포크 조향 포뮬러 등록기 & 셰어링 로열티 정산 (FORMULA-REGISTER-01)",
+      "conversionGoal": "나만의 공식 조향 Hash ID 발급 및 레시피 셰어링 랩 등록"
+    }
+  ],
+  "screens": [
+    {
+      "id": "W02-HOME",
+      "name": "믹솔로지 실험실 메인 허브",
+      "desc": "3D 쉐이커 캔버스, 믹솔로지 시뮬레이터 및 20종 큐레이션 통합 메인"
+    },
+    {
+      "id": "W02-RECIPE",
+      "name": "바이럴 레시피 랩 & 도감",
+      "desc": "1초 융해 3D 수색 레이어링 뷰어 및 6대 LNB 20종 상품 도감"
+    },
+    {
+      "id": "W02-STUDIO",
+      "name": "후각 조향 스튜디오 & 구독",
+      "desc": "8대 향미 슬라이더 처방 및 0.1g 조향 포뮬러 등록실"
+    },
+    {
+      "id": "W02-BUILD",
+      "name": "홈바 스타터 각인 아틀리에",
+      "desc": "바텐더 쉐이커/지거 3D 레이저 각인 시뮬레이터 및 선물 패키징"
+    },
+    {
+      "id": "W02-ESTIMATE",
+      "name": "홈파티 벌크 견적기",
+      "desc": "게스트 인원수(4~12인) 기반 60포 대용량 번들 계산기"
+    },
+    {
+      "id": "W02-COMM",
+      "name": "숏폼 챌린지 룸",
+      "desc": "15초 릴스 피드, 실시간 투표 랭킹 및 레시피 셰어링 대시보드"
+    },
+    {
+      "id": "W02-DRAWER",
+      "name": "Slide-out 패스트 체크아웃",
+      "desc": "1-Click 일반/15%구독/선물/벌크 통합 결제 드로어"
+    },
+    {
+      "id": "W02-DONE",
+      "name": "주문/등록 완료 & 포뮬러 QR",
+      "desc": "결제 승인 피드백, 공식 조향 등록증 PDF 및 QR 코드 발급"
+    }
+  ],
+  "sections": [
+    {
+      "id": "SEC-01",
+      "code": "WK-P01",
+      "name": "⭐ [조향사 시그니처] 오로라 블루 버터플라이피 믹서",
+      "category": "🍹 0.1초 융해 스파클링 에이드 (4)",
+      "price": "39,000원",
+      "goalId": "goal4",
+      "uiComponent": "3D Hero Canvas & 시뮬레이터 카드",
+      "imgSpec": "🖼️ [이미지: SEC-01 오로라 블루 버터플라이피 믹서 1초 융해 3D 수색 (16:9)]",
+      "displayData": "오로라 블루 1초 찬물 융해 3D 그래픽, pH 산도별 변색 가이드",
+      "userAction": "Canvas 드래그 & 산도 슬라이더 조작",
+      "systemLogic": "1.0초 수색 변환(블루➔바이올렛➔핑크) 쉐이더 렌더링",
+      "targetScreen": "W02-RECIPE",
+      "stateChange": "Hover 시 3D 칵테일 잔 회전 및 아로마 노트 툴팁 노출"
+    },
+    {
+      "id": "SEC-02",
+      "code": "WK-P02",
+      "name": "🌙 [나이트 아로마] 미드나잇 GABA 라벤더 올팩토리 티",
+      "category": "🌙 나이트 아로마 & 수면 이완 블렌드 (4)",
+      "price": "32,000원",
+      "goalId": "goal2",
+      "uiComponent": "후각 다이얼 수면 이완 처방 카드",
+      "imgSpec": "🖼️ [이미지: SEC-02 미드나잇 GABA 라벤더 올팩토리 티 패키지 (1:1)]",
+      "displayData": "천연 GABA 100mg, 0.00mg 무카페인 검증 성적서, 수면 이완 지수",
+      "userAction": "다크 모드 스위치 클릭 & 30일 정기배송 선택",
+      "systemLogic": "다크 앰비언트 테마 전환 및 15% 정기구독 할인율 계산",
+      "targetScreen": "W02-STUDIO",
+      "stateChange": "구독 주기(2주/4주) 선택 시 월 절약액 실시간 카운팅"
+    },
+    {
+      "id": "SEC-03",
+      "code": "WK-P03",
+      "name": "🍹 [논알콜 하이볼] 스모키 오크 얼그레이 베이스 스틱",
+      "category": "🧪 0.1g 비스포크 조향 포뮬러 킷 (4)",
+      "price": "28,000원",
+      "goalId": "goal1",
+      "uiComponent": "스모키 하이볼 레시피 배합 카드",
+      "imgSpec": "🖼️ [이미지: SEC-03 스모키 오크 얼그레이 하이볼 스틱 3D 비커 (1:1)]",
+      "displayData": "0.00% 논알콜 검증서, 오크 훈연 아로마 지수, 탄산수 배합 비율",
+      "userAction": "1초 레시피 담기 클릭",
+      "systemLogic": "탄산수/토닉워터 페어링 추천 아이템과 함께 Cart Drawer 추가",
+      "targetScreen": "W02-DRAWER",
+      "stateChange": "버튼 클릭 시 '담기 완료' 뱃지 전환 및 Drawer 오버레이 오픈"
+    },
+    {
+      "id": "SEC-04",
+      "code": "WK-P04",
+      "name": "💖 [스파클링 토핑] 로즈 쿼츠 히비스커스 탄산 믹서",
+      "category": "🍹 0.1초 융해 스파클링 에이드 (4)",
+      "price": "27,000원",
+      "goalId": "goal4",
+      "uiComponent": "탄산 믹솔로지 카루셀 카드",
+      "imgSpec": "🖼️ [이미지: SEC-04 로즈 쿼츠 히비스커스 스파클링 탄산 기포 (1:1)]",
+      "displayData": "0kcal 무가당 인증, 루비빛 수색 그라데이션, 탄산 기포 밀도",
+      "userAction": "가로 카루셀 스와이프 및 1초 융해 테스트 클릭",
+      "systemLogic": "물과 반응하는 탄산 기포 사운드 및 입체 파티클 재생",
+      "targetScreen": "W02-RECIPE",
+      "stateChange": "마우스 Hover 시 수색 확대 및 0kcal 영양정보 팝업 노출"
+    },
+    {
+      "id": "SEC-05",
+      "code": "WK-P05",
+      "name": "💙 [온수 아로마] 블루 캐모마일 & 바닐라 노트 팩",
+      "category": "🌙 나이트 아로마 & 수면 이완 블렌드 (4)",
+      "price": "26,000원",
+      "goalId": "goal2",
+      "uiComponent": "80℃ 온수 아로마 휠 카드",
+      "imgSpec": "🖼️ [이미지: SEC-05 블루 캐모마일 & 바닐라 노트 발향 휠 (1:1)]",
+      "displayData": "사파이어 블루 온수 발색, 8대 향미 프로파일, 카모마일 진정 성분",
+      "userAction": "아로마 휠 드래그하여 향미 노트 탐색",
+      "systemLogic": "선택한 바닐라/허브 노트에 따른 맞춤 페어링 티 추천",
+      "targetScreen": "W02-STUDIO",
+      "stateChange": "선택된 아로마 노트 테두리 하이라이트 및 발향 가이드 노출"
+    },
+    {
+      "id": "SEC-06",
+      "code": "WK-P06",
+      "name": "💚 [시트러스 믹서] 에메랄드 라임 마테 부스팅 스틱",
+      "category": "🍹 0.1초 융해 스파클링 에이드 (4)",
+      "price": "29,000원",
+      "goalId": "goal4",
+      "uiComponent": "천연 부스팅 에너지 카드",
+      "imgSpec": "🖼️ [이미지: SEC-06 에메랄드 라임 마테 부스팅 스틱 (1:1)]",
+      "displayData": "과라나 천연 부스팅 팩트, 당류 0g, 비타민 C 500mg 함유",
+      "userAction": "부스팅 계산기 수치 조절",
+      "systemLogic": "운동 전/오후 피로도에 따른 권장 음용 타이밍 산출",
+      "targetScreen": "W02-HOME",
+      "stateChange": "입력값에 따라 예상 활력 지수 그래프 상승 애니메이션"
+    },
+    {
+      "id": "SEC-07",
+      "code": "WK-P07",
+      "name": "💜 [무카페인 베이스] 바이올렛 루이보스 클린 포뮬러",
+      "category": "🌙 나이트 아로마 & 수면 이완 블렌드 (4)",
+      "price": "30,000원",
+      "goalId": "goal2",
+      "uiComponent": "0.00mg 무카페인 검증 카드",
+      "imgSpec": "🖼️ [이미지: SEC-07 바이올렛 루이보스 클린 포뮬러 (1:1)]",
+      "displayData": "KTR 시험성적서 번호 KTR-2026-WK07, 잔류 카페인 0.00mg",
+      "userAction": "공인 성적서 원본 PDF 보기 클릭",
+      "systemLogic": "성적서 라이트박스 팝업 및 KTR 검증 인장 렌더링",
+      "targetScreen": "W02-ABOUT",
+      "stateChange": "모달 오픈 시 배경 블러 및 KTR 3無 인증서 확대"
+    },
+    {
+      "id": "SEC-08",
+      "code": "WK-P08",
+      "name": "🍓 [비건 토닉] 루비 안토시아닌 베리 스파클링 믹서",
+      "category": "🍹 0.1초 융해 스파클링 에이드 (4)",
+      "price": "28,500원",
+      "goalId": "goal4",
+      "uiComponent": "비건 인증 믹솔로지 카드",
+      "imgSpec": "🖼️ [이미지: SEC-08 루비 안토시아닌 베리 스파클링 믹서 (1:1)]",
+      "displayData": "한국비건인증원 100% 식물성 원료, 야생 베리 4종 안토시아닌",
+      "userAction": "비건 레시피 탭 클릭",
+      "systemLogic": "논알콜 베리 모히또 제조 가이드 팝업 실행",
+      "targetScreen": "W02-RECIPE",
+      "stateChange": "탭 전환 시 상큼한 루비빛 수색 배경으로 소프트 트랜지션"
+    },
+    {
+      "id": "SEC-09",
+      "code": "WK-P09",
+      "name": "🍋 [1초 융해] 옐로우 유자 진저 퀵 믹솔로지 스틱",
+      "category": "🧪 0.1g 비스포크 조향 포뮬러 킷 (4)",
+      "price": "31,000원",
+      "goalId": "goal5",
+      "uiComponent": "초고속 융해 테크놀로지 카드",
+      "imgSpec": "🖼️ [이미지: SEC-09 옐로우 유자 진저 퀵 믹솔로지 스틱 (1:1)]",
+      "displayData": "찬물 1초 마이크로 융해 기술, 국내산 유자/생강 착즙 분말",
+      "userAction": "융해 속도 비교 영상 재생",
+      "systemLogic": "일반 티백(3분) vs 위케티(1초) 비교 비디오 재생",
+      "targetScreen": "W02-RECIPE",
+      "stateChange": "영상 재생 완료 시 '1초 믹서 담기' 버튼으로 전환"
+    },
+    {
+      "id": "SEC-10",
+      "code": "WK-P10",
+      "name": "🎓 [4+2 스타터] 믹솔로지 입문 키트 & 100% 페이백",
+      "category": "🧪 0.1g 비스포크 조향 포뮬러 킷 (4)",
+      "price": "34,000원",
+      "goalId": "goal3",
+      "uiComponent": "홈텐더 입문 스타터 카드",
+      "imgSpec": "🖼️ [이미지: SEC-10 믹솔로지 4+2 입문 스타터 키트 (1:1)]",
+      "displayData": "인기 4종 베이스 + 스파클링 2종 + 계량 지거 + 초보자 레시피북",
+      "userAction": "베이스 4종 커스텀 선택 및 카카오 선물하기 클릭",
+      "systemLogic": "카카오톡 선물하기 연동 및 수령인 메시지 카드 폼 활성화",
+      "targetScreen": "W02-BUILD",
+      "stateChange": "선택한 4종 스틱이 패키지 박스 그래픽에 실시간 슬롯 인"
+    },
+    {
+      "id": "SEC-11",
+      "code": "WK-P11",
+      "name": "🍸 [바텐더 글래스] 믹솔로지 전용 더블월 칵테일 잔",
+      "category": "🍸 홈텐더 입문 바텐더 툴킷 (4)",
+      "price": "36,000원",
+      "goalId": "goal3",
+      "uiComponent": "3D 글래스웨어 회전 뷰어 카드",
+      "imgSpec": "🖼️ [이미지: SEC-11 믹솔로지 전용 더블월 칵테일 잔 3D 뷰 (1:1)]",
+      "displayData": "빛 굴절 이중 단열 내열유리, 결로 방지, 수색 왜곡 제로 설계",
+      "userAction": "마우스 드래그로 360도 회전 탐색",
+      "systemLogic": "WebGL 3D 글래스웨어 실시간 각도 렌더링 및 광택 시뮬레이션",
+      "targetScreen": "W02-BUILD",
+      "stateChange": "회전 중 더블월 단열 레이어 구조도 툴팁 노출"
+    },
+    {
+      "id": "SEC-12",
+      "code": "WK-P12",
+      "name": "🥄 [정밀 계량] 스테인리스 바 지거 & 트위스트 머들러",
+      "category": "🍸 홈텐더 입문 바텐더 툴킷 (4)",
+      "price": "38,000원",
+      "goalId": "goal3",
+      "uiComponent": "3D 레이저 각인 아틀리에 카드",
+      "imgSpec": "🖼️ [이미지: SEC-12 스테인리스 바 지거 머들러 레이저 각인 (1:1)]",
+      "displayData": "SUS304 최고급 스테인리스, 15/30ml 정밀 눈금, 커스텀 이니셜 각인",
+      "userAction": "각인 문구(최대 10자) 입력",
+      "systemLogic": "스테인리스 표면에 레이저 버닝 이니셜 실시간 3D 합성",
+      "targetScreen": "W02-BUILD",
+      "stateChange": "입력 즉시 지거 표면에 타이핑 텍스트 렌더링"
+    },
+    {
+      "id": "SEC-13",
+      "code": "WK-P13",
+      "name": "🎁 [조향사 셀렉션] VIP 아로마 틴케이스 믹솔로지 세트",
+      "category": "🎉 홈파티 60포 대용량 리필 벌크 (4)",
+      "price": "49,000원",
+      "goalId": "goal3",
+      "uiComponent": "VIP 감성 선물 패키지 카드",
+      "imgSpec": "🖼️ [이미지: SEC-13 조향사 VIP 아로마 틴케이스 세트 (4:3)]",
+      "displayData": "무광 매트 틴케이스 + 비단 보자기 포장 + 조향사 친필 감사 엽서",
+      "userAction": "선물 포장 옵션 선택 및 주소 입력",
+      "systemLogic": "선물용 쇼핑백 0원 추가 및 카카오톡 알림톡 예약 발송",
+      "targetScreen": "W02-DRAWER",
+      "stateChange": "보자기 컬러(네이비/골드) 선택 시 실시간 패키지 이미지 교체"
+    },
+    {
+      "id": "SEC-14",
+      "code": "WK-P14",
+      "name": "🛡️ [0.00% 알콜] 공인 시험 성적서 보증 논알콜 팩",
+      "category": "🌙 나이트 아로마 & 수면 이완 블렌드 (4)",
+      "price": "35,000원",
+      "goalId": "goal1",
+      "uiComponent": "임산부/운전자 안심 보증 카드",
+      "imgSpec": "🖼️ [이미지: SEC-14 0.00% 무알콜 공인 시험 성적서 (3:4)]",
+      "displayData": "에탄올 0.000% 정밀 검출 테스트 합격, 운전자/임산부 섭취 가능",
+      "userAction": "임산부/운전자 FAQ 아코디언 확장",
+      "systemLogic": "식약처 기준 무알콜(0.00%) 정의 및 안전성 가이드 노출",
+      "targetScreen": "W02-ABOUT",
+      "stateChange": "아코디언 클릭 시 부드러운 슬라이드 다운 애니메이션"
+    },
+    {
+      "id": "SEC-15",
+      "code": "WK-P15",
+      "name": "🍑 [피치 아로마] 블라썸 피치 올팩토리 온수 팩",
+      "category": "🧪 0.1g 비스포크 조향 포뮬러 킷 (4)",
+      "price": "42,000원",
+      "goalId": "goal5",
+      "uiComponent": "0.1g 조향 포뮬러 등록 카드",
+      "imgSpec": "🖼️ [이미지: SEC-15 블라썸 피치 올팩토리 온수 팩 조향 룸 (1:1)]",
+      "displayData": "탑(화이트피치) / 미들(로즈페탈) / 베이스(머스크) 3단 피라미드",
+      "userAction": "나만의 조향 비율(0.1g 단위) 슬라이더 조절",
+      "systemLogic": "배합비 유효성 자동 검증 및 SHA-256 고유 Hash ID 생성",
+      "targetScreen": "W02-STUDIO",
+      "stateChange": "비율 조절 시 3단 수색 층분리 캔버스 실시간 농도 변경"
+    }
+  ]
+}

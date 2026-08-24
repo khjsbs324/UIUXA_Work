@@ -1,0 +1,45 @@
+graph TD
+    classDef root fill:#0D47A1,stroke:#01579B,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef gnb fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef lnb fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef detail fill:#FFF8E1,stroke:#F57F17,stroke-width:1.5px,color:#E65100;
+    classDef aside fill:#E1F5FE,stroke:#0277BD,stroke-width:1.5px,color:#01579B;
+
+    ROOT["🏠 W07-HOME (오피스 포털 메인)<br/>• 3D 탕비실 대시보드<br/>• 5대 피플팀 콘솔"]
+
+    GNB1["🏢 GNB-01: 스틱 카탈로그<br/>(W07-CATALOG)"]
+    GNB2["📑 GNB-02: 대량 계산 & 엑셀<br/>(W07-ESTIMATE)"]
+    GNB3["📱 GNB-03: QR 재발주 & 트래킹<br/>(W07-COMM)"]
+
+    ROOT --> GNB1
+    ROOT --> GNB2
+    ROOT --> GNB3
+
+    %% GNB1
+    STICK["⚡ 찬물 1초 스틱 4종"]
+    DISPENSER["🏢 PANTRY-DISPENSER-01 디스펜서"]
+    GNB1 --> STICK
+    GNB1 --> DISPENSER
+
+    %% GNB2
+    BULK["🧮 PANTRY-BULK-01 120포 비율"]
+    EXCEL["📑 EXCEL-SHIP-01 20명 업로더"]
+    TOWNHALL["🍹 TOWNHALL-CALC-01 50인분"]
+    GNB2 --> BULK
+    GNB2 --> EXCEL
+    GNB2 --> TOWNHALL
+
+    %% GNB3
+    QR["📱 PANTRY-QR-01 1초 재발주"]
+    SHIP["🚚 익일 07:00 문 앞 배송 트래킹"]
+    GNB3 --> QR
+    GNB3 --> SHIP
+
+    DRAWER["🛒 Aside: W07-DRAWER<br/>• CORP-PAY-01 법인카드 1초 결제"]
+    ROOT -.-> DRAWER
+
+    class ROOT root;
+    class GNB1,GNB2,GNB3 gnb;
+    class STICK,DISPENSER lnb;
+    class BULK,EXCEL,TOWNHALL,QR,SHIP detail;
+    class DRAWER aside;

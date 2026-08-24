@@ -1,0 +1,209 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - banner:
+      - link "콘텐츠로 건너뛰기":
+        - /url: "#"
+      - generic [ref=e15]:
+        - generic [ref=e17]:
+          - generic [ref=e18]:
+            - combobox "검색" [ref=e20]: interlocking continuous loop monoline logo mark
+            - generic [ref=e21]:
+              - button "검색 입력 삭제" [ref=e24] [cursor=pointer]
+              - generic "이미지 업로드" [ref=e30]:
+                - button "Pinterest 렌즈" [ref=e31] [cursor=pointer]
+          - button "모든 핀 드롭다운" [ref=e38] [cursor=pointer]:
+            - generic [ref=e40]:
+              - generic [ref=e41]: 모든 핀
+              - img "드롭다운" [ref=e43]
+        - link "내 프로필" [ref=e49] [cursor=pointer]:
+          - /url: /victoryjhl/
+          - img [ref=e56]:
+            - generic [ref=e57]: 이
+        - button "계정" [ref=e61] [cursor=pointer]
+    - navigation [ref=e66]:
+      - generic [ref=e68]:
+        - generic [ref=e69]:
+          - generic "홈" [ref=e73]:
+            - link "홈" [ref=e74] [cursor=pointer]:
+              - /url: /
+          - generic "홈" [ref=e81]:
+            - link "홈" [ref=e82] [cursor=pointer]:
+              - /url: /
+          - generic "내 보드" [ref=e89]:
+            - link "내 보드" [ref=e90] [cursor=pointer]:
+              - /url: /victoryjhl/
+          - generic "만들기" [ref=e97]:
+            - button "만들기" [ref=e98] [cursor=pointer]
+          - generic "업데이트" [ref=e107]:
+            - 'button "업데이트: 2개 알림" [ref=e108] [cursor=pointer]'
+          - generic "메시지" [ref=e117]:
+            - button "메시지" [ref=e118] [cursor=pointer]
+        - generic "설정 및 지원" [ref=e126]:
+          - button "설정 및 지원" [ref=e127] [cursor=pointer]
+    - generic:
+      - complementary "꼬리말 부동 버튼"
+    - main [ref=e132]:
+      - generic [ref=e134]:
+        - heading "검색 결과 페이지" [level=1] [ref=e136]
+        - region "필터 및 세분화 검색" [ref=e140]:
+          - button "필터 표시" [ref=e149] [cursor=pointer]
+        - generic [ref=e160]:
+          - generic [ref=e161]: interlocking continuous loop monoline logo mark 검색 결과를 추가로 표시
+          - list [ref=e166]:
+            - listitem [ref=e167]:
+              - button [ref=e169] [cursor=pointer]:
+                - group "핀 카드" [ref=e172]:
+                  - generic [ref=e174]:
+                    - link "제목 없음 핀 페이지" [ref=e176]:
+                      - /url: /pin/2181499817249314/
+                      - img "포함된 이미지:" [ref=e186]
+                    - generic "추가 작업" [ref=e195]:
+                      - button "추가 작업" [ref=e196]
+            - listitem [ref=e201]:
+              - button [ref=e203] [cursor=pointer]:
+                - group "핀 카드" [ref=e206]:
+                  - generic [ref=e208]:
+                    - link "Interlocking geometric loops forming a bold, continuous infinity symbol of digital connectivity. 핀 페이지" [ref=e210]:
+                      - /url: /pin/440860251048844439/
+                      - 'img "포함된 이미지: Interlocking geometric loops forming a bold, continuous infinity symbol of digital connectivity." [ref=e220]'
+                    - generic [ref=e225]:
+                      - heading [level=2] [ref=e231]:
+                        - link "Interlocking geometric loops forming a bold, continuous infinity symbol of digital connectivity. 핀 페이지" [ref=e233]:
+                          - /url: /pin/440860251048844439/
+                          - text: Interlocking geometric loops forming a bold, continuous infinity symbol of digital connectivity.
+                      - generic "추가 작업" [ref=e236]:
+                        - button "추가 작업" [ref=e237]
+            - listitem [ref=e242]:
+              - button [ref=e244] [cursor=pointer]:
+                - group "핀 카드" [ref=e247]:
+                  - generic [ref=e249]:
+                    - 'link "Loop: A Sign of Our Tenets 핀 페이지" [ref=e251]':
+                      - /url: /pin/1688918607278144/
+                      - 'img "포함된 이미지: Loop: A Sign of Our Tenets" [ref=e261]'
+                    - generic [ref=e266]:
+                      - generic [ref=e267]:
+                        - heading [level=2] [ref=e272]:
+                          - 'link "Loop: A Sign of Our Tenets 핀 페이지" [ref=e274]':
+                            - /url: /pin/1688918607278144/
+                            - text: "Loop: A Sign of Our Tenets"
+                        - link "The Sak" [ref=e277]:
+                          - /url: /thesak/
+                          - generic "The Sak" [ref=e284]
+                      - generic "추가 작업" [ref=e287]:
+                        - button "추가 작업" [ref=e288]
+            - listitem [ref=e293]:
+              - button [ref=e295] [cursor=pointer]:
+                - group "핀 카드" [ref=e298]:
+                  - generic [ref=e300]:
+                    - link "Interlocking, looped DP Logo 핀 페이지" [ref=e302]:
+                      - /url: /pin/4601482669159172992/
+                      - 'img "포함된 이미지: Interlocking, looped DP Logo" [ref=e312]'
+                    - generic [ref=e317]:
+                      - generic [ref=e319]:
+                        - generic [ref=e321]:
+                          - img "쇼핑 가능한 핀 표시기" [ref=e323]
+                          - heading [level=2] [ref=e326]:
+                            - link "Interlocking, looped DP Logo 핀 페이지" [ref=e328]:
+                              - /url: /pin/4601482669159172992/
+                              - text: Interlocking, looped DP Logo
+                        - link "Interlocking, looped DP Logo 핀 페이지" [ref=e330]:
+                          - /url: /pin/4601482669159172992/
+                          - generic "Scalebranding" [ref=e334]
+                      - generic "추가 작업" [ref=e337]:
+                        - button "추가 작업" [ref=e338]
+            - listitem [ref=e343]:
+              - button [ref=e345] [cursor=pointer]:
+                - group "핀 카드" [ref=e348]:
+                  - generic [ref=e350]:
+                    - link "제목 없음 핀 페이지" [ref=e352]:
+                      - /url: /pin/351912467391063/
+                      - img "포함된 이미지:" [ref=e362]
+                    - generic "추가 작업" [ref=e371]:
+                      - button "추가 작업" [ref=e372]
+            - listitem [ref=e377]:
+              - button [ref=e379] [cursor=pointer]:
+                - group "핀 카드" [ref=e382]:
+                  - generic [ref=e384]:
+                    - link "제목 없음 핀 페이지" [ref=e386]:
+                      - /url: /pin/3729612243454544/
+                      - img "포함된 이미지:" [ref=e396]
+                    - generic [ref=e401]:
+                      - link "Behance" [ref=e405]:
+                        - /url: /behance/
+                        - generic "Behance" [ref=e412]
+                      - generic "추가 작업" [ref=e415]:
+                        - button "추가 작업" [ref=e416]
+            - listitem [ref=e421]:
+              - button [ref=e423] [cursor=pointer]:
+                - group "핀 카드" [ref=e426]:
+                  - generic [ref=e428]:
+                    - link "Logo Templates from GraphicRiver 핀 페이지" [ref=e430]:
+                      - /url: /pin/4222193373857296/
+                      - 'img "포함된 이미지: Logo Templates from GraphicRiver" [ref=e440]'
+                    - generic [ref=e445]:
+                      - heading [level=2] [ref=e451]:
+                        - link "Logo Templates from GraphicRiver 핀 페이지" [ref=e453]:
+                          - /url: /pin/4222193373857296/
+                          - text: Logo Templates from GraphicRiver
+                      - generic "추가 작업" [ref=e456]:
+                        - button "추가 작업" [ref=e457]
+            - listitem [ref=e462]:
+              - button [ref=e464] [cursor=pointer]:
+                - group "핀 카드" [ref=e467]:
+                  - generic [ref=e469]:
+                    - link "제목 없음 핀 페이지" [ref=e471]:
+                      - /url: /pin/3940718421398117/
+                      - img "포함된 이미지:" [ref=e481]
+                    - generic "추가 작업" [ref=e490]:
+                      - button "추가 작업" [ref=e491]
+            - listitem [ref=e496]:
+              - button [ref=e498] [cursor=pointer]:
+                - group "핀 카드" [ref=e501]:
+                  - generic [ref=e503]:
+                    - link "제목 없음 핀 페이지" [ref=e505]:
+                      - /url: /pin/68749459533/
+                      - img "포함된 이미지:" [ref=e515]
+                    - generic "추가 작업" [ref=e524]:
+                      - button "추가 작업" [ref=e525]
+            - listitem [ref=e530]:
+              - button [ref=e532] [cursor=pointer]:
+                - group "핀 카드" [ref=e535]:
+                  - generic [ref=e537]:
+                    - link "제목 없음 핀 페이지" [ref=e539]:
+                      - /url: /pin/68820700553295622/
+                      - img "포함된 이미지:" [ref=e549]
+                    - generic "추가 작업" [ref=e558]:
+                      - button "추가 작업" [ref=e559]
+            - listitem [ref=e564]:
+              - button [ref=e566] [cursor=pointer]:
+                - group "핀 카드" [ref=e569]:
+                  - generic [ref=e571]:
+                    - link "Interlink Logo 핀 페이지" [ref=e573]:
+                      - /url: /pin/1900024830938845/
+                      - 'img "포함된 이미지: Interlink Logo" [ref=e583]'
+                    - generic [ref=e588]:
+                      - heading [level=2] [ref=e594]:
+                        - link "Interlink Logo 핀 페이지" [ref=e596]:
+                          - /url: /pin/1900024830938845/
+                          - text: Interlink Logo
+                      - generic "추가 작업" [ref=e599]:
+                        - button "추가 작업" [ref=e600]
+            - listitem [ref=e605]:
+              - button [ref=e607] [cursor=pointer]:
+                - group "핀 카드" [ref=e610]:
+                  - generic [ref=e612]:
+                    - link "Loop 핀 페이지" [ref=e614]:
+                      - /url: /pin/27443878975582598/
+                      - 'img "포함된 이미지: Loop" [ref=e624]'
+                    - generic [ref=e629]:
+                      - heading [level=2] [ref=e635]:
+                        - link "Loop 핀 페이지" [ref=e637]:
+                          - /url: /pin/27443878975582598/
+                          - text: Loop
+                      - generic "추가 작업" [ref=e640]:
+                        - button "추가 작업" [ref=e641]
+    - generic:
+      - contentinfo "꼬리말"
+  - generic:
+    - generic:
+      - region "Toast notification"

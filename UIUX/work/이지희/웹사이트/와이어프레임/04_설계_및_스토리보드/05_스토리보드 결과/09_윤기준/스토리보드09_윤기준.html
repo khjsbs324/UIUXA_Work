@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WICKETA 통합 마스터 스토리보드 - 윤기준 (C-3 데이터 대시보드 & 엔지니어링형 (Data-Driven Brewing))</title>
+  <style>
+    :root {
+      --bg: #0d0e12;
+      --card-bg: #16181f;
+      --card-border: #262936;
+      --card-hover: #323647;
+      --text: #f0f2f5;
+      --text-muted: #8c93a4;
+      --primary: #ffffff;
+      --accent: #d4af37;
+      --highlight: #2a3147;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+    header {
+      background: #111217;
+      border-bottom: 1px solid var(--card-border);
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .brand-title {
+      font-size: 16px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .badge {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 12px;
+      background: #252836;
+      color: #b0b8cc;
+      border: 1px solid #363b4e;
+    }
+    .tabs-bar {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+    }
+    .tab-btn {
+      background: transparent;
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .tab-btn:hover {
+      background: var(--card-bg);
+      color: var(--text);
+      border-color: #434961;
+    }
+    .tab-btn.active {
+      background: #ffffff;
+      color: #000000;
+      border-color: #ffffff;
+      font-weight: 700;
+    }
+    .main-container {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+    #sidebar {
+      width: 260px;
+      background: #12131a;
+      border-right: 1px solid var(--card-border);
+      padding: 16px;
+      overflow-y: auto;
+      flex-shrink: 0;
+    }
+    .nav-group-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #656c80;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .screen-nav-item {
+      padding: 9px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      color: var(--text-muted);
+      cursor: pointer;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.15s;
+    }
+    .screen-nav-item:hover {
+      background: var(--card-bg);
+      color: var(--text);
+    }
+    .screen-nav-item.active {
+      background: var(--highlight);
+      color: #ffffff;
+      font-weight: 700;
+      border-left: 3px solid #ffffff;
+    }
+    .split-view {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+    .wireframe-pane {
+      flex: 1.1;
+      background: #000000;
+      border-right: 1px solid var(--card-border);
+      padding: 24px;
+      overflow-y: auto;
+    }
+    .spec-pane {
+      flex: 1.3;
+      background: var(--bg);
+      padding: 24px;
+      overflow-y: auto;
+    }
+    .wf-box {
+      background: #111111;
+      border: 1.5px solid #333333;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 20px;
+      transition: all 0.2s;
+    }
+    .wf-box.highlight {
+      border-color: #ffffff;
+      box-shadow: 0 0 15px rgba(255,255,255,0.2);
+    }
+    .wf-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .wf-img-placeholder {
+      background: #1a1a1a;
+      border: 1px dashed #555555;
+      padding: 24px;
+      text-align: center;
+      color: #888888;
+      font-size: 13px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+    .spec-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 18px;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .spec-card:hover, .spec-card.active {
+      border-color: #ffffff;
+      background: #1c1f2a;
+    }
+    .spec-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 8px;
+    }
+    .spec-id {
+      font-size: 13px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+    .spec-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .spec-table {
+      width: 100%;
+      font-size: 12px;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    .spec-table th, .spec-table td {
+      padding: 6px 8px;
+      border: 1px solid var(--card-border);
+      text-align: left;
+    }
+    .spec-table th {
+      background: #1e212b;
+      color: #b0b8cc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header & 5-Goal Switcher -->
+  <header>
+    <div class="brand-title">
+      <span>WICKETA STORYBOARD</span>
+      <span class="badge">09 윤기준 (C-3 데이터 대시보드 & 엔지니어링형 (Data-Driven Brewing))</span>
+    </div>
+    <div class="tabs-bar">
+<button class="tab-btn active" onclick="filterGoal('all')">전체 5대 목적 (All)</button>
+      <button class="tab-btn" onclick="filterGoal('goal1')">목적 1: 0.1g 정밀 추출 텔레메트리 검증</button>
+      <button class="tab-btn" onclick="filterGoal('goal2')">목적 2: 48H 해커톤 집중력 정기배송</button>
+      <button class="tab-btn" onclick="filterGoal('goal3')">목적 3: 엔지니어 티 지거 3D 레이저 각인</button>
+      <button class="tab-btn" onclick="filterGoal('goal4')">목적 4: 새벽 온콜 1분 뇌파 진정 리추얼</button>
+      <button class="tab-btn" onclick="filterGoal('goal5')">목적 5: GitHub 연동 포뮬러 오픈소스 기여</button>
+
+    </div>
+  </header>
+
+  <div class="main-container">
+    <!-- Left Sidebar: Screen Registry -->
+    <nav id="sidebar">
+      <div class="nav-group-title">전체 화면 목록</div>
+      <div class="screen-nav-item" onclick="switchScreen('W09-HOME')">
+        <span>🏛️ W09-HOME</span>
+        <span class="badge">데이터 </span>
+      </div>
+      <div class="screen-nav-item" onclick="switchScreen('W09-CATALOG')">
+        <span>🏛️ W09-CATALOG</span>
+        <span class="badge">정밀 성</span>
+      </div>
+      <div class="screen-nav-item" onclick="switchScreen('W09-ABOUT')">
+        <span>🏛️ W09-ABOUT</span>
+        <span class="badge">R&D </span>
+      </div>
+      <div class="screen-nav-item" onclick="switchScreen('W09-BUILD')">
+        <span>🏛️ W09-BUILD</span>
+        <span class="badge">SUS3</span>
+      </div>
+      <div class="screen-nav-item" onclick="switchScreen('W09-SUB')">
+        <span>🏛️ W09-SUB</span>
+        <span class="badge">48H </span>
+      </div>
+      <div class="screen-nav-item" onclick="switchScreen('W09-COMM')">
+        <span>🏛️ W09-COMM</span>
+        <span class="badge">오픈소스</span>
+      </div>
+      <div class="screen-nav-item" onclick="switchScreen('W09-DRAWER')">
+        <span>🏛️ W09-DRAWER</span>
+        <span class="badge">Asid</span>
+      </div>
+      <div class="screen-nav-item" onclick="switchScreen('W09-DONE')">
+        <span>🏛️ W09-DONE</span>
+        <span class="badge">주문 완</span>
+      </div>
+
+    </nav>
+
+    <!-- Split Pane: Left Wireframe, Right Spec -->
+    <div class="split-view">
+      <!-- Left Wireframe View -->
+      <div class="wireframe-pane">
+        <h3 style="font-size:15px; margin-bottom:16px; color:#ffffff;">🖼️ 모노크롬 와이어프레임 뷰 (W09-HOME)</h3>
+        
+        <!-- Interactive Killer Module on Wireframe -->
+        <div class="wf-box" id="wf-killer">
+          <div class="wf-title">
+            <span>⭐ 0.1g 정밀 계량 텔레메트리 & HPLC 유효성분 데이터 대시보드 (DATA-BREW-01)</span>
+            <span class="badge">킬러 기능</span>
+          </div>
+          <div class="wf-img-placeholder" style="background:#111; color:#fff;">
+            [0.1g 정밀 계량 텔레메트리 & HPLC 유효성분 데이터 대시보드 (DATA-BREW-01): 100% 무채색 인터랙티브 콘솔]
+          </div>
+          <div style="font-size:12px; color:#aaa; line-height:1.6;">
+            • 클라이언트 맞춤형 핵심 인터랙션 & 5대 목적 연동<br/>
+            • 1-Click 패스트 체크아웃 및 가상 스크롤 복원
+          </div>
+        </div>
+
+        <!-- 15 Section Wireframe Placeholders -->
+        <div id="wf-sections-container">
+          <!-- Will be rendered via JS -->
+        </div>
+      </div>
+
+      <!-- Right Spec View -->
+      <div class="spec-pane">
+        <h3 style="font-size:15px; margin-bottom:16px; color:#ffffff;">📋 15대 상품 큐레이션 섹션 스토리보드 상세 명세</h3>
+        <div id="spec-cards-container">
+          <!-- Will be rendered via JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var sectionsData = [{"id": "SEC-01", "code": "WK-P01", "name": "⭐ [0.1g 정밀] HPLC 검증 싱글 오리진 버터플라이피 팩", "category": "💻 0.1g 정밀 계량 싱글 오리진 (4)", "price": "39,000원", "goalId": "goal1", "uiComponent": "⭐ [0.1g 정밀] HPLC 검증 싱글 오리진 버터플라이피 팩 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-01 ⭐ [0.1g 정밀] HPLC 검증 싱글 오리진 버터플라이피 팩 (100% 무채색 뷰박스)]", "displayData": "⭐ [0.1g 정밀] HPLC 검증 싱글 오리진 버터플라이피 팩 핵심 성분, 가격 39,000원, 💻 0.1g 정밀 계량 싱글 오리진 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 1: 0.1g 정밀 추출 텔레메트리 검증 연계", "systemLogic": "선택 시 W09-CATALOG 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W09-CATALOG", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-02", "code": "WK-P02", "name": "📊 [TDS 최적화] 45ppm 연수 전용 수온 프로파일 티백 팩", "category": "📊 TDS 수온/시간 최적화 프로파일 팩 (4)", "price": "32,000원", "goalId": "goal2", "uiComponent": "📊 [TDS 최적화] 45ppm 연수 전용 수온 프로파일 티백 팩 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-02 📊 [TDS 최적화] 45ppm 연수 전용 수온 프로파일 티백 팩 (100% 무채색 뷰박스)]", "displayData": "📊 [TDS 최적화] 45ppm 연수 전용 수온 프로파일 티백 팩 핵심 성분, 가격 32,000원, 📊 TDS 수온/시간 최적화 프로파일 팩 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 2: 48H 해커톤 집중력 정기배송 연계", "systemLogic": "선택 시 W09-ABOUT 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W09-ABOUT", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-03", "code": "WK-P03", "name": "⚙️ [티타늄 기어] 0.01g 초정밀 디지털 티 스케일 & 비커", "category": "⚙️ 티타늄 핀셋 & 정밀 계량 비커 (4)", "price": "58,000원", "goalId": "goal3", "uiComponent": "⚙️ [티타늄 기어] 0.01g 초정밀 디지털 티 스케일 & 비커 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-03 ⚙️ [티타늄 기어] 0.01g 초정밀 디지털 티 스케일 & 비커 (100% 무채색 뷰박스)]", "displayData": "⚙️ [티타늄 기어] 0.01g 초정밀 디지털 티 스케일 & 비커 핵심 성분, 가격 58,000원, ⚙️ 티타늄 핀셋 & 정밀 계량 비커 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 3: 엔지니어 티 지거 3D 레이저 각인 연계", "systemLogic": "선택 시 W09-BUILD 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W09-BUILD", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-04", "code": "WK-P04", "name": "⚡ [심야 코딩] 0.00mg 무카페인 GABA 라벤더 포뮬러", "category": "⚡ 심야 코딩 0.00mg 무카페인 GABA (4)", "price": "28,000원", "goalId": "goal4", "uiComponent": "⚡ [심야 코딩] 0.00mg 무카페인 GABA 라벤더 포뮬러 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-04 ⚡ [심야 코딩] 0.00mg 무카페인 GABA 라벤더 포뮬러 (100% 무채색 뷰박스)]", "displayData": "⚡ [심야 코딩] 0.00mg 무카페인 GABA 라벤더 포뮬러 핵심 성분, 가격 28,000원, ⚡ 심야 코딩 0.00mg 무카페인 GABA (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 4: 새벽 온콜 1분 뇌파 진정 리추얼 연계", "systemLogic": "선택 시 W09-SUB 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W09-SUB", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-05", "code": "WK-P05", "name": "🚀 [해커톤 48H] 개발팀 120포 올나잇 집중력 에너지 팩", "category": "🚀 해커톤 48H 집중력 팀팩 (4)", "price": "89,000원", "goalId": "goal5", "uiComponent": "🚀 [해커톤 48H] 개발팀 120포 올나잇 집중력 에너지 팩 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-05 🚀 [해커톤 48H] 개발팀 120포 올나잇 집중력 에너지 팩 (100% 무채색 뷰박스)]", "displayData": "🚀 [해커톤 48H] 개발팀 120포 올나잇 집중력 에너지 팩 핵심 성분, 가격 89,000원, 🚀 해커톤 48H 집중력 팀팩 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 5: GitHub 연동 포뮬러 오픈소스 기여 연계", "systemLogic": "선택 시 W09-COMM 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W09-COMM", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-06", "code": "WK-P06", "name": "💻 [파라미터 티] 산도(pH 5.5) 반응 수색 변환 티백 팩", "category": "💻 0.1g 정밀 계량 싱글 오리진 (4)", "price": "34,000원", "goalId": "goal1", "uiComponent": "💻 [파라미터 티] 산도(pH 5.5) 반응 수색 변환 티백 팩 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-06 💻 [파라미터 티] 산도(pH 5.5) 반응 수색 변환 티백 팩 (100% 무채색 뷰박스)]", "displayData": "💻 [파라미터 티] 산도(pH 5.5) 반응 수색 변환 티백 팩 핵심 성분, 가격 34,000원, 💻 0.1g 정밀 계량 싱글 오리진 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 1: 0.1g 정밀 추출 텔레메트리 검증 연계", "systemLogic": "선택 시 W09-DRAWER 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W09-DRAWER", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-07", "code": "WK-P07", "name": "📊 [데이터시트] 20종 원료 화학 분석 스펙트럼 리포트 팩", "category": "📊 TDS 수온/시간 최적화 프로파일 팩 (4)", "price": "42,000원", "goalId": "goal2", "uiComponent": "📊 [데이터시트] 20종 원료 화학 분석 스펙트럼 리포트 팩 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-07 📊 [데이터시트] 20종 원료 화학 분석 스펙트럼 리포트 팩 (100% 무채색 뷰박스)]", "displayData": "📊 [데이터시트] 20종 원료 화학 분석 스펙트럼 리포트 팩 핵심 성분, 가격 42,000원, 📊 TDS 수온/시간 최적화 프로파일 팩 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 2: 48H 해커톤 집중력 정기배송 연계", "systemLogic": "선택 시 W09-DONE 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W09-DONE", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-08", "code": "WK-P08", "name": "⚙️ [각인 텀블러] 터미널 Syntax 하이라이트 레이저 각인 텀블러", "category": "⚙️ 티타늄 핀셋 & 정밀 계량 비커 (4)", "price": "45,000원", "goalId": "goal3", "uiComponent": "⚙️ [각인 텀블러] 터미널 Syntax 하이라이트 레이저 각인 텀블러 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-08 ⚙️ [각인 텀블러] 터미널 Syntax 하이라이트 레이저 각인 텀블러 (100% 무채색 뷰박스)]", "displayData": "⚙️ [각인 텀블러] 터미널 Syntax 하이라이트 레이저 각인 텀블러 핵심 성분, 가격 45,000원, ⚙️ 티타늄 핀셋 & 정밀 계량 비커 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 3: 엔지니어 티 지거 3D 레이저 각인 연계", "systemLogic": "선택 시 W09-CATALOG 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W09-CATALOG", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-09", "code": "WK-P09", "name": "⚡ [알고리즘] 디버깅 스트레스 완화 L-테아닌 200mg 팩", "category": "⚡ 심야 코딩 0.00mg 무카페인 GABA (4)", "price": "31,000원", "goalId": "goal4", "uiComponent": "⚡ [알고리즘] 디버깅 스트레스 완화 L-테아닌 200mg 팩 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-09 ⚡ [알고리즘] 디버깅 스트레스 완화 L-테아닌 200mg 팩 (100% 무채색 뷰박스)]", "displayData": "⚡ [알고리즘] 디버깅 스트레스 완화 L-테아닌 200mg 팩 핵심 성분, 가격 31,000원, ⚡ 심야 코딩 0.00mg 무카페인 GABA (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 4: 새벽 온콜 1분 뇌파 진정 리추얼 연계", "systemLogic": "선택 시 W09-ABOUT 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W09-ABOUT", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-10", "code": "WK-P10", "name": "🚀 [스크럼 팩] 10인 개발팀 2주 스프린트 데일리 리추얼 팩", "category": "🚀 해커톤 48H 집중력 팀팩 (4)", "price": "120,000원", "goalId": "goal5", "uiComponent": "🚀 [스크럼 팩] 10인 개발팀 2주 스프린트 데일리 리추얼 팩 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-10 🚀 [스크럼 팩] 10인 개발팀 2주 스프린트 데일리 리추얼 팩 (100% 무채색 뷰박스)]", "displayData": "🚀 [스크럼 팩] 10인 개발팀 2주 스프린트 데일리 리추얼 팩 핵심 성분, 가격 120,000원, 🚀 해커톤 48H 집중력 팀팩 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 5: GitHub 연동 포뮬러 오픈소스 기여 연계", "systemLogic": "선택 시 W09-BUILD 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W09-BUILD", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-11", "code": "WK-P11", "name": "💻 [정밀 추출] 내열 붕규산 유리 침출 비커 & 온도계", "category": "💻 0.1g 정밀 계량 싱글 오리진 (4)", "price": "36,000원", "goalId": "goal1", "uiComponent": "💻 [정밀 추출] 내열 붕규산 유리 침출 비커 & 온도계 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-11 💻 [정밀 추출] 내열 붕규산 유리 침출 비커 & 온도계 (100% 무채색 뷰박스)]", "displayData": "💻 [정밀 추출] 내열 붕규산 유리 침출 비커 & 온도계 핵심 성분, 가격 36,000원, 💻 0.1g 정밀 계량 싱글 오리진 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 1: 0.1g 정밀 추출 텔레메트리 검증 연계", "systemLogic": "선택 시 W09-SUB 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W09-SUB", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-12", "code": "WK-P12", "name": "📊 [경도 매칭] 120ppm 경수 최적화 추출 포뮬러 팩", "category": "📊 TDS 수온/시간 최적화 프로파일 팩 (4)", "price": "33,000원", "goalId": "goal2", "uiComponent": "📊 [경도 매칭] 120ppm 경수 최적화 추출 포뮬러 팩 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-12 📊 [경도 매칭] 120ppm 경수 최적화 추출 포뮬러 팩 (100% 무채색 뷰박스)]", "displayData": "📊 [경도 매칭] 120ppm 경수 최적화 추출 포뮬러 팩 핵심 성분, 가격 33,000원, 📊 TDS 수온/시간 최적화 프로파일 팩 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 2: 48H 해커톤 집중력 정기배송 연계", "systemLogic": "선택 시 W09-COMM 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W09-COMM", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-13", "code": "WK-P13", "name": "⚙️ [티타늄 집게] 마이크로 티백 전용 티타늄 트위저", "category": "⚙️ 티타늄 핀셋 & 정밀 계량 비커 (4)", "price": "25,000원", "goalId": "goal3", "uiComponent": "⚙️ [티타늄 집게] 마이크로 티백 전용 티타늄 트위저 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-13 ⚙️ [티타늄 집게] 마이크로 티백 전용 티타늄 트위저 (100% 무채색 뷰박스)]", "displayData": "⚙️ [티타늄 집게] 마이크로 티백 전용 티타늄 트위저 핵심 성분, 가격 25,000원, ⚙️ 티타늄 핀셋 & 정밀 계량 비커 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 3: 엔지니어 티 지거 3D 레이저 각인 연계", "systemLogic": "선택 시 W09-DRAWER 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W09-DRAWER", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-14", "code": "WK-P14", "name": "⚡ [제로 지터] 카페인 부작용 없는 천연 테오브로민 티", "category": "⚡ 심야 코딩 0.00mg 무카페인 GABA (4)", "price": "29,000원", "goalId": "goal4", "uiComponent": "⚡ [제로 지터] 카페인 부작용 없는 천연 테오브로민 티 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-14 ⚡ [제로 지터] 카페인 부작용 없는 천연 테오브로민 티 (100% 무채색 뷰박스)]", "displayData": "⚡ [제로 지터] 카페인 부작용 없는 천연 테오브로민 티 핵심 성분, 가격 29,000원, ⚡ 심야 코딩 0.00mg 무카페인 GABA (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 4: 새벽 온콜 1분 뇌파 진정 리추얼 연계", "systemLogic": "선택 시 W09-DONE 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W09-DONE", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-15", "code": "WK-P15", "name": "🚀 [온콜 릴리프] 새벽 온콜 엔지니어 1분 진정 허브티 팩", "category": "🚀 해커톤 48H 집중력 팀팩 (4)", "price": "35,000원", "goalId": "goal5", "uiComponent": "🚀 [온콜 릴리프] 새벽 온콜 엔지니어 1분 진정 허브티 팩 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-15 🚀 [온콜 릴리프] 새벽 온콜 엔지니어 1분 진정 허브티 팩 (100% 무채색 뷰박스)]", "displayData": "🚀 [온콜 릴리프] 새벽 온콜 엔지니어 1분 진정 허브티 팩 핵심 성분, 가격 35,000원, 🚀 해커톤 48H 집중력 팀팩 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 5: GitHub 연동 포뮬러 오픈소스 기여 연계", "systemLogic": "선택 시 W09-CATALOG 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W09-CATALOG", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}];
+
+    function renderComponents() {
+      var wfContainer = document.getElementById('wf-sections-container');
+      var specContainer = document.getElementById('spec-cards-container');
+      wfContainer.innerHTML = '';
+      specContainer.innerHTML = '';
+
+      sectionsData.forEach(function(sec) {
+        // Render Left Wireframe Box
+        var wfDiv = document.createElement('div');
+        wfDiv.className = 'wf-box';
+        wfDiv.id = 'wf-' + sec.id;
+        wfDiv.setAttribute('data-goal', sec.goalId);
+        wfDiv.innerHTML = `
+          <div class="wf-title">
+            <span>${sec.id}: ${sec.name}</span>
+            <span class="badge">${sec.category}</span>
+          </div>
+          <div class="wf-img-placeholder">${sec.imgSpec}</div>
+          <div style="display:flex; justify-content:space-between; font-size:12px; color:#aaa;">
+            <span>가격: ${sec.price}</span>
+            <span>이동: ${sec.targetScreen}</span>
+          </div>
+        `;
+        wfContainer.appendChild(wfDiv);
+
+        // Render Right Spec Card
+        var specDiv = document.createElement('div');
+        specDiv.className = 'spec-card';
+        specDiv.id = 'spec-' + sec.id;
+        specDiv.setAttribute('data-goal', sec.goalId);
+        specDiv.onclick = function() { highlightSection(sec.id); };
+        specDiv.innerHTML = `
+          <div class="spec-header">
+            <div class="spec-id">${sec.id} | ${sec.name}</div>
+            <span class="badge">${sec.goalId.toUpperCase()}</span>
+          </div>
+          <div class="spec-meta">
+            <strong>카테고리:</strong> ${sec.category} | <strong>가격:</strong> ${sec.price}<br/>
+            <strong>UI 컴포넌트:</strong> ${sec.uiComponent}
+          </div>
+          <table class="spec-table">
+            <tr><th style="width:28%;">표시 데이터</th><td>${sec.displayData}</td></tr>
+            <tr><th>사용자 행동</th><td>${sec.userAction}</td></tr>
+            <tr><th>시스템 처리/모션</th><td>${sec.systemLogic}</td></tr>
+            <tr><th>이동 대상 화면</th><td><strong>${sec.targetScreen}</strong></td></tr>
+            <tr><th>상태별 변화</th><td>${sec.stateChange}</td></tr>
+          </table>
+        `;
+        specContainer.appendChild(specDiv);
+      });
+    }
+
+    function highlightSection(id) {
+      document.querySelectorAll('.wf-box').forEach(function(b) { b.classList.remove('highlight'); });
+      document.querySelectorAll('.spec-card').forEach(function(c) { c.classList.remove('active'); });
+
+      var wfTarget = document.getElementById('wf-' + id);
+      var specTarget = document.getElementById('spec-' + id);
+      if(wfTarget) {
+        wfTarget.classList.add('highlight');
+        wfTarget.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      if(specTarget) {
+        specTarget.classList.add('active');
+        specTarget.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+
+    function filterGoal(goal) {
+      document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+      event.target.classList.add('active');
+
+      document.querySelectorAll('.wf-box').forEach(function(b) {
+        if(b.id === 'wf-killer') return;
+        if(goal === 'all' || b.getAttribute('data-goal') === goal) b.style.display = 'block';
+        else b.style.display = 'none';
+      });
+
+      document.querySelectorAll('.spec-card').forEach(function(c) {
+        if(goal === 'all' || c.getAttribute('data-goal') === goal) c.style.display = 'block';
+        else c.style.display = 'none';
+      });
+    }
+
+    function switchScreen(screenId) {
+      document.querySelectorAll('.screen-nav-item').forEach(function(i) { i.classList.remove('active'); });
+      event.currentTarget.classList.add('active');
+      alert(screenId + ' 화면 상세 스토리보드로 전환되었습니다.');
+    }
+
+    renderComponents();
+  </script>
+</body>
+</html>

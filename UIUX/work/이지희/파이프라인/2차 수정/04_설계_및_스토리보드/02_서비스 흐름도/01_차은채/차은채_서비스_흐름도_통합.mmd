@@ -1,0 +1,74 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef explore fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef atelier fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef action fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    subgraph HUB ["HUB: WICKETA 차은채 에디토리얼 안식처 메인 허브"]
+        HOME["01 W01-HOME (안식처 메인)<br/>• 시네마틱 3D 무중력 비주얼 캔버스<br/>• COLLECTION-EDITOR-01 큐레이션 편집기<br/>• 3초 앰비언트 사운드스케이프"]
+    end
+
+    subgraph PATH1 ["경로 1: 브랜딩 공간 투어 & 프라이빗 시향 예약"]
+        SPACE["02-A W01-SPACE<br/>3D 가상 아포테케리 쇼룸<br/>• 360도 공간 투어 & 핫스팟"]
+        ESSAY["03-A W01-ESSAY<br/>브랜드 에세이 저널<br/>• 패럴랙스 스토리텔링"]
+        ABOUT["04-A W01-ABOUT<br/>시향 세션 & VIP 인증<br/>• 1:1 시향 프로그램 안내"]
+        RESERVE["05-A W01-RESERVE<br/>시향 예약 캘린더<br/>• 타임슬롯 & 소믈리에 지정"]
+        SPACE --> ESSAY --> ABOUT --> RESERVE
+    end
+
+    subgraph PATH2 ["경로 2: 긴급 감정 진단 & 초고속 정기구독"]
+        DIAG["02-B W01-DIAG<br/>3축 감정 진단 콘솔<br/>• 번아웃/수면부족 3축 다이얼"]
+        MIX["03-B W01-MIX<br/>믹솔로지 & 1초 융해<br/>• 0kcal 무카페인 KTR 성적서"]
+        DIAG --> MIX
+    end
+
+    subgraph PATH3 ["경로 3: 룩북 감상 & 3D 틴케이스 각인 선물"]
+        COLLECT["02-C W01-COLLECT<br/>디렉터스 컬렉션 아카이브<br/>• 6대 LNB 20종 상품 룩북"]
+        BUILD1["03-C W01-BUILD (각인)<br/>TIN-ENGRAVER-01 아틀리에<br/>• 3D 레이저 각인 & 패브릭 포장"]
+        COLLECT --> BUILD1
+    end
+
+    subgraph PATH4 ["경로 4: 180초 안식 의식 & 데일리 감정 아카이빙"]
+        RITUAL["02-D W01-RITUAL<br/>리추얼 플레이어<br/>• 432Hz 뇌파 사운드<br/>• 180초 원형 호흡 타이머"]
+    end
+
+    subgraph PATH5 ["경로 5: VIP 멤버십 초청 & 시즌 오더메이드"]
+        VIP_IN["01-E VIP 초청 진입<br/>• 카카오 알림톡 링크 유입"]
+        BUILD2["03-E W01-BUILD (VIP)<br/>시즌 맞춤 조향 빌더<br/>• 골드 포일 영문 각인"]
+        VIP_IN --> ABOUT
+        ABOUT --> ESSAY
+        ESSAY --> BUILD2
+    end
+
+    subgraph TRANSACT ["TRANSACT: 공통 장바구니 결제 & 완료 모달"]
+        DRAWER["W01-DRAWER (슬라이드아웃 Cart)<br/>• 일반/구독(15%)/선물/VIP 1초 간편결제<br/>• 가상 스크롤 100% 위치 복원"]
+        DONE["W01-DONE (통합 완료 모달)<br/>• 리추얼 코드, 모바일 패스, 선물 바우처 발급<br/>• 카카오 알림톡 발송 & 캘린더 등록"]
+        DRAWER --> DONE
+    end
+
+    subgraph ARCHIVE ["ARCHIVE: 사후 관리 & 리추얼 순환"]
+        COMM["W01-COMM (통합 리추얼 아카이브)<br/>• 1줄 감정 일기 & 마이 캘린더 태깅<br/>• 30일 리추얼 챌린지 스탬프 뱃지<br/>• 실시간 선물 배송 추적<br/>• 쇼룸 VIP 도슨트 안내서 다운로드"]
+    end
+
+    HOME --> SPACE
+    HOME --> DIAG
+    HOME --> COLLECT
+    HOME --> RITUAL
+    HOME --> VIP_IN
+
+    RESERVE --> DONE
+    MIX --> DRAWER
+    BUILD1 --> DRAWER
+    BUILD2 --> DRAWER
+    RITUAL --> COMM
+    DONE --> COMM
+
+    COMM -.->|내일 밤 나이트 리추얼 순환| RITUAL
+    DONE -.->|쇼핑 계속하기 스크롤 복원| HOME
+
+    class HOME home;
+    class SPACE,ESSAY,COLLECT,MIX explore;
+    class DIAG,BUILD1,BUILD2,RITUAL,ABOUT atelier;
+    class RESERVE,DRAWER,DONE action;
+    class COMM,VIP_IN support;

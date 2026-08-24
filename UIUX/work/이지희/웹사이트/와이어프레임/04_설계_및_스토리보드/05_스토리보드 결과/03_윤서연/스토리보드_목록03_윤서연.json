@@ -1,0 +1,324 @@
+{
+  "clientId": "03",
+  "clientName": "윤서연",
+  "role": "29SELECT 감성 라이프스타일 수석 MD (31세)",
+  "archetype": "A-2 감성 큐레이션 매거진형 (Aesthetic Deskterior)",
+  "killerFeature": "29CM 감성 데스크테리어 3D 룩북 & 오브제 시뮬레이터 (29SELECT-COLLAB-01)",
+  "company": "(주)위케타 데스크테리어 디자인 랩",
+  "ceo": "윤서연",
+  "bizNum": "120-88-03003",
+  "address": "서울시 용산구 한남대로 27 WICKETA 29SELECT 쇼룸",
+  "csPhone": "1588-0303 (평일 09:30 ~ 18:30)",
+  "csEmail": "seoyeon@wicketa.com",
+  "goals": [
+    {
+      "goalId": "goal1",
+      "name": "목적 1: 3D 데스크셋업 & 번들 발주",
+      "sitemap": "03_윤서연_사이트맵_통합.md (GNB-03)",
+      "serviceFlow": "03_윤서연_서비스_흐름도_통합.md (목적 1)",
+      "keyFeature": "가상 데스크 3D 오브제 배치기 & 20% 세트 할인 번들러 (DESK-SIMULATOR-01)",
+      "conversionGoal": "데스크테리어 오브제 풀패키지 1초 담기 & 20% 세트 할인 결제"
+    },
+    {
+      "goalId": "goal2",
+      "name": "목적 2: 미드나잇 GABA 새벽구독",
+      "sitemap": "03_윤서연_사이트맵_통합.md (GNB-04)",
+      "serviceFlow": "03_윤서연_서비스_흐름도_통합.md (목적 2)",
+      "keyFeature": "0.00mg 무카페인 성분표 & 30일 새벽배송 정기구독 플래너 (NIGHT-SUB-01)",
+      "conversionGoal": "미드나잇 GABA 안식티 30일 새벽구독 체결 및 월간 다이어리 수령"
+    },
+    {
+      "goalId": "goal3",
+      "name": "목적 3: 린넨 보자기 선물 세트",
+      "sitemap": "03_윤서연_사이트맵_통합.md (GNB-03)",
+      "serviceFlow": "03_윤서연_서비스_흐름도_통합.md (목적 3)",
+      "keyFeature": "린넨 보자기 360도 패키징 뷰어 & 감성 응원 엽서 에디터 (LINEN-WRAP-01)",
+      "conversionGoal": "감성 린넨 선물세트 커스텀 주문 & 카카오톡 선물하기 결제"
+    },
+    {
+      "goalId": "goal4",
+      "name": "목적 4: 432Hz 사운드 나이트 리추얼",
+      "sitemap": "03_윤서연_사이트맵_통합.md (GNB-04)",
+      "serviceFlow": "03_윤서연_서비스_흐름도_통합.md (목적 4)",
+      "keyFeature": "432Hz 빗소리 앰비언트 사운드 & 180초 펄스 브루잉 타이머 (RITUAL-TIMER-01)",
+      "conversionGoal": "180초 나이트 리추얼 완수 및 30일 감성 스탬프 적립"
+    },
+    {
+      "goalId": "goal5",
+      "name": "목적 5: 디저트 페어링 & 데스크 챌린지",
+      "sitemap": "03_윤서연_사이트맵_통합.md (GNB-01/05)",
+      "serviceFlow": "03_윤서연_서비스_흐름도_통합.md (목적 5)",
+      "keyFeature": "서촌 구움과자 x 스모키 얼그레이 페어링 가이드 & #데스크테리어 피드 (DESSERT-PAIRING-01)",
+      "conversionGoal": "페어링 디저트 세트 발주 & #데스크테리어 챌린지 투표 참여"
+    }
+  ],
+  "screens": [
+    {
+      "id": "W03-HOME",
+      "name": "데스크 매거진 메인 허브",
+      "desc": "3D 감성 데스크셋업 캔버스, 낮/밤 스위처 및 20종 큐레이션 통합 메인"
+    },
+    {
+      "id": "W03-LOOKBOOK",
+      "name": "오브제 화보 & 페어링 룩북",
+      "desc": "파스텔 틴 룩북, 디저트 페어링 가이드 및 6대 맞춤 LNB 20종 도감"
+    },
+    {
+      "id": "W03-ABOUT",
+      "name": "29SELECT 컬래버 철학 & 쇼룸",
+      "desc": "29CM 감성 라이프스타일 철학, KTR 3無 성적서 & 한남동 쇼룸 안내"
+    },
+    {
+      "id": "W03-BUILD",
+      "name": "3D 데스크 셋업 & 각인 룸",
+      "desc": "가상 데스크 3D 오브제 배치기 및 매트 파스텔 틴 레이저 각인 콘솔"
+    },
+    {
+      "id": "W03-RITUAL",
+      "name": "나이트 리추얼 & 432Hz 사운드",
+      "desc": "432Hz 빗소리 앰비언트 오디오, 180초 타이머 및 30일 새벽구독"
+    },
+    {
+      "id": "W03-COMM",
+      "name": "데스크 챌린지 보드",
+      "desc": "#데스크테리어 실시간 사진 피드, 에디터스 픽 투표 & 나이트 저널"
+    },
+    {
+      "id": "W03-DRAWER",
+      "name": "Slide-out 감성 주문 드로어",
+      "desc": "1-Click 간편결제 / 20% 세트 할인 / 30일 새벽구독 / 카카오 선물"
+    },
+    {
+      "id": "W03-DONE",
+      "name": "주문 완료 & 감성 엽서 발급",
+      "desc": "29SELECT 한정판 일러스트 엽서 및 스타일링 가이드북 다운로드"
+    }
+  ],
+  "sections": [
+    {
+      "id": "SEC-01",
+      "code": "WK-P01",
+      "name": "⭐ [에디터스 픽] 소프트 샌드 매트 파스텔 틴 팩",
+      "category": "🎨 매트 파스텔 오브제 틴 (4)",
+      "price": "39,000원",
+      "goalId": "goal1",
+      "uiComponent": "3D Hero Canvas & 오브제 틴 카드",
+      "imgSpec": "🖼️ [이미지: SEC-01 소프트 샌드 파스텔 틴 3D 데스크 셋업 (16:9)]",
+      "displayData": "무광 매트 샌드 틴, 3D 360도 회전 뷰, 29SELECT 단독 컬러",
+      "userAction": "3D 틴 드래그 회전 & 색상 스위칭",
+      "systemLogic": "WebGL 무광 금속 질감 실시간 광택 및 음영 렌더링",
+      "targetScreen": "W03-BUILD",
+      "stateChange": "선택 색상(샌드/세이지/로즈) 실시간 캔버스 반영"
+    },
+    {
+      "id": "SEC-02",
+      "code": "WK-P02",
+      "name": "🌙 [나이트 안식] 미드나잇 GABA 0.00mg 무카페인 티",
+      "category": "🌙 미드나잇 GABA 0.00mg 무카페인 (4)",
+      "price": "32,000원",
+      "goalId": "goal2",
+      "uiComponent": "나이트 다크 릴랙스 카드",
+      "imgSpec": "🖼️ [이미지: SEC-02 미드나잇 GABA 무카페인 티 야간 데스크 (1:1)]",
+      "displayData": "천연 GABA 100mg, 블루라이트 피로 완화, 0.00mg 무카페인 검증",
+      "userAction": "낮/밤 테마 스위치 클릭 및 30일 새벽구독 선택",
+      "systemLogic": "다크 모드 인디고 앰비언트 전환 및 새벽배송 15% 할인 계산",
+      "targetScreen": "W03-RITUAL",
+      "stateChange": "스위치 조작 시 배경 명도 0.3초 소프트 페이드 전환"
+    },
+    {
+      "id": "SEC-03",
+      "code": "WK-P03",
+      "name": "🥂 [빛 굴절] 스모키 오크 더블월 글래스웨어",
+      "category": "🥂 빛 굴절 더블월 글래스웨어 (4)",
+      "price": "28,000원",
+      "goalId": "goal1",
+      "uiComponent": "빛 굴절 글래스 3D 뷰어 카드",
+      "imgSpec": "🖼️ [이미지: SEC-03 스모키 오크 더블월 글래스 빛 굴절 (1:1)]",
+      "displayData": "이중 내열 유리, 결로 방지 데스크 보호, 빛 굴절 쉐도우",
+      "userAction": "조명 각도 슬라이더 조절",
+      "systemLogic": "데스크 위 글래스 그림자 및 빛 굴절 효과 실시간 렌더링",
+      "targetScreen": "W03-LOOKBOOK",
+      "stateChange": "슬라이더 조작 시 바닥면 앰비언트 굴절광 회전"
+    },
+    {
+      "id": "SEC-04",
+      "code": "WK-P04",
+      "name": "🌿 [내추럴 패브릭] 오가닉 린넨 데스크 매트 & 코스터",
+      "category": "🌿 린넨 패브릭 매트 & 코스터 (4)",
+      "price": "27,000원",
+      "goalId": "goal1",
+      "uiComponent": "린넨 패브릭 텍스처 카드",
+      "imgSpec": "🖼️ [이미지: SEC-04 오가닉 린넨 데스크 매트 & 코스터 텍스처 (1:1)]",
+      "displayData": "프랑스산 100% 천연 린넨, 방오 발수 코팅, 무표백 내추럴 베이지",
+      "userAction": "매트 사이즈(S/M/L) 옵션 선택",
+      "systemLogic": "가상 데스크(1200x600) 위 매트 비율 자동 리사이징",
+      "targetScreen": "W03-BUILD",
+      "stateChange": "사이즈 선택 시 데스크 배치 비율 즉시 변경"
+    },
+    {
+      "id": "SEC-05",
+      "code": "WK-P05",
+      "name": "💙 [파스텔 틴] 세이지 그린 매트 메탈 오브제 틴",
+      "category": "🎨 매트 파스텔 오브제 틴 (4)",
+      "price": "26,000원",
+      "goalId": "goal3",
+      "uiComponent": "파스텔 오브제 틴 카드",
+      "imgSpec": "🖼️ [이미지: SEC-05 세이지 그린 매트 메탈 오브제 틴 (1:1)]",
+      "displayData": "톤다운 세이지 그린, 밀폐 실리콘 패킹, 20포 대용량 보관",
+      "userAction": "각인 문구 입력 폼 타이핑",
+      "systemLogic": "틴 전면에 레이저 버닝 이니셜 실시간 3D 합성",
+      "targetScreen": "W03-BUILD",
+      "stateChange": "타이핑 즉시 틴케이스 그래픽 중앙에 이니셜 렌더링"
+    },
+    {
+      "id": "SEC-06",
+      "code": "WK-P06",
+      "name": "💚 [무카페인 릴랙스] 블루 캐모마일 & 바닐라 티",
+      "category": "🌙 미드나잇 GABA 0.00mg 무카페인 (4)",
+      "price": "29,000원",
+      "goalId": "goal2",
+      "uiComponent": "릴랙스 티 아로마 카드",
+      "imgSpec": "🖼️ [이미지: SEC-06 블루 캐모마일 바닐라 티 수색 (1:1)]",
+      "displayData": "사파이어 블루 수색, 천연 바닐라빈 블렌딩, 속 편한 무카페인",
+      "userAction": "1초 레시피 담기 클릭",
+      "systemLogic": "Cart Drawer 오픈 및 30일 새벽배송 체크박스 자동 추천",
+      "targetScreen": "W03-DRAWER",
+      "stateChange": "담기 완료 시 상단 장바구니 뱃지 카운트 +1"
+    },
+    {
+      "id": "SEC-07",
+      "code": "WK-P07",
+      "name": "💜 [자연 직조] 베이지 린넨 보자기 기프트 파우치",
+      "category": "🌿 린넨 패브릭 매트 & 코스터 (4)",
+      "price": "30,000원",
+      "goalId": "goal3",
+      "uiComponent": "린넨 보자기 360도 뷰어 카드",
+      "imgSpec": "🖼️ [이미지: SEC-07 베이지 린넨 보자기 기프트 파우치 360도 뷰 (1:1)]",
+      "displayData": "전통 매듭 재해석 보자기, 재사용 가능한 친환경 파우치",
+      "userAction": "매듭 풀기/묶기 인터랙션 클릭",
+      "systemLogic": "360도 보자기 패키징 언박싱 모션 애니메이션",
+      "targetScreen": "W03-BUILD",
+      "stateChange": "클릭 시 보자기 매듭이 풀리며 내부 틴케이스 노출"
+    },
+    {
+      "id": "SEC-08",
+      "code": "WK-P08",
+      "name": "🍓 [더스티 로즈] 매트 피치 틴 & 아로마 티백 세트",
+      "category": "🎨 매트 파스텔 오브제 틴 (4)",
+      "price": "28,500원",
+      "goalId": "goal1",
+      "uiComponent": "더스티 로즈 에디션 카드",
+      "imgSpec": "🖼️ [이미지: SEC-08 더스티 로즈 매트 피치 틴 세트 (1:1)]",
+      "displayData": "차분한 핑크빛 로즈 틴, 블라썸 피치 루이보스 15포 동봉",
+      "userAction": "데스크셋업 조합 보기 클릭",
+      "systemLogic": "우드/화이트 데스크별 톤 매칭 화보 모달 팝업",
+      "targetScreen": "W03-LOOKBOOK",
+      "stateChange": "모달 내에서 화이트/우드 데스크 프리뷰 전환"
+    },
+    {
+      "id": "SEC-09",
+      "code": "WK-P09",
+      "name": "🍋 [심야 웰니스] 라벤더 루이보스 무카페인 팩",
+      "category": "🌙 미드나잇 GABA 0.00mg 무카페인 (4)",
+      "price": "31,000원",
+      "goalId": "goal4",
+      "uiComponent": "432Hz 빗소리 사운드 카드",
+      "imgSpec": "🖼️ [이미지: SEC-09 라벤더 루이보스 무카페인 티백 (1:1)]",
+      "displayData": "프렌치 라벤더 오일 블렌딩, 432Hz 빗소리 앰비언트 연동",
+      "userAction": "사운드 재생 버튼 ▶ 클릭",
+      "systemLogic": "432Hz 빗소리 ASMR 백그라운드 오디오 스트리밍",
+      "targetScreen": "W03-RITUAL",
+      "stateChange": "재생 중 오디오 이퀄라이저 파형 애니메이션 활성화"
+    },
+    {
+      "id": "SEC-10",
+      "code": "WK-P10",
+      "name": "🎓 [오브제 스타터] 3종 파스텔 틴 & 원목 트레이",
+      "category": "🎨 매트 파스텔 오브제 틴 (4)",
+      "price": "34,000원",
+      "goalId": "goal1",
+      "uiComponent": "스타터 풀세트 번들러 카드",
+      "imgSpec": "🖼️ [이미지: SEC-10 파스텔 틴 3종 원목 트레이 스타터 (1:1)]",
+      "displayData": "3종 파스텔 틴 + 월넛 원목 거치 트레이 20% 특별할인",
+      "userAction": "20% 번들 세트 1초 담기",
+      "systemLogic": "단품 구매 대비 12,000원 절약 할인액 적용 및 Drawer 추가",
+      "targetScreen": "W03-DRAWER",
+      "stateChange": "번들 뱃지 하이라이트 및 할인 금액 롤링 카운팅"
+    },
+    {
+      "id": "SEC-11",
+      "code": "WK-P11",
+      "name": "🍸 [빛 굴절 잔] 크리스탈 컷 머들러 & 온더락 잔",
+      "category": "🥂 빛 굴절 더블월 글래스웨어 (4)",
+      "price": "36,000원",
+      "goalId": "goal5",
+      "uiComponent": "크리스탈 글래스웨어 카드",
+      "imgSpec": "🖼️ [이미지: SEC-11 크리스탈 컷 머들러 & 온더락 잔 (1:1)]",
+      "displayData": "핸드메이드 크리스탈 컷팅, 무연 크리스탈 글래스, 얼음 소리 공명",
+      "userAction": "디저트 페어링 룩북 탭 클릭",
+      "systemLogic": "버터 쿠키 및 피낭시에와 함께 세팅된 테이블 화보 노출",
+      "targetScreen": "W03-LOOKBOOK",
+      "stateChange": "화보 속 핫스팟 태그 클릭 시 상품 상세 레이어 노출"
+    },
+    {
+      "id": "SEC-12",
+      "code": "WK-P12",
+      "name": "🥄 [미니멀 스푼] 매트 골드 티 스푼 & 집게 툴",
+      "category": "🥂 빛 굴절 더블월 글래스웨어 (4)",
+      "price": "38,000원",
+      "goalId": "goal1",
+      "uiComponent": "황동 메탈 오브제 툴 카드",
+      "imgSpec": "🖼️ [이미지: SEC-12 매트 골드 티 스푼 & 집게 툴 세트 (1:1)]",
+      "displayData": "새틴 헤어라인 골드 마감, 티백 손잡이 집게, 건축적 미니멀리즘",
+      "userAction": "3D 툴 인터랙션 조작",
+      "systemLogic": "마우스 드래그에 따른 금속 반사 쉐이더 반응",
+      "targetScreen": "W03-BUILD",
+      "stateChange": "Hover 시 툴 표면 미세 헤어라인 질감 확대"
+    },
+    {
+      "id": "SEC-13",
+      "code": "WK-P13",
+      "name": "🎁 [선물 에디션] 린넨 포장 & 감성 엽서 기프트 세트",
+      "category": "🌿 린넨 패브릭 매트 & 코스터 (4)",
+      "price": "49,000원",
+      "goalId": "goal3",
+      "uiComponent": "카카오톡 1초 선물하기 카드",
+      "imgSpec": "🖼️ [이미지: SEC-13 린넨 포장 & 감성 엽서 기프트 세트 (4:3)]",
+      "displayData": "오브제 틴 2종 + 린넨 코스터 + 29SELECT 일러스트 엽서 3종",
+      "userAction": "응원 메시지 카드 작성 후 카카오 선물 클릭",
+      "systemLogic": "카카오톡 선물하기 API 연동 및 모바일 메시지 카드 생성",
+      "targetScreen": "W03-DRAWER",
+      "stateChange": "메시지 카드 입력 시 실시간 감성 손글씨 폰트 프리뷰"
+    },
+    {
+      "id": "SEC-14",
+      "code": "WK-P14",
+      "name": "🛡️ [친환경 패브릭] 100% 무표백 소창 찻수건 2종",
+      "category": "🌿 린넨 패브릭 매트 & 코스터 (4)",
+      "price": "35,000원",
+      "goalId": "goal1",
+      "uiComponent": "친환경 오가닉 패브릭 카드",
+      "imgSpec": "🖼️ [이미지: SEC-14 100% 무표백 소창 찻수건 2종 (3:4)]",
+      "displayData": "국내 직조 무형광 3중 강화 소창, 뛰어난 흡수성, 데스크 클리닝",
+      "userAction": "패브릭 세탁 및 관리법 아코디언 확인",
+      "systemLogic": "소창 길들이기 가이드 슬라이드 아코디언 노출",
+      "targetScreen": "W03-ABOUT",
+      "stateChange": "아코디언 토글 시 부드러운 펼침 애니메이션"
+    },
+    {
+      "id": "SEC-15",
+      "code": "WK-P15",
+      "name": "🍑 [구움과자 페어링] 피낭시에 x 스모키 얼그레이 팩",
+      "category": "🍰 티 & 구움과자 디저트 페어링 (4)",
+      "price": "42,000원",
+      "goalId": "goal5",
+      "uiComponent": "디저트 페어링 가이드 카드",
+      "imgSpec": "🖼️ [이미지: SEC-15 서촌 피낭시에 x 스모키 얼그레이 페어링 팩 (1:1)]",
+      "displayData": "서촌 유명 베이커리 솔티 카라멜 피낭시에 x 훈연 얼그레이 티",
+      "userAction": "페어링 맛 밸런스 차트 확인 및 주문",
+      "systemLogic": "단맛/바디감/풍미 밸런스 레이더 차트 렌더링",
+      "targetScreen": "W03-LOOKBOOK",
+      "stateChange": "차트 Hover 시 성분별 상세 조화도 코멘트 툴팁 노출"
+    }
+  ]
+}

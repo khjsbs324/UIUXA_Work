@@ -1,0 +1,48 @@
+flowchart TD
+    classDef root fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef main fill:#E8F5E9,stroke:#2E7D32,stroke-width:2px,color:#1B5E20,font-weight:bold;
+    classDef sub fill:#E1F5FE,stroke:#0277BD,stroke-width:1.5px,color:#01579B;
+    classDef act fill:#FFF8E1,stroke:#F57F17,stroke-width:1.5px,color:#E65100;
+    classDef common fill:#ECEFF1,stroke:#455A64,stroke-width:1.5px,color:#263238;
+    classDef exp fill:#FFEBEE,stroke:#C62828,stroke-width:1.5px,color:#B71C1C;
+
+    ROOT["WICKETA 한명석 플랫폼 루트<br/>(온수 다실)"]
+    HOME["W11-HOME<br/>온수 다실 홈 (큰글씨)"]
+    AGING["W11-AGING<br/>80℃ 발효 건강 도감"]
+    TEASET["W11-TEASET<br/>전통 다기 도감 (6대 LNB)"]
+    GIFT["W11-GIFT<br/>오동나무 각인 빌더"]
+    COMM["W11-COMM<br/>한옥 다도 저널 & 클래스"]
+    DONE["W11-DONE<br/>주문 및 예약 완료"]
+    DRAWER["W11-DRAWER<br/>큰글씨 장바구니"]
+
+    EXP1["EXP-01<br/>404 페이지 찾을 수 없음"]
+    EXP2["EXP-02<br/>품절 대체 안내"]
+    EXP3["EXP-03<br/>네트워크 오류 모달"]
+
+    ROOT --> HOME
+    HOME --> AGING
+    HOME --> TEASET
+    HOME --> GIFT
+    HOME --> COMM
+
+    AGING --> TEASET
+    TEASET --> GIFT
+    TEASET --> COMM
+    TEASET --> DRAWER
+    GIFT --> DRAWER
+
+    COMM --> HOME
+    DRAWER --> DONE
+    DONE --> COMM
+    DONE --> HOME
+
+    HOME -.-> EXP1
+    TEASET -.-> EXP2
+    COMM -.-> EXP3
+
+    class ROOT root;
+    class HOME main;
+    class AGING,TEASET,GIFT sub;
+    class COMM,DONE act;
+    class DRAWER common;
+    class EXP1,EXP2,EXP3 exp;

@@ -1,0 +1,38 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef explore fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef reserve fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef action fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W01-HOME (안식처 진입)<br/>• 3D 비주얼 캔버스<br/>• [가상 쇼룸 투어] 클릭"]
+    SPACE["02 W01-SPACE (3D 가상 쇼룸)<br/>• 360도 공간 탐색 & 핫스팟"]
+    ESSAY["03 W01-ESSAY (조향 저널)<br/>• 패럴랙스 스토리텔링"]
+    ABOUT["04 W01-ABOUT (시향 안내)<br/>• 1:1 프로그램 & 소믈리에"]
+    RESERVE["05 W01-RESERVE (예약 캘린더)<br/>• 날짜/시간 타임슬롯 선택"]
+    
+    CHECK{"06 잔여석<br/>검증"}
+    
+    DONE["07 W01-DONE (모바일 패스)<br/>• QR 입장권 & 카카오 알림톡"]
+    WAIT["06-B 대기 등록 (Fallback)<br/>• 취소석 알림톡 접수<br/>• 대체 날짜 제안"]
+    COMM["F1 W01-COMM (도슨트 가이드)<br/>• 성수 쇼룸 지도 & 도슨트 PDF"]
+
+    HOME --> SPACE
+    SPACE --> ESSAY
+    ESSAY --> ABOUT
+    ABOUT --> RESERVE
+    RESERVE --> CHECK
+    
+    CHECK -->|잔여석 있음| DONE
+    CHECK -->|잔여석 마감| WAIT
+    WAIT -.->|대체 날짜 선택 시| RESERVE
+    
+    DONE --> COMM
+
+    class HOME home;
+    class SPACE,ESSAY explore;
+    class CHECK decision;
+    class ABOUT,RESERVE,WAIT reserve;
+    class DONE action;
+    class COMM support;

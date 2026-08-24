@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>와이어프레임 - 이도은 (24H 서카디언 서클 이너뷰티 랩)</title>
+    <style>
+
+:root {
+    --border: #111111;
+    --border-light: #CCCCCC;
+    --border-dash: #999999;
+    --bg: #FFFFFF;
+    --bg-sub: #F8F9FA;
+    --bg-alt: #F1F3F5;
+    --text: #111111;
+    --text-muted: #666666;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: "Pretendard", -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding-top: 56px;
+    line-height: 1.5;
+}
+.wf-top-helper {
+    position: fixed; top: 0; left: 0; width: 100%; height: 56px;
+    background: #111111; color: #FFFFFF; display: flex; align-items: center;
+    justify-content: space-between; padding: 0 24px; z-index: 9999; font-size: 13px;
+}
+.wf-top-helper button {
+    background: #222222; color: #FFFFFF; border: 1px solid #444444;
+    padding: 5px 12px; font-size: 12px; cursor: pointer; border-radius: 4px; margin-left: 6px;
+    transition: all 0.15s; white-space: nowrap;
+}
+.wf-top-helper button.active, .wf-top-helper button:hover {
+    background: #FFFFFF; color: #111111; font-weight: bold; border-color: #FFFFFF;
+}
+.wf-header {
+    border-bottom: 2px solid var(--border); padding: 18px 32px;
+    display: flex; justify-content: space-between; align-items: center; background: #FFFFFF;
+}
+.wf-header .logo { font-size: 18px; font-weight: 900; letter-spacing: 0.5px; }
+.wf-header nav { display: flex; gap: 20px; }
+.wf-header nav a {
+    font-size: 14px; font-weight: 700; color: #111111; text-decoration: none; cursor: pointer;
+}
+.wf-header nav a:hover { text-decoration: underline; }
+.container { max-width: 1200px; margin: 0 auto; padding: 40px 24px; }
+.page-view { display: none; }
+.page-view.active { display: block; }
+.section-card {
+    border: 2px solid var(--border); background: #FFFFFF;
+    padding: 32px 28px; margin-bottom: 48px;
+}
+.section-title {
+    font-size: 17px; font-weight: 800; margin-bottom: 20px;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 1px solid var(--border-light); padding-bottom: 10px;
+}
+.status-badge {
+    font-size: 11px; font-weight: 700; padding: 2px 8px; border: 1px solid #111111; background: #F1F3F5;
+}
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.img-box {
+    background: var(--bg-alt); border: 1.5px dashed var(--border-dash);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text-muted); font-size: 13px; font-weight: 600; text-align: center; padding: 16px; min-height: 140px;
+}
+.custom-product-card {
+    border: 1.5px solid var(--border); padding: 16px; background: #FFFFFF;
+    display: flex; flex-direction: column; justify-content: space-between;
+}
+.wf-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 9px 18px; font-size: 13px; font-weight: 700; cursor: pointer;
+    border: 2px solid #111111; background: #FFFFFF; color: #111111;
+    transition: all 0.15s; text-decoration: none;
+}
+.wf-btn:hover { background: #111111; color: #FFFFFF; }
+.wf-btn-dark { background: #111111; color: #FFFFFF; }
+.wf-btn-dark:hover { background: #333333; }
+.wf-btn-sm { padding: 5px 10px; font-size: 12px; }
+.cart-drawer {
+    position: fixed; top: 0; right: -540px; width: 480px; height: 100%;
+    background: #FFFFFF; border-left: 2px solid #111111; z-index: 10000;
+    transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1); padding: 28px 24px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+}
+.cart-drawer.open { right: 0; }
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6); display: none; align-items: center; justify-content: center;
+    z-index: 10001;
+}
+.modal-overlay.open { display: flex; }
+.modal-card {
+    background: #FFFFFF; border: 2px solid #111111; padding: 36px 30px;
+    max-width: 520px; width: 90%; text-align: center;
+}
+.site-footer {
+    border-top: 2px solid var(--border); padding: 40px 32px;
+    background: #F8F9FA; font-size: 12px; color: var(--text-muted);
+}
+.site-footer .footer-cols { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 28px; margin-bottom: 24px; }
+.site-footer .footer-btm { border-top: 1px solid var(--border-light); padding-top: 16px; display: flex; justify-content: space-between; }
+
+    </style>
+</head>
+<body>
+
+    <!-- 1. Top Helper Bar (3-Tier Status Navigation) -->
+    <div class="wf-top-helper">
+        <div style="font-weight:700;">위케티 WICKETA | [06] 이도은 (24H 서카디언 서클 이너뷰티 랩)</div>
+        <div style="display:flex; overflow-x:auto;">
+            <button class="active" onclick="switchPage('W06-HOME')">📐 W06-HOME (이너뷰티 타임테이블 메인)</button>
+<button class="" onclick="switchPage('W06-CATALOG')">📐 W06-CATALOG (20종 이너뷰티 전수 도감)</button>
+<button class="" onclick="switchPage('W06-ABOUT')">📐 W06-ABOUT (글루타치온 KTR 순도 성적서)</button>
+<button class="" onclick="switchPage('W06-BUILD')">🎯 W06-BUILD (3D 레더 뷰티 파우치 빌더)</button>
+<button class="" onclick="switchPage('W06-RITUAL')">🎯 W06-RITUAL (180초 림프 순환 뷰티 타이머)</button>
+<button class="" onclick="switchPage('W06-DRAWER')">🎯 W06-DRAWER (이너뷰티 정기구독 주문 드로어)</button>
+<button class="" onclick="switchPage('W06-DONE')">📐 W06-DONE (주문 완료 & 30일 새벽배송 확인증)</button>
+
+        </div>
+    </div>
+
+    <!-- 2. Header (GNB) -->
+    <header class="wf-header">
+        <div class="logo">CIRCADIAN INNER BEAUTY LAB</div>
+        <nav>
+            <a onclick="switchPage('W06-HOME')">이너뷰티 타임테이블</a>
+<a onclick="switchPage('W06-CATALOG')">20종 이너뷰티 팩</a>
+<a onclick="switchPage('W06-ABOUT')">글루타치온 & KTR 인증</a>
+<a onclick="switchPage('W06-BUILD')">뷰티 파우치 커스텀</a>
+<a onclick="switchPage('W06-RITUAL')">림프 순환 타이머</a>
+
+        </nav>
+        <div>
+            <button class="wf-btn wf-btn-sm wf-btn-dark" onclick="toggleDrawer()">이너뷰티 장바구니</button>
+        </div>
+    </header>
+
+    <!-- 3. Mandatory Page 1: Main Home (WXX-HOME) -->
+    <main id="W06-HOME" class="page-view active container">
+        <div class="section-card">
+            <div class="section-title">
+                <span>🏛️ [W06-HOME] 이도은 메인 비주얼 캔버스</span>
+                <span class="status-badge">📐 설계 기준</span>
+            </div>
+            <div class="img-box" style="min-height:300px; font-size:16px; margin-bottom:20px;">
+                🖼️ [1200x380 시네마틱 3D 비주얼 캔버스: 24H 서카디언 서클 이너뷰티 랩]
+            </div>
+            <div style="text-align:center;">
+                <h2 style="font-size:22px; font-weight:900; margin-bottom:8px;">"문을 열고, 현실에서 벗어나세요 (Open the Door, Escape Reality)"</h2>
+                <p style="font-size:14px; color:#555555;">바쁜 일상에 지친 2030 세대에게 노동 없는 3분간의 초현실주의적인 휴식(길티프리 리추얼) 공간을 제공합니다.</p>
+            </div>
+        </div>
+
+        <!-- Killer Feature Module on Main -->
+        
+        <section id="W06-CIRCADIAN" data-feature-id="CIRCADIAN-TABLE-01" class="section-card">
+            <div class="section-title">
+                <span>⏰ [CIRCADIAN-TABLE-01] 24H 생체리듬 이너뷰티 서카디언 타임테이블</span>
+                <span class="status-badge">🎯 반영 목표</span>
+            </div>
+            <div class="grid-3">
+                <div style="border:1.5px solid #111111; padding:18px; text-align:center;">
+                    <div style="font-size:12px; font-weight:700; color:#666666;">☀️ 08:00 AM MORNING</div>
+                    <div style="font-size:16px; font-weight:800; margin:8px 0;">글루타치온 브라이트닝</div>
+                    <p style="font-size:12px; color:#555555;">순도 99% 순백 토닝 스틱</p>
+                </div>
+                <div style="border:1.5px solid #111111; padding:18px; text-align:center; background:#F1F3F5;">
+                    <div style="font-size:12px; font-weight:700; color:#111111;">💧 14:00 PM AFTERNOON</div>
+                    <div style="font-size:16px; font-weight:800; margin:8px 0;">히알루론산 수분 충전</div>
+                    <p style="font-size:12px; color:#555555;">오후 건조 피부 1초 융해</p>
+                </div>
+                <div style="border:1.5px solid #111111; padding:18px; text-align:center;">
+                    <div style="font-size:12px; font-weight:700; color:#666666;">🌙 22:00 PM NIGHT</div>
+                    <div style="font-size:16px; font-weight:800; margin:8px 0;">저분자 콜라겐 리페어</div>
+                    <p style="font-size:12px; color:#555555;">피쉬 콜라겐 300Da 재생</p>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- 3 Signature Curations -->
+        <section class="section-card">
+            <div class="section-title">
+                <span>✨ 대표 시그니처 3대 큐레이션</span>
+                <span class="status-badge">📐 설계 기준</span>
+            </div>
+            <div class="grid-3">
+                
+        <div class="custom-product-card">
+            <div class="img-box">🖼️ [이미지: SEC-01 ⭐ [08:00 AM] 순수 글루타치온 백옥 브라이트닝 티 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#111111; margin-top:8px;">✨ 대표 시그니처 큐레이션</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0;">⭐ [08:00 AM] 순수 글루타치온 백옥 브라이트닝 티</div>
+            <div style="font-size:16px; font-weight:900; margin-bottom:10px;">38,000원</div>
+            <button class="wf-btn wf-btn-sm wf-btn-dark" style="width:100%;" onclick="openOrder('⭐ [08:00 AM] 순수 글루타치온 백옥 브라이트닝 티', '38,000원')">바로 주문</button>
+        </div>
+        
+        <div class="custom-product-card">
+            <div class="img-box">🖼️ [이미지: SEC-02 💧 [14:00 PM] 5중 히알루론산 깊은 수분 충전 티 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#111111; margin-top:8px;">✨ 대표 시그니처 큐레이션</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0;">💧 [14:00 PM] 5중 히알루론산 깊은 수분 충전 티</div>
+            <div style="font-size:16px; font-weight:900; margin-bottom:10px;">32,000원</div>
+            <button class="wf-btn wf-btn-sm wf-btn-dark" style="width:100%;" onclick="openOrder('💧 [14:00 PM] 5중 히알루론산 깊은 수분 충전 티', '32,000원')">바로 주문</button>
+        </div>
+        
+        <div class="custom-product-card">
+            <div class="img-box">🖼️ [이미지: SEC-03 🌙 [22:00 PM] 300Da 저분자 피쉬 콜라겐 나이트 티 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#111111; margin-top:8px;">✨ 대표 시그니처 큐레이션</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0;">🌙 [22:00 PM] 300Da 저분자 피쉬 콜라겐 나이트 티</div>
+            <div style="font-size:16px; font-weight:900; margin-bottom:10px;">36,000원</div>
+            <button class="wf-btn wf-btn-sm wf-btn-dark" style="width:100%;" onclick="openOrder('🌙 [22:00 PM] 300Da 저분자 피쉬 콜라겐 나이트 티', '36,000원')">바로 주문</button>
+        </div>
+        
+            </div>
+        </section>
+    </main>
+
+    <!-- 4. Mandatory Page 2: 20 Products Catalog (WXX-CATALOG) -->
+    <section id="W06-CATALOG" class="page-view container">
+        <div class="section-card">
+            <div class="section-title">
+                <span>📖 [W06-CATALOG] 20종 전수 상품 도감 & 6대 맞춤 LNB 필터</span>
+                <span class="status-badge">📐 설계 기준</span>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:24px;">
+                <button class="wf-btn wf-btn-sm wf-btn-dark" onclick="filterLNB('전체 이너뷰티 팩 (20)')">전체 이너뷰티 팩 (20)</button>
+<button class="wf-btn wf-btn-sm " onclick="filterLNB('☀️ 08:00 AM 글루타치온 브라이트닝 (4)')">☀️ 08:00 AM 글루타치온 브라이트닝 (4)</button>
+<button class="wf-btn wf-btn-sm " onclick="filterLNB('💧 14:00 PM 히알루론산 수분 충전 (4)')">💧 14:00 PM 히알루론산 수분 충전 (4)</button>
+<button class="wf-btn wf-btn-sm " onclick="filterLNB('🌙 22:00 PM 저분자 콜라겐 나이트 리페어 (4)')">🌙 22:00 PM 저분자 콜라겐 나이트 리페어 (4)</button>
+<button class="wf-btn wf-btn-sm " onclick="filterLNB('👜 3D 뷰티 파우치 & 글래스 머들러 (4)')">👜 3D 뷰티 파우치 & 글래스 머들러 (4)</button>
+<button class="wf-btn wf-btn-sm " onclick="filterLNB('📦 30일 서카디언 정기구독 팩 (4)')">📦 30일 서카디언 정기구독 팩 (4)</button>
+
+            </div>
+            <div class="grid-4">
+                
+        <div class="custom-product-card" data-sec-id="SEC-01">
+            <div class="img-box">🖼️ [이미지: SEC-01 ⭐ [08:00 AM] 순수 글루타치온 백옥 브라이트닝 티 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">☀️ 08:00 AM 글루타치온 브라이트닝 (4) | 코드: WK-P01</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">⭐ [08:00 AM] 순수 글루타치온 백옥 브라이트닝 티</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">38,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('⭐ [08:00 AM] 순수 글루타치온 백옥 브라이트닝 티', '38,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-02">
+            <div class="img-box">🖼️ [이미지: SEC-02 💧 [14:00 PM] 5중 히알루론산 깊은 수분 충전 티 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">💧 14:00 PM 히알루론산 수분 충전 (4) | 코드: WK-P02</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">💧 [14:00 PM] 5중 히알루론산 깊은 수분 충전 티</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">32,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('💧 [14:00 PM] 5중 히알루론산 깊은 수분 충전 티', '32,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-03">
+            <div class="img-box">🖼️ [이미지: SEC-03 🌙 [22:00 PM] 300Da 저분자 피쉬 콜라겐 나이트 티 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🌙 22:00 PM 저분자 콜라겐 나이트 리페어 (4) | 코드: WK-P03</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🌙 [22:00 PM] 300Da 저분자 피쉬 콜라겐 나이트 티</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">36,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🌙 [22:00 PM] 300Da 저분자 피쉬 콜라겐 나이트 티', '36,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-04">
+            <div class="img-box">🖼️ [이미지: SEC-04 👜 [골드 각인] 소프트 벨벳 뷰티 파우치 & 글래스 스틱 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">👜 3D 뷰티 파우치 & 글래스 머들러 (4) | 코드: WK-P04</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">👜 [골드 각인] 소프트 벨벳 뷰티 파우치 & 글래스 스틱</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">29,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('👜 [골드 각인] 소프트 벨벳 뷰티 파우치 & 글래스 스틱', '29,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-05">
+            <div class="img-box">🖼️ [이미지: SEC-05 📦 [서카디언 30일] 24H 3단 이너뷰티 풀세트 새벽배송 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">📦 30일 서카디언 정기구독 팩 (4) | 코드: WK-P05</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">📦 [서카디언 30일] 24H 3단 이너뷰티 풀세트 새벽배송</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">89,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('📦 [서카디언 30일] 24H 3단 이너뷰티 풀세트 새벽배송', '89,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-06">
+            <div class="img-box">🖼️ [이미지: SEC-06 ☀️ [08:00 AM] 비타민C 1,000mg 화이트 토마토 팩 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">☀️ 08:00 AM 글루타치온 브라이트닝 (4) | 코드: WK-P06</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">☀️ [08:00 AM] 비타민C 1,000mg 화이트 토마토 팩</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">34,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('☀️ [08:00 AM] 비타민C 1,000mg 화이트 토마토 팩', '34,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-07">
+            <div class="img-box">🖼️ [이미지: SEC-07 💧 [14:00 PM] 세라마이드 피부 장벽 보호 미스트 티 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">💧 14:00 PM 히알루론산 수분 충전 (4) | 코드: WK-P07</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">💧 [14:00 PM] 세라마이드 피부 장벽 보호 미스트 티</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">31,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('💧 [14:00 PM] 세라마이드 피부 장벽 보호 미스트 티', '31,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-08">
+            <div class="img-box">🖼️ [이미지: SEC-08 🌙 [22:00 PM] 엘라스틴 & 히비스커스 탄력 리페어 팩 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🌙 22:00 PM 저분자 콜라겐 나이트 리페어 (4) | 코드: WK-P08</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🌙 [22:00 PM] 엘라스틴 & 히비스커스 탄력 리페어 팩</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">35,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🌙 [22:00 PM] 엘라스틴 & 히비스커스 탄력 리페어 팩', '35,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-09">
+            <div class="img-box">🖼️ [이미지: SEC-09 👜 [글래스웨어] 로즈 쿼츠 더블월 뷰티 머그 잔 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">👜 3D 뷰티 파우치 & 글래스 머들러 (4) | 코드: WK-P09</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">👜 [글래스웨어] 로즈 쿼츠 더블월 뷰티 머그 잔</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">28,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('👜 [글래스웨어] 로즈 쿼츠 더블월 뷰티 머그 잔', '28,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-10">
+            <div class="img-box">🖼️ [이미지: SEC-10 📦 [탄력 구독] 30일 콜라겐 집중 정기배송 팩 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">📦 30일 서카디언 정기구독 팩 (4) | 코드: WK-P10</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">📦 [탄력 구독] 30일 콜라겐 집중 정기배송 팩</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">72,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('📦 [탄력 구독] 30일 콜라겐 집중 정기배송 팩', '72,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-11">
+            <div class="img-box">🖼️ [이미지: SEC-11 ☀️ [08:00 AM] 붓기 완화 옥수수수염 & 단호박 팩 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">☀️ 08:00 AM 글루타치온 브라이트닝 (4) | 코드: WK-P11</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">☀️ [08:00 AM] 붓기 완화 옥수수수염 & 단호박 팩</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">26,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('☀️ [08:00 AM] 붓기 완화 옥수수수염 & 단호박 팩', '26,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-12">
+            <div class="img-box">🖼️ [이미지: SEC-12 💧 [14:00 PM] 병풀 추출물 시카 릴랙스 그린티 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">💧 14:00 PM 히알루론산 수분 충전 (4) | 코드: WK-P12</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">💧 [14:00 PM] 병풀 추출물 시카 릴랙스 그린티</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">29,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('💧 [14:00 PM] 병풀 추출물 시카 릴랙스 그린티', '29,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-13">
+            <div class="img-box">🖼️ [이미지: SEC-13 🌙 [22:00 PM] 비오틴 & 아연 모발/네일 영양 티 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🌙 22:00 PM 저분자 콜라겐 나이트 리페어 (4) | 코드: WK-P13</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🌙 [22:00 PM] 비오틴 & 아연 모발/네일 영양 티</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">33,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🌙 [22:00 PM] 비오틴 & 아연 모발/네일 영양 티', '33,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-14">
+            <div class="img-box">🖼️ [이미지: SEC-14 👜 [미니 틴] 핸드백 쏙 3종 휴대용 뷰티 틴 세트 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">👜 3D 뷰티 파우치 & 글래스 머들러 (4) | 코드: WK-P14</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">👜 [미니 틴] 핸드백 쏙 3종 휴대용 뷰티 틴 세트</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">24,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('👜 [미니 틴] 핸드백 쏙 3종 휴대용 뷰티 틴 세트', '24,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-15">
+            <div class="img-box">🖼️ [이미지: SEC-15 📦 [수분 구독] 30일 히알루론산 데일리 정기배송 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">📦 30일 서카디언 정기구독 팩 (4) | 코드: WK-P15</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">📦 [수분 구독] 30일 히알루론산 데일리 정기배송</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">65,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('📦 [수분 구독] 30일 히알루론산 데일리 정기배송', '65,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-16">
+            <div class="img-box">🖼️ [이미지: SEC-16 ☀️ [08:00 AM] 코엔자임 Q10 모닝 활력 티 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">☀️ 08:00 AM 글루타치온 브라이트닝 (4) | 코드: WK-P16</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">☀️ [08:00 AM] 코엔자임 Q10 모닝 활력 티</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">37,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('☀️ [08:00 AM] 코엔자임 Q10 모닝 활력 티', '37,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-17">
+            <div class="img-box">🖼️ [이미지: SEC-17 💧 [14:00 PM] 알로에베라 속보습 캄테크 티 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">💧 14:00 PM 히알루론산 수분 충전 (4) | 코드: WK-P17</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">💧 [14:00 PM] 알로에베라 속보습 캄테크 티</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">27,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('💧 [14:00 PM] 알로에베라 속보습 캄테크 티', '27,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-18">
+            <div class="img-box">🖼️ [이미지: SEC-18 🌙 [22:00 PM] 미드나잇 GABA 0.00mg 숙면 티 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">🌙 22:00 PM 저분자 콜라겐 나이트 리페어 (4) | 코드: WK-P18</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">🌙 [22:00 PM] 미드나잇 GABA 0.00mg 숙면 티</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">30,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('🌙 [22:00 PM] 미드나잇 GABA 0.00mg 숙면 티', '30,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-19">
+            <div class="img-box">🖼️ [이미지: SEC-19 👜 [스킨 괄사] 천연 백옥 페이셜 림프 괄사 툴 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">👜 3D 뷰티 파우치 & 글래스 머들러 (4) | 코드: WK-P19</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">👜 [스킨 괄사] 천연 백옥 페이셜 림프 괄사 툴</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">22,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('👜 [스킨 괄사] 천연 백옥 페이셜 림프 괄사 툴', '22,000원')">1초 담기 / 주문</button>
+        </div>
+        
+        <div class="custom-product-card" data-sec-id="SEC-20">
+            <div class="img-box">🖼️ [이미지: SEC-20 📦 [VIP 뷰티 박스] 24H 전 라인업 + 괄사 기프트 세트 (100% 무채색 뷰박스)]</div>
+            <div style="font-size:11px; font-weight:700; color:#666666; margin-top:8px;">📦 30일 서카디언 정기구독 팩 (4) | 코드: WK-P20</div>
+            <div style="font-size:14px; font-weight:800; margin:4px 0 8px 0; min-height:38px;">📦 [VIP 뷰티 박스] 24H 전 라인업 + 괄사 기프트 세트</div>
+            <div style="font-size:15px; font-weight:900; margin-bottom:10px;">110,000원</div>
+            <button class="wf-btn wf-btn-sm" style="width:100%;" onclick="openOrder('📦 [VIP 뷰티 박스] 24H 전 라인업 + 괄사 기프트 세트', '110,000원')">1초 담기 / 주문</button>
+        </div>
+        
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Mandatory Page 3: Brand Story & Philosophy (WXX-ABOUT) -->
+    <section id="W06-ABOUT" class="page-view container">
+        <div class="section-card">
+            <div class="section-title">
+                <span>🌱 [W06-ABOUT] 위케티 WICKETA 공식 브랜드 스토리 & 이도은 특화 철학</span>
+                <span class="status-badge">📐 설계 기준</span>
+            </div>
+            <div class="grid-2" style="margin-bottom:28px;">
+                <div class="img-box" style="min-height:260px;">
+                    🖼️ [비밀정원 다과회 세계관 & WONDERSCAPE 캄테크 디지털 웰니스 아카이브]
+                </div>
+                <div>
+                    <h3 style="font-size:18px; font-weight:900; margin-bottom:10px;">"문을 열고, 현실에서 벗어나세요 (Open the Door, Escape Reality)"</h3>
+                    <p style="font-size:13px; color:#444444; line-height:1.8; margin-bottom:14px;">
+                        <strong>브랜드 목적:</strong> 바쁜 일상에 지친 2030 세대에게 노동 없는 3분간의 초현실주의적인 휴식(길티프리 리추얼) 공간을 제공하는 것입니다. 차를 마시는 행위 자체를 환상 공간으로 입장하는 특별한 의식으로 재해석하여, 일상과의 완벽한 단절 및 마법 같은 휴식을 선사합니다. (모기업: WONDERSCAPE)
+                    </p>
+                    <p style="font-size:13px; color:#444444; line-height:1.8; margin-bottom:14px;">
+                        <strong>브랜드 세계관:</strong> '비밀정원 다과회' - 문을 열고 들어서는 순간 일상과 완벽히 단절되는 신비롭고 몽환적인 환상 안식처
+                    </p>
+                    <div style="background:#F1F3F5; padding:14px; border:1px solid #CCCCCC; font-size:12px; line-height:1.7;">
+                        <strong>3대 핵심 가치</strong><br/>
+                        • <strong>1. 감정 맞춤 추천 (Emotion Dial):</strong> 감정 다이얼 입력을 통해 오늘의 내면 상태에 맞춘 1:1 티 레시피 제공<br/>
+                        • <strong>2. DIY 믹솔로지 & 블렌딩 (Mixology):</strong> 베이스 티와 서브 아이템을 조합해 나만의 초현실 음료 완성<br/>
+                        • <strong>3. 노동 없는 3분의 초현실 휴식 (Zero-Labor):</strong> 찬물/탄산수에 1초 만에 녹아드는 즉각 융해와 180초 브루잉 타이머
+                    </div>
+                </div>
+            </div>
+            <div style="border-top:1px solid #CCCCCC; padding-top:20px;">
+                <h4 style="font-size:15px; font-weight:800; margin-bottom:8px;">💎 [이도은] 특화 운영 철학 및 안심 성적서</h4>
+                <p style="font-size:13px; color:#555555; margin-bottom:12px;">• 24시간 생체리듬 서카디언 서클 이너뷰티 R&D 리포트 & KTR 99% 순도 인증</p>
+                <div style="background:#F8F9FA; padding:12px; border:1px solid #CCCCCC; font-size:12px;">
+                    <strong>KTR 한국화학융합시험연구원 3無 공인 시험성적서 획득</strong> | 무설탕 (0.0g) | 무카페인 (0.00%) | 무색소 (100% 천연 원료)
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Unique Sub-Pages -->
+    
+        <section id="W06-BUILD" data-feature-id="POUCH-BUILDER-01" class="page-view container">
+            <div class="section-card">
+                <div class="section-title">
+                    <span>👜 [POUCH-BUILDER-01] 3D 비건 레더 뷰티 파우치 빌더</span>
+                    <span class="status-badge">🎯 반영 목표</span>
+                </div>
+                <div class="grid-2">
+                    <div class="img-box">🖼️ [비건 레더 이너뷰티 파우치 3D 뷰]</div>
+                    <div>
+                        <div style="margin-bottom:12px;">
+                            <label style="font-size:12px; font-weight:700;">파우치 이니셜 각인</label>
+                            <input type="text" placeholder="DOEUN LEE" style="width:100%; padding:8px; border:1.5px solid #111111;">
+                        </div>
+                        <button class="wf-btn wf-btn-dark" onclick="openOrder('비건 레더 파우치 세트', '38,000원')">파우치 세트 주문하기 (38,000원)</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="W06-RITUAL" data-feature-id="LYMPH-TIMER-01" class="page-view container">
+            <div class="section-card">
+                <div class="section-title">
+                    <span>⏱️ [LYMPH-TIMER-01] 180초 림프 순환 뷰티 타이머</span>
+                    <span class="status-badge">🎯 반영 목표</span>
+                </div>
+                <div style="text-align:center; padding:32px;">
+                    <div style="font-size:48px; font-weight:900; margin:16px 0;">03:00</div>
+                    <p style="font-size:13px; color:#666666; margin-bottom:16px;">콜라겐 티를 마시며 턱선과 목선 림프를 지압하세요.</p>
+                    <button class="wf-btn wf-btn-dark" onclick="alert('림프 순환 타이머가 시작되었습니다.')">타이머 시작</button>
+                </div>
+            </div>
+        </section>
+        
+
+    <!-- 7. Drawer Layer -->
+    
+        <aside id="W06-DRAWER" data-feature-id="CMD-CHECKOUT-01" class="cart-drawer">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+                <h3 style="font-size:16px; font-weight:800;">📦 30일 이너뷰티 새벽배송 구독</h3>
+                <button class="wf-btn wf-btn-sm" onclick="toggleDrawer()">✕</button>
+            </div>
+            <div style="flex:1; overflow-y:auto;">
+                <div style="background:#F1F3F5; padding:16px; border:1px solid #CCCCCC; margin-bottom:16px;">
+                    <div style="font-weight:700; font-size:14px;" id="drawerItem">서카디언 30일 루틴 팩</div>
+                    <div style="font-size:16px; font-weight:800; margin-top:6px;" id="drawerPrice">38,000원</div>
+                </div>
+            </div>
+            <button class="wf-btn wf-btn-dark" style="width:100%;" onclick="openModal('W06-DONE'); toggleDrawer();">정기구독 신청</button>
+        </aside>
+        
+
+    <!-- 8. Modal Overlay -->
+    
+        <div id="W06-DONE" data-feature-id="BEAUTY-DONE-01" class="modal-overlay">
+            <div class="modal-card">
+                <div style="font-size:36px; margin-bottom:8px;">✨</div>
+                <h3 style="font-size:18px; font-weight:800; margin-bottom:8px;">구독 체결 & 30일 새벽배송 시작</h3>
+                <p style="font-size:13px; color:#555555; margin-bottom:16px;">매일 아침 신선한 이너뷰티 스틱이 배송됩니다.</p>
+                <button class="wf-btn wf-btn-dark" onclick="closeModal()">확인 및 닫기</button>
+            </div>
+        </div>
+        
+
+    <!-- 9. Mandatory Footer (100% Client Bespoke) -->
+    <footer class="site-footer">
+        <div class="container" style="padding:0;">
+            <div class="footer-cols">
+                <div>
+                    <strong style="font-size:14px; color:#111111;">(주)위케타 24H 서카디언 이너뷰티 사업부</strong><br/>
+                    대표이사: <strong>이도은</strong> | 사업자등록번호: 120-88-06006 | 통신판매업신고: 제2026-서울성수-0142호<br/>
+                    사업장 주소: 서울시 강남구 도산대로 45 WICKETA 24H 뷰티 루틴 센터<br/>
+                    모기업: WONDERSCAPE (원더스케이프) 캄테크 디지털 웰니스 플랫폼
+                </div>
+                <div>
+                    <strong style="font-size:13px; color:#111111;">고객 안심 센터</strong><br/>
+                    직통전화: 1588-0606 (평일 09:00 ~ 18:00)<br/>
+                    문의이메일: doeun@wicketa.com
+                </div>
+                <div>
+                    <strong style="font-size:13px; color:#111111;">품질 및 인증</strong><br/>
+                    KTR 3無 공인 시험성적서 획득<br/>
+                    식약처 HACCP 위생 인증 시설 제조
+                </div>
+            </div>
+            <div class="footer-btm">
+                <div>© 2026 WICKETA Inc. (이도은). All rights reserved. 100% Monochrome Low-Fi Wireframe.</div>
+                <div>이용약관 | 개인정보처리방침 | 사업자정보확인</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Handlers -->
+    <script>
+        function switchPage(pageId) {
+            document.querySelectorAll('.page-view').forEach(function(v) { v.classList.remove('active'); });
+            var target = document.getElementById(pageId);
+            if(target) target.classList.add('active');
+            document.querySelectorAll('.wf-top-helper button').forEach(function(b) {
+                if(b.innerText.indexOf(pageId) !== -1) b.classList.add('active');
+                else b.classList.remove('active');
+            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        function toggleDrawer() {
+            document.querySelectorAll('.cart-drawer').forEach(function(d) { d.classList.toggle('open'); });
+        }
+        function openOrder(item, price) {
+            var di = document.getElementById('drawerItem');
+            var dp = document.getElementById('drawerPrice');
+            if(di) di.innerText = item;
+            if(dp) dp.innerText = price;
+            toggleDrawer();
+        }
+        function openModal(id) {
+            var m = document.getElementById(id);
+            if(m) m.classList.add('open');
+        }
+        function closeModal() {
+            document.querySelectorAll('.modal-overlay').forEach(function(m) { m.classList.remove('open'); });
+        }
+        function filterLNB(cat) {
+            alert(cat + ' 카테고리 필터가 적용되었습니다.');
+        }
+        
+    </script>
+</body>
+</html>

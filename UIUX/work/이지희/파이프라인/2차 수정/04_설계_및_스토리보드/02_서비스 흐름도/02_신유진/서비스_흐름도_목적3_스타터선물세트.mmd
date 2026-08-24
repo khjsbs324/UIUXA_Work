@@ -1,0 +1,36 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef base fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef kit fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W02-HOME (선물 진입)<br/>• [친구 생일 선물] 클릭"]
+    BASE["02 W02-BASE (세트 비교)<br/>• 스타터팩 vs VIP 틴세트"]
+    KIT["03 W02-KIT (3D 레이저 각인)<br/>• FLASK-ENGRAVER-01<br/>• 영문 이니셜 3D 버닝"]
+    CARD["04 W02-KIT (메시지 카드)<br/>• 조향사 테마 생일 엽서 작성"]
+    DRAWER["05 W02-DRAWER (선물 결제)<br/>• 카카오 친구 선택 & 간편결제"]
+    
+    ADDR_CHECK{"06 주소 보유<br/>여부 확인"}
+    
+    DONE["07 W02-DONE (모바일 카드)<br/>• 3D 언박싱 모바일 바우처"]
+    COMM["F1 W02-COMM (배송 추적)<br/>• 실시간 배송 대시보드"]
+
+    HOME --> BASE
+    BASE --> KIT
+    KIT --> CARD
+    CARD --> DRAWER
+    DRAWER --> ADDR_CHECK
+    
+    ADDR_CHECK -->|주소 확인 완료| DONE
+    ADDR_CHECK -->|주소 입력 링크 전송| DONE
+    
+    DONE --> COMM
+
+    class HOME home;
+    class BASE base;
+    class KIT,CARD kit;
+    class ADDR_CHECK decision;
+    class DRAWER,DONE drawer;
+    class COMM support;

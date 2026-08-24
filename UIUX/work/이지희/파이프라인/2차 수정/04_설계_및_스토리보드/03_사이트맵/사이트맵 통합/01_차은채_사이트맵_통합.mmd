@@ -1,0 +1,68 @@
+graph TD
+    classDef root fill:#0D47A1,stroke:#01579B,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef gnb fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef lnb fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef detail fill:#FFF8E1,stroke:#F57F17,stroke-width:1.5px,color:#E65100;
+    classDef aside fill:#E1F5FE,stroke:#0277BD,stroke-width:1.5px,color:#01579B;
+
+    ROOT["🏠 W01-HOME (에디토리얼 안식처 메인)<br/>• HERO-01 시네마틱 캔버스<br/>• COLLECTION-EDITOR-01 큐레이션"]
+
+    %% GNB 대메뉴 분기
+    GNB1["📖 GNB-01: 안식 저널<br/>(W01-ESSAY)"]
+    GNB2["🍵 GNB-02: 디렉터 컬렉션<br/>(W01-COLLECT)"]
+    GNB3["🎛️ GNB-03: 감정 브루잉<br/>(W01-DIAG)"]
+    GNB4["🛠️ GNB-04: 3D 비스포크<br/>(W01-BUILD)"]
+    GNB5["📅 GNB-05: 프라이빗 시향<br/>(W01-RESERVE)"]
+
+    ROOT --> GNB1
+    ROOT --> GNB2
+    ROOT --> GNB3
+    ROOT --> GNB4
+    ROOT --> GNB5
+
+    %% GNB1 하위
+    SPACE["🏛️ W01-SPACE (3D 쇼룸)"]
+    NOTE["📜 W01-NOTE (침향/백차 원료)"]
+    GNB1 --> SPACE
+    GNB1 --> NOTE
+
+    %% GNB2 하위
+    LNB21["✨ 론칭 시그니처 (4)"]
+    LNB22["📖 심신 안식티 (4)"]
+    LNB23["🌿 0kcal 클린티 (4)"]
+    LNB24["🎁 리미티드 기프트 (4)"]
+    GNB2 --> LNB21
+    GNB2 --> LNB22
+    GNB2 --> LNB23
+    GNB2 --> LNB24
+
+    %% GNB3 하위
+    DIAL["🎛️ DIAGNOSTIC-DIAL-01 (3축 진단)"]
+    MIX["🧪 W01-MIX (1초 융해 & KTR 성적서)"]
+    GNB3 --> DIAL
+    GNB3 --> MIX
+
+    %% GNB4 하위
+    ENGRAVE["⚡ TIN-ENGRAVER-01 (3D 각인)"]
+    WRAP["🎁 W01-WRAP (보자기 포장)"]
+    GNB4 --> ENGRAVE
+    GNB4 --> WRAP
+
+    %% GNB5 하위
+    CALENDAR["📅 W01-CALENDAR (1:1 타임슬롯)"]
+    PASS["🎫 W01-PASS (모바일 초대권)"]
+    GNB5 --> CALENDAR
+    GNB5 --> PASS
+
+    %% Aside / Footer
+    DRAWER["🛒 Aside: W01-DRAWER<br/>• 1-Click 간편결제 / 30일 정기구독"]
+    COMM["🔄 Comm: W01-COMM<br/>• 180초 리추얼 & 감정 일기 아카이브"]
+
+    ROOT -.-> DRAWER
+    ROOT -.-> COMM
+
+    class ROOT root;
+    class GNB1,GNB2,GNB3,GNB4,GNB5 gnb;
+    class LNB21,LNB22,LNB23,LNB24,SPACE,NOTE lnb;
+    class DIAL,MIX,ENGRAVE,WRAP,CALENDAR,PASS detail;
+    class DRAWER,COMM aside;

@@ -1,0 +1,226 @@
+{
+  "clientId": "03",
+  "clientName": "윤서연",
+  "title": "감성 데스크테리어 & 오브제 매거진",
+  "archetype": "A-2 감성 큐레이션 매거진형 (Aesthetic Deskterior)",
+  "company": "(주)위케타 데스크테리어 디자인 랩",
+  "ceo": "윤서연",
+  "bizNum": "120-88-03003",
+  "address": "서울시 용산구 한남대로 27 WICKETA 29SELECT 쇼룸",
+  "csPhone": "1588-0303 (평일 09:30 ~ 18:30)",
+  "csEmail": "seoyeon@wicketa.com",
+  "screens": [
+    {
+      "id": "W03-HOME",
+      "name": "데스크테리어 허브 메인",
+      "depth": "1-Depth",
+      "status": "designed",
+      "killerFeatureId": "29SELECT-COLLAB-01"
+    },
+    {
+      "id": "W03-CATALOG",
+      "name": "20종 데스크 오브제 전수 도감",
+      "depth": "2-Depth",
+      "status": "designed",
+      "killerFeatureId": "DESK-STORE-01"
+    },
+    {
+      "id": "W03-ABOUT",
+      "name": "29SELECT 컬래버 철학 & 성적서",
+      "depth": "2-Depth",
+      "status": "designed",
+      "killerFeatureId": "COLLAB-STORY-01"
+    },
+    {
+      "id": "W03-LOOKBOOK",
+      "name": "데스크테리어 3D 룩북 & 갤러리",
+      "depth": "2-Depth",
+      "status": "target",
+      "killerFeatureId": "DESK-LOOKBOOK-01"
+    },
+    {
+      "id": "W03-BUILD",
+      "name": "매트 파스텔 틴케이스 각인 콘솔",
+      "depth": "2-Depth",
+      "status": "target",
+      "killerFeatureId": "TIN-CUSTOM-01"
+    },
+    {
+      "id": "W03-DRAWER",
+      "name": "감성 패키지 주문 드로어",
+      "depth": "Aside",
+      "status": "target",
+      "killerFeatureId": "TIN-CHECKOUT-01"
+    },
+    {
+      "id": "W03-DONE",
+      "name": "주문 완료 & 데스크 챌린지 엽서 발급",
+      "depth": "Modal",
+      "status": "designed",
+      "killerFeatureId": "POSTCARD-DONE-01"
+    }
+  ],
+  "curationsCount": 20,
+  "curations": [
+    {
+      "id": "SEC-01",
+      "code": "WK-P01",
+      "name": "⭐ [에디터스 픽] 소프트 샌드 매트 파스텔 틴 팩",
+      "category": "🎨 매트 파스텔 오브제 틴 (4)",
+      "price": "39,000원",
+      "imgSpec": "🖼️ [이미지: SEC-01 소프트 샌드 파스텔 틴 (1:1 뷰박스)]"
+    },
+    {
+      "id": "SEC-02",
+      "code": "WK-P02",
+      "name": "🌙 [나이트 안식] 미드나잇 GABA 0.00mg 무카페인 티",
+      "category": "🌙 미드나잇 GABA 0.00mg 무카페인 (4)",
+      "price": "32,000원",
+      "imgSpec": "🖼️ [이미지: SEC-02 미드나잇 GABA 티 (1:1 뷰박스)]"
+    },
+    {
+      "id": "SEC-03",
+      "code": "WK-P03",
+      "name": "🥂 [빛 굴절] 스모키 오크 더블월 글래스웨어",
+      "category": "🥂 빛 굴절 더블월 글래스웨어 (4)",
+      "price": "28,000원",
+      "imgSpec": "🖼️ [이미지: SEC-03 더블월 글래스웨어 (1:1 뷰박스)]"
+    },
+    {
+      "id": "SEC-04",
+      "code": "WK-P04",
+      "name": "🌿 [내추럴 패브릭] 오가닉 린넨 데스크 매트 & 코스터",
+      "category": "🌿 린넨 패브릭 매트 & 코스터 (4)",
+      "price": "27,000원",
+      "imgSpec": "🖼️ [이미지: SEC-04 린넨 데스크 매트 (1:1 뷰박스)]"
+    },
+    {
+      "id": "SEC-05",
+      "code": "WK-P05",
+      "name": "💙 [파스텔 틴] 세이지 그린 매트 메탈 오브제 틴",
+      "category": "🎨 매트 파스텔 오브제 틴 (4)",
+      "price": "26,000원",
+      "imgSpec": "🖼️ [이미지: SEC-05 세이지 그린 메탈 틴 (1:1 뷰박스)]"
+    },
+    {
+      "id": "SEC-06",
+      "code": "WK-P06",
+      "name": "💚 [무카페인 릴랙스] 블루 캐모마일 & 바닐라 티",
+      "category": "🌙 미드나잇 GABA 0.00mg 무카페인 (4)",
+      "price": "29,000원",
+      "imgSpec": "🖼️ [이미지: SEC-06 블루 캐모마일 티 (1:1 뷰박스)]"
+    },
+    {
+      "id": "SEC-07",
+      "code": "WK-P07",
+      "name": "💜 [자연 직조] 베이지 린넨 보자기 기프트 파우치",
+      "category": "🌿 린넨 패브릭 매트 & 코스터 (4)",
+      "price": "30,000원",
+      "imgSpec": "🖼️ [이미지: SEC-07 린넨 보자기 파우치 (1:1 뷰박스)]"
+    },
+    {
+      "id": "SEC-08",
+      "code": "WK-P08",
+      "name": "🍓 [더스티 로즈] 매트 피치 틴 & 아로마 티백 세트",
+      "category": "🎨 매트 파스텔 오브제 틴 (4)",
+      "price": "28,500원",
+      "imgSpec": "🖼️ [이미지: SEC-08 더스티 로즈 메탈 틴 (1:1 뷰박스)]"
+    },
+    {
+      "id": "SEC-09",
+      "code": "WK-P09",
+      "name": "🍋 [심야 웰니스] 라벤더 루이보스 무카페인 팩",
+      "category": "🌙 미드나잇 GABA 0.00mg 무카페인 (4)",
+      "price": "31,000원",
+      "imgSpec": "🖼️ [이미지: SEC-09 라벤더 루이보스 티 (1:1 뷰박스)]"
+    },
+    {
+      "id": "SEC-10",
+      "code": "WK-P10",
+      "name": "🎓 [오브제 스타터] 3종 파스텔 틴 & 원목 트레이",
+      "category": "🎨 매트 파스텔 오브제 틴 (4)",
+      "price": "34,000원",
+      "imgSpec": "🖼️ [이미지: SEC-10 파스텔 틴 원목 트레이 (1:1 뷰박스)]"
+    },
+    {
+      "id": "SEC-11",
+      "code": "WK-P11",
+      "name": "🍸 [빛 굴절 잔] 크리스탈 컷 머들러 & 온더락 잔",
+      "category": "🥂 빛 굴절 더블월 글래스웨어 (4)",
+      "price": "36,000원",
+      "imgSpec": "🖼️ [이미지: SEC-11 크리스탈 머들러 잔 (1:1 뷰박스)]"
+    },
+    {
+      "id": "SEC-12",
+      "code": "WK-P12",
+      "name": "🥄 [미니멀 스푼] 매트 골드 티 스푼 & 집게 툴",
+      "category": "🥂 빛 굴절 더블월 글래스웨어 (4)",
+      "price": "38,000원",
+      "imgSpec": "🖼️ [이미지: SEC-12 매트 골드 티 스푼 (1:1 뷰박스)]"
+    },
+    {
+      "id": "SEC-13",
+      "code": "WK-P13",
+      "name": "🎁 [선물 에디션] 린넨 포장 & 감성 엽서 기프트 세트",
+      "category": "🌿 린넨 패브릭 매트 & 코스터 (4)",
+      "price": "49,000원",
+      "imgSpec": "🖼️ [이미지: SEC-13 린넨 포장 선물 세트 (4:3 뷰박스)]"
+    },
+    {
+      "id": "SEC-14",
+      "code": "WK-P14",
+      "name": "🛡️ [친환경 패브릭] 100% 무표백 소창 찻수건 2종",
+      "category": "🌿 린넨 패브릭 매트 & 코스터 (4)",
+      "price": "35,000원",
+      "imgSpec": "🖼️ [이미지: SEC-14 무표백 소창 찻수건 (3:4 뷰박스)]"
+    },
+    {
+      "id": "SEC-15",
+      "code": "WK-P15",
+      "name": "🍑 [구움과자 페어링] 피낭시에 x 스모키 얼그레이 팩",
+      "category": "🍰 티 & 구움과자 디저트 페어링 (4)",
+      "price": "42,000원",
+      "imgSpec": "🖼️ [이미지: SEC-15 피낭시에 얼그레이 팩 (1:1 뷰박스)]"
+    },
+    {
+      "id": "SEC-16",
+      "code": "WK-P16",
+      "name": "📦 [새벽구독] 30일 미드나잇 안식티 정기배송 팩",
+      "category": "🍰 티 & 구움과자 디저트 페어링 (4)",
+      "price": "33,150원",
+      "imgSpec": "🖼️ [이미지: SEC-16 30일 새벽구독 팩 (16:9 뷰박스)]"
+    },
+    {
+      "id": "SEC-17",
+      "code": "WK-P17",
+      "name": "💧 [더블월 머그] 투명 내열유리 인퓨저 티 머그",
+      "category": "🥂 빛 굴절 더블월 글래스웨어 (4)",
+      "price": "25,000원",
+      "imgSpec": "🖼️ [이미지: SEC-17 내열유리 인퓨저 머그 (1:1 뷰박스)]"
+    },
+    {
+      "id": "SEC-18",
+      "code": "WK-P18",
+      "name": "🌱 [마들렌 페어링] 레몬 마들렌 x 시트러스 마테 세트",
+      "category": "🍰 티 & 구움과자 디저트 페어링 (4)",
+      "price": "39,900원",
+      "imgSpec": "🖼️ [이미지: SEC-18 레몬 마들렌 티 세트 (1:1 뷰박스)]"
+    },
+    {
+      "id": "SEC-19",
+      "code": "WK-P19",
+      "name": "🎥 [티타임 플레이트] 매트 도자기 디저트 접시 2종",
+      "category": "🍰 티 & 구움과자 디저트 페어링 (4)",
+      "price": "31,000원",
+      "imgSpec": "🖼️ [이미지: SEC-19 매트 도자기 디저트 접시 (9:16 뷰박스)]"
+    },
+    {
+      "id": "SEC-20",
+      "code": "WK-P20",
+      "name": "⏱️ [빗소리 타이머] 432Hz 사운드 & 180초 펄스 타이머",
+      "category": "🌙 미드나잇 GABA 0.00mg 무카페인 (4)",
+      "price": "45,000원",
+      "imgSpec": "🖼️ [이미지: SEC-20 432Hz 빗소리 타이머 (1:1 뷰박스)]"
+    }
+  ]
+}

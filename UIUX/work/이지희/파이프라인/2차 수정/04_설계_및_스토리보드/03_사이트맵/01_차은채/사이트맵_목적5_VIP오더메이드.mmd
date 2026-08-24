@@ -1,0 +1,43 @@
+flowchart TD
+    classDef root fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef gnb fill:#E8EAF6,stroke:#3F51B5,stroke-width:1.5px,color:#1A237E,font-weight:bold;
+    classDef p1 fill:#FFF8E1,stroke:#F57F17,stroke-width:1.5px,color:#E65100,font-weight:bold;
+    classDef p2 fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef p3 fill:#E1F5FE,stroke:#0277BD,stroke-width:1.5px,color:#01579B,font-weight:bold;
+    classDef p4 fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    ROOT["👑 차은채 WICKETA 안식처 플랫폼 (목적 5: VIP 오더메이드 특화)"]
+    
+    GNB1["GNB 1: VIP 프라이빗 게이트<br/>(VIP Secret Gate)"]
+    GNB2["GNB 2: 1:1 티 세레머니<br/>(Director's Ceremony)"]
+    GNB3["GNB 3: 희귀 원료 아카이브<br/>(Rare Ingredients)"]
+    GNB4["GNB 4: 골드 비스포크 아틀리에<br/>(Gold Bespoke Atelier)"]
+    GNB5["GNB 5: VIP 전담 컨시어지<br/>(VIP Concierge)"]
+    
+    ROOT --> GNB1
+    ROOT --> GNB2
+    ROOT --> GNB3
+    ROOT --> GNB4
+    ROOT --> GNB5
+    
+    GNB1 --> P1_1["W01-HOME<br/>VIP 프라이빗 메인"]
+    GNB1 --> P1_2["W01-GATE<br/>VIP 시크릿 코드 인증 모달"]
+    
+    GNB2 --> P2_1["W01-ABOUT-CEREMONY<br/>1:1 티 세레머니 소개"]
+    GNB2 --> P2_2["W01-DONE-VIP<br/>VIP 다과회 모바일 초대권"]
+    
+    GNB3 --> P3_1["W01-ESSAY-RARE<br/>희귀 원료 스토리 저널"]
+    
+    GNB4 --> P4_1["W01-BUILD-VIP<br/>시즌 오더메이드 조향 빌더"]
+    GNB4 --> P4_2["W01-BUILD-GOLD<br/>골드 포일 3D 각인기"]
+    GNB4 --> P4_3["W01-DRAWER-VIP<br/>VIP 슬라이드아웃 결제"]
+    
+    GNB5 --> P5_1["W01-COMM-DOCENT<br/>VIP 라운지 도슨트 가이드"]
+    GNB5 --> P5_2["W01-COMM-CONCIERGE<br/>1:1 전담 컨시어지 채널"]
+
+    class ROOT root;
+    class GNB1,GNB2,GNB3,GNB4,GNB5 gnb;
+    class P1_1,P1_2,P4_1,P4_2,P4_3 p1;
+    class P2_1,P2_2 p2;
+    class P3_1 p3;
+    class P5_1,P5_2 p4;

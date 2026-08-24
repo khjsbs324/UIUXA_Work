@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WICKETA 통합 마스터 스토리보드 - 박지후 (B-2 엔터프라이즈 B2B 조달형 (Office Wellness))</title>
+  <style>
+    :root {
+      --bg: #0d0e12;
+      --card-bg: #16181f;
+      --card-border: #262936;
+      --card-hover: #323647;
+      --text: #f0f2f5;
+      --text-muted: #8c93a4;
+      --primary: #ffffff;
+      --accent: #d4af37;
+      --highlight: #2a3147;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+    header {
+      background: #111217;
+      border-bottom: 1px solid var(--card-border);
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .brand-title {
+      font-size: 16px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .badge {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 12px;
+      background: #252836;
+      color: #b0b8cc;
+      border: 1px solid #363b4e;
+    }
+    .tabs-bar {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+    }
+    .tab-btn {
+      background: transparent;
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .tab-btn:hover {
+      background: var(--card-bg);
+      color: var(--text);
+      border-color: #434961;
+    }
+    .tab-btn.active {
+      background: #ffffff;
+      color: #000000;
+      border-color: #ffffff;
+      font-weight: 700;
+    }
+    .main-container {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+    #sidebar {
+      width: 260px;
+      background: #12131a;
+      border-right: 1px solid var(--card-border);
+      padding: 16px;
+      overflow-y: auto;
+      flex-shrink: 0;
+    }
+    .nav-group-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #656c80;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .screen-nav-item {
+      padding: 9px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      color: var(--text-muted);
+      cursor: pointer;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.15s;
+    }
+    .screen-nav-item:hover {
+      background: var(--card-bg);
+      color: var(--text);
+    }
+    .screen-nav-item.active {
+      background: var(--highlight);
+      color: #ffffff;
+      font-weight: 700;
+      border-left: 3px solid #ffffff;
+    }
+    .split-view {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+    .wireframe-pane {
+      flex: 1.1;
+      background: #000000;
+      border-right: 1px solid var(--card-border);
+      padding: 24px;
+      overflow-y: auto;
+    }
+    .spec-pane {
+      flex: 1.3;
+      background: var(--bg);
+      padding: 24px;
+      overflow-y: auto;
+    }
+    .wf-box {
+      background: #111111;
+      border: 1.5px solid #333333;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 20px;
+      transition: all 0.2s;
+    }
+    .wf-box.highlight {
+      border-color: #ffffff;
+      box-shadow: 0 0 15px rgba(255,255,255,0.2);
+    }
+    .wf-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .wf-img-placeholder {
+      background: #1a1a1a;
+      border: 1px dashed #555555;
+      padding: 24px;
+      text-align: center;
+      color: #888888;
+      font-size: 13px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+    .spec-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 18px;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .spec-card:hover, .spec-card.active {
+      border-color: #ffffff;
+      background: #1c1f2a;
+    }
+    .spec-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 8px;
+    }
+    .spec-id {
+      font-size: 13px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+    .spec-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .spec-table {
+      width: 100%;
+      font-size: 12px;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    .spec-table th, .spec-table td {
+      padding: 6px 8px;
+      border: 1px solid var(--card-border);
+      text-align: left;
+    }
+    .spec-table th {
+      background: #1e212b;
+      color: #b0b8cc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header & 5-Goal Switcher -->
+  <header>
+    <div class="brand-title">
+      <span>WICKETA STORYBOARD</span>
+      <span class="badge">07 박지후 (B-2 엔터프라이즈 B2B 조달형 (Office Wellness))</span>
+    </div>
+    <div class="tabs-bar">
+<button class="tab-btn active" onclick="filterGoal('all')">전체 5대 목적 (All)</button>
+      <button class="tab-btn" onclick="filterGoal('goal1')">목적 1: 100인 탕비실 월간 대량 발주</button>
+      <button class="tab-btn" onclick="filterGoal('goal2')">목적 2: 0원 스타트업 탕비실 체험 박스</button>
+      <button class="tab-btn" onclick="filterGoal('goal3')">목적 3: 사명 각인 아크릴 디스펜서 렌탈</button>
+      <button class="tab-btn" onclick="filterGoal('goal4')">목적 4: 야근/회의 1초 집중 부스팅 티타임</button>
+      <button class="tab-btn" onclick="filterGoal('goal5')">목적 5: ERP 안전재고 20% 자동 재발주</button>
+
+    </div>
+  </header>
+
+  <div class="main-container">
+    <!-- Left Sidebar: Screen Registry -->
+    <nav id="sidebar">
+      <div class="nav-group-title">전체 화면 목록</div>
+      <div class="screen-nav-item" onclick="switchScreen('W07-HOME')">
+        <span>🏛️ W07-HOME</span>
+        <span class="badge">오피스 </span>
+      </div>
+      <div class="screen-nav-item" onclick="switchScreen('W07-CATALOG')">
+        <span>🏛️ W07-CATALOG</span>
+        <span class="badge">B2B </span>
+      </div>
+      <div class="screen-nav-item" onclick="switchScreen('W07-ABOUT')">
+        <span>🏛️ W07-ABOUT</span>
+        <span class="badge">오피스 </span>
+      </div>
+      <div class="screen-nav-item" onclick="switchScreen('W07-BUILD')">
+        <span>🏛️ W07-BUILD</span>
+        <span class="badge">아크릴 </span>
+      </div>
+      <div class="screen-nav-item" onclick="switchScreen('W07-ESTIMATE')">
+        <span>🏛️ W07-ESTIMATE</span>
+        <span class="badge">B2B </span>
+      </div>
+      <div class="screen-nav-item" onclick="switchScreen('W07-COMM')">
+        <span>🏛️ W07-COMM</span>
+        <span class="badge">ERP </span>
+      </div>
+      <div class="screen-nav-item" onclick="switchScreen('W07-DRAWER')">
+        <span>🏛️ W07-DRAWER</span>
+        <span class="badge">Asid</span>
+      </div>
+      <div class="screen-nav-item" onclick="switchScreen('W07-DONE')">
+        <span>🏛️ W07-DONE</span>
+        <span class="badge">발주 완</span>
+      </div>
+
+    </nav>
+
+    <!-- Split Pane: Left Wireframe, Right Spec -->
+    <div class="split-view">
+      <!-- Left Wireframe View -->
+      <div class="wireframe-pane">
+        <h3 style="font-size:15px; margin-bottom:16px; color:#ffffff;">🖼️ 모노크롬 와이어프레임 뷰 (W07-HOME)</h3>
+        
+        <!-- Interactive Killer Module on Wireframe -->
+        <div class="wf-box" id="wf-killer">
+          <div class="wf-title">
+            <span>⭐ 판교 100인 스타트업 탕비실 대량 견적기 & 아크릴 디스펜서 렌탈 (OFFICE-PANTRY-01)</span>
+            <span class="badge">킬러 기능</span>
+          </div>
+          <div class="wf-img-placeholder" style="background:#111; color:#fff;">
+            [판교 100인 스타트업 탕비실 대량 견적기 & 아크릴 디스펜서 렌탈 (OFFICE-PANTRY-01): 100% 무채색 인터랙티브 콘솔]
+          </div>
+          <div style="font-size:12px; color:#aaa; line-height:1.6;">
+            • 클라이언트 맞춤형 핵심 인터랙션 & 5대 목적 연동<br/>
+            • 1-Click 패스트 체크아웃 및 가상 스크롤 복원
+          </div>
+        </div>
+
+        <!-- 15 Section Wireframe Placeholders -->
+        <div id="wf-sections-container">
+          <!-- Will be rendered via JS -->
+        </div>
+      </div>
+
+      <!-- Right Spec View -->
+      <div class="spec-pane">
+        <h3 style="font-size:15px; margin-bottom:16px; color:#ffffff;">📋 15대 상품 큐레이션 섹션 스토리보드 상세 명세</h3>
+        <div id="spec-cards-container">
+          <!-- Will be rendered via JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var sectionsData = [{"id": "SEC-01", "code": "WK-P01", "name": "⭐ [09:00 에너지] 집중력 부스팅 과라나 & 마테 스틱", "category": "☕ 09:00 집중력 부스팅 에너지티 (4)", "price": "32,000원", "goalId": "goal1", "uiComponent": "⭐ [09:00 에너지] 집중력 부스팅 과라나 & 마테 스틱 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-01 ⭐ [09:00 에너지] 집중력 부스팅 과라나 & 마테 스틱 (100% 무채색 뷰박스)]", "displayData": "⭐ [09:00 에너지] 집중력 부스팅 과라나 & 마테 스틱 핵심 성분, 가격 32,000원, ☕ 09:00 집중력 부스팅 에너지티 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 1: 100인 탕비실 월간 대량 발주 연계", "systemLogic": "선택 시 W07-CATALOG 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W07-CATALOG", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-02", "code": "WK-P02", "name": "🌿 [14:00 식곤증] 식후 입가심 페퍼민트 & 레몬 클린티", "category": "🌿 14:00 식곤증 해소 클린티 (4)", "price": "28,000원", "goalId": "goal2", "uiComponent": "🌿 [14:00 식곤증] 식후 입가심 페퍼민트 & 레몬 클린티 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-02 🌿 [14:00 식곤증] 식후 입가심 페퍼민트 & 레몬 클린티 (100% 무채색 뷰박스)]", "displayData": "🌿 [14:00 식곤증] 식후 입가심 페퍼민트 & 레몬 클린티 핵심 성분, 가격 28,000원, 🌿 14:00 식곤증 해소 클린티 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 2: 0원 스타트업 탕비실 체험 박스 연계", "systemLogic": "선택 시 W07-ABOUT 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W07-ABOUT", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-03", "code": "WK-P03", "name": "🌙 [19:00 야근케어] 야근 스트레스 이완 GABA 무카페인 팩", "category": "🌙 19:00 야근 스트레스 이완 GABA티 (4)", "price": "30,000원", "goalId": "goal3", "uiComponent": "🌙 [19:00 야근케어] 야근 스트레스 이완 GABA 무카페인 팩 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-03 🌙 [19:00 야근케어] 야근 스트레스 이완 GABA 무카페인 팩 (100% 무채색 뷰박스)]", "displayData": "🌙 [19:00 야근케어] 야근 스트레스 이완 GABA 무카페인 팩 핵심 성분, 가격 30,000원, 🌙 19:00 야근 스트레스 이완 GABA티 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 3: 사명 각인 아크릴 디스펜서 렌탈 연계", "systemLogic": "선택 시 W07-BUILD 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W07-BUILD", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-04", "code": "WK-P04", "name": "📦 [탕비실 120포] 30인 스타트업 맞춤 120포 벌크 박스", "category": "📦 탕비실 120/180포 벌크 리필 (4)", "price": "78,000원", "goalId": "goal4", "uiComponent": "📦 [탕비실 120포] 30인 스타트업 맞춤 120포 벌크 박스 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-04 📦 [탕비실 120포] 30인 스타트업 맞춤 120포 벌크 박스 (100% 무채색 뷰박스)]", "displayData": "📦 [탕비실 120포] 30인 스타트업 맞춤 120포 벌크 박스 핵심 성분, 가격 78,000원, 📦 탕비실 120/180포 벌크 리필 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 4: 야근/회의 1초 집중 부스팅 티타임 연계", "systemLogic": "선택 시 W07-ESTIMATE 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W07-ESTIMATE", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-05", "code": "WK-P05", "name": "🗄️ [디스펜서] 탕비실 전용 4단 투명 아크릴 스틱 오거나이저", "category": "🗄️ 아크릴 디스펜서 & 보관 거치대 (4)", "price": "35,000원", "goalId": "goal5", "uiComponent": "🗄️ [디스펜서] 탕비실 전용 4단 투명 아크릴 스틱 오거나이저 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-05 🗄️ [디스펜서] 탕비실 전용 4단 투명 아크릴 스틱 오거나이저 (100% 무채색 뷰박스)]", "displayData": "🗄️ [디스펜서] 탕비실 전용 4단 투명 아크릴 스틱 오거나이저 핵심 성분, 가격 35,000원, 🗄️ 아크릴 디스펜서 & 보관 거치대 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 5: ERP 안전재고 20% 자동 재발주 연계", "systemLogic": "선택 시 W07-COMM 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W07-COMM", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-06", "code": "WK-P06", "name": "☕ [09:00 모닝] 타우린 1,000mg 함유 무설탕 에너지 팩", "category": "☕ 09:00 집중력 부스팅 에너지티 (4)", "price": "34,000원", "goalId": "goal1", "uiComponent": "☕ [09:00 모닝] 타우린 1,000mg 함유 무설탕 에너지 팩 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-06 ☕ [09:00 모닝] 타우린 1,000mg 함유 무설탕 에너지 팩 (100% 무채색 뷰박스)]", "displayData": "☕ [09:00 모닝] 타우린 1,000mg 함유 무설탕 에너지 팩 핵심 성분, 가격 34,000원, ☕ 09:00 집중력 부스팅 에너지티 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 1: 100인 탕비실 월간 대량 발주 연계", "systemLogic": "선택 시 W07-DRAWER 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W07-DRAWER", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-07", "code": "WK-P07", "name": "🌿 [14:00 리프레시] 유자 진저 소화 촉진 온수 스틱", "category": "🌿 14:00 식곤증 해소 클린티 (4)", "price": "27,000원", "goalId": "goal2", "uiComponent": "🌿 [14:00 리프레시] 유자 진저 소화 촉진 온수 스틱 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-07 🌿 [14:00 리프레시] 유자 진저 소화 촉진 온수 스틱 (100% 무채색 뷰박스)]", "displayData": "🌿 [14:00 리프레시] 유자 진저 소화 촉진 온수 스틱 핵심 성분, 가격 27,000원, 🌿 14:00 식곤증 해소 클린티 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 2: 0원 스타트업 탕비실 체험 박스 연계", "systemLogic": "선택 시 W07-DONE 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W07-DONE", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-08", "code": "WK-P08", "name": "🌙 [19:00 릴랙스] 블루 캐모마일 & 바닐라 릴리프 팩", "category": "🌙 19:00 야근 스트레스 이완 GABA티 (4)", "price": "29,000원", "goalId": "goal3", "uiComponent": "🌙 [19:00 릴랙스] 블루 캐모마일 & 바닐라 릴리프 팩 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-08 🌙 [19:00 릴랙스] 블루 캐모마일 & 바닐라 릴리프 팩 (100% 무채색 뷰박스)]", "displayData": "🌙 [19:00 릴랙스] 블루 캐모마일 & 바닐라 릴리프 팩 핵심 성분, 가격 29,000원, 🌙 19:00 야근 스트레스 이완 GABA티 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 3: 사명 각인 아크릴 디스펜서 렌탈 연계", "systemLogic": "선택 시 W07-CATALOG 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W07-CATALOG", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-09", "code": "WK-P09", "name": "📦 [탕비실 180포] 50인 오피스 대용량 180포 에코 벌크", "category": "📦 탕비실 120/180포 벌크 리필 (4)", "price": "110,000원", "goalId": "goal4", "uiComponent": "📦 [탕비실 180포] 50인 오피스 대용량 180포 에코 벌크 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-09 📦 [탕비실 180포] 50인 오피스 대용량 180포 에코 벌크 (100% 무채색 뷰박스)]", "displayData": "📦 [탕비실 180포] 50인 오피스 대용량 180포 에코 벌크 핵심 성분, 가격 110,000원, 📦 탕비실 120/180포 벌크 리필 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 4: 야근/회의 1초 집중 부스팅 티타임 연계", "systemLogic": "선택 시 W07-ABOUT 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W07-ABOUT", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-10", "code": "WK-P10", "name": "🗄️ [원목 트레이] 회사 로고 레이저 각인 탕비실 우드 트레이", "category": "🗄️ 아크릴 디스펜서 & 보관 거치대 (4)", "price": "42,000원", "goalId": "goal5", "uiComponent": "🗄️ [원목 트레이] 회사 로고 레이저 각인 탕비실 우드 트레이 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-10 🗄️ [원목 트레이] 회사 로고 레이저 각인 탕비실 우드 트레이 (100% 무채색 뷰박스)]", "displayData": "🗄️ [원목 트레이] 회사 로고 레이저 각인 탕비실 우드 트레이 핵심 성분, 가격 42,000원, 🗄️ 아크릴 디스펜서 & 보관 거치대 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 5: ERP 안전재고 20% 자동 재발주 연계", "systemLogic": "선택 시 W07-BUILD 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W07-BUILD", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-11", "code": "WK-P11", "name": "☕ [09:00 비타민] 비타민B군 8종 충전 에너지 스틱", "category": "☕ 09:00 집중력 부스팅 에너지티 (4)", "price": "31,000원", "goalId": "goal1", "uiComponent": "☕ [09:00 비타민] 비타민B군 8종 충전 에너지 스틱 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-11 ☕ [09:00 비타민] 비타민B군 8종 충전 에너지 스틱 (100% 무채색 뷰박스)]", "displayData": "☕ [09:00 비타민] 비타민B군 8종 충전 에너지 스틱 핵심 성분, 가격 31,000원, ☕ 09:00 집중력 부스팅 에너지티 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 1: 100인 탕비실 월간 대량 발주 연계", "systemLogic": "선택 시 W07-ESTIMATE 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W07-ESTIMATE", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-12", "code": "WK-P12", "name": "🌿 [14:00 클렌즈] 루이보스 & 자몽 제로칼로리 팩", "category": "🌿 14:00 식곤증 해소 클린티 (4)", "price": "26,000원", "goalId": "goal2", "uiComponent": "🌿 [14:00 클렌즈] 루이보스 & 자몽 제로칼로리 팩 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-12 🌿 [14:00 클렌즈] 루이보스 & 자몽 제로칼로리 팩 (100% 무채색 뷰박스)]", "displayData": "🌿 [14:00 클렌즈] 루이보스 & 자몽 제로칼로리 팩 핵심 성분, 가격 26,000원, 🌿 14:00 식곤증 해소 클린티 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 2: 0원 스타트업 탕비실 체험 박스 연계", "systemLogic": "선택 시 W07-COMM 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W07-COMM", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-13", "code": "WK-P13", "name": "🌙 [19:00 디톡스] 모니터 피로 완화 루테인 안토시아닌 팩", "category": "🌙 19:00 야근 스트레스 이완 GABA티 (4)", "price": "33,000원", "goalId": "goal3", "uiComponent": "🌙 [19:00 디톡스] 모니터 피로 완화 루테인 안토시아닌 팩 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-13 🌙 [19:00 디톡스] 모니터 피로 완화 루테인 안토시아닌 팩 (100% 무채색 뷰박스)]", "displayData": "🌙 [19:00 디톡스] 모니터 피로 완화 루테인 안토시아닌 팩 핵심 성분, 가격 33,000원, 🌙 19:00 야근 스트레스 이완 GABA티 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 3: 사명 각인 아크릴 디스펜서 렌탈 연계", "systemLogic": "선택 시 W07-DRAWER 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W07-DRAWER", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-14", "code": "WK-P14", "name": "📦 [대용량 300포] 100인 기업 전용 분기 정기배송 박스", "category": "📦 탕비실 120/180포 벌크 리필 (4)", "price": "175,000원", "goalId": "goal4", "uiComponent": "📦 [대용량 300포] 100인 기업 전용 분기 정기배송 박스 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-14 📦 [대용량 300포] 100인 기업 전용 분기 정기배송 박스 (100% 무채색 뷰박스)]", "displayData": "📦 [대용량 300포] 100인 기업 전용 분기 정기배송 박스 핵심 성분, 가격 175,000원, 📦 탕비실 120/180포 벌크 리필 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 4: 야근/회의 1초 집중 부스팅 티타임 연계", "systemLogic": "선택 시 W07-DONE 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W07-DONE", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-15", "code": "WK-P15", "name": "🗄️ [종이컵 홀더] 친환경 대나무 티스틱 & 컵 홀더", "category": "🗄️ 아크릴 디스펜서 & 보관 거치대 (4)", "price": "22,000원", "goalId": "goal5", "uiComponent": "🗄️ [종이컵 홀더] 친환경 대나무 티스틱 & 컵 홀더 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: SEC-15 🗄️ [종이컵 홀더] 친환경 대나무 티스틱 & 컵 홀더 (100% 무채색 뷰박스)]", "displayData": "🗄️ [종이컵 홀더] 친환경 대나무 티스틱 & 컵 홀더 핵심 성분, 가격 22,000원, 🗄️ 아크릴 디스펜서 & 보관 거치대 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 5: ERP 안전재고 20% 자동 재발주 연계", "systemLogic": "선택 시 W07-CATALOG 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W07-CATALOG", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}];
+
+    function renderComponents() {
+      var wfContainer = document.getElementById('wf-sections-container');
+      var specContainer = document.getElementById('spec-cards-container');
+      wfContainer.innerHTML = '';
+      specContainer.innerHTML = '';
+
+      sectionsData.forEach(function(sec) {
+        // Render Left Wireframe Box
+        var wfDiv = document.createElement('div');
+        wfDiv.className = 'wf-box';
+        wfDiv.id = 'wf-' + sec.id;
+        wfDiv.setAttribute('data-goal', sec.goalId);
+        wfDiv.innerHTML = `
+          <div class="wf-title">
+            <span>${sec.id}: ${sec.name}</span>
+            <span class="badge">${sec.category}</span>
+          </div>
+          <div class="wf-img-placeholder">${sec.imgSpec}</div>
+          <div style="display:flex; justify-content:space-between; font-size:12px; color:#aaa;">
+            <span>가격: ${sec.price}</span>
+            <span>이동: ${sec.targetScreen}</span>
+          </div>
+        `;
+        wfContainer.appendChild(wfDiv);
+
+        // Render Right Spec Card
+        var specDiv = document.createElement('div');
+        specDiv.className = 'spec-card';
+        specDiv.id = 'spec-' + sec.id;
+        specDiv.setAttribute('data-goal', sec.goalId);
+        specDiv.onclick = function() { highlightSection(sec.id); };
+        specDiv.innerHTML = `
+          <div class="spec-header">
+            <div class="spec-id">${sec.id} | ${sec.name}</div>
+            <span class="badge">${sec.goalId.toUpperCase()}</span>
+          </div>
+          <div class="spec-meta">
+            <strong>카테고리:</strong> ${sec.category} | <strong>가격:</strong> ${sec.price}<br/>
+            <strong>UI 컴포넌트:</strong> ${sec.uiComponent}
+          </div>
+          <table class="spec-table">
+            <tr><th style="width:28%;">표시 데이터</th><td>${sec.displayData}</td></tr>
+            <tr><th>사용자 행동</th><td>${sec.userAction}</td></tr>
+            <tr><th>시스템 처리/모션</th><td>${sec.systemLogic}</td></tr>
+            <tr><th>이동 대상 화면</th><td><strong>${sec.targetScreen}</strong></td></tr>
+            <tr><th>상태별 변화</th><td>${sec.stateChange}</td></tr>
+          </table>
+        `;
+        specContainer.appendChild(specDiv);
+      });
+    }
+
+    function highlightSection(id) {
+      document.querySelectorAll('.wf-box').forEach(function(b) { b.classList.remove('highlight'); });
+      document.querySelectorAll('.spec-card').forEach(function(c) { c.classList.remove('active'); });
+
+      var wfTarget = document.getElementById('wf-' + id);
+      var specTarget = document.getElementById('spec-' + id);
+      if(wfTarget) {
+        wfTarget.classList.add('highlight');
+        wfTarget.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      if(specTarget) {
+        specTarget.classList.add('active');
+        specTarget.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+
+    function filterGoal(goal) {
+      document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+      event.target.classList.add('active');
+
+      document.querySelectorAll('.wf-box').forEach(function(b) {
+        if(b.id === 'wf-killer') return;
+        if(goal === 'all' || b.getAttribute('data-goal') === goal) b.style.display = 'block';
+        else b.style.display = 'none';
+      });
+
+      document.querySelectorAll('.spec-card').forEach(function(c) {
+        if(goal === 'all' || c.getAttribute('data-goal') === goal) c.style.display = 'block';
+        else c.style.display = 'none';
+      });
+    }
+
+    function switchScreen(screenId) {
+      document.querySelectorAll('.screen-nav-item').forEach(function(i) { i.classList.remove('active'); });
+      event.currentTarget.classList.add('active');
+      alert(screenId + ' 화면 상세 스토리보드로 전환되었습니다.');
+    }
+
+    renderComponents();
+  </script>
+</body>
+</html>

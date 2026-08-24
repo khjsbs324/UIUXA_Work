@@ -1,0 +1,38 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef formula fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef sim fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef cert fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W02-HOME (조향 진입)<br/>• [포뮬러 작곡하기] 클릭"]
+    FORMULA["02 W02-FORMULA (0.1g 정밀 조합)<br/>• FORMULA-COMPOSER-01<br/>• 8대 향미 배합 조작"]
+    SIM["03 W02-SIMULATE (발향 시뮬레이션)<br/>• 3단계 발향 및 수색 검증"]
+    
+    DUPLICATE_CHECK{"04 포뮬러<br/>중복성 검증"}
+    
+    CERT["05 W02-CERT (공식 등록증 발급)<br/>• REGISTRY-CERT-01<br/>• 고유 Hash ID & 조향사 서명"]
+    ADJUST["04-B 미세 조정 (Fallback)<br/>• 0.2g 향미 미세 보정"]
+    DRAWER["06 W02-DRAWER (실물 패키지 결제)<br/>• 맞춤 1초 스틱 20포 주문"]
+    DONE["07 W02-DONE (셰어링 랩 등재)<br/>• 커뮤니티 공식 레시피 공개"]
+    COMM["F1 W02-COMM (로열티 루프)<br/>• 타인 구매 시 5% 로열티 적립"]
+
+    HOME --> FORMULA
+    FORMULA --> SIM
+    SIM --> DUPLICATE_CHECK
+    
+    DUPLICATE_CHECK -->|신규 창작 적합| CERT
+    DUPLICATE_CHECK -->|유사 레시피 존재| ADJUST
+    ADJUST -.->|미세 조정 후| SIM
+    
+    CERT --> DRAWER
+    DRAWER --> DONE
+    DONE --> COMM
+
+    class HOME home;
+    class FORMULA formula;
+    class SIM sim;
+    class DUPLICATE_CHECK decision;
+    class CERT,DRAWER,DONE cert;
+    class ADJUST,COMM support;

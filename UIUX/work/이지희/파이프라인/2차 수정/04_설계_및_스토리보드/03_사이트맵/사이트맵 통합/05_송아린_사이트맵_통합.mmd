@@ -1,0 +1,45 @@
+graph TD
+    classDef root fill:#0D47A1,stroke:#01579B,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef gnb fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef lnb fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef detail fill:#FFF8E1,stroke:#F57F17,stroke-width:1.5px,color:#E65100;
+    classDef aside fill:#E1F5FE,stroke:#0277BD,stroke-width:1.5px,color:#01579B;
+
+    ROOT["🏠 W05-HOME (숏폼 스튜디오 메인)<br/>• 9:16 비디오 캔버스<br/>• REELS-PLAYER-01 3초 구매"]
+
+    GNB1["🍹 GNB-01: 바이럴 레시피<br/>(W05-RECIPE)"]
+    GNB2["📸 GNB-02: 3D 장비 & 드롭<br/>(W05-STUDIO)"]
+    GNB3["🎬 GNB-03: 릴스 챌린지<br/>(W05-COMM)"]
+
+    ROOT --> GNB1
+    ROOT --> GNB2
+    ROOT --> GNB3
+
+    %% GNB1
+    LNB11["🍹 3단 수색 변색 믹서"]
+    LOOK["✨ CREATOR-LOOKBOOK-01"]
+    GNB1 --> LNB11
+    GNB1 --> LOOK
+
+    %% GNB2
+    STUDIO["📸 AURORA-STUDIO-01 3D 조명"]
+    BGM["🎵 BGM-LICENSE-01 음원 팩"]
+    DROP["⏰ LIMITED-DROP-01 500개 카운터"]
+    GNB2 --> STUDIO
+    GNB2 --> BGM
+    GNB2 --> DROP
+
+    %% GNB3
+    FEED["🎬 REELS-FEED-01 실시간 피드"]
+    VOTE["🏆 VOTE-BOARD-01 1위 투표"]
+    GNB3 --> FEED
+    GNB3 --> VOTE
+
+    DRAWER["🛒 Aside: W05-DRAWER<br/>• FAST-CHECKOUT-01 3초 결제 / 25% 번들"]
+    ROOT -.-> DRAWER
+
+    class ROOT root;
+    class GNB1,GNB2,GNB3 gnb;
+    class LNB11,LOOK lnb;
+    class STUDIO,BGM,DROP,FEED,VOTE detail;
+    class DRAWER aside;

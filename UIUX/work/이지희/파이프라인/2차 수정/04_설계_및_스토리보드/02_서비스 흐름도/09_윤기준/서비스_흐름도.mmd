@@ -1,0 +1,54 @@
+flowchart TD
+    classDef discover fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef decide fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef pathA fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20;
+    classDef pathB fill:#FFF8E1,stroke:#F57F17,stroke-width:1.5px,color:#E65100;
+    classDef follow fill:#37474F,stroke:#263238,stroke-width:2px,color:#FFFFFF;
+
+    subgraph DISCOVER_CONSIDER ["Phase 1: DISCOVER & CONSIDER · 초정밀 데이터 콘솔 탐색과 엔지니어링 신뢰 형성"]
+        C01["01 정밀 콘솔 진입 (W09-HOME)<br/>• 사용자: 블룸버그 터미널 무드 & 실시간 추출 파형 차트 확인<br/>• 화면: HERO-09 초정밀 엔지니어링 대시보드 캔버스<br/>• 반응: 소수점 실시간 데이터 스트리밍 및 PRECISION-DASH-01 탐색 CTA 제공"]
+        C02["02 TDS 프로파일러 조작 (W09-HOME)<br/>• 사용자: PRECISION-DASH-01 파라미터 조작<br/>• 화면: PRECISION-DASH-01 프로파일러 모듈<br/>• 반응: 수온 85.0℃ / 시간 180초 / TDS 1.25% 실시간 파형 그래프 렌더링"]
+        C03["03 추출 파라미터 진단 (W09-DIAG)<br/>• 사용자: 선호 농도(TDS) & 추출 시간 0.1단위 입력<br/>• 화면: Extraction Parameter Intake 콘솔<br/>• 반응: 오차 0%의 최적 브루잉 프로파일 3안 알고리즘 도출"]
+        C04["04 성분 스펙트럼 탐색 (W09-MIX)<br/>• 사용자: HPLC 성분 분석표 & 폴리페놀 450mg 레이더 비교<br/>• 화면: Component Spectrum Explorer<br/>• 반응: 카테킨 120mg, 테아닌 150mg 공인 정량 데이터 시각화"]
+        C05["05 180초 정밀 디지털 타이머 체험 (W09-RITUAL)<br/>• 사용자: 0.1초 단위 디지털 스톱워치 실행<br/>• 화면: 180s Precision Timer 룸<br/>• 반응: 수온 센서 시뮬레이션 연동 SVG 원형 타이머 카운트다운"]
+
+        C01 --> C02 --> C03 --> C04 --> C05
+    end
+
+    subgraph DECIDE_SELECT ["Phase 2: DECIDE · 전환 경로 선택"]
+        C06["06 전환 행동 결정 (W09-SHOP / BUILD)<br/>• 사용자: [정밀 브루잉 키트 & 정기구독] 또는 [HPLC 시험성적서 PDF 다운로드] 선택<br/>• 화면: Primary / Secondary CTA 바<br/>• 반응: 선택한 전환 경로(PATH A 또는 PATH B) 즉시 분기"]
+    end
+
+    C05 --> C06
+
+    subgraph PATH_A ["Phase 3-A: PATH A · 정밀 하드웨어 키트 & 소비주기 스마트 정기구독 경로"]
+        A1["A1 성분 도감 & 사양 확인 (W09-SHOP)<br/>• 사용자: 6대 LNB 카테고리 및 HPLC 연구소 성분표 검토<br/>• 화면: Component Spectrum Archive (6대 LNB)<br/>• 반응: 463종 잔류농약 불검출 인증 및 스마트 소비주기 예측 구독"]
+        A2["A2 랩웨어 하드웨어 설계 (W09-BUILD)<br/>• 사용자: 0.1g 마이크로 스쿱 + 밀폐 알루미늄 틴 선택<br/>• 화면: Labware Gear Builder<br/>• 반응: 0.01mm 오차 없는 정밀 하드웨어 3D 렌더링 및 가격 자동 계산"]
+        A3["A3 심리스 발주 & 결제 (W09-DONE)<br/>• 사용자: Data Cart Drawer에서 1-Click 주문 완료<br/>• 화면: 슬라이드아웃 Data Cart Drawer<br/>• 반응: 브루잉 프리셋 저장 완료 후 스크롤 위치 100% 복원"]
+
+        A1 --> A2 --> A3
+    end
+
+    subgraph PATH_B ["Phase 3-B: PATH B · HPLC 시험성적서 PDF 다운로드 & 브루잉 로그 경로"]
+        B1["B1 성적서 다운로드 선택 (W09-ABOUT)<br/>• 사용자: KTR/SGS 공인 HPLC 크로마토그래피 성적서 PDF 선택<br/>• 화면: HPLC Lab Reports & PDF Download<br/>• 반응: 463종 성분 공인 시험성적서 PDF 즉시 다운로드 모달 구동"]
+        B2["B2 브루잉 파라미터 JSON 내보내기 (W09-COMM)<br/>• 사용자: 나만의 수온/시간/TDS 데이터 JSON/CSV 파일 내보내기<br/>• 화면: Brewing Logs Archive & Export<br/>• 반응: 브루잉 파라미터 데이터 파일 생성 및 클라우드 동기화"]
+        B3["B3 다운로드 완료 & 프로파일 저장 (W09-DONE)<br/>• 사용자: 공인 성적서 PDF 수령 및 프로파일 클라우드 저장 확인<br/>• 화면: Profile Saved & Order Modal<br/>• 반응: 스마트 소비주기 예측 알고리즘 활성화 안내"]
+
+        B1 --> B2 --> B3
+    end
+
+    C06 -- "Precision Gear Order / Smart Sub" --> A1
+    C06 -- "Download HPLC PDF / Export JSON" --> B1
+
+    subgraph FOLLOW_UP ["Phase 4: 공통 후속 경험 · 브루잉 로그 아카이빙 & 데이터 분석 지속"]
+        F1["F1 브루잉 로그 분석 & 정밀 알고리즘 업데이트 (W09-COMM)<br/>• 사용자: 매일의 브루잉 TDS 로그 기록 및 엔지니어 커뮤니티 데이터 공유<br/>• 화면: Brewing Logs Archive & Footer<br/>• 반응: 월간 성분 섭취 통계 차트 발송 및 신규 롯트 HPLC 데이터 우선 제공"]
+    end
+
+    A3 --> F1
+    B3 --> F1
+
+    class C01,C02,C03,C04,C05 discover;
+    class C06 decide;
+    class A1,A2,A3 pathA;
+    class B1,B2,B3 pathB;
+    class F1 follow;

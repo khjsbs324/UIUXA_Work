@@ -1,0 +1,36 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef catalog fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef engrave fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W04-HOME (VIP 기프트 진입)<br/>• [스위트룸 기프트 제작] 클릭"]
+    CATALOG["02 W04-CATALOG (틴 라인업)<br/>• 매트 블랙 메탈 틴세트 선택"]
+    ENGRAVE["03 W04-ESTIMATE (3D 로고 각인)<br/>• HOTEL-ENGRAVER-01<br/>• 호텔 로고 SVG 골드 각인"]
+    
+    MOQ_CHECK{"04 최소 수량<br/>(100세트) 검증"}
+    
+    DRAWER["05 W04-DRAWER (대량 발주 결제)<br/>• 세금계산서 승인 & 납기 지정"]
+    MOQ_WARN["04-B 수량 조정 (Fallback)<br/>• 최소 100세트 상향 가이드"]
+    DONE["06 W04-DONE (발주 완료)<br/>• VIP 품질 보증서 PDF 발급"]
+    COMM["F1 W04-COMM (화물 트래킹)<br/>• 호텔 입고 검수 대시보드"]
+
+    HOME --> CATALOG
+    CATALOG --> ENGRAVE
+    ENGRAVE --> MOQ_CHECK
+    
+    MOQ_CHECK -->|500세트 MOQ 충족| DRAWER
+    MOQ_CHECK -->|100세트 미만| MOQ_WARN
+    MOQ_WARN -.->|수량 보정 후| DRAWER
+    
+    DRAWER --> DONE
+    DONE --> COMM
+
+    class HOME home;
+    class CATALOG catalog;
+    class ENGRAVE,MOQ_WARN engrave;
+    class MOQ_CHECK decision;
+    class DRAWER,DONE drawer;
+    class COMM support;

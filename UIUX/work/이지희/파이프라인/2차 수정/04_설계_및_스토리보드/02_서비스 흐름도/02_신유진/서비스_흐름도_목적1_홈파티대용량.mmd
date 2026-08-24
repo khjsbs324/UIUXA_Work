@@ -1,0 +1,38 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef base fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef formula fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W02-HOME (믹솔로지 진입)<br/>• [홈파티 대용량] 클릭"]
+    BASE["02 W02-BASE (원료 아카이브)<br/>• 60포 벌크 & 0.00% 성적서"]
+    FORMULA["03 W02-FORMULA (인원수 계산)<br/>• 6~8인 황금비율 산출"]
+    KIT["04 W02-KIT (바텐더 툴 세트)<br/>• 더블월 잔 & 바 지거 추가"]
+    DRAWER["05 W02-DRAWER (장바구니)<br/>• 20% 세트 할인 적용"]
+    
+    CHECK{"06 재고 및<br/>결제 승인"}
+    
+    DONE["07 W02-DONE (주문 완료)<br/>• 홈파티 레시피 PDF 발급"]
+    RETRY["06-B 대체 향미 선택 (Fallback)<br/>• 유사 베이스 추천"]
+    COMM["F1 W02-COMM (배송 추적)<br/>• 실시간 새벽배송 조회"]
+
+    HOME --> BASE
+    BASE --> FORMULA
+    FORMULA --> KIT
+    KIT --> DRAWER
+    DRAWER --> CHECK
+    
+    CHECK -->|재고 확인 & 승인| DONE
+    CHECK -->|재고 부족| RETRY
+    RETRY -.->|원료 변경| DRAWER
+    
+    DONE --> COMM
+
+    class HOME home;
+    class BASE base;
+    class FORMULA,KIT formula;
+    class CHECK decision;
+    class DRAWER,DONE,RETRY drawer;
+    class COMM support;

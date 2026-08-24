@@ -1,0 +1,23 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef catalog fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef done fill:#ECEFF1,stroke:#455A64,stroke-width:1.5px,color:#263238;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W11-HOME (구독 진입)<br/>• [백세건강 60일 구독] 클릭"]
+    CATALOG["02 W11-CATALOG (성분 검증)<br/>• HEALTH-CERT-01 무당 성적서"]
+    DRAWER["03 W11-DRAWER (구독 드로어)<br/>• SENIOR-SUB-01 20% 할인"]
+    DONE["04 W11-DONE (다이어리 증정)<br/>• 백세 건강 다이어리 동봉 출고"]
+    COMM["F1 W11-COMM (2달 루프)<br/>• 2달 주기 사전 음성 안내 루프"]
+
+    HOME --> CATALOG
+    CATALOG --> DRAWER
+    DRAWER --> DONE
+    DONE --> COMM
+
+    class HOME home;
+    class CATALOG catalog;
+    class DRAWER drawer;
+    class DONE done;
+    class COMM support;

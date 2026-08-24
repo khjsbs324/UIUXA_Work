@@ -1,0 +1,29 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef catalog fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef build fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef done fill:#ECEFF1,stroke:#455A64,stroke-width:1.5px,color:#263238;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W11-HOME (선물 진입)<br/>• [오동나무 선물세트] 클릭"]
+    CATALOG["02 W11-CATALOG (세트 선택)<br/>• 오동나무 발효티 세트 확인"]
+    BUILD["03 W11-BUILD (3D 오동나무)<br/>• WOOD-BOX-01 360도 뷰어"]
+    CARD["04 W11-BUILD (붓글씨 카드)<br/>• CALLI-CARD-01 감사 엽서"]
+    DRAWER["05 W11-DRAWER (선물 결제)<br/>• 자녀 선택 & 간편/전화 결제"]
+    DONE["06 W11-DONE (출고증 발급)<br/>• 우체국 안심 출고증 발급"]
+    COMM["F1 W11-COMM (배송 추적)<br/>• 배송 완료 알림 & 감사 통화"]
+
+    HOME --> CATALOG
+    CATALOG --> BUILD
+    BUILD --> CARD
+    CARD --> DRAWER
+    DRAWER --> DONE
+    DONE --> COMM
+
+    class HOME home;
+    class CATALOG catalog;
+    class BUILD,CARD build;
+    class DRAWER drawer;
+    class DONE done;
+    class COMM support;

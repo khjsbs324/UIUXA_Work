@@ -1,0 +1,48 @@
+flowchart TD
+    classDef root fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef main fill:#E8F5E9,stroke:#2E7D32,stroke-width:2px,color:#1B5E20,font-weight:bold;
+    classDef sub fill:#E1F5FE,stroke:#0277BD,stroke-width:1.5px,color:#01579B;
+    classDef act fill:#FFF8E1,stroke:#F57F17,stroke-width:1.5px,color:#E65100;
+    classDef common fill:#ECEFF1,stroke:#455A64,stroke-width:1.5px,color:#263238;
+    classDef exp fill:#FFEBEE,stroke:#C62828,stroke-width:1.5px,color:#B71C1C;
+
+    ROOT["WICKETA 윤기준 플랫폼 루트<br/>(정밀 브루잉 데이터 랩)"]
+    HOME["W09-HOME<br/>터미널 랩 홈"]
+    TDS["W09-TDS<br/>TDS 계측 콘솔"]
+    GEAR["W09-GEAR<br/>정밀 기어 도감 (6대 LNB)"]
+    GIFT["W09-GIFT<br/>코드 각인 아틀리에"]
+    COMM["W09-COMM<br/>브루잉 데이터 로거"]
+    DONE["W09-DONE<br/>프로파일 발급 완료"]
+    DRAWER["W09-DRAWER<br/>슬라이드아웃 장바구니"]
+
+    EXP1["EXP-01<br/>404 페이지 찾을 수 없음"]
+    EXP2["EXP-02<br/>품절 대체 안내"]
+    EXP3["EXP-03<br/>네트워크 오류 모달"]
+
+    ROOT --> HOME
+    HOME --> TDS
+    HOME --> GEAR
+    HOME --> GIFT
+    HOME --> COMM
+
+    TDS --> GEAR
+    GEAR --> GIFT
+    GEAR --> COMM
+    GEAR --> DRAWER
+    GIFT --> DRAWER
+
+    COMM --> HOME
+    DRAWER --> DONE
+    DONE --> COMM
+    DONE --> HOME
+
+    HOME -.-> EXP1
+    GEAR -.-> EXP2
+    COMM -.-> EXP3
+
+    class ROOT root;
+    class HOME main;
+    class TDS,GEAR,GIFT sub;
+    class COMM,DONE act;
+    class DRAWER common;
+    class EXP1,EXP2,EXP3 exp;

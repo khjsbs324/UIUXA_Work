@@ -1,0 +1,38 @@
+flowchart TD
+    classDef root fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef gnb fill:#E8EAF6,stroke:#3F51B5,stroke-width:1.5px,color:#1A237E,font-weight:bold;
+    classDef p1 fill:#FFF8E1,stroke:#F57F17,stroke-width:1.5px,color:#E65100,font-weight:bold;
+    classDef p2 fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef p3 fill:#E1F5FE,stroke:#0277BD,stroke-width:1.5px,color:#01579B,font-weight:bold;
+    classDef p4 fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    ROOT["🧘 차은채 WICKETA 안식처 플랫폼 (목적 4: 180초 리추얼 & 일기 특화)"]
+    
+    GNB1["GNB 1: 180초 안식 플레이어<br/>(180s Ritual Player)"]
+    GNB2["GNB 2: 데일리 마인드 저널<br/>(Daily Mind Journal)"]
+    GNB3["GNB 3: 30일 리추얼 챌린지<br/>(30-Day Challenge)"]
+    GNB4["GNB 4: 나이트 리마인더<br/>(Night Reminder)"]
+    
+    ROOT --> GNB1
+    ROOT --> GNB2
+    ROOT --> GNB3
+    ROOT --> GNB4
+    
+    GNB1 --> P1_1["W01-HOME<br/>나이트 안식처 메인"]
+    GNB1 --> P1_2["W01-RITUAL-SOUND<br/>432Hz 사운드 셀렉터"]
+    GNB1 --> P1_3["W01-RITUAL-TIMER<br/>180초 호흡 타이머"]
+    
+    GNB2 --> P2_1["W01-COMM-DIARY<br/>1줄 감정 일기 작성"]
+    GNB2 --> P2_2["W01-COMM-CALENDAR<br/>월간 감정 캘린더"]
+    
+    GNB3 --> P3_1["W01-COMM-STAMP<br/>30일 출석 스탬프 보드"]
+    GNB3 --> P3_2["W01-COMM-BADGE<br/>리추얼 뱃지 보관함"]
+    
+    GNB4 --> P4_1["W01-COMM-ALERT<br/>나이트 알림 스케줄러"]
+
+    class ROOT root;
+    class GNB1,GNB2,GNB3,GNB4 gnb;
+    class P1_1,P1_2,P1_3 p1;
+    class P2_1,P2_2 p2;
+    class P3_1,P3_2 p3;
+    class P4_1 p4;

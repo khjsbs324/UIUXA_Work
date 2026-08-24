@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WICKETA 통합 마스터 스토리보드 - 차은채 (A-1 에디토리얼 스토리텔링형 (Editorial Sanctuary))</title>
+  <style>
+    :root {
+      --bg: #0d0e12;
+      --card-bg: #16181f;
+      --card-border: #262936;
+      --card-hover: #323647;
+      --text: #f0f2f5;
+      --text-muted: #8c93a4;
+      --primary: #ffffff;
+      --accent: #d4af37;
+      --highlight: #2a3147;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+    header {
+      background: #111217;
+      border-bottom: 1px solid var(--card-border);
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .brand-title {
+      font-size: 16px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .badge {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 12px;
+      background: #252836;
+      color: #b0b8cc;
+      border: 1px solid #363b4e;
+    }
+    .tabs-bar {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+    }
+    .tab-btn {
+      background: transparent;
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .tab-btn:hover {
+      background: var(--card-bg);
+      color: var(--text);
+      border-color: #434961;
+    }
+    .tab-btn.active {
+      background: #ffffff;
+      color: #000000;
+      border-color: #ffffff;
+      font-weight: 700;
+    }
+    .main-container {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+    #sidebar {
+      width: 260px;
+      background: #12131a;
+      border-right: 1px solid var(--card-border);
+      padding: 16px;
+      overflow-y: auto;
+      flex-shrink: 0;
+    }
+    .nav-group-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #656c80;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .screen-nav-item {
+      padding: 9px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      color: var(--text-muted);
+      cursor: pointer;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.15s;
+    }
+    .screen-nav-item:hover {
+      background: var(--card-bg);
+      color: var(--text);
+    }
+    .screen-nav-item.active {
+      background: var(--highlight);
+      color: #ffffff;
+      font-weight: 700;
+      border-left: 3px solid #ffffff;
+    }
+    .split-view {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+    .wireframe-pane {
+      flex: 1.1;
+      background: #000000;
+      border-right: 1px solid var(--card-border);
+      padding: 24px;
+      overflow-y: auto;
+    }
+    .spec-pane {
+      flex: 1.3;
+      background: var(--bg);
+      padding: 24px;
+      overflow-y: auto;
+    }
+    .wf-box {
+      background: #111111;
+      border: 1.5px solid #333333;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 20px;
+      transition: all 0.2s;
+    }
+    .wf-box.highlight {
+      border-color: #ffffff;
+      box-shadow: 0 0 15px rgba(255,255,255,0.2);
+    }
+    .wf-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .wf-img-placeholder {
+      background: #1a1a1a;
+      border: 1px dashed #555555;
+      padding: 24px;
+      text-align: center;
+      color: #888888;
+      font-size: 13px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+    .spec-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 18px;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .spec-card:hover, .spec-card.active {
+      border-color: #ffffff;
+      background: #1c1f2a;
+    }
+    .spec-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 8px;
+    }
+    .spec-id {
+      font-size: 13px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+    .spec-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .spec-table {
+      width: 100%;
+      font-size: 12px;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    .spec-table th, .spec-table td {
+      padding: 6px 8px;
+      border: 1px solid var(--card-border);
+      text-align: left;
+    }
+    .spec-table th {
+      background: #1e212b;
+      color: #b0b8cc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header & 5-Goal Switcher -->
+  <header>
+    <div class="brand-title">
+      <span>WICKETA STORYBOARD</span>
+      <span class="badge">01 차은채 (A-1 에디토리얼 스토리텔링형 (Editorial Sanctuary))</span>
+    </div>
+    <div class="tabs-bar">
+<button class="tab-btn active" onclick="filterGoal('all')">전체 5대 목적 (All)</button>
+      <button class="tab-btn" onclick="filterGoal('goal1')">목적 1: D2C 론칭 브랜딩 & 공간 에디토리얼</button>
+      <button class="tab-btn" onclick="filterGoal('goal2')">목적 2: 30일 감정 리듬 정기구독</button>
+      <button class="tab-btn" onclick="filterGoal('goal3')">목적 3: VIP 틴케이스 이니셜 각인 선물</button>
+      <button class="tab-btn" onclick="filterGoal('goal4')">목적 4: 180초 시네마틱 브루잉 리추얼</button>
+      <button class="tab-btn" onclick="filterGoal('goal5')">목적 5: 성수 플래그십 쇼룸 1:1 시향 예약</button>
+
+    </div>
+  </header>
+
+  <div class="main-container">
+    <!-- Left Sidebar: Screen Registry -->
+    <nav id="sidebar">
+      <div class="nav-group-title">전체 화면 목록</div>
+      <div class="screen-nav-item" onclick="switchScreen('W01-HOME')">
+    <span>🏛️ W01-HOME</span>
+    <span class="badge">에디토리</span>
+  </div>
+      <div class="screen-nav-item" onclick="switchScreen('W01-CATALOG')">
+    <span>🏛️ W01-CATALOG</span>
+    <span class="badge">디렉터스</span>
+  </div>
+      <div class="screen-nav-item" onclick="switchScreen('W01-ABOUT')">
+    <span>🏛️ W01-ABOUT</span>
+    <span class="badge">브랜드 </span>
+  </div>
+      <div class="screen-nav-item" onclick="switchScreen('W01-BUILD')">
+    <span>🏛️ W01-BUILD</span>
+    <span class="badge">3D 틴</span>
+  </div>
+      <div class="screen-nav-item" onclick="switchScreen('W01-RITUAL')">
+    <span>🏛️ W01-RITUAL</span>
+    <span class="badge">180초</span>
+  </div>
+      <div class="screen-nav-item" onclick="switchScreen('W01-COMM')">
+    <span>🏛️ W01-COMM</span>
+    <span class="badge">성수 쇼</span>
+  </div>
+      <div class="screen-nav-item" onclick="switchScreen('W01-DRAWER')">
+    <span>🏛️ W01-DRAWER</span>
+    <span class="badge">Asid</span>
+  </div>
+      <div class="screen-nav-item" onclick="switchScreen('W01-DONE')">
+    <span>🏛️ W01-DONE</span>
+    <span class="badge">주문 완</span>
+  </div>
+
+    </nav>
+
+    <!-- Split Pane: Left Wireframe, Right Spec -->
+    <div class="split-view">
+      <!-- Left Wireframe View -->
+      <div class="wireframe-pane">
+        <h3 style="font-size:15px; margin-bottom:16px; color:#ffffff;">🖼️ 모노크롬 와이어프레임 뷰 (W01-HOME)</h3>
+        
+        <!-- Interactive Killer Module on Wireframe -->
+        <div class="wf-box" id="wf-killer">
+          <div class="wf-title">
+            <span>⭐ 디렉터의 선택 근거 컬렉션 편집기 & 2X 시네마틱 캔버스 (COLLECTION-EDITOR-01)</span>
+            <span class="badge">킬러 기능</span>
+          </div>
+          <div class="wf-img-placeholder" style="background:#111; color:#fff;">
+            [디렉터의 선택 근거 컬렉션 편집기 & 2X 시네마틱 캔버스 (COLLECTION-EDITOR-01): 100% 무채색 인터랙티브 콘솔]
+          </div>
+          <div style="font-size:12px; color:#aaa; line-height:1.6;">
+            • 클라이언트 맞춤형 핵심 인터랙션 & 5대 목적 연동<br/>
+            • 1-Click 패스트 체크아웃 및 가상 스크롤 복원
+          </div>
+        </div>
+
+        <!-- 15 Section Wireframe Placeholders -->
+        <div id="wf-sections-container">
+          <!-- Will be rendered via JS -->
+        </div>
+      </div>
+
+      <!-- Right Spec View -->
+      <div class="spec-pane">
+        <h3 style="font-size:15px; margin-bottom:16px; color:#ffffff;">📋 15대 상품 큐레이션 섹션 스토리보드 상세 명세</h3>
+        <div id="spec-cards-container">
+          <!-- Will be rendered via JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var sectionsData = [{"id": "SEC-01", "code": "WK-P01", "name": "⭐ [디렉터 초이스] 오로라 믹솔로지 론칭 시그니처 팩", "category": "✨ 디렉터스 론칭 시그니처 (4)", "price": "39,000원", "goalId": "goal1", "uiComponent": "⭐ [디렉터 초이스] 오로라 믹솔로지 론칭 시그니처 팩 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: ⭐ [디렉터 초이스] 오로라 믹솔로지 론칭 시그니처 팩 (1:1 정방형 뷰박스)]", "displayData": "⭐ [디렉터 초이스] 오로라 믹솔로지 론칭 시그니처 팩 핵심 성분, 가격 39,000원, ✨ 디렉터스 론칭 시그니처 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 1: D2C 론칭 브랜딩 & 공간 에디토리얼 연계", "systemLogic": "선택 시 W01-CATALOG 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W01-CATALOG", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-02", "code": "WK-P02", "name": "🌙 [에디토리얼 안식] 미드나잇 GABA 뇌식 릴랙스 팩", "category": "📖 에디토리얼 심신 안식티 (4)", "price": "32,000원", "goalId": "goal2", "uiComponent": "🌙 [에디토리얼 안식] 미드나잇 GABA 뇌식 릴랙스 팩 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: 🌙 [에디토리얼 안식] 미드나잇 GABA 뇌식 릴랙스 팩 (1:1 정방형 뷰박스)]", "displayData": "🌙 [에디토리얼 안식] 미드나잇 GABA 뇌식 릴랙스 팩 핵심 성분, 가격 32,000원, 📖 에디토리얼 심신 안식티 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 2: 30일 감정 리듬 정기구독 연계", "systemLogic": "선택 시 W01-ABOUT 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W01-ABOUT", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-03", "code": "WK-P03", "name": "🍹 [Zero-Labor] 무가당 스모키 얼그레이 하이볼 스틱", "category": "✨ 디렉터스 론칭 시그니처 (4)", "price": "28,000원", "goalId": "goal3", "uiComponent": "🍹 [Zero-Labor] 무가당 스모키 얼그레이 하이볼 스틱 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: 🍹 [Zero-Labor] 무가당 스모키 얼그레이 하이볼 스틱 (1:1 정방형 뷰박스)]", "displayData": "🍹 [Zero-Labor] 무가당 스모키 얼그레이 하이볼 스틱 핵심 성분, 가격 28,000원, ✨ 디렉터스 론칭 시그니처 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 3: VIP 틴케이스 이니셜 각인 선물 연계", "systemLogic": "선택 시 W01-BUILD 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W01-BUILD", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-04", "code": "WK-P04", "name": "🌿 [캄테크 클린] 보태니컬 0kcal 스파클링 에이드 (10포)", "category": "🌿 캄테크 0kcal 클린티 (4)", "price": "27,000원", "goalId": "goal4", "uiComponent": "🌿 [캄테크 클린] 보태니컬 0kcal 스파클링 에이드 (10포) 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: 🌿 [캄테크 클린] 보태니컬 0kcal 스파클링 에이드 (10포) (1:1 정방형 뷰박스)]", "displayData": "🌿 [캄테크 클린] 보태니컬 0kcal 스파클링 에이드 (10포) 핵심 성분, 가격 27,000원, 🌿 캄테크 0kcal 클린티 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 4: 180초 시네마틱 브루잉 리추얼 연계", "systemLogic": "선택 시 W01-RITUAL 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W01-RITUAL", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-05", "code": "WK-P05", "name": "💙 [심신 안식] 캄 사파이어 블루 캐모마일 온수 티 (15포)", "category": "📖 에디토리얼 심신 안식티 (4)", "price": "26,000원", "goalId": "goal5", "uiComponent": "💙 [심신 안식] 캄 사파이어 블루 캐모마일 온수 티 (15포) 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: 💙 [심신 안식] 캄 사파이어 블루 캐모마일 온수 티 (15포) (1:1 정방형 뷰박스)]", "displayData": "💙 [심신 안식] 캄 사파이어 블루 캐모마일 온수 티 (15포) 핵심 성분, 가격 26,000원, 📖 에디토리얼 심신 안식티 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 5: 성수 플래그십 쇼룸 1:1 시향 예약 연계", "systemLogic": "선택 시 W01-COMM 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W01-COMM", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-06", "code": "WK-P06", "name": "⚡ [포커스 활력] 시트러스 마테 천연 부스터 스틱 (15포)", "category": "🌿 캄테크 0kcal 클린티 (4)", "price": "29,000원", "goalId": "goal1", "uiComponent": "⚡ [포커스 활력] 시트러스 마테 천연 부스터 스틱 (15포) 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: ⚡ [포커스 활력] 시트러스 마테 천연 부스터 스틱 (15포) (1:1 정방형 뷰박스)]", "displayData": "⚡ [포커스 활력] 시트러스 마테 천연 부스터 스틱 (15포) 핵심 성분, 가격 29,000원, 🌿 캄테크 0kcal 클린티 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 1: D2C 론칭 브랜딩 & 공간 에디토리얼 연계", "systemLogic": "선택 시 W01-DRAWER 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W01-DRAWER", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-07", "code": "WK-P07", "name": "💜 [숙면 리추얼] 슬립 라벤더 루이보스 무카페인 (10포)", "category": "📖 에디토리얼 심신 안식티 (4)", "price": "30,000원", "goalId": "goal2", "uiComponent": "💜 [숙면 리추얼] 슬립 라벤더 루이보스 무카페인 (10포) 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: 💜 [숙면 리추얼] 슬립 라벤더 루이보스 무카페인 (10포) (1:1 정방형 뷰박스)]", "displayData": "💜 [숙면 리추얼] 슬립 라벤더 루이보스 무카페인 (10포) 핵심 성분, 가격 30,000원, 📖 에디토리얼 심신 안식티 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 2: 30일 감정 리듬 정기구독 연계", "systemLogic": "선택 시 W01-DONE 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W01-DONE", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-08", "code": "WK-P08", "name": "🍇 [비건 항산화] 비건 베리 토닉 0.00% 클린 에이드 (10포)", "category": "🌿 캄테크 0kcal 클린티 (4)", "price": "28,500원", "goalId": "goal3", "uiComponent": "🍇 [비건 항산화] 비건 베리 토닉 0.00% 클린 에이드 (10포) 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: 🍇 [비건 항산화] 비건 베리 토닉 0.00% 클린 에이드 (10포) (1:1 정방형 뷰박스)]", "displayData": "🍇 [비건 항산화] 비건 베리 토닉 0.00% 클린 에이드 (10포) 핵심 성분, 가격 28,500원, 🌿 캄테크 0kcal 클린티 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 3: VIP 틴케이스 이니셜 각인 선물 연계", "systemLogic": "선택 시 W01-CATALOG 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W01-CATALOG", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-09", "code": "WK-P09", "name": "⏱️ [3분 리추얼] 퀵 브루 에디토리얼 스틱 (20포)", "category": "✨ 디렉터스 론칭 시그니처 (4)", "price": "31,000원", "goalId": "goal4", "uiComponent": "⏱️ [3분 리추얼] 퀵 브루 에디토리얼 스틱 (20포) 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: ⏱️ [3분 리추얼] 퀵 브루 에디토리얼 스틱 (20포) (1:1 정방형 뷰박스)]", "displayData": "⏱️ [3분 리추얼] 퀵 브루 에디토리얼 스틱 (20포) 핵심 성분, 가격 31,000원, ✨ 디렉터스 론칭 시그니처 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 4: 180초 시네마틱 브루잉 리추얼 연계", "systemLogic": "선택 시 W01-ABOUT 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W01-ABOUT", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-10", "code": "WK-P10", "name": "🎯 [1:1 맞춤] 3단계 감정 다이얼 진단 샘플러 (5종)", "category": "🎁 D2C 리미티드 기프트 & 정기구독 (4)", "price": "34,000원", "goalId": "goal5", "uiComponent": "🎯 [1:1 맞춤] 3단계 감정 다이얼 진단 샘플러 (5종) 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: 🎯 [1:1 맞춤] 3단계 감정 다이얼 진단 샘플러 (5종) (1:1 정방형 뷰박스)]", "displayData": "🎯 [1:1 맞춤] 3단계 감정 다이얼 진단 샘플러 (5종) 핵심 성분, 가격 34,000원, 🎁 D2C 리미티드 기프트 & 정기구독 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 5: 성수 플래그십 쇼룸 1:1 시향 예약 연계", "systemLogic": "선택 시 W01-BUILD 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W01-BUILD", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-11", "code": "WK-P11", "name": "🥂 [오브제 다기] 비밀정원 빛 굴절 더블월 글래스 세트", "category": "🥂 빛 굴절 더블월 다기 & 머들러 (4)", "price": "36,000원", "goalId": "goal1", "uiComponent": "🥂 [오브제 다기] 비밀정원 빛 굴절 더블월 글래스 세트 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: 🥂 [오브제 다기] 비밀정원 빛 굴절 더블월 글래스 세트 (1:1 정방형 뷰박스)]", "displayData": "🥂 [오브제 다기] 비밀정원 빛 굴절 더블월 글래스 세트 핵심 성분, 가격 36,000원, 🥂 빛 굴절 더블월 다기 & 머들러 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 1: D2C 론칭 브랜딩 & 공간 에디토리얼 연계", "systemLogic": "선택 시 W01-RITUAL 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W01-RITUAL", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-12", "code": "WK-P12", "name": "🥄 [바텐더 키트] 믹솔로지 전용 쉐이커 & 머들러 세트", "category": "🥂 빛 굴절 더블월 다기 & 머들러 (4)", "price": "38,000원", "goalId": "goal2", "uiComponent": "🥄 [바텐더 키트] 믹솔로지 전용 쉐이커 & 머들러 세트 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: 🥄 [바텐더 키트] 믹솔로지 전용 쉐이커 & 머들러 세트 (1:1 정방형 뷰박스)]", "displayData": "🥄 [바텐더 키트] 믹솔로지 전용 쉐이커 & 머들러 세트 핵심 성분, 가격 38,000원, 🥂 빛 굴절 더블월 다기 & 머들러 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 2: 30일 감정 리듬 정기구독 연계", "systemLogic": "선택 시 W01-COMM 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W01-COMM", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-13", "code": "WK-P13", "name": "🎁 [D2C 기프팅] 카카오 1초 선물하기 VIP 에디션", "category": "🎁 D2C 리미티드 기프트 & 정기구독 (4)", "price": "49,000원", "goalId": "goal3", "uiComponent": "🎁 [D2C 기프팅] 카카오 1초 선물하기 VIP 에디션 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: 🎁 [D2C 기프팅] 카카오 1초 선물하기 VIP 에디션 (4:3 와이드 뷰박스)]", "displayData": "🎁 [D2C 기프팅] 카카오 1초 선물하기 VIP 에디션 핵심 성분, 가격 49,000원, 🎁 D2C 리미티드 기프트 & 정기구독 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 3: VIP 틴케이스 이니셜 각인 선물 연계", "systemLogic": "선택 시 W01-DRAWER 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W01-DRAWER", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-14", "code": "WK-P14", "name": "🛡️ [클린 스탠다드] 0.00% 무알콜/무카페인 검증 팩", "category": "🌿 캄테크 0kcal 클린티 (4)", "price": "35,000원", "goalId": "goal4", "uiComponent": "🛡️ [클린 스탠다드] 0.00% 무알콜/무카페인 검증 팩 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: 🛡️ [클린 스탠다드] 0.00% 무알콜/무카페인 검증 팩 (3:4 세로형 뷰박스)]", "displayData": "🛡️ [클린 스탠다드] 0.00% 무알콜/무카페인 검증 팩 핵심 성분, 가격 35,000원, 🌿 캄테크 0kcal 클린티 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 4: 180초 시네마틱 브루잉 리추얼 연계", "systemLogic": "선택 시 W01-DONE 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W01-DONE", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}, {"id": "SEC-15", "code": "WK-P15", "name": "🍵 [온수 릴랙스] 이지 브루잉 한방 발효 티 세트", "category": "🥂 빛 굴절 더블월 다기 & 머들러 (4)", "price": "42,000원", "goalId": "goal5", "uiComponent": "🍵 [온수 릴랙스] 이지 브루잉 한방 발효 티 세트 특화 인터랙티브 카드", "imgSpec": "🖼️ [이미지: 🍵 [온수 릴랙스] 이지 브루잉 한방 발효 티 세트 (1:1 정방형 뷰박스)]", "displayData": "🍵 [온수 릴랙스] 이지 브루잉 한방 발효 티 세트 핵심 성분, 가격 42,000원, 🥂 빛 굴절 더블월 다기 & 머들러 (4) 큐레이션 데이터", "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 5: 성수 플래그십 쇼룸 1:1 시향 예약 연계", "systemLogic": "선택 시 W01-CATALOG 실시간 연동 및 카트 드로어 갱신", "targetScreen": "W01-CATALOG", "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"}];
+
+    function renderComponents() {
+      var wfContainer = document.getElementById('wf-sections-container');
+      var specContainer = document.getElementById('spec-cards-container');
+      wfContainer.innerHTML = '';
+      specContainer.innerHTML = '';
+
+      sectionsData.forEach(function(sec) {
+        // Render Left Wireframe Box
+        var wfDiv = document.createElement('div');
+        wfDiv.className = 'wf-box';
+        wfDiv.id = 'wf-' + sec.id;
+        wfDiv.setAttribute('data-goal', sec.goalId);
+        wfDiv.innerHTML = `
+          <div class="wf-title">
+            <span>${sec.id}: ${sec.name}</span>
+            <span class="badge">${sec.category}</span>
+          </div>
+          <div class="wf-img-placeholder">${sec.imgSpec}</div>
+          <div style="display:flex; justify-content:space-between; font-size:12px; color:#aaa;">
+            <span>가격: ${sec.price}</span>
+            <span>이동: ${sec.targetScreen}</span>
+          </div>
+        `;
+        wfContainer.appendChild(wfDiv);
+
+        // Render Right Spec Card
+        var specDiv = document.createElement('div');
+        specDiv.className = 'spec-card';
+        specDiv.id = 'spec-' + sec.id;
+        specDiv.setAttribute('data-goal', sec.goalId);
+        specDiv.onclick = function() { highlightSection(sec.id); };
+        specDiv.innerHTML = `
+          <div class="spec-header">
+            <div class="spec-id">${sec.id} | ${sec.name}</div>
+            <span class="badge">${sec.goalId.toUpperCase()}</span>
+          </div>
+          <div class="spec-meta">
+            <strong>카테고리:</strong> ${sec.category} | <strong>가격:</strong> ${sec.price}<br/>
+            <strong>UI 컴포넌트:</strong> ${sec.uiComponent}
+          </div>
+          <table class="spec-table">
+            <tr><th style="width:28%;">표시 데이터</th><td>${sec.displayData}</td></tr>
+            <tr><th>사용자 행동</th><td>${sec.userAction}</td></tr>
+            <tr><th>시스템 처리/모션</th><td>${sec.systemLogic}</td></tr>
+            <tr><th>이동 대상 화면</th><td><strong>${sec.targetScreen}</strong></td></tr>
+            <tr><th>상태별 변화</th><td>${sec.stateChange}</td></tr>
+          </table>
+        `;
+        specContainer.appendChild(specDiv);
+      });
+    }
+
+    function highlightSection(id) {
+      document.querySelectorAll('.wf-box').forEach(function(b) { b.classList.remove('highlight'); });
+      document.querySelectorAll('.spec-card').forEach(function(c) { c.classList.remove('active'); });
+
+      var wfTarget = document.getElementById('wf-' + id);
+      var specTarget = document.getElementById('spec-' + id);
+      if(wfTarget) {
+        wfTarget.classList.add('highlight');
+        wfTarget.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      if(specTarget) {
+        specTarget.classList.add('active');
+        specTarget.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+
+    function filterGoal(goal) {
+      document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+      event.target.classList.add('active');
+
+      document.querySelectorAll('.wf-box').forEach(function(b) {
+        if(b.id === 'wf-killer') return;
+        if(goal === 'all' || b.getAttribute('data-goal') === goal) b.style.display = 'block';
+        else b.style.display = 'none';
+      });
+
+      document.querySelectorAll('.spec-card').forEach(function(c) {
+        if(goal === 'all' || c.getAttribute('data-goal') === goal) c.style.display = 'block';
+        else c.style.display = 'none';
+      });
+    }
+
+    function switchScreen(screenId) {
+      document.querySelectorAll('.screen-nav-item').forEach(function(i) { i.classList.remove('active'); });
+      event.currentTarget.classList.add('active');
+      alert(screenId + ' 화면 상세 스토리보드로 전환되었습니다.');
+    }
+
+    renderComponents();
+  </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef explore fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef atelier fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef action fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    subgraph HUB ["HUB: WICKETA 박지후 오피스 퀵커머스 메인 허브"]
+        HOME["01 W07-HOME (오피스 메인)<br/>• 탕비실 퀵커머스 비주얼 캔버스<br/>• PANTRY-BULK-01 대용량 계산기<br/>• 익일 새벽도착 보장 카운터"]
+    end
+
+    subgraph PATH1 ["경로 1: 탕비실 120포 벌크 새벽배송"]
+        BULK["02-A W07-BULK<br/>탕비실 대용량 벌크 콘솔<br/>• 120포 스틱 & 30% 할인"]
+    end
+
+    subgraph PATH2 ["경로 2: 월간 정기배송 & 디스펜서 무상 렌탈"]
+        SUB["02-B W07-SUB<br/>OFFICE-SUB-01 콘솔<br/>• 월간 정기배송 & 디스펜서 증정"]
+    end
+
+    subgraph PATH3 ["경로 3: 신규 입사자 웰컴 온보딩 킷 발주"]
+        KIT["02-C W07-KIT<br/>WELCOME-KIT-01 아틀리에<br/>• 회사 로고 각인 텀블러 50세트"]
+    end
+
+    subgraph PATH4 ["경로 4: 소진율 알림 & 원클릭 재주문"]
+        COMM_IN["02-D W07-COMM (알림)<br/>REORDER-LOOP-01<br/>• 재고 20% 알림 & 1초 재발주"]
+    end
+
+    subgraph PATH5 ["경로 5: 전사 타운홀 100인 대량 발주"]
+        EVENT["02-E W07-EVENT<br/>TOWNHALL-PACK-01<br/>• 100인 음료/스낵 행사 패키지"]
+    end
+
+    subgraph TRANSACT ["TRANSACT: 법인 전용 결제 & 발주 승인"]
+        DRAWER["W07-DRAWER (슬라이드아웃 Cart)<br/>• 법인카드 1-Click / 세금계산서<br/>• 익일 새벽도착 보장"]
+        DONE["W07-DONE (발주 완료 모달)<br/>• 거래명세서 출력, 배송 추적<br/>• 카카오 알림톡 즉시 발송"]
+        DRAWER --> DONE
+    end
+
+    subgraph ARCHIVE ["ARCHIVE: 탕비실 재고 관리 & 재발주 루프"]
+        COMM["W07-COMM (탕비실 재고 관리)<br/>• 실시간 재고 모니터링 & 월간 통계<br/>• 재고 소진 시 1초 재발주 루프"]
+    end
+
+    HOME --> BULK
+    HOME --> SUB
+    HOME --> KIT
+    HOME --> COMM_IN
+    HOME --> EVENT
+
+    BULK --> DRAWER
+    SUB --> DRAWER
+    KIT --> DRAWER
+    EVENT --> DRAWER
+    COMM_IN --> DRAWER
+    DONE --> COMM
+
+    COMM -.->|재고 20% 도달 시 원클릭 재발주 순환| DRAWER
+    DONE -.->|쇼핑 계속하기 스크롤 복원| HOME
+
+    class HOME home;
+    class BULK,EVENT explore;
+    class KIT,SUB,COMM_IN atelier;
+    class DRAWER,DONE action;
+    class COMM support;

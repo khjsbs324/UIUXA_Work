@@ -1,0 +1,56 @@
+flowchart TD
+    classDef root fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef main fill:#E8F5E9,stroke:#2E7D32,stroke-width:2px,color:#1B5E20,font-weight:bold;
+    classDef sub fill:#E1F5FE,stroke:#0277BD,stroke-width:1.5px,color:#01579B;
+    classDef act fill:#FFF8E1,stroke:#F57F17,stroke-width:1.5px,color:#E65100;
+    classDef common fill:#ECEFF1,stroke:#455A64,stroke-width:1.5px,color:#263238;
+    classDef exp fill:#FFEBEE,stroke:#C62828,stroke-width:1.5px,color:#B71C1C;
+
+    ROOT["WICKETA 신유진 플랫폼 루트<br/>(믹솔로지 실험실)"]
+    HOME["W02-HOME<br/>믹솔로지 실험실 홈"]
+    OLF["W02-OLFACTORY<br/>후각 프로파일러"]
+    BASE["W02-BASE<br/>원료 아카이브 (6대 LNB)"]
+    FORMULA["W02-FORMULA<br/>3D 포뮬러 조합기"]
+    SIM["W02-SIMULATE<br/>수색 층분리 시뮬레이터"]
+    RITUAL["W02-RITUAL<br/>180초 인퓨전 타이머"]
+    KIT["W02-KIT<br/>플라스크 키트 빌더"]
+    CERT["W02-CERT<br/>포뮬러 공식 등록증"]
+    COMM["W02-COMM<br/>레시피 셰어링 랩"]
+    DONE["W02-DONE<br/>주문 및 등록 완료"]
+    DRAWER["W02-DRAWER<br/>플라스크 장바구니"]
+
+    EXP1["EXP-01<br/>404 페이지 찾을 수 없음"]
+    EXP2["EXP-02<br/>품절 대체 안내"]
+    EXP3["EXP-03<br/>네트워크 오류 모달"]
+
+    ROOT --> HOME
+    HOME --> OLF
+    HOME --> BASE
+    HOME --> FORMULA
+
+    OLF --> FORMULA
+    BASE --> FORMULA
+    FORMULA --> SIM
+    SIM --> RITUAL
+    RITUAL --> KIT
+    FORMULA --> KIT
+    
+    KIT --> CERT
+    CERT --> DONE
+    CERT --> COMM
+    COMM --> FORMULA
+
+    KIT -.-> DRAWER
+    DRAWER -.-> DONE
+    DONE --> HOME
+
+    HOME -.-> EXP1
+    BASE -.-> EXP2
+    FORMULA -.-> EXP3
+
+    class ROOT root;
+    class HOME main;
+    class OLF,BASE,FORMULA,SIM,RITUAL sub;
+    class KIT,CERT,COMM,DONE act;
+    class DRAWER common;
+    class EXP1,EXP2,EXP3 exp;

@@ -1,0 +1,40 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef sim fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef kit fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W02-HOME (릴스 진입)<br/>• 인스타 유입 & 3초 숏폼 감상"]
+    SIM["02 W02-SIMULATE (층분리 시뮬레이터)<br/>• COLOR-LAYER-01<br/>• 3단 수색 그라데이션 검증"]
+    KIT["03 W02-KIT (릴스 스타터 킷)<br/>• 전용 글래스 + 스틱 2종"]
+    DRAWER["04 W02-DRAWER (패스트 결제)<br/>• 1-Click 간편결제"]
+    
+    COMM["05 W02-COMM (영상 업로드)<br/>• 15초 챌린지 영상 등록"]
+    
+    VOTE_CHECK{"06 100표 달성<br/>여부 확인"}
+    
+    REWARD["06-A 5,000P 페이백<br/>• 이달의 바텐더 뱃지 획득"]
+    PENDING["06-B 투표 진행 중<br/>• 친구 공유 링크 생성"]
+    LOOP_NODE["F1 챌린지 순환 루프<br/>• 신규 릴스 챌린지 알림"]
+
+    HOME --> SIM
+    SIM --> KIT
+    KIT --> DRAWER
+    DRAWER --> COMM
+    COMM --> VOTE_CHECK
+    
+    VOTE_CHECK -->|100표 달성| REWARD
+    VOTE_CHECK -->|진행 중| PENDING
+    
+    REWARD --> LOOP_NODE
+    PENDING --> LOOP_NODE
+    LOOP_NODE -.->|신규 챌린지 참여| SIM
+
+    class HOME home;
+    class SIM sim;
+    class KIT kit;
+    class DRAWER drawer;
+    class VOTE_CHECK decision;
+    class COMM,REWARD,PENDING,LOOP_NODE support;

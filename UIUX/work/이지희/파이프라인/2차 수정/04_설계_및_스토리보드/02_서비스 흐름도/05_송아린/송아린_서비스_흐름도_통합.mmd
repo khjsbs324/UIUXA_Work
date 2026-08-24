@@ -1,0 +1,62 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef explore fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef atelier fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef action fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    subgraph HUB ["HUB: WICKETA 송아린 숏폼 바이럴 안식처 메인"]
+        HOME["01 W05-HOME (소셜 메인)<br/>• 9:16 비디오 인터랙티브 캔버스<br/>• REELS-RECIPE-01 퀵독<br/>• 콜라보 드롭 카운트다운"]
+    end
+
+    subgraph PATH1 ["경로 1: 15초 릴스 레시피 즉시 구매"]
+        REELS["02-A W05-REELS<br/>15초 숏폼 레시피 피드<br/>• [레시피 세트 담기]"]
+    end
+
+    subgraph PATH2 ["경로 2: 영상 촬영 장비 풀세트 발주"]
+        STUDIO["02-B W05-STUDIO<br/>AURORA-STUDIO-01 킷<br/>• 오로라 글래스 + 쉐이커"]
+    end
+
+    subgraph PATH3 ["경로 3: 레시피 & BGM 30일 정기구독"]
+        SUB["02-C W05-SUB<br/>VIRAL-SUB-01 정기구독<br/>• 매월 레시피 + BGM 라이선스"]
+    end
+
+    subgraph PATH4 ["경로 4: 챌린지 영상 등록 & 100% 페이백"]
+        COMM_IN["02-D W05-COMM (챌린지)<br/>CHALLENGE-PAYBACK-01<br/>• 영상 URL 등록 & 100% 환급"]
+    end
+
+    subgraph PATH5 ["경로 5: 인플루언서 콜라보 한정판 드롭"]
+        DROP["02-E W05-DROP<br/>COLLABO-DROP-01 콘솔<br/>• 사인 틴케이스 선착순"]
+    end
+
+    subgraph TRANSACT ["TRANSACT: 공통 장바구니 결제 & 완료 모달"]
+        DRAWER["W05-DRAWER (슬라이드아웃 Cart)<br/>• 일반/구독/콜라보 1초 간편결제<br/>• 가상 스크롤 100% 위치 복원"]
+        DONE["W05-DONE (통합 완료 모달)<br/>• BGM 라이선스 키 발급<br/>• 카카오 알림톡 즉시 발송"]
+        DRAWER --> DONE
+    end
+
+    subgraph LOOP ["LOOP: 숏폼 소셜 바이럴 순환 루프"]
+        LOOP_NODE["W05-LOOP (페이백 순환)<br/>• SNS 업로드 ➔ 100% 페이백 ➔ 신상 구매<br/>• 크리에이터 랭킹 보드 갱신"]
+    end
+
+    HOME --> REELS
+    HOME --> STUDIO
+    HOME --> SUB
+    HOME --> COMM_IN
+    HOME --> DROP
+
+    REELS --> DRAWER
+    STUDIO --> DRAWER
+    SUB --> DRAWER
+    DROP --> DRAWER
+    COMM_IN --> LOOP_NODE
+    DONE --> LOOP_NODE
+
+    LOOP_NODE -.->|적립금 환급으로 다음 달 신상 레시피 재구매| HOME
+    DONE -.->|쇼핑 계속하기 스크롤 복원| HOME
+
+    class HOME home;
+    class REELS,DROP explore;
+    class STUDIO,SUB,COMM_IN atelier;
+    class DRAWER,DONE action;
+    class LOOP_NODE support;

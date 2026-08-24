@@ -1,0 +1,36 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef catalog fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef build fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W09-HOME (선물 진입)<br/>• [코드 각인 선물] 클릭"]
+    CATALOG["02 W09-CATALOG (틴 선택)<br/>• 매트 블랙 틴세트 스펙 확인"]
+    BUILD["03 W09-BUILD (3D 코드 각인)<br/>• CODE-ENGRAVER-01 커밋 잔디 각인"]
+    CARD["04 W09-BUILD (터미널 카드)<br/>• git commit 감성 카드 작성"]
+    DRAWER["05 W09-DRAWER (선물 결제)<br/>• GIT-GIFT-01 카카오 결제"]
+    
+    ADDR_CHECK{"06 주소 보유<br/>여부 확인"}
+    
+    DONE["07 W09-DONE (모바일 카드)<br/>• 3D 터미널 언박싱 바우처"]
+    COMM["F1 W09-COMM (디스코드 연동)<br/>• 디스코드 웹훅 알림"]
+
+    HOME --> CATALOG
+    CATALOG --> BUILD
+    BUILD --> CARD
+    CARD --> DRAWER
+    DRAWER --> ADDR_CHECK
+    
+    ADDR_CHECK -->|주소 확인 완료| DONE
+    ADDR_CHECK -->|주소 입력 링크 전송| DONE
+    
+    DONE --> COMM
+
+    class HOME home;
+    class CATALOG catalog;
+    class BUILD,CARD build;
+    class ADDR_CHECK decision;
+    class DRAWER,DONE drawer;
+    class COMM support;

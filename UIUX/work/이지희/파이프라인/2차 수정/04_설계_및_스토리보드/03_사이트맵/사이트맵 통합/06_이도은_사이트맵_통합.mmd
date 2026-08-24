@@ -1,0 +1,51 @@
+graph TD
+    classDef root fill:#0D47A1,stroke:#01579B,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef gnb fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef lnb fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef detail fill:#FFF8E1,stroke:#F57F17,stroke-width:1.5px,color:#E65100;
+    classDef aside fill:#E1F5FE,stroke:#0277BD,stroke-width:1.5px,color:#01579B;
+
+    ROOT["🏠 W06-HOME (미니멀 안식처 허브)<br/>• 무채색 3D 캔버스<br/>• 조도 70% 딤드"]
+
+    GNB1["🏢 GNB-01: 오브제 도감<br/>(W06-CATALOG)"]
+    GNB2["📐 GNB-02: 3D 공간 매칭<br/>(W06-BUILD)"]
+    GNB3["🌙 GNB-03: 432Hz 캄테크<br/>(W06-RITUAL)"]
+    GNB4["📑 GNB-04: 포트폴리오 & B2B<br/>(W06-COMM)"]
+
+    ROOT --> GNB1
+    ROOT --> GNB2
+    ROOT --> GNB3
+    ROOT --> GNB4
+
+    %% GNB1
+    CERT["📜 ZERO-KTR-01 성적서"]
+    TIN["🖤 매트 블랙 틴"]
+    GNB1 --> CERT
+    GNB1 --> TIN
+
+    %% GNB2
+    SPACE["📐 MINIMAL-SPACE-01 3D 선반"]
+    ENGRAVE["⚡ MONO-ENGRAVER-01 각인"]
+    GNB2 --> SPACE
+    GNB2 --> ENGRAVE
+
+    %% GNB3
+    CALM["🌙 CALM-PLAYER-01 180초 타이머"]
+    DIARY["📝 MINIMAL-DIARY-01 감정 저널"]
+    GNB3 --> CALM
+    GNB3 --> DIARY
+
+    %% GNB4
+    FEED["🏢 인테리어 시공 피드"]
+    B2B["📑 DESIGNER-ESTIMATE-01 견적"]
+    GNB4 --> FEED
+    GNB4 --> B2B
+
+    DRAWER["🛒 Aside: W06-DRAWER<br/>• 20% 번들 / 30일 구독 / B2B 세금계산서"]
+    ROOT -.-> DRAWER
+
+    class ROOT root;
+    class GNB1,GNB2,GNB3,GNB4 gnb;
+    class CERT,TIN lnb;
+    class SPACE,ENGRAVE,CALM,DIARY,FEED,B2B detail;
+    class DRAWER aside;

@@ -1,0 +1,53 @@
+flowchart TD
+    classDef root fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef main fill:#E8F5E9,stroke:#2E7D32,stroke-width:2px,color:#1B5E20,font-weight:bold;
+    classDef sub fill:#E1F5FE,stroke:#0277BD,stroke-width:1.5px,color:#01579B;
+    classDef act fill:#FFF8E1,stroke:#F57F17,stroke-width:1.5px,color:#E65100;
+    classDef common fill:#ECEFF1,stroke:#455A64,stroke-width:1.5px,color:#263238;
+    classDef exp fill:#FFEBEE,stroke:#C62828,stroke-width:1.5px,color:#B71C1C;
+
+    ROOT["WICKETA 박지후 플랫폼 루트<br/>(오피스 웰니스)"]
+    HOME["W07-HOME<br/>오피스 웰니스 홈"]
+    CALC["W07-CALC<br/>소진량 계산기"]
+    BULK["W07-BULK<br/>탕비실 도감 (6대 LNB)"]
+    SUB["W07-SUBSCRIBE<br/>오피스 정기배송"]
+    WEL["W07-WELCOME<br/>웰컴 키트 빌더"]
+    EVT["W07-EVENT<br/>타운홀 패키지"]
+    COMM["W07-COMM<br/>재발주 콘솔"]
+    DONE["W07-DONE<br/>발주 완료"]
+    DRAWER["W07-DRAWER<br/>슬라이드아웃 장바구니"]
+
+    EXP1["EXP-01<br/>404 페이지 찾을 수 없음"]
+    EXP2["EXP-02<br/>품절 대체 안내"]
+    EXP3["EXP-03<br/>네트워크 오류 모달"]
+
+    ROOT --> HOME
+    HOME --> CALC
+    HOME --> BULK
+    HOME --> SUB
+    HOME --> WEL
+    HOME --> EVT
+
+    CALC --> BULK
+    BULK --> SUB
+    BULK --> WEL
+    BULK --> EVT
+    SUB --> DRAWER
+    WEL --> DRAWER
+    EVT --> DRAWER
+
+    COMM --> HOME
+    DRAWER --> DONE
+    DONE --> COMM
+    DONE --> HOME
+
+    HOME -.-> EXP1
+    BULK -.-> EXP2
+    DRAWER -.-> EXP3
+
+    class ROOT root;
+    class HOME main;
+    class CALC,BULK,SUB,WEL,EVT sub;
+    class COMM,DONE act;
+    class DRAWER common;
+    class EXP1,EXP2,EXP3 exp;

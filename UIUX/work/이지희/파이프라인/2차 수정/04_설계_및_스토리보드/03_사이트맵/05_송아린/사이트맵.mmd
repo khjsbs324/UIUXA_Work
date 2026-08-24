@@ -1,0 +1,51 @@
+flowchart TD
+    classDef root fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef main fill:#E8F5E9,stroke:#2E7D32,stroke-width:2px,color:#1B5E20,font-weight:bold;
+    classDef sub fill:#E1F5FE,stroke:#0277BD,stroke-width:1.5px,color:#01579B;
+    classDef act fill:#FFF8E1,stroke:#F57F17,stroke-width:1.5px,color:#E65100;
+    classDef common fill:#ECEFF1,stroke:#455A64,stroke-width:1.5px,color:#263238;
+    classDef exp fill:#FFEBEE,stroke:#C62828,stroke-width:1.5px,color:#B71C1C;
+
+    ROOT["WICKETA 송아린 플랫폼 루트<br/>(미식 페어링 살롱)"]
+    HOME["W05-HOME<br/>미식 페어링 살롱 홈"]
+    PAIR["W05-PAIRING<br/>코스 페어링 계산기"]
+    VIN["W05-VINTAGE<br/>소믈리에 도감 (6대 LNB)"]
+    SOM["W05-SOMMELIER<br/>소믈리에 스토리"]
+    CLASS["W05-CLASS<br/>페어링 클래스 예약"]
+    GIFT["W05-GIFT<br/>옻칠함 각인 아틀리에"]
+    COMM["W05-COMM<br/>테이스팅 아카이브"]
+    DONE["W05-DONE<br/>주문 및 예약 완료"]
+    DRAWER["W05-DRAWER<br/>슬라이드아웃 장바구니"]
+
+    EXP1["EXP-01<br/>404 페이지 찾을 수 없음"]
+    EXP2["EXP-02<br/>품절 대체 안내"]
+    EXP3["EXP-03<br/>네트워크 오류 모달"]
+
+    ROOT --> HOME
+    HOME --> PAIR
+    HOME --> VIN
+    HOME --> SOM
+    HOME --> CLASS
+
+    PAIR --> VIN
+    VIN --> SOM
+    VIN --> GIFT
+    SOM --> CLASS
+    GIFT --> DRAWER
+    CLASS --> DONE
+
+    COMM --> HOME
+    DRAWER --> DONE
+    DONE --> COMM
+    DONE --> HOME
+
+    HOME -.-> EXP1
+    VIN -.-> EXP2
+    PAIR -.-> EXP3
+
+    class ROOT root;
+    class HOME main;
+    class PAIR,VIN,SOM,CLASS,GIFT sub;
+    class COMM,DONE act;
+    class DRAWER common;
+    class EXP1,EXP2,EXP3 exp;

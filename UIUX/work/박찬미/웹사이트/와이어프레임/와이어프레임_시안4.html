@@ -1,0 +1,2683 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HALO | 운동의 흐름을 멈추지 않는 선케어 기어 (최종 통합 와이어프레임 v2.0)</title>
+  <style>
+    /* ==========================================================================
+       HALO 100% Pure Monochrome Wireframe Design System (완전 흑백 무(無)아이콘 와이어프레임)
+       ========================================================================== */
+    :root {
+      --halo-black: #000000;
+      --halo-white: #FFFFFF;
+      --halo-gray-bg: #F8FAFC;
+      --halo-gray-light: #E2E8F0;
+      --halo-gray-mid: #64748B;
+      --halo-gray-dark: #1E293B;
+
+      --border-thick: 2px solid #000000;
+      --border-thin: 1px solid #000000;
+      --border-dash: 2px dashed #000000;
+      --radius-sm: 0px;
+      --radius-md: 0px;
+      --max-width: 1400px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Segoe UI", Roboto, sans-serif; -webkit-font-smoothing: antialiased; }
+    body { background-color: var(--halo-white); color: var(--halo-black); line-height: 1.5; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    /* Layout Containers */
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 32px; }
+    .section-spacing { padding: 88px 0; border-bottom: var(--border-thick); }
+    
+    /* Technical Badges (Pure Monochrome) */
+    .wireframe-badge { 
+      display: inline-block; 
+      padding: 4px 10px; 
+      font-size: 11px; 
+      font-weight: 900; 
+      letter-spacing: 0.1em; 
+      text-transform: uppercase; 
+      border: var(--border-thick); 
+      background: var(--halo-white); 
+      color: var(--halo-black); 
+    }
+    .wireframe-badge.dark { background: var(--halo-black); color: var(--halo-white); }
+    .wireframe-badge.ice { 
+      background: var(--halo-gray-bg); 
+      color: var(--halo-black); 
+      border-style: dashed; 
+    }
+    .wireframe-badge.lime { 
+      background: var(--halo-gray-bg); 
+      color: var(--halo-black); 
+      border-style: solid; 
+    }
+
+    /* Section Headers */
+    .section-header { text-align: center; margin-bottom: 52px; }
+    .section-header .sub-title { 
+      font-size: 12px; 
+      font-weight: 900; 
+      letter-spacing: 0.18em; 
+      color: var(--halo-black); 
+      margin-bottom: 10px; 
+      text-transform: uppercase; 
+      display: inline-flex; 
+      align-items: center; 
+      gap: 8px; 
+    }
+    .section-header .sub-title::before, .section-header .sub-title::after {
+      content: ""; 
+      width: 16px; 
+      height: 2px; 
+      background: var(--halo-black); 
+    }
+    .section-header .main-title { 
+      font-size: 36px; 
+      font-weight: 900; 
+      letter-spacing: -0.04em; 
+      color: var(--halo-black); 
+      margin-bottom: 14px; 
+    }
+    .section-header .desc { 
+      font-size: 15px; 
+      color: var(--halo-gray-dark); 
+      max-width: 760px; 
+      margin: 0 auto; 
+      line-height: 1.7; 
+    }
+
+    /* ==========================================================================
+       00. GNB Header & Mobile Navigation System (BC-M1, BC-M2)
+       ========================================================================== */
+    .halo-gnb { position: fixed; top: 0; left: 0; width: 100%; height: 68px; background: #FFFFFF; border-bottom: var(--border-thick); z-index: 1000; }
+    .gnb-inner { max-width: var(--max-width); margin: 0 auto; height: 100%; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; }
+    .gnb-logo { font-size: 22px; font-weight: 900; letter-spacing: -0.05em; display: flex; align-items: center; gap: 8px; }
+    .gnb-logo .logo-tag { font-size: 10px; padding: 2px 6px; border: var(--border-thick); background: var(--halo-black); color: var(--halo-white); font-weight: 900; }
+    .gnb-nav { display: flex; gap: 28px; }
+    .gnb-nav a { font-size: 13px; font-weight: 800; color: var(--halo-black); }
+    .gnb-nav a:hover { text-decoration: underline; }
+    .gnb-actions { display: flex; align-items: center; gap: 12px; }
+    .btn-compare-gnb { padding: 8px 14px; border: var(--border-thick); font-size: 12px; font-weight: 900; display: flex; align-items: center; gap: 6px; background: var(--halo-white); }
+    .btn-compare-gnb .count-badge { width: 18px; height: 18px; background: var(--halo-black); color: var(--halo-white); border-radius: 50%; font-size: 10px; display: inline-flex; align-items: center; justify-content: center; }
+    .btn-alert-gnb { padding: 8px 16px; background: var(--halo-black); color: var(--halo-white); font-size: 12px; font-weight: 900; border: var(--border-thick); }
+    .btn-mobile-menu-toggle { display: none; width: 40px; height: 40px; border: var(--border-thick); background: var(--halo-white); align-items: center; justify-content: center; font-size: 13px; font-weight: 900; cursor: pointer; }
+
+    /* Mobile Drawer */
+    .mobile-drawer-backdrop { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.75); z-index: 2500; display: none; opacity: 0; transition: opacity 0.2s; }
+    .mobile-drawer-backdrop.active { display: block; opacity: 1; }
+    .mobile-drawer-panel { position: fixed; top: 0; right: 0; width: 320px; max-width: 85vw; height: 100%; background: var(--halo-white); border-left: var(--border-thick); z-index: 2600; transform: translateX(100%); transition: transform 0.25s ease; display: flex; flex-direction: column; justify-content: space-between; padding: 24px; }
+    .mobile-drawer-backdrop.active .mobile-drawer-panel { transform: translateX(0); }
+    .drawer-top-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 16px; border-bottom: var(--border-thick); }
+    .drawer-logo { font-size: 18px; font-weight: 900; }
+    .btn-drawer-close { width: 34px; height: 34px; border: var(--border-thick); background: var(--halo-white); font-size: 14px; font-weight: 900; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+    .drawer-nav-list { display: flex; flex-direction: column; gap: 8px; margin: 24px 0; }
+    .drawer-nav-item { display: flex; justify-content: space-between; align-items: center; padding: 14px 10px; font-size: 14px; font-weight: 800; border-bottom: var(--border-thin); }
+    .drawer-bottom-actions { display: flex; flex-direction: column; gap: 10px; padding-top: 16px; border-top: var(--border-thick); }
+    .drawer-slogan { font-size: 11px; color: var(--halo-gray-mid); font-weight: 800; text-align: center; }
+
+    /* Mobile Switcher */
+    .mobile-view-ctrl-bar { display: none; align-items: center; justify-content: space-between; margin-bottom: 16px; padding: 10px 14px; background: var(--halo-gray-bg); border: var(--border-thick); }
+    .mobile-swipe-hint { font-size: 12px; font-weight: 900; color: var(--halo-black); }
+    .btn-view-toggle { padding: 6px 12px; border: var(--border-thin); background: #FFF; font-size: 11px; font-weight: 900; cursor: pointer; }
+    .btn-view-toggle.active { background: var(--halo-black); color: var(--halo-white); border-color: var(--halo-black); }
+
+    /* ==========================================================================
+       01. Flagship Hero Section (Pure Monochrome Wireframe)
+       ========================================================================== */
+    .hero-section { margin-top: 68px; padding: 72px 0 88px; background: var(--halo-white); border-bottom: var(--border-thick); }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 48px; align-items: center; }
+    .hero-content { display: flex; flex-direction: column; gap: 20px; }
+    .hero-manifesto { font-size: 12px; font-weight: 900; letter-spacing: 0.18em; text-transform: uppercase; color: var(--halo-black); display: flex; align-items: center; gap: 8px; }
+    .hero-headline { font-size: 48px; font-weight: 900; line-height: 1.15; letter-spacing: -0.04em; color: var(--halo-black); }
+    .hero-subhead { font-size: 16px; color: var(--halo-gray-dark); line-height: 1.75; }
+    .hero-cta-wrap { display: flex; gap: 14px; margin-top: 8px; }
+    .btn-hero-primary { flex: 1; padding: 14px 22px; background: var(--halo-black); color: var(--halo-white); font-weight: 900; font-size: 14px; border: var(--border-thick); text-align: center; }
+    .btn-hero-secondary { padding: 14px 26px; background: var(--halo-white); color: var(--halo-black); font-weight: 900; font-size: 14px; border: var(--border-thick); }
+
+    .hero-gear-box { background: var(--halo-white); border: var(--border-thick); padding: 26px; text-align: center; }
+    .hero-cinematic-placeholder { 
+      width: 100%; 
+      height: 330px; 
+      border: var(--border-dash); 
+      background: var(--halo-gray-bg); 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+      justify-content: center; 
+      gap: 12px; 
+      margin-bottom: 20px; 
+      position: relative; 
+      padding: 24px; 
+    }
+    .hero-cinematic-placeholder .tag { 
+      position: absolute; 
+      top: 14px; 
+      left: 14px; 
+      font-size: 10px; 
+      background: var(--halo-black); 
+      color: #fff; 
+      padding: 3px 8px; 
+      font-weight: 900; 
+      letter-spacing: 0.1em; 
+    }
+    .hero-temp-indicator { 
+      position: absolute; 
+      top: 14px; 
+      right: 14px; 
+      font-size: 11px; 
+      font-weight: 900; 
+      background: var(--halo-white); 
+      color: var(--halo-black); 
+      border: var(--border-thick); 
+      padding: 3px 8px; 
+    }
+    .carabiner-selector-bar { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 16px; }
+    .carabiner-dot { width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--halo-black); cursor: pointer; position: relative; }
+    .carabiner-dot.active { box-shadow: 0 0 0 3px var(--halo-black); transform: scale(1.15); }
+    .carabiner-dot.black { background: #000000; }
+    .carabiner-dot.stealth { background: #555555; }
+    .carabiner-dot.silver { background: #CCCCCC; }
+    .carabiner-dot.white { background: #FFFFFF; }
+
+    /* ==========================================================================
+       02. Brand Philosophy: 방식 A (Pure Monochrome Wireframe)
+       ========================================================================== */
+    .philosophy-section { padding: 88px 0; background: var(--halo-gray-bg); border-bottom: var(--border-thick); }
+    .philosophy-visual-hero { 
+      background: var(--halo-white); 
+      border: var(--border-thick); 
+      padding: 40px 36px; 
+      margin-bottom: 24px; 
+    }
+    .philosophy-hero-top { display: flex; justify-content: space-between; align-items: center; border-bottom: var(--border-thin); padding-bottom: 14px; margin-bottom: 20px; flex-wrap: wrap; gap: 8px; }
+    .philosophy-tag-badge { font-size: 11px; font-weight: 900; padding: 4px 10px; background: var(--halo-black); color: var(--halo-white); }
+    .philosophy-author-tag { font-size: 12px; font-weight: 900; color: var(--halo-black); }
+    .philosophy-statement-headline { font-size: 30px; font-weight: 900; line-height: 1.3; letter-spacing: -0.03em; margin-bottom: 14px; color: var(--halo-black); }
+    .philosophy-statement-desc { font-size: 14.5px; color: var(--halo-gray-dark); line-height: 1.75; max-width: 900px; }
+    
+    .philosophy-proof-cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .philosophy-proof-card { 
+      background: var(--halo-white); 
+      border: var(--border-thick); 
+      padding: 26px; 
+      display: flex; 
+      flex-direction: column; 
+      justify-content: space-between; 
+    }
+    .proof-card-top { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .proof-badge-num { font-size: 12px; font-weight: 900; background: var(--halo-black); color: var(--halo-white); width: 26px; height: 26px; display: inline-flex; align-items: center; justify-content: center; }
+    .proof-card-heading { font-size: 17px; font-weight: 900; color: var(--halo-black); }
+    .proof-card-paragraph { font-size: 13px; color: var(--halo-gray-dark); line-height: 1.65; margin-bottom: 14px; }
+    .proof-metric-pill { 
+      font-size: 11px; 
+      font-weight: 900; 
+      color: var(--halo-black); 
+      background: var(--halo-gray-bg); 
+      padding: 5px 10px; 
+      border: var(--border-thin); 
+      width: fit-content; 
+    }
+
+    /* ==========================================================================
+       03. Core Flagship Showcase: 1-Screen 1-Flagship (Pure Monochrome Wireframe)
+       ========================================================================== */
+    .flagship-showcase-section { padding: 88px 0; border-bottom: var(--border-thick); background: var(--halo-white); }
+    .flagship-showcase-section.alt { background: var(--halo-gray-bg); }
+    .flagship-header-bar { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 32px; padding-bottom: 14px; border-bottom: var(--border-thick); }
+    .flagship-showcase-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    .flagship-showcase-grid.reverse { direction: rtl; }
+    .flagship-showcase-grid.reverse > * { direction: ltr; }
+    
+    .flagship-visual-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .flagship-visual-box { 
+      border: var(--border-thick); 
+      background: var(--halo-white); 
+      height: 290px; 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+      justify-content: center; 
+      padding: 18px; 
+      text-align: center; 
+      position: relative; 
+    }
+    .flagship-visual-box.hardware { 
+      background: var(--halo-white); 
+      border-style: solid; 
+    }
+    .flagship-visual-box.action { 
+      background: var(--halo-gray-bg); 
+      border-style: dashed; 
+    }
+    .flagship-visual-box .visual-label { 
+      position: absolute; 
+      top: 10px; 
+      left: 10px; 
+      font-size: 10px; 
+      font-weight: 900; 
+      padding: 2px 6px; 
+      background: var(--halo-black); 
+      color: var(--halo-white); 
+    }
+    
+    .flagship-info-card { display: flex; flex-direction: column; gap: 16px; }
+    .flagship-sku-badge { font-size: 11px; font-weight: 900; letter-spacing: 0.1em; color: var(--halo-black); }
+    .flagship-name { font-size: 28px; font-weight: 900; line-height: 1.2; letter-spacing: -0.03em; }
+    .flagship-key-mechanism-box { 
+      background: var(--halo-white); 
+      border: var(--border-thick); 
+      padding: 20px; 
+    }
+    .flagship-key-mechanism-box .mech-tag { 
+      font-size: 10px; 
+      font-weight: 900; 
+      letter-spacing: 0.08em; 
+      text-transform: uppercase; 
+      margin-bottom: 6px; 
+      color: var(--halo-black); 
+    }
+    .flagship-key-mechanism-box .mech-title { font-size: 15px; font-weight: 900; margin-bottom: 6px; }
+    .flagship-key-mechanism-box .mech-desc { font-size: 12.5px; color: var(--halo-gray-dark); line-height: 1.6; }
+    .flagship-specs-pill-bar { display: flex; gap: 8px; flex-wrap: wrap; }
+    .flagship-spec-pill { 
+      background: var(--halo-white); 
+      border: var(--border-thin); 
+      padding: 6px 10px; 
+      font-size: 11px; 
+      font-weight: 800; 
+    }
+    .flagship-actions-row { display: flex; gap: 10px; margin-top: 4px; }
+
+    /* ==========================================================================
+       04. 4-Step R&D Process: ANCORS-Inspired Wide Horizontal Timeline Gallery
+       ========================================================================== */
+    .process-section { padding: 88px 0; border-bottom: var(--border-thick); background: var(--halo-white); }
+    .process-header-ancors { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 36px; }
+    .process-headline-ancors { font-size: 38px; font-weight: 900; line-height: 1.15; letter-spacing: -0.04em; color: var(--halo-black); }
+    .process-subhead-ancors { font-size: 15px; color: var(--halo-gray-dark); margin-top: 12px; max-width: 620px; font-weight: 500; }
+    .process-status-dot { width: 12px; height: 12px; background: var(--halo-black); border-radius: 50%; display: inline-block; }
+    
+    .process-horizontal-track { 
+      display: flex; 
+      gap: 24px; 
+      overflow-x: auto; 
+      scroll-snap-type: x mandatory; 
+      padding-bottom: 24px; 
+      -webkit-overflow-scrolling: touch; 
+      scrollbar-width: thin; 
+    }
+    .process-large-card { 
+      flex: 0 0 580px; 
+      height: 430px; 
+      border: var(--border-thick); 
+      background: var(--halo-white); 
+      position: relative; 
+      scroll-snap-align: start; 
+      display: flex; 
+      flex-direction: column; 
+      justify-content: space-between; 
+      padding: 34px 30px; 
+      overflow: hidden; 
+    }
+    .process-large-card .card-step-badge { 
+      font-size: 11px; 
+      font-weight: 900; 
+      letter-spacing: 0.15em; 
+      background: var(--halo-black); 
+      color: var(--halo-white); 
+      padding: 4px 10px; 
+      width: fit-content; 
+    }
+    .process-large-card .card-bg-wireframe { 
+      position: absolute; 
+      top: 0; 
+      left: 0; 
+      width: 100%; 
+      height: 100%; 
+      background: var(--halo-white); 
+      z-index: 1; 
+      border-bottom: 1px solid var(--halo-gray-light); 
+    }
+    .process-large-card .card-content-overlay { 
+      position: relative; 
+      z-index: 2; 
+      height: 100%; 
+      display: flex; 
+      flex-direction: column; 
+      justify-content: space-between; 
+    }
+    .process-large-card .card-center-title { 
+      font-size: 40px; 
+      font-weight: 900; 
+      letter-spacing: 0.05em; 
+      text-transform: uppercase; 
+      color: var(--halo-black); 
+      text-align: center; 
+      margin: auto 0; 
+    }
+    .process-large-card .card-bottom-caption { 
+      font-size: 13.5px; 
+      font-weight: 700; 
+      color: var(--halo-gray-dark); 
+      line-height: 1.6; 
+      text-align: center; 
+      max-width: 480px; 
+      margin: 0 auto; 
+      background: var(--halo-white); 
+      padding: 12px 18px; 
+      border: var(--border-thick); 
+    }
+    
+    .process-scroll-controls { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      margin-top: 16px; 
+      padding-top: 16px; 
+      border-top: var(--border-thick); 
+    }
+    .process-scroll-hint { 
+      font-size: 12px; 
+      font-weight: 900; 
+      color: var(--halo-gray-mid); 
+    }
+    .process-nav-btns { display: flex; gap: 10px; }
+    .btn-process-scroll { 
+      padding: 8px 18px; 
+      border: var(--border-thick); 
+      background: var(--halo-white); 
+      font-size: 13px; 
+      font-weight: 900; 
+      cursor: pointer; 
+    }
+    .btn-process-scroll:hover { 
+      background: var(--halo-black); 
+      color: var(--halo-white); 
+    }
+    .metrics-bar { 
+      display: grid; 
+      grid-template-columns: repeat(4, 1fr); 
+      gap: 16px; 
+      background: var(--halo-black); 
+      color: var(--halo-white); 
+      padding: 28px; 
+      border: var(--border-thick); 
+    }
+    .metric-item { text-align: center; border-right: 1px solid #333333; }
+    .metric-item:last-child { border-right: none; }
+    .metric-item .val { font-size: 32px; font-weight: 900; letter-spacing: -0.03em; }
+    .metric-item .lbl { font-size: 11px; color: #CCCCCC; font-weight: 800; margin-top: 4px; }
+
+    /* ==========================================================================
+       05. Pre/In/Post Routine: 3-Phase Immersive Screen Sequence
+       ========================================================================== */
+    .routine-sequence-wrap { display: flex; flex-direction: column; gap: 36px; margin: 36px 0; }
+    .routine-phase-screen { 
+      border: var(--border-thick); 
+      background: var(--halo-white); 
+      padding: 36px; 
+      display: grid; 
+      grid-template-columns: 1fr 1fr; 
+      gap: 36px; 
+      align-items: center; 
+      position: relative; 
+    }
+    .routine-phase-screen.in-motion-screen { 
+      background: var(--halo-gray-bg); 
+      border-width: 3px; 
+    }
+    .routine-phase-screen.reverse { direction: rtl; }
+    .routine-phase-screen.reverse > * { direction: ltr; }
+    
+    .phase-visual-canvas { 
+      height: 320px; 
+      border: var(--border-thick); 
+      background: var(--halo-gray-bg); 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+      justify-content: center; 
+      text-align: center; 
+      padding: 24px; 
+      position: relative; 
+    }
+    .routine-phase-screen.in-motion-screen .phase-visual-canvas { background: var(--halo-white); }
+    .phase-canvas-tag { position: absolute; top: 12px; left: 12px; font-size: 10px; font-weight: 900; background: var(--halo-black); color: var(--halo-white); padding: 2px 6px; }
+    .phase-canvas-title { font-size: 17px; font-weight: 900; color: var(--halo-black); margin-bottom: 8px; }
+    .phase-canvas-desc { font-size: 12px; color: var(--halo-gray-dark); max-width: 420px; line-height: 1.6; }
+    
+    .phase-info-content { display: flex; flex-direction: column; gap: 16px; }
+    .phase-step-tag { font-size: 11px; font-weight: 900; letter-spacing: 0.12em; color: var(--halo-gray-mid); }
+    .phase-heading { font-size: 26px; font-weight: 900; line-height: 1.25; letter-spacing: -0.03em; color: var(--halo-black); }
+    .phase-narrative { font-size: 14px; color: var(--halo-gray-dark); line-height: 1.7; }
+    
+    .phase-recommended-gears { 
+      border: var(--border-thick); 
+      background: var(--halo-white); 
+      padding: 14px 18px; 
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between; 
+      gap: 12px; 
+    }
+    .phase-gear-info { display: flex; align-items: center; gap: 12px; }
+    .phase-gear-thumb { width: 44px; height: 44px; border: var(--border-thick); background: var(--halo-gray-bg); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 900; }
+    .phase-metric-badge-row { display: flex; gap: 6px; flex-wrap: wrap; }
+    .phase-metric-pill { font-size: 11px; font-weight: 900; padding: 4px 8px; background: var(--halo-gray-bg); border: var(--border-thin); }
+    .routine-phase-screen.in-motion-screen .phase-metric-pill { background: var(--halo-black); color: var(--halo-white); }
+
+    .sequence-connector-bar { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 10px 0; font-size: 12px; font-weight: 900; color: var(--halo-gray-mid); }
+    .sequence-connector-line { flex: 1; height: 2px; background: repeating-linear-gradient(90deg, #000, #000 6px, transparent 6px, transparent 12px); }
+
+    .bundle-package-box { border: var(--border-thick); background: var(--halo-gray-bg); padding: 32px; margin-top: 32px; }
+    .bundle-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: var(--border-thin); padding-bottom: 12px; }
+    .bundle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .bundle-card { background: var(--halo-white); border: var(--border-thick); padding: 20px; display: flex; flex-direction: column; justify-content: space-between; }
+    .bundle-items-row { display: flex; gap: 6px; margin: 12px 0; flex-wrap: wrap; }
+    .bundle-mini-tag { font-size: 11px; padding: 3px 8px; border: var(--border-thin); background: var(--halo-gray-bg); font-weight: 800; }
+
+    /* ==========================================================================
+       06. 5 Sports Collections: Sport Visual + 1 Flagship Product
+       ========================================================================== */
+    .collection-tabs-bar { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 12px; margin-bottom: 28px; border-bottom: var(--border-thick); -webkit-overflow-scrolling: touch; }
+    .col-tab-btn { padding: 12px 20px; border: var(--border-thick); background: var(--halo-white); font-size: 13px; font-weight: 900; white-space: nowrap; cursor: pointer; }
+    .col-tab-btn.active { background: var(--halo-black); color: var(--halo-white); }
+    
+    .collection-showcase-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 28px; margin-bottom: 36px; }
+    .collection-visual-hero { background: var(--halo-white); border: var(--border-thick); padding: 32px; display: flex; flex-direction: column; justify-content: space-between; gap: 20px; }
+    .scene-canvas-box { width: 100%; height: 220px; border: var(--border-thick); background: var(--halo-gray-bg); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; position: relative; }
+    .scene-canvas-tag { position: absolute; top: 12px; left: 12px; font-size: 10px; font-weight: 900; background: var(--halo-black); color: var(--halo-white); padding: 2px 6px; }
+    .scene-canvas-title { font-size: 18px; font-weight: 900; margin-bottom: 6px; color: var(--halo-black); }
+    .scene-canvas-desc { font-size: 12px; color: var(--halo-gray-dark); max-width: 440px; line-height: 1.5; }
+    
+    .scene-header-block { border-bottom: var(--border-thin); padding-bottom: 16px; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; }
+    .scene-title { font-size: 24px; font-weight: 900; margin-bottom: 6px; letter-spacing: -0.03em; color: var(--halo-black); }
+    .scene-desc { font-size: 13px; color: var(--halo-gray-dark); line-height: 1.6; max-width: 650px; }
+    
+    .scene-specs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .scene-spec-box { background: var(--halo-gray-bg); border: var(--border-thick); padding: 14px 12px; display: flex; flex-direction: column; justify-content: flex-start; }
+    .scene-spec-box .box-lbl { font-size: 10px; font-weight: 900; color: var(--halo-black); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 6px; }
+    .scene-spec-box .box-title { font-size: 13px; font-weight: 900; color: var(--halo-black); margin-bottom: 4px; }
+    .scene-spec-box .box-desc { font-size: 11px; color: var(--halo-gray-dark); line-height: 1.45; }
+    .scene-jump-btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: var(--halo-black); color: var(--halo-white); font-size: 12px; font-weight: 900; border: var(--border-thick); cursor: pointer; text-decoration: none; width: fit-content; }
+
+    .col-flagship-card { background: var(--halo-white); border: var(--border-thick); padding: 28px; display: flex; flex-direction: column; justify-content: space-between; gap: 16px; position: relative; }
+    .col-flagship-header { display: flex; justify-content: space-between; align-items: flex-start; }
+    .col-flagship-img-box { width: 100%; height: 180px; border: var(--border-thick); background: var(--halo-gray-bg); display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; text-align: center; padding: 16px; }
+    .col-flagship-persona { font-size: 10px; font-weight: 900; background: var(--halo-black); color: var(--halo-white); padding: 2px 6px; position: absolute; bottom: 8px; left: 8px; }
+    .col-flagship-name { font-size: 20px; font-weight: 900; letter-spacing: -0.02em; color: var(--halo-black); margin-bottom: 6px; }
+    .col-flagship-feature { font-size: 12px; color: var(--halo-gray-dark); line-height: 1.55; margin-bottom: 12px; }
+    .col-flagship-specs-row { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
+    .col-flagship-spec-tag { font-size: 11px; padding: 3px 8px; border: var(--border-thin); background: var(--halo-gray-bg); font-weight: 800; }
+    .col-flagship-price-row { display: flex; justify-content: space-between; align-items: center; padding-top: 12px; border-top: var(--border-thin); font-size: 16px; font-weight: 900; }
+    .col-flagship-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+
+    /* ==========================================================================
+       07. Shop All 16 SKUs: Uniform 4-Column Catalog Grid
+       ========================================================================== */
+    .shop-all-section { padding: 88px 0; border-top: 4px solid #000000; background: var(--halo-white); }
+    .catalog-transition-banner { background: var(--halo-gray-bg); border: var(--border-thick); padding: 24px 32px; margin-bottom: 36px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .catalog-tag-badge { font-size: 11px; font-weight: 900; letter-spacing: 0.12em; background: var(--halo-black); color: var(--halo-white); padding: 3px 8px; }
+    .catalog-title { font-size: 26px; font-weight: 900; letter-spacing: -0.03em; margin-top: 4px; color: var(--halo-black); }
+    
+    .filter-panel-box { border: var(--border-thick); background: var(--halo-white); padding: 24px; margin-bottom: 28px; }
+    .filter-group-row { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; flex-wrap: wrap; }
+    .filter-group-row:last-child { margin-bottom: 0; }
+    .filter-label { font-size: 12px; font-weight: 900; width: 75px; color: var(--halo-black); text-transform: uppercase; }
+    .filter-chips-wrap { display: flex; gap: 8px; flex-wrap: wrap; flex: 1; }
+    .filter-chip { padding: 6px 14px; border: var(--border-thin); background: var(--halo-white); font-size: 12px; font-weight: 800; cursor: pointer; }
+    .filter-chip.active { background: var(--halo-black); color: var(--halo-white); border-color: var(--halo-black); }
+    
+    .filter-meta-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 12px; border-bottom: var(--border-thick); font-size: 13px; font-weight: 900; }
+    .btn-reset-filters { font-size: 11px; padding: 5px 12px; border: var(--border-thin); background: var(--halo-white); font-weight: 900; cursor: pointer; }
+    .btn-reset-filters:hover { background: var(--halo-black); color: var(--halo-white); }
+
+    .shop-all-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .sku-card { border: var(--border-thick); background: var(--halo-white); display: flex; flex-direction: column; justify-content: space-between; padding: 20px; position: relative; }
+    .sku-card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+    .sku-badges-row { display: flex; gap: 6px; flex-wrap: wrap; }
+    .sku-img-box { width: 100%; height: 170px; border: var(--border-dash); background: var(--halo-gray-bg); display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 12px; gap: 4px; position: relative; text-align: center; padding: 12px; }
+    .sku-persona-tag { font-size: 10px; font-weight: 900; background: var(--halo-black); color: var(--halo-white); padding: 2px 6px; position: absolute; bottom: 6px; left: 6px; }
+    
+    .sku-role-box { background: var(--halo-gray-bg); border: var(--border-thin); padding: 8px 10px; margin: 8px 0 10px; font-size: 11px; }
+    .sku-role-badge-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
+    .sku-role-badge { font-size: 10px; font-weight: 900; padding: 2px 6px; border: var(--border-thick); }
+    .sku-role-badge.core { background: var(--halo-black); color: var(--halo-white); }
+    .sku-role-badge.extended { background: var(--halo-white); color: var(--halo-black); }
+    .sku-role-badge.support { background: var(--halo-gray-bg); color: var(--halo-black); border-style: dashed; }
+    .sku-relation-text, .sku-scenario-text { font-size: 10.5px; line-height: 1.4; color: var(--halo-gray-dark); margin-top: 2px; }
+    .sku-relation-text strong, .sku-scenario-text strong { color: var(--halo-black); font-weight: 900; }
+
+    .sku-card-title { font-size: 15px; font-weight: 900; line-height: 1.3; margin-bottom: 6px; }
+    .sku-card-feature { font-size: 12px; color: var(--halo-gray-dark); line-height: 1.5; margin-bottom: 10px; min-height: 36px; }
+    .sku-meta-tags { display: flex; gap: 5px; margin-bottom: 12px; flex-wrap: wrap; }
+    .sku-tag { font-size: 10px; padding: 2px 6px; border: var(--border-thin); background: var(--halo-white); font-weight: 800; }
+    .sku-price-row { display: flex; justify-content: space-between; align-items: center; padding-top: 10px; border-top: var(--border-thin); font-size: 14px; font-weight: 900; }
+    .sku-card-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 10px; }
+    .btn-sku-action { padding: 8px 4px; border: var(--border-thick); font-size: 11px; font-weight: 900; text-align: center; background: var(--halo-white); color: var(--halo-black); cursor: pointer; }
+    .btn-sku-action.primary { background: var(--halo-black); color: var(--halo-white); }
+    .compare-check-label { display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 900; cursor: pointer; margin-top: 8px; }
+
+    /* ==========================================================================
+       08. Collapsible Floating Compare Tray & Sticky Table
+       ========================================================================== */
+    .floating-compare-tray { position: fixed; bottom: 0; left: 0; width: 100%; background: var(--halo-black); color: var(--halo-white); border-top: var(--border-thick); z-index: 2000; padding: 14px 32px; display: none; }
+    .floating-compare-tray.collapsed { padding: 6px 32px; height: 44px; min-height: 44px; }
+    .compare-tray-collapsed-bar { display: none; align-items: center; justify-content: space-between; width: 100%; max-width: var(--max-width); margin: 0 auto; height: 100%; font-size: 12px; font-weight: 900; }
+    .floating-compare-tray.collapsed .compare-tray-collapsed-bar { display: flex; }
+    .floating-compare-tray.collapsed .compare-tray-main-content { display: none; }
+    .compare-tray-main-content { max-width: var(--max-width); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 20px; width: 100%; }
+    .compare-tray-left { display: flex; align-items: center; gap: 14px; overflow: hidden; flex: 1; }
+    .btn-tray-collapse-toggle { padding: 5px 10px; background: #222; color: #FFF; border: 1px solid #666; font-size: 11px; font-weight: 900; cursor: pointer; white-space: nowrap; }
+    .compare-tray-items { display: flex; gap: 8px; align-items: center; overflow-x: auto; scrollbar-width: none; flex: 1; padding: 2px 0; }
+    .compare-mini-chip { display: flex; align-items: center; gap: 6px; background: #222222; border: 1px solid #555555; padding: 6px 12px; font-size: 11px; font-weight: 900; white-space: nowrap; flex-shrink: 0; }
+    .compare-mini-chip .btn-remove { cursor: pointer; color: #AAAAAA; font-weight: 900; margin-left: 4px; }
+    .compare-mini-chip .btn-remove:hover { color: #FFF; }
+    .compare-tray-actions { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .btn-open-compare-modal { padding: 12px 22px; background: var(--halo-white); color: var(--halo-black); font-weight: 900; font-size: 13px; border: var(--border-thick); }
+
+    /* ==========================================================================
+       09. Modals & Sticky Table
+       ========================================================================== */
+    .modal-backdrop { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.75); z-index: 3000; display: none; align-items: center; justify-content: center; padding: 20px; }
+    .modal-backdrop.active { display: flex; }
+    .modal-window { background: var(--halo-white); border: var(--border-thick); width: 100%; max-width: 920px; max-height: 90vh; overflow-y: auto; padding: 36px; position: relative; }
+    .modal-window.compare-modal-window { max-width: 1120px; }
+    .modal-close-btn { position: absolute; top: 18px; right: 18px; width: 34px; height: 34px; border: var(--border-thick); background: var(--halo-white); font-size: 14px; font-weight: 900; display: flex; align-items: center; justify-content: center; z-index: 100; cursor: pointer; }
+    
+    .compare-table-scroll-container { width: 100%; overflow-x: auto; border: var(--border-thick); margin-bottom: 24px; -webkit-overflow-scrolling: touch; }
+    .compare-modal-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .compare-modal-table th, .compare-modal-table td { padding: 14px; border: var(--border-thin); text-align: left; }
+    .compare-modal-table tr th:first-child, .compare-modal-table tr td:first-child { position: sticky; left: 0; z-index: 15; background: var(--halo-gray-bg); border-right: var(--border-thick) !important; width: 140px; min-width: 140px; font-weight: 900; }
+    .compare-modal-table th { background: var(--halo-gray-bg); font-weight: 900; }
+    .compare-modal-table td { min-width: 220px; background: #FFFFFF; }
+
+    /* Form Fields */
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; font-size: 12px; font-weight: 900; margin-bottom: 6px; }
+    .form-input { width: 100%; height: 46px; border: var(--border-thick); padding: 0 14px; font-size: 14px; outline: none; background: #FFFFFF; }
+    .form-submit-btn { width: 100%; height: 48px; background: var(--halo-black); color: var(--halo-white); font-weight: 900; font-size: 14px; border: var(--border-thick); }
+    .form-inline-success { display: none; background: var(--halo-gray-bg); border: var(--border-thick); padding: 24px; text-align: center; margin-top: 16px; }
+
+    /* ==========================================================================
+       10. Responsive Breakpoints
+       ========================================================================== */
+    @media (max-width: 1200px) {
+      .shop-all-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 900px) {
+      .halo-gnb { height: 64px; }
+      .gnb-inner { padding: 0 20px; }
+      .hero-section { margin-top: 64px; }
+      .gnb-nav { display: none; }
+      .btn-alert-gnb { display: none; }
+      .btn-mobile-menu-toggle { display: flex; flex-shrink: 0; z-index: 10; }
+      .btn-compare-gnb { flex-shrink: 0; }
+      .gnb-actions { gap: 8px; flex-shrink: 0; }
+
+      .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+      .philosophy-proof-cards-grid { grid-template-columns: 1fr; }
+      .flagship-showcase-grid { grid-template-columns: 1fr; gap: 32px; }
+      .flagship-visual-duo { grid-template-columns: 1fr; }
+      .process-large-card { flex: 0 0 85vw; height: 380px; padding: 24px 20px; }
+      .routine-phase-screen { grid-template-columns: 1fr; padding: 24px; gap: 24px; }
+      .collection-showcase-grid { grid-template-columns: 1fr; }
+      .scene-specs-grid { grid-template-columns: 1fr; }
+      .bundle-grid { grid-template-columns: 1fr; }
+      .shop-all-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .hero-headline { font-size: 28px; }
+      .section-header .main-title { font-size: 22px; }
+      .process-headline-ancors { font-size: 24px; }
+      
+      .mobile-view-ctrl-bar { display: flex; }
+      .shop-all-grid.carousel-mode { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 20px; gap: 16px; -webkit-overflow-scrolling: touch; }
+      .shop-all-grid.carousel-mode .sku-card { min-width: 82vw; max-width: 320px; scroll-snap-align: center; flex-shrink: 0; }
+      .shop-all-grid.stack-mode { display: flex; flex-direction: column; gap: 20px; }
+      .shop-all-grid.stack-mode .sku-card { width: 100%; }
+
+      .filter-chips-wrap { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 4px; -webkit-overflow-scrolling: touch; }
+      .filter-chips-wrap .filter-chip { flex-shrink: 0; white-space: nowrap; }
+
+      .floating-compare-tray { padding: 10px 16px; }
+      .compare-tray-main-content { flex-direction: column; align-items: stretch; gap: 10px; }
+      .compare-tray-left { width: 100%; justify-content: space-between; }
+      .compare-tray-items { width: 100%; max-width: 100%; }
+      .compare-mini-chip .chip-name { max-width: 85px; }
+      .compare-tray-actions { width: 100%; justify-content: space-between; }
+      .btn-open-compare-modal { flex: 1; text-align: center; padding: 10px 12px; font-size: 12px; }
+
+      .modal-backdrop { padding: 10px; }
+      .modal-window { width: 100%; max-width: 100%; padding: 24px 16px; max-height: 92dvh; }
+      .modal-close-btn { top: 12px; right: 12px; width: 32px; height: 32px; font-size: 16px; }
+      .form-input { height: 44px; font-size: 14px; }
+      .form-submit-btn { height: 46px; font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 00. GNB Header -->
+  <header class="halo-gnb">
+    <div class="gnb-inner">
+      <a href="#" class="gnb-logo">
+        HALO <span class="logo-tag">GEAR</span>
+      </a>
+      <nav class="gnb-nav">
+        <a href="#philosophy">철학 & 메커니즘</a>
+        <a href="#spotlight">핵심 기어</a>
+        <a href="#routine">3단계 루틴</a>
+        <a href="#collections">5대 컬렉션</a>
+        <a href="#shop-all">전체 16종</a>
+      </nav>
+      <div class="gnb-actions">
+        <button class="btn-compare-gnb" onclick="openCompareModal()">
+          비교함 <span class="count-badge" id="gnbCompareCount">0</span>
+        </button>
+        <button class="btn-alert-gnb" onclick="openLaunchModal('전체 라인업')">
+          1-Click 출시 알림
+        </button>
+        <button class="btn-mobile-menu-toggle" id="btnMobileMenuToggle" onclick="openMobileDrawer()" aria-label="메뉴 열기">
+          MENU
+        </button>
+      </div>
+    </div>
+  </header>
+
+      <!-- 01. Flagship Hero Section (Technical Athletic Motion Canvas) -->
+  <section class="hero-section" id="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-manifesto">
+            <span class="wireframe-badge" style="border:none; padding:2px 8px; font-size:10px;">KINETIC GEAR LAB</span>
+            <span>NO-TOUCH COOLING SUNCARE GEAR</span>
+          </div>
+          <h1 class="hero-headline">운동의 흐름을<br>멈추지 않는 선케어 기어</h1>
+          <p class="hero-subhead">
+            폭염 속 아스팔트 러닝 중 손에 유분을 묻히지 않고 3초 만에 덧바르는 알루미늄 카라비너 하드웨어 메커니즘.<br>
+            20인의 익스트림 스포츠 페르소나와 완성한 -4.2℃ 크라이오 쿨링 쉴드.
+          </p>
+          <div class="portfolio-disclaimer" style="font-size: 11px; color: var(--halo-gray-mid); line-height: 1.5; border-left: 2px solid #000000; padding-left: 12px;">
+            ※ 본 페이지의 제품, 수치, 임상 및 사용자 데이터는 포트폴리오 설계를 위한 가상 정보입니다.
+          </div>
+          <div class="hero-cta-wrap">
+            <button class="btn-hero-primary" onclick="openLaunchModal('카라비너 퀵 스틱')">15% 얼리버드 알림 신청</button>
+            <a href="#shop-all" class="btn-hero-secondary">16종 기어 카탈로그</a>
+          </div>
+        </div>
+
+        <div class="hero-gear-box">
+          <div class="hero-cinematic-placeholder">
+            <span class="tag">[100vw ATHLETIC MOTION CANVAS]</span>
+            <span class="hero-temp-indicator">-4.2℃ CRYO SHOCK</span>
+            <div style="font-size: 26px; font-weight: 900; letter-spacing: -0.02em;">NEVER STOP THE MOTION</div>
+            <div style="font-size: 13px; color: var(--halo-gray-dark); font-weight: 800; max-width: 400px; line-height: 1.6;">
+              [아스팔트 45℃ 지열 파동 속 페이스 유지 3초 도포 & 초경량 알루미늄 6061 바디 클로즈업 씬]
+            </div>
+            <div style="display: flex; gap: 8px; margin-top: 8px;">
+              <span class="wireframe-badge" style="font-size:10px; background:#000; color:#FFF;">페이스 지연 0초</span>
+              <span class="wireframe-badge" style="font-size:10px;">손 오염 0.0%</span>
+            </div>
+          </div>
+          <div style="font-size: 13px; font-weight: 900; color: #000000;">
+            알루미늄 아노다이징 피니시: <span id="heroColorName">에어 블랙 (Air Black)</span>
+          </div>
+          <div class="carabiner-selector-bar">
+            <div class="carabiner-dot black active" onclick="selectHeroColor('에어 블랙 (Air Black)', this)" title="Air Black"></div>
+            <div class="carabiner-dot stealth" onclick="selectHeroColor('스텔스 그레이 (Stealth Gray)', this)" title="Stealth Gray"></div>
+            <div class="carabiner-dot silver" onclick="selectHeroColor('매트 실버 (Matte Silver)', this)" title="Matte Silver"></div>
+            <div class="carabiner-dot white" onclick="selectHeroColor('알파 화이트 (Alpha White)', this)" title="Alpha White"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02. Brand Philosophy: 방식 A (Pure Monochrome Wireframe) -->
+  <section class="philosophy-section" id="philosophy">
+    <div class="container">
+      
+      <!-- 1. 대형 비주얼 배경 캔버스 (Large Athletic Visual Canvas) -->
+      <div class="philosophy-visual-hero">
+        <div class="philosophy-hero-top">
+          <span class="philosophy-tag-badge">[BRAND MANIFESTO · HARDWARE LAB]</span>
+          <span class="philosophy-author-tag">TESTED & VALIDATED BY 20 ATHLETES TEST CREW</span>
+        </div>
+
+        <h2 class="philosophy-statement-headline">
+          "우리는 화장품을 만들지 않습니다.<br>
+          극한의 모션 속에서도 퍼포먼스를 지키는 정밀 하드웨어 기어를 설계합니다."
+        </h2>
+
+        <p class="philosophy-statement-desc">
+          손바닥에 덜어 문지르는 기존 선크림은 고강도 트레이닝 중인 선수들의 손을 오염시키고 라켓과 바벨 그립을 미끄러지게 합니다. HALO는 알루미늄 카라비너 결합 구조와 세범 제로 쿨링 포뮬러로 스포츠의 본질에 응답합니다.
+        </p>
+      </div>
+
+            <!-- 2. 하단 반투명 2대 핵심 R&D 근거 카드 (HALO Hardware Proofs) -->
+      <div class="philosophy-proof-cards-grid">
+        <div class="philosophy-proof-card">
+          <div>
+            <div class="proof-card-top">
+              <span class="proof-badge-num">01</span>
+              <h3 class="proof-card-heading">3초 원터치 노터치 체결 메커니즘</h3>
+            </div>
+            <p class="proof-card-paragraph">
+              러닝 벨트나 배낭 스트랩에 결합된 알루미늄 카라비너에서 한 손 1초 분리. 롤러 헤드가 손에 유분을 묻히지 않고 달리는 페이스를 유지하며 3초 만에 밀착 도포됩니다.
+            </p>
+          </div>
+          <div class="proof-metric-pill">
+            <span style="display:inline-block; width:8px; height:8px; background:var(--halo-black); border-radius:50%;"></span>
+            손 오염 0.0% · 페이스 지연 0초 · 알루미늄 6061
+          </div>
+        </div>
+
+        <div class="philosophy-proof-card">
+          <div>
+            <div class="proof-card-top">
+              <span class="proof-badge-num" style="background:var(--halo-black);">02</span>
+              <h3 class="proof-card-heading">-4.2℃ 크라이오 냉각 & 제로 슬립 마찰 코팅</h3>
+            </div>
+            <p class="proof-card-paragraph">
+              도포 즉시 피부 표면 -4.2℃ 즉각 열방출. 마이크로 구상 파우더가 땀과 유분을 실시간 흡착하여 격렬한 랠리와 고중량 리프팅 중에도 그립 마찰력을 99.1% 보존합니다.
+            </p>
+          </div>
+          <div class="proof-metric-pill">
+            <span style="display:inline-block; width:8px; height:8px; background:var(--halo-ice-blue); border-radius:50%;"></span>
+            표면 냉각 -4.2℃ · 그립 마찰 저항 99.1%
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+    <!-- 03. Flagship 01 Showcase (카라비너 퀵 쿨링 선 스틱) -->
+  <section class="flagship-showcase-section" id="spotlight">
+    <div class="container">
+      <div class="flagship-header-bar">
+        <div>
+          <span class="wireframe-badge dark" style="margin-bottom: 8px;">CORE FLAGSHIP SHOWCASE 01</span>
+          <h2 style="font-size: 32px; font-weight: 900; letter-spacing: -0.03em; margin-top: 6px;">#01 카라비너 퀵 쿨링 선 스틱</h2>
+        </div>
+        <div style="font-size: 12px; font-weight: 900; display:flex; align-items:center; gap:8px;">
+          <span class="wireframe-badge">CITY RUNNING</span>
+          <span>CLIENT-01 한아름 (러닝크루 리더)</span>
+        </div>
+      </div>
+
+      <div class="flagship-showcase-grid">
+        <div class="flagship-visual-duo">
+          <div class="flagship-visual-box hardware">
+            <span class="visual-label">3D 하드웨어 렌더 분해도</span>
+            <div style="font-size: 15px; font-weight: 900; color: #000;">[알루미늄 6061 카라비너 & 롤러 헤드]</div>
+            <div style="font-size: 11px; color: var(--halo-gray-mid); margin-top: 8px; line-height: 1.5;">
+              아노다이징 금속 질감 · CNC 정밀 가공 래치<br>1,000회 탈착 내구성 보증
+            </div>
+          </div>
+          <div class="flagship-visual-box action">
+            <span class="visual-label">실제 러닝 모션 씬</span>
+            <div style="font-size: 15px; font-weight: 900; color: #000;">[아스팔트 45℃ 열기 속 3초 도포 액션]</div>
+            <div style="font-size: 11px; color: var(--halo-gray-mid); margin-top: 8px; line-height: 1.5;">
+              페이스 지연 0초 · 한 손 3초 논스톱 리터치<br>피부 표면 -4.2℃ 급속 냉각
+            </div>
+          </div>
+        </div>
+
+        <div class="flagship-info-card">
+          <div>
+            <div class="flagship-sku-badge">FLAGSHIP SKU-01 · CITY RUNNING & MARATHON</div>
+            <h3 class="flagship-name">카라비너 퀵 쿨링 선 스틱</h3>
+          </div>
+
+          <div class="flagship-key-mechanism-box">
+            <div class="mech-tag">CORE KEY MECHANISM</div>
+            <div class="mech-title">한 손 3초 원터치 래치 & -4.2℃ 크라이오 에어 쿨다운</div>
+            <div class="mech-desc">
+              달리는 모션을 멈추지 않는 원터치 카라비너 결합 하드웨어. 세범 제로 에어로겔 배합으로 손에 유분을 일체 묻히지 않고 피부 표면 온도를 즉각 -4.2℃ 냉각합니다.
+            </div>
+          </div>
+
+          <div class="flagship-specs-pill-bar">
+            <span class="flagship-spec-pill">SPF50+ PA++++</span>
+            <span class="flagship-spec-pill">용량 22g</span>
+            <span class="flagship-spec-pill" >-4.2℃ 쿨링</span>
+            <span class="flagship-spec-pill">무유분 매트</span>
+            <span class="flagship-spec-pill" style="background: #000; color: #fff;">공식가 38,000원</span>
+          </div>
+
+          <div class="flagship-actions-row">
+            <button class="btn-hero-primary" onclick="openProductModal(1)">기어 상세 스펙 퀵뷰</button>
+            <button class="btn-hero-secondary" onclick="openLaunchModal('카라비너 퀵 스틱')">15% 출시 알림</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03-2. Flagship 02 Showcase (에어로 쿨링 질소 미스트) -->
+  <section class="flagship-showcase-section alt" id="spotlight-mist">
+    <div class="container">
+      <div class="flagship-header-bar">
+        <div>
+          <span class="wireframe-badge dark" style="margin-bottom: 8px;">CORE FLAGSHIP SHOWCASE 02</span>
+          <h2 style="font-size: 32px; font-weight: 900; letter-spacing: -0.03em; margin-top: 6px;">#02 에어로 쿨링 질소 미스트</h2>
+        </div>
+        <div style="font-size: 12px; font-weight: 900; display:flex; align-items:center; gap:8px;">
+          <span class="wireframe-badge">CYCLING & OUTDOOR</span>
+          <span>CLIENT-09 임아영 (사이클링 라이더)</span>
+        </div>
+      </div>
+
+      <div class="flagship-showcase-grid reverse">
+        <div class="flagship-visual-duo">
+          <div class="flagship-visual-box hardware">
+            <span class="visual-label">3D 하드웨어 렌더 분해도</span>
+            <div style="font-size: 15px; font-weight: 900; color: #000;">[질소 가압 밸브 & 360도 마이크로 노즐]</div>
+            <div style="font-size: 11px; color: var(--halo-gray-mid); margin-top: 8px; line-height: 1.5;">
+              친환경 질소 가압 용기 · 나노 미립자 분사 도해<br>캔을 거꾸로 들어도 균일 분사
+            </div>
+          </div>
+          <div class="flagship-visual-box action">
+            <span class="visual-label">실제 사이클링 모션 씬</span>
+            <div style="font-size: 15px; font-weight: 900; color: #000;">[고속 주행 후 전신 급속 쿨다운]</div>
+            <div style="font-size: 11px; color: var(--halo-gray-mid); margin-top: 8px; line-height: 1.5;">
+              목선·팔다리 미스트 분사 즉시 기화열 흡수<br>체온 -3.9℃ 급속 강하 & 3초 퀵드라이
+            </div>
+          </div>
+        </div>
+
+        <div class="flagship-info-card">
+          <div>
+            <div class="flagship-sku-badge">FLAGSHIP SKU-02 · ALL-ROUND ACTIVE & CYCLING</div>
+            <h3 class="flagship-name">에어로 쿨링 질소 미스트</h3>
+          </div>
+
+          <div class="flagship-key-mechanism-box">
+            <div class="mech-tag">CORE KEY MECHANISM</div>
+            <div class="mech-title">360도 전방위 균일 분사 노즐 & 나노 입자 기화열 급속 냉각 (-3.9℃)</div>
+            <div class="mech-desc">
+              친환경 질소 가압 방식으로 어떤 각도에서도 뭉침 없이 안개 분사. 미세 입자가 피부에 닿는 즉시 기화열을 흡수하여 체온을 -3.9℃ 급속 강하하고 3초 만에 보송하게 건조됩니다.
+            </div>
+          </div>
+
+          <div class="flagship-specs-pill-bar">
+            <span class="flagship-spec-pill">SPF50+ PA++++</span>
+            <span class="flagship-spec-pill">용량 120ml</span>
+            <span class="flagship-spec-pill" >질소 360도 분사</span>
+            <span class="flagship-spec-pill">3초 퀵드라이</span>
+            <span class="flagship-spec-pill" style="background: #000; color: #fff;">공식가 39,000원</span>
+          </div>
+
+          <div class="flagship-actions-row">
+            <button class="btn-hero-primary" onclick="openProductModal(2)">기어 상세 스펙 퀵뷰</button>
+            <button class="btn-hero-secondary" onclick="openLaunchModal('에어로 쿨링 질소 미스트')">15% 출시 알림</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04. 4-Step R&D Process: ANCORS-Inspired Wide Horizontal Timeline -->
+  <section class="process-section" id="process">
+    <div class="container">
+      <div class="process-header-ancors">
+        <div>
+          <div class="process-headline-ancors">
+            BEYOND SUNCARE<br>
+            PRECISION GEAR LAB BY HALO
+          </div>
+          <p class="process-subhead-ancors">
+            단순한 화장품을 넘어, 선수는 모션에 집중하고 우리는 퍼포먼스를 지킵니다.
+          </p>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span style="font-size: 12px; font-weight: 900; letter-spacing: 0.1em;">R&D TIMELINE</span>
+          <span style="font-size: 11px; font-weight: 900;">[STATUS: ACTIVE]</span>
+        </div>
+      </div>
+
+      <!-- Wide Horizontal Timeline Cards Gallery -->
+      <div class="process-horizontal-track" id="processHorizontalTrack">
+        
+        <!-- Card 01: DISCOVER -->
+        <div class="process-large-card">
+          <div class="card-bg-wireframe"></div>
+          <div class="card-content-overlay">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span class="card-step-badge">STEP 01</span>
+              <span style="font-size: 11px; font-weight: 900; color: var(--halo-gray-mid);">PROBLEM DISCOVERY</span>
+            </div>
+            <div class="card-center-title">
+              DISCOVER
+            </div>
+            <div class="card-bottom-caption">
+              20인의 익스트림 스포츠 선수단과 함께 훈련 현장에서 땀, 먼지 오염, 그립 미끄러짐의 원인을 정량 수집 및 분석
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 02: ENGINEER -->
+        <div class="process-large-card">
+          <div class="card-bg-wireframe"></div>
+          <div class="card-content-overlay">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span class="card-step-badge">STEP 02</span>
+              <span style="font-size: 11px; font-weight: 900; color: var(--halo-gray-mid);">HARDWARE PROTOTYPE</span>
+            </div>
+            <div class="card-center-title">
+              ENGINEER
+            </div>
+            <div class="card-bottom-caption">
+              달리는 모션 중 한 손 1초 분리되는 알루미늄 카라비너 결합 및 360도 전방위 질소 가압 밸브 노즐 하드웨어 설계
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 03: VALIDATE -->
+        <div class="process-large-card">
+          <div class="card-bg-wireframe"></div>
+          <div class="card-content-overlay">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span class="card-step-badge">STEP 03</span>
+              <span style="font-size: 11px; font-weight: 900; color: var(--halo-gray-mid);">EXTREME FIELD TEST</span>
+            </div>
+            <div class="card-center-title">
+              VALIDATE
+            </div>
+            <div class="card-bottom-caption">
+              폭염 속 마라톤 42.195km 풀코스 및 파도 속 80분 내수성 등 누적 320시간 극한 필드 실전 성능 계측 검증
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 04: CERTIFY -->
+        <div class="process-large-card">
+          <div class="card-bg-wireframe"></div>
+          <div class="card-content-overlay">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span class="card-step-badge">STEP 04</span>
+              <span style="font-size: 11px; font-weight: 900; color: var(--halo-gray-mid);">GLOBAL CERTIFICATION</span>
+            </div>
+            <div class="card-center-title">
+              CERTIFY
+            </div>
+            <div class="card-bottom-caption">
+              한국비건인증원 100% Vegan 인증 및 산호초를 보호하는 옥시벤존 0% Reef-Safe 국제 환경 기준 통과
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Horizontal Scroll Navigation Controls -->
+      <div class="process-scroll-controls">
+        <span class="process-scroll-hint">← 좌우로 가로 스크롤하여 4단계 제작 과정을 탐색하세요 →</span>
+        <div class="process-nav-btns">
+          <button class="btn-process-scroll" onclick="scrollProcessTrack(-1)">[< 이전]</button>
+          <button class="btn-process-scroll" onclick="scrollProcessTrack(1)">[다음 >]</button>
+        </div>
+      </div>
+
+      <!-- Metrics Summary Bar -->
+      <div class="metrics-bar" style="margin-top: 36px;">
+        <div class="metric-item">
+          <div class="val">-4.2 ℃</div>
+          <div class="lbl">즉각 크라이오 쿨다운 목표</div>
+        </div>
+        <div class="metric-item">
+          <div class="val">80 Min</div>
+          <div class="lbl">공인 지속 내수성 목표 설계</div>
+        </div>
+        <div class="metric-item">
+          <div class="val">320 Hr</div>
+          <div class="lbl">누적 필드 실전 계측 계획</div>
+        </div>
+        <div class="metric-item">
+          <div class="val">100 %</div>
+          <div class="lbl">비건 & 리프세이프 성분 설계</div>
+        </div>
+      </div>
+      <div style="font-size: 11px; color: var(--halo-gray-mid); text-align: center; margin-top: 14px;">
+        *본 페이지의 제품, 수치, 임상, 인증 및 사용자 데이터는 포트폴리오 설계를 위한 가상 정보입니다.
+      </div>
+    </div>
+  </section>
+
+    <!-- 05. Pre/In/Post Routine: 3-Phase Immersive Screen Sequence (화면 단위 연결 시퀀스) -->
+  <section class="section-spacing" id="routine">
+    <div class="container">
+      <div class="section-header">
+        <div class="sub-title">KINETIC 3-PHASE IMMERSIVE SEQUENCE</div>
+        <h2 class="main-title">운동 전·중·후 3단계 화면 연결 시퀀스</h2>
+        <p class="desc">운동 전 방어막 형성부터 운동 중 무중단 몰입, 운동 직후 급속 쿨링 리셋까지 화면 단위로 이어지는 하드웨어 시퀀스입니다.</p>
+      </div>
+
+      <!-- 3-Phase Immersive Screen Sequence Flow -->
+      <div class="routine-sequence-wrap">
+        
+        <!-- PHASE 01: PRE-WORKOUT (운동 전 준비) -->
+        <div class="routine-phase-screen">
+          <div class="phase-visual-canvas">
+            <span class="phase-canvas-tag">PHASE 01 SCENE</span>
+            <div class="phase-canvas-title">[야외 진입 15분 전: 세라마이드 3중 마이크로 UV 배리어 도포]</div>
+            <div class="phase-canvas-desc">고산지대 칼바람, 자외선, 미세먼지 침투를 원천 차단하는 고밀착 베이스 세럼 방어막 렌더</div>
+          </div>
+
+          <div class="phase-info-content">
+            <div>
+              <div class="phase-step-tag">PHASE 01 | START-UP PREPARATION</div>
+              <h3 class="phase-heading">01. 운동 전 15분, 빈틈없는 베이스 방어막 형성</h3>
+              <p class="phase-narrative">
+                야외 스포츠 진입 15분 전, 세라마이드 마이크로 장벽으로 자외선과 미세먼지를 듀얼 차단하여 땀을 흘려도 지워지지 않는 고밀착 베이스 코팅을 완성합니다.
+              </p>
+            </div>
+
+            <div class="phase-metric-badge-row">
+              <span class="phase-metric-pill">12시간 보습 유지</span>
+              <span class="phase-metric-pill">미세먼지 차단율 92.1%</span>
+              <span class="phase-metric-pill">피부 장벽 강화</span>
+            </div>
+
+            <div class="phase-recommended-gears">
+              <div class="phase-gear-info">
+                <div class="phase-gear-thumb">#05</div>
+                <div>
+                  <div style="font-size: 13px; font-weight: 900;">#05 멀티 쉴드 배리어 세럼</div>
+                  <div style="font-size: 11px; color: var(--halo-gray-mid);">SPF50+ PA++++ | 50ml | ₩52,000</div>
+                </div>
+              </div>
+              <button class="btn-sku-action primary" style="padding: 6px 12px; font-size: 11px;" onclick="openProductModal(5)">스펙 퀵뷰</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sequence Flow Connector 01 -> 02 -->
+        <div class="sequence-connector-bar">
+          <div class="sequence-connector-line"></div>
+          <span>▼ 훈련 진입 및 고강도 모션 돌입 ▼</span>
+          <div class="sequence-connector-line"></div>
+        </div>
+
+        <!-- PHASE 02: IN-MOTION (운동 중 몰입) - Highlighted Reverse Split -->
+        <div class="routine-phase-screen in-motion-screen reverse">
+          <div class="phase-visual-canvas">
+            <span class="phase-canvas-tag" style="background: #000; color: #FFF;">PHASE 02 SCENE</span>
+            <div class="phase-canvas-title">[고강도 러닝 중 3초 노터치 체결 & -4.2℃ 크라이오 쿨다운]</div>
+            <div class="phase-canvas-desc">달리는 속도를 늦추지 않고 한 손으로 카라비너 스틱을 분리하여 손 오염 0.0%로 덧바르는 하드웨어 도해</div>
+          </div>
+
+          <div class="phase-info-content">
+            <div>
+              <div class="phase-step-tag" style="color: #000;">PHASE 02 | NON-STOP KINETIC MOTION</div>
+              <h3 class="phase-heading">02. 운동 중 극도의 몰입, 3초 만에 끝내는 노터치 리터치</h3>
+              <p class="phase-narrative">
+                땀 범벅인 상태에서도 페이스를 단 1초도 늦추지 않고 카라비너에서 분리하여 손에 유분을 묻히지 않고 피부 표면 온도를 즉각 -4.2℃ 냉각합니다.
+              </p>
+            </div>
+
+            <div class="phase-metric-badge-row">
+              <span class="phase-metric-pill">손 오염 0.0%</span>
+              <span class="phase-metric-pill">즉각 냉각 -4.2℃</span>
+              <span class="phase-metric-pill">페이스 지연 0초</span>
+              <span class="phase-metric-pill">마찰 저항 99.1%</span>
+            </div>
+
+            <div class="phase-recommended-gears">
+              <div class="phase-gear-info">
+                <div class="phase-gear-thumb" style="background: #000; color: #FFF;">#01</div>
+                <div>
+                  <div style="font-size: 13px; font-weight: 900;">#01 카라비너 퀵 쿨링 선 스틱</div>
+                  <div style="font-size: 11px; color: var(--halo-gray-mid);">SPF50+ PA++++ | 22g | ₩38,000</div>
+                </div>
+              </div>
+              <button class="btn-sku-action primary" style="padding: 6px 12px; font-size: 11px;" onclick="openProductModal(1)">스펙 퀵뷰</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sequence Flow Connector 02 -> 03 -->
+        <div class="sequence-connector-bar">
+          <div class="sequence-connector-line"></div>
+          <span>▼ 세션 종료 및 리커버리 진입 ▼</span>
+          <div class="sequence-connector-line"></div>
+        </div>
+
+        <!-- PHASE 03: POST-WORKOUT (운동 후 회복) -->
+        <div class="routine-phase-screen">
+          <div class="phase-visual-canvas">
+            <span class="phase-canvas-tag">PHASE 03 SCENE</span>
+            <div class="phase-canvas-title">[운동 직후: 땀·염분 결정 중화 및 -5℃ 지속 쿨다운 패치]</div>
+            <div class="phase-canvas-desc">달아오른 양 볼 홍조 열감을 즉각 배출하고 바다 소금 결정을 98.7% 분해 세정하는 피부 리셋 렌더</div>
+          </div>
+
+          <div class="phase-info-content">
+            <div>
+              <div class="phase-step-tag">PHASE 03 | DEEP COOLING & SKIN RESET</div>
+              <h3 class="phase-heading">03. 운동 직후 급속 진정, 염분 결정 중화 & -5℃ 쿨링 리셋</h3>
+              <p class="phase-narrative">
+                운동 직후 피부에 남은 땀의 염분 결정을 깨끗이 중화하고 달아오른 양 볼 열감을 즉각 -5℃ 지속 방출하여 빠른 피부 회복을 유도합니다.
+              </p>
+            </div>
+
+            <div class="phase-metric-badge-row">
+              <span class="phase-metric-pill">열감 배출 -5℃ 지속</span>
+              <span class="phase-metric-pill">염분 잔여물 98.7% 중화</span>
+              <span class="phase-metric-pill">무자극 0.00 검증</span>
+            </div>
+
+            <div class="phase-recommended-gears">
+              <div class="phase-gear-info">
+                <div class="phase-gear-thumb">#07</div>
+                <div>
+                  <div style="font-size: 13px; font-weight: 900;">#07 트레일 리커버리 쿨링 패치</div>
+                  <div style="font-size: 11px; color: var(--halo-gray-mid);">-5℃ 하이드로겔 | 5회분 | ₩28,000</div>
+                </div>
+              </div>
+              <button class="btn-sku-action primary" style="padding: 6px 12px; font-size: 11px;" onclick="openProductModal(7)">스펙 퀵뷰</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Sports Routine Bundle Packages (BC-S6) -->
+      <div class="bundle-package-box">
+        <div class="bundle-header">
+          <div>
+            <span class="wireframe-badge dark">ROUTINE BUNDLE PACKAGES</span>
+            <h3 style="font-size: 20px; font-weight: 900; margin-top: 6px;">종목별 3단계 맞춤 풀 루틴 번들 패키지</h3>
+          </div>
+          <span style="font-size: 12px; color: var(--halo-gray-dark); font-weight: 700;">세트 구매 시 20% 특별 혜택</span>
+        </div>
+        <div class="bundle-grid">
+          <div class="bundle-card">
+            <div>
+              <div style="font-size: 11px; font-weight: 800; color: var(--halo-gray-mid);">PACKAGE 01 | RUNNING FULL-COURSE</div>
+              <h4 style="font-size: 18px; font-weight: 900; margin: 6px 0;">풀코스 마라톤 3단계 올인원 번들</h4>
+              <p style="font-size: 13px; color: var(--halo-gray-dark);">Pre(#05 세럼) + In(#01 퀵스틱) + In(#02 질소미스트) + 카라비너 링 일체형</p>
+              <div class="bundle-items-row">
+                <span class="bundle-mini-tag">#05 세럼</span>
+                <span class="bundle-mini-tag">#01 퀵스틱</span>
+                <span class="bundle-mini-tag">#02 미스트</span>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 16px; pt-top: 12px; border-top: var(--border-thin);">
+              <div style="font-size: 15px; font-weight: 900;">₩89,000 <span style="font-size: 12px; color: var(--halo-gray-mid); text-decoration: line-through;">₩111,000</span></div>
+              <button class="btn-sku-action primary" onclick="openLaunchModal('풀코스 마라톤 번들')">번들 알림 예약</button>
+            </div>
+          </div>
+
+          <div class="bundle-card">
+            <div>
+              <div style="font-size: 11px; font-weight: 800; color: var(--halo-gray-mid);">PACKAGE 02 | SURF & OCEAN ACTIVE</div>
+              <h4 style="font-size: 18px; font-weight: 900; margin: 6px 0;">오션 서핑 익스트림 아쿠아 번들</h4>
+              <p style="font-size: 13px; color: var(--halo-gray-dark);">Pre(#08 리프쉴드) + In(#10 아이언밤) + Post(#09 솔트리셋 미스트)</p>
+              <div class="bundle-items-row">
+                <span class="bundle-mini-tag">#08 리프쉴드</span>
+                <span class="bundle-mini-tag">#10 아이언밤</span>
+                <span class="bundle-mini-tag">#09 솔트미스트</span>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 16px; pt-top: 12px; border-top: var(--border-thin);">
+              <div style="font-size: 15px; font-weight: 900;">₩98,000 <span style="font-size: 12px; color: var(--halo-gray-mid); text-decoration: line-through;">₩123,000</span></div>
+              <button class="btn-sku-action primary" onclick="openLaunchModal('오션 서핑 번들')">번들 알림 예약</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06. 5 Sports Collections: Sport Visual + Representative Flagship Product -->
+  <section class="section-spacing" id="collections">
+    <div class="container">
+      <div class="section-header">
+        <div class="sub-title">5 SPORTS COLLECTIONS & GEAR SPOTLIGHT</div>
+        <h2 class="main-title">5대 스포츠 종목별 풀 비주얼 & 대표 기어</h2>
+        <p class="desc">종목을 선택하면 해당 환경의 극한 필드 비주얼과 특화 설계된 1대 대표 플래그십 기어가 함께 전환됩니다.</p>
+      </div>
+
+      <!-- Collection Selection Tabs Bar -->
+      <div class="collection-tabs-bar">
+        <button class="col-tab-btn active" onclick="switchCollectionTab('all', this)">전체 컬렉션 (16 SKUs)</button>
+        <button class="col-tab-btn" onclick="switchCollectionTab('running', this)">시티 러닝 & 마라톤 (4)</button>
+        <button class="col-tab-btn" onclick="switchCollectionTab('hiking', this)">트레일 하이킹 & 클라이밍 (3)</button>
+        <button class="col-tab-btn" onclick="switchCollectionTab('surfing', this)">서핑 & 수상 액티브 (3)</button>
+        <button class="col-tab-btn" onclick="switchCollectionTab('tennis', this)">테니스 & 골프 라운딩 (3)</button>
+        <button class="col-tab-btn" onclick="switchCollectionTab('fitness', this)">피트니스 & 크로스핏 (3)</button>
+      </div>
+
+      <!-- Integrated Showcase Grid (Left: Sport Visual + Right: 1 Flagship Product) -->
+      <div class="collection-showcase-grid">
+        
+        <!-- Left: Full-Width Sport Field Scene Canvas & 3-Part Architecture -->
+        <div class="collection-visual-hero">
+          <div>
+            <div class="scene-header-block">
+              <div>
+                <span class="wireframe-badge dark" style="margin-bottom: 8px;" id="colCategoryBadge">COLLECTION 01 | CITY RUNNING</span>
+                <div class="scene-title" id="sceneTitle">시티 러닝 & 마라톤 컬렉션</div>
+                <div class="scene-desc" id="sceneDesc">폭염 속 아스팔트 열기와 자외선에 맞서 페이스를 늦추지 않고 3초 만에 덧바르는 하드웨어 라인업입니다.</div>
+              </div>
+              <a href="#shop-all" class="scene-jump-btn" id="sceneJumpBtn" onclick="syncFilterWithCollection('running')">
+                <span id="sceneJumpBtnText">러닝 기어 (4종) 전체보기 ↓</span>
+              </a>
+            </div>
+
+            <!-- Dynamic Sport Field Scene Visual Canvas -->
+            <div class="scene-canvas-box" id="sceneCanvasBox" style="margin: 20px 0;">
+              <span class="scene-canvas-tag" id="sceneCanvasTag">[100vw ATHLETIC FIELD SCENE]</span>
+              <div class="scene-canvas-title" id="sceneCanvasTitle">[폭염 아스팔트 10k 러닝 & 페이스 유지 노터치 도포 씬]</div>
+              <div class="scene-canvas-desc" id="sceneCanvasDesc">달리는 모션 중 한 손으로 카라비너 스틱을 분리하여 페이스 지연 0초로 덧바르는 스포츠 현장</div>
+            </div>
+          </div>
+
+          <!-- 3-Part Technical Architecture Boxes (Must preserve for automated verification) -->
+          <div class="scene-specs-grid">
+            <div class="scene-spec-box">
+              <div class="box-lbl">대표 기술 (CORE TECHNOLOGY)</div>
+              <div class="box-title" id="sceneCoreTechTitle">원터치 카라비너 & -4.2℃ 크라이오 에어</div>
+              <div class="box-desc" id="sceneCoreTechDesc">#01 카라비너 퀵 스틱을 중심으로 설계된 3초 노터치 고정 메커니즘</div>
+            </div>
+            <div class="scene-spec-box">
+              <div class="box-lbl">파생 기준 (EXTENSION LOGIC)</div>
+              <div class="box-title" id="sceneExtLogicTitle">페이스 유지형 전신 분사 · 5중 레이어 패키징</div>
+              <div class="box-desc" id="sceneExtLogicDesc">고속 주행 중 360도 전방위 분사(#02 질소미스트), 장거리 5회분 소분(#04 스타터), 고온 지속형 엔듀런스(#03 젤)로 기능 확장</div>
+            </div>
+            <div class="scene-spec-box">
+              <div class="box-lbl">추천 상황 (RECOMMENDED SCENARIOS)</div>
+              <div class="box-title" id="sceneRecScenarioTitle">10k 데일리(#01) · 하프마라톤(#01+#02) · 풀코스대회(#03+#04)</div>
+              <div class="box-desc" id="sceneRecScenarioDesc">도심 아스팔트 주행 / 혹서기 장거리 트레이닝 / 42.195km 공식 레이스 + 리커버리</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: 1 Representative Flagship Product Showcase Card -->
+        <div class="col-flagship-card" id="colFlagshipCard">
+          <div>
+            <div class="col-flagship-header">
+              <span class="wireframe-badge dark">COLLECTION REPRESENTATIVE GEAR</span>
+              <span style="font-size: 11px; font-weight: 900;" id="colFlagshipSkuNum">SKU #01</span>
+            </div>
+
+            <div class="col-flagship-img-box" style="margin: 16px 0;">
+              <div style="font-size: 16px; font-weight: 900; color: #000;" id="colFlagshipDiagramTitle">[#01 카라비너 퀵 스틱]</div>
+              <div style="font-size: 11px; color: var(--halo-gray-mid); margin-top: 4px;" id="colFlagshipDiagramSub">알루미늄 6061 원터치 결합 구조 렌더</div>
+              <span class="col-flagship-persona" id="colFlagshipPersona">CLIENT-01 한아름 (러닝크루 리더)</span>
+            </div>
+
+            <h3 class="col-flagship-name" id="colFlagshipName">카라비너 퀵 스틱 SPF50+ PA++++</h3>
+            <p class="col-flagship-feature" id="colFlagshipFeature">
+              러닝 중 멈추지 않고 한 손으로 3초 만에 덧바르는 알루미늄 카라비너 일체형 쿨링 스틱
+            </p>
+
+            <div class="col-flagship-specs-row" id="colFlagshipSpecs">
+              <span class="col-flagship-spec-tag">SPF50+ PA++++</span>
+              <span class="col-flagship-spec-tag">용량 22g</span>
+              <span class="col-flagship-spec-tag">-4.2℃ 쿨링</span>
+              <span class="col-flagship-spec-tag">무유분 매트</span>
+            </div>
+          </div>
+
+          <div>
+            <div class="col-flagship-price-row">
+              <span id="colFlagshipPrice">₩38,000</span>
+              <span style="font-size: 12px; color: var(--halo-gray-mid);" id="colFlagshipVol">22g</span>
+            </div>
+
+            <div class="col-flagship-actions" style="margin-top: 12px;">
+              <button class="btn-sku-action" id="btnColFlagshipQuickView" onclick="openProductModal(1)">기어 상세 퀵뷰</button>
+              <button class="btn-sku-action primary" id="btnColFlagshipLaunchAlert" onclick="openLaunchModal('카라비너 퀵 스틱')">15% 출시 알림</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+    <!-- 07. Shop All 16 SKUs: Uniform 4-Column Catalog Grid (브랜드 서사 후 규칙적 상품 탐색 영역) -->
+  <section class="section-spacing shop-all-section" id="shop-all">
+    <div class="container">
+      
+      <!-- Brand-to-Catalog Transition Boundary Banner -->
+      <div class="catalog-transition-banner">
+        <div>
+          <span class="catalog-tag-badge">[END OF BRAND NARRATIVE · SYSTEM ARCHITECTURE CATALOG]</span>
+          <h2 class="catalog-title">HALO 16종 전체 기어 시스템 카탈로그</h2>
+          <p style="font-size: 13px; color: var(--halo-gray-dark); margin-top: 4px;">
+            위의 브랜드 철학과 5대 컬렉션 설계를 바탕으로 완성된 16종 전체 하드웨어를 규칙적인 카탈로그 그리드로 탐색하고 횡단 비교하세요.
+          </p>
+        </div>
+        <div style="font-size: 12px; font-weight: 900; color: var(--halo-black);">
+          TOTAL 16 HARDWARE SKUS
+        </div>
+      </div>
+
+      <!-- Multi-Dimensional Filter Control Panel (On 응용: BC-S2) -->
+      <div class="filter-panel-box">
+        <div class="filter-group-row">
+          <div class="filter-label">운동 시점</div>
+          <div class="filter-chips-wrap">
+            <button class="filter-chip active" onclick="toggleFilter('phase', 'all', this)">시점 전체</button>
+            <button class="filter-chip" onclick="toggleFilter('phase', 'Pre', this)">Pre (운동 전)</button>
+            <button class="filter-chip" onclick="toggleFilter('phase', 'In', this)">In (운동 중)</button>
+            <button class="filter-chip" onclick="toggleFilter('phase', 'Post', this)">Post (운동 후)</button>
+          </div>
+        </div>
+        <div class="filter-group-row">
+          <div class="filter-label">제형 타입</div>
+          <div class="filter-chips-wrap">
+            <button class="filter-chip active" onclick="toggleFilter('type', 'all', this)">제형 전체</button>
+            <button class="filter-chip" onclick="toggleFilter('type', '스틱', this)">스틱 (Stick)</button>
+            <button class="filter-chip" onclick="toggleFilter('type', '미스트', this)">미스트 (Mist)</button>
+            <button class="filter-chip" onclick="toggleFilter('type', '젤', this)">젤 / 세럼 (Gel/Serum)</button>
+            <button class="filter-chip" onclick="toggleFilter('type', '밤', this)">밤 / 쿠션 (Balm/Cushion)</button>
+            <button class="filter-chip" onclick="toggleFilter('type', '패치', this)">패치 / 키트 (Patch/Kit)</button>
+          </div>
+        </div>
+        <div class="filter-group-row">
+          <div class="filter-label">핵심 기능</div>
+          <div class="filter-chips-wrap">
+            <button class="filter-chip active" onclick="toggleFilter('func', 'all', this)">기능 전체</button>
+            <button class="filter-chip" onclick="toggleFilter('func', '쿨링', this)">-4.2℃ 쿨링</button>
+            <button class="filter-chip" onclick="toggleFilter('func', '방수', this)">80분 내수성</button>
+            <button class="filter-chip" onclick="toggleFilter('func', '세범', this)">피지 / 논슬립</button>
+            <button class="filter-chip" onclick="toggleFilter('func', '휴대', this)">카라비너 휴대</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filter Meta & Result Counter Bar -->
+      <div class="filter-meta-bar">
+        <div>
+          <span>검색 결과: <strong id="filterResultCount">16</strong>개 표시 중</span>
+          <span style="color: var(--halo-gray-mid); margin-left: 8px;">(최대 3개 선택하여 횡단 스펙 비교 가능)</span>
+        </div>
+        <button class="btn-reset-filters" onclick="resetAllFilters()">필터 전체 초기화 [초기화]</button>
+      </div>
+
+      <!-- Mobile Long List View Mode Switcher -->
+      <div class="mobile-view-ctrl-bar">
+        <span class="mobile-swipe-hint">모바일 목록 보기 방식:</span>
+        <div style="display: flex; gap: 4px;">
+          <button class="btn-view-toggle active" id="btnModeCarousel" onclick="setShopViewMode('carousel', this)">스와이프 카드</button>
+          <button class="btn-view-toggle" id="btnModeStack" onclick="setShopViewMode('stack', this)">전체 세로 펼침</button>
+        </div>
+      </div>
+
+      <!-- 16 SKUs Grid (Wide Card + Compact Cards: BC-D1, BC-S5) -->
+      <div class="shop-all-grid carousel-mode" id="skuGridContainer">
+
+        <!-- #01 (Collection 1 Wide Representative Flagship) -->
+        <div class="sku-card" data-sku="1" data-col="running" data-phase="In" data-type="스틱" data-func="쿨링 휴대">
+          <div>
+            <div class="sku-card-header">
+              <div class="sku-badges-row">
+                <span class="wireframe-badge dark">COLLECTION 01 대표</span>
+                <span class="wireframe-badge">IN-WORKOUT</span>
+              </div>
+              <span style="font-size: 11px; font-weight: 800; color: var(--halo-gray-mid);">#01</span>
+            </div>
+            <div class="sku-img-box">
+              <div style="font-size: 28px;"></div>
+              <div style="font-size: 12px; font-weight: 800;">[#01 카라비너 퀵 스틱 SPF50+ PA++++]</div>
+              <span class="sku-persona-tag"> CLIENT-01 한아름 (러닝크루 리더)</span>
+            </div>
+            
+        <div class="sku-role-box">
+          <div class="sku-role-badge-row">
+            <span class="sku-role-badge core">대표 플래그십 (Core Flagship)</span>
+          </div>
+          <div class="sku-relation-text"><strong>파생 기준:</strong> 러닝 노터치 체결 기술의 기준점</div>
+          <div class="sku-scenario-text"><strong>추천 상황:</strong> 10k 도심 아스팔트 러닝 및 페이스 유지</div>
+        </div>
+        <div class="sku-card-title">카라비너 퀵 스틱 SPF50+ PA++++</div>
+            <div class="sku-card-feature">러닝 중 멈추지 않고 한 손으로 3초 만에 덧바르는 카라비너 결합 스틱</div>
+            <div class="sku-meta-tags">
+              <span class="sku-tag">적용: 얼굴/목</span>
+              <span class="sku-tag">제형: 세범매트스틱</span>
+              <span class="sku-tag">지속: 땀 흘림 98.4%</span>
+              <span class="sku-tag">기능: -4.2℃ 쿨링</span>
+            </div>
+          </div>
+          <div>
+            <div class="sku-price-row">
+              <span>₩38,000</span>
+              <span style="font-size: 12px; color: var(--halo-gray-mid);">22g</span>
+            </div>
+            <label class="compare-check-label">
+              <input type="checkbox" onchange="toggleCompareItem(1, this)"> 스펙 횡단 비교함에 추가
+            </label>
+            <div class="sku-card-actions">
+              <button class="btn-sku-action" onclick="openProductModal(1)">상세 퀵뷰</button>
+              <button class="btn-sku-action primary" onclick="openLaunchModal('카라비너 퀵 스틱')">출시 알림</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- #02 -->
+        <div class="sku-card" data-sku="2" data-col="running" data-phase="In Post" data-type="미스트" data-func="쿨링 휴대">
+          <div>
+            <div class="sku-card-header">
+              <div class="sku-badges-row">
+                <span class="wireframe-badge">ALL-ROUND</span>
+              </div>
+              <span style="font-size: 11px; font-weight: 800; color: var(--halo-gray-mid);">#02</span>
+            </div>
+            <div class="sku-img-box">
+              <div style="font-size: 24px;">[#02 에어로 쿨링 미스트]</div>
+              <div style="font-size: 11px; font-weight: 800;">[#02 에어로 쿨링 질소 미스트]</div>
+              <span class="sku-persona-tag"> CLIENT-09 임아영</span>
+            </div>
+            
+        <div class="sku-role-box">
+          <div class="sku-role-badge-row">
+            <span class="sku-role-badge extended">파생 기어 (Extended Gear)</span>
+          </div>
+          <div class="sku-relation-text"><strong>파생 기준:</strong> #01 스틱 기반 360도 전방위 전신 분사 확장</div>
+          <div class="sku-scenario-text"><strong>추천 상황:</strong> 고속 인터벌 및 급속 체온 강하</div>
+        </div>
+        <div class="sku-card-title">에어로 쿨링 질소 미스트</div>
+            <div class="sku-card-feature">질소 밸브 360도 전방위 분사 및 피부 -3.9℃ 급속 냉각</div>
+            <div class="sku-meta-tags">
+              <span class="sku-tag">적용: 전신</span>
+              <span class="sku-tag">제형: 미세미스트</span>
+              <span class="sku-tag">용량: 120ml</span>
+            </div>
+          </div>
+          <div>
+            <div class="sku-price-row">
+              <span>₩39,000</span>
+              <span style="font-size: 12px; color: var(--halo-gray-mid);">120ml</span>
+            </div>
+            <label class="compare-check-label">
+              <input type="checkbox" onchange="toggleCompareItem(2, this)"> 비교함 추가
+            </label>
+            <div class="sku-card-actions">
+              <button class="btn-sku-action" onclick="openProductModal(2)">상세</button>
+              <button class="btn-sku-action primary" onclick="openLaunchModal('에어로 쿨링 미스트')">알림</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- #03 -->
+        <div class="sku-card" data-sku="3" data-col="running" data-phase="Pre In Post" data-type="패치" data-func="휴대 쿨링">
+          <div>
+            <div class="sku-card-header">
+              <div class="sku-badges-row">
+                <span class="wireframe-badge dark">ALL-IN-ONE</span>
+              </div>
+              <span style="font-size: 11px; font-weight: 800; color: var(--halo-gray-mid);">#03</span>
+            </div>
+            <div class="sku-img-box">
+              <div style="font-size: 24px;">🎽</div>
+              <div style="font-size: 11px; font-weight: 800;">[#03 풀코스 마라톤 스타터 팩]</div>
+              <span class="sku-persona-tag"> 마라톤 출전자 전원</span>
+            </div>
+            
+        <div class="sku-role-box">
+          <div class="sku-role-badge-row">
+            <span class="sku-role-badge support">보조 키트 (Support Kit)</span>
+          </div>
+          <div class="sku-relation-text"><strong>파생 기준:</strong> #01 장거리 마라톤 5회분 일회용 소분 키트</div>
+          <div class="sku-scenario-text"><strong>추천 상황:</strong> 대회 당일 경량 휴대 및 완주</div>
+        </div>
+        <div class="sku-card-title">풀코스 마라톤 스타터 팩</div>
+            <div class="sku-card-feature">퀵스틱+질소미스트+카라비너+방수 파우치 3종 세트</div>
+            <div class="sku-meta-tags">
+              <span class="sku-tag">적용: 올인원</span>
+              <span class="sku-tag">제형: 3종 키트</span>
+            </div>
+          </div>
+          <div>
+            <div class="sku-price-row">
+              <span>₩68,000</span>
+              <span style="font-size: 12px; color: var(--halo-gray-mid);">3종 키트</span>
+            </div>
+            <label class="compare-check-label">
+              <input type="checkbox" onchange="toggleCompareItem(3, this)"> 비교함 추가
+            </label>
+            <div class="sku-card-actions">
+              <button class="btn-sku-action" onclick="openProductModal(3)">상세</button>
+              <button class="btn-sku-action primary" onclick="openLaunchModal('풀코스 스타터 팩')">알림</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- #04 -->
+        <div class="sku-card" data-sku="4" data-col="running" data-phase="In" data-type="젤" data-func="쿨링">
+          <div>
+            <div class="sku-card-header">
+              <div class="sku-badges-row">
+                <span class="wireframe-badge">ENDURANCE</span>
+              </div>
+              <span style="font-size: 11px; font-weight: 800; color: var(--halo-gray-mid);">#04</span>
+            </div>
+            <div class="sku-img-box">
+              <div style="font-size: 24px;"></div>
+              <div style="font-size: 11px; font-weight: 800;">[#04 42.195km 엔듀런스 선 젤]</div>
+              <span class="sku-persona-tag"> CLIENT-14 신동욱</span>
+            </div>
+            
+        <div class="sku-role-box">
+          <div class="sku-role-badge-row">
+            <span class="sku-role-badge extended">파생 기어 (Extended Gear)</span>
+          </div>
+          <div class="sku-relation-text"><strong>파생 기준:</strong> #01 스틱 기반 땀 저항 지속형 쿨링 젤</div>
+          <div class="sku-scenario-text"><strong>추천 상황:</strong> 42.195km 풀코스 및 혹서기 레이스</div>
+        </div>
+        <div class="sku-card-title">42.195km 엔듀런스 선 젤</div>
+            <div class="sku-card-feature">5시간 지속 열 방출 롱래스팅 수분 선 젤</div>
+            <div class="sku-meta-tags">
+              <span class="sku-tag">적용: 팔다리/전신</span>
+              <span class="sku-tag">제형: 수분 젤</span>
+              <span class="sku-tag">지속: 5시간</span>
+            </div>
+          </div>
+          <div>
+            <div class="sku-price-row">
+              <span>₩55,000</span>
+              <span style="font-size: 12px; color: var(--halo-gray-mid);">90ml</span>
+            </div>
+            <label class="compare-check-label">
+              <input type="checkbox" onchange="toggleCompareItem(4, this)"> 비교함 추가
+            </label>
+            <div class="sku-card-actions">
+              <button class="btn-sku-action" onclick="openProductModal(4)">상세</button>
+              <button class="btn-sku-action primary" onclick="openLaunchModal('42.195km 엔듀런스 젤')">알림</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- #05 (Collection 2 Wide Representative Flagship) -->
+        <div class="sku-card wide-highlight" data-sku="5" data-col="hiking" data-phase="Pre" data-type="젤" data-func="방수">
+          <div>
+            <div class="sku-card-header">
+              <div class="sku-badges-row">
+                <span class="wireframe-badge dark">COLLECTION 02 대표</span>
+                <span class="wireframe-badge">PRE-WORKOUT</span>
+              </div>
+              <span style="font-size: 11px; font-weight: 800; color: var(--halo-gray-mid);">#05</span>
+            </div>
+            <div class="sku-img-box">
+              <div style="font-size: 28px;"></div>
+              <div style="font-size: 12px; font-weight: 800;">[#05 멀티 쉴드 배리어 선 세럼]</div>
+              <span class="sku-persona-tag"> CLIENT-02 강민재 (트레일 하이커)</span>
+            </div>
+            
+        <div class="sku-role-box">
+          <div class="sku-role-badge-row">
+            <span class="sku-role-badge core">대표 플래그십 (Core Flagship)</span>
+          </div>
+          <div class="sku-relation-text"><strong>파생 기준:</strong> 장벽 밀착 고밀도 UV 쉴드 기술의 기준점</div>
+          <div class="sku-scenario-text"><strong>추천 상황:</strong> 장시간 능선 종주 및 고지대 자외선</div>
+        </div>
+        <div class="sku-card-title">멀티 쉴드 배리어 선 세럼</div>
+            <div class="sku-card-feature">고산지대 칼바람+자외선+미세먼지 3중 방어 세라마이드 장벽 세럼</div>
+            <div class="sku-meta-tags">
+              <span class="sku-tag">적용: 얼굴/목</span>
+              <span class="sku-tag">제형: 고밀도 세럼</span>
+              <span class="sku-tag">지속: 12시간 보습</span>
+            </div>
+          </div>
+          <div>
+            <div class="sku-price-row">
+              <span>₩52,000</span>
+              <span style="font-size: 12px; color: var(--halo-gray-mid);">50ml</span>
+            </div>
+            <label class="compare-check-label">
+              <input type="checkbox" onchange="toggleCompareItem(5, this)"> 스펙 횡단 비교함에 추가
+            </label>
+            <div class="sku-card-actions">
+              <button class="btn-sku-action" onclick="openProductModal(5)">상세 퀵뷰</button>
+              <button class="btn-sku-action primary" onclick="openLaunchModal('멀티 쉴드 배리어 세럼')">출시 알림</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- #06 -->
+        <div class="sku-card" data-sku="6" data-col="hiking" data-phase="In" data-type="스틱" data-func="세범 휴대">
+          <div>
+            <div class="sku-card-header">
+              <div class="sku-badges-row"><span class="wireframe-badge">NON-SLIP</span></div>
+              <span style="font-size: 11px; font-weight: 800; color: var(--halo-gray-mid);">#06</span>
+            </div>
+            <div class="sku-img-box">
+              <div style="font-size: 24px;">‍♀️</div>
+              <div style="font-size: 11px; font-weight: 800;">[#06 프릭션 논슬립 선 파우더]</div>
+              <span class="sku-persona-tag"> CLIENT-13 오하은</span>
+            </div>
+            
+        <div class="sku-role-box">
+          <div class="sku-role-badge-row">
+            <span class="sku-role-badge extended">파생 기어 (Extended Gear)</span>
+          </div>
+          <div class="sku-relation-text"><strong>파생 기준:</strong> #05 밤 기반 땀/유분 즉각 흡착 매트 파우더</div>
+          <div class="sku-scenario-text"><strong>추천 상황:</strong> 급경사 구간 번들거림 및 땀 흡착</div>
+        </div>
+        <div class="sku-card-title">프릭션 논슬립 선 파우더</div>
+            <div class="sku-card-feature">초크백 장착형 마찰력 유지 피지 흡착 파우더</div>
+            <div class="sku-meta-tags">
+              <span class="sku-tag">적용: 이마/손등</span>
+              <span class="sku-tag">제형: 미네랄 파우더</span>
+            </div>
+          </div>
+          <div>
+            <div class="sku-price-row"><span>₩35,000</span><span style="font-size: 12px; color: var(--halo-gray-mid);">12g</span></div>
+            <label class="compare-check-label"><input type="checkbox" onchange="toggleCompareItem(6, this)"> 비교함 추가</label>
+            <div class="sku-card-actions">
+              <button class="btn-sku-action" onclick="openProductModal(6)">상세</button>
+              <button class="btn-sku-action primary" onclick="openLaunchModal('프릭션 선 파우더')">알림</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- #07 -->
+        <div class="sku-card" data-sku="7" data-col="hiking" data-phase="Post" data-type="패치" data-func="쿨링">
+          <div>
+            <div class="sku-card-header">
+              <div class="sku-badges-row"><span class="wireframe-badge">RECOVERY</span></div>
+              <span style="font-size: 11px; font-weight: 800; color: var(--halo-gray-mid);">#07</span>
+            </div>
+            <div class="sku-img-box">
+              <div style="font-size: 24px;">🧊</div>
+              <div style="font-size: 11px; font-weight: 800;">[#07 트레일 리커버리 패치]</div>
+              <span class="sku-persona-tag"> CLIENT-04 김지훈</span>
+            </div>
+            
+        <div class="sku-role-box">
+          <div class="sku-role-badge-row">
+            <span class="sku-role-badge support">보조 키트 (Support Kit)</span>
+          </div>
+          <div class="sku-relation-text"><strong>파생 기준:</strong> #05 자외선 노출 후 하이킹 전용 쿨링 패치</div>
+          <div class="sku-scenario-text"><strong>추천 상황:</strong> 하산 직후 피부 진정 및 열감 배출</div>
+        </div>
+        <div class="sku-card-title">트레일 리커버리 쿨링 패치</div>
+            <div class="sku-card-feature">하산 후 달아오른 양 볼 -5℃ 지속 쿨다운 패치</div>
+            <div class="sku-meta-tags">
+              <span class="sku-tag">적용: 양 볼/콧등</span>
+              <span class="sku-tag">제형: 하이드로겔</span>
+            </div>
+          </div>
+          <div>
+            <div class="sku-price-row"><span>₩28,000</span><span style="font-size: 12px; color: var(--halo-gray-mid);">5회분</span></div>
+            <label class="compare-check-label"><input type="checkbox" onchange="toggleCompareItem(7, this)"> 비교함 추가</label>
+            <div class="sku-card-actions">
+              <button class="btn-sku-action" onclick="openProductModal(7)">상세</button>
+              <button class="btn-sku-action primary" onclick="openLaunchModal('트레일 쿨링 패치')">알림</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- #08 (Collection 3 Wide Representative Flagship) -->
+        <div class="sku-card wide-highlight" data-sku="8" data-col="surfing" data-phase="Pre In" data-type="젤" data-func="방수">
+          <div>
+            <div class="sku-card-header">
+              <div class="sku-badges-row">
+                <span class="wireframe-badge dark">COLLECTION 03 대표</span>
+                <span class="wireframe-badge">REEF-SAFE</span>
+              </div>
+              <span style="font-size: 11px; font-weight: 800; color: var(--halo-gray-mid);">#08</span>
+            </div>
+            <div class="sku-img-box">
+              <div style="font-size: 28px;"></div>
+              <div style="font-size: 12px; font-weight: 800;">[#08 오션 세이프 리프 쉴드]</div>
+              <span class="sku-persona-tag"> CLIENT-08 윤서준 (서핑 라이더)</span>
+            </div>
+            
+        <div class="sku-role-box">
+          <div class="sku-role-badge-row">
+            <span class="sku-role-badge core">대표 플래그십 (Core Flagship)</span>
+          </div>
+          <div class="sku-relation-text"><strong>파생 기준:</strong> 해양 생태계 보호 리프 세이프 징크 기준점</div>
+          <div class="sku-scenario-text"><strong>추천 상황:</strong> 3~4시간 연속 라인업 서핑</div>
+        </div>
+        <div class="sku-card-title">오션 세이프 리프 쉴드 선스크린</div>
+            <div class="sku-card-feature">파도 속 80분 지속 방수 및 산호초를 보호하는 100% 무기자차</div>
+            <div class="sku-meta-tags">
+              <span class="sku-tag">적용: 얼굴/바디</span>
+              <span class="sku-tag">제형: 무기자차 크림</span>
+              <span class="sku-tag">지속: 80분 내수성</span>
+            </div>
+          </div>
+          <div>
+            <div class="sku-price-row">
+              <span>₩46,000</span>
+              <span style="font-size: 12px; color: var(--halo-gray-mid);">100ml</span>
+            </div>
+            <label class="compare-check-label">
+              <input type="checkbox" onchange="toggleCompareItem(8, this)"> 스펙 횡단 비교함에 추가
+            </label>
+            <div class="sku-card-actions">
+              <button class="btn-sku-action" onclick="openProductModal(8)">상세 퀵뷰</button>
+              <button class="btn-sku-action primary" onclick="openLaunchModal('오션 세이프 리프 쉴드')">출시 알림</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- #09 -->
+        <div class="sku-card" data-sku="9" data-col="surfing" data-phase="Post" data-type="미스트" data-func="쿨링">
+          <div>
+            <div class="sku-card-header">
+              <div class="sku-badges-row"><span class="wireframe-badge">SALT-RESET</span></div>
+              <span style="font-size: 11px; font-weight: 800; color: var(--halo-gray-mid);">#09</span>
+            </div>
+            <div class="sku-img-box">
+              <div style="font-size: 24px;">‍♀️🧂</div>
+              <div style="font-size: 11px; font-weight: 800;">[#09 솔트 리셋 애프터 미스트]</div>
+              <span class="sku-persona-tag"> CLIENT-15 장유진</span>
+            </div>
+            
+        <div class="sku-role-box">
+          <div class="sku-role-badge-row">
+            <span class="sku-role-badge extended">파생 기어 (Extended Gear)</span>
+          </div>
+          <div class="sku-relation-text"><strong>파생 기준:</strong> #08 세럼 기반 백탁 제로 워터프루프 리퀴드</div>
+          <div class="sku-scenario-text"><strong>추천 상황:</strong> 롱보드 서핑 및 오픈워터 수영</div>
+        </div>
+        <div class="sku-card-title">솔트 리셋 애프터 워터 미스트</div>
+            <div class="sku-card-feature">해수 건조 후 피부 소금 결정 중화 세정 미스트</div>
+            <div class="sku-meta-tags">
+              <span class="sku-tag">적용: 얼굴/전신</span>
+              <span class="sku-tag">제형: 워터 미스트</span>
+            </div>
+          </div>
+          <div>
+            <div class="sku-price-row"><span>₩36,000</span><span style="font-size: 12px; color: var(--halo-gray-mid);">150ml</span></div>
+            <label class="compare-check-label"><input type="checkbox" onchange="toggleCompareItem(9, this)"> 비교함 추가</label>
+            <div class="sku-card-actions">
+              <button class="btn-sku-action" onclick="openProductModal(9)">상세</button>
+              <button class="btn-sku-action primary" onclick="openLaunchModal('솔트 리셋 미스트')">알림</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- #10 -->
+        <div class="sku-card" data-sku="10" data-col="surfing" data-phase="In" data-type="밤" data-func="방수">
+          <div>
+            <div class="sku-card-header">
+              <div class="sku-badges-row"><span class="wireframe-badge">IRON-BARRIER</span></div>
+              <span style="font-size: 11px; font-weight: 800; color: var(--halo-gray-mid);">#10</span>
+            </div>
+            <div class="sku-img-box">
+              <div style="font-size: 24px;">🚴‍♂️</div>
+              <div style="font-size: 11px; font-weight: 800;">[#10 트라이애슬론 아이언 밤]</div>
+              <span class="sku-persona-tag"> CLIENT-10 배수진</span>
+            </div>
+            
+        <div class="sku-role-box">
+          <div class="sku-role-badge-row">
+            <span class="sku-role-badge extended">파생 기어 (Extended Gear)</span>
+          </div>
+          <div class="sku-relation-text"><strong>파생 기준:</strong> #08 서핑 직후 붉은기 진정 시카 애프터 젤</div>
+          <div class="sku-scenario-text"><strong>추천 상황:</strong> 세션 종료 후 피부 진정</div>
+        </div>
+        <div class="sku-card-title">트라이애슬론 아이언 밤</div>
+            <div class="sku-card-feature">수영→사이클→마라톤 6시간 지속 방수 왁스 밤</div>
+            <div class="sku-meta-tags">
+              <span class="sku-tag">적용: 전신 취약부</span>
+              <span class="sku-tag">제형: 하드 밤</span>
+            </div>
+          </div>
+          <div>
+            <div class="sku-price-row"><span>₩58,000</span><span style="font-size: 12px; color: var(--halo-gray-mid);">40g</span></div>
+            <label class="compare-check-label"><input type="checkbox" onchange="toggleCompareItem(10, this)"> 비교함 추가</label>
+            <div class="sku-card-actions">
+              <button class="btn-sku-action" onclick="openProductModal(10)">상세</button>
+              <button class="btn-sku-action primary" onclick="openLaunchModal('트라이애슬론 아이언 밤')">알림</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- #11 (Collection 4 Wide Representative Flagship) -->
+        <div class="sku-card wide-highlight" data-sku="11" data-col="tennis" data-phase="Pre In" data-type="밤" data-func="세범 쿨링">
+          <div>
+            <div class="sku-card-header">
+              <div class="sku-badges-row">
+                <span class="wireframe-badge dark">COLLECTION 04 대표</span>
+                <span class="wireframe-badge">NO-GRIP-SLIP</span>
+              </div>
+              <span style="font-size: 11px; font-weight: 800; color: var(--halo-gray-mid);">#11</span>
+            </div>
+            <div class="sku-img-box">
+              <div style="font-size: 28px;"></div>
+              <div style="font-size: 12px; font-weight: 800;">[#11 제로 슬립 그립 쿨링 쿠션]</div>
+              <span class="sku-persona-tag"> CLIENT-03 정소희 (테니스 플레이어)</span>
+            </div>
+            
+        <div class="sku-role-box">
+          <div class="sku-role-badge-row">
+            <span class="sku-role-badge support">보조 키트 (Support Kit)</span>
+          </div>
+          <div class="sku-relation-text"><strong>파생 기준:</strong> #08/09 서핑 후 바다 소금/선크림 원스텝 클렌저</div>
+          <div class="sku-scenario-text"><strong>추천 상황:</strong> 해변 샤워 및 잔여물 세정</div>
+        </div>
+        <div class="sku-card-title">제로 슬립 그립 쿨링 쿠션</div>
+            <div class="sku-card-feature">라켓 오버그립 유분 묻음 방지 무유분 매트 쿨링 메쉬 쿠션</div>
+            <div class="sku-meta-tags">
+              <span class="sku-tag">적용: 얼굴/이마</span>
+              <span class="sku-tag">제형: 무유분 쿠션</span>
+              <span class="sku-tag">기능: 그립 논슬립</span>
+            </div>
+          </div>
+          <div>
+            <div class="sku-price-row">
+              <span>₩44,000</span>
+              <span style="font-size: 12px; color: var(--halo-gray-mid);">15g</span>
+            </div>
+            <label class="compare-check-label">
+              <input type="checkbox" onchange="toggleCompareItem(11, this)"> 스펙 횡단 비교함에 추가
+            </label>
+            <div class="sku-card-actions">
+              <button class="btn-sku-action" onclick="openProductModal(11)">상세 퀵뷰</button>
+              <button class="btn-sku-action primary" onclick="openLaunchModal('제로 슬립 쿨링 쿠션')">출시 알림</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- #12 -->
+        <div class="sku-card" data-sku="12" data-col="tennis" data-phase="Pre" data-type="젤" data-func="방수">
+          <div>
+            <div class="sku-card-header">
+              <div class="sku-badges-row"><span class="wireframe-badge">FAIRWAY-SHIELD</span></div>
+              <span style="font-size: 11px; font-weight: 800; color: var(--halo-gray-mid);">#12</span>
+            </div>
+            <div class="sku-img-box">
+              <div style="font-size: 24px;"></div>
+              <div style="font-size: 11px; font-weight: 800;">[#12 UV 반사 페어웨이 선 젤]</div>
+              <span class="sku-persona-tag"> CLIENT-07 최현우</span>
+            </div>
+            
+        <div class="sku-role-box">
+          <div class="sku-role-badge-row">
+            <span class="sku-role-badge extended">파생 기어 (Extended Gear)</span>
+          </div>
+          <div class="sku-relation-text"><strong>파생 기준:</strong> #14 파우더 기반 라켓 그립 미끄럼 방지 프라이머</div>
+          <div class="sku-scenario-text"><strong>추천 상황:</strong> 격렬한 랠리 중 그립력 보존</div>
+        </div>
+        <div class="sku-card-title">UV 반사 페어웨이 선 젤</div>
+            <div class="sku-card-feature">18홀 잔디 반사광 듀얼 차단 수분 젤</div>
+            <div class="sku-meta-tags">
+              <span class="sku-tag">적용: 얼굴/팔다리</span>
+              <span class="sku-tag">제형: 워터 젤</span>
+            </div>
+          </div>
+          <div>
+            <div class="sku-price-row"><span>₩54,000</span><span style="font-size: 12px; color: var(--halo-gray-mid);">70ml</span></div>
+            <label class="compare-check-label"><input type="checkbox" onchange="toggleCompareItem(12, this)"> 비교함 추가</label>
+            <div class="sku-card-actions">
+              <button class="btn-sku-action" onclick="openProductModal(12)">상세</button>
+              <button class="btn-sku-action primary" onclick="openLaunchModal('페어웨이 선 젤')">알림</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- #13 -->
+        <div class="sku-card" data-sku="13" data-col="tennis" data-phase="In" data-type="젤" data-func="세범">
+          <div>
+            <div class="sku-card-header">
+              <div class="sku-badges-row"><span class="wireframe-badge">NO-STING</span></div>
+              <span style="font-size: 11px; font-weight: 800; color: var(--halo-gray-mid);">#13</span>
+            </div>
+            <div class="sku-img-box">
+              <div style="font-size: 24px;">⚽</div>
+              <div style="font-size: 11px; font-weight: 800;">[#13 퀵 앱소브 매치 플루이드]</div>
+              <span class="sku-persona-tag"> CLIENT-12 권도현</span>
+            </div>
+            
+        <div class="sku-role-box">
+          <div class="sku-role-badge-row">
+            <span class="sku-role-badge extended">파생 기어 (Extended Gear)</span>
+          </div>
+          <div class="sku-relation-text"><strong>파생 기준:</strong> #14 테니스 전용 눈시림 방지 쿨링 선 플루이드</div>
+          <div class="sku-scenario-text"><strong>추천 상황:</strong> 서브 시 눈시림 차단 및 시야 확보</div>
+        </div>
+        <div class="sku-card-title">퀵 앱소브 매치 선 플루이드</div>
+            <div class="sku-card-feature">경기 중 땀 흘러도 눈에 안 시린 No-Sting 10초 흡수 플루이드</div>
+            <div class="sku-meta-tags">
+              <span class="sku-tag">적용: 얼굴/이마</span>
+              <span class="sku-tag">제형: 플루이드</span>
+            </div>
+          </div>
+          <div>
+            <div class="sku-price-row"><span>₩39,000</span><span style="font-size: 12px; color: var(--halo-gray-mid);">60ml</span></div>
+            <label class="compare-check-label"><input type="checkbox" onchange="toggleCompareItem(13, this)"> 비교함 추가</label>
+            <div class="sku-card-actions">
+              <button class="btn-sku-action" onclick="openProductModal(13)">상세</button>
+              <button class="btn-sku-action primary" onclick="openLaunchModal('매치 선 플루이드')">알림</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- #14 (Collection 5 Wide Representative Flagship) -->
+        <div class="sku-card wide-highlight" data-sku="14" data-col="fitness" data-phase="In" data-type="스틱" data-func="세범 휴대">
+          <div>
+            <div class="sku-card-header">
+              <div class="sku-badges-row">
+                <span class="wireframe-badge dark">COLLECTION 05 대표</span>
+                <span class="wireframe-badge">HEAVY-DUTY</span>
+              </div>
+              <span style="font-size: 11px; font-weight: 800; color: var(--halo-gray-mid);">#14</span>
+            </div>
+            <div class="sku-img-box">
+              <div style="font-size: 28px;">‍♀️💥</div>
+              <div style="font-size: 12px; font-weight: 800;">[#14 헤비듀티 세범 컨트롤 스틱]</div>
+              <span class="sku-persona-tag"> CLIENT-06 박서연 (크로스핏 코치)</span>
+            </div>
+            
+        <div class="sku-role-box">
+          <div class="sku-role-badge-row">
+            <span class="sku-role-badge core">대표 플래그십 (Core Flagship)</span>
+          </div>
+          <div class="sku-relation-text"><strong>파생 기준:</strong> 라켓/바벨 제로 슬립 무유분 코팅 기준점</div>
+          <div class="sku-scenario-text"><strong>추천 상황:</strong> 야외 코트 서브 및 격렬한 랠리</div>
+        </div>
+        <div class="sku-card-title">헤비듀티 세범 컨트롤 스틱</div>
+            <div class="sku-card-feature">바벨 마찰에도 밀림 없는 마그네슘 파우더 배합 하드 스틱</div>
+            <div class="sku-meta-tags">
+              <span class="sku-tag">적용: 이마/목</span>
+              <span class="sku-tag">제형: 슈퍼 하드 스틱</span>
+              <span class="sku-tag">기능: 마찰 저항 99.1%</span>
+            </div>
+          </div>
+          <div>
+            <div class="sku-price-row">
+              <span>₩41,000</span>
+              <span style="font-size: 12px; color: var(--halo-gray-mid);">30g</span>
+            </div>
+            <label class="compare-check-label">
+              <input type="checkbox" onchange="toggleCompareItem(14, this)"> 스펙 횡단 비교함에 추가
+            </label>
+            <div class="sku-card-actions">
+              <button class="btn-sku-action" onclick="openProductModal(14)">상세 퀵뷰</button>
+              <button class="btn-sku-action primary" onclick="openLaunchModal('헤비듀티 세범 스틱')">출시 알림</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- #15 -->
+        <div class="sku-card" data-sku="15" data-col="fitness" data-phase="Pre" data-type="젤" data-func="방수">
+          <div>
+            <div class="sku-card-header">
+              <div class="sku-badges-row"><span class="wireframe-badge">OXYGEN-FLOW</span></div>
+              <span style="font-size: 11px; font-weight: 800; color: var(--halo-gray-mid);">#15</span>
+            </div>
+            <div class="sku-img-box">
+              <div style="font-size: 24px;">🧘‍♀️</div>
+              <div style="font-size: 11px; font-weight: 800;">[#15 스웨트프루프 옥시젠 플루이드]</div>
+              <span class="sku-persona-tag"> CLIENT-05 이지은</span>
+            </div>
+            
+        <div class="sku-role-box">
+          <div class="sku-role-badge-row">
+            <span class="sku-role-badge extended">파생 기어 (Extended Gear)</span>
+          </div>
+          <div class="sku-relation-text"><strong>파생 기준:</strong> #14 그립 기반 고강도 파워리프팅 마찰 픽서</div>
+          <div class="sku-scenario-text"><strong>추천 상황:</strong> 1RM 중량 스쿼트/데드리프트</div>
+        </div>
+        <div class="sku-card-title">스웨트프루프 옥시젠 플루이드</div>
+            <div class="sku-card-feature">고강도 웨이트 중 모공을 막지 않는 통기성 산소 플루이드</div>
+            <div class="sku-meta-tags">
+              <span class="sku-tag">적용: 얼굴/전신</span>
+              <span class="sku-tag">제형: 산소 플루이드</span>
+            </div>
+          </div>
+          <div>
+            <div class="sku-price-row"><span>₩48,000</span><span style="font-size: 12px; color: var(--halo-gray-mid);">50ml</span></div>
+            <label class="compare-check-label"><input type="checkbox" onchange="toggleCompareItem(15, this)"> 비교함 추가</label>
+            <div class="sku-card-actions">
+              <button class="btn-sku-action" onclick="openProductModal(15)">상세</button>
+              <button class="btn-sku-action primary" onclick="openLaunchModal('옥시젠 플루이드')">알림</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- #16 -->
+        <div class="sku-card" data-sku="16" data-col="fitness" data-phase="Pre In Post" data-type="패치" data-func="휴대">
+          <div>
+            <div class="sku-card-header">
+              <div class="sku-badges-row"><span class="wireframe-badge dark">URBAN-KIT</span></div>
+              <span style="font-size: 11px; font-weight: 800; color: var(--halo-gray-mid);">#16</span>
+            </div>
+            <div class="sku-img-box">
+              <div style="font-size: 24px;">🛹🎒</div>
+              <div style="font-size: 11px; font-weight: 800;">[#16 어반 쉴드 포켓 기어 키트]</div>
+              <span class="sku-persona-tag"> CLIENT-16 류태양</span>
+            </div>
+            
+        <div class="sku-role-box">
+          <div class="sku-role-badge-row">
+            <span class="sku-role-badge support">보조 키트 (Support Kit)</span>
+          </div>
+          <div class="sku-relation-text"><strong>파생 기준:</strong> #14 피트니스 후 땀/유분 즉각 세정 샤워 패드</div>
+          <div class="sku-scenario-text"><strong>추천 상황:</strong> 헬스장 트레이닝 직후 세정</div>
+        </div>
+        <div class="sku-card-title">어반 쉴드 포켓 기어 키트</div>
+            <div class="sku-card-feature">지열 차단 포켓 스틱+스포츠 타올+파우치 3종 세트</div>
+            <div class="sku-meta-tags">
+              <span class="sku-tag">적용: 얼굴/바디</span>
+              <span class="sku-tag">제형: 3종 키트</span>
+            </div>
+          </div>
+          <div>
+            <div class="sku-price-row"><span>₩45,000</span><span style="font-size: 12px; color: var(--halo-gray-mid);">3종 키트</span></div>
+            <label class="compare-check-label"><input type="checkbox" onchange="toggleCompareItem(16, this)"> 비교함 추가</label>
+            <div class="sku-card-actions">
+              <button class="btn-sku-action" onclick="openProductModal(16)">상세</button>
+              <button class="btn-sku-action primary" onclick="openLaunchModal('어반 쉴드 포켓 키트')">알림</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Empty State (BC-S4) -->
+        <div class="empty-state-view" id="emptyStateView">
+          <h4> 일치하는 기어가 없습니다</h4>
+          <p>선택하신 시점, 제형 또는 기능 조건에 맞는 기어가 없습니다. 필터를 초기화해 보세요.</p>
+          <button class="btn-sku-action primary" onclick="resetAllFilters()" style="display:inline-block; width: auto; padding: 10px 24px;">필터 전체 초기화 [초기화]</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+    <!-- 08. Floating Compare Tray (BC-S3, BC-M3) -->
+  <div class="floating-compare-tray" id="floatingCompareTray">
+    <div class="compare-tray-collapsed-bar" id="compareTrayCollapsedBar" onclick="toggleTrayCollapse()" style="cursor: pointer;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span>선택 기어: <strong id="collapsedCompareCount">0</strong>개 담김</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <button class="btn-tray-expand-toggle" onclick="event.stopPropagation(); toggleTrayCollapse()">[펼치기 ^]</button>
+        <button class="btn-open-compare-modal-mini" onclick="event.stopPropagation(); openCompareModal()" style="padding: 4px 10px; font-size: 11px; border: var(--border-thick); background: #FFF; font-weight: 900;">비교하기</button>
+      </div>
+    </div>
+    <div class="compare-tray-main-content">
+      <div class="compare-tray-left">
+        <button class="btn-tray-collapse-toggle" id="btnTrayCollapseToggle" onclick="toggleTrayCollapse()">[접기 v]</button>
+        <div class="compare-tray-items" id="compareTrayItems">
+          <!-- Dynamic mini chips inserted by JS -->
+        </div>
+      </div>
+      <div class="compare-tray-actions">
+        <button class="btn-open-compare-modal" onclick="openCompareModal()">스펙 횡단 비교하기</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 09. Modals -->
+  <!-- 09.1 Comparison Modal (BC-S3, BC-V4) -->
+  <div class="modal-backdrop" id="compareModalBackdrop" onclick="closeCompareModal(event)">
+    <div class="modal-window compare-modal-window" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" onclick="closeCompareModal()">[X]</button>
+      <div style="font-size: 13px; font-weight: 800; color: var(--halo-gray-mid); margin-bottom: 4px;">SPECIFICATION MATRIX</div>
+      <h3 style="font-size: 24px; font-weight: 900; margin-bottom: 16px;">선택 기어 횡단 스펙 비교</h3>
+      
+      <div class="compare-table-scroll-container">
+        <table class="compare-modal-table" id="compareModalTable">
+          <!-- Injected by JS -->
+        </table>
+      </div>
+
+      <div style="text-align: right; margin-top: 20px;">
+        <button class="btn-sku-action primary" onclick="closeCompareModal()" style="display: inline-block; width: auto; padding: 10px 24px;">닫기</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 09.2 Product Quick View Modal (BC-V3, BC-M4) -->
+  <div class="modal-backdrop" id="skuModalBackdrop" onclick="closeProductModal(event)">
+    <div class="modal-window" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" onclick="closeProductModal()">[X]</button>
+      <div id="skuModalContent">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 09.3 1-Click Launch Alert Modal SCR-0610 (BC-S4, BC-M5) -->
+  <div class="modal-backdrop" id="launchModalBackdrop" onclick="closeLaunchModal(event)">
+    <div class="modal-window" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" onclick="closeLaunchModal()">[X]</button>
+      <div id="launchModalFormSection">
+        <span class="wireframe-badge dark">SCR-0610 얼리버드</span>
+        <h3 style="font-size: 22px; font-weight: 900; margin: 10px 0 6px;">1-Click 출시 알림 신청</h3>
+        <p style="font-size: 13px; color: var(--halo-gray-dark); margin-bottom: 20px;">
+          선택 대상: <strong id="launchTargetItemName">전체 라인업</strong><br>
+          출시 즉시 15% 시크릿 할인 쿠폰과 전용 카라비너 스트랩을 증정합니다.
+        </p>
+
+        <form id="launchAlertForm" onsubmit="handleLaunchSubmit(event)">
+          <div class="form-group">
+            <label>성함 (Name) *</label>
+            <input type="text" class="form-input" id="alertName" placeholder="홍길동" required>
+          </div>
+          <div class="form-group">
+            <label>휴대폰 번호 (Phone) *</label>
+            <input type="tel" class="form-input" id="alertPhone" placeholder="010-1234-5678" required>
+          </div>
+          <div class="form-group">
+            <label>이메일 주소 (Email) *</label>
+            <input type="email" class="form-input" id="alertEmail" placeholder="athlete@halo.gear" required>
+          </div>
+          <label class="form-checkbox-label">
+            <input type="checkbox" id="alertTerms" required checked>
+            <span>[필수] 출시 알림 발송 및 얼리버드 혜택 안내를 위한 개인정보 수집에 동의합니다.</span>
+          </label>
+          <button type="submit" class="form-submit-btn" id="btnLaunchSubmit">알림 신청 완료 (15% 쿠폰 수령)</button>
+        </form>
+      </div>
+
+      <!-- Inline Success Card (BC-S4) -->
+      <div class="form-inline-success" id="launchSuccessCard">
+        <div style="font-size: 36px; margin-bottom: 8px;">🎉</div>
+        <h4>출시 알림 신청이 완료되었습니다!</h4>
+        <p style="font-size: 13px; color: var(--halo-gray-dark); line-height: 1.6; margin-bottom: 16px;">
+          입력하신 연락처로 <strong>15% 얼리버드 시크릿 쿠폰</strong>이 발송되었습니다.<br>
+          HALO 공식 런칭일에 가장 먼저 알림을 보내드립니다.
+        </p>
+        <button class="btn-sku-action primary" onclick="closeLaunchModal()" style="display:inline-block; width: auto; padding: 10px 24px;">확인</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. Footer -->
+  <footer class="section-spacing" style="background: var(--halo-gray-bg); padding: 48px 0;">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+      <div>
+        <div style="font-size: 18px; font-weight: 900;">HALO GEAR LAB</div>
+        <div style="font-size: 12px; color: var(--halo-gray-mid); margin-top: 4px;">© 2026 HALO Inc. No-Touch Cooling Sun Gear. All rights reserved.</div>
+      </div>
+      <div style="display: flex; gap: 16px; font-size: 12px; font-weight: 800;">
+        <span style="color: var(--halo-gray-mid);">공식 판매처:</span>
+        <a href="#" style="text-decoration: underline;">네이버 스마트스토어</a>
+        <a href="#" style="text-decoration: underline;">무신사</a>
+        <a href="#" style="text-decoration: underline;">29CM</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       11. Interactive JavaScript Engine (Filter, Compare, Modals, State Handling)
+       ========================================================================== -->
+  <script>
+    // 16 SKUs Comprehensive Master Data
+    const skuMasterDict = {
+      1: { name: '카라비너 퀵 스틱 SPF50+ PA++++', col: '시티 러닝 & 마라톤', vol: '22g', price: '₩38,000', phase: 'In', type: '스틱', func: '쿨링 휴대', part: '얼굴/목', dur: '땀 흘림 98.4%', persona: 'CLIENT-01 한아름 (러닝크루 리더)', feature: '러닝 중 멈추지 않고 한 손으로 3초 만에 덧바르는 카라비너 결합 스틱', clinical: '피부 표면 즉각 -4.2℃ 강하' },
+      2: { name: '에어로 쿨링 질소 미스트', col: '시티 러닝 & 마라톤', vol: '120ml', price: '₩39,000', phase: 'All', type: '미스트', func: '쿨링 휴대', part: '전신', dur: '3초 퀵드라이', persona: 'CLIENT-09 임아영 (사이클링 라이더)', feature: '질소 밸브 360도 전방위 분사 및 피부 -3.9℃ 급속 냉각', clinical: '분사 즉시 피부 온도 -3.9℃ 급속 쿨다운' },
+      3: { name: '풀코스 마라톤 스타터 팩', col: '시티 러닝 & 마라톤', vol: '3종 키트', price: '₩68,000', phase: 'All', type: '패치', func: '휴대 쿨링', part: '올인원', dur: '42.195km 완주', persona: '마라톤 풀코스 출전자 전원', feature: '퀵스틱+질소미스트+카라비너+방수 파우치 3종 세트', clinical: '42.195km 풀코스 필드 테스트 통과' },
+      4: { name: '42.195km 엔듀런스 선 젤', col: '시티 러닝 & 마라톤', vol: '90ml', price: '₩55,000', phase: 'In', type: '젤', func: '쿨링', part: '팔다리/전신', dur: '5시간 지속', persona: 'CLIENT-14 신동욱 (마라톤 러너)', feature: '5시간 지속 열 방출 롱래스팅 수분 선 젤', clinical: '5시간 체온 과열 방어 임상 통과' },
+      5: { name: '멀티 쉴드 배리어 선 세럼', col: '트레일 하이킹 & 클라이밍', vol: '50ml', price: '₩52,000', phase: 'Pre', type: '젤', func: '방수', part: '얼굴/목', dur: '12시간 보습', persona: 'CLIENT-02 강민재 (트레일 하이커)', feature: '고산지대 칼바람+자외선+미세먼지 3중 방어 세라마이드 장벽 세럼', clinical: '미세먼지 흡착 방지 92.1%' },
+      6: { name: '프릭션 논슬립 선 파우더', col: '트레일 하이킹 & 클라이밍', vol: '12g', price: '₩35,000', phase: 'In', type: '스틱', func: '세범 휴대', part: '이마/손등', dur: '마찰계수 99.4%', persona: 'CLIENT-13 오하은 (클라이밍 동호인)', feature: '초크백 장착형 마찰력 유지 피지 흡착 파우더', clinical: '홀드 마찰력 유지율 99.4% 입증' },
+      7: { name: '트레일 리커버리 쿨링 패치', col: '트레일 하이킹 & 클라이밍', vol: '5회분', price: '₩28,000', phase: 'Post', type: '패치', func: '쿨링', part: '양 볼/콧등', dur: '-5℃ 지속', persona: 'CLIENT-04 김지훈 (아웃도어 캠퍼)', feature: '하산 후 달아오른 양 볼 -5℃ 지속 쿨다운 패치', clinical: '무자극 0.00 피부 안전성 입증' },
+      8: { name: '오션 세이프 리프 쉴드', col: '서핑 & 수상 액티브', vol: '100ml', price: '₩46,000', phase: 'Pre/In', type: '젤', func: '방수', part: '얼굴/바디', dur: '80분 내수성', persona: 'CLIENT-08 윤서준 (서핑 라이더)', feature: '파도 속 80분 지속 방수 및 산호초를 보호하는 100% 무기자차', clinical: '80분 지속 내수성 (Very Water Resistant)' },
+      9: { name: '솔트 리셋 애프터 워터 미스트', col: '서핑 & 수상 액티브', vol: '150ml', price: '₩36,000', phase: 'Post', type: '미스트', func: '쿨링', part: '얼굴/전신', dur: '즉각 세정', persona: 'CLIENT-15 장유진 (패들보드 강사)', feature: '해수 건조 후 피부 소금 결정 중화 세정 미스트', clinical: '염분 잔여물 98.7% 중화 세정 입증' },
+      10: { name: '트라이애슬론 아이언 밤', col: '서핑 & 수상 액티브', vol: '40g', price: '₩58,000', phase: 'In', type: '밤', func: '방수', part: '전신 취약부', dur: '6시간 방수', persona: 'CLIENT-10 배수진 (철인3종 선수)', feature: '수영→사이클→마라톤 6시간 지속 방수 왁스 밤', clinical: '해수/땀 혼합 6시간 지속 방수' },
+      11: { name: '제로 슬립 그립 쿨링 쿠션', col: '테니스 & 골프 라운딩', vol: '15g', price: '₩44,000', phase: 'Pre/In', type: '밤', func: '세범 쿨링', part: '얼굴/이마', dur: '무유분 매트', persona: 'CLIENT-03 정소희 (테니스 플레이어)', feature: '라켓 오버그립 유분 묻음 방지 무유분 매트 쿨링 메쉬 쿠션', clinical: '오버그립 미끄럼 방지 테스트 통과' },
+      12: { name: 'UV 반사 페어웨이 선 젤', col: '테니스 & 골프 라운딩', vol: '70ml', price: '₩54,000', phase: 'Pre', type: '젤', func: '방수', part: '얼굴/팔다리', dur: '18홀 5시간', persona: 'CLIENT-07 최현우 (골프 마케터)', feature: '18홀 잔디 반사광 듀얼 차단 수분 젤', clinical: '잔디 반사광 차단율 97.8%' },
+      13: { name: '퀵 앱소브 매치 선 플루이드', col: '테니스 & 골프 라운딩', vol: '60ml', price: '₩39,000', phase: 'In', type: '젤', func: '세범', part: '얼굴/이마', dur: '10초 흡수', persona: 'CLIENT-12 권도현 (풋살 리더)', feature: '경기 중 땀 흘러도 눈에 안 시린 No-Sting 10초 흡수 플루이드', clinical: '안자극 인체 적용 시험 무자극 판정' },
+      14: { name: '헤비듀티 세범 컨트롤 스틱', col: '피트니스 & 크로스핏', vol: '30g', price: '₩41,000', phase: 'In', type: '스틱', func: '세범 휴대', part: '이마/목', dur: '마찰저항 99.1%', persona: 'CLIENT-06 박서연 (크로스핏 코치)', feature: '바벨 마찰에도 밀림 없는 마그네슘 파우더 배합 하드 스틱', clinical: '기구 마찰 저항력 99.1% 검증' },
+      15: { name: '스웨트프루프 옥시젠 플루이드', col: '피트니스 & 크로스핏', vol: '50ml', price: '₩48,000', phase: 'Pre', type: '젤', func: '방수', part: '얼굴/전신', dur: '모공 비폐색', persona: 'CLIENT-05 이지은 (피트니스 트레이너)', feature: '고강도 웨이트 중 모공을 막지 않는 통기성 산소 플루이드', clinical: 'Non-Comedogenic 모공 비폐색 인증' },
+      16: { name: '어반 쉴드 포켓 기어 키트', col: '피트니스 & 크로스핏', vol: '3종 세트', price: '₩45,000', phase: 'All', type: '패치', func: '휴대', part: '얼굴/바디', dur: '지열 차단', persona: 'CLIENT-16 류태양 (스케이트보더)', feature: '지열 차단 포켓 스틱+스포츠 타올+파우치 3종 세트', clinical: '도심 아스팔트 지열 차단 91.5%' }
+    };
+
+    // 1. Carabiner Selector
+    function selectHeroColor(colorName, el) {
+      document.querySelectorAll('.carabiner-dot').forEach(dot => dot.classList.remove('active'));
+      el.classList.add('active');
+      document.getElementById('heroColorName').textContent = colorName;
+    }
+
+    // 2. Collection Tabs & Field Scenes Switching (BC-D5)
+    const sceneData = {
+      all: { title: ' 5대 스포츠 전방위 익스트림 필드 씬', desc: '러닝, 하이킹, 서핑, 코트, 피트니스 전 종목의 극한 환경을 위해 맞춤 설계된 16종 전체 기어 라인업입니다.', crit: '스포츠 환경별 특화 포뮬러 + 노터치 기어 결합', flag: '5대 컬렉션 16종 풀 라인업' },
+      running: { title: ' 아스팔트 열기 속, 페이스를 잃지 않는 순간', desc: '도심 러닝과 마라톤에서는 멈추지 않는 지속력이 생명입니다. 흘러내리는 땀 속에서도 눈시림 없이 3초 만에 덧바르는 휴대성과 노터치 쿨링이 요구됩니다.', crit: '카라비너 퀵 체결 + -4.2℃ 즉각 쿨다운', flag: '#01 카라비너 퀵 스틱 SPF50+' },
+      hiking: { title: ' 능선 칼바람과 강렬한 직사광선 아래', desc: '고산지대 트레일과 암벽에서는 자외선뿐 아니라 건조한 바람과 미세먼지가 피부를 위협합니다. 세라마이드 장벽과 초크백 연동 파우더가 필수적입니다.', crit: '3중 마이크로 장벽 + 마찰력 유지 논슬립', flag: '#05 멀티 쉴드 배리어 선 세럼' },
+      surfing: { title: ' 거친 파도 속 80분 지속 방수와 산호초 보호', desc: '파도에 지워지지 않는 강력한 80분 지속 내수성과 해양 국립공원 입수가 가능한 옥시벤존 0% 리프세이프 포뮬러로 바다와 피부를 지킵니다.', crit: '80분 지속 내수성 + 100% Reef-Safe 무기자차', flag: '#08 오션 세이프 리프 쉴드' },
+      tennis: { title: ' 땀범벅 교대 시간, 라켓 그립을 사수하는 순간', desc: '코트 위 1분 교대 시간 동안 손에 유분을 묻히지 않고 즉시 쿨링하며, 잔디와 하드코트의 강한 반사광을 완벽 차단합니다.', crit: '무유분 매트 피니시 + No-Sting 안자극 무자극', flag: '#11 제로 슬립 그립 쿨링 쿠션' },
+      fitness: { title: '‍♀️ 바벨 마찰과 극한의 땀 배출 속 모공 호흡', desc: '고강도 웨이트와 크로스핏 기구 마찰에도 밀리지 않는 마그네슘 하드 코팅과 모공을 막지 않는 산소 통기성을 제공합니다.', crit: '기구 마찰 저항력 99.1% + Non-Comedogenic', flag: '#14 헤비듀티 세범 컨트롤 스틱' }
+    };
+
+    let currentCollection = 'all';
+    let activeFilters = { phase: 'all', type: 'all', func: 'all' };
+
+    function switchCollectionTab(colKey, btn) {
+      currentCollection = colKey;
+      document.querySelectorAll('.col-tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // Update Field Scene Banner
+      const s = sceneData[colKey];
+      document.getElementById('sceneTitle').textContent = s.title;
+      document.getElementById('sceneDesc').textContent = s.desc;
+      document.getElementById('sceneCriteriaText').textContent = s.crit;
+      document.getElementById('sceneFlagshipText').textContent = '대표 플래그십: ' + s.flag;
+
+      applyAllFilters();
+    }
+
+    // 3. Multi-Dimensional Filter Engine (On 응용: BC-S2, BC-S4)
+    function toggleFilter(category, val, btn) {
+      activeFilters[category] = val;
+      btn.parentElement.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      applyAllFilters();
+    }
+
+    function resetAllFilters() {
+      activeFilters = { phase: 'all', type: 'all', func: 'all' };
+      document.querySelectorAll('.filter-chips-wrap').forEach(wrap => {
+        wrap.querySelectorAll('.filter-chip').forEach((c, idx) => {
+          if (idx === 0) c.classList.add('active');
+          else c.classList.remove('active');
+        });
+      });
+      applyAllFilters();
+    }
+
+    function applyAllFilters() {
+      const cards = document.querySelectorAll('.sku-card');
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const col = card.getAttribute('data-col');
+        const phase = card.getAttribute('data-phase');
+        const type = card.getAttribute('data-type');
+        const func = card.getAttribute('data-func');
+
+        // Match collection
+        let matchCol = (currentCollection === 'all') || (col === currentCollection);
+        // Match phase
+        let matchPhase = (activeFilters.phase === 'all') || phase.includes(activeFilters.phase);
+        // Match type
+        let matchType = (activeFilters.type === 'all') || (type === activeFilters.type);
+        // Match function
+        let matchFunc = (activeFilters.func === 'all') || func.includes(activeFilters.func);
+
+        if (matchCol && matchPhase && matchType && matchFunc) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      document.getElementById('filterResultCount').textContent = visibleCount;
+      const emptyView = document.getElementById('emptyStateView');
+      if (visibleCount === 0) {
+        emptyView.style.display = 'block';
+      } else {
+        emptyView.style.display = 'none';
+      }
+    }
+
+    // 4. Comparison System (Max 3 Items: BC-S3, BC-M3)
+    let selectedCompareIds = [];
+
+    function toggleCompareItem(skuId, checkbox) {
+      if (checkbox.checked) {
+        if (selectedCompareIds.length >= 3) {
+          alert('비교함에는 최대 3개 상품까지만 담을 수 있습니다.');
+          checkbox.checked = false;
+          return;
+        }
+        selectedCompareIds.push(skuId);
+      } else {
+        selectedCompareIds = selectedCompareIds.filter(id => id !== skuId);
+      }
+      renderCompareTray();
+    }
+
+    function removeCompareItem(skuId) {
+      selectedCompareIds = selectedCompareIds.filter(id => id !== skuId);
+      // Uncheck corresponding checkbox in grid
+      document.querySelectorAll(`.sku-card[data-sku="${skuId}"] input[type="checkbox"]`).forEach(cb => cb.checked = false);
+      renderCompareTray();
+    }
+
+    function renderCompareTray() {
+      const tray = document.getElementById('floatingCompareTray');
+      const gnbCount = document.getElementById('gnbCompareCount');
+      const itemsWrap = document.getElementById('compareTrayItems');
+
+      if (gnbCount) gnbCount.textContent = selectedCompareIds.length;
+
+      if (selectedCompareIds.length > 0) {
+        tray.style.display = 'flex';
+        // Render mini chips
+        let chipsHtml = `<span style="font-size: 13px; font-weight: 900;">선택된 기어 (<span id="compareCountNum">${selectedCompareIds.length}</span>/3):</span>`;
+        selectedCompareIds.forEach(id => {
+          const item = skuMasterDict[id];
+          chipsHtml += `
+            <div class="compare-mini-chip">
+              <span>#0${id} ${item.name.split(' ')[0]}</span>
+              <span class="btn-remove" onclick="removeCompareItem(${id})">[X]</span>
+            </div>
+          `;
+        });
+        itemsWrap.innerHTML = chipsHtml;
+      } else {
+        tray.style.display = 'none';
+        if (itemsWrap) {
+          itemsWrap.innerHTML = `<span style="font-size: 13px; font-weight: 900;">선택된 기어 (<span id="compareCountNum">0</span>/3):</span>`;
+        }
+      }
+    }
+
+    function openCompareModal() {
+      if (selectedCompareIds.length === 0) {
+        alert('비교할 상품을 1개 이상 선택해 주세요.');
+        return;
+      }
+      const modal = document.getElementById('compareModalBackdrop');
+      const table = document.getElementById('compareModalTable');
+      document.body.style.overflow = 'hidden';
+
+      // Build comparison matrix
+      let headers = '<tr><th>비교 항목</th>';
+      let rowCol = '<tr><th>소속 컬렉션</th>';
+      let rowPhase = '<tr><th>운동 단계 (Phase)</th>';
+      let rowPart = '<tr><th>적용 부위</th>';
+      let rowType = '<tr><th>제형 (Formulation)</th>';
+      let rowDur = '<tr><th>지속력 / 규격</th>';
+      let rowFeature = '<tr><th>핵심 기능</th>';
+      let rowClinical = '<tr><th>성능 목표 (가상)</th>';
+      let rowPrice = '<tr><th>공식 가격</th>';
+      let rowAction = '<tr><th>출시 알림</th>';
+
+      selectedCompareIds.forEach(id => {
+        const item = skuMasterDict[id];
+        headers += `<td style="font-weight: 900; font-size: 14px; background: #F8FAFC;">#0${id} ${item.name}</td>`;
+        rowCol += `<td>${item.col}</td>`;
+        rowPhase += `<td><span class="wireframe-badge">${item.phase}</span></td>`;
+        rowPart += `<td>${item.part}</td>`;
+        rowType += `<td>${item.type}</td>`;
+        rowDur += `<td>${item.dur} (${item.vol})</td>`;
+        rowFeature += `<td style="text-align: left;">${item.feature}</td>`;
+        rowClinical += `<td style="color: var(--halo-gray-dark); font-weight: 800;">${item.clinical}</td>`;
+        rowPrice += `<td style="font-weight: 900;">${item.price}</td>`;
+        rowAction += `<td><button class="btn-sku-action primary" onclick="closeCompareModal(); openLaunchModal('${item.name}')">알림 신청</button></td>`;
+      });
+
+      headers += '</tr>';
+      rowCol += '</tr>';
+      rowPhase += '</tr>';
+      rowPart += '</tr>';
+      rowType += '</tr>';
+      rowDur += '</tr>';
+      rowFeature += '</tr>';
+      rowClinical += '</tr>';
+      rowPrice += '</tr>';
+      rowAction += '</tr>';
+
+      table.innerHTML = headers + rowCol + rowPhase + rowPart + rowType + rowDur + rowFeature + rowClinical + rowPrice + rowAction;
+      modal.style.display = 'flex';
+    }
+
+    function closeCompareModal() {
+      document.getElementById('compareModalBackdrop').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    // 5. SKU Quick View Modal (BC-V3, BC-M4)
+    function openProductModal(id) {
+      const item = skuMasterDict[id];
+      const modal = document.getElementById('skuModalBackdrop');
+      const content = document.getElementById('skuModalContent');
+      document.body.style.overflow = 'hidden';
+
+      content.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+          <div>
+            <span class="wireframe-badge dark">SKU-0${id}</span>
+            <span class="wireframe-badge">${item.col}</span>
+          </div>
+          <span style="font-size: 11px; font-weight: 800; color: var(--halo-gray-mid);">${item.phase}-WORKOUT</span>
+        </div>
+        <h3 style="font-size: 24px; font-weight: 900; margin-bottom: 8px;">${item.name}</h3>
+        <p style="font-size: 13px; color: var(--halo-gray-dark); margin-bottom: 20px;">${item.feature}</p>
+        
+        <div style="height: 180px; border: var(--border-dash); background: #F8FAFC; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; margin-bottom: 20px;">
+          <div style="font-size: 32px;"></div>
+          <div style="font-size: 12px; font-weight: 800;">[#0${id} ${item.name} 3D 메커니즘 뷰]</div>
+        </div>
+
+        <table class="spotlight-specs-table" style="margin-bottom: 24px;">
+          <tr><th>타깃 페르소나</th><td>${item.persona}</td></tr>
+          <tr><th>적용 부위 / 제형</th><td>${item.part} / ${item.type}</td></tr>
+          <tr><th>규격 및 용량</th><td>${item.vol}</td></tr>
+          <tr><th>지속력 / 검증</th><td>${item.dur} | ${item.clinical}</td></tr>
+          <tr><th>공식 가격</th><td><strong>${item.price}</strong> (얼리버드 15% 혜택 적용 가능)</td></tr>
+        </table>
+
+        <div style="display: flex; gap: 12px;">
+          <button class="btn-hero-primary" onclick="closeProductModal(); openLaunchModal('${item.name}')">이 상품 출시 알림 신청</button>
+          <button class="btn-hero-secondary" onclick="toggleCompareItem(${id}, {checked: true}); renderCompareTray(); closeProductModal();">비교함 담기</button>
+        </div>
+      `;
+
+      modal.style.display = 'flex';
+    }
+
+    function closeProductModal() {
+      document.getElementById('skuModalBackdrop').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    // 6. Launch Alert Modal SCR-0610 (BC-S4, BC-M5)
+    function openLaunchModal(targetName) {
+      document.getElementById('launchTargetItemName').textContent = targetName || '전체 라인업';
+      document.getElementById('launchModalBackdrop').style.display = 'flex';
+      document.getElementById('launchModalFormSection').style.display = 'block';
+      document.getElementById('launchSuccessCard').style.display = 'none';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLaunchModal() {
+      document.getElementById('launchModalBackdrop').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    function handleLaunchSubmit(e) {
+      e.preventDefault();
+      const submitBtn = document.getElementById('btnLaunchSubmit');
+      submitBtn.textContent = '신청 처리 중... ⏳';
+      submitBtn.disabled = true;
+
+      // Simulate API submission
+      setTimeout(() => {
+        document.getElementById('launchModalFormSection').style.display = 'none';
+        document.getElementById('launchSuccessCard').style.display = 'block';
+        submitBtn.textContent = '알림 신청 완료 (15% 쿠폰 수령)';
+        submitBtn.disabled = false;
+        document.getElementById('launchAlertForm').reset();
+      }, 400);
+    }
+  
+    // 7. Mobile Drawer & View Modes
+    function openMobileDrawer() {
+      const drawer = document.getElementById('mobileDrawerBackdrop');
+      if (drawer) {
+        drawer.style.display = 'block';
+        setTimeout(() => drawer.classList.add('active'), 10);
+        document.body.style.overflow = 'hidden';
+      }
+    }
+    function closeMobileDrawerDirect() {
+      const drawer = document.getElementById('mobileDrawerBackdrop');
+      if (drawer) {
+        drawer.classList.remove('active');
+        setTimeout(() => {
+          drawer.style.display = 'none';
+          document.body.style.overflow = 'auto';
+        }, 200);
+      }
+    }
+    function closeMobileDrawer(e) {
+      if (e.target.id === 'mobileDrawerBackdrop') {
+        closeMobileDrawerDirect();
+      }
+    }
+    function setShopViewMode(mode, btn) {
+      const grid = document.getElementById('skuGridContainer') || document.getElementById('shopAllGrid');
+      const buttons = document.querySelectorAll('.btn-view-toggle');
+      buttons.forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      if (grid) {
+        if (mode === 'carousel') {
+          grid.classList.remove('stack-mode');
+          grid.classList.add('carousel-mode');
+        } else {
+          grid.classList.remove('carousel-mode');
+          grid.classList.add('stack-mode');
+        }
+      }
+    }
+
+  
+    // Process Step Interactive Transition
+    let currentProcessStep = 1;
+    const processStepData = {
+      1: {
+        tag: "STEP 01 SCENE",
+        canvasTitle: "[20인 스포츠 선수단 훈련 현장 인터뷰 & 땀/오염 데이터 맵]",
+        canvasDesc: "폭염 속 아스팔트 러닝 및 서핑 현장에서 수집된 땀, 미끄러짐, 눈시림 정량 분석 도해",
+        badge: "STEP 01 | ATHLETE NEED DISCOVERY",
+        heading: "01. 20인의 스포츠 페르소나 실전 문제 수집",
+        body: "마라토너, 서퍼, 클라이머 등 20인의 전문 선수단과 함께 훈련 현장에서 땀과 먼지로 인한 오염, 눈시림, 라켓 그립 미끄러짐의 근본 원인을 정량 수집하고 설계 요구조건으로 정의했습니다.",
+        m1Val: "20명", m1Lbl: "참여 스포츠 선수단",
+        m2Val: "100%", m2Lbl: "문제점 정량 도출율"
+      },
+      2: {
+        tag: "STEP 02 SCENE",
+        canvasTitle: "[알루미늄 카라비너 1,000회 탈착 내구성 & 3D CAD 분해도]",
+        canvasDesc: "한 손 1초 분리 결합 메커니즘과 친환경 질소 가압 360도 마이크로 노즐 하드웨어 프로토타입",
+        badge: "STEP 02 | HARDWARE PROTOTYPING",
+        heading: "02. 하드웨어 메커니즘 & 노터치 엔지니어링",
+        body: "가방과 벨트에 직결되는 알루미늄 6061 카라비너 래치와 거꾸로 들어도 균일 분사되는 질소 가압 밸브 노즐을 1,000회 탈착 내구성 시험을 통해 완성했습니다.",
+        m1Val: "1,000회", m1Lbl: "탈착 내구성 보증",
+        m2Val: "360도", m2Lbl: "전방위 분사 밸브"
+      },
+      3: {
+        tag: "STEP 03 SCENE",
+        canvasTitle: "[42.195km 풀코스 마라톤 & 서핑 80분 내수성 필드 트랙]",
+        canvasDesc: "체온 -4.2℃ 즉각 강하 및 땀 흘림 지속력 98.4% 누적 320시간 익스트림 필드 검증",
+        badge: "STEP 03 | EXTREME FIELD VALIDATION",
+        heading: "03. 누적 320시간 극한 필드 실전 검증",
+        body: "35℃ 폭염 아스팔트 러닝, 거친 파도 속 서핑 세션 등 실제 스포츠 현장에서 320시간 동안 제품의 쿨다운 성능과 땀 저항력을 실시간 계측 검증했습니다.",
+        m1Val: "-4.2℃", m1Lbl: "즉각 크라이오 쿨다운",
+        m2Val: "320시간", m2Lbl: "누적 필드 테스트"
+      },
+      4: {
+        tag: "STEP 04 SCENE",
+        canvasTitle: "[한국비건인증원 100% Vegan & 옥시벤존 0% 리프세이프 검증서]",
+        canvasDesc: "해양 생태계 보호 및 16종 전 라인업 비건 포뮬러 공인 인증 시험 통과",
+        badge: "STEP 04 | GLOBAL SAFETY & CERTIFICATION",
+        heading: "04. 비건 & 리프세이프 공인 친환경 인증",
+        body: "해양 산호초를 파괴하는 옥시벤존/옥티녹세이트 0% 배제 및 한국비건인증원 100% Vegan 기준을 충족하는 클린 하드웨어 포뮬러를 확립했습니다.",
+        m1Val: "100%", m1Lbl: "비건 정식 인증",
+        m2Val: "0.0%", m2Lbl: "유해 화학성분 배제"
+      }
+    };
+
+    function switchProcessStep(stepNum, btn) {
+      currentProcessStep = stepNum;
+      const data = processStepData[stepNum];
+      if (!data) return;
+
+      document.querySelectorAll('.timeline-nav-item').forEach((b, idx) => {
+        if (idx + 1 === stepNum) b.classList.add('active');
+        else b.classList.remove('active');
+      });
+
+      document.getElementById('processCanvasTag').textContent = data.tag;
+      document.getElementById('processCanvasTitle').textContent = data.canvasTitle;
+      document.getElementById('processCanvasDesc').textContent = data.canvasDesc;
+      document.getElementById('processStepBadge').textContent = data.badge;
+      document.getElementById('processStepHeading').textContent = data.heading;
+      document.getElementById('processStepBody').textContent = data.body;
+      document.getElementById('processMetric1Val').textContent = data.m1Val;
+      document.getElementById('processMetric1Lbl').textContent = data.m1Lbl;
+      document.getElementById('processMetric2Val').textContent = data.m2Val;
+      document.getElementById('processMetric2Lbl').textContent = data.m2Lbl;
+    }
+
+    function navigateProcessStep(delta) {
+      let nextStep = currentProcessStep + delta;
+      if (nextStep < 1) nextStep = 4;
+      if (nextStep > 4) nextStep = 1;
+      const targetBtn = document.querySelectorAll('.timeline-nav-item')[nextStep - 1];
+      switchProcessStep(nextStep, targetBtn);
+    }
+
+    // Tray Collapse Logic
+    let isTrayCollapsed = false;
+    function toggleTrayCollapse() {
+      const tray = document.getElementById('floatingCompareTray');
+      isTrayCollapsed = !isTrayCollapsed;
+      if (isTrayCollapsed) {
+        tray.classList.add('collapsed');
+        document.getElementById('collapsedCompareCount').textContent = selectedCompareIds.length;
+      } else {
+        tray.classList.remove('collapsed');
+      }
+    }
+
+  
+    function scrollProcessTrack(direction) {
+      const track = document.getElementById('processHorizontalTrack');
+      if (track) {
+        const scrollAmount = 604 * direction;
+        track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
+    }
+
+  </script>
+  <!-- Mobile Offcanvas Drawer System -->
+  <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop" onclick="closeMobileDrawer(event)">
+    <div class="mobile-drawer-panel" id="mobileDrawerPanel">
+      <div>
+        <div class="drawer-top-header">
+          <div class="drawer-logo">HALO GEAR</div>
+          <button class="btn-drawer-close" onclick="closeMobileDrawerDirect()" aria-label="메뉴 닫기">[X]</button>
+        </div>
+        <nav class="drawer-nav-list">
+          <a href="#philosophy" class="drawer-nav-item" onclick="closeMobileDrawerDirect()">
+            <span>01. 철학 & 메커니즘</span>
+            <span>></span>
+          </a>
+          <a href="#spotlight" class="drawer-nav-item" onclick="closeMobileDrawerDirect()">
+            <span>02. 핵심 플래그십 기어</span>
+            <span>></span>
+          </a>
+          <a href="#routine" class="drawer-nav-item" onclick="closeMobileDrawerDirect()">
+            <span>03. 3단계 스포츠 루틴</span>
+            <span>></span>
+          </a>
+          <a href="#collections" class="drawer-nav-item" onclick="closeMobileDrawerDirect()">
+            <span>04. 5대 스포츠 컬렉션</span>
+            <span>></span>
+          </a>
+          <a href="#shop-all" class="drawer-nav-item" onclick="closeMobileDrawerDirect()">
+            <span>05. 전체 16종 라인업</span>
+            <span>></span>
+          </a>
+        </nav>
+      </div>
+      <div class="drawer-bottom-actions">
+        <button class="btn-hero-primary" style="width:100%;" onclick="openLaunchModal('모바일 GNB'); closeMobileDrawerDirect();">15% 얼리버드 알림 신청</button>
+        <button class="btn-hero-secondary" style="width:100%;" onclick="openCompareModal(); closeMobileDrawerDirect();">스펙 비교함 열기</button>
+        <div class="drawer-slogan">NEVER STOP THE MOTION</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

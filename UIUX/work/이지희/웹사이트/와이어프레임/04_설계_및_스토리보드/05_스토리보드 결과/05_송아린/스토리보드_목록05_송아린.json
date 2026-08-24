@@ -1,0 +1,314 @@
+{
+  "clientId": "05",
+  "clientName": "송아린",
+  "role": "0kcal 비건 헬스 & 다이어트 코치 (27세)",
+  "archetype": "B-3 헬스 & 다이어트 인터랙티브형 (Zero Diet Spa)",
+  "killerFeature": "0kcal 혈당 스파이크 방어 & 실시간 칼로리 소모 시뮬레이터 (DIET-CALC-01)",
+  "company": "(주)위케타 0kcal 헬스 & 다이어트 랩",
+  "ceo": "송아린",
+  "bizNum": "120-88-05005",
+  "address": "서울시 강남구 압구정로 12 WICKETA 0kcal 웰니스 스파",
+  "csPhone": "1588-0505 (평일 09:00 ~ 18:00)",
+  "csEmail": "arin@wicketa.com",
+  "goals": [
+    {
+      "goalId": "goal1",
+      "name": "목적 1: 0kcal 혈당 방어 식단 & 번들",
+      "keyFeature": "0kcal 당류 0g 성분표 & 식단 번들 계산기 (DIET-CALC-01)",
+      "conversionGoal": "식단 4주 다이어트 패키지 1초 결제"
+    },
+    {
+      "goalId": "goal2",
+      "name": "목적 2: 30일 모닝 디톡스 새벽구독",
+      "keyFeature": "공복 혈당 케어 & 30일 모닝 디톡스 새벽배송 (DETOX-SUB-01)",
+      "conversionGoal": "30일 디톡스 정기배송 체결 & 체중 기록 저널 수령"
+    },
+    {
+      "goalId": "goal3",
+      "name": "목적 3: 피트니스 텀블러 이니셜 각인 선물",
+      "keyFeature": "보냉 텀블러 3D 레이저 각인 아틀리에 (FIT-TUMBLER-01)",
+      "conversionGoal": "각인 텀블러 선물세트 주문 & 카카오톡 선물하기"
+    },
+    {
+      "goalId": "goal4",
+      "name": "목적 4: 러닝 리커버리 180초 전해질 충전",
+      "keyFeature": "180초 전해질 이온 수분 펄스 타이머 (ION-TIMER-01)",
+      "conversionGoal": "180초 수분 리추얼 완수 & 런크루 챌린지 스탬프"
+    },
+    {
+      "goalId": "goal5",
+      "name": "목적 5: #0kcal챌린지 눈바디 피드 & 랭킹",
+      "keyFeature": "#0kcal식단 실시간 눈바디 피드 & 인바디 연동 (BODY-CHALLENGE-01)",
+      "conversionGoal": "눈바디 인증샷 업로드 & 다이어트 지원금 적립"
+    }
+  ],
+  "screens": [
+    {
+      "id": "W05-HOME",
+      "name": "0kcal 다이어트 랩 메인",
+      "desc": "0kcal 시뮬레이터, 체중 관리 및 20종 큐레이션 통합 메인"
+    },
+    {
+      "id": "W05-CATALOG",
+      "name": "0kcal 성분 도감",
+      "desc": "식약처 0kcal/당류 0g 성분표 및 6대 LNB 20종 도감"
+    },
+    {
+      "id": "W05-ABOUT",
+      "name": "비건 웰니스 & 성적서",
+      "desc": "비건 인증원 100% 식물성 성적서 & 압구정 스파 안내"
+    },
+    {
+      "id": "W05-BUILD",
+      "name": "피트니스 텀블러 각인실",
+      "desc": "보냉 텀블러 3D 레이저 각인기 및 식단 패키징"
+    },
+    {
+      "id": "W05-SUB",
+      "name": "30일 디톡스 새벽구독",
+      "desc": "공복 디톡스 30일 새벽배송 스케줄러"
+    },
+    {
+      "id": "W05-COMM",
+      "name": "0kcal 눈바디 챌린지",
+      "desc": "#0kcal식단 피드 및 실시간 인바디 감량 랭킹"
+    },
+    {
+      "id": "W05-DRAWER",
+      "name": "Aside 패스트 체크아웃",
+      "desc": "1-Click 간편결제 / 30일 새벽구독 / 카카오 선물"
+    },
+    {
+      "id": "W05-DONE",
+      "name": "주문 완료 & 식단 가이드",
+      "desc": "0kcal 다이어트 레시피북 PDF 및 인바디 연동 코드 발급"
+    }
+  ],
+  "sections": [
+    {
+      "id": "SEC-01",
+      "code": "WK-P01",
+      "name": "⭐ [0kcal 시그니처] 블루 오로라 버터플라이피 스파클링",
+      "category": "🍹 0kcal 버터플라이피 스파클링 (4)",
+      "price": "34,000원",
+      "goalId": "goal1",
+      "uiComponent": "⭐ [0kcal 시그니처] 블루 오로라 버터플라이피 스파클링 특화 인터랙티브 카드",
+      "imgSpec": "🖼️ [이미지: SEC-01 ⭐ [0kcal 시그니처] 블루 오로라 버터플라이피 스파클링 (100% 무채색 뷰박스)]",
+      "displayData": "⭐ [0kcal 시그니처] 블루 오로라 버터플라이피 스파클링 핵심 성분, 가격 34,000원, 🍹 0kcal 버터플라이피 스파클링 (4) 큐레이션 데이터",
+      "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 1: 0kcal 혈당 방어 식단 & 번들 연계",
+      "systemLogic": "선택 시 W05-CATALOG 실시간 연동 및 카트 드로어 갱신",
+      "targetScreen": "W05-CATALOG",
+      "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"
+    },
+    {
+      "id": "SEC-02",
+      "code": "WK-P02",
+      "name": "💪 [부스팅 마테] 운동 전 버닝 에메랄드 라임 마테 팩",
+      "category": "💪 운동 전 부스팅 에메랄드 마테 (4)",
+      "price": "29,000원",
+      "goalId": "goal2",
+      "uiComponent": "💪 [부스팅 마테] 운동 전 버닝 에메랄드 라임 마테 팩 특화 인터랙티브 카드",
+      "imgSpec": "🖼️ [이미지: SEC-02 💪 [부스팅 마테] 운동 전 버닝 에메랄드 라임 마테 팩 (100% 무채색 뷰박스)]",
+      "displayData": "💪 [부스팅 마테] 운동 전 버닝 에메랄드 라임 마테 팩 핵심 성분, 가격 29,000원, 💪 운동 전 부스팅 에메랄드 마테 (4) 큐레이션 데이터",
+      "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 2: 30일 모닝 디톡스 새벽구독 연계",
+      "systemLogic": "선택 시 W05-ABOUT 실시간 연동 및 카트 드로어 갱신",
+      "targetScreen": "W05-ABOUT",
+      "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"
+    },
+    {
+      "id": "SEC-03",
+      "code": "WK-P03",
+      "name": "🌙 [야식 방어] 야식 충동 차단 GABA 루이보스 팩",
+      "category": "🌙 야식 방어 0.00mg 무카페인 GABA (4)",
+      "price": "28,000원",
+      "goalId": "goal3",
+      "uiComponent": "🌙 [야식 방어] 야식 충동 차단 GABA 루이보스 팩 특화 인터랙티브 카드",
+      "imgSpec": "🖼️ [이미지: SEC-03 🌙 [야식 방어] 야식 충동 차단 GABA 루이보스 팩 (100% 무채색 뷰박스)]",
+      "displayData": "🌙 [야식 방어] 야식 충동 차단 GABA 루이보스 팩 핵심 성분, 가격 28,000원, 🌙 야식 방어 0.00mg 무카페인 GABA (4) 큐레이션 데이터",
+      "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 3: 피트니스 텀블러 이니셜 각인 선물 연계",
+      "systemLogic": "선택 시 W05-BUILD 실시간 연동 및 카트 드로어 갱신",
+      "targetScreen": "W05-BUILD",
+      "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"
+    },
+    {
+      "id": "SEC-04",
+      "code": "WK-P04",
+      "name": "🏋️ [30일 챌린지] 바디프로필 30일 1일 1포 챌린지 박스",
+      "category": "🏋️ 30일 챌린지 보틀 번들 팩 (4)",
+      "price": "68,000원",
+      "goalId": "goal4",
+      "uiComponent": "🏋️ [30일 챌린지] 바디프로필 30일 1일 1포 챌린지 박스 특화 인터랙티브 카드",
+      "imgSpec": "🖼️ [이미지: SEC-04 🏋️ [30일 챌린지] 바디프로필 30일 1일 1포 챌린지 박스 (100% 무채색 뷰박스)]",
+      "displayData": "🏋️ [30일 챌린지] 바디프로필 30일 1일 1포 챌린지 박스 핵심 성분, 가격 68,000원, 🏋️ 30일 챌린지 보틀 번들 팩 (4) 큐레이션 데이터",
+      "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 4: 러닝 리커버리 180초 전해질 충전 연계",
+      "systemLogic": "선택 시 W05-SUB 실시간 연동 및 카트 드로어 갱신",
+      "targetScreen": "W05-SUB",
+      "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"
+    },
+    {
+      "id": "SEC-05",
+      "code": "WK-P05",
+      "name": "🍓 [루비 베리] 안토시아닌 비건 스파클링 탄산 믹서",
+      "category": "🍓 비건 안토시아닌 루비 베리 믹서 (4)",
+      "price": "27,000원",
+      "goalId": "goal5",
+      "uiComponent": "🍓 [루비 베리] 안토시아닌 비건 스파클링 탄산 믹서 특화 인터랙티브 카드",
+      "imgSpec": "🖼️ [이미지: SEC-05 🍓 [루비 베리] 안토시아닌 비건 스파클링 탄산 믹서 (100% 무채색 뷰박스)]",
+      "displayData": "🍓 [루비 베리] 안토시아닌 비건 스파클링 탄산 믹서 핵심 성분, 가격 27,000원, 🍓 비건 안토시아닌 루비 베리 믹서 (4) 큐레이션 데이터",
+      "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 5: #0kcal챌린지 눈바디 피드 & 랭킹 연계",
+      "systemLogic": "선택 시 W05-COMM 실시간 연동 및 카트 드로어 갱신",
+      "targetScreen": "W05-COMM",
+      "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"
+    },
+    {
+      "id": "SEC-06",
+      "code": "WK-P06",
+      "name": "🍹 [트리플 레몬] 0kcal 비타민C 레몬 스파클링 스틱",
+      "category": "🍹 0kcal 버터플라이피 스파클링 (4)",
+      "price": "26,000원",
+      "goalId": "goal1",
+      "uiComponent": "🍹 [트리플 레몬] 0kcal 비타민C 레몬 스파클링 스틱 특화 인터랙티브 카드",
+      "imgSpec": "🖼️ [이미지: SEC-06 🍹 [트리플 레몬] 0kcal 비타민C 레몬 스파클링 스틱 (100% 무채색 뷰박스)]",
+      "displayData": "🍹 [트리플 레몬] 0kcal 비타민C 레몬 스파클링 스틱 핵심 성분, 가격 26,000원, 🍹 0kcal 버터플라이피 스파클링 (4) 큐레이션 데이터",
+      "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 1: 0kcal 혈당 방어 식단 & 번들 연계",
+      "systemLogic": "선택 시 W05-DRAWER 실시간 연동 및 카트 드로어 갱신",
+      "targetScreen": "W05-DRAWER",
+      "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"
+    },
+    {
+      "id": "SEC-07",
+      "code": "WK-P07",
+      "name": "💪 [L-카르니틴] 체지방 분해 부스팅 자몽 블렌드",
+      "category": "💪 운동 전 부스팅 에메랄드 마테 (4)",
+      "price": "32,000원",
+      "goalId": "goal2",
+      "uiComponent": "💪 [L-카르니틴] 체지방 분해 부스팅 자몽 블렌드 특화 인터랙티브 카드",
+      "imgSpec": "🖼️ [이미지: SEC-07 💪 [L-카르니틴] 체지방 분해 부스팅 자몽 블렌드 (100% 무채색 뷰박스)]",
+      "displayData": "💪 [L-카르니틴] 체지방 분해 부스팅 자몽 블렌드 핵심 성분, 가격 32,000원, 💪 운동 전 부스팅 에메랄드 마테 (4) 큐레이션 데이터",
+      "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 2: 30일 모닝 디톡스 새벽구독 연계",
+      "systemLogic": "선택 시 W05-DONE 실시간 연동 및 카트 드로어 갱신",
+      "targetScreen": "W05-DONE",
+      "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"
+    },
+    {
+      "id": "SEC-08",
+      "code": "WK-P08",
+      "name": "🌙 [붓기 제로] 호박 & 옥수수수염 0kcal 클린티",
+      "category": "🌙 야식 방어 0.00mg 무카페인 GABA (4)",
+      "price": "25,000원",
+      "goalId": "goal3",
+      "uiComponent": "🌙 [붓기 제로] 호박 & 옥수수수염 0kcal 클린티 특화 인터랙티브 카드",
+      "imgSpec": "🖼️ [이미지: SEC-08 🌙 [붓기 제로] 호박 & 옥수수수염 0kcal 클린티 (100% 무채색 뷰박스)]",
+      "displayData": "🌙 [붓기 제로] 호박 & 옥수수수염 0kcal 클린티 핵심 성분, 가격 25,000원, 🌙 야식 방어 0.00mg 무카페인 GABA (4) 큐레이션 데이터",
+      "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 3: 피트니스 텀블러 이니셜 각인 선물 연계",
+      "systemLogic": "선택 시 W05-CATALOG 실시간 연동 및 카트 드로어 갱신",
+      "targetScreen": "W05-CATALOG",
+      "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"
+    },
+    {
+      "id": "SEC-09",
+      "code": "WK-P09",
+      "name": "🏋️ [각인 쉐이커] BPA-Free 트라이탄 500ml 각인 보틀",
+      "category": "🏋️ 30일 챌린지 보틀 번들 팩 (4)",
+      "price": "19,000원",
+      "goalId": "goal4",
+      "uiComponent": "🏋️ [각인 쉐이커] BPA-Free 트라이탄 500ml 각인 보틀 특화 인터랙티브 카드",
+      "imgSpec": "🖼️ [이미지: SEC-09 🏋️ [각인 쉐이커] BPA-Free 트라이탄 500ml 각인 보틀 (100% 무채색 뷰박스)]",
+      "displayData": "🏋️ [각인 쉐이커] BPA-Free 트라이탄 500ml 각인 보틀 핵심 성분, 가격 19,000원, 🏋️ 30일 챌린지 보틀 번들 팩 (4) 큐레이션 데이터",
+      "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 4: 러닝 리커버리 180초 전해질 충전 연계",
+      "systemLogic": "선택 시 W05-ABOUT 실시간 연동 및 카트 드로어 갱신",
+      "targetScreen": "W05-ABOUT",
+      "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"
+    },
+    {
+      "id": "SEC-10",
+      "code": "WK-P10",
+      "name": "🍓 [석류 콜라겐] 0kcal 저분자 피쉬 콜라겐 믹서",
+      "category": "🍓 비건 안토시아닌 루비 베리 믹서 (4)",
+      "price": "33,000원",
+      "goalId": "goal5",
+      "uiComponent": "🍓 [석류 콜라겐] 0kcal 저분자 피쉬 콜라겐 믹서 특화 인터랙티브 카드",
+      "imgSpec": "🖼️ [이미지: SEC-10 🍓 [석류 콜라겐] 0kcal 저분자 피쉬 콜라겐 믹서 (100% 무채색 뷰박스)]",
+      "displayData": "🍓 [석류 콜라겐] 0kcal 저분자 피쉬 콜라겐 믹서 핵심 성분, 가격 33,000원, 🍓 비건 안토시아닌 루비 베리 믹서 (4) 큐레이션 데이터",
+      "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 5: #0kcal챌린지 눈바디 피드 & 랭킹 연계",
+      "systemLogic": "선택 시 W05-BUILD 실시간 연동 및 카트 드로어 갱신",
+      "targetScreen": "W05-BUILD",
+      "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"
+    },
+    {
+      "id": "SEC-11",
+      "code": "WK-P11",
+      "name": "🍹 [민트 쿨링] 갈증 해소 페퍼민트 스파클링 스틱",
+      "category": "🍹 0kcal 버터플라이피 스파클링 (4)",
+      "price": "24,000원",
+      "goalId": "goal1",
+      "uiComponent": "🍹 [민트 쿨링] 갈증 해소 페퍼민트 스파클링 스틱 특화 인터랙티브 카드",
+      "imgSpec": "🖼️ [이미지: SEC-11 🍹 [민트 쿨링] 갈증 해소 페퍼민트 스파클링 스틱 (100% 무채색 뷰박스)]",
+      "displayData": "🍹 [민트 쿨링] 갈증 해소 페퍼민트 스파클링 스틱 핵심 성분, 가격 24,000원, 🍹 0kcal 버터플라이피 스파클링 (4) 큐레이션 데이터",
+      "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 1: 0kcal 혈당 방어 식단 & 번들 연계",
+      "systemLogic": "선택 시 W05-SUB 실시간 연동 및 카트 드로어 갱신",
+      "targetScreen": "W05-SUB",
+      "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"
+    },
+    {
+      "id": "SEC-12",
+      "code": "WK-P12",
+      "name": "💪 [BCAA 에너지] 무설탕 타우린 & 그린티 에너지 팩",
+      "category": "💪 운동 전 부스팅 에메랄드 마테 (4)",
+      "price": "35,000원",
+      "goalId": "goal2",
+      "uiComponent": "💪 [BCAA 에너지] 무설탕 타우린 & 그린티 에너지 팩 특화 인터랙티브 카드",
+      "imgSpec": "🖼️ [이미지: SEC-12 💪 [BCAA 에너지] 무설탕 타우린 & 그린티 에너지 팩 (100% 무채색 뷰박스)]",
+      "displayData": "💪 [BCAA 에너지] 무설탕 타우린 & 그린티 에너지 팩 핵심 성분, 가격 35,000원, 💪 운동 전 부스팅 에메랄드 마테 (4) 큐레이션 데이터",
+      "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 2: 30일 모닝 디톡스 새벽구독 연계",
+      "systemLogic": "선택 시 W05-COMM 실시간 연동 및 카트 드로어 갱신",
+      "targetScreen": "W05-COMM",
+      "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"
+    },
+    {
+      "id": "SEC-13",
+      "code": "WK-P13",
+      "name": "🌙 [수면 릴랙스] 심야 숙면 돕는 타트체리 무당 티",
+      "category": "🌙 야식 방어 0.00mg 무카페인 GABA (4)",
+      "price": "31,000원",
+      "goalId": "goal3",
+      "uiComponent": "🌙 [수면 릴랙스] 심야 숙면 돕는 타트체리 무당 티 특화 인터랙티브 카드",
+      "imgSpec": "🖼️ [이미지: SEC-13 🌙 [수면 릴랙스] 심야 숙면 돕는 타트체리 무당 티 (100% 무채색 뷰박스)]",
+      "displayData": "🌙 [수면 릴랙스] 심야 숙면 돕는 타트체리 무당 티 핵심 성분, 가격 31,000원, 🌙 야식 방어 0.00mg 무카페인 GABA (4) 큐레이션 데이터",
+      "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 3: 피트니스 텀블러 이니셜 각인 선물 연계",
+      "systemLogic": "선택 시 W05-DRAWER 실시간 연동 및 카트 드로어 갱신",
+      "targetScreen": "W05-DRAWER",
+      "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"
+    },
+    {
+      "id": "SEC-14",
+      "code": "WK-P14",
+      "name": "🏋️ [덤벨 머들러] 스테인리스 덤벨 디자인 바 머들러",
+      "category": "🏋️ 30일 챌린지 보틀 번들 팩 (4)",
+      "price": "15,000원",
+      "goalId": "goal4",
+      "uiComponent": "🏋️ [덤벨 머들러] 스테인리스 덤벨 디자인 바 머들러 특화 인터랙티브 카드",
+      "imgSpec": "🖼️ [이미지: SEC-14 🏋️ [덤벨 머들러] 스테인리스 덤벨 디자인 바 머들러 (100% 무채색 뷰박스)]",
+      "displayData": "🏋️ [덤벨 머들러] 스테인리스 덤벨 디자인 바 머들러 핵심 성분, 가격 15,000원, 🏋️ 30일 챌린지 보틀 번들 팩 (4) 큐레이션 데이터",
+      "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 4: 러닝 리커버리 180초 전해질 충전 연계",
+      "systemLogic": "선택 시 W05-DONE 실시간 연동 및 카트 드로어 갱신",
+      "targetScreen": "W05-DONE",
+      "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"
+    },
+    {
+      "id": "SEC-15",
+      "code": "WK-P15",
+      "name": "🍓 [히비스커스] HCA 가르시니아 함유 다이어트 팩",
+      "category": "🍓 비건 안토시아닌 루비 베리 믹서 (4)",
+      "price": "29,500원",
+      "goalId": "goal5",
+      "uiComponent": "🍓 [히비스커스] HCA 가르시니아 함유 다이어트 팩 특화 인터랙티브 카드",
+      "imgSpec": "🖼️ [이미지: SEC-15 🍓 [히비스커스] HCA 가르시니아 함유 다이어트 팩 (100% 무채색 뷰박스)]",
+      "displayData": "🍓 [히비스커스] HCA 가르시니아 함유 다이어트 팩 핵심 성분, 가격 29,500원, 🍓 비건 안토시아닌 루비 베리 믹서 (4) 큐레이션 데이터",
+      "userAction": "1초 담기 / 상세 인터랙션 조작 / 목적 5: #0kcal챌린지 눈바디 피드 & 랭킹 연계",
+      "systemLogic": "선택 시 W05-CATALOG 실시간 연동 및 카트 드로어 갱신",
+      "targetScreen": "W05-CATALOG",
+      "stateChange": "마우스 Hover 시 3D 회전 애니메이션 및 실시간 가격/스펙 툴팁 노출"
+    }
+  ]
+}

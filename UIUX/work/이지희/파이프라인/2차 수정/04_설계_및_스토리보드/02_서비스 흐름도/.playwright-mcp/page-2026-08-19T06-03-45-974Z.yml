@@ -1,0 +1,161 @@
+- generic [active] [ref=f27e1]:
+  - generic [ref=f27e4]:
+    - banner:
+      - link "콘텐츠로 건너뛰기":
+        - /url: "#"
+      - generic [ref=f27e15]:
+        - generic [ref=f27e17]:
+          - generic [ref=f27e18]:
+            - combobox "검색" [ref=f27e20]: minimalist geometric circular wave logo mark
+            - generic [ref=f27e21]:
+              - button "검색 입력 삭제" [ref=f27e24] [cursor=pointer]
+              - generic "이미지 업로드" [ref=f27e30]:
+                - button "Pinterest 렌즈" [ref=f27e31] [cursor=pointer]
+          - button "모든 핀 드롭다운" [ref=f27e38] [cursor=pointer]:
+            - generic [ref=f27e40]:
+              - generic [ref=f27e41]: 모든 핀
+              - img "드롭다운" [ref=f27e43]
+        - link "내 프로필" [ref=f27e49] [cursor=pointer]:
+          - /url: /victoryjhl/
+          - img [ref=f27e56]:
+            - generic [ref=f27e57]: 이
+        - button "계정" [ref=f27e61] [cursor=pointer]
+    - navigation [ref=f27e66]:
+      - generic [ref=f27e68]:
+        - generic [ref=f27e69]:
+          - generic "홈" [ref=f27e73]:
+            - link "홈" [ref=f27e74] [cursor=pointer]:
+              - /url: /
+          - generic "홈" [ref=f27e81]:
+            - link "홈" [ref=f27e82] [cursor=pointer]:
+              - /url: /
+          - generic "내 보드" [ref=f27e89]:
+            - link "내 보드" [ref=f27e90] [cursor=pointer]:
+              - /url: /victoryjhl/
+          - generic "만들기" [ref=f27e97]:
+            - button "만들기" [ref=f27e98] [cursor=pointer]
+          - generic "업데이트" [ref=f27e107]:
+            - button "업데이트" [ref=f27e108] [cursor=pointer]
+          - generic "메시지" [ref=f27e117]:
+            - button "메시지" [ref=f27e118] [cursor=pointer]
+        - generic "설정 및 지원" [ref=f27e126]:
+          - button "설정 및 지원" [ref=f27e127] [cursor=pointer]
+    - generic:
+      - complementary "꼬리말 부동 버튼"
+    - main [ref=f27e132]:
+      - generic [ref=f27e134]:
+        - heading "검색 결과 페이지" [level=1] [ref=f27e136]
+        - region "필터 및 세분화 검색" [ref=f27e140]:
+          - button "필터 표시" [ref=f27e149] [cursor=pointer]
+        - generic [ref=f27e160]:
+          - generic [ref=f27e161]: minimalist geometric circular wave logo mark 검색 결과를 추가로 표시
+          - list [ref=f27e166]:
+            - listitem [ref=f27e167]:
+              - button [ref=f27e169] [cursor=pointer]:
+                - group "핀 카드" [ref=f27e172]:
+                  - generic [ref=f27e174]:
+                    - link "제목 없음 핀 페이지" [ref=f27e176]:
+                      - /url: /pin/4292562141224058/
+                      - img "포함된 이미지:" [ref=f27e186]
+                    - generic "추가 작업" [ref=f27e195]:
+                      - button "추가 작업" [ref=f27e196]
+            - listitem [ref=f27e201]:
+              - button [ref=f27e203] [cursor=pointer]:
+                - group "핀 카드" [ref=f27e206]:
+                  - generic [ref=f27e208]:
+                    - link "Графический знак 핀 페이지" [ref=f27e210]:
+                      - /url: /pin/63050463534431098/
+                      - 'img "포함된 이미지: Графический знак" [ref=f27e220]'
+                    - generic [ref=f27e225]:
+                      - heading [level=2] [ref=f27e231]:
+                        - link "Графический знак 핀 페이지" [ref=f27e233]:
+                          - /url: /pin/63050463534431098/
+                          - text: Графический знак
+                      - generic "추가 작업" [ref=f27e236]:
+                        - button "추가 작업" [ref=f27e237]
+            - listitem [ref=f27e242]:
+              - button [ref=f27e244] [cursor=pointer]:
+                - group "핀 카드" [ref=f27e247]:
+                  - generic [ref=f27e249]:
+                    - link "제목 없음 핀 페이지" [ref=f27e251]:
+                      - /url: /pin/1196337401126475/
+                      - img "포함된 이미지:" [ref=f27e261]
+                    - generic "추가 작업" [ref=f27e270]:
+                      - button "추가 작업" [ref=f27e271]
+            - listitem [ref=f27e276]:
+              - button [ref=f27e278] [cursor=pointer]:
+                - group "핀 카드" [ref=f27e281]:
+                  - generic [ref=f27e283]:
+                    - link "Logotype 핀 페이지" [ref=f27e285]:
+                      - /url: /pin/7318418142289539/
+                      - 'img "포함된 이미지: Logotype" [ref=f27e295]'
+                    - generic [ref=f27e300]:
+                      - heading [level=2] [ref=f27e306]:
+                        - link "Logotype 핀 페이지" [ref=f27e308]:
+                          - /url: /pin/7318418142289539/
+                          - text: Logotype
+                      - generic "추가 작업" [ref=f27e311]:
+                        - button "추가 작업" [ref=f27e312]
+            - listitem [ref=f27e317]:
+              - button [ref=f27e319] [cursor=pointer]:
+                - group "핀 카드" [ref=f27e322]:
+                  - generic [ref=f27e324]:
+                    - link "제목 없음 핀 페이지" [ref=f27e326]:
+                      - /url: /pin/2533343537301597/
+                      - img "포함된 이미지:" [ref=f27e336]
+                    - generic "추가 작업" [ref=f27e345]:
+                      - button "추가 작업" [ref=f27e346]
+            - listitem [ref=f27e351]:
+              - button [ref=f27e353] [cursor=pointer]:
+                - group "핀 카드" [ref=f27e356]:
+                  - generic [ref=f27e358]:
+                    - link "제목 없음 핀 페이지" [ref=f27e360]:
+                      - /url: /pin/20547742048226139/
+                      - img "포함된 이미지:" [ref=f27e370]
+                    - generic "추가 작업" [ref=f27e379]:
+                      - button "추가 작업" [ref=f27e380]
+            - listitem [ref=f27e385]:
+              - button [ref=f27e387] [cursor=pointer]:
+                - group "핀 카드" [ref=f27e390]:
+                  - generic [ref=f27e392]:
+                    - link "제목 없음 핀 페이지" [ref=f27e394]:
+                      - /url: /pin/2533343537785122/
+                      - img "포함된 이미지:" [ref=f27e404]
+                    - generic "추가 작업" [ref=f27e413]:
+                      - button "추가 작업" [ref=f27e414]
+            - listitem [ref=f27e419]:
+              - button [ref=f27e421] [cursor=pointer]:
+                - group "핀 카드" [ref=f27e424]:
+                  - generic [ref=f27e426]:
+                    - 'link "10 Years of Logos. Realised it’s been about 10 years since I started doing logo designs, so I thought I’d give a digital handshake to the vintage logo book layouts that got me into logos in the first place. 2nd slide is a collection of 145 logos done between 2015 and 2025, followed by some personal favorites. See the www for the full collection. #graphicdesign 핀 페이지" [ref=f27e428]':
+                      - /url: /pin/633387444488652/
+                      - img "포함된 이미지:" [ref=f27e438]
+                    - generic [ref=f27e443]:
+                      - link "Sylvan Hillebrand Design" [ref=f27e447]:
+                        - /url: /sylvanhillebrand/
+                        - generic "Sylvan Hillebrand Design" [ref=f27e454]
+                      - generic "추가 작업" [ref=f27e457]:
+                        - button "추가 작업" [ref=f27e458]
+            - listitem [ref=f27e463]:
+              - button [ref=f27e465] [cursor=pointer]:
+                - group "핀 카드" [ref=f27e468]:
+                  - generic [ref=f27e470]:
+                    - link "제목 없음 핀 페이지" [ref=f27e472]:
+                      - /url: /pin/1125968743116833/
+                      - img "포함된 이미지:" [ref=f27e482]
+                    - generic "추가 작업" [ref=f27e491]:
+                      - button "추가 작업" [ref=f27e492]
+            - listitem [ref=f27e497]:
+              - button [ref=f27e499] [cursor=pointer]:
+                - group "핀 카드" [ref=f27e502]:
+                  - generic [ref=f27e504]:
+                    - link "제목 없음 핀 페이지" [ref=f27e506]:
+                      - /url: /pin/422281209270967/
+                      - img "포함된 이미지:" [ref=f27e516]
+                    - generic "추가 작업" [ref=f27e525]:
+                      - button "추가 작업" [ref=f27e526]
+    - generic:
+      - contentinfo "꼬리말"
+  - generic:
+    - generic:
+      - region "Toast notification"

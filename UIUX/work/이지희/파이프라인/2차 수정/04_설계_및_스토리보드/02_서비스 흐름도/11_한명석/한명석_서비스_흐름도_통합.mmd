@@ -1,0 +1,64 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef explore fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef atelier fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef action fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    subgraph HUB ["HUB: WICKETA 한명석 전통 다실 메인 허브"]
+        HOME["01 W11-HOME (전통 다실 메인)<br/>• 20pt 큰글씨 고대비 캔버스<br/>• ☎️ 1588 전화 주문 직통 배너<br/>• 다도회 예약 퀵독"]
+    end
+
+    subgraph PATH1 ["경로 1: 80℃ 발효 온수티 & 백자 다기 세트"]
+        AGING["02-A W11-AGING<br/>80℃ 발효티 효능 도감<br/>• 위장/수면 개선 효능"]
+        TEASET["03-A W11-TEASET<br/>백자 도자기 다기 세트<br/>• 10% 우대 할인"]
+        AGING --> TEASET
+    end
+
+    subgraph PATH2 ["경로 2: 백세건강 60일 정기배송 & ☎️ 전화주문"]
+        SUB["02-B W11-SUB<br/>WELL-AGING-SUB-01<br/>• ☎️ 1588 전화상담 & 20% 할인"]
+    end
+
+    subgraph PATH3 ["경로 3: 오동나무 보자기 효도 선물 발송"]
+        GIFT["02-C W11-GIFT<br/>PAULOWNIA-GIFT-01 아틀리에<br/>• 실크 보자기 & 한지 붓글씨 편지"]
+    end
+
+    subgraph PATH4 ["경로 4: 매일 아침 다도 일기 & 안부 문자"]
+        COMM_IN1["02-D W11-COMM (일기)<br/>TEA-DIARY-01<br/>• 음성 녹음 & 출석 도장"]
+    end
+
+    subgraph PATH5 ["경로 5: 한옥 다실 티 마스터 클래스 예약"]
+        COMM_IN2["02-E W11-COMM (예약)<br/>TEA-MASTER-CLASS-01<br/>• 큰글씨 캘린더 타임슬롯"]
+    end
+
+    subgraph TRANSACT ["TRANSACT: 공통 장바구니 결제 & 완료 모달"]
+        DRAWER["W11-DRAWER (슬라이드아웃 Cart)<br/>• 60px 큰 버튼 / ARS 전화결제<br/>• 가상 스크롤 100% 위치 복원"]
+        DONE["W11-DONE (통합 완료 모달)<br/>• 큰글씨 주문서, 모바일 초대권<br/>• 자녀 카카오톡 공유 링크"]
+        DRAWER --> DONE
+    end
+
+    subgraph LOOP ["LOOP: 아침 다도 일기 & 안부 순환 루프"]
+        LOOP_NODE["W11-LOOP (안부 순환)<br/>• 아침 다도 출석 ➔ 자녀 안부 문자 ➔ 스탬프 갱신<br/>• 매일 아침 07:00 다도 알림"]
+    end
+
+    HOME --> AGING
+    HOME --> SUB
+    HOME --> GIFT
+    HOME --> COMM_IN1
+    HOME --> COMM_IN2
+
+    TEASET --> DRAWER
+    SUB --> DRAWER
+    GIFT --> DRAWER
+    COMM_IN2 --> DRAWER
+    COMM_IN1 --> LOOP_NODE
+    DONE --> LOOP_NODE
+
+    LOOP_NODE -.->|매일 아침 다도 일기 순환| HOME
+    DONE -.->|쇼핑 계속하기 스크롤 복원| HOME
+
+    class HOME home;
+    class AGING,TEASET explore;
+    class GIFT,SUB,COMM_IN1,COMM_IN2 atelier;
+    class DRAWER,DONE action;
+    class LOOP_NODE support;

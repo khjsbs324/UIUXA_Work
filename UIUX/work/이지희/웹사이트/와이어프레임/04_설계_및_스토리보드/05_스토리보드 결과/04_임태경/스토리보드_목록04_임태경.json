@@ -1,0 +1,324 @@
+{
+  "clientId": "04",
+  "clientName": "임태경",
+  "role": "부티크 웰니스 호텔 총괄 이사 & 구매총괄 (42세)",
+  "archetype": "C-1 B2B 엔터프라이즈 솔루션형 (Luxury Hospitality B2B)",
+  "killerFeature": "5,000세트 B2B 대량 견적기 & 국세청 연동 0원 VIP 샘플 신청기 (B2B-ESTIMATE-01)",
+  "company": "(주)위케타 호텔 어메니티 B2B 사업부",
+  "ceo": "임태경",
+  "bizNum": "120-88-04004",
+  "address": "서울시 중구 을지로 100 WICKETA 호스피탈리티 센터",
+  "csPhone": "1588-0404 (평일 09:00 ~ 18:00)",
+  "csEmail": "taekyung@wicketa.com",
+  "goals": [
+    {
+      "goalId": "goal1",
+      "name": "목적 1: 5,000세트 B2B 대량 견적 & 전자계약",
+      "sitemap": "04_임태경_사이트맵_통합.md (GNB-03)",
+      "serviceFlow": "04_임태경_서비스_흐름도_통합.md (목적 1)",
+      "keyFeature": "객실수(50~500실) 기반 5,000세트 계단식 대량 견적기 (B2B-ESTIMATE-01)",
+      "conversionGoal": "스위트룸 500객실 연간 정기납품 전자계약 체결 & 세금계산서 발주"
+    },
+    {
+      "goalId": "goal2",
+      "name": "목적 2: 0원 VIP 호텔리어 샘플 신청",
+      "sitemap": "04_임태경_사이트맵_통합.md (GNB-01)",
+      "serviceFlow": "04_임태경_서비스_흐름도_통합.md (목적 2)",
+      "keyFeature": "국세청 API 사업자 인증 0원 VIP 4종 실물 샘플 킷 신청기 (VIP-SAMPLE-01)",
+      "conversionGoal": "호텔 구매팀 무료 테이스팅 샘플 킷 접수 및 익일 특급 배송"
+    },
+    {
+      "goalId": "goal3",
+      "name": "목적 3: 호텔 로고 3D 골드 각인 PB 기프트",
+      "sitemap": "04_임태경_사이트맵_통합.md (GNB-04)",
+      "serviceFlow": "04_임태경_서비스_흐름도_통합.md (목적 3)",
+      "keyFeature": "호텔 로고 SVG 3D 골드 레이저 각인기 & 자작나무 인룸 트레이 (HOTEL-ENGRAVER-01)",
+      "conversionGoal": "호텔 시그니처 VIP 기프트 박스 MOQ 100세트 제작 발주"
+    },
+    {
+      "goalId": "goal4",
+      "name": "목적 4: ERP 안전재고 15% 1초 자동 재발주",
+      "sitemap": "04_임태경_사이트맵_통합.md (GNB-05)",
+      "serviceFlow": "04_임태경_서비스_흐름도_통합.md (목적 4)",
+      "keyFeature": "객실 잔여 15% 안전재고 알림 & 1-Click 스마트 ERP 재발주 (ERP-REORDER-01)",
+      "conversionGoal": "익월 스위트룸 어메니티 1-Click 정기 발주 승인 및 순환 루프 진입"
+    },
+    {
+      "goalId": "goal5",
+      "name": "목적 5: 호텔 라운지 F&B 시즌 대용량 공급",
+      "sitemap": "04_임태경_사이트맵_통합.md (GNB-02/05)",
+      "serviceFlow": "04_임태경_서비스_흐름도_통합.md (목적 5)",
+      "keyFeature": "호텔 라운지 웰컴 드링크 벌크(500잔) 계산기 & 바텐더 레시피북 (SEASON-FNB-01)",
+      "conversionGoal": "시즌 한정 라운지 벌크 패키지 대량 발주 및 바텐더 레시피북 PDF 다운로드"
+    }
+  ],
+  "screens": [
+    {
+      "id": "W04-HOME",
+      "name": "호텔 B2B 엔터프라이즈 포털",
+      "desc": "특급호텔 객실 어메니티 3D 쇼케이스, 5대 B2B 콘솔 및 463종 성적서 허브"
+    },
+    {
+      "id": "W04-CATALOG",
+      "name": "B2B 어메니티 카탈로그",
+      "desc": "6대 맞춤 LNB 20종 B2B 라인업 및 VIP 0원 샘플 신청 콘솔"
+    },
+    {
+      "id": "W04-ABOUT",
+      "name": "호스피탈리티 파트너십 & 쇼룸",
+      "desc": "5성급 호텔 파트너십 철학, KTR/SGS 공인 인증서 및 을지로 쇼룸 안내"
+    },
+    {
+      "id": "W04-ESTIMATE",
+      "name": "B2B 대량 견적 & 전자계약실",
+      "desc": "5,000세트 계단식 대량 단가 시뮬레이터 및 국세청 사업자 인증 모듈"
+    },
+    {
+      "id": "W04-BUILD",
+      "name": "3D 호텔 로고 각인실",
+      "desc": "호텔 로고 SVG 3D 골드 레이저 각인기 및 MOQ 100세트 패키징 검증"
+    },
+    {
+      "id": "W04-COMM",
+      "name": "ERP 재발주 & 미슐랭 협업 허브",
+      "desc": "안전재고 15% 자동 재발주 대시보드 및 미슐랭 셰프 1:1 미팅 캘린더"
+    },
+    {
+      "id": "W04-DRAWER",
+      "name": "B2B 전자계약 드로어",
+      "desc": "전자서명 B2B 납품 계약 체결 및 세금계산서 후불 승인 시스템"
+    },
+    {
+      "id": "W04-DONE",
+      "name": "발주 승인 & 품질보증서",
+      "desc": "ERP 발주서 PDF, VIP 품질보증서 및 실시간 화물 배송 트래킹 발급"
+    }
+  ],
+  "sections": [
+    {
+      "id": "SEC-01",
+      "code": "WK-P01",
+      "name": "⭐ [5성급 시그니처] 인룸 웰컴 버터플라이피 티 팩",
+      "category": "🏨 5성급 호텔 인룸 웰컴티 팩 (4)",
+      "price": "39,000원",
+      "goalId": "goal1",
+      "uiComponent": "5성급 시그니처 웰컴티 3D 카드",
+      "imgSpec": "🖼️ [이미지: SEC-01 ⭐ [5성급 시그니처] 인룸 웰컴 버터플라이피 티 팩 (100% 무채색 뷰박스)]",
+      "displayData": "오로라 블루 찬물 1초 융해, 웰컴 카드 연동, 호텔 전용 4포 팩",
+      "userAction": "객실 수량별 단가 슬라이더 조절",
+      "systemLogic": "100~1,000세트 구간별 대량 할인율(최대 30%) 실시간 렌더링",
+      "targetScreen": "W04-ESTIMATE",
+      "stateChange": "수량 선택 시 세트당 단가 실시간 변환 (39,000원 ➔ 27,300원)"
+    },
+    {
+      "id": "SEC-02",
+      "code": "WK-P02",
+      "name": "📦 [5,000세트 벌크] 호텔 조달 전용 1초 융해 티 1,000포 번들",
+      "category": "📦 5,000세트 B2B 벌크 조달 팩 (4)",
+      "price": "850,000원",
+      "goalId": "goal1",
+      "uiComponent": "B2B 대용량 벌크 조달 카드",
+      "imgSpec": "🖼️ [이미지: SEC-02 📦 [5,000세트 벌크] 호텔 조달 전용 1초 융해 티 1,000포 번들 (100% 무채색 뷰박스)]",
+      "displayData": "1,000포 개별 질소충전 포장, 보관 수명 24개월, 위생 개별 파우치",
+      "userAction": "1-Click 전자계약 발주서 생성 클릭",
+      "systemLogic": "국세청 사업자 등록번호 연동 세금계산서 청구서 자동 발행",
+      "targetScreen": "W04-DRAWER",
+      "stateChange": "발주서 버튼 클릭 시 Drawer 오픈 및 사업자 정보 자동 바인딩"
+    },
+    {
+      "id": "SEC-03",
+      "code": "WK-P03",
+      "name": "🌱 [ESG 생분해] 친환경 사탕수수 파우치 웰컴티 팩",
+      "category": "🌱 ESG 생분해 파우치 & 우드 트레이 (4)",
+      "price": "32,000원",
+      "goalId": "goal1",
+      "uiComponent": "친환경 ESG 그린 호텔 카드",
+      "imgSpec": "🖼️ [이미지: SEC-03 🌱 [ESG 생분해] 친환경 사탕수수 파우치 웰컴티 팩 (100% 무채색 뷰박스)]",
+      "displayData": "100% 생분해 사탕수수 지류, 친환경 소이잉크 인쇄, 탄소중립 인증",
+      "userAction": "ESG 성적서 PDF 다운로드 클릭",
+      "systemLogic": "한국환경산업기술원 공인 생분해 인증서 라이트박스 팝업",
+      "targetScreen": "W04-ABOUT",
+      "stateChange": "다운로드 완료 시 'ESG 인증 마크' 배지 하이라이트"
+    },
+    {
+      "id": "SEC-04",
+      "code": "WK-P04",
+      "name": "🛁 [나이트 스파] 딥 릴랙스 캐모마일 & 바닐라 스파 팩",
+      "category": "🛁 나이트 스파 & 릴랙스 허브티 (4)",
+      "price": "28,000원",
+      "goalId": "goal2",
+      "uiComponent": "스파 어메니티 릴랙스 카드",
+      "imgSpec": "🖼️ [이미지: SEC-04 🛁 [나이트 스파] 딥 릴랙스 캐모마일 & 바닐라 스파 팩 (100% 무채색 뷰박스)]",
+      "displayData": "0.00mg 무카페인, 스위트 욕실 배스 티 겸용, 온수 80℃ 아로마 휠",
+      "userAction": "0원 VIP 샘플 신청 클릭",
+      "systemLogic": "호텔리어 4종 샘플 키트 바구니에 자동 추가",
+      "targetScreen": "W04-CATALOG",
+      "stateChange": "샘플 신청 폼에 선택된 상품 뱃지 활성화"
+    },
+    {
+      "id": "SEC-05",
+      "code": "WK-P05",
+      "name": "💎 [VIP 스위트] 자작나무 인룸 트레이 & 티 6종 기프트",
+      "category": "💎 VIP 스위트 룸 맞춤 기프트 (4)",
+      "price": "65,000원",
+      "goalId": "goal3",
+      "uiComponent": "자작나무 인룸 트레이 3D 뷰어 카드",
+      "imgSpec": "🖼️ [이미지: SEC-05 💎 [VIP 스위트] 자작나무 인룸 트레이 & 티 6종 기프트 (100% 무채색 뷰박스)]",
+      "displayData": "북유럽산 자작나무 원목 트레이, 티 6종 큐레이션, 호텔 로고 각인",
+      "userAction": "호텔 로고 SVG 파일 업로드",
+      "systemLogic": "3D 원목 트레이 표면에 레이저 버닝 로고 실시간 합성",
+      "targetScreen": "W04-BUILD",
+      "stateChange": "업로드 즉시 3D 트레이 중앙에 골드 각인 시뮬레이션"
+    },
+    {
+      "id": "SEC-06",
+      "code": "WK-P06",
+      "name": "🏨 [조식 라운지] 상쾌한 모닝 시트러스 라임 마테 팩",
+      "category": "🏨 5성급 호텔 인룸 웰컴티 팩 (4)",
+      "price": "29,000원",
+      "goalId": "goal5",
+      "uiComponent": "호텔 조식 뷔페 공급 카드",
+      "imgSpec": "🖼️ [이미지: SEC-06 🏨 [조식 라운지] 상쾌한 모닝 시트러스 라임 마테 팩 (100% 무채색 뷰박스)]",
+      "displayData": "비타민C 500mg, 당류 0g 천연 부스팅, 조식 디스펜서 호환 규격",
+      "userAction": "라운지 잔수별 소요량 계산",
+      "systemLogic": "일일 투숙객 300인 기준 월간 소요 박스 산출 알고리즘",
+      "targetScreen": "W04-HOME",
+      "stateChange": "투숙객 슬라이더 이동 시 월간 권장 공급량 그래프 변동"
+    },
+    {
+      "id": "SEC-07",
+      "code": "WK-P07",
+      "name": "📦 [3,000세트 벌크] 스위트룸 전용 프리미엄 블렌드 벌크",
+      "category": "📦 5,000세트 B2B 벌크 조달 팩 (4)",
+      "price": "560,000원",
+      "goalId": "goal1",
+      "uiComponent": "분기 분할 납품 계산 카드",
+      "imgSpec": "🖼️ [이미지: SEC-07 📦 [3,000세트 벌크] 스위트룸 전용 프리미엄 블렌드 벌크 (100% 무채색 뷰박스)]",
+      "displayData": "3,000세트 4분기 분할 납품, 안전재고 보관 서비스, 물류비 무료",
+      "userAction": "분기별 분할 배송 일정 선택",
+      "systemLogic": "분기별 정기 출고 스케줄러 자동 생성",
+      "targetScreen": "W04-ESTIMATE",
+      "stateChange": "일정 지정 시 캘린더에 납품 D-Day 핀 표시"
+    },
+    {
+      "id": "SEC-08",
+      "code": "WK-P08",
+      "name": "🌱 [우드 트레이] 호텔 로고 레이저 각인 원목 트레이",
+      "category": "🌱 ESG 생분해 파우치 & 우드 트레이 (4)",
+      "price": "45,000원",
+      "goalId": "goal3",
+      "uiComponent": "원목 트레이 커스텀 카드",
+      "imgSpec": "🖼️ [이미지: SEC-08 🌱 [우드 트레이] 호텔 로고 레이저 각인 원목 트레이 (100% 무채색 뷰박스)]",
+      "displayData": "FSC 인증 친환경 원목, 내수 우레탄 코팅, 객실 컵받침 일체형",
+      "userAction": "MOQ 100세트 견적 확인",
+      "systemLogic": "100세트 이상 발주 시 각인 동판비 0원 자동 할인",
+      "targetScreen": "W04-BUILD",
+      "stateChange": "MOQ 충족 시 '동판비 무료' 뱃지 점등"
+    },
+    {
+      "id": "SEC-09",
+      "code": "WK-P09",
+      "name": "🛁 [사우나 & 스파] 0kcal 미네랄 아쿠아 수분 충전 티",
+      "category": "🛁 나이트 스파 & 릴랙스 허브티 (4)",
+      "price": "27,000원",
+      "goalId": "goal4",
+      "uiComponent": "호텔 피트니스 & 스파 전용 카드",
+      "imgSpec": "🖼️ [이미지: SEC-09 🛁 [사우나 & 스파] 0kcal 미네랄 아쿠아 수분 충전 티 (100% 무채색 뷰박스)]",
+      "displayData": "천연 전해질 이온 함유, 무가당 0kcal, 냉음용 1초 용해 스틱",
+      "userAction": "ERP 자동 재발주 루프 등록",
+      "systemLogic": "월간 고정 수량 20박스 정기 자동 결제 스케줄러 등록",
+      "targetScreen": "W04-COMM",
+      "stateChange": "등록 시 'ERP 연동 활성화' 토글 ON"
+    },
+    {
+      "id": "SEC-10",
+      "code": "WK-P10",
+      "name": "💎 [프레지덴셜] 옻칠 웰컴 박스 & 하이엔드 다기 세트",
+      "category": "💎 VIP 스위트 룸 맞춤 기프트 (4)",
+      "price": "120,000원",
+      "goalId": "goal3",
+      "uiComponent": "VVIP 프레지덴셜 스위트 전용 카드",
+      "imgSpec": "🖼️ [이미지: SEC-10 💎 [프레지덴셜] 옻칠 웰컴 박스 & 하이엔드 다기 세트 (100% 무채색 뷰박스)]",
+      "displayData": "무형문화재 장인 옻칠 오동나무 함, 비단 보자기, 수제 유리 다기",
+      "userAction": "VVIP 1:1 컨시어지 상담 요청",
+      "systemLogic": "호스피탈리티 총괄 디렉터 1:1 방문 상담 티켓 생성",
+      "targetScreen": "W04-ABOUT",
+      "stateChange": "상담 요청 즉시 전담 매니저 배정 알림 노출"
+    },
+    {
+      "id": "SEC-11",
+      "code": "WK-P11",
+      "name": "🏨 [체크인 컨시어지] 웰컴 드링크 스파클링 에이드 팩",
+      "category": "🏨 5성급 호텔 인룸 웰컴티 팩 (4)",
+      "price": "34,000원",
+      "goalId": "goal5",
+      "uiComponent": "호텔 로비 웰컴 드링크 카드",
+      "imgSpec": "🖼️ [이미지: SEC-11 🏨 [체크인 컨시어지] 웰컴 드링크 스파클링 에이드 팩 (100% 무채색 뷰박스)]",
+      "displayData": "로즈 쿼츠 탄산 믹서, 웰컴 글래스웨어 서빙 매뉴얼 동봉",
+      "userAction": "바텐더 5종 레시피북 PDF 다운로드",
+      "systemLogic": "호텔 F&B 바텐더 전용 디지털 레시피 가이드 발급",
+      "targetScreen": "W04-CATALOG",
+      "stateChange": "다운로드 버튼 클릭 시 고해상도 PDF 렌더링"
+    },
+    {
+      "id": "SEC-12",
+      "code": "WK-P12",
+      "name": "📦 [10,000세트 엔터프라이즈] 리조트 체인 전용 어메니티 벌크",
+      "category": "📦 5,000세트 B2B 벌크 조달 팩 (4)",
+      "price": "1,600,000원",
+      "goalId": "goal1",
+      "uiComponent": "엔터프라이즈 대규모 체인 조달 카드",
+      "imgSpec": "🖼️ [이미지: SEC-12 📦 [10,000세트 엔터프라이즈] 리조트 체인 전용 어메니티 벌크 (100% 무채색 뷰박스)]",
+      "displayData": "전국 10개 체인 지점별 분할 직배송, 연간 단가 고정 계약",
+      "userAction": "체인 호텔 지점별 배송지 엑셀 업로드",
+      "systemLogic": "다중 배송지 일괄 분기 배송 스케줄 매핑 엔진",
+      "targetScreen": "W04-ESTIMATE",
+      "stateChange": "엑셀 업로드 시 지점별 납품 수량 자동 분할"
+    },
+    {
+      "id": "SEC-13",
+      "code": "WK-P13",
+      "name": "🌱 [PLA 티백] 100% 옥수수 전분 생분해 피라미드 티백",
+      "category": "🌱 ESG 생분해 파우치 & 우드 트레이 (4)",
+      "price": "31,000원",
+      "goalId": "goal1",
+      "uiComponent": "미세플라스틱 0% 안심 티백 카드",
+      "imgSpec": "🖼️ [이미지: SEC-13 🌱 [PLA 티백] 100% 옥수수 전분 생분해 피라미드 티백 (100% 무채색 뷰박스)]",
+      "displayData": "미세플라스틱 검출 0건 KTR 성적서, 초음파 융착 무접착제 공법",
+      "userAction": "KTR 미세플라스틱 불검출 성적서 확인",
+      "systemLogic": "시험성적서 번호 KTR-2026-WK13 원본 뷰어 팝업",
+      "targetScreen": "W04-ABOUT",
+      "stateChange": "팝업 내에서 성분 분석 스펙트럼 확대 뷰 제공"
+    },
+    {
+      "id": "SEC-14",
+      "code": "WK-P14",
+      "name": "🛁 [아로마 테라피] 라벤더 GABA 0.00mg 무카페인 티",
+      "category": "🛁 나이트 스파 & 릴랙스 허브티 (4)",
+      "price": "35,000원",
+      "goalId": "goal4",
+      "uiComponent": "야간 턴다운 서비스 전용 카드",
+      "imgSpec": "🖼️ [이미지: SEC-14 🛁 [아로마 테라피] 라벤더 GABA 0.00mg 무카페인 티 (100% 무채색 뷰박스)]",
+      "displayData": "하우스키핑 턴다운 베개 위 세팅 규격, 심야 수면 릴랙스",
+      "userAction": "턴다운 서비스 세팅 매뉴얼 보기",
+      "systemLogic": "객실 턴다운 트레이 세팅 가이드 3D 뷰어 노출",
+      "targetScreen": "W04-CATALOG",
+      "stateChange": "3D 객실 베드사이드 테이블 회전 뷰어 활성화"
+    },
+    {
+      "id": "SEC-15",
+      "code": "WK-P15",
+      "name": "💎 [기프트 틴] 호텔 자체 PB 틴케이스 제작 솔루션",
+      "category": "💎 VIP 스위트 룸 맞춤 기프트 (4)",
+      "price": "48,000원",
+      "goalId": "goal3",
+      "uiComponent": "호텔 PB 독점 브랜드 개발 카드",
+      "imgSpec": "🖼️ [이미지: SEC-15 💎 [기프트 틴] 호텔 자체 PB 틴케이스 제작 솔루션 (100% 무채색 뷰박스)]",
+      "displayData": "호텔 고유 컬러 팬톤 지정, 풀 커스텀 슬리브, 시그니처 조향",
+      "userAction": "PB 브랜딩 샘플 3D 커스텀 빌드",
+      "systemLogic": "팬톤 컬러 코드 입력 시 3D 틴케이스 실시간 조색",
+      "targetScreen": "W04-BUILD",
+      "stateChange": "컬러 칩 선택 시 3D 틴 질감 및 색상 즉시 교체"
+    }
+  ]
+}

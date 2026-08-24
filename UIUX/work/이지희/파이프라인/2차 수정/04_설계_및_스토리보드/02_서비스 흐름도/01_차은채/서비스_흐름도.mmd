@@ -1,0 +1,54 @@
+flowchart TD
+    classDef discover fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef decide fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef pathA fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20;
+    classDef pathB fill:#FFF8E1,stroke:#F57F17,stroke-width:1.5px,color:#E65100;
+    classDef follow fill:#37474F,stroke:#263238,stroke-width:2px,color:#FFFFFF;
+
+    subgraph DISCOVER_CONSIDER ["Phase 1: DISCOVER & CONSIDER · 에디토리얼 안식처 탐색과 신뢰 형성"]
+        C01["01 안식처 진입 (W01-HOME)<br/>• 사용자: 무중력 에세이 및 세계관 확인<br/>• 화면: HERO-01 시네마틱 3D 캔버스<br/>• 반응: 3초 앰비언트 무드 및 탐색 CTA 제공"]
+        C02["02 디렉터 큐레이션 탐색 (W01-HOME)<br/>• 사용자: COLLECTION-EDITOR-01 조작<br/>• 화면: 디렉터 컬렉션 편집기 모듈<br/>• 반응: 디렉터 추천 근거 및 블렌드 노트 렌더링"]
+        C03["03 감정·스트레스 진단 (W01-DIAG)<br/>• 사용자: 번아웃/수면부족 3축 다이얼 입력<br/>• 화면: Mood & Time Intake 콘솔<br/>• 반응: 1:1 맞춤형 블렌딩 티 3안 실시간 처방"]
+        C04["04 오로라 믹솔로지 탐색 (W01-MIX)<br/>• 사용자: 1초 융해 수색 및 아로마 휠 비교<br/>• 화면: Mixology Explorer 캔버스<br/>• 반응: 3D 수색 층분리 및 향미 레이어링 시뮬레이션"]
+        C05["05 180초 안식 의식 체험 (W01-RITUAL)<br/>• 사용자: 180초 브루잉 타이머 실행<br/>• 화면: Ritual Player & ASMR 사운드<br/>• 반응: 432Hz 뇌파 안정 음향 및 오로라 펄스 가이드"]
+
+        C01 --> C02 --> C03 --> C04 --> C05
+    end
+
+    subgraph DECIDE_SELECT ["Phase 2: DECIDE · 전환 경로 선택"]
+        C06["06 전환 행동 결정 (W01-SHOP / BUILD)<br/>• 사용자: [D2C 1-Click 주문/구독] 또는 [시향 세션/알림] 선택<br/>• 화면: Primary / Secondary CTA 바<br/>• 반응: 선택한 전환 경로(PATH A 또는 PATH B) 즉시 분기"]
+    end
+
+    C05 --> C06
+
+    subgraph PATH_A ["Phase 3-A: PATH A · 메인 D2C 주문 및 정기구독 경로"]
+        A1["A1 혜택 및 클린 성분 확인 (W01-SHOP)<br/>• 사용자: 0kcal/0% 무카페인 성적서 및 구독 혜택 검토<br/>• 화면: Director's Archive & 성분 배지<br/>• 반응: 6대 카테고리 필터링 및 15% 구독 할인 적용"]
+        A2["A2 커스텀 번들 설계 (W01-BUILD)<br/>• 사용자: 나만의 리미티드 틴케이스 세트 조합<br/>• 화면: Bundle Atelier 커스텀 빌더<br/>• 반응: 3D 패키지 실시간 렌더링 및 가격 자동 계산"]
+        A3["A3 심리스 주문 & 결제 (W01-DONE)<br/>• 사용자: Cart Drawer에서 1-Click 주문 완료<br/>• 화면: 슬라이드아웃 Cart Drawer<br/>• 반응: 페이지 이탈 없이 결제 후 스크롤 위치 100% 복원"]
+
+        A1 --> A2 --> A3
+    end
+
+    subgraph PATH_B ["Phase 3-B: PATH B · 프라이빗 시향 예약 & 카카오 알림 경로"]
+        B1["B1 프라이빗 예약/알림 선택 (W01-ABOUT)<br/>• 사용자: 오프라인 시향 세션 또는 출시 알림 선택<br/>• 화면: Brand Philosophy & Reservation<br/>• 반응: 1:1 시향 세션 타임슬롯 및 알림 모달 구동"]
+        B2["B2 예약/알림 정보 입력 (W01-COMM)<br/>• 사용자: 희망 일정 및 카카오 연락처 입력<br/>• 화면: Reservation & Notification Modal<br/>• 반응: 예약 가능 여부 유효성 검증 및 동의 저장"]
+        B3["B3 예약 완료 & 티켓 발급 (W01-DONE)<br/>• 사용자: 시향 세션 모바일 티켓 확인<br/>• 화면: Saved Ritual & Confirmation<br/>• 반응: 카카오 알림톡 즉시 발송 및 웰컴 바우처 발급"]
+
+        B1 --> B2 --> B3
+    end
+
+    C06 -- "D2C Purchase / Subscription" --> A1
+    C06 -- "Private Session / Notification" --> B1
+
+    subgraph FOLLOW_UP ["Phase 4: 공통 후속 경험 · 리추얼 아카이빙 & 관계 지속"]
+        F1["F1 리추얼 아카이브 & 지속 케어 (W01-COMM)<br/>• 사용자: 나만의 감정 일기 저장 및 30일 리추얼 챌린지 참여<br/>• 화면: Ritual Archive & Footer Brand Journal<br/>• 반응: 월간 감정 리듬 리포트 발송 및 VIP 프라이빗 다과회 초청"]
+    end
+
+    A3 --> F1
+    B3 --> F1
+
+    class C01,C02,C03,C04,C05 discover;
+    class C06 decide;
+    class A1,A2,A3 pathA;
+    class B1,B2,B3 pathB;
+    class F1 follow;

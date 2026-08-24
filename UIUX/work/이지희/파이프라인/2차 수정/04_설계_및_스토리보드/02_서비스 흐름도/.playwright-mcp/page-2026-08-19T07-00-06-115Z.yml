@@ -1,0 +1,180 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - banner:
+      - link "콘텐츠로 건너뛰기":
+        - /url: "#"
+      - generic [ref=e15]:
+        - generic [ref=e17]:
+          - generic [ref=e18]:
+            - combobox "검색" [ref=e20]: minimalist continuous loop logo mark black white
+            - generic [ref=e21]:
+              - button "검색 입력 삭제" [ref=e24] [cursor=pointer]
+              - generic "이미지 업로드" [ref=e30]:
+                - button "Pinterest 렌즈" [ref=e31] [cursor=pointer]
+          - button "모든 핀 드롭다운" [ref=e38] [cursor=pointer]:
+            - generic [ref=e40]:
+              - generic [ref=e41]: 모든 핀
+              - img "드롭다운" [ref=e43]
+        - link "내 프로필" [ref=e49] [cursor=pointer]:
+          - /url: /victoryjhl/
+          - img [ref=e56]:
+            - generic [ref=e57]: 이
+        - button "계정" [ref=e61] [cursor=pointer]
+    - navigation [ref=e66]:
+      - generic [ref=e68]:
+        - generic [ref=e69]:
+          - generic "홈" [ref=e73]:
+            - link "홈" [ref=e74] [cursor=pointer]:
+              - /url: /
+          - generic "홈" [ref=e81]:
+            - link "홈" [ref=e82] [cursor=pointer]:
+              - /url: /
+          - generic "내 보드" [ref=e89]:
+            - link "내 보드" [ref=e90] [cursor=pointer]:
+              - /url: /victoryjhl/
+          - generic "만들기" [ref=e97]:
+            - button "만들기" [ref=e98] [cursor=pointer]
+          - generic "업데이트" [ref=e107]:
+            - 'button "업데이트: 2개 알림" [ref=e108] [cursor=pointer]'
+          - generic "메시지" [ref=e117]:
+            - button "메시지" [ref=e118] [cursor=pointer]
+        - generic "설정 및 지원" [ref=e126]:
+          - button "설정 및 지원" [ref=e127] [cursor=pointer]
+    - generic:
+      - complementary "꼬리말 부동 버튼"
+    - main [ref=e132]:
+      - generic [ref=e134]:
+        - heading "검색 결과 페이지" [level=1] [ref=e136]
+        - region "필터 및 세분화 검색" [ref=e140]:
+          - button "필터 표시" [ref=e149] [cursor=pointer]
+        - generic [ref=e160]:
+          - generic [ref=e161]: minimalist continuous loop logo mark black white 검색 결과를 추가로 표시
+          - list [ref=e166]:
+            - listitem [ref=e167]:
+              - button [ref=e169] [cursor=pointer]:
+                - group "핀 카드" [ref=e172]:
+                  - generic [ref=e174]:
+                    - link "제목 없음 핀 페이지" [ref=e176]:
+                      - /url: /pin/4574037117093761/
+                      - img "포함된 이미지:" [ref=e186]
+                    - generic "추가 작업" [ref=e195]:
+                      - button "추가 작업" [ref=e196]
+            - listitem [ref=e201]:
+              - button [ref=e203] [cursor=pointer]:
+                - group "핀 카드" [ref=e206]:
+                  - generic [ref=e208]:
+                    - link "Lottie Animations - The LoopDeLoop Lotties 핀 페이지" [ref=e210]:
+                      - /url: /pin/7459155630771354/
+                      - 'img "포함된 이미지: Lottie Animations - The LoopDeLoop Lotties" [ref=e220]'
+                    - generic [ref=e225]:
+                      - heading [level=2] [ref=e231]:
+                        - link "Lottie Animations - The LoopDeLoop Lotties 핀 페이지" [ref=e233]:
+                          - /url: /pin/7459155630771354/
+                          - text: Lottie Animations - The LoopDeLoop Lotties
+                      - generic "추가 작업" [ref=e236]:
+                        - button "추가 작업" [ref=e237]
+            - listitem [ref=e242]:
+              - button [ref=e244] [cursor=pointer]:
+                - group "핀 카드" [ref=e247]:
+                  - generic [ref=e249]:
+                    - link "A continuous, flat-edged loop with a central twist, emphasizes logic, cycles, and data flow. 핀 페이지" [ref=e251]:
+                      - /url: /pin/23432860625948038/
+                      - 'img "포함된 이미지: A continuous, flat-edged loop with a central twist, emphasizes logic, cycles, and data flow." [ref=e261]'
+                    - generic [ref=e266]:
+                      - heading [level=2] [ref=e272]:
+                        - link "A continuous, flat-edged loop with a central twist, emphasizes logic, cycles, and data flow. 핀 페이지" [ref=e274]:
+                          - /url: /pin/23432860625948038/
+                          - text: A continuous, flat-edged loop with a central twist, emphasizes logic, cycles, and data flow.
+                      - generic "추가 작업" [ref=e277]:
+                        - button "추가 작업" [ref=e278]
+            - listitem [ref=e283]:
+              - button [ref=e285] [cursor=pointer]:
+                - group "핀 카드" [ref=e288]:
+                  - generic [ref=e290]:
+                    - link "제목 없음 핀 페이지" [ref=e292]:
+                      - /url: /pin/774124931410110/
+                      - img "포함된 이미지:" [ref=e302]
+                    - generic "추가 작업" [ref=e311]:
+                      - button "추가 작업" [ref=e312]
+            - listitem [ref=e317]:
+              - button [ref=e319] [cursor=pointer]:
+                - group "핀 카드" [ref=e322]:
+                  - generic [ref=e324]:
+                    - link "Loop 핀 페이지" [ref=e326]:
+                      - /url: /pin/27443878975582598/
+                      - 'img "포함된 이미지: Loop" [ref=e336]'
+                    - generic [ref=e341]:
+                      - heading [level=2] [ref=e347]:
+                        - link "Loop 핀 페이지" [ref=e349]:
+                          - /url: /pin/27443878975582598/
+                          - text: Loop
+                      - generic "추가 작업" [ref=e352]:
+                        - button "추가 작업" [ref=e353]
+            - listitem [ref=e358]:
+              - button [ref=e360] [cursor=pointer]:
+                - group "핀 카드" [ref=e363]:
+                  - generic [ref=e365]:
+                    - link "제목 없음 핀 페이지" [ref=e367]:
+                      - /url: /pin/351912467104773/
+                      - img "포함된 이미지:" [ref=e377]
+                    - generic "추가 작업" [ref=e386]:
+                      - button "추가 작업" [ref=e387]
+            - listitem [ref=e392]:
+              - button [ref=e394] [cursor=pointer]:
+                - group "핀 카드" [ref=e397]:
+                  - generic [ref=e399]:
+                    - 'link "10 Years of Logos. Realised it’s been about 10 years since I started doing logo designs, so I thought I’d give a digital handshake to the vintage logo book layouts that got me into logos in the first place. 2nd slide is a collection of 145 logos done between 2015 and 2025, followed by some personal favorites. See the www for the full collection. #graphicdesign 핀 페이지" [ref=e401]':
+                      - /url: /pin/633387444488652/
+                      - img "포함된 이미지:" [ref=e411]
+                    - generic [ref=e416]:
+                      - link "Sylvan Hillebrand Design" [ref=e420]:
+                        - /url: /sylvanhillebrand/
+                        - generic "Sylvan Hillebrand Design" [ref=e427]
+                      - generic "추가 작업" [ref=e430]:
+                        - button "추가 작업" [ref=e431]
+            - listitem [ref=e436]:
+              - button [ref=e438] [cursor=pointer]:
+                - group "핀 카드" [ref=e441]:
+                  - generic [ref=e443]:
+                    - link "제목 없음 핀 페이지" [ref=e445]:
+                      - /url: /pin/375487687704493653/
+                      - img "포함된 이미지:" [ref=e455]
+                    - generic "추가 작업" [ref=e464]:
+                      - button "추가 작업" [ref=e465]
+            - listitem [ref=e470]:
+              - button [ref=e472] [cursor=pointer]:
+                - group "핀 카드" [ref=e475]:
+                  - generic [ref=e477]:
+                    - 'link "Loop: A Sign of Our Tenets 핀 페이지" [ref=e479]':
+                      - /url: /pin/1688918607278144/
+                      - 'img "포함된 이미지: Loop: A Sign of Our Tenets" [ref=e489]'
+                    - generic [ref=e494]:
+                      - generic [ref=e495]:
+                        - heading [level=2] [ref=e500]:
+                          - 'link "Loop: A Sign of Our Tenets 핀 페이지" [ref=e502]':
+                            - /url: /pin/1688918607278144/
+                            - text: "Loop: A Sign of Our Tenets"
+                        - link "The Sak" [ref=e505]:
+                          - /url: /thesak/
+                          - generic "The Sak" [ref=e512]
+                      - generic "추가 작업" [ref=e515]:
+                        - button "추가 작업" [ref=e516]
+            - listitem [ref=e521]:
+              - button [ref=e523] [cursor=pointer]:
+                - group "핀 카드" [ref=e526]:
+                  - generic [ref=e528]:
+                    - link "Infinity Logo Design | Minimal Endless Loop Symbol Modern Branding Icon 핀 페이지" [ref=e530]:
+                      - /url: /pin/146718900357337570/
+                      - 'img "포함된 이미지: Infinity Logo Design | Minimal Endless Loop Symbol Modern Branding Icon" [ref=e540]'
+                    - generic [ref=e545]:
+                      - heading [level=2] [ref=e551]:
+                        - link "Infinity Logo Design | Minimal Endless Loop Symbol Modern Branding Icon 핀 페이지" [ref=e553]:
+                          - /url: /pin/146718900357337570/
+                          - text: Infinity Logo Design | Minimal Endless Loop Symbol Modern Branding Icon
+                      - generic "추가 작업" [ref=e556]:
+                        - button "추가 작업" [ref=e557]
+    - generic:
+      - contentinfo "꼬리말"
+  - generic:
+    - generic:
+      - region "Toast notification"

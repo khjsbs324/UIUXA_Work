@@ -1,0 +1,42 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef comm fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef done fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W05-HOME (챌린지 진입)<br/>• [#15초믹솔로지] 탭 클릭"]
+    COMM["02 W05-COMM (피드 감상 & 투표)<br/>• REELS-FEED-01 투표 참여"]
+    UPLOAD["03 W05-COMM (영상 업로드)<br/>• 15초 숏폼 비디오 등록"]
+    
+    FORMAT_CHECK{"04 영상 규격<br/>검증 (15초 이내?)"}
+    
+    RANK_CHECK{"05 랭킹 심사<br/>(1위 달성?)"}
+    
+    TRIM["04-B 영상 트리밍 (Fallback)<br/>• 15초 컷 편집기 보정"]
+    GOLD["05-A 1위 골드 트로피<br/>• 50,000P 상금 지급"]
+    PARTICIPANT["05-B 참가상 수령<br/>• 3,000P 즉시 적립"]
+    DONE["06 W05-DONE (리워드 정산)<br/>• 포인트 보관함 적립"]
+    LOOP_NODE["F1 신규 챌린지 루프<br/>• 다음 시즌 알림 등록"]
+
+    HOME --> COMM
+    COMM --> UPLOAD
+    UPLOAD --> FORMAT_CHECK
+    
+    FORMAT_CHECK -->|규격 적합| RANK_CHECK
+    FORMAT_CHECK -->|길이 초과| TRIM
+    TRIM -.->|편집 후| RANK_CHECK
+    
+    RANK_CHECK -->|1위 등극| GOLD
+    RANK_CHECK -->|참여 완료| PARTICIPANT
+    
+    GOLD --> DONE
+    PARTICIPANT --> DONE
+    DONE --> LOOP_NODE
+    LOOP_NODE -.->|다음 챌린지 참여| COMM
+
+    class HOME home;
+    class COMM,UPLOAD comm;
+    class FORMAT_CHECK,RANK_CHECK decision;
+    class GOLD,PARTICIPANT,DONE done;
+    class TRIM,LOOP_NODE support;

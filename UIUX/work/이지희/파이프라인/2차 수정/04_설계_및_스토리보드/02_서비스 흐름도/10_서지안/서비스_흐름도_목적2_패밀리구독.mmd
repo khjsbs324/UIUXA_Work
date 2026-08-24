@@ -1,0 +1,23 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef catalog fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef done fill:#ECEFF1,stroke:#455A64,stroke-width:1.5px,color:#263238;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W10-HOME (구독 진입)<br/>• [패밀리 맞춤 구독] 클릭"]
+    CATALOG["02 W10-CATALOG (구성원 선택)<br/>• FAMILY-PLANNER-01 아이+부모 티"]
+    DRAWER["03 W10-DRAWER (구독 드로어)<br/>• FAMILY-SUB-01 15% 할인"]
+    DONE["04 W10-DONE (리포트 발급)<br/>• 월간 안심 육아 PDF 발급"]
+    COMM["F1 W10-COMM (티 스왑 루프)<br/>• 계절별 원료 변경 콘솔"]
+
+    HOME --> CATALOG
+    CATALOG --> DRAWER
+    DRAWER --> DONE
+    DONE --> COMM
+
+    class HOME home;
+    class CATALOG catalog;
+    class DRAWER drawer;
+    class DONE done;
+    class COMM support;

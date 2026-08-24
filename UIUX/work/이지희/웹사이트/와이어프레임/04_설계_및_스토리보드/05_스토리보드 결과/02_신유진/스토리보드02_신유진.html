@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WICKETA 통합 마스터 스토리보드 - 신유진 (Viral Mixology Lab)</title>
+  <style>
+    :root {
+      --bg: #0d0e12;
+      --card-bg: #16181f;
+      --card-border: #262936;
+      --card-hover: #323647;
+      --text: #f0f2f5;
+      --text-muted: #8c93a4;
+      --primary: #ffffff;
+      --accent: #d4af37;
+      --highlight: #2a3147;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+    header {
+      background: #111217;
+      border-bottom: 1px solid var(--card-border);
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .brand-title {
+      font-size: 16px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .badge {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 12px;
+      background: #252836;
+      color: #b0b8cc;
+      border: 1px solid #363b4e;
+    }
+    .tabs-bar {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+    }
+    .tab-btn {
+      background: transparent;
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .tab-btn:hover {
+      background: var(--card-bg);
+      color: var(--text);
+      border-color: #434961;
+    }
+    .tab-btn.active {
+      background: #ffffff;
+      color: #000000;
+      border-color: #ffffff;
+      font-weight: 700;
+    }
+    .main-container {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+    #sidebar {
+      width: 260px;
+      background: #12131a;
+      border-right: 1px solid var(--card-border);
+      padding: 16px;
+      overflow-y: auto;
+      flex-shrink: 0;
+    }
+    .nav-group-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #656c80;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .screen-nav-item {
+      padding: 9px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      color: var(--text-muted);
+      cursor: pointer;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.15s;
+    }
+    .screen-nav-item:hover {
+      background: var(--card-bg);
+      color: var(--text);
+    }
+    .screen-nav-item.active {
+      background: var(--highlight);
+      color: #ffffff;
+      font-weight: 700;
+      border-left: 3px solid #ffffff;
+    }
+    .split-view {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+    .wireframe-pane {
+      flex: 1.1;
+      background: #000000;
+      border-right: 1px solid var(--card-border);
+      padding: 24px;
+      overflow-y: auto;
+    }
+    .spec-pane {
+      flex: 1.3;
+      background: var(--bg);
+      padding: 24px;
+      overflow-y: auto;
+    }
+    .wf-box {
+      background: #111111;
+      border: 1.5px solid #333333;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 20px;
+      transition: all 0.2s;
+    }
+    .wf-box.highlight {
+      border-color: #ffffff;
+      box-shadow: 0 0 15px rgba(255,255,255,0.2);
+    }
+    .wf-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .wf-img-placeholder {
+      background: #1a1a1a;
+      border: 1px dashed #555555;
+      padding: 24px;
+      text-align: center;
+      color: #888888;
+      font-size: 13px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+    .spec-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 18px;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .spec-card:hover, .spec-card.active {
+      border-color: #ffffff;
+      background: #1c1f2a;
+    }
+    .spec-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 8px;
+    }
+    .spec-id {
+      font-size: 13px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+    .spec-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .spec-table {
+      width: 100%;
+      font-size: 12px;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    .spec-table th, .spec-table td {
+      padding: 6px 8px;
+      border: 1px solid var(--card-border);
+      text-align: left;
+    }
+    .spec-table th {
+      background: #1e212b;
+      color: #b0b8cc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header & 5-Goal Switcher -->
+  <header>
+    <div class="brand-title">
+      <span>WICKETA STORYBOARD</span>
+      <span class="badge">02 신유진 (Viral Mixology Lab)</span>
+    </div>
+    <div class="tabs-bar">
+      <button class="tab-btn active" onclick="filterGoal('all')">전체 5대 목적 (All)</button>
+      <button class="tab-btn" onclick="filterGoal('goal1')">목적 1: 홈파티 대용량 번들</button>
+      <button class="tab-btn" onclick="filterGoal('goal2')">목적 2: 나이트 아로마 구독</button>
+      <button class="tab-btn" onclick="filterGoal('goal3')">목적 3: 바텐더 스타터 각인</button>
+      <button class="tab-btn" onclick="filterGoal('goal4')">목적 4: 릴스 1초 융해 레시피</button>
+      <button class="tab-btn" onclick="filterGoal('goal5')">목적 5: 0.1g 조향 포뮬러 등록</button>
+    </div>
+  </header>
+
+  <div class="main-container">
+    <!-- Left Sidebar: Screen Registry -->
+    <nav id="sidebar">
+      <div class="nav-group-title">공통 필수 3대 페이지</div>
+      <div class="screen-nav-item active" onclick="switchScreen('W02-HOME')">
+        <span>🏛️ W02-HOME</span>
+        <span class="badge">메인</span>
+      </div>
+      <div class="screen-nav-item" onclick="switchScreen('W02-RECIPE')">
+        <span>📖 W02-RECIPE</span>
+        <span class="badge">도감</span>
+      </div>
+      <div class="screen-nav-item" onclick="switchScreen('W02-ABOUT')">
+        <span>🌱 W02-ABOUT</span>
+        <span class="badge">브랜드</span>
+      </div>
+
+      <div class="nav-group-title" style="margin-top:16px;">고유 킬러 서브 화면</div>
+      <div class="screen-nav-item" onclick="switchScreen('W02-STUDIO')">
+        <span>🧪 W02-STUDIO</span>
+        <span class="badge">조향/구독</span>
+      </div>
+      <div class="screen-nav-item" onclick="switchScreen('W02-BUILD')">
+        <span>🍸 W02-BUILD</span>
+        <span class="badge">3D각인</span>
+      </div>
+      <div class="screen-nav-item" onclick="switchScreen('W02-ESTIMATE')">
+        <span>🧮 W02-ESTIMATE</span>
+        <span class="badge">벌크계산</span>
+      </div>
+      <div class="screen-nav-item" onclick="switchScreen('W02-COMM')">
+        <span>🎬 W02-COMM</span>
+        <span class="badge">릴스룸</span>
+      </div>
+      <div class="screen-nav-item" onclick="switchScreen('W02-DRAWER')">
+        <span>🛒 W02-DRAWER</span>
+        <span class="badge">Aside</span>
+      </div>
+      <div class="screen-nav-item" onclick="switchScreen('W02-DONE')">
+        <span>✅ W02-DONE</span>
+        <span class="badge">Modal</span>
+      </div>
+    </nav>
+
+    <!-- Split Pane: Left Wireframe, Right Spec -->
+    <div class="split-view">
+      <!-- Left Wireframe View -->
+      <div class="wireframe-pane">
+        <h3 style="font-size:15px; margin-bottom:16px; color:#ffffff;">🖼️ 모노크롬 와이어프레임 뷰 (W02-HOME)</h3>
+        
+        <!-- Interactive Killer Module on Wireframe -->
+        <div class="wf-box" id="wf-killer">
+          <div class="wf-title">
+            <span>🍹 [MIXOLOGY-SIM-01] 3단계 홈텐더 믹솔로지 칵테일 배합 시뮬레이터</span>
+            <span class="badge">킬러 기능</span>
+          </div>
+          <div class="wf-img-placeholder" style="background:#111; color:#fff;">
+            [3D 실시간 층분리 칵테일 시뮬레이션: 베이스 티 + 탄산수/토닉 + 가니시]
+          </div>
+          <div style="font-size:12px; color:#aaa; line-height:1.6;">
+            • 베이스 선택: 스모키 얼그레이 / 루비 베리 / 미드나잇 라벤더<br/>
+            • 1초 찬물 융해 및 수색 그라데이션 렌더링
+          </div>
+        </div>
+
+        <!-- 15 Section Wireframe Placeholders -->
+        <div id="wf-sections-container">
+          <!-- Will be rendered via JS -->
+        </div>
+      </div>
+
+      <!-- Right Spec View -->
+      <div class="spec-pane">
+        <h3 style="font-size:15px; margin-bottom:16px; color:#ffffff;">📋 15대 상품 큐레이션 섹션 스토리보드 상세 명세</h3>
+        <div id="spec-cards-container">
+          <!-- Will be rendered via JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var sectionsData = [{"id": "SEC-01", "code": "WK-P01", "name": "⭐ [조향사 시그니처] 오로라 블루 버터플라이피 믹서", "category": "🍹 0.1초 융해 스파클링 에이드 (4)", "price": "39,000원", "goalId": "goal4", "uiComponent": "3D Hero Canvas & 시뮬레이터 카드", "imgSpec": "🖼️ [이미지: SEC-01 오로라 블루 버터플라이피 믹서 1초 융해 3D 수색 (16:9)]", "displayData": "오로라 블루 1초 찬물 융해 3D 그래픽, pH 산도별 변색 가이드", "userAction": "Canvas 드래그 & 산도 슬라이더 조작", "systemLogic": "1.0초 수색 변환(블루➔바이올렛➔핑크) 쉐이더 렌더링", "targetScreen": "W02-RECIPE", "stateChange": "Hover 시 3D 칵테일 잔 회전 및 아로마 노트 툴팁 노출"}, {"id": "SEC-02", "code": "WK-P02", "name": "🌙 [나이트 아로마] 미드나잇 GABA 라벤더 올팩토리 티", "category": "🌙 나이트 아로마 & 수면 이완 블렌드 (4)", "price": "32,000원", "goalId": "goal2", "uiComponent": "후각 다이얼 수면 이완 처방 카드", "imgSpec": "🖼️ [이미지: SEC-02 미드나잇 GABA 라벤더 올팩토리 티 패키지 (1:1)]", "displayData": "천연 GABA 100mg, 0.00mg 무카페인 검증 성적서, 수면 이완 지수", "userAction": "다크 모드 스위치 클릭 & 30일 정기배송 선택", "systemLogic": "다크 앰비언트 테마 전환 및 15% 정기구독 할인율 계산", "targetScreen": "W02-STUDIO", "stateChange": "구독 주기(2주/4주) 선택 시 월 절약액 실시간 카운팅"}, {"id": "SEC-03", "code": "WK-P03", "name": "🍹 [논알콜 하이볼] 스모키 오크 얼그레이 베이스 스틱", "category": "🧪 0.1g 비스포크 조향 포뮬러 킷 (4)", "price": "28,000원", "goalId": "goal1", "uiComponent": "스모키 하이볼 레시피 배합 카드", "imgSpec": "🖼️ [이미지: SEC-03 스모키 오크 얼그레이 하이볼 스틱 3D 비커 (1:1)]", "displayData": "0.00% 논알콜 검증서, 오크 훈연 아로마 지수, 탄산수 배합 비율", "userAction": "1초 레시피 담기 클릭", "systemLogic": "탄산수/토닉워터 페어링 추천 아이템과 함께 Cart Drawer 추가", "targetScreen": "W02-DRAWER", "stateChange": "버튼 클릭 시 '담기 완료' 뱃지 전환 및 Drawer 오버레이 오픈"}, {"id": "SEC-04", "code": "WK-P04", "name": "💖 [스파클링 토핑] 로즈 쿼츠 히비스커스 탄산 믹서", "category": "🍹 0.1초 융해 스파클링 에이드 (4)", "price": "27,000원", "goalId": "goal4", "uiComponent": "탄산 믹솔로지 카루셀 카드", "imgSpec": "🖼️ [이미지: SEC-04 로즈 쿼츠 히비스커스 스파클링 탄산 기포 (1:1)]", "displayData": "0kcal 무가당 인증, 루비빛 수색 그라데이션, 탄산 기포 밀도", "userAction": "가로 카루셀 스와이프 및 1초 융해 테스트 클릭", "systemLogic": "물과 반응하는 탄산 기포 사운드 및 입체 파티클 재생", "targetScreen": "W02-RECIPE", "stateChange": "마우스 Hover 시 수색 확대 및 0kcal 영양정보 팝업 노출"}, {"id": "SEC-05", "code": "WK-P05", "name": "💙 [온수 아로마] 블루 캐모마일 & 바닐라 노트 팩", "category": "🌙 나이트 아로마 & 수면 이완 블렌드 (4)", "price": "26,000원", "goalId": "goal2", "uiComponent": "80℃ 온수 아로마 휠 카드", "imgSpec": "🖼️ [이미지: SEC-05 블루 캐모마일 & 바닐라 노트 발향 휠 (1:1)]", "displayData": "사파이어 블루 온수 발색, 8대 향미 프로파일, 카모마일 진정 성분", "userAction": "아로마 휠 드래그하여 향미 노트 탐색", "systemLogic": "선택한 바닐라/허브 노트에 따른 맞춤 페어링 티 추천", "targetScreen": "W02-STUDIO", "stateChange": "선택된 아로마 노트 테두리 하이라이트 및 발향 가이드 노출"}, {"id": "SEC-06", "code": "WK-P06", "name": "💚 [시트러스 믹서] 에메랄드 라임 마테 부스팅 스틱", "category": "🍹 0.1초 융해 스파클링 에이드 (4)", "price": "29,000원", "goalId": "goal4", "uiComponent": "천연 부스팅 에너지 카드", "imgSpec": "🖼️ [이미지: SEC-06 에메랄드 라임 마테 부스팅 스틱 (1:1)]", "displayData": "과라나 천연 부스팅 팩트, 당류 0g, 비타민 C 500mg 함유", "userAction": "부스팅 계산기 수치 조절", "systemLogic": "운동 전/오후 피로도에 따른 권장 음용 타이밍 산출", "targetScreen": "W02-HOME", "stateChange": "입력값에 따라 예상 활력 지수 그래프 상승 애니메이션"}, {"id": "SEC-07", "code": "WK-P07", "name": "💜 [무카페인 베이스] 바이올렛 루이보스 클린 포뮬러", "category": "🌙 나이트 아로마 & 수면 이완 블렌드 (4)", "price": "30,000원", "goalId": "goal2", "uiComponent": "0.00mg 무카페인 검증 카드", "imgSpec": "🖼️ [이미지: SEC-07 바이올렛 루이보스 클린 포뮬러 (1:1)]", "displayData": "KTR 시험성적서 번호 KTR-2026-WK07, 잔류 카페인 0.00mg", "userAction": "공인 성적서 원본 PDF 보기 클릭", "systemLogic": "성적서 라이트박스 팝업 및 KTR 검증 인장 렌더링", "targetScreen": "W02-ABOUT", "stateChange": "모달 오픈 시 배경 블러 및 KTR 3無 인증서 확대"}, {"id": "SEC-08", "code": "WK-P08", "name": "🍓 [비건 토닉] 루비 안토시아닌 베리 스파클링 믹서", "category": "🍹 0.1초 융해 스파클링 에이드 (4)", "price": "28,500원", "goalId": "goal4", "uiComponent": "비건 인증 믹솔로지 카드", "imgSpec": "🖼️ [이미지: SEC-08 루비 안토시아닌 베리 스파클링 믹서 (1:1)]", "displayData": "한국비건인증원 100% 식물성 원료, 야생 베리 4종 안토시아닌", "userAction": "비건 레시피 탭 클릭", "systemLogic": "논알콜 베리 모히또 제조 가이드 팝업 실행", "targetScreen": "W02-RECIPE", "stateChange": "탭 전환 시 상큼한 루비빛 수색 배경으로 소프트 트랜지션"}, {"id": "SEC-09", "code": "WK-P09", "name": "🍋 [1초 융해] 옐로우 유자 진저 퀵 믹솔로지 스틱", "category": "🧪 0.1g 비스포크 조향 포뮬러 킷 (4)", "price": "31,000원", "goalId": "goal5", "uiComponent": "초고속 융해 테크놀로지 카드", "imgSpec": "🖼️ [이미지: SEC-09 옐로우 유자 진저 퀵 믹솔로지 스틱 (1:1)]", "displayData": "찬물 1초 마이크로 융해 기술, 국내산 유자/생강 착즙 분말", "userAction": "융해 속도 비교 영상 재생", "systemLogic": "일반 티백(3분) vs 위케티(1초) 비교 비디오 재생", "targetScreen": "W02-RECIPE", "stateChange": "영상 재생 완료 시 '1초 믹서 담기' 버튼으로 전환"}, {"id": "SEC-10", "code": "WK-P10", "name": "🎓 [4+2 스타터] 믹솔로지 입문 키트 & 100% 페이백", "category": "🧪 0.1g 비스포크 조향 포뮬러 킷 (4)", "price": "34,000원", "goalId": "goal3", "uiComponent": "홈텐더 입문 스타터 카드", "imgSpec": "🖼️ [이미지: SEC-10 믹솔로지 4+2 입문 스타터 키트 (1:1)]", "displayData": "인기 4종 베이스 + 스파클링 2종 + 계량 지거 + 초보자 레시피북", "userAction": "베이스 4종 커스텀 선택 및 카카오 선물하기 클릭", "systemLogic": "카카오톡 선물하기 연동 및 수령인 메시지 카드 폼 활성화", "targetScreen": "W02-BUILD", "stateChange": "선택한 4종 스틱이 패키지 박스 그래픽에 실시간 슬롯 인"}, {"id": "SEC-11", "code": "WK-P11", "name": "🍸 [바텐더 글래스] 믹솔로지 전용 더블월 칵테일 잔", "category": "🍸 홈텐더 입문 바텐더 툴킷 (4)", "price": "36,000원", "goalId": "goal3", "uiComponent": "3D 글래스웨어 회전 뷰어 카드", "imgSpec": "🖼️ [이미지: SEC-11 믹솔로지 전용 더블월 칵테일 잔 3D 뷰 (1:1)]", "displayData": "빛 굴절 이중 단열 내열유리, 결로 방지, 수색 왜곡 제로 설계", "userAction": "마우스 드래그로 360도 회전 탐색", "systemLogic": "WebGL 3D 글래스웨어 실시간 각도 렌더링 및 광택 시뮬레이션", "targetScreen": "W02-BUILD", "stateChange": "회전 중 더블월 단열 레이어 구조도 툴팁 노출"}, {"id": "SEC-12", "code": "WK-P12", "name": "🥄 [정밀 계량] 스테인리스 바 지거 & 트위스트 머들러", "category": "🍸 홈텐더 입문 바텐더 툴킷 (4)", "price": "38,000원", "goalId": "goal3", "uiComponent": "3D 레이저 각인 아틀리에 카드", "imgSpec": "🖼️ [이미지: SEC-12 스테인리스 바 지거 머들러 레이저 각인 (1:1)]", "displayData": "SUS304 최고급 스테인리스, 15/30ml 정밀 눈금, 커스텀 이니셜 각인", "userAction": "각인 문구(최대 10자) 입력", "systemLogic": "스테인리스 표면에 레이저 버닝 이니셜 실시간 3D 합성", "targetScreen": "W02-BUILD", "stateChange": "입력 즉시 지거 표면에 타이핑 텍스트 렌더링"}, {"id": "SEC-13", "code": "WK-P13", "name": "🎁 [조향사 셀렉션] VIP 아로마 틴케이스 믹솔로지 세트", "category": "🎉 홈파티 60포 대용량 리필 벌크 (4)", "price": "49,000원", "goalId": "goal3", "uiComponent": "VIP 감성 선물 패키지 카드", "imgSpec": "🖼️ [이미지: SEC-13 조향사 VIP 아로마 틴케이스 세트 (4:3)]", "displayData": "무광 매트 틴케이스 + 비단 보자기 포장 + 조향사 친필 감사 엽서", "userAction": "선물 포장 옵션 선택 및 주소 입력", "systemLogic": "선물용 쇼핑백 0원 추가 및 카카오톡 알림톡 예약 발송", "targetScreen": "W02-DRAWER", "stateChange": "보자기 컬러(네이비/골드) 선택 시 실시간 패키지 이미지 교체"}, {"id": "SEC-14", "code": "WK-P14", "name": "🛡️ [0.00% 알콜] 공인 시험 성적서 보증 논알콜 팩", "category": "🌙 나이트 아로마 & 수면 이완 블렌드 (4)", "price": "35,000원", "goalId": "goal1", "uiComponent": "임산부/운전자 안심 보증 카드", "imgSpec": "🖼️ [이미지: SEC-14 0.00% 무알콜 공인 시험 성적서 (3:4)]", "displayData": "에탄올 0.000% 정밀 검출 테스트 합격, 운전자/임산부 섭취 가능", "userAction": "임산부/운전자 FAQ 아코디언 확장", "systemLogic": "식약처 기준 무알콜(0.00%) 정의 및 안전성 가이드 노출", "targetScreen": "W02-ABOUT", "stateChange": "아코디언 클릭 시 부드러운 슬라이드 다운 애니메이션"}, {"id": "SEC-15", "code": "WK-P15", "name": "🍑 [피치 아로마] 블라썸 피치 올팩토리 온수 팩", "category": "🧪 0.1g 비스포크 조향 포뮬러 킷 (4)", "price": "42,000원", "goalId": "goal5", "uiComponent": "0.1g 조향 포뮬러 등록 카드", "imgSpec": "🖼️ [이미지: SEC-15 블라썸 피치 올팩토리 온수 팩 조향 룸 (1:1)]", "displayData": "탑(화이트피치) / 미들(로즈페탈) / 베이스(머스크) 3단 피라미드", "userAction": "나만의 조향 비율(0.1g 단위) 슬라이더 조절", "systemLogic": "배합비 유효성 자동 검증 및 SHA-256 고유 Hash ID 생성", "targetScreen": "W02-STUDIO", "stateChange": "비율 조절 시 3단 수색 층분리 캔버스 실시간 농도 변경"}];
+
+    function renderComponents() {
+      var wfContainer = document.getElementById('wf-sections-container');
+      var specContainer = document.getElementById('spec-cards-container');
+      wfContainer.innerHTML = '';
+      specContainer.innerHTML = '';
+
+      sectionsData.forEach(function(sec) {
+        // Render Left Wireframe Box
+        var wfDiv = document.createElement('div');
+        wfDiv.className = 'wf-box';
+        wfDiv.id = 'wf-' + sec.id;
+        wfDiv.setAttribute('data-goal', sec.goalId);
+        wfDiv.innerHTML = `
+          <div class="wf-title">
+            <span>${sec.id}: ${sec.name}</span>
+            <span class="badge">${sec.category}</span>
+          </div>
+          <div class="wf-img-placeholder">${sec.imgSpec}</div>
+          <div style="display:flex; justify-content:space-between; font-size:12px; color:#aaa;">
+            <span>가격: ${sec.price}</span>
+            <span>이동: ${sec.targetScreen}</span>
+          </div>
+        `;
+        wfContainer.appendChild(wfDiv);
+
+        // Render Right Spec Card
+        var specDiv = document.createElement('div');
+        specDiv.className = 'spec-card';
+        specDiv.id = 'spec-' + sec.id;
+        specDiv.setAttribute('data-goal', sec.goalId);
+        specDiv.onclick = function() { highlightSection(sec.id); };
+        specDiv.innerHTML = `
+          <div class="spec-header">
+            <div class="spec-id">${sec.id} | ${sec.name}</div>
+            <span class="badge">${sec.goalId.toUpperCase()}</span>
+          </div>
+          <div class="spec-meta">
+            <strong>카테고리:</strong> ${sec.category} | <strong>가격:</strong> ${sec.price}<br/>
+            <strong>UI 컴포넌트:</strong> ${sec.uiComponent}
+          </div>
+          <table class="spec-table">
+            <tr><th style="width:28%;">표시 데이터</th><td>${sec.displayData}</td></tr>
+            <tr><th>사용자 행동</th><td>${sec.userAction}</td></tr>
+            <tr><th>시스템 처리/모션</th><td>${sec.systemLogic}</td></tr>
+            <tr><th>이동 대상 화면</th><td><strong>${sec.targetScreen}</strong></td></tr>
+            <tr><th>상태별 변화</th><td>${sec.stateChange}</td></tr>
+          </table>
+        `;
+        specContainer.appendChild(specDiv);
+      });
+    }
+
+    function highlightSection(id) {
+      document.querySelectorAll('.wf-box').forEach(function(b) { b.classList.remove('highlight'); });
+      document.querySelectorAll('.spec-card').forEach(function(c) { c.classList.remove('active'); });
+
+      var wfTarget = document.getElementById('wf-' + id);
+      var specTarget = document.getElementById('spec-' + id);
+      if(wfTarget) {
+        wfTarget.classList.add('highlight');
+        wfTarget.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      if(specTarget) {
+        specTarget.classList.add('active');
+        specTarget.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+
+    function filterGoal(goal) {
+      document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+      event.target.classList.add('active');
+
+      document.querySelectorAll('.wf-box').forEach(function(b) {
+        if(b.id === 'wf-killer') return;
+        if(goal === 'all' || b.getAttribute('data-goal') === goal) b.style.display = 'block';
+        else b.style.display = 'none';
+      });
+
+      document.querySelectorAll('.spec-card').forEach(function(c) {
+        if(goal === 'all' || c.getAttribute('data-goal') === goal) c.style.display = 'block';
+        else c.style.display = 'none';
+      });
+    }
+
+    function switchScreen(screenId) {
+      document.querySelectorAll('.screen-nav-item').forEach(function(i) { i.classList.remove('active'); });
+      event.currentTarget.classList.add('active');
+      alert(screenId + ' 화면 상세 스토리보드로 전환되었습니다.');
+    }
+
+    renderComponents();
+  </script>
+</body>
+</html>

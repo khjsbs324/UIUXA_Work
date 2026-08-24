@@ -1,0 +1,36 @@
+flowchart TD
+    classDef home fill:#1A237E,stroke:#0D47A1,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef look fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef sim fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef decision fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef drawer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px,color:#01579B,font-weight:bold;
+    classDef support fill:#37474F,stroke:#263238,stroke-width:1.5px,color:#FFFFFF;
+
+    HOME["01 W03-HOME (매거진 진입)<br/>• [데스크셋업 시작] 클릭"]
+    LOOK["02 W03-LOOKBOOK (컬러 탐색)<br/>• 6대 감성 컬러 룩북"]
+    BUILD["03 W03-BUILD (3D 데스크 배치)<br/>• DESK-SIMULATOR-01<br/>• 틴케이스 & 글래스 드래그"]
+    
+    TONE_CHECK{"04 데스크 조화도<br/>검증 (95점 이상?)"}
+    
+    DRAWER["05 W03-DRAWER (세트 주문)<br/>• 20% 세트 할인 적용 & 결제"]
+    ADJUST["04-B 에디터 추천 프리셋 (Fallback)<br/>• 최적 컬러 조합 자동 제안"]
+    DONE["07 W03-DONE (가이드 발급)<br/>• 데스크 스타일링 PDF 증정"]
+    COMM["F1 W03-COMM (인스타 챌린지)<br/>• 데스크 인증샷 공유 피드"]
+
+    HOME --> LOOK
+    LOOK --> BUILD
+    BUILD --> TONE_CHECK
+    
+    TONE_CHECK -->|톤 매칭 우수| DRAWER
+    TONE_CHECK -->|색상 충돌| ADJUST
+    ADJUST -.->|컬러 보정 후| BUILD
+    
+    DRAWER --> DONE
+    DONE --> COMM
+
+    class HOME home;
+    class LOOK look;
+    class BUILD,ADJUST sim;
+    class TONE_CHECK decision;
+    class DRAWER,DONE drawer;
+    class COMM support;

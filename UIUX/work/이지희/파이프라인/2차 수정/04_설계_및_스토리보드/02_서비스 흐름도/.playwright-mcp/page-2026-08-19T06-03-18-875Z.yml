@@ -1,0 +1,172 @@
+- generic [active] [ref=f13e1]:
+  - generic [ref=f13e4]:
+    - banner:
+      - link "콘텐츠로 건너뛰기":
+        - /url: "#"
+      - generic [ref=f13e15]:
+        - generic [ref=f13e17]:
+          - generic [ref=f13e18]:
+            - combobox "검색" [ref=f13e20]: abstract fluid rotation minimal logo mark
+            - generic [ref=f13e21]:
+              - button "검색 입력 삭제" [ref=f13e24] [cursor=pointer]
+              - generic "이미지 업로드" [ref=f13e30]:
+                - button "Pinterest 렌즈" [ref=f13e31] [cursor=pointer]
+          - button "모든 핀 드롭다운" [ref=f13e38] [cursor=pointer]:
+            - generic [ref=f13e40]:
+              - generic [ref=f13e41]: 모든 핀
+              - img "드롭다운" [ref=f13e43]
+        - link "내 프로필" [ref=f13e49] [cursor=pointer]:
+          - /url: /victoryjhl/
+          - img [ref=f13e56]:
+            - generic [ref=f13e57]: 이
+        - button "계정" [ref=f13e61] [cursor=pointer]
+    - navigation [ref=f13e66]:
+      - generic [ref=f13e68]:
+        - generic [ref=f13e69]:
+          - generic "홈" [ref=f13e73]:
+            - link "홈" [ref=f13e74] [cursor=pointer]:
+              - /url: /
+          - generic "홈" [ref=f13e81]:
+            - link "홈" [ref=f13e82] [cursor=pointer]:
+              - /url: /
+          - generic "내 보드" [ref=f13e89]:
+            - link "내 보드" [ref=f13e90] [cursor=pointer]:
+              - /url: /victoryjhl/
+          - generic "만들기" [ref=f13e97]:
+            - button "만들기" [ref=f13e98] [cursor=pointer]
+          - generic "업데이트" [ref=f13e107]:
+            - button "업데이트" [ref=f13e108] [cursor=pointer]
+          - generic "메시지" [ref=f13e117]:
+            - button "메시지" [ref=f13e118] [cursor=pointer]
+        - generic "설정 및 지원" [ref=f13e126]:
+          - button "설정 및 지원" [ref=f13e127] [cursor=pointer]
+    - generic:
+      - complementary "꼬리말 부동 버튼"
+    - main [ref=f13e132]:
+      - generic [ref=f13e134]:
+        - heading "검색 결과 페이지" [level=1] [ref=f13e136]
+        - region "필터 및 세분화 검색" [ref=f13e140]:
+          - button "필터 표시" [ref=f13e149] [cursor=pointer]
+        - generic [ref=f13e160]:
+          - generic [ref=f13e161]: abstract fluid rotation minimal logo mark 검색 결과를 추가로 표시
+          - list [ref=f13e166]:
+            - listitem [ref=f13e167]:
+              - button [ref=f13e169] [cursor=pointer]:
+                - group "핀 카드" [ref=f13e172]:
+                  - generic [ref=f13e174]:
+                    - 'link "10 Years of Logos. Realised it’s been about 10 years since I started doing logo designs, so I thought I’d give a digital handshake to the vintage logo book layouts that got me into logos in the first place. 2nd slide is a collection of 145 logos done between 2015 and 2025, followed by some personal favorites. See the www for the full collection. #graphicdesign 핀 페이지" [ref=f13e176]':
+                      - /url: /pin/633387444488652/
+                      - img "포함된 이미지:" [ref=f13e186]
+                    - generic [ref=f13e191]:
+                      - link "Sylvan Hillebrand Design" [ref=f13e195]:
+                        - /url: /sylvanhillebrand/
+                        - generic "Sylvan Hillebrand Design" [ref=f13e202]
+                      - generic "추가 작업" [ref=f13e205]:
+                        - button "추가 작업" [ref=f13e206]
+            - listitem [ref=f13e211]:
+              - button [ref=f13e213] [cursor=pointer]:
+                - group "핀 카드" [ref=f13e216]:
+                  - generic [ref=f13e218]:
+                    - link "제목 없음 핀 페이지" [ref=f13e220]:
+                      - /url: /pin/14988611256160957/
+                      - img "포함된 이미지:" [ref=f13e230]
+                    - generic "추가 작업" [ref=f13e239]:
+                      - button "추가 작업" [ref=f13e240]
+            - listitem [ref=f13e245]:
+              - button [ref=f13e247] [cursor=pointer]:
+                - group "핀 카드" [ref=f13e250]:
+                  - generic [ref=f13e252]:
+                    - link "Fluid 핀 페이지" [ref=f13e254]:
+                      - /url: /pin/34199278420404465/
+                      - 'img "포함된 이미지: Fluid" [ref=f13e264]'
+                    - generic [ref=f13e269]:
+                      - heading [level=2] [ref=f13e275]:
+                        - link "Fluid 핀 페이지" [ref=f13e277]:
+                          - /url: /pin/34199278420404465/
+                          - text: Fluid
+                      - generic "추가 작업" [ref=f13e280]:
+                        - button "추가 작업" [ref=f13e281]
+            - listitem [ref=f13e286]:
+              - button [ref=f13e288] [cursor=pointer]:
+                - group "핀 카드" [ref=f13e291]:
+                  - generic [ref=f13e293]:
+                    - link "Minimal Brand Logo 핀 페이지" [ref=f13e295]:
+                      - /url: /pin/6122149489263594/
+                      - 'img "포함된 이미지: Minimal Brand Logo" [ref=f13e305]'
+                    - generic [ref=f13e310]:
+                      - heading [level=2] [ref=f13e316]:
+                        - link "Minimal Brand Logo 핀 페이지" [ref=f13e318]:
+                          - /url: /pin/6122149489263594/
+                          - text: Minimal Brand Logo
+                      - generic "추가 작업" [ref=f13e321]:
+                        - button "추가 작업" [ref=f13e322]
+            - listitem [ref=f13e327]:
+              - button [ref=f13e329] [cursor=pointer]:
+                - group "핀 카드" [ref=f13e332]:
+                  - generic [ref=f13e334]:
+                    - link "Logo exploration for organic logo icon fluid shapes A letter and globe inspired 핀 페이지" [ref=f13e336]:
+                      - /url: /pin/3096293491974188/
+                      - 'img "포함된 이미지: Logo exploration for organic logo icon fluid shapes A letter and globe inspired" [ref=f13e346]'
+                    - generic [ref=f13e351]:
+                      - heading [level=2] [ref=f13e357]:
+                        - link "Logo exploration for organic logo icon fluid shapes A letter and globe inspired 핀 페이지" [ref=f13e359]:
+                          - /url: /pin/3096293491974188/
+                          - text: Logo exploration for organic logo icon fluid shapes A letter and globe inspired
+                      - generic "추가 작업" [ref=f13e362]:
+                        - button "추가 작업" [ref=f13e363]
+            - listitem [ref=f13e368]:
+              - button [ref=f13e370] [cursor=pointer]:
+                - group "핀 카드" [ref=f13e373]:
+                  - generic [ref=f13e375]:
+                    - link "Rate this creative work out of 10. 핀 페이지" [ref=f13e377]:
+                      - /url: /pin/7599893118058328/
+                      - 'img "포함된 이미지: Rate this creative work out of 10." [ref=f13e387]'
+                    - generic [ref=f13e392]:
+                      - heading [level=2] [ref=f13e398]:
+                        - link "Rate this creative work out of 10. 핀 페이지" [ref=f13e400]:
+                          - /url: /pin/7599893118058328/
+                          - text: Rate this creative work out of 10.
+                      - generic "추가 작업" [ref=f13e403]:
+                        - button "추가 작업" [ref=f13e404]
+            - listitem [ref=f13e409]:
+              - button [ref=f13e411] [cursor=pointer]:
+                - group "핀 카드" [ref=f13e414]:
+                  - generic [ref=f13e416]:
+                    - link "LOGO 핀 페이지" [ref=f13e418]:
+                      - /url: /pin/68749265125/
+                      - 'img "포함된 이미지: LOGO" [ref=f13e428]'
+                    - generic [ref=f13e433]:
+                      - heading [level=2] [ref=f13e439]:
+                        - link "LOGO 핀 페이지" [ref=f13e441]:
+                          - /url: /pin/68749265125/
+                          - text: LOGO
+                      - generic "추가 작업" [ref=f13e444]:
+                        - button "추가 작업" [ref=f13e445]
+            - listitem [ref=f13e450]:
+              - button [ref=f13e452] [cursor=pointer]:
+                - group "핀 카드" [ref=f13e455]:
+                  - generic [ref=f13e457]:
+                    - link "Roxana Niculescu 핀 페이지" [ref=f13e459]:
+                      - /url: /pin/4644405859528633/
+                      - 'img "포함된 이미지: Roxana Niculescu" [ref=f13e469]'
+                    - generic [ref=f13e474]:
+                      - heading [level=2] [ref=f13e480]:
+                        - link "Roxana Niculescu 핀 페이지" [ref=f13e482]:
+                          - /url: /pin/4644405859528633/
+                          - text: Roxana Niculescu
+                      - generic "추가 작업" [ref=f13e485]:
+                        - button "추가 작업" [ref=f13e486]
+            - listitem [ref=f13e491]:
+              - button [ref=f13e493] [cursor=pointer]:
+                - group "핀 카드" [ref=f13e496]:
+                  - generic [ref=f13e498]:
+                    - link "제목 없음 핀 페이지" [ref=f13e500]:
+                      - /url: /pin/8303580555663386/
+                      - img "포함된 이미지:" [ref=f13e510]
+                    - generic "추가 작업" [ref=f13e519]:
+                      - button "추가 작업" [ref=f13e520]
+    - generic:
+      - contentinfo "꼬리말"
+  - generic:
+    - generic:
+      - region "Toast notification"

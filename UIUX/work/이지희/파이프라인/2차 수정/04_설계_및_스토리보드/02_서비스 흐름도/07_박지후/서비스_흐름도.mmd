@@ -1,0 +1,54 @@
+flowchart TD
+    classDef discover fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-weight:bold;
+    classDef decide fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,color:#F57F17,font-weight:bold;
+    classDef pathA fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20;
+    classDef pathB fill:#FFF8E1,stroke:#F57F17,stroke-width:1.5px,color:#E65100;
+    classDef follow fill:#37474F,stroke:#263238,stroke-width:2px,color:#FFFFFF;
+
+    subgraph DISCOVER_CONSIDER ["Phase 1: DISCOVER & CONSIDER · 생산성 퀵 대시보드 탐색과 속 편한 신뢰 형성"]
+        C01["01 퀵 대시보드 진입 (W07-HOME)<br/>• 사용자: 노션 스타일 오피스 대시보드 & 활력 지표 확인<br/>• 화면: HERO-07 생산성 퀵 대시보드 캔버스<br/>• 반응: 키보드 단축키 가이드 및 QUICK-BREW-01 탐색 CTA 제공"]
+        C02["02 회의 전 활력 체크 (W07-HOME)<br/>• 사용자: QUICK-BREW-01 회의 타이머 연동<br/>• 화면: QUICK-BREW-01 활력 체크 모듈<br/>• 반응: 회의 시작 10분 전 알림 및 1초 천연 부스터 포뮬러 매칭"]
+        C03["03 식곤증·피로도 진단 (W07-DIAG)<br/>• 사용자: 커피 섭취 잔 수 & 속쓰림 지수 다이얼 입력<br/>• 화면: Meeting Countdown & Energy Check 콘솔<br/>• 반응: 커피 대체용 천연 과라나/비타민B 맞춤 스틱 3안 도출"]
+        C04["04 커피 대체재 스펙 탐색 (W07-MIX)<br/>• 사용자: 커피 vs WICKETA 위장 부담 및 카페인 비교<br/>• 화면: Coffee Alternative Explorer<br/>• 반응: 위장 자극 제로 및 심박수 안정 비교 그래프 실시간 렌더링"]
+        C05["05 1초 플래시 브루 체험 (W07-RITUAL)<br/>• 사용자: 탕비실 정수기 찬물 1초 융해 시뮬레이터 실행<br/>• 화면: 1s Flash Brew Player<br/>• 반응: 찬물/얼음물 투하 즉시 1초 나노 분산 Canvas 애니메이션"]
+
+        C01 --> C02 --> C03 --> C04 --> C05
+    end
+
+    subgraph DECIDE_SELECT ["Phase 2: DECIDE · 전환 경로 선택"]
+        C06["06 전환 행동 결정 (W07-SHOP / BUILD)<br/>• 사용자: [탕비실 대용량 박스 정기구독] 또는 [팀원 1초 선물] 선택<br/>• 화면: Primary / Secondary CTA 바<br/>• 반응: 선택한 전환 경로(PATH A 또는 PATH B) 즉시 분기"]
+    end
+
+    C05 --> C06
+
+    subgraph PATH_A ["Phase 3-A: PATH A · 오피스 대용량 박스 & 파티션 디스펜서 정기구독 경로"]
+        A1["A1 오피스 도감 & 법인 혜택 확인 (W07-SHOP)<br/>• 사용자: 6대 LNB 카테고리 및 법인/대용량 할인표 검토<br/>• 화면: Office Quick Archive (6대 LNB)<br/>• 반응: 대용량 60/120포 번들 할인 및 세금계산서 발행 옵션"]
+        A2["A2 파티션 디스펜서 설계 (W07-BUILD)<br/>• 사용자: 파티션 부착형 슬림 디스펜서 + 스틱 60포 선택<br/>• 화면: Desk Slim Dispenser Builder<br/>• 반응: 3D 오피스 데스크테리어 뷰어 및 월간 배송일 지정"]
+        A3["A3 심리스 발주 & 결제 (W07-DONE)<br/>• 사용자: 1-Sec Cart Drawer에서 법인/개인 카드 결제 완료<br/>• 화면: 슬라이드아웃 1-Sec Cart Drawer<br/>• 반응: 3초 Fast Checkout 완료 후 스크롤 위치 100% 복원"]
+
+        A1 --> A2 --> A3
+    end
+
+    subgraph PATH_B ["Phase 3-B: PATH B · 슬랙/팀원 1초 모바일 응원 쿠폰 & 샘플 경로"]
+        B1["B1 팀원 선물/샘플 선택 (W07-COMM)<br/>• 사용자: 슬랙 채널 연동 팀원 선물 또는 탕비실 무료 샘플 신청<br/>• 화면: Team Gift & Free Sample CTA<br/>• 반응: 슬랙 팀원 일괄 모바일 쿠폰 발송 모달 구동"]
+        B2["B2 슬랙 팀원 선택 & 메시지 입력 (W07-COMM)<br/>• 사용자: 수신 팀원 목록 선택 및 '오늘 회의 화이팅' 메시지 입력<br/>• 화면: Team Coupon Modal<br/>• 반응: 팀원별 모바일 기프티콘 생성 및 법인 비용 정산 연동"]
+        B3["B3 발송 완료 & 탕비실 샘플 배송 (W07-DONE)<br/>• 사용자: 팀원 쿠폰 발송 완료 및 탕비실 샘플 트래킹 확인<br/>• 화면: Office Pack Subscribed Modal<br/>• 반응: 슬랙 채널 쿠폰 봇 자동 알림 및 탕비실 샘플 익일 도착"]
+
+        B1 --> B2 --> B3
+    end
+
+    C06 -- "Office Pack Sub / Slim Dispenser" --> A1
+    C06 -- "Send Team Gift / Free Office Sample" --> B1
+
+    subgraph FOLLOW_UP ["Phase 4: 공통 후속 경험 · 오피스 라운지 아카이빙 & 활력 루틴 지속"]
+        F1["F1 오피스 라운지 & 카페인 컷 챌린지 (W07-COMM)<br/>• 사용자: 커피 끊기 30일 챌린지 후기 작성 및 활력 지표 공유<br/>• 화면: Office Lounge & Footer<br/>• 반응: 월간 카페인 절감 리포트 발송 및 대용량 정기구독 20% 추가 할인"]
+    end
+
+    A3 --> F1
+    B3 --> F1
+
+    class C01,C02,C03,C04,C05 discover;
+    class C06 decide;
+    class A1,A2,A3 pathA;
+    class B1,B2,B3 pathB;
+    class F1 follow;
