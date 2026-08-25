@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="2200" viewBox="0 0 1800 2200" role="img" aria-labelledby="title desc">
+  <title id="title">DAMORI 사이트 구조맵</title>
+  <desc id="desc">가상 클라이언트 요구를 기반으로 정리한 메인, 카테고리·서브, 브랜드 소개 3페이지 16구역 정보 구조</desc>
+  <defs>
+    <style>
+      text{font-family:"Noto Sans KR","Malgun Gothic",Arial,sans-serif;fill:#243029}
+      .title{font-size:34px;font-weight:800;fill:#fff}
+      .subtitle{font-size:18px;fill:#e8eee9}
+      .band-title{font-size:20px;font-weight:700}
+      .page-title{font-size:21px;font-weight:800}
+      .page-desc{font-size:15px}
+      .section-title{font-size:17px;font-weight:800}
+      .body{font-size:14px}
+      .role{font-size:13px;font-style:italic}
+      .source{font-size:12px;fill:#66736a}
+      .small{font-size:12px}
+      .home{fill:#f7f2e8;stroke:#9b7b4f;stroke-width:1.5}
+      .products{fill:#edf2e8;stroke:#6f835f;stroke-width:1.5}
+      .brand{fill:#edf0f3;stroke:#687989;stroke-width:1.5}
+      .page-home{fill:#fcfaf5;stroke:#9b7b4f;stroke-width:2}
+      .page-products{fill:#f7faf5;stroke:#6f835f;stroke-width:2}
+      .page-brand{fill:#f7f9fb;stroke:#687989;stroke-width:2}
+      .meta{fill:#eef2ec;stroke:#66736a;stroke-width:1.5}
+      .support{fill:#fafafa;stroke:#858585;stroke-width:1.2}
+      .out{fill:#fbf5f5;stroke:#a68a8a;stroke-width:1.2;stroke-dasharray:6 4}
+      .arrow{stroke:#66736a;stroke-width:2;fill:none;marker-end:url(#arrow)}
+      .light-arrow{stroke:#8b968e;stroke-width:1.5;fill:none;marker-end:url(#arrow)}
+    </style>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#66736a"/></marker>
+  </defs>
+
+  <rect x="0" y="0" width="1800" height="2200" fill="#fff"/>
+  <rect x="40" y="30" width="1720" height="105" rx="12" fill="#243029"/>
+  <text x="900" y="75" text-anchor="middle" class="title">DAMORI 사이트 구조맵</text>
+  <text x="900" y="108" text-anchor="middle" class="subtitle">가상 클라이언트 요구 기반의 메인 · 카테고리 · 브랜드 정보 구조</text>
+
+  <rect x="210" y="160" width="1380" height="88" rx="10" class="meta"/>
+  <text x="900" y="190" text-anchor="middle" class="band-title">전역 메뉴 · 공통 구조</text>
+  <text x="900" y="216" text-anchor="middle" class="body">DAMORI · 메인 · 카테고리·서브 · 브랜드 소개 · 현재 위치 · 구역 이동 · 하단 정보 · 제목 계층 · 텍스트 대체</text>
+  <path d="M900 248 V275" class="arrow"/>
+
+  <text x="900" y="300" text-anchor="middle" class="band-title">3 페이지 · 16 구역</text>
+
+  <!-- 메인 페이지 -->
+  <rect x="35" y="320" width="550" height="1180" rx="12" class="page-home"/>
+  <rect x="55" y="340" width="510" height="90" rx="8" fill="#fff" stroke="#9b7b4f" stroke-width="2"/>
+  <text x="310" y="370" text-anchor="middle" class="page-title">01. 메인 페이지 (HOME)</text>
+  <text x="310" y="397" text-anchor="middle" class="page-desc">브랜드 이해에서 제품 세계로 이어지는 긴 스크롤 포트폴리오</text>
+
+  <g transform="translate(70 455)">
+    <rect width="480" height="135" rx="8" class="home"/><text x="240" y="28" text-anchor="middle" class="section-title">0.1 첫인상 / 메인 비주얼</text><text x="240" y="55" text-anchor="middle" class="body">DAMORI · 기록 생활 브랜드 · 포트폴리오</text><text x="240" y="82" text-anchor="middle" class="role">첫 화면에서 브랜드 성격 이해</text><text x="240" y="110" text-anchor="middle" class="source">근거 VC11·38 / 브랜드 핵심</text>
+  </g>
+  <g transform="translate(70 630)">
+    <rect width="480" height="135" rx="8" class="home"/><text x="240" y="28" text-anchor="middle" class="section-title">0.2 브랜드 핵심 소개</text><text x="240" y="55" text-anchor="middle" class="body">편안함 · 보존 · 자율성</text><text x="240" y="82" text-anchor="middle" class="role">사용자 문제와 브랜드 약속 연결</text><text x="240" y="110" text-anchor="middle" class="source">근거 C03·06 / RG03·06</text>
+  </g>
+  <g transform="translate(70 805)">
+    <rect width="480" height="135" rx="8" class="home"/><text x="240" y="28" text-anchor="middle" class="section-title">0.3 기록 경험</text><text x="240" y="55" text-anchor="middle" class="body">부담 없는 기록 · 원본 보존 · 중단 후 복귀</text><text x="240" y="82" text-anchor="middle" class="role">기록 상황과 브랜드 철학 연결</text><text x="240" y="110" text-anchor="middle" class="source">근거 C03·06 / DN03·06</text>
+  </g>
+  <g transform="translate(70 980)">
+    <rect width="480" height="135" rx="8" class="home"/><text x="240" y="28" text-anchor="middle" class="section-title">0.4 기록 방식과 제품 연결</text><text x="240" y="55" text-anchor="middle" class="body">기록 목적 · 매체 특성 · 관련 제품군</text><text x="240" y="82" text-anchor="middle" class="role">기록 방식에서 제품 탐색으로 연결</text><text x="240" y="110" text-anchor="middle" class="source">근거 C01·04 / VC20·37</text>
+  </g>
+  <g transform="translate(70 1155)">
+    <rect width="480" height="135" rx="8" class="home"/><text x="240" y="28" text-anchor="middle" class="section-title">0.5 제품 포트폴리오</text><text x="240" y="55" text-anchor="middle" class="body">제품 후보군 · 임시 그룹 · 화면 구성</text><text x="240" y="82" text-anchor="middle" class="role">제품 세계를 포트폴리오로 제시</text><text x="240" y="110" text-anchor="middle" class="source">근거 VC09·41 / 제품 자료</text>
+  </g>
+  <g transform="translate(70 1330)">
+    <rect width="480" height="135" rx="8" class="home"/><text x="240" y="28" text-anchor="middle" class="section-title">0.6 마무리 및 이동</text><text x="240" y="55" text-anchor="middle" class="body">현재 위치 · 다음 탐색 · 하단 정보</text><text x="240" y="82" text-anchor="middle" class="role">제품 또는 브랜드 탐색을 자율 선택</text><text x="240" y="110" text-anchor="middle" class="source">근거 VC40·46 / 이동 원칙</text>
+  </g>
+  <path d="M310 430 V455 M310 590 V630 M310 765 V805 M310 940 V980 M310 1115 V1155 M310 1290 V1330" class="light-arrow"/>
+
+  <!-- 카테고리 페이지 -->
+  <rect x="625" y="320" width="550" height="1180" rx="12" class="page-products"/>
+  <rect x="645" y="340" width="510" height="90" rx="8" fill="#fff" stroke="#6f835f" stroke-width="2"/>
+  <text x="900" y="370" text-anchor="middle" class="page-title">02. 카테고리·서브 페이지 (PRODUCTS)</text>
+  <text x="900" y="397" text-anchor="middle" class="page-desc">제품군과 제품 간 차이를 이해하는 포트폴리오 보조 페이지</text>
+
+  <g transform="translate(660 455)">
+    <rect width="480" height="135" rx="8" class="products"/><text x="240" y="28" text-anchor="middle" class="section-title">1.1 대표 비주얼</text><text x="240" y="55" text-anchor="middle" class="body">페이지 제목 · 탐색 범위 · 기록 맥락</text><text x="240" y="82" text-anchor="middle" class="role">장식이 아닌 제품 세계의 진입 정보</text><text x="240" y="110" text-anchor="middle" class="source">근거 VC42·47 / 제품 자료</text>
+  </g>
+  <g transform="translate(660 690)">
+    <rect width="480" height="135" rx="8" class="products"/><text x="240" y="28" text-anchor="middle" class="section-title">1.2 제품군 탐색</text><text x="240" y="55" text-anchor="middle" class="body">임시 그룹 · 대표/미탐색 · 중복 소속</text><text x="240" y="82" text-anchor="middle" class="role">확정 전 제품군의 범위 이해</text><text x="240" y="110" text-anchor="middle" class="source">근거 C02·07 / RG02·07</text>
+  </g>
+  <g transform="translate(660 925)">
+    <rect width="480" height="135" rx="8" class="products"/><text x="240" y="28" text-anchor="middle" class="section-title">1.3 제품 특징·사양 정보</text><text x="240" y="55" text-anchor="middle" class="body">제품 특징 · 사양 항목 · 확인 상태</text><text x="240" y="82" text-anchor="middle" class="role">제품 차이와 정보 근거를 대조</text><text x="240" y="110" text-anchor="middle" class="source">근거 C01·04 / RG01·08</text>
+  </g>
+  <g transform="translate(660 1160)">
+    <rect width="480" height="135" rx="8" class="products"/><text x="240" y="28" text-anchor="middle" class="section-title">1.4 사용자 기준 탐색 안내</text><text x="240" y="55" text-anchor="middle" class="body">기록 목적 · 매체/보존 · 휴대/정리</text><text x="240" y="82" text-anchor="middle" class="role">개인 기준으로 제품 정보를 참고</text><text x="240" y="110" text-anchor="middle" class="source">근거 C07·VC46 / RG07·08</text>
+  </g>
+  <path d="M900 430 V455 M900 590 V690 M900 825 V925 M900 1060 V1160" class="light-arrow"/>
+
+  <!-- 브랜드 페이지 -->
+  <rect x="1215" y="320" width="550" height="1180" rx="12" class="page-brand"/>
+  <rect x="1235" y="340" width="510" height="90" rx="8" fill="#fff" stroke="#687989" stroke-width="2"/>
+  <text x="1490" y="370" text-anchor="middle" class="page-title">03. 브랜드 소개 페이지 (BRAND)</text>
+  <text x="1490" y="397" text-anchor="middle" class="page-desc">존재 이유·기록 철학·제품 원칙을 설명하는 편집형 페이지</text>
+
+  <g transform="translate(1250 455)">
+    <rect width="480" height="135" rx="8" class="brand"/><text x="240" y="28" text-anchor="middle" class="section-title">2.1 브랜드 소개</text><text x="240" y="55" text-anchor="middle" class="body">DAMORI 정의 · 현재 상태 · 브랜드 범위</text><text x="240" y="82" text-anchor="middle" class="role">무엇을 다루며 무엇이 아닌지 설명</text><text x="240" y="110" text-anchor="middle" class="source">근거 VC11·38 / 브랜드 핵심</text>
+  </g>
+  <g transform="translate(1250 630)">
+    <rect width="480" height="135" rx="8" class="brand"/><text x="240" y="28" text-anchor="middle" class="section-title">2.2 브랜드 존재 이유</text><text x="240" y="55" text-anchor="middle" class="body">기록 부담 · 선택 피로 · 브랜드 약속</text><text x="240" y="82" text-anchor="middle" class="role">사용자 문제에서 존재 이유 도출</text><text x="240" y="110" text-anchor="middle" class="source">근거 VC11·27 / C03·06</text>
+  </g>
+  <g transform="translate(1250 805)">
+    <rect width="480" height="135" rx="8" class="brand"/><text x="240" y="28" text-anchor="middle" class="section-title">2.3 기록 철학</text><text x="240" y="55" text-anchor="middle" class="body">작게 시작 · 멈춤 허용 · 다시 돌아오기</text><text x="240" y="82" text-anchor="middle" class="role">기록을 의무로 만들지 않는 원칙</text><text x="240" y="110" text-anchor="middle" class="source">근거 C03·06 / RG03·06</text>
+  </g>
+  <g transform="translate(1250 980)">
+    <rect width="480" height="135" rx="8" class="brand"/><text x="240" y="28" text-anchor="middle" class="section-title">2.4 핵심 가치</text><text x="240" y="55" text-anchor="middle" class="body">편안함 · 보존 · 자율성</text><text x="240" y="82" text-anchor="middle" class="role">가치와 사용자 이익·적용 위치 연결</text><text x="240" y="110" text-anchor="middle" class="source">근거 C01·06 / RG01·07</text>
+  </g>
+  <g transform="translate(1250 1155)">
+    <rect width="480" height="135" rx="8" class="brand"/><text x="240" y="28" text-anchor="middle" class="section-title">2.5 아날로그·디지털 원칙</text><text x="240" y="55" text-anchor="middle" class="body">물성/손기록 · 접근/정리 · 상호 보완</text><text x="240" y="82" text-anchor="middle" class="role">두 매체의 역할과 연결 방식 설명</text><text x="240" y="110" text-anchor="middle" class="source">근거 VC01·20 / 브랜드 핵심</text>
+  </g>
+  <g transform="translate(1250 1330)">
+    <rect width="480" height="135" rx="8" class="brand"/><text x="240" y="28" text-anchor="middle" class="section-title">2.6 제품 원칙</text><text x="240" y="55" text-anchor="middle" class="body">확인 정보 · 미확정 구분 · 선택 비강요</text><text x="240" y="82" text-anchor="middle" class="role">제품 정보와 브랜드 철학 연결</text><text x="240" y="110" text-anchor="middle" class="source">근거 C01·07 / VC15·49</text>
+  </g>
+  <path d="M1490 430 V455 M1490 590 V630 M1490 765 V805 M1490 940 V980 M1490 1115 V1155 M1490 1290 V1330" class="light-arrow"/>
+
+  <!-- 핵심 교차 관계 -->
+  <rect x="35" y="1530" width="1730" height="210" rx="12" class="meta"/>
+  <text x="900" y="1565" text-anchor="middle" class="band-title">핵심 교차 관계 · 사용자 정보 이동 목적</text>
+  <g class="body">
+    <rect x="70" y="1595" width="390" height="110" rx="8" class="support"/><text x="265" y="1635" text-anchor="middle">0.3 기록 경험 → 2.3 기록 철학</text><text x="265" y="1670" text-anchor="middle" class="source">철학 더 알아보기</text>
+    <rect x="495" y="1595" width="390" height="110" rx="8" class="support"/><text x="690" y="1635" text-anchor="middle">0.4 기록 방식 → 1.2 제품군 탐색</text><text x="690" y="1670" text-anchor="middle" class="source">제품군 탐색</text>
+    <rect x="920" y="1595" width="390" height="110" rx="8" class="support"/><text x="1115" y="1635" text-anchor="middle">0.5 제품 포트폴리오 → 1.3 특징·사양</text><text x="1115" y="1670" text-anchor="middle" class="source">제품 정보 확인</text>
+    <rect x="1345" y="1595" width="390" height="110" rx="8" class="support"/><text x="1540" y="1635" text-anchor="middle">2.6 제품 원칙 → 1.3 특징·사양</text><text x="1540" y="1670" text-anchor="middle" class="source">제품 원칙 확인</text>
+  </g>
+
+  <!-- 보조 정보 -->
+  <text x="900" y="1780" text-anchor="middle" class="band-title">보조 정보 · 상세 추적은 대표안 MD에서 확인</text>
+  <rect x="35" y="1810" width="550" height="300" rx="12" class="support"/>
+  <text x="310" y="1850" text-anchor="middle" class="band-title">제품 정보 구조</text>
+  <text x="310" y="1885" text-anchor="middle" class="body">약 200개 제품 후보 → 임시 제품 정보 그룹</text>
+  <text x="310" y="1915" text-anchor="middle" class="body">→ 최소 15개 화면 검토용 구성 → 특징·사양 비교</text>
+  <text x="310" y="1960" text-anchor="middle" class="source">관련 구역: 0.5 · 1.2 · 1.3</text>
+  <text x="310" y="1990" text-anchor="middle" class="source">최종 15개 아님 · 공식 분류 아님</text>
+
+  <rect x="625" y="1810" width="550" height="300" rx="12" class="support"/>
+  <text x="900" y="1850" text-anchor="middle" class="band-title">추가 연결</text>
+  <text x="900" y="1890" text-anchor="middle" class="body">0.2 → 2.1 브랜드 상세</text>
+  <text x="900" y="1925" text-anchor="middle" class="body">1.3 → 2.6 제품 원칙</text>
+  <text x="900" y="1960" text-anchor="middle" class="body">1.4 → 1.3 정보 대조</text>
+  <text x="900" y="1995" text-anchor="middle" class="body">2.5 → 0.4 매체 원칙 적용</text>
+
+  <rect x="1215" y="1810" width="550" height="300" rx="12" class="out"/>
+  <text x="1490" y="1850" text-anchor="middle" class="band-title">현재 웹사이트 범위에서 제외</text>
+  <text x="1490" y="1890" text-anchor="middle" class="body">회원·로그인 · 구매·결제</text>
+  <text x="1490" y="1925" text-anchor="middle" class="body">편집·저장·동기화</text>
+  <text x="1490" y="1960" text-anchor="middle" class="body">자동 추천·실행형 필터</text>
+  <text x="1490" y="1995" text-anchor="middle" class="source">20 Page App 구조 · 검토 후 제외</text>
+
+  <text x="900" y="2160" text-anchor="middle" class="source">상세 Source Trace · P2/P3 정보 · 미확정 근거는 04-사이트구조맵-대표안.md에서 확인</text>
+</svg>

@@ -1,0 +1,7 @@
+flowchart LR
+  H["HOME"] <--> P["PRODUCTS"]
+  H <--> B["BRAND"]
+  P <--> B
+  H03["HOME 0.3"] --> H04["HOME 0.4"] --> P12["PRODUCTS 1.2"] --> P13["PRODUCTS 1.3"]
+  H05["HOME 0.5"] --> P13
+  P13 --> B26["BRAND 2.6"]

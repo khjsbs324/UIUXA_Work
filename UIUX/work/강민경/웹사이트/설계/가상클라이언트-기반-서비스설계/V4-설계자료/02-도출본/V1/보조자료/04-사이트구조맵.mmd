@@ -1,0 +1,18 @@
+flowchart LR
+  NAV["GLOBAL NAV"] --> H["HOME"]
+  NAV --> P["PRODUCTS"]
+  NAV --> B["BRAND"]
+  H --> HN["Brand Narrative"]
+  H --> HE["Recording Experience"]
+  H --> HW["Product World"]
+  H --> HP["15-item Portfolio"]
+  P --> PV["Visual Context"]
+  P --> PG["Working Groups"]
+  P --> PE["Evidence & Specification"]
+  P --> PX["Exploration Guide"]
+  B --> BI["Introduction & Purpose"]
+  B --> BF["Philosophy & Values"]
+  B --> BM["Analog/Digital & Principle"]
+  HE --> HW --> PG --> PE
+  HN --> BI
+  PE --> BM

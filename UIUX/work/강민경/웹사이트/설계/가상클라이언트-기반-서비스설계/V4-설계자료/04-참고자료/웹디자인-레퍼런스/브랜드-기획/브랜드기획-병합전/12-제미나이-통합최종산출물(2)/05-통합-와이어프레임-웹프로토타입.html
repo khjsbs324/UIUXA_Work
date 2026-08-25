@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAMORI 단일 통합 반응형 와이어프레임 & 50개 상품 스크롤 포털</title>
+  <style>
+    :root {
+      --bg-paper: #fcfbf9;
+      --bg-card: #ffffff;
+      --bg-subtle: #f4f0eb;
+      --bg-dark: #1e2522;
+      --text-main: #2b302d;
+      --text-sub: #5c635f;
+      --accent-sage: #4a5d55;
+      --accent-clay: #9e7b66;
+      --border-subtle: #e2ddd7;
+      --focus-ring: #2457A7;
+      --font-main: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-paper); color: var(--text-main); font-family: var(--font-main); line-height: 1.65; height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+
+    /* Portal Toolbar Header */
+    .portal-bar { height: 60px; background: var(--bg-dark); color: white; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; z-index: 200; border-bottom: 1px solid #334155; }
+    .portal-logo { font-size: 16px; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+    .portal-badge { background: #0284c7; color: white; font-size: 11px; padding: 3px 8px; border-radius: 4px; font-weight: 700; }
+    .vp-btns { display: flex; gap: 8px; }
+    .btn-vp { background: #1e293b; color: #94a3b8; border: 1px solid #475569; padding: 5px 12px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer; }
+    .btn-vp.active { background: #0284c7; color: white; border-color: #0284c7; }
+
+    /* Embedded Navigation Bar */
+    .page-nav-bar { height: 48px; background: #1e293b; display: flex; align-items: center; padding: 0 16px; gap: 8px; overflow-x: auto; border-bottom: 1px solid #334155; }
+    .nav-tab { background: none; border: none; color: #94a3b8; font-size: 13px; font-weight: 600; padding: 8px 16px; border-radius: 6px; cursor: pointer; white-space: nowrap; }
+    .nav-tab.active { background: #334155; color: white; }
+
+    /* Main Viewport Container */
+    .viewport-container { flex: 1; display: flex; justify-content: center; align-items: center; background: #e2e8f0; position: relative; overflow: hidden; }
+    .web-frame { width: 100%; height: 100%; border: none; background: white; transition: all 0.3s ease; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    .web-frame.tablet { width: 768px; height: 95%; border-radius: 12px; }
+    .web-frame.mobile { width: 375px; height: 90%; border-radius: 20px; }
+  </style>
+</head>
+<body>
+
+  <!-- Top Portal Bar -->
+  <div class="portal-bar">
+    <div class="portal-logo">
+      [LOGO] DAMORI 통합 최종 웹 와이어프레임 포털
+      <span class="portal-badge">상품 15~50개 스크롤 레일 반영 완료</span>
+    </div>
+    <div class="vp-btns">
+      <button class="btn-vp active" onclick="setVp('desktop', this)">데스크톱 (1200px+)</button>
+      <button class="btn-vp" onclick="setVp('tablet', this)">태블릿 (768px)</button>
+      <button class="btn-vp" onclick="setVp('mobile', this)">모바일 (375px)</button>
+    </div>
+  </div>
+
+  <!-- Unified Navigation Bar -->
+  <div class="page-nav-bar">
+    <button class="nav-tab active" onclick="loadPage('../11-제미나이-브랜드설계/02-반응형-HTML-와이어프레임/PAGE-001-메인페이지-반응형와이어프레임.html', this)">통합 메인페이지 (15~50개 상품 스크롤)</button>
+    <button class="nav-tab" onclick="loadPage('../11-제미나이-브랜드설계/02-반응형-HTML-와이어프레임/PAGE-002-기록방식찾기-반응형와이어프레임.html', this)">서브: 기록 방식 찾기</button>
+    <button class="nav-tab" onclick="loadPage('../11-제미나이-브랜드설계/02-반응형-HTML-와이어프레임/PAGE-004-아날로그기록-반응형와이어프레임.html', this)">서브: 아날로그 기록</button>
+    <button class="nav-tab" onclick="loadPage('../11-제미나이-브랜드설계/02-반응형-HTML-와이어프레임/PAGE-009-디지털기록-반응형와이어프레임.html', this)">서브: 디지털 기록</button>
+    <button class="nav-tab" onclick="loadPage('../11-제미나이-브랜드설계/02-반응형-HTML-와이어프레임/PAGE-013-템플릿과꾸미기-반응형와이어프레임.html', this)">서브: 템플릿과 꾸미기</button>
+    <button class="nav-tab" onclick="loadPage('../11-제미나이-브랜드설계/02-반응형-HTML-와이어프레임/PAGE-016-기록가이드-반응형와이어프레임.html', this)">서브: 기록 가이드</button>
+  </div>
+
+  <!-- Web Frame Container -->
+  <div class="viewport-container">
+    <iframe id="main-frame" class="web-frame" src="../11-제미나이-브랜드설계/02-반응형-HTML-와이어프레임/PAGE-001-메인페이지-반응형와이어프레임.html"></iframe>
+  </div>
+
+  <script>
+    function loadPage(url, tab) {
+      document.getElementById('main-frame').src = url;
+      document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+    }
+
+    function setVp(mode, btn) {
+      const frame = document.getElementById('main-frame');
+      document.querySelectorAll('.btn-vp').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      frame.className = 'web-frame';
+      if (mode === 'tablet') frame.classList.add('tablet');
+      if (mode === 'mobile') frame.classList.add('mobile');
+    }
+  </script>
+</body>
+</html>

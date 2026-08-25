@@ -1,0 +1,235 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 3000" width="1200" height="3000">
+  <!-- CANVAS BACKGROUND -->
+  <rect width="1200" height="3000" fill="#F4F4F4"/>
+  
+  <!-- PAGE HEADER -->
+  <rect width="1200" height="60" fill="#222222"/>
+  <text x="40" y="38" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF">DAMORI V4 INTEGRATED WIREFRAME V3 - 2.0 BRAND</text>
+  
+  <!-- GNB -->
+  <g id="GNB" transform="translate(0, 60)">
+    <rect width="1200" height="60" fill="#FFFFFF" stroke="#CCCCCC"/>
+    <text x="40" y="38" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#111111">[LOGO / HOME]</text>
+    <text x="880" y="38" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#444444">PRODUCTS</text>
+    <text x="1040" y="38" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#111111">BRAND</text>
+  </g>
+
+  <!-- SECTIONS -->
+  
+  <!-- SECTION 2.1: DAMORI INTRODUCTION (Opening Narrative) -->
+  <g id="SECTION_2.1" transform="translate(40, 140)">
+    <rect width="1120" height="420" fill="#FFFFFF" stroke="#BBBBBB" stroke-width="1.5" rx="4"/>
+    <rect width="1120" height="36" fill="#EAEAEA" rx="4"/>
+    <text x="20" y="24" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333333">SECTION 2.1 DAMORI INTRODUCTION (Brand Opening Narrative)</text>
+    
+    <!-- 2-Column Editorial Opening Layout -->
+    <g transform="translate(30, 60)">
+      <!-- Left: Opening Essay Headline & Text -->
+      <rect width="580" height="330" fill="#F8F8F8" stroke="#E0E0E0" rx="4"/>
+      <text x="25" y="45" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#111111">DAMORI: 쉼표를 담는 브랜드</text>
+      <text x="25" y="75" font-family="Arial, sans-serif" font-size="14" fill="#666666">SUBHEADING: 바쁜 일상 속 사색과 기록을 위한 아날로그 &amp; 디지털 도구</text>
+      
+      <rect x="25" y="110" width="530" height="12" fill="#D0D0D0"/>
+      <rect x="25" y="130" width="500" height="12" fill="#E0E0E0"/>
+      <rect x="25" y="150" width="515" height="12" fill="#E0E0E0"/>
+      <rect x="25" y="170" width="460" height="12" fill="#E0E0E0"/>
+      <rect x="25" y="190" width="490" height="12" fill="#E0E0E0"/>
+      
+      <text x="25" y="240" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#444444">DAMORI 브랜드 존재 이유와 비전 서사 오프닝</text>
+      <rect x="25" y="260" width="400" height="10" fill="#D5D5D5"/>
+    </g>
+    
+    <!-- Right: Brand Hero Image Placeholder -->
+    <g transform="translate(630, 60)">
+      <rect width="460" height="330" fill="#E0E0E0" stroke="#CCCCCC" rx="4"/>
+      <line x1="0" y1="0" x2="460" y2="330" stroke="#D0D0D0"/>
+      <line x1="0" y1="330" x2="460" y2="0" stroke="#D0D0D0"/>
+      <rect x="80" y="135" width="300" height="60" fill="#FFFFFF" opacity="0.9" rx="4"/>
+      <text x="105" y="170" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#222222">BRAND HERO IMAGE PLACEHOLDER</text>
+    </g>
+  </g>
+
+  <!-- SECTION 2.2: BRAND EXISTENCE & PURPOSE (Text-Led Essay) -->
+  <g id="SECTION_2.2" transform="translate(140, 580)">
+    <rect width="920" height="360" fill="#FFFFFF" stroke="#BBBBBB" stroke-width="1.5" rx="4"/>
+    <rect width="920" height="36" fill="#EAEAEA" rx="4"/>
+    <text x="20" y="24" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333333">SECTION 2.2 BRAND EXISTENCE &amp; PURPOSE (Centered Text-Led Essay)</text>
+    
+    <g transform="translate(40, 65)">
+      <text x="0" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#111111">바쁜 일상 속 기록의 쉼표가 필요한 이유</text>
+      <rect x="0" y="50" width="840" height="12" fill="#CCCCCC"/>
+      <rect x="0" y="70" width="800" height="12" fill="#E0E0E0"/>
+      <rect x="0" y="90" width="820" height="12" fill="#E0E0E0"/>
+      <rect x="0" y="110" width="760" height="12" fill="#E0E0E0"/>
+      
+      <rect x="0" y="150" width="840" height="12" fill="#D0D0D0"/>
+      <rect x="0" y="170" width="810" height="12" fill="#E0E0E0"/>
+      <rect x="0" y="190" width="780" height="12" fill="#E0E0E0"/>
+      <rect x="0" y="210" width="830" height="12" fill="#E0E0E0"/>
+      <rect x="0" y="230" width="720" height="12" fill="#E0E0E0"/>
+      
+      <text x="0" y="275" font-family="Arial, sans-serif" font-size="12" fill="#666666">※ 에디토리얼 수필 양식의 심화 서사 본문 (Narrower Centered Width for Reading Comfort)</text>
+    </g>
+  </g>
+
+  <!-- SECTION 2.3: RECORDING PHILOSOPHY (Core Philosophy - Option A: Large Quote) -->
+  <g id="SECTION_2.3" transform="translate(40, 960)">
+    <rect width="1120" height="460" fill="#FFFFFF" stroke="#BBBBBB" stroke-width="1.5" rx="4"/>
+    <rect width="1120" height="36" fill="#EAEAEA" rx="4"/>
+    <text x="20" y="24" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333333">SECTION 2.3 RECORDING PHILOSOPHY (Option A: Center-Highlighted Philosophy Quote)</text>
+    
+    <g transform="translate(30, 60)">
+      <!-- Option A: Large Highlighted Quote Card Box -->
+      <rect width="1060" height="200" fill="#EFEFEF" stroke="#AAAAAA" stroke-width="2" rx="6"/>
+      <text x="40" y="55" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#111111">“기록은 매일 이어가야 하는 의무가 아닌, 일상의 편안한 쉼표입니다.”</text>
+      <text x="40" y="90" font-family="Arial, sans-serif" font-size="15" fill="#444444">― DAMORI RECORDING PHILOSOPHY (스트릭 파기 미안함 제거 &amp; 죄책감 차단 철학)</text>
+      
+      <rect x="40" y="120" width="980" height="10" fill="#D0D0D0"/>
+      <rect x="40" y="140" width="920" height="10" fill="#E0E0E0"/>
+      <rect x="40" y="160" width="860" height="10" fill="#E0E0E0"/>
+      
+      <!-- Bottom Supporting Narrative Text Area -->
+      <g transform="translate(0, 220)">
+        <rect width="1060" height="150" fill="#F8F8F8" stroke="#DDDDDD" rx="4"/>
+        <text x="30" y="35" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#222222">연속 기록의 압박 없이 언제든 돌아올 수 있는 기록 공간</text>
+        <rect x="30" y="55" width="1000" height="10" fill="#D0D0D0"/>
+        <rect x="30" y="75" width="960" height="10" fill="#E0E0E0"/>
+        <rect x="30" y="95" width="980" height="10" fill="#E0E0E0"/>
+        <rect x="30" y="115" width="880" height="10" fill="#E0E0E0"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- SECTION 2.4: CORE VALUES & USER VALUE (3 Core Value Columns) -->
+  <g id="SECTION_2.4" transform="translate(40, 1440)">
+    <rect width="1120" height="400" fill="#FFFFFF" stroke="#BBBBBB" stroke-width="1.5" rx="4"/>
+    <rect width="1120" height="36" fill="#EAEAEA" rx="4"/>
+    <text x="20" y="24" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333333">SECTION 2.4 CORE VALUES &amp; USER VALUE (3 Core Value Column Cards)</text>
+    
+    <text x="30" y="70" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#111111">DAMORI 3대 상위 가치 &amp; 사용자 이점</text>
+    
+    <!-- 3 Core Value Cards -->
+    <!-- Card 1 -->
+    <g transform="translate(30, 95)">
+      <rect width="340" height="270" fill="#F8F8F8" stroke="#CCCCCC" rx="4"/>
+      <rect width="340" height="45" fill="#E5E5E5"/>
+      <text x="20" y="28" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#111111">01. ZERO STRAIN</text>
+      <text x="20" y="70" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333333">저부담 회고 가치</text>
+      <rect x="20" y="90" width="280" height="8" fill="#D0D0D0"/>
+      <rect x="20" y="105" width="260" height="8" fill="#E0E0E0"/>
+      <rect x="20" y="120" width="240" height="8" fill="#E0E0E0"/>
+      <text x="20" y="160" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#444444">사용자 이점:</text>
+      <text x="20" y="185" font-family="Arial, sans-serif" font-size="12" fill="#666666">기록 시작과 중단의 미안함 없는 자유</text>
+    </g>
+    
+    <!-- Card 2 -->
+    <g transform="translate(390, 95)">
+      <rect width="340" height="270" fill="#F8F8F8" stroke="#CCCCCC" rx="4"/>
+      <rect width="340" height="45" fill="#E5E5E5"/>
+      <text x="20" y="28" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#111111">02. DATA INTEGRITY</text>
+      <text x="20" y="70" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333333">글 원본 보존성 가치</text>
+      <rect x="20" y="90" width="280" height="8" fill="#D0D0D0"/>
+      <rect x="20" y="105" width="260" height="8" fill="#E0E0E0"/>
+      <rect x="20" y="120" width="240" height="8" fill="#E0E0E0"/>
+      <text x="20" y="160" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#444444">사용자 이점:</text>
+      <text x="20" y="185" font-family="Arial, sans-serif" font-size="12" fill="#666666">내 생각과 기록의 안전한 완전 보존</text>
+    </g>
+    
+    <!-- Card 3 -->
+    <g transform="translate(750, 95)">
+      <rect width="340" height="270" fill="#F8F8F8" stroke="#CCCCCC" rx="4"/>
+      <rect width="340" height="45" fill="#E5E5E5"/>
+      <text x="20" y="28" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#111111">03. AUTONOMY</text>
+      <text x="20" y="70" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333333">자율성 가치</text>
+      <rect x="20" y="90" width="280" height="8" fill="#D0D0D0"/>
+      <rect x="20" y="105" width="260" height="8" fill="#E0E0E0"/>
+      <rect x="20" y="120" width="240" height="8" fill="#E0E0E0"/>
+      <text x="20" y="160" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#444444">사용자 이점:</text>
+      <text x="20" y="185" font-family="Arial, sans-serif" font-size="12" fill="#666666">강요 없는 자율적 탐색 및 선택 권리</text>
+    </g>
+  </g>
+
+  <!-- SECTION 2.5: ANALOG & DIGITAL PRINCIPLE (Complementary Balance) -->
+  <g id="SECTION_2.5" transform="translate(40, 1860)">
+    <rect width="1120" height="420" fill="#FFFFFF" stroke="#BBBBBB" stroke-width="1.5" rx="4"/>
+    <rect width="1120" height="36" fill="#EAEAEA" rx="4"/>
+    <text x="20" y="24" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333333">SECTION 2.5 ANALOG &amp; DIGITAL PRINCIPLE (Complementary Balance Layout)</text>
+    
+    <g transform="translate(30, 60)">
+      <!-- Left: Analog Area -->
+      <rect width="500" height="280" fill="#F8F8F8" stroke="#CCCCCC" rx="4"/>
+      <rect width="500" height="35" fill="#E0E0E0"/>
+      <text x="20" y="23" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#222222">ANALOG MATERIALITY (아날로그 물성)</text>
+      <rect x="20" y="55" width="460" height="100" fill="#E5E5E5"/>
+      <text x="140" y="110" font-family="Arial, sans-serif" font-size="13" fill="#555555">[ANALOG VISUAL PLACEHOLDER]</text>
+      <text x="20" y="180" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#111111">종이 질감, 손글씨, 펼침성 감성</text>
+      <rect x="20" y="195" width="420" height="8" fill="#D0D0D0"/>
+      <rect x="20" y="210" width="380" height="8" fill="#E0E0E0"/>
+      
+      <!-- Right: Digital Area -->
+      <g transform="translate(560, 0)">
+        <rect width="500" height="280" fill="#F8F8F8" stroke="#CCCCCC" rx="4"/>
+        <rect width="500" height="35" fill="#E0E0E0"/>
+        <text x="20" y="23" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#222222">DIGITAL CONVENIENCE (디지털 편의성)</text>
+        <rect x="20" y="55" width="460" height="100" fill="#E5E5E5"/>
+        <text x="140" y="110" font-family="Arial, sans-serif" font-size="13" fill="#555555">[DIGITAL VISUAL PLACEHOLDER]</text>
+        <text x="20" y="180" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#111111">디지털 기록의 탐색·보존 편의 관점</text>
+        <rect x="20" y="195" width="420" height="8" fill="#D0D0D0"/>
+        <rect x="20" y="210" width="380" height="8" fill="#E0E0E0"/>
+      </g>
+      
+      <!-- Center Bridge Indicator -->
+      <g transform="translate(380, 295)">
+        <rect width="300" height="40" fill="#333333" rx="20"/>
+        <text x="35" y="25" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">[ HYBRID COMPLEMENTARY BALANCE ]</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- SECTION 2.6: PRODUCT PRINCIPLE (Bridge to Products) -->
+  <g id="SECTION_2.6" transform="translate(40, 2300)">
+    <rect width="1120" height="360" fill="#FFFFFF" stroke="#BBBBBB" stroke-width="1.5" rx="4"/>
+    <rect width="1120" height="36" fill="#EAEAEA" rx="4"/>
+    <text x="20" y="24" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333333">SECTION 2.6 PRODUCT PRINCIPLE EXAMPLES (Products Bridge)</text>
+    
+    <g transform="translate(30, 60)">
+      <rect width="1060" height="260" fill="#F8F8F8" stroke="#CCCCCC" rx="4"/>
+      <text x="30" y="45" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#111111">제품 제작 원칙 예시 (PRODUCT PRINCIPLE EXAMPLE)</text>
+      <text x="30" y="70" font-family="Arial, sans-serif" font-size="13" fill="#666666">공식 항목 수가 미확정된 제품 원칙 작업 예시입니다.</text>
+      
+      <!-- 3 Principle Points -->
+      <g transform="translate(30, 95)">
+        <rect width="310" height="90" fill="#FFFFFF" stroke="#DDDDDD" rx="4"/>
+        <text x="15" y="25" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#222222">EXAMPLE A</text>
+        <text x="15" y="45" font-family="Arial, sans-serif" font-size="12" fill="#555555">과장 없는 담백한 최소 디자인</text>
+        <rect x="15" y="60" width="240" height="8" fill="#E0E0E0"/>
+        
+        <g transform="translate(330, 0)">
+          <rect width="310" height="90" fill="#FFFFFF" stroke="#DDDDDD" rx="4"/>
+          <text x="15" y="25" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#222222">EXAMPLE B</text>
+          <text x="15" y="45" font-family="Arial, sans-serif" font-size="12" fill="#555555">물성 완결성과 실측 정직성</text>
+          <rect x="15" y="60" width="240" height="8" fill="#E0E0E0"/>
+        </g>
+        
+        <g transform="translate(660, 0)">
+          <rect width="310" height="90" fill="#FFFFFF" stroke="#DDDDDD" rx="4"/>
+          <text x="15" y="25" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#222222">EXAMPLE C</text>
+          <text x="15" y="45" font-family="Arial, sans-serif" font-size="12" fill="#555555">아날로그와 디지털의 호환</text>
+          <rect x="15" y="60" width="240" height="8" fill="#E0E0E0"/>
+        </g>
+      </g>
+      
+      <!-- Bridge to PRODUCTS -->
+      <g transform="translate(30, 200)">
+        <rect width="280" height="42" fill="#333333" rx="4"/>
+        <text x="35" y="26" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">[ EXPLORE PRODUCTS PORTFOLIO ]</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- CANVAS FOOTER -->
+  <g transform="translate(0, 2900)">
+    <rect width="1200" height="100" fill="#111111"/>
+    <text x="40" y="56" font-family="Arial, sans-serif" font-size="14" fill="#888888">WIREFRAME_V3_READY_FOR_USER_QA | BRAND EDITORIAL · GRAYSCALE ONLY</text>
+  </g>
+</svg>

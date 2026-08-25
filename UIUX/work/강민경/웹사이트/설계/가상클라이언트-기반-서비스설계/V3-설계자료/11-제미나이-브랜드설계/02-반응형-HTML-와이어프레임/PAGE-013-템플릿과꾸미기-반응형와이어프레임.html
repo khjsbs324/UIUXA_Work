@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAMORI — 템플릿과 꾸미기 자산</title>
+  <style>
+    :root {
+      --bg-paper: #fcfbf9;
+      --bg-card: #ffffff;
+      --bg-subtle: #f4f0eb;
+      --bg-dark: #1e2522;
+      --text-main: #2b302d;
+      --text-sub: #5c635f;
+      --accent-sage: #4a5d55;
+      --border-subtle: #e2ddd7;
+      --focus-ring: #2457A7;
+      --font-main: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-paper); color: var(--text-main); font-family: var(--font-main); line-height: 1.65; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; }
+
+    header { height: 76px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border-subtle); position: sticky; top: 0; z-index: 100; }
+    .header-container { max-width: 1240px; margin: 0 auto; height: 100%; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; }
+    .brand-logo-group { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-stamp { width: 36px; height: 36px; border-radius: 50%; background: var(--accent-sage); color: white; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 800; }
+    .brand-name { font-size: 20px; font-weight: 800; color: var(--text-main); }
+    .gnb-menu { display: flex; gap: 28px; list-style: none; }
+    .gnb-menu a { text-decoration: none; color: var(--text-sub); font-size: 15px; font-weight: 600; padding: 8px 12px; border-radius: 6px; }
+    .gnb-menu a[aria-current="page"] { color: var(--accent-sage); background-color: var(--bg-subtle); }
+
+    .hero-section { max-width: 1240px; margin: 0 auto; padding: 64px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .hero-badge { display: inline-block; padding: 4px 12px; background: var(--bg-subtle); border-radius: 4px; font-size: 12px; font-weight: 700; color: var(--accent-sage); margin-bottom: 16px; }
+    .hero-title { font-size: 38px; font-weight: 800; margin-bottom: 16px; letter-spacing: -1px; }
+    .hero-desc { font-size: 18px; color: var(--text-sub); margin-bottom: 28px; }
+
+    .section-wrapper { max-width: 1240px; margin: 0 auto; padding: 48px 24px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .card { background: var(--bg-card); border: 1.5px solid var(--border-subtle); border-radius: 14px; padding: 28px; }
+
+    footer { background: var(--bg-dark); color: #94a3b8; padding: 60px 24px; margin-top: 80px; }
+    .footer-inner { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; }
+
+    @media (max-width: 1023px) { .hero-section, .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } .footer-inner { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <a href="PAGE-001-메인페이지-반응형와이어프레임.html" class="brand-logo-group">
+        <div class="logo-stamp">多</div>
+        <span class="brand-name">DAMORI (다모리)</span>
+      </a>
+      <nav>
+        <ul class="gnb-menu">
+          <li><a href="PAGE-001-메인페이지-반응형와이어프레임.html">홈</a></li>
+          <li><a href="PAGE-002-기록방식찾기-반응형와이어프레임.html">기록 방식 찾기</a></li>
+          <li><a href="PAGE-004-아날로그기록-반응형와이어프레임.html">아날로그 기록</a></li>
+          <li><a href="PAGE-009-디지털기록-반응형와이어프레임.html">디지털 기록</a></li>
+          <li><a href="#" aria-current="page">템플릿과 꾸미기</a></li>
+          <li><a href="PAGE-016-기록가이드-반응형와이어프레임.html">기록 가이드</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <div>
+        <span class="hero-badge">소담(VC-04) & 나린(VC-06) 탐색 자산</span>
+        <h1 class="hero-title">입력의 틀은 단순하게,<br>표현의 장식은 자유롭게</h1>
+        <p class="hero-desc">생각의 질문 항목을 잡아주는 템플릿과 시각적 온기를 더하는 꾸미기 자산을 원본 손상 피로 없이 분리 적용하세요.</p>
+      </div>
+      <div style="height:340px; background:var(--bg-subtle); border-radius:14px; border:1.5px solid var(--border-subtle); display:flex; flex-direction:column; align-items:center; justify-content:center;">
+        <div style="font-size:56px;">🎨 📋</div>
+        <div style="font-size:16px; font-weight:700; margin-top:12px;">원본 보호 사본 적용 인터페이스</div>
+        <div style="font-size:13px; color:var(--text-sub);">"꾸미기를 취소해도 글 원본은 유지됩니다"</div>
+      </div>
+    </section>
+
+    <!-- Compare Structure vs Asset -->
+    <section class="section-wrapper">
+      <h2 style="font-size:26px; font-weight:800; margin-bottom:12px;">구조와 표현의 명확한 역할 분리</h2>
+      <p style="color:var(--text-sub); margin-bottom:32px;">데이터 안전과 커스터마이징 후회를 방지합니다.</p>
+
+      <div class="grid-2">
+        <div class="card">
+          <span class="hero-badge">소담(VC-04) 입력 구조</span>
+          <h3 style="font-size:20px; margin-bottom:12px;">주제별 사본 템플릿</h3>
+          <p style="color:var(--text-sub); font-size:14px;">질문 항목과 작성 순서 틀을 제공합니다. 적용 시 새로운 복사본 파일로 생성되어 원본 기록을 절대 훼손하지 않습니다.</p>
+        </div>
+        <div class="card">
+          <span class="hero-badge">나린(VC-06) 시각 표현</span>
+          <h3 style="font-size:20px; margin-bottom:12px;">다이어리 스티커 & 인장</h3>
+          <p style="color:var(--text-sub); font-size:14px;">실링 왁스 인장, 마스킹 테이프, 테두리 레이어를 얹는 장식 요소입니다. 글 텍스트와 독립된 레이어로 언제든 제거 가능합니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Templates Section -->
+    <section class="section-wrapper" style="background:var(--bg-subtle); border-radius:16px;">
+      <h2 style="font-size:26px; font-weight:800; margin-bottom:12px;">주제별 맞춤 템플릿 예시</h2>
+      <p style="color:var(--text-sub); margin-bottom:32px;">생각을 다듬어주는 3가지 대표 서식 양식입니다.</p>
+
+      <div class="grid-3">
+        <div class="card" style="cursor:pointer;" onclick="alert('독서 서식 사본 생성 완료')">
+          <h4 style="font-size:18px; margin-bottom:8px;">📚 독서 회고 서식</h4>
+          <p style="font-size:14px; color:var(--text-sub);">책 제목 / 인상 깊은 한 문장 / 내 삶 적용점</p>
+        </div>
+        <div class="card" style="cursor:pointer;" onclick="alert('여행 일기 서식 사본 생성 완료')">
+          <h4 style="font-size:18px; margin-bottom:8px;">✈️ 여행 기억 서식</h4>
+          <p style="font-size:14px; color:var(--text-sub);">장소 & 날씨 / 오늘의 동선 / 뜻밖의 순간 하나</p>
+        </div>
+        <div class="card" style="cursor:pointer;" onclick="alert('주간 회고 서식 사본 생성 완료')">
+          <h4 style="font-size:18px; margin-bottom:8px;">🌱 주간 성장 서식</h4>
+          <p style="font-size:14px; color:var(--text-sub);">잘했던 일 / 감사한 순간 / 다음 주 나만의 약속</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div style="color:white; font-size:18px; font-weight:800; margin-bottom:16px;">[LOGO] DAMORI (다모리)</div>
+        <p>글의 본질을 지키며 표현의 자율성을 드립니다.</p>
+      </div>
+      <div>
+        <h4 style="color:white; margin-bottom:16px;">자산</h4>
+        <ul style="list-style:none;">
+          <li><a href="#" style="color:#94a3b8; text-decoration:none;">사본 템플릿</a></li>
+          <li><a href="#" style="color:#94a3b8; text-decoration:none;">꾸미기 스티커</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color:white; margin-bottom:16px;">도움말</h4>
+        <ul style="list-style:none;">
+          <li><a href="PAGE-016-기록가이드-반응형와이어프레임.html" style="color:#94a3b8; text-decoration:none;">기록 가이드</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color:white; margin-bottom:16px;">브랜드</h4>
+        <ul style="list-style:none;">
+          <li><a href="#" style="color:#94a3b8; text-decoration:none;">브랜드 소개</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,104 @@
+{
+  "version": "V1",
+  "status": "CURRENT_WORKING_BASELINE",
+  "projectWorkingName": "DAMORI / 다모리",
+  "scope": {
+    "screenCount": 3,
+    "sectionCount": 16,
+    "notes": [
+      "현재 3 Page 포트폴리오 웹사이트 범위만 등록함",
+      "대표 Product 15개와 Category 이름은 미선정 상태임",
+      "PRODUCTS 1.4는 비실행형 탐색 기준 안내 구조임"
+    ]
+  },
+  "screens": [
+    {
+      "id": "PAGE-00",
+      "name": "HOME / MAIN",
+      "purpose": "DAMORI의 존재 이유와 기록 경험을 소개하고 제품 포트폴리오 탐색으로 연결한다.",
+      "entryConditions": [
+        "사이트 첫 진입",
+        "전역 HOME 이동",
+        "PATH A 또는 PATH C 진입"
+      ],
+      "sections": [
+        { "id": "0.1", "name": "First Impression", "purpose": "브랜드 첫인상과 쉼표 메시지 전달" },
+        { "id": "0.2", "name": "Brand Core Summary", "purpose": "사색의 깊이, 보존성, 자율성 가치 요약" },
+        { "id": "0.3", "name": "Recording Experience", "purpose": "대표 기록 경험 예시 안내" },
+        { "id": "0.4", "name": "Product Groups Intro", "purpose": "아날로그와 디지털 도구 관계 및 제품 탐색 연결" },
+        { "id": "0.5", "name": "Portfolio Showcase", "purpose": "Product Placeholder 15개를 수용하는 포트폴리오 구조" },
+        { "id": "0.6", "name": "Navigation & Footer", "purpose": "전역 이동과 비페이지성 지원 정보 정돈" }
+      ],
+      "actions": [
+        { "type": "NAVIGATE", "label": "EXPLORE PRODUCTS", "target": "PAGE-01" },
+        { "type": "NAVIGATE", "label": "BRAND", "target": "PAGE-02" },
+        { "type": "VIEW_INFORMATION", "label": "VIEW PRODUCT INFO", "target": "PAGE-01#1.3" }
+      ],
+      "states": [
+        "DEFAULT_INFORMATION_VIEW",
+        "PRODUCT_PLACEHOLDERS_15",
+        "REPRESENTATIVE_PRODUCTS_PENDING_SELECTION"
+      ],
+      "nextScreens": ["PAGE-01", "PAGE-02"]
+    },
+    {
+      "id": "PAGE-01",
+      "name": "PRODUCTS / CATEGORY-SUB",
+      "purpose": "약 200개 Raw Product Source Pool을 바탕으로 제품군, 소재, 제본, 사양과 탐색 기준 정보를 비교·확인하게 한다.",
+      "entryConditions": [
+        "전역 PRODUCTS 이동",
+        "HOME 0.4 또는 0.5에서 이동",
+        "PATH B 또는 PATH C 후속 진입"
+      ],
+      "sections": [
+        { "id": "1.1", "name": "Visual Hero", "purpose": "제품 포트폴리오 첫인상과 탐색 맥락 제시" },
+        { "id": "1.2", "name": "Product Group Exploration", "purpose": "미확정 Category를 임시 그룹 구조로 탐색" },
+        { "id": "1.3", "name": "Product Feature & Specification", "purpose": "120gsm, 180도, Smyth Sewn 및 Generic Info Slot을 소재·사양 균형 구조로 비교" },
+        { "id": "1.4", "name": "User-led Exploration", "purpose": "비교·탐색에 참고할 기준과 관련 제품 정보 범위를 비실행형으로 안내" }
+      ],
+      "actions": [
+        { "type": "VIEW_INFORMATION", "label": "제품군 정보 확인", "target": "PAGE-01#1.2" },
+        { "type": "VIEW_INFORMATION", "label": "제품 사양 비교", "target": "PAGE-01#1.3" },
+        { "type": "VIEW_INFORMATION", "label": "탐색 기준 안내 확인", "target": "PAGE-01#1.4" },
+        { "type": "NAVIGATE", "label": "제품 원칙 확인", "target": "PAGE-02#2.6" }
+      ],
+      "states": [
+        "DEFAULT_INFORMATION_VIEW",
+        "CATEGORY_UNCONFIRMED",
+        "PRODUCT_SELECTION_PENDING",
+        "NON_EXECUTABLE_EXPLORATION",
+        "GENERIC_PRODUCT_INFO_PLACEHOLDER"
+      ],
+      "nextScreens": ["PAGE-00", "PAGE-02"]
+    },
+    {
+      "id": "PAGE-02",
+      "name": "BRAND",
+      "purpose": "DAMORI의 존재 이유, 기록 철학, 핵심 가치와 아날로그·디지털 관계를 에디토리얼 흐름으로 전달한다.",
+      "entryConditions": [
+        "전역 BRAND 이동",
+        "HOME 0.2에서 브랜드 서사 심화 이동",
+        "PRODUCTS 1.3에서 제품 원칙 확인 이동"
+      ],
+      "sections": [
+        { "id": "2.1", "name": "DAMORI Introduction", "purpose": "프로젝트 브랜드명과 도입 서사 제시" },
+        { "id": "2.2", "name": "Brand Existence & Purpose", "purpose": "기록의 쉼표가 필요한 이유 설명" },
+        { "id": "2.3", "name": "Recording Philosophy", "purpose": "기록은 의무가 아닌 쉼표라는 철학 전달" },
+        { "id": "2.4", "name": "Core Values & User Value", "purpose": "Zero Strain, Data Integrity, Autonomy 전달" },
+        { "id": "2.5", "name": "Analog & Digital Principle", "purpose": "아날로그 물성과 디지털 편의의 상호 보완 관계 설명" },
+        { "id": "2.6", "name": "Product Principle", "purpose": "제품 제작 원칙의 Working Example과 PRODUCTS 연결" }
+      ],
+      "actions": [
+        { "type": "VIEW_INFORMATION", "label": "브랜드 서사 읽기", "target": "PAGE-02#2.1" },
+        { "type": "VIEW_INFORMATION", "label": "제품 원칙 예시 확인", "target": "PAGE-02#2.6" },
+        { "type": "NAVIGATE", "label": "제품 포트폴리오 탐색", "target": "PAGE-01" }
+      ],
+      "states": [
+        "DEFAULT_EDITORIAL_VIEW",
+        "PROJECT_WORKING_NAME",
+        "PRODUCT_PRINCIPLE_WORKING_EXAMPLE"
+      ],
+      "nextScreens": ["PAGE-00", "PAGE-01"]
+    }
+  ]
+}

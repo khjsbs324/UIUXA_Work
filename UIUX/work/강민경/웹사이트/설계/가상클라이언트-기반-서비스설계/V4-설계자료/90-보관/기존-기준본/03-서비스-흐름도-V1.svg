@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 920" width="1200" height="920" style="background-color: #F9FBF8; font-family: 'Pretendard', 'Malgun Gothic', sans-serif;">
+  <style>
+    .title { font-size: 24px; font-weight: bold; fill: #2C3527; }
+    .subtitle { font-size: 14px; fill: #6B7F5E; }
+    .box-gnb { fill: #6B7F5E; stroke: #3A4832; stroke-width: 2; rx: 8; }
+    .text-gnb { font-size: 16px; font-weight: bold; fill: #FFFFFF; text-anchor: middle; }
+    .box-path { fill: #F4F7F2; stroke: #6B7F5E; stroke-width: 1.5; rx: 8; }
+    .text-path-title { font-size: 15px; font-weight: bold; fill: #3A4832; }
+    .box-step { fill: #FFFFFF; stroke: #8A9A7E; stroke-width: 1.5; rx: 6; }
+    .text-step-title { font-size: 13px; font-weight: bold; fill: #2C3527; }
+    .text-step-desc { font-size: 11px; fill: #555555; }
+    .box-goal { fill: #E8EFE5; stroke: #6B7F5E; stroke-width: 1.5; rx: 6; }
+    .box-exit { fill: #3A4832; stroke: #2C3527; stroke-width: 2; rx: 8; }
+    .text-exit { font-size: 15px; font-weight: bold; fill: #FFFFFF; text-anchor: middle; }
+    .line { stroke: #A2B29F; stroke-width: 2; fill: none; }
+    .line-dash { stroke: #6B7F5E; stroke-width: 1.5; stroke-dasharray: 4; fill: none; }
+  </style>
+
+  <!-- Title Header -->
+  <text x="50" y="45" class="title">DAMORI (다모리) V4 통합 서비스 흐름도 V1 (Service Flow)</text>
+  <text x="50" y="70" class="subtitle">상태: V4_SERVICE_FLOW_BASELINE_V1 | 멀티 진입 경로 (PATH A: 브랜드 발견 / PATH B: 제품 탐색 / PATH C: 경험 발견)</text>
+
+  <!-- GNB Header -->
+  <g transform="translate(50, 100)">
+    <rect x="0" y="0" width="340" height="45" class="box-gnb"/>
+    <text x="170" y="28" class="text-gnb">[LOGO / HOME] 0.0 메인</text>
+
+    <rect x="380" y="0" width="340" height="45" class="box-gnb"/>
+    <text x="550" y="28" class="text-gnb">PRODUCTS 1.0 카테고리·서브</text>
+
+    <rect x="760" y="0" width="340" height="45" class="box-gnb"/>
+    <text x="930" y="28" class="text-gnb">BRAND 2.0 브랜드 소개</text>
+  </g>
+
+  <!-- PATH A: 브랜드 발견 흐름 -->
+  <g transform="translate(50, 170)">
+    <rect x="0" y="0" width="340" height="540" class="box-path"/>
+    <text x="20" y="30" class="text-path-title">PATH A: 브랜드 발견 흐름 (Main Narrative)</text>
+
+    <!-- A-1 -->
+    <rect x="15" y="45" width="310" height="60" class="box-step"/>
+    <text x="25" y="68" class="text-step-title">A-1: 메인 랜딩 진입 (HOME 0.1)</text>
+    <text x="25" y="88" class="text-step-desc">DAMORI 존재 이유 및 쉼표 메시지 확인</text>
+
+    <!-- A-2 -->
+    <rect x="15" y="115" width="310" height="60" class="box-step"/>
+    <text x="25" y="138" class="text-step-title">A-2: 핵심 가치 요약 (HOME 0.2)</text>
+    <text x="25" y="158" class="text-step-desc">편안함, 보존성, 자율성 가치 요약 파악</text>
+
+    <!-- A-3 -->
+    <rect x="15" y="185" width="310" height="60" class="box-step"/>
+    <text x="25" y="208" class="text-step-title">A-3: 기록 경험 확인 (HOME 0.3)</text>
+    <text x="25" y="228" class="text-step-desc">저부담 회고/글 보존/복귀 경험 이해</text>
+
+    <!-- A-4 -->
+    <rect x="15" y="255" width="310" height="60" class="box-step"/>
+    <text x="25" y="278" class="text-step-title">A-4: 제품군 소개 (HOME 0.4)</text>
+    <text x="25" y="298" class="text-step-desc">아날로그 &amp; 디지털 결합 라인업 파악</text>
+
+    <!-- A-5 -->
+    <rect x="15" y="325" width="310" height="60" class="box-step"/>
+    <text x="25" y="348" class="text-step-title">A-5: 쇼케이스 탐색 (HOME 0.5)</text>
+    <text x="25" y="368" class="text-step-desc">대표 Product 최소 15개 시각 탐색</text>
+
+    <!-- Goal A -->
+    <rect x="15" y="440" width="310" height="70" class="box-goal"/>
+    <text x="25" y="465" class="text-step-title" fill="#3A4832">GOAL A: DAMORI 브랜드 이해</text>
+    <text x="25" y="488" class="text-step-desc">브랜드 존재 이유 및 기록 철학 이해 완수</text>
+  </g>
+
+  <!-- PATH B: 제품 탐색 흐름 -->
+  <g transform="translate(430, 170)">
+    <rect x="0" y="0" width="340" height="540" class="box-path"/>
+    <text x="20" y="30" class="text-path-title">PATH B: 제품 탐색 흐름 (Product Task)</text>
+
+    <!-- B-1 -->
+    <rect x="15" y="45" width="310" height="70" class="box-step"/>
+    <text x="25" y="68" class="text-step-title">B-1: 카테고리 진입 (PRODUCTS 1.1/1.2)</text>
+    <text x="25" y="88" class="text-step-desc">제품군 비주얼 탐색 갤러리 확인</text>
+
+    <!-- B-2 -->
+    <rect x="15" y="125" width="310" height="85" class="box-step"/>
+    <text x="25" y="148" class="text-step-title">B-2: 스펙 &amp; 치수 대조 (PRODUCTS 1.3)</text>
+    <text x="25" y="168" class="text-step-desc">소재, 제본 스펙, 잉크 번짐 저감 대조</text>
+    <text x="25" y="188" class="text-step-desc">실측 치수 1:1 대조 정보 확인</text>
+
+    <!-- B-3 -->
+    <rect x="15" y="220" width="310" height="70" class="box-step"/>
+    <text x="25" y="243" class="text-step-title">B-3: 자율 조건 탐색 (PRODUCTS 1.4)</text>
+    <text x="25" y="263" class="text-step-desc">가입 없는 사용자 기준 자율 좁히기</text>
+
+    <!-- Goal B/C -->
+    <rect x="15" y="440" width="310" height="70" class="box-goal"/>
+    <text x="25" y="465" class="text-step-title" fill="#3A4832">GOAL B/C: 제품 스펙 대조 완수</text>
+    <text x="25" y="488" class="text-step-desc">제품 특징 이해 및 적합 후보 판단 완수</text>
+  </g>
+
+  <!-- PATH C: 기록 목적 발견 흐름 -->
+  <g transform="translate(810, 170)">
+    <rect x="0" y="0" width="340" height="540" class="box-path"/>
+    <text x="20" y="30" class="text-path-title">PATH C: 기록 목적 발견 흐름 (Need-based)</text>
+
+    <!-- C-1 -->
+    <rect x="15" y="45" width="310" height="70" class="box-step"/>
+    <text x="25" y="68" class="text-step-title">C-1: 기록 경험 확인 (HOME 0.3)</text>
+    <text x="25" y="88" class="text-step-desc">저부담 회고, 글 보존, 복귀 경험 탐색</text>
+
+    <!-- C-2 -->
+    <rect x="15" y="125" width="310" height="70" class="box-step"/>
+    <text x="25" y="148" class="text-step-title">C-2: 관련 도구 연결 (HOME 0.4)</text>
+    <text x="25" y="168" class="text-step-desc">해당 경험과 제품군/서식 연결 확인</text>
+
+    <!-- C-3 -->
+    <rect x="15" y="205" width="310" height="85" class="box-step"/>
+    <text x="25" y="228" class="text-step-title">C-3: 서식 특징 확인 (PRODUCTS 1.2/1.3)</text>
+    <text x="25" y="248" class="text-step-desc">선택한 기록 방식에 맞는 서식 특성 파악</text>
+    <text x="25" y="268" class="text-step-desc">필요 시 BRAND 2.3 기록 철학 심화</text>
+
+    <!-- Goal D -->
+    <rect x="15" y="440" width="310" height="70" class="box-goal"/>
+    <text x="25" y="465" class="text-step-title" fill="#3A4832">GOAL D: 기록 방식 파악 완수</text>
+    <text x="25" y="488" class="text-step-desc">나에게 맞는 기록 방식 및 관련 도구 이해</text>
+  </g>
+
+  <!-- Connectors -->
+  <path d="M 220 145 L 220 170" class="line"/>
+  <path d="M 600 145 L 600 170" class="line"/>
+  <path d="M 980 145 L 980 170" class="line"/>
+
+  <!-- Exit Block -->
+  <g transform="translate(50, 740)">
+    <rect x="0" y="0" width="1100" height="60" class="box-exit"/>
+    <text x="550" y="36" class="text-exit">SUCCESSFUL_EXIT (정보 탐색 완수 후 정당한 포트폴리오 웹사이트 종료)</text>
+  </g>
+
+  <path d="M 220 710 L 220 740" class="line"/>
+  <path d="M 600 710 L 600 740" class="line"/>
+  <path d="M 980 710 L 980 740" class="line"/>
+</svg>

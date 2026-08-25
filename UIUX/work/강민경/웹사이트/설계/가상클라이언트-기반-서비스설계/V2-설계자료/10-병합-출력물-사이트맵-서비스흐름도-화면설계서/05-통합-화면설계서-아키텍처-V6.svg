@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 1000" width="1600" height="1000" style="background:#FAF9F5;">
+  <defs>
+    <style>
+      text { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; }
+    </style>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#6B7F5E" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Title &amp; Header -->
+  <rect x="40" y="30" width="1520" height="70" rx="8" fill="#6B7F5E"/>
+  <text x="70" y="73" fill="#FFFFFF" font-size="22" font-weight="700" letter-spacing="1">DAMORI (다모리) V6 3대 핵심 화면설계 컴포넌트 아키텍처</text>
+  <text x="1330" y="73" fill="#E8F0E3" font-size="14" font-weight="600">RESPONSIVE 3-BREAKPOINTS</text>
+
+  <!-- Screen 1: PAGE-001 (메인 랜딩) -->
+  <g transform="translate(60, 130)" filter="url(#shadow)">
+    <rect x="0" y="0" width="460" height="820" rx="8" fill="#FFFFFF" stroke="#6B7F5E" stroke-width="2"/>
+    <rect x="0" y="0" width="460" height="40" rx="6" fill="#6B7F5E"/>
+    <text x="20" y="26" fill="#FFFFFF" font-size="15" font-weight="700">PAGE-001: 메인 랜딩 (Main Landing)</text>
+
+    <!-- GNB -->
+    <rect x="15" y="55" width="430" height="45" rx="4" fill="#FAF9F5" stroke="#DCD6CD"/>
+    <text x="30" y="82" fill="#2D3328" font-size="12" font-weight="700">[LOGO] DAMORI | 4대 GNB | Compare Tray</text>
+
+    <!-- Hero -->
+    <rect x="15" y="110" width="430" height="120" rx="6" fill="#6B7F5E"/>
+    <text x="30" y="145" fill="#FFFFFF" font-size="14" font-weight="700">"흘러가는 취향을 한 장의 삶의 페이지로"</text>
+    <text x="30" y="170" fill="#E8F0E3" font-size="11">애착공방 기억의 서재 6:6 랜딩 Hero</text>
+    <rect x="30" y="185" width="120" height="28" rx="4" fill="#4A5840"/>
+    <text x="50" y="203" fill="#FFFFFF" font-size="11" font-weight="700">솔루션 탐색 →</text>
+
+    <!-- 15-Product Rail -->
+    <rect x="15" y="240" width="430" height="110" rx="4" fill="#FAF9F5" stroke="#E6E0D8"/>
+    <text x="25" y="260" fill="#2D3328" font-size="12" font-weight="700">대표 라인업 15선 가로 스크롤 레일 (scroll-snap)</text>
+    <rect x="25" y="270" width="90" height="70" rx="4" fill="#FFFFFF" stroke="#DCD6CD"/>
+    <text x="35" y="305" fill="#2D3328" font-size="10">PROD-001</text>
+    <rect x="125" y="270" width="90" height="70" rx="4" fill="#FFFFFF" stroke="#DCD6CD"/>
+    <text x="135" y="305" fill="#2D3328" font-size="10">PROD-002</text>
+    <rect x="225" y="270" width="90" height="70" rx="4" fill="#FFFFFF" stroke="#DCD6CD"/>
+    <text x="235" y="305" fill="#2D3328" font-size="10">PROD-003</text>
+    <rect x="325" y="270" width="90" height="70" rx="4" fill="#FFFFFF" stroke="#DCD6CD"/>
+    <text x="335" y="305" fill="#2D3328" font-size="10">PROD-004</text>
+
+    <!-- 4 Filter Chips -->
+    <rect x="15" y="360" width="430" height="70" rx="4" fill="#FAF9F5" stroke="#DCD6CD"/>
+    <text x="25" y="380" fill="#2D3328" font-size="12" font-weight="700">4대 자율 필터 칩 매트릭스 (VC-08 다온)</text>
+    <rect x="25" y="390" width="90" height="26" rx="13" fill="#6B7F5E"/>
+    <text x="45" y="407" fill="#FFFFFF" font-size="10">기록 목적</text>
+    <rect x="125" y="390" width="90" height="26" rx="13" fill="#FFFFFF" stroke="#DCD6CD"/>
+    <text x="150" y="407" fill="#2D3328" font-size="10">분량</text>
+    <rect x="225" y="390" width="90" height="26" rx="13" fill="#FFFFFF" stroke="#DCD6CD"/>
+    <text x="250" y="407" fill="#2D3328" font-size="10">장소</text>
+    <rect x="325" y="390" width="90" height="26" rx="13" fill="#FFFFFF" stroke="#DCD6CD"/>
+    <text x="350" y="407" fill="#2D3328" font-size="10">보존</text>
+
+    <!-- 10-sec Quick Bar -->
+    <rect x="15" y="440" width="430" height="75" rx="4" fill="#FFFFFF" stroke="#6B7F5E"/>
+    <text x="25" y="460" fill="#6B7F5E" font-size="12" font-weight="700">10초 저부담 퀵 스냅샷 모듈 (VC-03 하람)</text>
+    <text x="25" y="480" fill="#756A5B" font-size="10">사진 1장 · 1줄 회고 · 무설정 팝업 모달</text>
+    <rect x="340" y="455" width="90" height="26" rx="4" fill="#6B7F5E"/>
+    <text x="355" y="472" fill="#FFFFFF" font-size="10" font-weight="700">10초 작성</text>
+
+    <!-- 24-hr Timeline Widget -->
+    <rect x="15" y="525" width="430" height="75" rx="4" fill="#FFFFFF" stroke="#A3B299"/>
+    <text x="25" y="545" fill="#4A5840" font-size="12" font-weight="700">24시간 타임라인 위젯 (VC-02 지안 / ST-HOLD)</text>
+    <text x="25" y="565" fill="#756A5B" font-size="10">08:00 출근 | 12:00 점심 | 22:00 사색 (시간축 통제)</text>
+
+    <!-- Resume Band -->
+    <rect x="15" y="610" width="430" height="60" rx="4" fill="#FAF9F5" stroke="#6B7F5E"/>
+    <text x="25" y="630" fill="#6B7F5E" font-size="12" font-weight="700">죄책감 없는 복귀 밴드 (VC-07 이준)</text>
+    <text x="25" y="650" fill="#444444" font-size="10">스트릭 실패 경고 0% · 1-클릭 최근 위치 복귀</text>
+
+    <!-- Footer -->
+    <rect x="15" y="680" width="430" height="120" rx="4" fill="#6B7F5E"/>
+    <text x="25" y="705" fill="#FFFFFF" font-size="11">DAMORI 기억의 서재 · 4열 푸터 링크</text>
+    <text x="25" y="730" fill="#E8F0E3" font-size="10">이동 | 보존 | 도움말 | 브랜드 소개 (WCAG 2.1 AA)</text>
+  </g>
+
+  <!-- Screen 2: PAGE-021 (카테고리 솔루션 허브) -->
+  <g transform="translate(570, 130)" filter="url(#shadow)">
+    <rect x="0" y="0" width="460" height="820" rx="8" fill="#FFFFFF" stroke="#6B7F5E" stroke-width="2"/>
+    <rect x="0" y="0" width="460" height="40" rx="6" fill="#6B7F5E"/>
+    <text x="20" y="26" fill="#FFFFFF" font-size="15" font-weight="700">PAGE-021: 카테고리 솔루션 허브</text>
+
+    <!-- GNB -->
+    <rect x="15" y="55" width="430" height="45" rx="4" fill="#FAF9F5" stroke="#DCD6CD"/>
+    <text x="30" y="82" fill="#2D3328" font-size="12" font-weight="700">[LOGO] DAMORI | 카테고리 솔루션 허브</text>
+
+    <!-- Visual Hero -->
+    <rect x="15" y="110" width="430" height="100" rx="6" fill="#6B7F5E"/>
+    <text x="30" y="145" fill="#FFFFFF" font-size="14" font-weight="700">"나에게 맞는 기록 방식을 시각적으로 탐색"</text>
+    <text x="30" y="170" fill="#E8F0E3" font-size="11">10대 카테고리 200개 제품 인벤토리 대조</text>
+
+    <!-- Category Tabs -->
+    <rect x="15" y="220" width="430" height="50" rx="4" fill="#FAF9F5" stroke="#DCD6CD"/>
+    <text x="25" y="248" fill="#2D3328" font-size="11">노트 | 속지 | 플래너 | 10초폼 | 템플릿 | 스티커 | 바인더</text>
+
+    <!-- 1:1 Compare Cards -->
+    <rect x="15" y="280" width="205" height="180" rx="4" fill="#FFFFFF" stroke="#DCD6CD"/>
+    <text x="25" y="305" fill="#2D3328" font-size="12" font-weight="700">아날로그 노구 (PROD-001)</text>
+    <text x="25" y="330" fill="#756A5B" font-size="10">120gsm 평산지 / 180도 제본</text>
+    <rect x="25" y="420" width="185" height="26" rx="4" fill="#6B7F5E"/>
+    <text x="75" y="437" fill="#FFFFFF" font-size="10">+ Compare 담기</text>
+
+    <rect x="240" y="280" width="205" height="180" rx="4" fill="#FFFFFF" stroke="#DCD6CD"/>
+    <text x="250" y="305" fill="#2D3328" font-size="12" font-weight="700">디지털 플래너 (PROD-041)</text>
+    <text x="250" y="330" fill="#756A5B" font-size="10">24시간 시간축 / PDF 서식</text>
+    <rect x="250" y="420" width="185" height="26" rx="4" fill="#4A5840"/>
+    <text x="300" y="437" fill="#FFFFFF" font-size="10">+ Compare 담기</text>
+
+    <!-- 200 Products Grid -->
+    <rect x="15" y="470" width="430" height="220" rx="4" fill="#FAF9F5" stroke="#E6E0D8"/>
+    <text x="25" y="495" fill="#2D3328" font-size="12" font-weight="700">200개 제품 인벤토리 (PROD-001 ~ PROD-200)</text>
+    <text x="25" y="520" fill="#756A5B" font-size="10">10대 카테고리별 20개 제품 전수 1:1 대조 지원</text>
+
+    <!-- Floating Compare Tray -->
+    <rect x="15" y="700" width="430" height="100" rx="6" fill="#6B7F5E"/>
+    <text x="25" y="730" fill="#FFFFFF" font-size="12" font-weight="700">1:1 Compare Tray (담긴 상품 2/3)</text>
+    <text x="25" y="755" fill="#E8F0E3" font-size="10">PROD-001 vs PROD-041 실측 대조 중</text>
+    <rect x="330" y="725" width="100" height="32" rx="4" fill="#4A5840"/>
+    <text x="350" y="746" fill="#FFFFFF" font-size="11" font-weight="700">실측 대조 →</text>
+  </g>
+
+  <!-- Screen 3: PAGE-020 (브랜드 소개) -->
+  <g transform="translate(1080, 130)" filter="url(#shadow)">
+    <rect x="0" y="0" width="460" height="820" rx="8" fill="#FFFFFF" stroke="#A88B77" stroke-width="2"/>
+    <rect x="0" y="0" width="460" height="40" rx="6" fill="#A88B77"/>
+    <text x="20" y="26" fill="#FFFFFF" font-size="15" font-weight="700">PAGE-020: 브랜드 소개 (Brand Philosophy)</text>
+
+    <!-- GNB -->
+    <rect x="15" y="55" width="430" height="45" rx="4" fill="#FAF9F5" stroke="#DCD6CD"/>
+    <text x="30" y="82" fill="#2D3328" font-size="12" font-weight="700">[LOGO] DAMORI | 브랜드 소개</text>
+
+    <!-- Hero Philosophy -->
+    <rect x="15" y="110" width="430" height="140" rx="6" fill="#A88B77"/>
+    <text x="30" y="145" fill="#FFFFFF" font-size="15" font-weight="700">"나만의 애착공방 기억의 서재"</text>
+    <text x="30" y="175" fill="#F3EFEA" font-size="12">종이와 화면, 두 세계의 동등한 존중</text>
+    <text x="30" y="205" fill="#E6E0D8" font-size="10">단색 불박 도장 각인 · 120gsm 평산지 생산 출처</text>
+
+    <!-- 3 Philosophy Cards -->
+    <rect x="15" y="260" width="430" height="150" rx="4" fill="#FAF9F5" stroke="#E6E0D8"/>
+    <text x="25" y="285" fill="#2D3328" font-size="12" font-weight="700">다모리 3대 철학</text>
+    <text x="25" y="310" fill="#2D3328" font-size="10">1. 기록 자율성: 사용자가 원하는 방식으로 기록</text>
+    <text x="25" y="335" fill="#2D3328" font-size="10">2. 아날로그 물성 존중: 120gsm 미유광 평산지</text>
+    <text x="25" y="360" fill="#2D3328" font-size="10">3. 정직한 정보: 실측 데이터 및 단차 0mm 보장</text>
+
+    <!-- Smyth Sewn Process -->
+    <rect x="15" y="420" width="430" height="170" rx="4" fill="#FFFFFF" stroke="#DCD6CD"/>
+    <text x="25" y="445" fill="#2D3328" font-size="12" font-weight="700">180도 Smyth Sewn 실제본 장인 공정</text>
+    <text x="25" y="470" fill="#756A5B" font-size="10">중앙 솟아오름 통증 없는 180도 완전 평면 펼침 검증</text>
+    <rect x="25" y="490" width="390" height="80" rx="4" fill="#FAF9F5"/>
+    <text x="40" y="525" fill="#6B7F5E" font-size="12" font-weight="700">단차 0mm 실측 검증 라벨 (VC-01 은재)</text>
+    <text x="40" y="550" fill="#756A5B" font-size="10">만년필 잉크 번짐률 0% · 뒷비침 3% 이하 보증</text>
+
+    <!-- Branding &amp; Accessibility -->
+    <rect x="15" y="600" width="430" height="90" rx="4" fill="#FAF9F5" stroke="#E6E0D8"/>
+    <text x="25" y="625" fill="#2D3328" font-size="12" font-weight="700">16x16px 불박 도장 각인 및 접근성 원칙</text>
+    <text x="25" y="650" fill="#2D3328" font-size="10">한국적 여백 미학 · WCAG 2.1 AA 장벽 없는 환경</text>
+
+    <!-- Footer -->
+    <rect x="15" y="700" width="430" height="100" rx="4" fill="#6B7F5E"/>
+    <text x="25" y="730" fill="#FFFFFF" font-size="11">DAMORI 기억의 서재 푸터</text>
+    <text x="25" y="755" fill="#E8F0E3" font-size="10">홈으로 돌아가기 | 카테고리 솔루션 보기</text>
+  </g>
+</svg>

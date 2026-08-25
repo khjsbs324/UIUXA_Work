@@ -1,0 +1,66 @@
+{
+  "brand": {
+    "name": "DAMORI",
+    "nameKorean": "다모리",
+    "slogan": "흘러가는 취향을 한 장의 삶의 페이지로, 기억의 서재",
+    "version": "V6.0.0"
+  },
+  "colors": {
+    "primitive": {
+      "canvas": "#FAF9F5",
+      "surface": "#FFFFFF",
+      "ink": "#2D3328",
+      "oliveGreen": "#6B7F5E",
+      "softSage": "#A3B299",
+      "warmWood": "#A88B77"
+    },
+    "semantic": {
+      "selected": "#E9ECE6",
+      "success": "#6B7F5E",
+      "warning": "#F3EFEA",
+      "danger": "#F8EAE7",
+      "local": "#E8F1F5",
+      "hold": "#F4EFE6"
+    },
+    "border": {
+      "subtle": "#E6E0D8",
+      "regular": "#DCD6CD",
+      "focusRing": "#6B7F5E"
+    }
+  },
+  "typography": {
+    "fontFamilySans": "'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+    "fontFamilySerif": "'Noto Serif KR', 'Batang', serif",
+    "fontFamilyMono": "'JetBrains Mono', 'Fira Code', monospace",
+    "fontSize": {
+      "hero": "2.75rem",
+      "h1": "2.25rem",
+      "h2": "1.75rem",
+      "h3": "1.35rem",
+      "bodyLarge": "1.125rem",
+      "body": "1rem",
+      "bodySmall": "0.875rem",
+      "caption": "0.75rem"
+    },
+    "lineHeight": {
+      "tight": "1.25",
+      "normal": "1.6",
+      "relaxed": "1.8"
+    }
+  },
+  "layout": {
+    "maxWidth": "1200px",
+    "headerHeight": "76px",
+    "breakpoints": {
+      "desktop": "1200px",
+      "tablet": "768px",
+      "mobile": "360px"
+    },
+    "touchTargetMin": "44px"
+  },
+  "accessibility": {
+    "wcagStandard": "WCAG 2.1 AA",
+    "minContrastRatio": 4.5,
+    "focusRingWidth": "3px"
+  }
+}

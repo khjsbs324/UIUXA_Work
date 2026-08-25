@@ -1,0 +1,4 @@
+interface:
+  display_name: "브랜드 설계 반복 파이프라인"
+  short_description: "가상 클라이언트부터 스토리보드까지 반복 실행·병합"
+  default_prompt: "Use $brand-design-pipeline to run the next approved batch of the brand design workflow and validate its outputs."

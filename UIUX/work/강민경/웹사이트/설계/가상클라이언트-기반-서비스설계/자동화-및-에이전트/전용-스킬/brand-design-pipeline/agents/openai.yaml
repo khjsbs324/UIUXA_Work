@@ -1,0 +1,4 @@
+interface:
+  display_name: "브랜드 설계 반복 파이프라인"
+  short_description: "실제 단계 출력물을 V1·V2로 생성·검증하고 병합 준비도를 판단"
+  default_prompt: "Use $brand-design-pipeline to save the actual result under <번호>-<단계명>-출력물 as the next Vn, without creating batch or review files and without performing the final merge."

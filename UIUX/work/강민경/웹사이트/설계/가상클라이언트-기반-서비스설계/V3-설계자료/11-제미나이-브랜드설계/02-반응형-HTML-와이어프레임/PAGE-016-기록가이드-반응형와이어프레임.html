@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAMORI — 기록 가이드 및 지원 센터</title>
+  <style>
+    :root {
+      --bg-paper: #fcfbf9;
+      --bg-card: #ffffff;
+      --bg-subtle: #f4f0eb;
+      --bg-dark: #1e2522;
+      --text-main: #2b302d;
+      --text-sub: #5c635f;
+      --accent-sage: #4a5d55;
+      --border-subtle: #e2ddd7;
+      --focus-ring: #2457A7;
+      --font-main: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-paper); color: var(--text-main); font-family: var(--font-main); line-height: 1.65; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; }
+
+    header { height: 76px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border-subtle); position: sticky; top: 0; z-index: 100; }
+    .header-container { max-width: 1240px; margin: 0 auto; height: 100%; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; }
+    .brand-logo-group { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-stamp { width: 36px; height: 36px; border-radius: 50%; background: var(--accent-sage); color: white; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 800; }
+    .brand-name { font-size: 20px; font-weight: 800; color: var(--text-main); }
+    .gnb-menu { display: flex; gap: 28px; list-style: none; }
+    .gnb-menu a { text-decoration: none; color: var(--text-sub); font-size: 15px; font-weight: 600; padding: 8px 12px; border-radius: 6px; }
+    .gnb-menu a[aria-current="page"] { color: var(--accent-sage); background-color: var(--bg-subtle); }
+
+    .hero-section { max-width: 1240px; margin: 0 auto; padding: 64px 24px; text-align: center; }
+    .hero-badge { display: inline-block; padding: 4px 12px; background: var(--bg-subtle); border-radius: 4px; font-size: 12px; font-weight: 700; color: var(--accent-sage); margin-bottom: 16px; }
+    .hero-title { font-size: 38px; font-weight: 800; margin-bottom: 16px; letter-spacing: -1px; }
+    .hero-desc { font-size: 18px; color: var(--text-sub); margin-bottom: 32px; }
+
+    .section-wrapper { max-width: 1240px; margin: 0 auto; padding: 48px 24px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .card { background: var(--bg-card); border: 1.5px solid var(--border-subtle); border-radius: 14px; padding: 32px; text-decoration: none; color: inherit; display: block; }
+
+    footer { background: var(--bg-dark); color: #94a3b8; padding: 60px 24px; margin-top: 80px; }
+    .footer-inner { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; }
+
+    @media (max-width: 1023px) { .grid-3, .grid-2 { grid-template-columns: 1fr; } .footer-inner { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <a href="PAGE-001-메인페이지-반응형와이어프레임.html" class="brand-logo-group">
+        <div class="logo-stamp">多</div>
+        <span class="brand-name">DAMORI (다모리)</span>
+      </a>
+      <nav>
+        <ul class="gnb-menu">
+          <li><a href="PAGE-001-메인페이지-반응형와이어프레임.html">홈</a></li>
+          <li><a href="PAGE-002-기록방식찾기-반응형와이어프레임.html">기록 방식 찾기</a></li>
+          <li><a href="PAGE-004-아날로그기록-반응형와이어프레임.html">아날로그 기록</a></li>
+          <li><a href="PAGE-009-디지털기록-반응형와이어프레임.html">디지털 기록</a></li>
+          <li><a href="PAGE-013-템플릿과꾸미기-반응형와이어프레임.html">템플릿과 꾸미기</a></li>
+          <li><a href="#" aria-current="page">기록 가이드</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <span class="hero-badge">이준(VC-07) & 여울(VC-13) 조력 센터</span>
+      <h1 class="hero-title">기록이 멈출 때,<br>다시 이어지는 길을 만납니다</h1>
+      <p class="hero-desc">시작의 망설임, 멈춤의 미안함, 데이터 보존의 걱정 중 필요한 가이드를 선택하세요.</p>
+    </section>
+
+    <!-- 3 Core Guides -->
+    <section class="section-wrapper">
+      <h2 style="font-size:26px; font-weight:800; margin-bottom:12px;">3대 맞춤 상황별 도움말</h2>
+      <p style="color:var(--text-sub); margin-bottom:32px;">부담 없이 기록 라이프를 지속할 수 있도록 돕습니다.</p>
+
+      <div class="grid-3">
+        <a href="#" class="card" onclick="alert('작게 시작하기 가이드로 이동합니다.')">
+          <span class="hero-badge">시작 가이드</span>
+          <h3 style="font-size:22px; margin-bottom:12px;">작게 시작하기</h3>
+          <p style="color:var(--text-sub); font-size:14px;">로그인 없이 사진 한 장, 1줄 메모로 부담 없이 첫 기록을 내딛는 방법을 안내합니다.</p>
+        </a>
+        <a href="#" class="card" onclick="alert('중단 후 다시 시작 가이드로 이동합니다.')">
+          <span class="hero-badge" style="background:#fef3c7; color:#92400e;">이준(VC-07) 복귀</span>
+          <h3 style="font-size:22px; margin-bottom:12px;">중단 후 다시 시작</h3>
+          <p style="color:var(--text-sub); font-size:14px;">기록의 멈춤은 실패가 아닌 당연한 쉼표입니다. 죄책감 없이 과거 노트를 다시 펼쳐 이어 쓰는 노하우를 제공합니다.</p>
+        </a>
+        <a href="#" class="card" onclick="alert('접근성 가이드로 이동합니다.')">
+          <span class="hero-badge" style="background:#e0f2fe; color:#0369a1;">여울(VC-13) 접근성</span>
+          <h3 style="font-size:22px; margin-bottom:12px;">이동·보존·도움말</h3>
+          <p style="color:var(--text-sub); font-size:14px;">스크린리더 탐색, 키보드 컨트롤, 오프라인 백업 및 데이터 안전 보존 방침을 제시합니다.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Accessibility & Trust -->
+    <section class="section-wrapper" style="background:var(--bg-subtle); border-radius:16px;">
+      <h2 style="font-size:26px; font-weight:800; margin-bottom:12px;">웹 접근성 및 데이터 안전 보존 원칙</h2>
+      <p style="color:var(--text-sub); margin-bottom:32px;">모두가 평등하게 이용하는 신뢰를 높입니다.</p>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3 style="font-size:20px; margin-bottom:12px;">WCAG 2.1 접근성 준수</h3>
+          <p style="color:var(--text-sub); font-size:14px;">모든 이미지 대체 텍스트(alt), 3px 포커스 링, 랜드마크 스키마, 4.5:1 이상 명암비를 지킵니다.</p>
+        </div>
+        <div class="card">
+          <h3 style="font-size:20px; margin-bottom:12px;">확인된 사실만 투명 명시</h3>
+          <p style="color:var(--text-sub); font-size:14px;">미검증 외부 연동 기능은 `검증 진행 중(HOLD)`으로 명확히 구분하여 사용자를 오인하지 않도록 돕습니다.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div style="color:white; font-size:18px; font-weight:800; margin-bottom:16px;">[LOGO] DAMORI (다모리)</div>
+        <p>당신의 기록 삶을 따뜻하게 조력합니다.</p>
+      </div>
+      <div>
+        <h4 style="color:white; margin-bottom:16px;">가이드</h4>
+        <ul style="list-style:none;">
+          <li><a href="#" style="color:#94a3b8; text-decoration:none;">작게 시작하기</a></li>
+          <li><a href="#" style="color:#94a3b8; text-decoration:none;">중단 후 다시 시작</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color:white; margin-bottom:16px;">도움말</h4>
+        <ul style="list-style:none;">
+          <li><a href="#" style="color:#94a3b8; text-decoration:none;">접근성 안내</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color:white; margin-bottom:16px;">브랜드</h4>
+        <ul style="list-style:none;">
+          <li><a href="#" style="color:#94a3b8; text-decoration:none;">브랜드 소개</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

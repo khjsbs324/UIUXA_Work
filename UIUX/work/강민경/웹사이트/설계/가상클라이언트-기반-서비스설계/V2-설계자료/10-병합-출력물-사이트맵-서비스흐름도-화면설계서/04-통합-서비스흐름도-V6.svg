@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 900" width="1600" height="900" style="background:#FAF9F5;">
+  <defs>
+    <style>
+      text { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; }
+    </style>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#6B7F5E" flood-opacity="0.08"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#A3B299"/>
+    </marker>
+  </defs>
+
+  <!-- Title &amp; Header -->
+  <rect x="40" y="30" width="1520" height="70" rx="8" fill="#6B7F5E"/>
+  <text x="70" y="73" fill="#FFFFFF" font-size="22" font-weight="700" letter-spacing="1">DAMORI (다모리) V6 5대 핵심 서비스 흐름도 (User Flow A ~ E)</text>
+  <text x="1330" y="73" fill="#E8F0E3" font-size="14" font-weight="600">ST-HOLD &amp; ST-LOCAL VERIFIED</text>
+
+  <!-- 5 User Flow Rows -->
+  <!-- Flow A -->
+  <g transform="translate(60, 130)">
+    <rect x="0" y="0" width="1480" height="120" rx="8" fill="#FFFFFF" stroke="#DCD6CD" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="8" height="120" rx="4" fill="#6B7F5E"/>
+    <text x="25" y="35" fill="#2D3328" font-size="16" font-weight="700">User Flow A: 아날로그 장문 사색 여정 (VC-01 은재, VC-15 새봄, VC-17 채운)</text>
+    
+    <!-- Nodes -->
+    <rect x="25" y="55" width="220" height="48" rx="6" fill="#FAF9F5" stroke="#DCD6CD"/>
+    <text x="40" y="85" fill="#2D3328" font-size="13">1. PAGE-001 (홈) 진입</text>
+
+    <line x1="245" y1="79" x2="295" y2="79" stroke="#A3B299" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect x="300" y="55" width="250" height="48" rx="6" fill="#FAF9F5" stroke="#DCD6CD"/>
+    <text x="315" y="85" fill="#2D3328" font-size="13">2. 15선 레일 탐색 (PROD-001)</text>
+
+    <line x1="550" y1="79" x2="600" y2="79" stroke="#A3B299" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect x="605" y="55" width="260" height="48" rx="6" fill="#FAF9F5" stroke="#DCD6CD"/>
+    <text x="620" y="85" fill="#2D3328" font-size="13">3. PAGE-021 (1:1 Compare Tray)</text>
+
+    <line x1="865" y1="79" x2="915" y2="79" stroke="#A3B299" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect x="920" y="55" width="260" height="48" rx="6" fill="#FAF9F5" stroke="#DCD6CD"/>
+    <text x="935" y="85" fill="#2D3328" font-size="13">4. PAGE-020 (180도 Smyth Sewn)</text>
+
+    <line x1="1180" y1="79" x2="1230" y2="79" stroke="#A3B299" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect x="1235" y="55" width="215" height="48" rx="6" fill="#6B7F5E"/>
+    <text x="1255" y="85" fill="#FFFFFF" font-size="13" font-weight="700">5. 120gsm 노구 소장 완료</text>
+  </g>
+
+  <!-- Flow B -->
+  <g transform="translate(60, 275)">
+    <rect x="0" y="0" width="1480" height="120" rx="8" fill="#FFFFFF" stroke="#DCD6CD" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="8" height="120" rx="4" fill="#A3B299"/>
+    <text x="25" y="35" fill="#2D3328" font-size="16" font-weight="700">User Flow B: 디지털 시간축 통제 여정 (VC-02 지안, VC-05 태오, VC-16 한결)</text>
+    
+    <rect x="25" y="55" width="220" height="48" rx="6" fill="#FAF9F5" stroke="#DCD6CD"/>
+    <text x="40" y="85" fill="#2D3328" font-size="13">1. 08:30 지하철 모바일 진입</text>
+
+    <line x1="245" y1="79" x2="295" y2="79" stroke="#A3B299" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect x="300" y="55" width="250" height="48" rx="6" fill="#FAF9F5" stroke="#DCD6CD"/>
+    <text x="315" y="85" fill="#2D3328" font-size="13">2. 24시간 타임라인 위젯 조작</text>
+
+    <line x1="550" y1="79" x2="600" y2="79" stroke="#A3B299" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect x="605" y="55" width="260" height="48" rx="6" fill="#F4EFE6" stroke="#DCD6CD"/>
+    <text x="620" y="85" fill="#4A5840" font-size="13" font-weight="700">3. ST-HOLD (외부 연동 보류)</text>
+
+    <line x1="865" y1="79" x2="915" y2="79" stroke="#A3B299" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect x="920" y="55" width="260" height="48" rx="6" fill="#FAF9F5" stroke="#DCD6CD"/>
+    <text x="935" y="85" fill="#2D3328" font-size="13">4. 3단 반응형 화면 비율 고정</text>
+
+    <line x1="1180" y1="79" x2="1230" y2="79" stroke="#A3B299" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect x="1235" y="55" width="215" height="48" rx="6" fill="#4A5840"/>
+    <text x="1255" y="85" fill="#FFFFFF" font-size="13" font-weight="700">5. 시간표 직접 통제 완료</text>
+  </g>
+
+  <!-- Flow C -->
+  <g transform="translate(60, 420)">
+    <rect x="0" y="0" width="1480" height="120" rx="8" fill="#FFFFFF" stroke="#DCD6CD" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="8" height="120" rx="4" fill="#5B7E98"/>
+    <text x="25" y="35" fill="#2D3328" font-size="16" font-weight="700">User Flow C: 10초 저부담 빠른 회고 여정 (VC-03 하람, VC-32 유진)</text>
+    
+    <rect x="25" y="55" width="220" height="48" rx="6" fill="#FAF9F5" stroke="#DCD6CD"/>
+    <text x="40" y="85" fill="#2D3328" font-size="13">1. 취침 전 모바일 원터치 진입</text>
+
+    <line x1="245" y1="79" x2="295" y2="79" stroke="#A3B299" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect x="300" y="55" width="250" height="48" rx="6" fill="#FAF9F5" stroke="#DCD6CD"/>
+    <text x="315" y="85" fill="#2D3328" font-size="13">2. 10초 퀵 스냅샷 바 터치</text>
+
+    <line x1="550" y1="79" x2="600" y2="79" stroke="#A3B299" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect x="605" y="55" width="260" height="48" rx="6" fill="#FAF9F5" stroke="#DCD6CD"/>
+    <text x="620" y="85" fill="#2D3328" font-size="13">3. 사진 1장 + 단문 1줄 모달</text>
+
+    <line x1="865" y1="79" x2="915" y2="79" stroke="#A3B299" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect x="920" y="55" width="260" height="48" rx="6" fill="#E8F1F5" stroke="#5B7E98"/>
+    <text x="935" y="85" fill="#5B7E98" font-size="13" font-weight="700">4. ST-LOCAL (IndexedDB 저장)</text>
+
+    <line x1="1180" y1="79" x2="1230" y2="79" stroke="#A3B299" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect x="1235" y="55" width="215" height="48" rx="6" fill="#6B7F5E"/>
+    <text x="1255" y="85" fill="#FFFFFF" font-size="13" font-weight="700">5. 10초 무부담 완료 피드백</text>
+  </g>
+
+  <!-- Flow D -->
+  <g transform="translate(60, 565)">
+    <rect x="0" y="0" width="1480" height="120" rx="8" fill="#FFFFFF" stroke="#DCD6CD" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="8" height="120" rx="4" fill="#A88B77"/>
+    <text x="25" y="35" fill="#2D3328" font-size="16" font-weight="700">User Flow D: 템플릿 구획 및 꾸미기 여정 (VC-04 소담, VC-06 나린, VC-30 서진)</text>
+    
+    <rect x="25" y="55" width="220" height="48" rx="6" fill="#FAF9F5" stroke="#DCD6CD"/>
+    <text x="40" y="85" fill="#2D3328" font-size="13">1. PAGE-001 템플릿 카드</text>
+
+    <line x1="245" y1="79" x2="295" y2="79" stroke="#A3B299" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect x="300" y="55" width="250" height="48" rx="6" fill="#FAF9F5" stroke="#DCD6CD"/>
+    <text x="315" y="85" fill="#2D3328" font-size="13">2. 원본 글 훼손 0% 서식 미리보기</text>
+
+    <line x1="550" y1="79" x2="600" y2="79" stroke="#A3B299" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect x="605" y="55" width="260" height="48" rx="6" fill="#FAF9F5" stroke="#DCD6CD"/>
+    <text x="620" y="85" fill="#2D3328" font-size="13">3. 독립 레이어 스티커 부착</text>
+
+    <line x1="865" y1="79" x2="915" y2="79" stroke="#A3B299" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect x="920" y="55" width="260" height="48" rx="6" fill="#FAF9F5" stroke="#DCD6CD"/>
+    <text x="935" y="85" fill="#2D3328" font-size="13">4. 가독성 경고 없는 분리 렌더링</text>
+
+    <line x1="1180" y1="79" x2="1230" y2="79" stroke="#A3B299" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect x="1235" y="55" width="215" height="48" rx="6" fill="#A88B77"/>
+    <text x="1255" y="85" fill="#FFFFFF" font-size="13" font-weight="700">5. 내 서재 서식 보존 완료</text>
+  </g>
+
+  <!-- Flow E -->
+  <g transform="translate(60, 710)">
+    <rect x="0" y="0" width="1480" height="120" rx="8" fill="#FFFFFF" stroke="#DCD6CD" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="8" height="120" rx="4" fill="#6B7F5E"/>
+    <text x="25" y="35" fill="#2D3328" font-size="16" font-weight="700">User Flow E: 죄책감 없는 기록 복귀 여정 (VC-07 이준, VC-20 주원, VC-51 이솔)</text>
+    
+    <rect x="25" y="55" width="220" height="48" rx="6" fill="#FAF9F5" stroke="#DCD6CD"/>
+    <text x="40" y="85" fill="#2D3328" font-size="13">1. 오랜만에 서비스 재진입</text>
+
+    <line x1="245" y1="79" x2="295" y2="79" stroke="#A3B299" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect x="300" y="55" width="250" height="48" rx="6" fill="#F8EAE7" stroke="#A88B77"/>
+    <text x="315" y="85" fill="#756A5B" font-size="13" font-weight="700">2. 스트릭 경고 0% 원천 차단</text>
+
+    <line x1="550" y1="79" x2="600" y2="79" stroke="#A3B299" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect x="605" y="55" width="260" height="48" rx="6" fill="#FAF9F5" stroke="#DCD6CD"/>
+    <text x="620" y="85" fill="#2D3328" font-size="13">3. 1-클릭 '복귀 응원 밴드' 터치</text>
+
+    <line x1="865" y1="79" x2="915" y2="79" stroke="#A3B299" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect x="920" y="55" width="260" height="48" rx="6" fill="#FAF9F5" stroke="#DCD6CD"/>
+    <text x="935" y="85" fill="#2D3328" font-size="13">4. 최근 작성 위치 자동 포커스</text>
+
+    <line x1="1180" y1="79" x2="1230" y2="79" stroke="#A3B299" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect x="1235" y="55" width="215" height="48" rx="6" fill="#6B7F5E"/>
+    <text x="1255" y="85" fill="#FFFFFF" font-size="13" font-weight="700">5. 부담 없는 기록 재개 완료</text>
+  </g>
+</svg>

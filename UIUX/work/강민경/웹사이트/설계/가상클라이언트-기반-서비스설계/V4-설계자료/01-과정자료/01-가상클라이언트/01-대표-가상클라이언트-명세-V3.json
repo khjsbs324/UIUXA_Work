@@ -1,0 +1,978 @@
+{
+  "version": "V3",
+  "status": "CURRENT_WORKING_BASELINE",
+  "brandName": "DAMORI / 다모리",
+  "sourceClientCount": 51,
+  "representativeClientCount": 7,
+  "projectConstraint": {
+    "experienceGoal": "브랜드를 소개하면서 제품군까지 설득력 있게 보여주는 포트폴리오형 랜딩 경험",
+    "targetPages": [
+      "0.0 HOME / MAIN",
+      "1.0 PRODUCTS / CATEGORY-SUB",
+      "2.0 BRAND"
+    ],
+    "brandCorePrinciples": [
+      "DAMORI 브랜드 소개",
+      "브랜드 존재 이유",
+      "기록 철학",
+      "핵심 가치 3종",
+      "아날로그/디지털 결합 관점",
+      "제품 원칙"
+    ],
+    "productRequirementLayerNote": "Smyth Sewn 실제본, 120gsm 지질 등 기술 스펙은 Brand Core가 아닌 Product Requirement로 관리함"
+  },
+  "sourceRoleSummary": {
+    "primaryPersonaMappedCount": 20,
+    "primaryPersonaUnmappedCount": 31,
+    "secondaryPersonaMappedCount": 2,
+    "legitimateMultiNeedClientCount": 2,
+    "productComparisonPoolSourceCount": 38,
+    "insufficientEvidenceCount": 0,
+    "traceabilityRate": "100% Traceable"
+  },
+  "clients": [
+    {
+      "id": "V4-C01",
+      "name": "은재",
+      "type": "장문 사색 & 필기 물성 중시 클라이언트",
+      "context": "카페 및 서재에서 1시간 이상 몰입하여 장문 필기와 아이디어 구상을 진행하며 손목 피로와 잉크 번짐에 민감함.",
+      "goal": "손목 부담 없이 평평하게 펼쳐지는 제본과 만년필 잉크 번짐이 적은 고품질 아날로그 기록 도구를 탐색하고 비교함.",
+      "originalServiceNeed": "손목 통증 없는 180도 평면 펼침 Smyth Sewn 실제본 및 EF/F 만년필 잉크 번짐 0% 지질 노트 원함.",
+      "normalizedPureNeed": "장시간 필기 시 손목에 부담이 적고 글씨가 번지지 않는 고품질 아날로그 기록 경험",
+      "siteLevelNeed": "DAMORI가 제공하는 제품의 제본 특성(평면 펼침), 종이의 필기 적합성 정보, 브랜드의 제품 원칙을 탐색하고 실측 스펙을 대조함.",
+      "siteCoverageType": "DIRECT",
+      "siteRelevantPages": [
+        "PRODUCTS (주 수용 - 제본/지질 사양 대조)",
+        "BRAND (보조적 - 제품 원칙 및 기록 철학 이해)"
+      ],
+      "scopeNote": "웹사이트에서 제본/지질 사양 정보와 실측 치수를 직접 대조할 수 있어 DIRECT 수용. 구체 Smyth Sewn, 120gsm은 Product Requirement로 관리.",
+      "pureNeedIds": [
+        "DN-01"
+      ],
+      "requirementPatterns": [
+        "RG-01",
+        "RG-07"
+      ],
+      "primaryPersonaSources": [
+        "VC-01",
+        "VC-06",
+        "VC-17",
+        "VC-29"
+      ],
+      "secondaryPersonaSources": [],
+      "productPoolSources": [
+        "VC-17"
+      ],
+      "productRequirements": [
+        "180도 평면 펼침 제본 사양 검토",
+        "EF/F 필기 적합성 지질 검토",
+        "두께 및 치수 실측 정보"
+      ],
+      "designOpportunities": [
+        "제품 스펙 및 치수 1:1 대조 비교표 UI 후보"
+      ],
+      "globalRules": [
+        "ACCESSIBILITY_RULE",
+        "RESPONSIVE_RULE"
+      ],
+      "sourceValueStatuses": [
+        {
+          "value": "180도",
+          "context": "제본 펼침 각도",
+          "status": "PRODUCT_REQUIREMENT_CANDIDATE",
+          "note": "평면 펼침 사용자 요구 지원을 위한 제본 스펙 검토 조건"
+        },
+        {
+          "value": "120gsm",
+          "context": "종이 평량 사양",
+          "status": "PRODUCT_REQUIREMENT_CANDIDATE",
+          "note": "필기 적합성을 위한 종이 사양 검토 조건"
+        },
+        {
+          "value": "0%",
+          "context": "잉크 번짐률",
+          "status": "USER_STATED_EXPECTATION",
+          "note": "원본 사용자 기대 목표값이며 제품 보증값 아님"
+        }
+      ],
+      "sourceTraceabilityNote": "Primary Persona Source 4명(VC-01, 06, 17, 29) 전수 매핑 완료."
+    },
+    {
+      "id": "V4-C02",
+      "name": "지안",
+      "type": "수치적 시간축 통제 & 타임라인 클라이언트",
+      "context": "직장 및 프리랜서 업무 중 바쁜 일정 겹침과 계획 수립에 대한 스트레스를 직관적 타임라인으로 통제하길 원함.",
+      "goal": "하루의 시간을 24시간 세로 축으로 직관적으로 파악하고 계획과 실적을 명확히 대조하는 기록 서식과 제품을 탐색함.",
+      "originalServiceNeed": "24시간 세로 타임라인에서 일정 겹침을 실시간 파악하고 직접 조절하는 앱 기능 원함.",
+      "normalizedPureNeed": "복잡한 일정을 직관적으로 시각화하고 시간을 유연하게 통제하는 경험",
+      "siteLevelNeed": "DAMORI의 디지털/아날로그 플래너 및 세로 타임라인 서식의 지원 특성과 시간 관리 방식을 파악함.",
+      "siteCoverageType": "INFORMATIONAL",
+      "siteRelevantPages": [
+        "PRODUCTS (1.2 서식 탐색 & 1.3 서식 특성)"
+      ],
+      "scopeNote": "실제 일정 조절 앱 기능이 아닌, 관련 플래너 서식 및 디지털 템플릿의 지원 특성과 사용 방식을 확인하는 정보 수용.",
+      "pureNeedIds": [
+        "DN-02"
+      ],
+      "requirementPatterns": [
+        "RG-02"
+      ],
+      "primaryPersonaSources": [
+        "VC-02",
+        "VC-05",
+        "VC-16"
+      ],
+      "secondaryPersonaSources": [],
+      "productPoolSources": [
+        "VC-16"
+      ],
+      "productRequirements": [
+        "24시간 세로 타임라인 레이아웃 검토",
+        "일정-실적 대조 구획 서식 검토"
+      ],
+      "designOpportunities": [
+        "시간축 플래너 템플릿 구조 시각화 UI 후보"
+      ],
+      "globalRules": [
+        "ACCESSIBILITY_RULE",
+        "RESPONSIVE_RULE"
+      ],
+      "sourceValueStatuses": [
+        {
+          "value": "24시간",
+          "context": "세로 타임라인 서식",
+          "status": "PRODUCT_REQUIREMENT_CANDIDATE",
+          "note": "시간축 플래너 레이아웃 구성 검토 조건"
+        },
+        {
+          "value": "1클릭",
+          "context": "재설정 동작",
+          "status": "OUT_OF_CURRENT_SCOPE_REFERENCE",
+          "note": "원본 서비스 요구의 재설정 동작 수치이며 현재 웹사이트 기능 목표가 아님"
+        }
+      ],
+      "sourceTraceabilityNote": "Primary Persona Source 3명(VC-02, 05, 16) 전수 매핑 완료. VC-16은 타임라인 서식 대조 소스 겸용."
+    },
+    {
+      "id": "V4-C03",
+      "name": "하람",
+      "type": "저부담 시각 회고 & 1줄 스냅 클라이언트",
+      "context": "피곤한 퇴근 후 길고 거창한 일기를 쓸 엄두가 나지 않아 부담 없이 10초 만에 하루를 기록하길 원함.",
+      "goal": "사진 1장이나 감정 스티커, 짧은 1줄 글만으로도 부담 없이 하루를 돌아보고 회고하는 기록 방식을 발견함.",
+      "originalServiceNeed": "10초 만에 폼 작성 없이 사진 1장과 1줄 텍스트로 회고를 완료하고 저장하는 서비스 원함.",
+      "normalizedPureNeed": "복잡한 폼이나 압박 없이 짧고 부담 없이 회고하는 경험",
+      "siteLevelNeed": "DAMORI가 지향하는 저부담 회고 경험과 관련 서식/도구 샘플 및 양식 갤러리를 미리 봄.",
+      "siteCoverageType": "EXPERIENCE_PREVIEW",
+      "siteRelevantPages": [
+        "HOME (0.3 회고 경험 섹션)",
+        "PRODUCTS (관련 서식 탐색)"
+      ],
+      "scopeNote": "실제 회고 데이터를 저장하는 기능이 아니라, 부담 없는 회고 방식 및 관련 양식을 시각적으로 설명/미리보기함.",
+      "pureNeedIds": [
+        "DN-03"
+      ],
+      "requirementPatterns": [
+        "RG-03"
+      ],
+      "primaryPersonaSources": [
+        "VC-03",
+        "VC-14",
+        "VC-32"
+      ],
+      "secondaryPersonaSources": [],
+      "productPoolSources": [
+        "VC-14",
+        "VC-32"
+      ],
+      "productRequirements": [
+        "1줄 회고 전용 간결 레이아웃 검토",
+        "사진-텍스트 결합 서식 검토"
+      ],
+      "designOpportunities": [
+        "짧은 회고 입력 UI 후보",
+        "무설정 원터치 팝업 폼 UI 후보"
+      ],
+      "globalRules": [
+        "ACCESSIBILITY_RULE",
+        "RESPONSIVE_RULE"
+      ],
+      "sourceValueStatuses": [
+        {
+          "value": "10초",
+          "context": "회고 소요 시간",
+          "status": "USER_STATED_EXPECTATION",
+          "note": "원본 사용자 기대 목표 수치이며 확정 시스템 보증치 아님"
+        },
+        {
+          "value": "1줄",
+          "context": "기록 텍스트 분량",
+          "status": "DESIGN_TARGET",
+          "note": "저부담 서식 설계 목표 분량"
+        }
+      ],
+      "sourceTraceabilityNote": "Primary Persona Source 3명(VC-03, 14, 32) 전수 매핑 완료. VC-14(저부담 서식), VC-32(이모티콘 회고) 원문 근거 확인."
+    },
+    {
+      "id": "V4-C04",
+      "name": "소담",
+      "type": "글-서식 분리 & 레이어 보존 클라이언트",
+      "context": "다이어리 꾸미기와 스티커 사용을 즐기지만, 배경 서식이나 스티커 때문에 본문 글이 훼손되거나 가려지는 것을 싫어함.",
+      "goal": "내가 적은 소중한 글 원본과 꾸미기 레이어가 분리되어 언제든 깨끗하게 글만 보존되는 제품 구조를 확인함.",
+      "originalServiceNeed": "글 데이터(Structure)와 배경 서식/스티커(Asset)를 100% 독립 레이어로 분리 작성하고 추출하는 앱 원함.",
+      "normalizedPureNeed": "내가 적은 글 원본 데이터가 다른 요소에 의해 훼손되지 않고 보존되는 경험",
+      "siteLevelNeed": "DAMORI 제품 및 템플릿에 적용된 글 원본 보존 원칙과 서식 분리 구조의 특징을 확인함.",
+      "siteCoverageType": "INFORMATIONAL",
+      "siteRelevantPages": [
+        "PRODUCTS (1.3 제품 특징)",
+        "HOME (0.3 경험 섹션)"
+      ],
+      "scopeNote": "실제 레이어 편집 기능을 실행하는 웹앱이 아닌, 글 원본 보존 원칙과 관련 서식의 구조적 특징을 정보로 제공함.",
+      "pureNeedIds": [
+        "DN-04",
+        "DN-13"
+      ],
+      "requirementPatterns": [
+        "RG-04"
+      ],
+      "primaryPersonaSources": [
+        "VC-04",
+        "VC-30",
+        "VC-50"
+      ],
+      "secondaryPersonaSources": [
+        "VC-06"
+      ],
+      "productPoolSources": [],
+      "productRequirements": [
+        "글-서식 분리 프레임 레이아웃 검토",
+        "텍스트 보호 투명도 가이드 검토"
+      ],
+      "designOpportunities": [
+        "글-서식 분리 구조 시각 설명 UI 후보"
+      ],
+      "globalRules": [
+        "ACCESSIBILITY_RULE",
+        "RESPONSIVE_RULE"
+      ],
+      "sourceValueStatuses": [
+        {
+          "value": "100%",
+          "context": "글 원본 보존율",
+          "status": "USER_STATED_EXPECTATION",
+          "note": "데이터 무손실 보존에 대한 사용자 요구 수치"
+        }
+      ],
+      "sourceTraceabilityNote": "Primary Persona Source 3명(VC-04, 30, 50) + Secondary Persona 1명(VC-06) 매핑 완료."
+    },
+    {
+      "id": "V4-C05",
+      "name": "태오",
+      "type": "오프라인 캐시 & 로컬 소장 클라이언트",
+      "context": "인터넷이 불안정한 장소에서도 안심하고 기록하고 싶고, 개인적 기록이 외부 서버에만 남는 것에 보안상 불안감을 느낌.",
+      "goal": "네트워크 연결 없이도 기록할 수 있고 내 기록 데이터를 로컬 파일(PDF/CSV)로 안전하게 소장할 수 있는 제품 특성을 확인함.",
+      "originalServiceNeed": "Offline-First 작성, IndexedDB 로컬 저장 및 PDF/CSV 사본 백업 다운로드 서비스 원함.",
+      "normalizedPureNeed": "내 기록과 데이터에 대한 완전한 소유권과 오프라인 안전성을 확보하는 경험",
+      "siteLevelNeed": "로컬 소장 및 오프라인 선호는 원본 서비스 요구로 보존하며, 현재 웹사이트에서는 실제 지원 기능으로 제공하지 않음.",
+      "siteCoverageType": "OUT_OF_CURRENT_SCOPE_REFERENCE",
+      "siteRelevantPages": [],
+      "scopeNote": "Offline-First 작성, 로컬 저장 및 파일 추출은 현재 3 Page 포트폴리오 웹사이트 범위 밖이며 기능 지원을 약속하지 않음.",
+      "pureNeedIds": [
+        "DN-05"
+      ],
+      "requirementPatterns": [
+        "RG-05"
+      ],
+      "primaryPersonaSources": [
+        "VC-18",
+        "VC-42"
+      ],
+      "secondaryPersonaSources": [
+        "VC-05"
+      ],
+      "productPoolSources": [
+        "VC-18",
+        "VC-42"
+      ],
+      "productRequirements": [
+        "표준 PDF/CSV 추출 호환성 검토",
+        "오프라인 백업 안내 가이드 검토"
+      ],
+      "designOpportunities": [
+        "로컬 백업 안내 모듈은 현재 범위 밖 참고 요구"
+      ],
+      "globalRules": [
+        "ACCESSIBILITY_RULE",
+        "RESPONSIVE_RULE"
+      ],
+      "sourceValueStatuses": [
+        {
+          "value": "PDF/CSV",
+          "context": "로컬 백업 파일 표준",
+          "status": "PRODUCT_REQUIREMENT_CANDIDATE",
+          "note": "표준 데이터 추출 호환성 검토 후보"
+        },
+        {
+          "value": "IndexedDB",
+          "context": "로컬 캐시 시스템",
+          "status": "UNVERIFIED_ABSOLUTE",
+          "note": "웹앱 기술 사양이며 포트폴리오 사이트 수용 사양 아님"
+        }
+      ],
+      "sourceTraceabilityNote": "Primary Persona Source 2명(VC-18, 42) + Secondary 1명(VC-05). VC-42(Hero 쇼케이스 대조) 원문 근거 확인."
+    },
+    {
+      "id": "V4-C06",
+      "name": "이준",
+      "type": "미안함 없는 복귀 & 죄책감 차단 클라이언트",
+      "context": "며칠 동안 바빠서 기록을 멈추었을 때, 출석 파기 경고나 미완성 빈자리를 보면 죄책감이 들어 완전히 포기하게 됨.",
+      "goal": "한참 동안 쉬었다 돌아와도 미안함이나 압박 없이 언제든 편안하게 다시 기록을 시작할 수 있는 브랜드를 발견함.",
+      "originalServiceNeed": "연속 작성 경고를 지우고 마지막 작성 위치로 1-클릭 자동 복귀시켜 주는 앱 서비스 원함.",
+      "normalizedPureNeed": "기록 중단에 대한 죄책감이나 스트릭 강요 없이 언제든 자유롭게 돌아오는 경험",
+      "siteLevelNeed": "DAMORI의 '기록은 의무가 아닌 쉼표'라는 철학 및 미안함 없는 복귀 가이드를 경험하고 이해함.",
+      "siteCoverageType": "EXPERIENCE_PREVIEW",
+      "siteRelevantPages": [
+        "HOME (0.3 기록 경험)",
+        "BRAND (2.3 기록 철학)"
+      ],
+      "scopeNote": "실제 개인 작성 위치 복귀 포커스 앱이 아니라, 죄책감을 주지 않는 DAMORI의 브랜드 철학과 복귀 경험을 설명/미리보기함.",
+      "pureNeedIds": [
+        "DN-06",
+        "DN-12"
+      ],
+      "requirementPatterns": [
+        "RG-06"
+      ],
+      "primaryPersonaSources": [
+        "VC-07",
+        "VC-20",
+        "VC-51"
+      ],
+      "secondaryPersonaSources": [],
+      "productPoolSources": [
+        "VC-20"
+      ],
+      "productRequirements": [
+        "날짜 강요 없는 날짜 자율 서식 검토",
+        "복귀 응원 안내 문구 검토"
+      ],
+      "designOpportunities": [
+        "부담 없는 복귀 표현 UI 후보",
+        "복귀 포커스 가이드 UI 후보"
+      ],
+      "globalRules": [
+        "ACCESSIBILITY_RULE",
+        "RESPONSIVE_RULE"
+      ],
+      "sourceValueStatuses": [
+        {
+          "value": "1-클릭",
+          "context": "복귀 동선",
+          "status": "OUT_OF_CURRENT_SCOPE_REFERENCE",
+          "note": "원본 서비스 요구의 자동 복귀 수치이며 현재 웹사이트 기능 목표가 아님"
+        }
+      ],
+      "sourceTraceabilityNote": "Primary Persona Source 3명(VC-07, 20, 51) 매핑 완료. VC-20(하이브리드 바인더 대조) 원문 근거 확인."
+    },
+    {
+      "id": "V4-C07",
+      "name": "다온",
+      "type": "자율 조건 탐색 & 실측 대조 클라이언트",
+      "context": "복잡한 회원가입이나 개인정보 입력, 취향 진단 퀴즈에 피로감을 느끼며 자신만의 명확한 기준으로 제품을 탐색하길 원함.",
+      "goal": "가입이나 진단 강요 없이 내 기준(용도, 제본, 종이, 규격)에 따라 제품 후보를 자율적으로 좁히고 사양 차이를 직접 비교함.",
+      "originalServiceNeed": "회원가입 없이 4개 칩 필터로 제품을 좁히고 소재/치수 1:1 비교표를 제공하는 기능 원함.",
+      "normalizedPureNeed": "강요나 진단 없이 스스로의 기준에 따라 제품 정보를 자율 탐색하고 실측 차이를 비교하는 경험",
+      "siteLevelNeed": "DAMORI 제품군을 비교·탐색할 때 참고할 기준과 관련 정보 범위를 확인하고, 소재 및 실측 치수 대조 정보를 직접 살펴봄.",
+      "siteCoverageType": "DIRECT",
+      "siteRelevantPages": [
+        "PRODUCTS (1.3 스펙 대조 & 1.4 자율 탐색)"
+      ],
+      "scopeNote": "PRODUCTS 1.4는 동적 필터가 아닌 비실행형 탐색 기준 안내이며, 실측 치수 대조 정보는 PRODUCTS 1.3에서 확인함.",
+      "pureNeedIds": [
+        "DN-07",
+        "DN-08"
+      ],
+      "requirementPatterns": [
+        "RG-07",
+        "RG-08"
+      ],
+      "primaryPersonaSources": [
+        "VC-08",
+        "VC-09"
+      ],
+      "secondaryPersonaSources": [],
+      "productPoolSources": [
+        "VC-10",
+        "VC-11",
+        "VC-12",
+        "VC-13",
+        "VC-14",
+        "VC-15",
+        "VC-16",
+        "VC-17",
+        "VC-18",
+        "VC-19",
+        "VC-20",
+        "VC-21",
+        "VC-22",
+        "VC-23",
+        "VC-24",
+        "VC-25",
+        "VC-26",
+        "VC-27",
+        "VC-28",
+        "VC-31",
+        "VC-32",
+        "VC-33",
+        "VC-34",
+        "VC-35",
+        "VC-36",
+        "VC-37",
+        "VC-38",
+        "VC-39",
+        "VC-40",
+        "VC-41",
+        "VC-42",
+        "VC-43",
+        "VC-44",
+        "VC-45",
+        "VC-46",
+        "VC-47",
+        "VC-48",
+        "VC-49"
+      ],
+      "productRequirements": [
+        "실측 치수 대조표 구조 검토",
+        "소재 및 제본 사양 표기 검토"
+      ],
+      "designOpportunities": [
+        "사용자 기준 조건 탐색 UI 후보",
+        "소재 & 치수 1:1 대조 비교표 UI 후보"
+      ],
+      "globalRules": [
+        "ACCESSIBILITY_RULE",
+        "RESPONSIVE_RULE"
+      ],
+      "sourceValueStatuses": [
+        {
+          "value": "4개 칩",
+          "context": "자율 탐색 필터 수",
+          "status": "USER_STATED_EXPECTATION",
+          "note": "원본 사용자 기재 표현이며 확정 시스템 필터 수 아님"
+        }
+      ],
+      "sourceTraceabilityNote": "Primary Persona Source 2명(VC-08, VC-09). 38개 소스는 Product Comparison Pool Source로 계층 분리 완료."
+    }
+  ],
+  "sourceTraceability": [
+    {
+      "vcId": "VC-01",
+      "name": "은재",
+      "title": "아날로그 장문 기록",
+      "primaryV4": "V4-C01 (은재)",
+      "secondaryV4": "NONE",
+      "poolRole": "NONE",
+      "finalRole": "PRIMARY_PERSONA_SOURCE",
+      "mappingEvidence": "장문 필기 및 평면 제본 사양 요구"
+    },
+    {
+      "vcId": "VC-02",
+      "name": "지안",
+      "title": "미래 일정 흐름 통제",
+      "primaryV4": "V4-C02 (지안)",
+      "secondaryV4": "NONE",
+      "poolRole": "NONE",
+      "finalRole": "PRIMARY_PERSONA_SOURCE",
+      "mappingEvidence": "24시간 세로 타임라인 서식 요구"
+    },
+    {
+      "vcId": "VC-03",
+      "name": "하람",
+      "title": "저부담 시각 회고",
+      "primaryV4": "V4-C03 (하람)",
+      "secondaryV4": "NONE",
+      "poolRole": "NONE",
+      "finalRole": "PRIMARY_PERSONA_SOURCE",
+      "mappingEvidence": "10초 저부담 1줄 회고 서식 요구"
+    },
+    {
+      "vcId": "VC-04",
+      "name": "소담",
+      "title": "주제별 기록 탐색",
+      "primaryV4": "V4-C04 (소담)",
+      "secondaryV4": "NONE",
+      "poolRole": "NONE",
+      "finalRole": "PRIMARY_PERSONA_SOURCE",
+      "mappingEvidence": "글-서식 분리 보존 구조 요구"
+    },
+    {
+      "vcId": "VC-05",
+      "name": "태오",
+      "title": "다기기 연속성 검증",
+      "primaryV4": "V4-C02 (지안)",
+      "secondaryV4": "V4-C05 (태오)",
+      "poolRole": "NONE",
+      "finalRole": "PRIMARY_PERSONA_SOURCE",
+      "mappingEvidence": "24시간 세로 타임라인 서식 요구 + 오프라인 수용 요구"
+    },
+    {
+      "vcId": "VC-06",
+      "name": "나린",
+      "title": "꾸미기 자산 재사용",
+      "primaryV4": "V4-C01 (은재)",
+      "secondaryV4": "V4-C04 (소담)",
+      "poolRole": "NONE",
+      "finalRole": "PRIMARY_PERSONA_SOURCE",
+      "mappingEvidence": "장문 필기 및 평면 제본 사양 요구 + 서식 레이어 보존 요구"
+    },
+    {
+      "vcId": "VC-07",
+      "name": "이준",
+      "title": "중단 후 재시작",
+      "primaryV4": "V4-C06 (이준)",
+      "secondaryV4": "NONE",
+      "poolRole": "NONE",
+      "finalRole": "PRIMARY_PERSONA_SOURCE",
+      "mappingEvidence": "미안함 없는 복귀 및 죄책감 차단 요구"
+    },
+    {
+      "vcId": "VC-08",
+      "name": "다온",
+      "title": "첫 선택 부담",
+      "primaryV4": "V4-C07 (다온)",
+      "secondaryV4": "NONE",
+      "poolRole": "NONE",
+      "finalRole": "PRIMARY_PERSONA_SOURCE",
+      "mappingEvidence": "가입 없는 자율 탐색 및 실측 대조 요구"
+    },
+    {
+      "vcId": "VC-09",
+      "name": "윤슬",
+      "title": "카테고리·제품 비교",
+      "primaryV4": "V4-C07 (다온)",
+      "secondaryV4": "NONE",
+      "poolRole": "NONE",
+      "finalRole": "PRIMARY_PERSONA_SOURCE",
+      "mappingEvidence": "가입 없는 자율 탐색 및 실측 대조 요구"
+    },
+    {
+      "vcId": "VC-10",
+      "name": "온유",
+      "title": "선물 패키지 선택",
+      "primaryV4": "NONE",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRODUCT_COMPARISON_POOL_SOURCE",
+      "mappingEvidence": "200개 인벤토리 대조 소스"
+    },
+    {
+      "vcId": "VC-11",
+      "name": "가람",
+      "title": "브랜드 신뢰",
+      "primaryV4": "NONE",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRODUCT_COMPARISON_POOL_SOURCE",
+      "mappingEvidence": "200개 인벤토리 대조 소스"
+    },
+    {
+      "vcId": "VC-12",
+      "name": "해솔",
+      "title": "개인정보·보존 통제",
+      "primaryV4": "NONE",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRODUCT_COMPARISON_POOL_SOURCE",
+      "mappingEvidence": "200개 인벤토리 대조 소스"
+    },
+    {
+      "vcId": "VC-13",
+      "name": "여울",
+      "title": "접근성",
+      "primaryV4": "NONE",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRODUCT_COMPARISON_POOL_SOURCE",
+      "mappingEvidence": "200개 인벤토리 대조 소스"
+    },
+    {
+      "vcId": "VC-14",
+      "name": "마루",
+      "title": "탐색 재개",
+      "primaryV4": "V4-C03 (하람)",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRIMARY_PERSONA_SOURCE",
+      "mappingEvidence": "10초 저부담 1줄 회고 서식 요구"
+    },
+    {
+      "vcId": "VC-15",
+      "name": "새봄",
+      "title": "재료·지속가능성 정보",
+      "primaryV4": "NONE",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRODUCT_COMPARISON_POOL_SOURCE",
+      "mappingEvidence": "200개 인벤토리 대조 소스"
+    },
+    {
+      "vcId": "VC-16",
+      "name": "한결",
+      "title": "반복 설정 피로",
+      "primaryV4": "V4-C02 (지안)",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRIMARY_PERSONA_SOURCE",
+      "mappingEvidence": "24시간 세로 타임라인 서식 요구"
+    },
+    {
+      "vcId": "VC-17",
+      "name": "채운",
+      "title": "아날로그 정보 부족",
+      "primaryV4": "V4-C01 (은재)",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRIMARY_PERSONA_SOURCE",
+      "mappingEvidence": "장문 필기 및 평면 제본 사양 요구"
+    },
+    {
+      "vcId": "VC-18",
+      "name": "서우",
+      "title": "디지털 내보내기 판단",
+      "primaryV4": "V4-C05 (태오)",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRIMARY_PERSONA_SOURCE",
+      "mappingEvidence": "오프라인 로컬 데이터 소장 요구"
+    },
+    {
+      "vcId": "VC-19",
+      "name": "초아",
+      "title": "가족 공동 기록 경계",
+      "primaryV4": "NONE",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRODUCT_COMPARISON_POOL_SOURCE",
+      "mappingEvidence": "200개 인벤토리 대조 소스"
+    },
+    {
+      "vcId": "VC-20",
+      "name": "주원",
+      "title": "기록 방식 전환",
+      "primaryV4": "V4-C06 (이준)",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRIMARY_PERSONA_SOURCE",
+      "mappingEvidence": "미안함 없는 복귀 및 죄책감 차단 요구"
+    },
+    {
+      "vcId": "VC-21",
+      "name": "민서",
+      "title": "예산 미정 탐색",
+      "primaryV4": "NONE",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRODUCT_COMPARISON_POOL_SOURCE",
+      "mappingEvidence": "200개 인벤토리 대조 소스"
+    },
+    {
+      "vcId": "VC-22",
+      "name": "선율",
+      "title": "기록 공개 부담",
+      "primaryV4": "NONE",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRODUCT_COMPARISON_POOL_SOURCE",
+      "mappingEvidence": "200개 인벤토리 대조 소스"
+    },
+    {
+      "vcId": "VC-23",
+      "name": "도윤",
+      "title": "복잡한 필터 회피",
+      "primaryV4": "NONE",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRODUCT_COMPARISON_POOL_SOURCE",
+      "mappingEvidence": "200개 인벤토리 대조 소스"
+    },
+    {
+      "vcId": "VC-24",
+      "name": "아라",
+      "title": "근거 시점 확인",
+      "primaryV4": "NONE",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRODUCT_COMPARISON_POOL_SOURCE",
+      "mappingEvidence": "200개 인벤토리 대조 소스"
+    },
+    {
+      "vcId": "VC-25",
+      "name": "재희",
+      "title": "선물 실패 회피",
+      "primaryV4": "NONE",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRODUCT_COMPARISON_POOL_SOURCE",
+      "mappingEvidence": "200개 인벤토리 대조 소스"
+    },
+    {
+      "vcId": "VC-26",
+      "name": "지후",
+      "title": "중단 후 비교 맥락",
+      "primaryV4": "NONE",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRODUCT_COMPARISON_POOL_SOURCE",
+      "mappingEvidence": "200개 인벤토리 대조 소스"
+    },
+    {
+      "vcId": "VC-27",
+      "name": "예린",
+      "title": "브랜드 주장 검증",
+      "primaryV4": "NONE",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRODUCT_COMPARISON_POOL_SOURCE",
+      "mappingEvidence": "200개 인벤토리 대조 소스"
+    },
+    {
+      "vcId": "VC-28",
+      "name": "수현",
+      "title": "오래된 기록 재탐색",
+      "primaryV4": "NONE",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRODUCT_COMPARISON_POOL_SOURCE",
+      "mappingEvidence": "200개 인벤토리 대조 소스"
+    },
+    {
+      "vcId": "VC-29",
+      "name": "건우",
+      "title": "실물 보관 공간 제약",
+      "primaryV4": "V4-C01 (은재)",
+      "secondaryV4": "NONE",
+      "poolRole": "NONE",
+      "finalRole": "PRIMARY_PERSONA_SOURCE",
+      "mappingEvidence": "장문 필기 및 평면 제본 사양 요구"
+    },
+    {
+      "vcId": "VC-30",
+      "name": "서진",
+      "title": "커스터마이징 후회 방지",
+      "primaryV4": "V4-C04 (소담)",
+      "secondaryV4": "NONE",
+      "poolRole": "NONE",
+      "finalRole": "PRIMARY_PERSONA_SOURCE",
+      "mappingEvidence": "글-서식 분리 보존 구조 요구"
+    },
+    {
+      "vcId": "VC-31",
+      "name": "지민",
+      "title": "알림 피로 회피",
+      "primaryV4": "NONE",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRODUCT_COMPARISON_POOL_SOURCE",
+      "mappingEvidence": "200개 인벤토리 대조 소스"
+    },
+    {
+      "vcId": "VC-32",
+      "name": "유진",
+      "title": "빠른 기록의 의미 선택",
+      "primaryV4": "V4-C03 (하람)",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRIMARY_PERSONA_SOURCE",
+      "mappingEvidence": "10초 저부담 1줄 회고 서식 요구"
+    },
+    {
+      "vcId": "VC-33",
+      "name": "연우",
+      "title": "기존 기록 이전 판단",
+      "primaryV4": "NONE",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRODUCT_COMPARISON_POOL_SOURCE",
+      "mappingEvidence": "200개 인벤토리 대조 소스"
+    },
+    {
+      "vcId": "VC-34",
+      "name": "하윤",
+      "title": "선물 수령자의 접근성",
+      "primaryV4": "NONE",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRODUCT_COMPARISON_POOL_SOURCE",
+      "mappingEvidence": "200개 인벤토리 대조 소스"
+    },
+    {
+      "vcId": "VC-35",
+      "name": "시온",
+      "title": "생활 변화에 따른 방식 수정",
+      "primaryV4": "NONE",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRODUCT_COMPARISON_POOL_SOURCE",
+      "mappingEvidence": "200개 인벤토리 대조 소스"
+    },
+    {
+      "vcId": "VC-36",
+      "name": "나윤",
+      "title": "리필·수리 가능성",
+      "primaryV4": "NONE",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRODUCT_COMPARISON_POOL_SOURCE",
+      "mappingEvidence": "200개 인벤토리 대조 소스"
+    },
+    {
+      "vcId": "VC-37",
+      "name": "태윤",
+      "title": "콘텐츠와 제품 탐색 구분",
+      "primaryV4": "NONE",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRODUCT_COMPARISON_POOL_SOURCE",
+      "mappingEvidence": "200개 인벤토리 대조 소스"
+    },
+    {
+      "vcId": "VC-38",
+      "name": "라온",
+      "title": "가칭 브랜드 인지",
+      "primaryV4": "NONE",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRODUCT_COMPARISON_POOL_SOURCE",
+      "mappingEvidence": "200개 인벤토리 대조 소스"
+    },
+    {
+      "vcId": "VC-39",
+      "name": "은호",
+      "title": "포트폴리오 과정 검증",
+      "primaryV4": "NONE",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRODUCT_COMPARISON_POOL_SOURCE",
+      "mappingEvidence": "200개 인벤토리 대조 소스"
+    },
+    {
+      "vcId": "VC-40",
+      "name": "세아",
+      "title": "긴 랜딩 서사 탐색",
+      "primaryV4": "NONE",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRODUCT_COMPARISON_POOL_SOURCE",
+      "mappingEvidence": "200개 인벤토리 대조 소스"
+    },
+    {
+      "vcId": "VC-41",
+      "name": "유나",
+      "title": "200개 후보군 전체 방향 감각",
+      "primaryV4": "NONE",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRODUCT_COMPARISON_POOL_SOURCE",
+      "mappingEvidence": "200개 인벤토리 대조 소스"
+    },
+    {
+      "vcId": "VC-42",
+      "name": "현서",
+      "title": "시각적 Hero와 탐색 균형",
+      "primaryV4": "V4-C05 (태오)",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRIMARY_PERSONA_SOURCE",
+      "mappingEvidence": "오프라인 로컬 데이터 소장 요구"
+    },
+    {
+      "vcId": "VC-43",
+      "name": "다빈",
+      "title": "비판매 포트폴리오 인지",
+      "primaryV4": "NONE",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRODUCT_COMPARISON_POOL_SOURCE",
+      "mappingEvidence": "200개 인벤토리 대조 소스"
+    },
+    {
+      "vcId": "VC-44",
+      "name": "로운",
+      "title": "이미지 실패 상황의 제품 판단",
+      "primaryV4": "NONE",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRODUCT_COMPARISON_POOL_SOURCE",
+      "mappingEvidence": "200개 인벤토리 대조 소스"
+    },
+    {
+      "vcId": "VC-45",
+      "name": "해나",
+      "title": "한국적 정서의 진정성",
+      "primaryV4": "NONE",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRODUCT_COMPARISON_POOL_SOURCE",
+      "mappingEvidence": "200개 인벤토리 대조 소스"
+    },
+    {
+      "vcId": "VC-46",
+      "name": "지율",
+      "title": "긴 페이지의 스크린리더 탐색",
+      "primaryV4": "NONE",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRODUCT_COMPARISON_POOL_SOURCE",
+      "mappingEvidence": "200개 인벤토리 대조 소스"
+    },
+    {
+      "vcId": "VC-47",
+      "name": "주하",
+      "title": "모바일 제품 레일 발견",
+      "primaryV4": "NONE",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRODUCT_COMPARISON_POOL_SOURCE",
+      "mappingEvidence": "200개 인벤토리 대조 소스"
+    },
+    {
+      "vcId": "VC-48",
+      "name": "태린",
+      "title": "대표 15개 선정 이유 확인",
+      "primaryV4": "NONE",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRODUCT_COMPARISON_POOL_SOURCE",
+      "mappingEvidence": "200개 인벤토리 대조 소스"
+    },
+    {
+      "vcId": "VC-49",
+      "name": "윤재",
+      "title": "브랜드와 제품의 일관성",
+      "primaryV4": "NONE",
+      "secondaryV4": "NONE",
+      "poolRole": "C07-Product-Pool",
+      "finalRole": "PRODUCT_COMPARISON_POOL_SOURCE",
+      "mappingEvidence": "200개 인벤토리 대조 소스"
+    },
+    {
+      "vcId": "VC-50",
+      "name": "아인",
+      "title": "카테고리 경계 이해",
+      "primaryV4": "V4-C04 (소담)",
+      "secondaryV4": "NONE",
+      "poolRole": "NONE",
+      "finalRole": "PRIMARY_PERSONA_SOURCE",
+      "mappingEvidence": "글-서식 분리 보존 구조 요구"
+    },
+    {
+      "vcId": "VC-51",
+      "name": "이솔",
+      "title": "저연결성 긴 페이지 복귀",
+      "primaryV4": "V4-C06 (이준)",
+      "secondaryV4": "NONE",
+      "poolRole": "NONE",
+      "finalRole": "PRIMARY_PERSONA_SOURCE",
+      "mappingEvidence": "미안함 없는 복귀 및 죄책감 차단 요구"
+    }
+  ]
+}

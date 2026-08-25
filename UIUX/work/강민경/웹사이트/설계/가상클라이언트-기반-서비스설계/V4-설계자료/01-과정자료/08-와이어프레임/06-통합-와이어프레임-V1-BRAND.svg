@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 2400" width="1200" height="2400">
+  <!-- CANVAS BACKGROUND -->
+  <rect width="1200" height="2400" fill="#F0F0F0"/>
+  
+  <!-- PAGE HEADER -->
+  <rect width="1200" height="60" fill="#222222"/>
+  <text x="40" y="38" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#FFFFFF">DAMORI V4 INTEGRATED WIREFRAME V1 - 2.0 BRAND</text>
+  
+  <!-- GNB -->
+  <g transform="translate(0, 60)">
+    <rect width="1200" height="60" fill="#FFFFFF" stroke="#CCCCCC"/>
+    <text x="40" y="38" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#111111">[LOGO / HOME]</text>
+    <text x="880" y="38" font-family="Arial, sans-serif" font-size="18" fill="#444444">PRODUCTS</text>
+    <text x="1040" y="38" font-family="Arial, sans-serif" font-size="18" fill="#444444">BRAND</text>
+  </g>
+  
+  <!-- SECTIONS -->
+  
+    <!-- SECTION 2.1 -->
+    <g transform="translate(40, 130)">
+      <rect width="1120" height="260" fill="#F8F8F8" stroke="#CCCCCC" stroke-width="1.5"/>
+      <rect width="1120" height="40" fill="#EAEAEA"/>
+      <text x="20" y="26" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#444444">SECTION 2.1 DAMORI INTRODUCTION</text>
+      <rect x="20" y="55" width="1080" height="185" fill="#FFFFFF" stroke="#E0E0E0"/>
+      <text x="40" y="147" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#222222">DAMORI: 쉼표를 담는 브랜드 명칭의 의미와 비전 서사</text>
+    </g>
+
+    <!-- SECTION 2.2 -->
+    <g transform="translate(40, 420)">
+      <rect width="1120" height="280" fill="#F8F8F8" stroke="#CCCCCC" stroke-width="1.5"/>
+      <rect width="1120" height="40" fill="#EAEAEA"/>
+      <text x="20" y="26" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#444444">SECTION 2.2 BRAND EXISTENCE &amp; PURPOSE</text>
+      <rect x="20" y="55" width="1080" height="205" fill="#FFFFFF" stroke="#E0E0E0"/>
+      <text x="40" y="157" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#222222">바쁜 일상 속 기록의 쉼표 메시지 및 존재 이유 서사</text>
+    </g>
+
+    <!-- SECTION 2.3 -->
+    <g transform="translate(40, 730)">
+      <rect width="1120" height="360" fill="#F8F8F8" stroke="#CCCCCC" stroke-width="1.5"/>
+      <rect width="1120" height="40" fill="#EAEAEA"/>
+      <text x="20" y="26" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#444444">SECTION 2.3 RECORDING PHILOSOPHY</text>
+      <rect x="20" y="55" width="1080" height="285" fill="#FFFFFF" stroke="#E0E0E0"/>
+      <text x="40" y="197" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#222222">기록은 의무가 아닌 쉼표 (스트릭 파기 미안함 차단 철학 서사)</text>
+    </g>
+
+    <!-- SECTION 2.4 -->
+    <g transform="translate(40, 1120)">
+      <rect width="1120" height="280" fill="#F8F8F8" stroke="#CCCCCC" stroke-width="1.5"/>
+      <rect width="1120" height="40" fill="#EAEAEA"/>
+      <text x="20" y="26" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#444444">SECTION 2.4 CORE VALUES &amp; USER VALUE</text>
+      <rect x="20" y="55" width="1080" height="205" fill="#FFFFFF" stroke="#E0E0E0"/>
+      <text x="40" y="157" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#222222">Zero Strain | Data Integrity | Autonomy 3대 상위 가치 체계</text>
+    </g>
+
+    <!-- SECTION 2.5 -->
+    <g transform="translate(40, 1430)">
+      <rect width="1120" height="260" fill="#F8F8F8" stroke="#CCCCCC" stroke-width="1.5"/>
+      <rect width="1120" height="40" fill="#EAEAEA"/>
+      <text x="20" y="26" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#444444">SECTION 2.5 ANALOG &amp; DIGITAL PRINCIPLE</text>
+      <rect x="20" y="55" width="1080" height="185" fill="#FFFFFF" stroke="#E0E0E0"/>
+      <text x="40" y="147" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#222222">아날로그 감성 물성과 디지털 편의성의 상호 보완 관계</text>
+    </g>
+
+    <!-- SECTION 2.6 -->
+    <g transform="translate(40, 1720)">
+      <rect width="1120" height="300" fill="#F8F8F8" stroke="#CCCCCC" stroke-width="1.5"/>
+      <rect width="1120" height="40" fill="#EAEAEA"/>
+      <text x="20" y="26" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#444444">SECTION 2.6 PRODUCT PRINCIPLE</text>
+      <rect x="20" y="55" width="1080" height="225" fill="#FFFFFF" stroke="#E0E0E0"/>
+      <text x="40" y="167" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#222222">도구를 과시하지 않는 DAMORI 제품 제작 원칙 정보</text>
+    </g>
+  
+  <!-- FOOTER -->
+  <g transform="translate(0, 2300)">
+    <rect width="1200" height="100" fill="#111111"/>
+    <text x="40" y="58" font-family="Arial, sans-serif" font-size="16" fill="#888888">DAMORI OFFICIAL INTEGRATED WIREFRAME V1 | GRAYSCALE ONLY | NO BRAND COLOR</text>
+  </g>
+</svg>

@@ -1,0 +1,76 @@
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Noto Sans KR, Malgun Gothic, Arial, sans-serif","primaryTextColor":"#243029","lineColor":"#66736a","clusterBkg":"#fbfaf6","clusterBorder":"#8b968e"},"flowchart":{"curve":"basis","nodeSpacing":34,"rankSpacing":54,"htmlLabels":true}}}%%
+flowchart TB
+  SRC["사용자 요구·출처<br/><b>51 원천 클라이언트 · 7 대표 클라이언트</b><br/>153개 A/B/C 후보 → DN/RG → 메뉴·콘텐츠·기능"]
+  LEG["정보 우선순위·상태<br/><b>P1</b> 반드시 표시 · P2 보조 · P3 선택<br/>[확인] · [확인 필요] · [미확정] · [범위 밖]"]
+
+  subgraph PAGES["대표 사이트 구조 — 3 페이지 / 16 구역"]
+  direction LR
+  subgraph HOME["메인 페이지 (HOME)<br/>브랜드 이해에서 제품 세계로 이어지는 긴 스크롤 포트폴리오"]
+    direction TB
+    H01["<b>0.1 첫인상</b><br/>목적: 브랜드 성격 이해<br/><b>P1</b> DAMORI · 기록 라이프스타일 · 포트폴리오<br/>콘텐츠: 브랜드 식별·메시지·시각 자료<br/>기능: 스크롤·브랜드 상세 이동<br/>근거: VC11·38·43·49 / BRAND_CORE"]
+    H02["<b>0.2 브랜드 핵심 소개</b><br/>목적: 핵심 가치와 이익 이해<br/><b>P1</b> 편안함 · 보존 · 자율성<br/>콘텐츠: 사용자 문제→브랜드 약속<br/>기능: Section·브랜드 상세 이동<br/>근거: C03·C04·C06·C07 / RG03·04·06·07"]
+    H03["<b>0.3 기록 경험</b><br/>목적: 실제 상황과 철학 연결<br/><b>P1</b> 부담 없음 · 원본 보존 · 중단 후 복귀<br/>콘텐츠: 세 경험 사례<br/>기능: 제품·철학 정보 이동<br/>근거: C03·C04·C06 / DN03·04·06·12·13"]
+    H04["<b>0.4 기록 방식과 제품 연결</b><br/>목적: 방식→제품 탐색 이유 설명<br/><b>P1</b> 기록 목적 · Analog/Digital · 제품군<br/>콘텐츠: 목적→매체→제품 Bridge<br/>기능: 제품군·매체 원칙 이동<br/>근거: C01·C02·C04, VC20·37"]
+    H05["<b>0.5 제품 포트폴리오</b><br/>목적: 제품 세계를 포트폴리오로 증명<br/><b>P1</b> 200 후보군 · 임시 그룹 · 최소 15개 수용 구성<br/>콘텐츠: 유형·방식·확인 특징<br/>기능: 제품 정보·PRODUCTS 이동<br/>근거: VC09·41·42·48·50 / PRODUCT_SOURCE"]
+    H06["<b>0.6 마무리 및 이동</b><br/>목적: 다음 탐색 자율 선택<br/><b>P1</b> 현재 위치 · 다음 탐색 · 하단 정보<br/>콘텐츠: PRODUCTS/BRAND 역할<br/>기능: 페이지·구역 이동<br/>근거: VC40·46·51 / NAV_RULE"]
+    H01 --> H02 --> H03 --> H04 --> H05 --> H06
+  end
+
+  subgraph PRODUCTS["카테고리·서브 페이지 (PRODUCTS)<br/>제품군 범위와 제품 간 차이를 이해하는 포트폴리오 보조 페이지"]
+    direction TB
+    P11["<b>1.1 대표 비주얼</b><br/>목적: 페이지 범위·기록 맥락 전달<br/><b>P1</b> 제목 · 현재 범위 · 기록 맥락<br/>콘텐츠: 텍스트+대표 시각 자료<br/>기능: 제품군·GNB 이동<br/>근거: VC42·47·48 / PRODUCT_SOURCE"]
+    P12["<b>1.2 제품군 탐색</b><br/>목적: 검토 후보군 범위 이해<br/><b>P1</b> 임시 그룹 · 대표/미탐색 · 중복 소속<br/>콘텐츠: 그룹 보드·범위 요약<br/>기능: 그룹·사양 정보 이동<br/>근거: C02·C07, VC09·41·50 / RG02·07"]
+    P13["<b>1.3 제품 특징·사양</b><br/>목적: 제품 차이와 근거 상태 이해<br/><b>P1</b> 유형/특징 · 재질/제본/서식/치수 · 상태<br/>콘텐츠: 특징 카드·사양 대조표<br/>기능: 대조·기준/원칙 이동<br/>근거: C01·C02·C04·C07 / RG01·02·04·08"]
+    P14["<b>1.4 사용자 기준 탐색 안내</b><br/>목적: 자기 기준으로 정보 참고<br/><b>P1</b> 목적/분량 · 매체/물성/보존 · 휴대/정리<br/>콘텐츠: 비실행형 기준 카드<br/>기능: 기준 참고·1.3 재대조<br/>근거: C07, VC08·23·34·46 / RG07·08"]
+    P11 --> P12 --> P13 --> P14
+    P14 -. "비교 기준 적용" .-> P13
+  end
+
+  subgraph BRAND["브랜드 소개 페이지 (BRAND)<br/>존재 이유·기록 철학·제품 원칙을 설명하는 편집형 페이지"]
+    direction TB
+    B21["<b>2.1 브랜드 소개</b><br/>목적: 무엇이며 아닌지 정의<br/><b>P1</b> DAMORI 정의 · 현재 상태 · 범위<br/>콘텐츠: 정의·다루는 것·아닌 것<br/>기능: 순차 읽기·HOME 이동<br/>근거: VC11·38·39·43 / BRAND_CORE"]
+    B22["<b>2.2 존재 이유</b><br/>목적: 사용자 문제에서 이유 도출<br/><b>P1</b> 기록 부담 · 선택 피로 · 브랜드 약속<br/>콘텐츠: 문제→방향→존재 이유<br/>기능: 순차 읽기·근거 확인<br/>근거: VC11·27·43, C03·C06"]
+    B23["<b>2.3 기록 철학</b><br/>목적: 의무가 아닌 기록 원칙<br/><b>P1</b> 작게 시작 · 멈춤 허용 · 죄책감 없는 복귀<br/>콘텐츠: 철학 문장·경험 사례<br/>기능: 경험·가치 이동<br/>근거: C03·C06, VC07·14·32 / RG03·06"]
+    B24["<b>2.4 핵심 가치</b><br/>목적: 가치와 실제 적용 연결<br/><b>P1</b> 편안함 · 보존 · 자율성의 의미/이익/적용<br/>콘텐츠: 웹사이트·제품 적용 관계<br/>기능: 관련 구역 이동<br/>근거: C01·C04·C06·C07 / RG01·04·06·07"]
+    B25["<b>2.5 아날로그·디지털 원칙</b><br/>목적: 두 매체의 상호 보완 설명<br/><b>P1</b> 물성/손기록 · 접근/정리/참조 · 상호 보완<br/>콘텐츠: 매체 역할 비교 서사<br/>기능: 기록 방식·제품 원칙 이동<br/>근거: VC01·20·28·37 / BRAND_CORE"]
+    B26["<b>2.6 제품 원칙</b><br/>목적: 제품 정보와 철학 연결<br/><b>P1</b> 확인 정보 · 미확정 구분 · 선택 비강요<br/>콘텐츠: 정보 원칙·적용 예시<br/>기능: 1.3 제품 정보 이동<br/>근거: C01·C07, VC15·17·24·45·49"]
+    B21 --> B22 --> B23 --> B24 --> B25 --> B26
+  end
+  end
+
+  subgraph PRODUCT_FLOW["제품 정보 구조 — 확정 분류가 아닌 검토 관계"]
+    direction TB
+    POOL["약 200개 제품 후보군"] --> WG["임시 제품 정보 그룹<br/>[미확정] 공식 분류 아님"] --> SET15["메인 최소 15개 수용 구성<br/>[미확정] 최종 선정 아님"] --> SPEC["제품 특징·사양 비교<br/>[확인] / [확인 필요] / [미확정]"]
+  end
+
+  GLOBAL["전역 구조 원칙<br/><b>P1</b> 제목 계층 · 현재 위치 · 구역 이동<br/>키보드 이동 · 텍스트 대체 · 긴 페이지 탐색<br/>시각 자료 실패에도 핵심 텍스트 유지"]
+  REL["<b>페이지 간 교차 관계 · 사용자 목적</b><br/>0.2 → 2.1 브랜드 상세 확인 · 0.3 → 2.3 철학 근거 확인<br/>0.4 → 1.2 제품 정보 탐색 · 0.5 → 1.3 특징·사양 확인<br/>1.3 → 2.6 제품 원칙 확인 · 1.4 → 1.3 비교 기준 적용<br/>2.5 → 0.4 매체 원칙 적용 · 2.6 → 1.3 제품 원칙 검증"]
+  OUT["현재 구조에 포함하지 않는 요구 [범위 밖]<br/>로그인 · 회원 · 장바구니 · 결제<br/>편집기 · 저장 · 동기화 · 내보내기<br/>자동 추천 · 실행형 필터 · 20 페이지 앱"]
+
+  SRC --> H01
+  SRC --> P11
+  SRC --> B21
+  LEG -.-> H01
+  LEG -.-> P11
+  LEG -.-> B21
+  GLOBAL -. "전 페이지 공통" .-> H01
+  GLOBAL -. "전 페이지 공통" .-> P11
+  GLOBAL -. "전 페이지 공통" .-> B21
+  H06 --> REL
+  P14 --> REL
+  B26 --> REL
+  REL --> POOL
+  OUT -. "검토 후 의도적 제외" .-> GLOBAL
+
+  classDef source fill:#eef2ec,stroke:#66736a,stroke-width:1.5px,color:#243029;
+  classDef home fill:#f7f2e8,stroke:#9b7b4f,stroke-width:1.5px,color:#2d2922;
+  classDef products fill:#edf2e8,stroke:#6f835f,stroke-width:1.5px,color:#243024;
+  classDef brand fill:#edf0f3,stroke:#687989,stroke-width:1.5px,color:#252d34;
+  classDef meta fill:#fafafa,stroke:#858585,stroke-width:1px,stroke-dasharray:4 3,color:#333;
+  classDef out fill:#f7eeee,stroke:#9a6d6d,stroke-width:1px,stroke-dasharray:5 3,color:#4b3030;
+  class SRC,LEG,POOL,WG,SET15,SPEC source;
+  class H01,H02,H03,H04,H05,H06 home;
+  class P11,P12,P13,P14 products;
+  class B21,B22,B23,B24,B25,B26 brand;
+  class GLOBAL,REL meta;
+  class OUT out;

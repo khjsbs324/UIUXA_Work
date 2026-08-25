@@ -1,0 +1,378 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 3360" width="1200" height="3360">
+  <!-- CANVAS BACKGROUND -->
+  <rect width="1200" height="3360" fill="#F4F4F4"/>
+  
+  <!-- PAGE HEADER -->
+  <rect width="1200" height="60" fill="#222222"/>
+  <text x="40" y="38" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF">DAMORI V4 INTEGRATED WIREFRAME V2 - 0.0 HOME / MAIN</text>
+  
+  <!-- GNB -->
+  <g id="GNB" transform="translate(0, 60)">
+    <rect width="1200" height="60" fill="#FFFFFF" stroke="#CCCCCC"/>
+    <text x="40" y="38" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#111111">[LOGO / HOME]</text>
+    <text x="880" y="38" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#444444">PRODUCTS</text>
+    <text x="1040" y="38" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#444444">BRAND</text>
+  </g>
+
+  <!-- SECTIONS -->
+  
+  <!-- SECTION 0.1: FIRST IMPRESSION -->
+  <g id="SECTION_0.1" transform="translate(40, 140)">
+    <rect width="1120" height="420" fill="#FFFFFF" stroke="#BBBBBB" stroke-width="1.5" rx="4"/>
+    <rect width="1120" height="36" fill="#EAEAEA" rx="4"/>
+    <text x="20" y="24" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333333">SECTION 0.1 FIRST IMPRESSION (Brand Narrative &amp; Hero Visual)</text>
+    
+    <!-- Left: Narrative Text & CTA -->
+    <g transform="translate(30, 60)">
+      <rect x="0" y="0" width="510" height="325" fill="#F9F9F9" stroke="#E0E0E0" rx="4"/>
+      <text x="25" y="45" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#111111">DAMORI: 바쁜 일상 속 기록의 쉼표</text>
+      <text x="25" y="75" font-family="Arial, sans-serif" font-size="14" fill="#666666">SUBHEADING: 일상의 부담을 덜어주는 아날로그 &amp; 디지털 기록 도구</text>
+      
+      <rect x="25" y="105" width="460" height="12" fill="#D5D5D5"/>
+      <rect x="25" y="125" width="420" height="12" fill="#E0E0E0"/>
+      <rect x="25" y="145" width="440" height="12" fill="#E0E0E0"/>
+      <rect x="25" y="165" width="380" height="12" fill="#E0E0E0"/>
+      
+      <!-- CTA Area -->
+      <g transform="translate(25, 230)">
+        <rect x="0" y="0" width="220" height="50" fill="#333333" rx="4"/>
+        <text x="35" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">[ EXPLORE PRODUCTS ]</text>
+      </g>
+    </g>
+    
+    <!-- Right: Representative Hero Visual Placeholder -->
+    <g transform="translate(560, 60)">
+      <rect x="0" y="0" width="530" height="325" fill="#E5E5E5" stroke="#CCCCCC" rx="4"/>
+      <line x1="0" y1="0" x2="530" y2="325" stroke="#D0D0D0" stroke-width="1.5"/>
+      <line x1="0" y1="325" x2="530" y2="0" stroke="#D0D0D0" stroke-width="1.5"/>
+      <rect x="115" y="135" width="300" height="55" fill="#FFFFFF" opacity="0.9" rx="4"/>
+      <text x="140" y="168" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#222222">HERO VISUAL PLACEHOLDER</text>
+    </g>
+  </g>
+
+  <!-- SECTION 0.2: BRAND CORE SUMMARY -->
+  <g id="SECTION_0.2" transform="translate(40, 580)">
+    <rect width="1120" height="320" fill="#FFFFFF" stroke="#BBBBBB" stroke-width="1.5" rx="4"/>
+    <rect width="1120" height="36" fill="#EAEAEA" rx="4"/>
+    <text x="20" y="24" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333333">SECTION 0.2 BRAND CORE SUMMARY (3 Core Value Columns)</text>
+    
+    <text x="30" y="70" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#111111">DAMORI 3대 상위 가치 체계</text>
+    
+    <!-- Value 1 -->
+    <g transform="translate(30, 90)">
+      <rect width="340" height="190" fill="#F8F8F8" stroke="#DDDDDD" rx="4"/>
+      <rect x="15" y="20" width="310" height="30" fill="#E0E0E0"/>
+      <text x="25" y="40" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#222222">VALUE 01: 사색의 깊이</text>
+      <rect x="15" y="65" width="280" height="10" fill="#D0D0D0"/>
+      <rect x="15" y="85" width="290" height="10" fill="#E0E0E0"/>
+      <rect x="15" y="105" width="250" height="10" fill="#E0E0E0"/>
+      <text x="15" y="150" font-family="Arial, sans-serif" font-size="12" fill="#666666">Zero Strain: 기록의 부담을 덜어주는 가치</text>
+    </g>
+    
+    <!-- Value 2 -->
+    <g transform="translate(390, 90)">
+      <rect width="340" height="190" fill="#F8F8F8" stroke="#DDDDDD" rx="4"/>
+      <rect x="15" y="20" width="310" height="30" fill="#E0E0E0"/>
+      <text x="25" y="40" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#222222">VALUE 02: 글 원본 보존성</text>
+      <rect x="15" y="65" width="280" height="10" fill="#D0D0D0"/>
+      <rect x="15" y="85" width="290" height="10" fill="#E0E0E0"/>
+      <rect x="15" y="105" width="250" height="10" fill="#E0E0E0"/>
+      <text x="15" y="150" font-family="Arial, sans-serif" font-size="12" fill="#666666">Data Integrity: 기록의 영속성과 완전성</text>
+    </g>
+    
+    <!-- Value 3 -->
+    <g transform="translate(750, 90)">
+      <rect width="340" height="190" fill="#F8F8F8" stroke="#DDDDDD" rx="4"/>
+      <rect x="15" y="20" width="310" height="30" fill="#E0E0E0"/>
+      <text x="25" y="40" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#222222">VALUE 03: 자율성 가치</text>
+      <rect x="15" y="65" width="280" height="10" fill="#D0D0D0"/>
+      <rect x="15" y="85" width="290" height="10" fill="#E0E0E0"/>
+      <rect x="15" y="105" width="250" height="10" fill="#E0E0E0"/>
+      <text x="15" y="150" font-family="Arial, sans-serif" font-size="12" fill="#666666">Autonomy: 사용자 중심 자율 탐색권</text>
+    </g>
+  </g>
+
+  <!-- SECTION 0.3: RECORDING EXPERIENCE -->
+  <g id="SECTION_0.3" transform="translate(40, 920)">
+    <rect width="1120" height="380" fill="#FFFFFF" stroke="#BBBBBB" stroke-width="1.5" rx="4"/>
+    <rect width="1120" height="36" fill="#EAEAEA" rx="4"/>
+    <text x="20" y="24" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333333">SECTION 0.3 RECORDING EXPERIENCE (Experiential Guide Group)</text>
+    
+    <text x="30" y="70" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#111111">나에게 맞는 주요 기록 경험 가이드</text>
+    
+    <!-- Experience Card 1 -->
+    <g transform="translate(30, 90)">
+      <rect width="340" height="255" fill="#F9F9F9" stroke="#CCCCCC" rx="4"/>
+      <rect width="340" height="120" fill="#E0E0E0"/>
+      <text x="90" y="65" font-family="Arial, sans-serif" font-size="14" fill="#555555">[VISUAL PLACEHOLDER]</text>
+      <text x="20" y="150" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#111111">저부담 회고 경험</text>
+      <rect x="20" y="165" width="280" height="10" fill="#D5D5D5"/>
+      <rect x="20" y="185" width="240" height="10" fill="#E0E0E0"/>
+      <text x="20" y="225" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#444444">[ LEARN MORE ]</text>
+    </g>
+    
+    <!-- Experience Card 2 -->
+    <g transform="translate(390, 90)">
+      <rect width="340" height="255" fill="#F9F9F9" stroke="#CCCCCC" rx="4"/>
+      <rect width="340" height="120" fill="#E0E0E0"/>
+      <text x="90" y="65" font-family="Arial, sans-serif" font-size="14" fill="#555555">[VISUAL PLACEHOLDER]</text>
+      <text x="20" y="150" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#111111">글 원본 보존 경험</text>
+      <rect x="20" y="165" width="280" height="10" fill="#D5D5D5"/>
+      <rect x="20" y="185" width="240" height="10" fill="#E0E0E0"/>
+      <text x="20" y="225" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#444444">[ LEARN MORE ]</text>
+    </g>
+    
+    <!-- Experience Card 3 -->
+    <g transform="translate(750, 90)">
+      <rect width="340" height="255" fill="#F9F9F9" stroke="#CCCCCC" rx="4"/>
+      <rect width="340" height="120" fill="#E0E0E0"/>
+      <text x="90" y="65" font-family="Arial, sans-serif" font-size="14" fill="#555555">[VISUAL PLACEHOLDER]</text>
+      <text x="20" y="150" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#111111">편안한 복귀 경험</text>
+      <rect x="20" y="165" width="280" height="10" fill="#D5D5D5"/>
+      <rect x="20" y="185" width="240" height="10" fill="#E0E0E0"/>
+      <text x="20" y="225" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#444444">[ LEARN MORE ]</text>
+    </g>
+  </g>
+
+  <!-- SECTION 0.4: PRODUCT GROUPS INTRO (Bridge) -->
+  <g id="SECTION_0.4" transform="translate(40, 1320)">
+    <rect width="1120" height="280" fill="#FFFFFF" stroke="#BBBBBB" stroke-width="1.5" rx="4"/>
+    <rect width="1120" height="36" fill="#EAEAEA" rx="4"/>
+    <text x="20" y="24" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333333">SECTION 0.4 PRODUCT GROUPS INTRO (Bridge Layout)</text>
+    
+    <g transform="translate(30, 60)">
+      <!-- Left Bridge Concept -->
+      <rect width="520" height="185" fill="#F8F8F8" stroke="#DDDDDD" rx="4"/>
+      <text x="25" y="40" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#111111">ANALOG &amp; DIGITAL HYBRID LINEUP</text>
+      <rect x="25" y="60" width="460" height="10" fill="#D5D5D5"/>
+      <rect x="25" y="80" width="420" height="10" fill="#E0E0E0"/>
+      <text x="25" y="125" font-family="Arial, sans-serif" font-size="13" fill="#666666">기록 경험을 돕는 하이브리드 결합 도구 아카이브 안내</text>
+      
+      <!-- Right Bridge CTA -->
+      <g transform="translate(560, 0)">
+        <rect width="500" height="185" fill="#EAEAEA" stroke="#CCCCCC" rx="4"/>
+        <text x="30" y="55" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#222222">포트폴리오 제품군 전체 탐색</text>
+        <rect x="30" y="100" width="240" height="45" fill="#333333" rx="4"/>
+        <text x="45" y="127" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">[ VIEW PRODUCT PORTFOLIO ]</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- SECTION 0.5: PORTFOLIO SHOWCASE (15 Product Capacity Test - Option A) -->
+  <g id="SECTION_0.5" transform="translate(40, 1620)">
+    <rect width="1120" height="1400" fill="#FFFFFF" stroke="#BBBBBB" stroke-width="1.5" rx="4"/>
+    <rect width="1120" height="36" fill="#EAEAEA" rx="4"/>
+    <text x="20" y="24" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333333">SECTION 0.5 PORTFOLIO SHOWCASE (Option A: 3 Featured + 12 Supporting Grid = 15 Placeholders)</text>
+    
+    <text x="30" y="75" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#111111">DAMORI 대표 도구 쇼케이스 (15개 이상 수용 시각 검증)</text>
+    
+    <!-- TOP TIER: 3 FEATURED PRODUCTS (Larger Emphasis) -->
+    <text x="30" y="105" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#555555">FEATURED PRODUCTS (대표 도구 3종)</text>
+    
+    <!-- Featured Product 01 -->
+    <g transform="translate(30, 120)">
+      <rect width="340" height="360" fill="#F8F8F8" stroke="#CCCCCC" rx="4"/>
+      <rect width="340" height="220" fill="#DCDCDC"/>
+      <line x1="0" y1="0" x2="340" y2="220" stroke="#CCCCCC"/>
+      <line x1="0" y1="220" x2="340" y2="0" stroke="#CCCCCC"/>
+      <text x="80" y="115" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#444444">[PRODUCT 01 VISUAL]</text>
+      <text x="20" y="255" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#111111">PRODUCT 01</text>
+      <rect x="20" y="270" width="280" height="10" fill="#D0D0D0"/>
+      <rect x="20" y="290" width="220" height="10" fill="#E0E0E0"/>
+      <text x="20" y="335" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#555555">[ FEATURED DETAILS ]</text>
+    </g>
+    
+    <!-- Featured Product 02 -->
+    <g transform="translate(390, 120)">
+      <rect width="340" height="360" fill="#F8F8F8" stroke="#CCCCCC" rx="4"/>
+      <rect width="340" height="220" fill="#DCDCDC"/>
+      <line x1="0" y1="0" x2="340" y2="220" stroke="#CCCCCC"/>
+      <line x1="0" y1="220" x2="340" y2="0" stroke="#CCCCCC"/>
+      <text x="80" y="115" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#444444">[PRODUCT 02 VISUAL]</text>
+      <text x="20" y="255" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#111111">PRODUCT 02</text>
+      <rect x="20" y="270" width="280" height="10" fill="#D0D0D0"/>
+      <rect x="20" y="290" width="220" height="10" fill="#E0E0E0"/>
+      <text x="20" y="335" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#555555">[ FEATURED DETAILS ]</text>
+    </g>
+    
+    <!-- Featured Product 03 -->
+    <g transform="translate(750, 120)">
+      <rect width="340" height="360" fill="#F8F8F8" stroke="#CCCCCC" rx="4"/>
+      <rect width="340" height="220" fill="#DCDCDC"/>
+      <line x1="0" y1="0" x2="340" y2="220" stroke="#CCCCCC"/>
+      <line x1="0" y1="220" x2="340" y2="0" stroke="#CCCCCC"/>
+      <text x="80" y="115" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#444444">[PRODUCT 03 VISUAL]</text>
+      <text x="20" y="255" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#111111">PRODUCT 03</text>
+      <rect x="20" y="270" width="280" height="10" fill="#D0D0D0"/>
+      <rect x="20" y="290" width="220" height="10" fill="#E0E0E0"/>
+      <text x="20" y="335" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#555555">[ FEATURED DETAILS ]</text>
+    </g>
+
+    <!-- SUPPORTING TIER: 12 PRODUCTS (4 Columns x 3 Rows) -->
+    <text x="30" y="515" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#555555">SUPPORTING PORTFOLIO LINEUP (보조 도구 12종)</text>
+    
+    <!-- ROW 1 (Products 04 ~ 07) -->
+    <g transform="translate(30, 530)">
+      <!-- Product 04 -->
+      <rect x="0" y="0" width="250" height="260" fill="#F9F9F9" stroke="#DDDDDD" rx="4"/>
+      <rect x="0" y="0" width="250" height="140" fill="#E5E5E5"/>
+      <text x="50" y="75" font-family="Arial, sans-serif" font-size="12" fill="#666666">[PRODUCT 04]</text>
+      <text x="15" y="170" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#111111">PRODUCT 04</text>
+      <rect x="15" y="185" width="200" height="8" fill="#E0E0E0"/>
+      <rect x="15" y="200" width="160" height="8" fill="#E5E5E5"/>
+      
+      <!-- Product 05 -->
+      <g transform="translate(270, 0)">
+        <rect width="250" height="260" fill="#F9F9F9" stroke="#DDDDDD" rx="4"/>
+        <rect width="250" height="140" fill="#E5E5E5"/>
+        <text x="50" y="75" font-family="Arial, sans-serif" font-size="12" fill="#666666">[PRODUCT 05]</text>
+        <text x="15" y="170" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#111111">PRODUCT 05</text>
+        <rect x="15" y="185" width="200" height="8" fill="#E0E0E0"/>
+        <rect x="15" y="200" width="160" height="8" fill="#E5E5E5"/>
+      </g>
+      
+      <!-- Product 06 -->
+      <g transform="translate(540, 0)">
+        <rect width="250" height="260" fill="#F9F9F9" stroke="#DDDDDD" rx="4"/>
+        <rect width="250" height="140" fill="#E5E5E5"/>
+        <text x="50" y="75" font-family="Arial, sans-serif" font-size="12" fill="#666666">[PRODUCT 06]</text>
+        <text x="15" y="170" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#111111">PRODUCT 06</text>
+        <rect x="15" y="185" width="200" height="8" fill="#E0E0E0"/>
+        <rect x="15" y="200" width="160" height="8" fill="#E5E5E5"/>
+      </g>
+      
+      <!-- Product 07 -->
+      <g transform="translate(810, 0)">
+        <rect width="250" height="260" fill="#F9F9F9" stroke="#DDDDDD" rx="4"/>
+        <rect width="250" height="140" fill="#E5E5E5"/>
+        <text x="50" y="75" font-family="Arial, sans-serif" font-size="12" fill="#666666">[PRODUCT 07]</text>
+        <text x="15" y="170" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#111111">PRODUCT 07</text>
+        <rect x="15" y="185" width="200" height="8" fill="#E0E0E0"/>
+        <rect x="15" y="200" width="160" height="8" fill="#E5E5E5"/>
+      </g>
+    </g>
+
+    <!-- ROW 2 (Products 08 ~ 11) -->
+    <g transform="translate(30, 810)">
+      <!-- Product 08 -->
+      <rect width="250" height="260" fill="#F9F9F9" stroke="#DDDDDD" rx="4"/>
+      <rect width="250" height="140" fill="#E5E5E5"/>
+      <text x="50" y="75" font-family="Arial, sans-serif" font-size="12" fill="#666666">[PRODUCT 08]</text>
+      <text x="15" y="170" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#111111">PRODUCT 08</text>
+      <rect x="15" y="185" width="200" height="8" fill="#E0E0E0"/>
+      <rect x="15" y="200" width="160" height="8" fill="#E5E5E5"/>
+      
+      <!-- Product 09 -->
+      <g transform="translate(270, 0)">
+        <rect width="250" height="260" fill="#F9F9F9" stroke="#DDDDDD" rx="4"/>
+        <rect width="250" height="140" fill="#E5E5E5"/>
+        <text x="50" y="75" font-family="Arial, sans-serif" font-size="12" fill="#666666">[PRODUCT 09]</text>
+        <text x="15" y="170" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#111111">PRODUCT 09</text>
+        <rect x="15" y="185" width="200" height="8" fill="#E0E0E0"/>
+        <rect x="15" y="200" width="160" height="8" fill="#E5E5E5"/>
+      </g>
+      
+      <!-- Product 10 -->
+      <g transform="translate(540, 0)">
+        <rect width="250" height="260" fill="#F9F9F9" stroke="#DDDDDD" rx="4"/>
+        <rect width="250" height="140" fill="#E5E5E5"/>
+        <text x="50" y="75" font-family="Arial, sans-serif" font-size="12" fill="#666666">[PRODUCT 10]</text>
+        <text x="15" y="170" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#111111">PRODUCT 10</text>
+        <rect x="15" y="185" width="200" height="8" fill="#E0E0E0"/>
+        <rect x="15" y="200" width="160" height="8" fill="#E5E5E5"/>
+      </g>
+      
+      <!-- Product 11 -->
+      <g transform="translate(810, 0)">
+        <rect width="250" height="260" fill="#F9F9F9" stroke="#DDDDDD" rx="4"/>
+        <rect width="250" height="140" fill="#E5E5E5"/>
+        <text x="50" y="75" font-family="Arial, sans-serif" font-size="12" fill="#666666">[PRODUCT 11]</text>
+        <text x="15" y="170" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#111111">PRODUCT 11</text>
+        <rect x="15" y="185" width="200" height="8" fill="#E0E0E0"/>
+        <rect x="15" y="200" width="160" height="8" fill="#E5E5E5"/>
+      </g>
+    </g>
+
+    <!-- ROW 3 (Products 12 ~ 15) -->
+    <g transform="translate(30, 1090)">
+      <!-- Product 12 -->
+      <rect width="250" height="260" fill="#F9F9F9" stroke="#DDDDDD" rx="4"/>
+      <rect width="250" height="140" fill="#E5E5E5"/>
+      <text x="50" y="75" font-family="Arial, sans-serif" font-size="12" fill="#666666">[PRODUCT 12]</text>
+      <text x="15" y="170" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#111111">PRODUCT 12</text>
+      <rect x="15" y="185" width="200" height="8" fill="#E0E0E0"/>
+      <rect x="15" y="200" width="160" height="8" fill="#E5E5E5"/>
+      
+      <!-- Product 13 -->
+      <g transform="translate(270, 0)">
+        <rect width="250" height="260" fill="#F9F9F9" stroke="#DDDDDD" rx="4"/>
+        <rect width="250" height="140" fill="#E5E5E5"/>
+        <text x="50" y="75" font-family="Arial, sans-serif" font-size="12" fill="#666666">[PRODUCT 13]</text>
+        <text x="15" y="170" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#111111">PRODUCT 13</text>
+        <rect x="15" y="185" width="200" height="8" fill="#E0E0E0"/>
+        <rect x="15" y="200" width="160" height="8" fill="#E5E5E5"/>
+      </g>
+      
+      <!-- Product 14 -->
+      <g transform="translate(540, 0)">
+        <rect width="250" height="260" fill="#F9F9F9" stroke="#DDDDDD" rx="4"/>
+        <rect width="250" height="140" fill="#E5E5E5"/>
+        <text x="50" y="75" font-family="Arial, sans-serif" font-size="12" fill="#666666">[PRODUCT 14]</text>
+        <text x="15" y="170" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#111111">PRODUCT 14</text>
+        <rect x="15" y="185" width="200" height="8" fill="#E0E0E0"/>
+        <rect x="15" y="200" width="160" height="8" fill="#E5E5E5"/>
+      </g>
+      
+      <!-- Product 15 -->
+      <g transform="translate(810, 0)">
+        <rect width="250" height="260" fill="#F9F9F9" stroke="#DDDDDD" rx="4"/>
+        <rect width="250" height="140" fill="#E5E5E5"/>
+        <text x="50" y="75" font-family="Arial, sans-serif" font-size="12" fill="#666666">[PRODUCT 15]</text>
+        <text x="15" y="170" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#111111">PRODUCT 15</text>
+        <rect x="15" y="185" width="200" height="8" fill="#E0E0E0"/>
+        <rect x="15" y="200" width="160" height="8" fill="#E5E5E5"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- SECTION 0.6: NAVIGATION & FOOTER -->
+  <g id="SECTION_0.6" transform="translate(40, 3040)">
+    <rect width="1120" height="220" fill="#FFFFFF" stroke="#BBBBBB" stroke-width="1.5" rx="4"/>
+    <rect width="1120" height="36" fill="#EAEAEA" rx="4"/>
+    <text x="20" y="24" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333333">SECTION 0.6 NAVIGATION &amp; FOOTER (4 Column Footer Layout)</text>
+    
+    <g transform="translate(30, 60)">
+      <!-- Col 1 -->
+      <rect width="240" height="130" fill="#F8F8F8" stroke="#E0E0E0" rx="4"/>
+      <text x="15" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#111111">DAMORI</text>
+      <text x="15" y="55" font-family="Arial, sans-serif" font-size="12" fill="#666666">기록의 쉼표를 담는 도구 브랜드</text>
+      
+      <!-- Col 2 -->
+      <g transform="translate(270, 0)">
+        <rect width="240" height="130" fill="#F8F8F8" stroke="#E0E0E0" rx="4"/>
+        <text x="15" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#111111">NAVIGATION</text>
+        <text x="15" y="55" font-family="Arial, sans-serif" font-size="12" fill="#444444">[HOME] | [PRODUCTS] | [BRAND]</text>
+      </g>
+      
+      <!-- Col 3 -->
+      <g transform="translate(540, 0)">
+        <rect width="240" height="130" fill="#F8F8F8" stroke="#E0E0E0" rx="4"/>
+        <text x="15" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#111111">POLICY &amp; SUPPORT</text>
+        <text x="15" y="55" font-family="Arial, sans-serif" font-size="12" fill="#666666">접근성 가이드 / 이용 안내</text>
+      </g>
+      
+      <!-- Col 4 -->
+      <g transform="translate(810, 0)">
+        <rect width="250" height="130" fill="#F8F8F8" stroke="#E0E0E0" rx="4"/>
+        <text x="15" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#111111">COPYRIGHT</text>
+        <text x="15" y="55" font-family="Arial, sans-serif" font-size="12" fill="#666666">© DAMORI. ALL RIGHTS RESERVED.</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- CANVAS FOOTER -->
+  <g transform="translate(0, 3280)">
+    <rect width="1200" height="80" fill="#111111"/>
+    <text x="40" y="46" font-family="Arial, sans-serif" font-size="14" fill="#888888">DAMORI OFFICIAL INTEGRATED WIREFRAME V2 | GRAYSCALE MID-FIDELITY | NO BRAND COLOR</text>
+  </g>
+</svg>

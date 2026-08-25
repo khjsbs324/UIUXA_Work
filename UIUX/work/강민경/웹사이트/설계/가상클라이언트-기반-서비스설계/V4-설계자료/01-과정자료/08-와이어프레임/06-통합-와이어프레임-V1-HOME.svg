@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 2400" width="1200" height="2400">
+  <!-- CANVAS BACKGROUND -->
+  <rect width="1200" height="2400" fill="#F0F0F0"/>
+  
+  <!-- PAGE HEADER -->
+  <rect width="1200" height="60" fill="#222222"/>
+  <text x="40" y="38" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#FFFFFF">DAMORI V4 INTEGRATED WIREFRAME V1 - 0.0 HOME / MAIN</text>
+  
+  <!-- GNB -->
+  <g transform="translate(0, 60)">
+    <rect width="1200" height="60" fill="#FFFFFF" stroke="#CCCCCC"/>
+    <text x="40" y="38" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#111111">[LOGO / HOME]</text>
+    <text x="880" y="38" font-family="Arial, sans-serif" font-size="18" fill="#444444">PRODUCTS</text>
+    <text x="1040" y="38" font-family="Arial, sans-serif" font-size="18" fill="#444444">BRAND</text>
+  </g>
+  
+  <!-- SECTIONS -->
+  
+    <!-- SECTION 0.1 -->
+    <g transform="translate(40, 130)">
+      <rect width="1120" height="350" fill="#F8F8F8" stroke="#CCCCCC" stroke-width="1.5"/>
+      <rect width="1120" height="40" fill="#EAEAEA"/>
+      <text x="20" y="26" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#444444">SECTION 0.1 FIRST IMPRESSION</text>
+      <rect x="20" y="55" width="1080" height="275" fill="#FFFFFF" stroke="#E0E0E0"/>
+      <text x="40" y="192" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#222222">DAMORI: 바쁜 일상 속 기록의 쉼표 (Brand Narrative &amp; Hero Visual Area)</text>
+    </g>
+
+    <!-- SECTION 0.2 -->
+    <g transform="translate(40, 510)">
+      <rect width="1120" height="220" fill="#F8F8F8" stroke="#CCCCCC" stroke-width="1.5"/>
+      <rect width="1120" height="40" fill="#EAEAEA"/>
+      <text x="20" y="26" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#444444">SECTION 0.2 BRAND CORE SUMMARY</text>
+      <rect x="20" y="55" width="1080" height="145" fill="#FFFFFF" stroke="#E0E0E0"/>
+      <text x="40" y="127" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#222222">사색의 깊이 | 글 원본 보존성 | 자율성 가치 요약 영역</text>
+    </g>
+
+    <!-- SECTION 0.3 -->
+    <g transform="translate(40, 760)">
+      <rect width="1120" height="300" fill="#F8F8F8" stroke="#CCCCCC" stroke-width="1.5"/>
+      <rect width="1120" height="40" fill="#EAEAEA"/>
+      <text x="20" y="26" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#444444">SECTION 0.3 RECORDING EXPERIENCE</text>
+      <rect x="20" y="55" width="1080" height="225" fill="#FFFFFF" stroke="#E0E0E0"/>
+      <text x="40" y="167" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#222222">저부담 회고 / 글 보존 / 편안한 복귀 주요 기록 경험 가이드</text>
+    </g>
+
+    <!-- SECTION 0.4 -->
+    <g transform="translate(40, 1090)">
+      <rect width="1120" height="200" fill="#F8F8F8" stroke="#CCCCCC" stroke-width="1.5"/>
+      <rect width="1120" height="40" fill="#EAEAEA"/>
+      <text x="20" y="26" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#444444">SECTION 0.4 PRODUCT GROUPS INTRO</text>
+      <rect x="20" y="55" width="1080" height="125" fill="#FFFFFF" stroke="#E0E0E0"/>
+      <text x="40" y="117" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#222222">아날로그 &amp; 디지털 하이브리드 결합 제품군 소개 및 연결</text>
+    </g>
+
+    <!-- SECTION 0.5 -->
+    <g transform="translate(40, 1320)">
+      <rect width="1120" height="750" fill="#F8F8F8" stroke="#CCCCCC" stroke-width="1.5"/>
+      <rect width="1120" height="40" fill="#EAEAEA"/>
+      <text x="20" y="26" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#444444">SECTION 0.5 PORTFOLIO SHOWCASE</text>
+      <rect x="20" y="55" width="1080" height="675" fill="#FFFFFF" stroke="#E0E0E0"/>
+      <text x="40" y="392" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#222222">대표 Product 최소 15개 이상 수용 시각 쇼케이스 영역 (PRODUCT 01 ~ 15 PLACEHOLDERS)</text>
+    </g>
+
+    <!-- SECTION 0.6 -->
+    <g transform="translate(40, 2100)">
+      <rect width="1120" height="150" fill="#F8F8F8" stroke="#CCCCCC" stroke-width="1.5"/>
+      <rect width="1120" height="40" fill="#EAEAEA"/>
+      <text x="20" y="26" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#444444">SECTION 0.6 NAVIGATION &amp; FOOTER</text>
+      <rect x="20" y="55" width="1080" height="75" fill="#FFFFFF" stroke="#E0E0E0"/>
+      <text x="40" y="92" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#222222">DAMORI 전역 보조 내비게이션 &amp; 전역 푸터 정보 정돈</text>
+    </g>
+  
+  <!-- FOOTER -->
+  <g transform="translate(0, 2300)">
+    <rect width="1200" height="100" fill="#111111"/>
+    <text x="40" y="58" font-family="Arial, sans-serif" font-size="16" fill="#888888">DAMORI OFFICIAL INTEGRATED WIREFRAME V1 | GRAYSCALE ONLY | NO BRAND COLOR</text>
+  </g>
+</svg>

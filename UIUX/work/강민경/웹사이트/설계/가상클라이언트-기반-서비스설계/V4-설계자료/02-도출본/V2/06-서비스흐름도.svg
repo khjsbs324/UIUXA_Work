@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="1160" viewBox="0 0 1700 1160">
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#555"/></marker></defs><style>.t{font-family:"Malgun Gothic",Arial,sans-serif;fill:#181818}.h{font-size:28px;font-weight:700}.p{font-size:17px;font-weight:700}.s{font-size:13px}.box{fill:#fff;stroke:#333;stroke-width:2}.soft{fill:#f2f2f2;stroke:#777}.line{stroke:#555;stroke-width:2;fill:none;marker-end:url(#a)}</style>
+  <rect width="1700" height="1160" fill="#fafafa"/><text class="t h" x="55" y="55">DAMORI 서비스 흐름도 · 상황 → 목적 → 행동 → 표시 정보 → 판단</text>
+  <text class="t p" x="55" y="105">경로 A · 브랜드 발견에서 제품 포트폴리오 이해</text>
+  <g class="t s"><rect class="box" x="55" y="130" width="250" height="140"/><text class="p" x="75" y="160">A1 메인 진입</text><text x="75" y="188">상황: 브랜드가 궁금함</text><text x="75" y="214">행동: 첫인상 확인</text><text x="75" y="240">정보: 이름·기록의 쉼표</text>
+  <rect class="soft" x="335" y="130" width="250" height="140"/><text class="p" x="355" y="160">A2 핵심 가치</text><text x="355" y="188">목적: 판단 기준 파악</text><text x="355" y="214">정보: 사색·원본·자율성</text><text x="355" y="240">다음: 기록 경험</text>
+  <rect class="box" x="615" y="130" width="250" height="140"/><text class="p" x="635" y="160">A3 기록 경험</text><text x="635" y="188">행동: 자신의 방식과 연결</text><text x="635" y="214">정보: 부담·보존·복귀 예시</text><text x="635" y="240">판단: 제품 접근 확인</text>
+  <rect class="soft" x="895" y="130" width="250" height="140"/><text class="p" x="915" y="160">A4 제품 접근</text><text x="915" y="188">정보: 아날로그·디지털</text><text x="915" y="214">관계: 상호 보완</text><text x="915" y="240">다음: 제품 15개</text>
+  <rect class="box" x="1175" y="130" width="250" height="140"/><text class="p" x="1195" y="160">A5 포트폴리오</text><text x="1195" y="188">행동: 후보 15개 훑기</text><text x="1195" y="214">판단: 정보가 더 필요한가</text><text x="1195" y="240">다음: 1.3 또는 브랜드</text>
+  <rect class="soft" x="1455" y="130" width="190" height="140"/><text class="p" x="1475" y="160">A6 다음 선택</text><text x="1475" y="188">제품 정보</text><text x="1475" y="214">브랜드 이야기</text><text x="1475" y="240">또는 종료</text></g>
+  <path class="line" d="M305 200H335M585 200H615M865 200H895M1145 200H1175M1425 200H1455"/>
+  <text class="t p" x="55" y="355">경로 B · 제품 정보 탐색</text>
+  <g class="t s"><rect class="box" x="145" y="380" width="300" height="150"/><text class="p" x="170" y="412">B1 카테고리 진입</text><text x="170" y="442">상황: 제품 정보를 찾음</text><text x="170" y="468">정보: 작업용 Source Pool</text><text x="170" y="494">다음: 임시 제품군</text>
+  <rect class="soft" x="515" y="380" width="300" height="150"/><text class="p" x="540" y="412">B2 제품군 탐색</text><text x="540" y="442">목적: 정보 범위 파악</text><text x="540" y="468">정보: 공식 분류 아닌 그룹</text><text x="540" y="494">다음: 특징·사양</text>
+  <rect class="box" x="885" y="380" width="300" height="150"/><text class="p" x="910" y="412">B3 정보 비교</text><text x="910" y="442">행동: 확인/추가 확인 구분</text><text x="910" y="468">정보: 물성·제본·사양 슬롯</text><text x="910" y="494">판단: 기준이 필요한가</text>
+  <rect class="soft" x="1255" y="380" width="300" height="150"/><text class="p" x="1280" y="412">B4 탐색 기준 참고</text><text x="1280" y="442">정보: 목적·환경·물성·완성도</text><text x="1280" y="468">자동 결과: 없음</text><text x="1280" y="494">다음: 재탐색 또는 종료</text></g>
+  <path class="line" d="M445 455H515M815 455H885M1185 455H1255"/>
+  <text class="t p" x="55" y="625">경로 C · 기록 경험에서 제품 정보 탐색</text>
+  <g class="t s"><rect class="box" x="180" y="655" width="290" height="125"/><text class="p" x="205" y="687">0.3 기록 경험</text><text x="205" y="717">자신의 기록 방식과 연결</text><text x="205" y="746">다음: 제품 접근 방식</text>
+  <rect class="soft" x="540" y="655" width="290" height="125"/><text class="p" x="565" y="687">0.4 기록 방식과 제품</text><text x="565" y="717">매체 관계와 제품 세계 이해</text><text x="565" y="746">다음: 임시 제품군</text>
+  <rect class="box" x="900" y="655" width="290" height="125"/><text class="p" x="925" y="687">1.2 제품군 탐색</text><text x="925" y="717">정보 범위 확인</text><text x="925" y="746">다음: 특징·사양</text>
+  <rect class="soft" x="1260" y="655" width="290" height="125"/><text class="p" x="1285" y="687">1.3 제품 특징·사양</text><text x="1285" y="717">근거 상태를 구분해 비교</text><text x="1285" y="746">자동 추천 없이 종료·재탐색</text></g>
+  <path class="line" d="M470 718H540M830 718H900M1190 718H1260"/>
+  <rect class="box" x="350" y="900" width="1000" height="145" rx="8"/><text class="t p" x="390" y="938">재탐색·종료 규칙</text><text class="t s" x="390" y="970">원하는 정보를 찾기 어려우면 1.4의 기준을 읽고 1.2 또는 1.3으로 돌아간다.</text><text class="t s" x="390" y="998">조건 입력·결과 계산·로그인·저장·구매 없이 필요한 정보를 확인한 시점에 종료한다.</text><text class="t s" x="390" y="1026">경로 C는 앵커 이동이며 추천 알고리즘이 아니다.</text>
+</svg>

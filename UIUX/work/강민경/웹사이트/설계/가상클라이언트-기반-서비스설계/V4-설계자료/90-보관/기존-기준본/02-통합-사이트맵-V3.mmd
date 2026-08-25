@@ -1,0 +1,62 @@
+graph TD
+    %% DAMORI V4 Integrated Site Map (V3 Baseline)
+    
+    subgraph GNB ["전역 내비게이션 (GNB)"]
+        HOME["[LOGO / HOME] 0.0 메인 (Long Scroll Landing)"]
+        PRODUCTS["PRODUCTS 1.0 카테고리·서브"]
+        BRAND["BRAND 2.0 브랜드 소개"]
+    end
+
+    subgraph MAIN_TREE ["0.0 HOME / MAIN (Long Scroll Portfolio Landing)"]
+        M_01["0.1 First Impression<br/>(DAMORI 브랜드 존재 이유 요약)"]
+        M_02["0.2 Brand Core Summary<br/>(사색의 깊이 & 미안함 없는 기록)"]
+        M_03["0.3 Recording Experience<br/>(짧은 회고 / 글 보존 / 편안한 복귀)"]
+        M_04["0.4 Product Groups Intro<br/>(아날로그 & 디지털 결합 소개)"]
+        M_05["0.5 Portfolio Showcase<br/>(대표 Product 최소 15개 수용 영역)"]
+        M_06["0.6 Navigation & Footer<br/>(서브연결 & 전역 푸터)"]
+        
+        HOME --> M_01
+        HOME --> M_02
+        HOME --> M_03
+        HOME --> M_04
+        HOME --> M_05
+        HOME --> M_06
+    end
+
+    subgraph PRODUCTS_TREE ["1.0 PRODUCTS (CATEGORY / SUB - 제품군 이해 & 비주얼 탐색)"]
+        P_01["1.1 Visual Hero<br/>(카테고리 비주얼 표현)"]
+        P_02["1.2 Product Group Exploration<br/>(제품군 비주얼 탐색 갤러리)"]
+        P_03["1.3 Product Feature & Spec<br/>(소재, 제본, 잉크 번짐, 실측 치수 대조)"]
+        P_04["1.4 User-led Exploration<br/>(사용자 기준 자율 탐색)"]
+        
+        PRODUCTS --> P_01
+        PRODUCTS --> P_02
+        PRODUCTS --> P_03
+        PRODUCTS --> P_04
+    end
+
+    subgraph BRAND_TREE ["2.0 BRAND (독립 브랜드 서사 페이지)"]
+        B_01["2.1 DAMORI Introduction<br/>(브랜드 소개 및 비전)"]
+        B_02["2.2 Brand Existence & Purpose<br/>(브랜드가 존재하는 이유와 비전)"]
+        B_03["2.3 Recording Philosophy<br/>(의무가 아닌 쉼표로서의 기록 철학)"]
+        B_04["2.4 Core Values & User Value<br/>(Zero Strain, Data Integrity, Autonomy)"]
+        B_05["2.5 Analog & Digital Principle<br/>(물성과 편의성의 상호 보완 관계)"]
+        B_06["2.6 Product Principle<br/>(도구를 바라보는 DAMORI의 제품 원칙)"]
+        
+        BRAND --> B_01
+        BRAND --> B_02
+        BRAND --> B_03
+        BRAND --> B_04
+        BRAND --> B_05
+        BRAND --> B_06
+    end
+
+    subgraph GLOBAL_RULES ["전역 설계 규범 (Global Rules)"]
+        GR_ACCESSIBILITY["GLOBAL RULE: ACCESSIBILITY_RULE<br/>(WCAG 2.1 AA 명도 대비 검증 & 포커스 링)"]
+        GR_RESPONSIVE["GLOBAL RULE: RESPONSIVE_RULE<br/>(Desktop / Tablet / Mobile 레이아웃 일관성)"]
+    end
+
+    %% Style definitions
+    style HOME fill:#6B7F5E,color:#FFFFFF,stroke:#3A4832,stroke-width:2px
+    style PRODUCTS fill:#6B7F5E,color:#FFFFFF,stroke:#3A4832,stroke-width:2px
+    style BRAND fill:#6B7F5E,color:#FFFFFF,stroke:#3A4832,stroke-width:2px

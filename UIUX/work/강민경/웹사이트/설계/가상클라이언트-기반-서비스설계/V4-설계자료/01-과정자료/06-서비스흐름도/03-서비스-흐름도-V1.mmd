@@ -1,0 +1,68 @@
+graph TD
+    %% DAMORI V4 Integrated Service Flow Baseline V1
+    
+    subgraph GNB_NAV ["전역 내비게이션 (GNB)"]
+        GNB_HOME["[LOGO / HOME] 0.0 메인"]
+        GNB_PRODUCTS["PRODUCTS 1.0 카테고리·서브"]
+        GNB_BRAND["BRAND 2.0 브랜드 소개"]
+    end
+
+    subgraph PATH_A ["PATH A: 브랜드 발견 흐름 (Main Narrative)"]
+        A_ENTRY["A-1: 메인 랜딩 진입 (HOME 0.1)"]
+        A_SUMMARY["A-2: 핵심 가치 요약 (HOME 0.2)"]
+        A_EXP["A-3: 기록 경험 확인 (HOME 0.3)"]
+        A_INTRO["A-4: 제품군 소개 (HOME 0.4)"]
+        A_SHOWCASE["A-5: 쇼케이스 탐색 (HOME 0.5)"]
+        
+        A_ENTRY --> A_SUMMARY
+        A_SUMMARY --> A_EXP
+        A_EXP --> A_INTRO
+        A_INTRO --> A_SHOWCASE
+    end
+
+    subgraph PATH_B ["PATH B: 제품 탐색 흐름 (Product Task)"]
+        B_ENTRY["B-1: 카테고리 탐색 진입 (PRODUCTS 1.1/1.2)"]
+        B_SPEC["B-2: 스펙 & 치수 대조 (PRODUCTS 1.3)"]
+        B_USER_LED["B-3: 탐색 기준 안내 (PRODUCTS 1.4)"]
+        
+        B_ENTRY --> B_SPEC
+        B_SPEC -. 선택 .-> B_USER_LED
+        B_USER_LED -. 재대조 .-> B_SPEC
+    end
+
+    subgraph PATH_C ["PATH C: 기록 목적 발견 흐름 (Need-based Discovery)"]
+        C_ENTRY["C-1: 기록 경험 확인 (HOME 0.3)"]
+        C_INTRO["C-2: 관련 도구 연결 (HOME 0.4)"]
+        C_EXPLORE["C-3: 서식 특징 확인 (PRODUCTS 1.2/1.3)"]
+        
+        C_ENTRY --> C_INTRO
+        C_INTRO --> C_EXPLORE
+    end
+
+    subgraph DECISION_GOAL ["판단 및 목표 달성 (Decision & Goal)"]
+        GOAL_A["GOAL A: DAMORI 브랜드 및 철학 이해"]
+        GOAL_B["GOAL B/C: 제품 특징 및 실측 치수 대조 완수"]
+        GOAL_D["GOAL D: 적합한 기록 방식 및 도구 파악"]
+        
+        EXIT_SUCCESS["SUCCESSFUL_EXIT (정보 탐색 완수 후 종료)"]
+    end
+
+    %% Cross-path Connections
+    A_SHOWCASE -. 카테고리 클릭 .-> B_ENTRY
+    A_SHOWCASE -. 서사 심화 .-> GNB_BRAND
+    B_SPEC -. 제품 원칙 확인 .-> GNB_BRAND
+    C_EXPLORE -. 기록 철학 읽기 .-> GNB_BRAND
+    
+    A_SHOWCASE --> GOAL_A
+    B_SPEC --> GOAL_B
+    C_EXPLORE --> GOAL_D
+    
+    GOAL_A --> EXIT_SUCCESS
+    GOAL_B --> EXIT_SUCCESS
+    GOAL_D --> EXIT_SUCCESS
+
+    %% Styling
+    style GNB_HOME fill:#6B7F5E,color:#FFFFFF,stroke:#3A4832,stroke-width:2px
+    style GNB_PRODUCTS fill:#6B7F5E,color:#FFFFFF,stroke:#3A4832,stroke-width:2px
+    style GNB_BRAND fill:#6B7F5E,color:#FFFFFF,stroke:#3A4832,stroke-width:2px
+    style EXIT_SUCCESS fill:#3A4832,color:#FFFFFF,stroke:#2C3527,stroke-width:2px

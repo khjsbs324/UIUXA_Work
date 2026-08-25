@@ -1,0 +1,120 @@
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Noto Sans KR, Malgun Gothic, Arial, sans-serif","primaryTextColor":"#243029","lineColor":"#52635a","clusterBkg":"#ffffff","clusterBorder":"#9aa39c"},"flowchart":{"curve":"basis","nodeSpacing":28,"rankSpacing":38,"htmlLabels":true,"useMaxWidth":false}}}%%
+flowchart TB
+  TITLE["<b>DAMORI 사이트 흐름도</b><br/>순차 서사 + 핵심 Anchor + 맥락 복귀"]
+  ENTRY(["외부 진입"])
+  GNB["<b>전역 메뉴 GNB</b><br/>메인 · 카테고리·서브 · 브랜드 소개<br/><small>전역 이탈 · Page 전환 · 재진입</small>"]
+  TITLE --> ENTRY --> GNB
+
+  subgraph PAGES["3 Page · 16 Section Primary Narrative"]
+    direction LR
+
+    subgraph BRAND["03. 브랜드 소개 페이지 (BRAND)"]
+      direction TB
+      B21["2.1 브랜드 소개<br/><small>AN-01</small>"]
+      B22["2.2 존재 이유"]
+      B23["2.3 기록 철학<br/><small>AN-02</small>"]
+      B24["2.4 핵심 가치"]
+      B25["2.5 아날로그·디지털 원칙"]
+      B26["2.6 제품 원칙<br/><small>AN-05 · 핵심 대조</small>"]
+      B21 ==> B22 ==> B23 ==> B24 ==> B25 ==> B26
+    end
+
+    subgraph PRODUCTS["02. 카테고리·서브 페이지 (PRODUCTS)"]
+      direction TB
+      P11["1.1 대표 비주얼"]
+      P12["1.2 제품군 탐색<br/><small>AN-03</small>"]
+      P13["1.3 제품 특징·사양<br/><small>AN-04 · 핵심 대조</small>"]
+      P14["1.4 사용자 기준 탐색"]
+      P11 ==> P12 ==> P13 ==> P14
+      P14 -. "기준 재대조 · Return" .-> P13
+    end
+
+    subgraph HOME["01. 메인 페이지 (HOME)"]
+      direction TB
+      H01["0.1 첫인상"]
+      H02["0.2 브랜드 핵심 소개"]
+      H03["0.3 기록 경험<br/><small>Anchor Source</small>"]
+      H04["0.4 기록 방식과 제품 연결<br/><small>AN-06</small>"]
+      H05["0.5 제품 포트폴리오"]
+      H06["0.6 마무리 및 이동"]
+      H01 ==> H02 ==> H03 ==> H04 ==> H05 ==> H06
+    end
+  end
+
+  GNB -->|"메인"| H01
+  GNB -->|"제품"| P11
+  GNB -->|"브랜드"| B21
+
+  subgraph CROSS["핵심 Anchor · Cross Navigation 6개"]
+    direction LR
+    XHEAD["<b>목적형 교차 이동</b><br/><small>Page 열을 가로지르는 직접선 대신 관계 Band로 표시</small>"]
+    C1["CR-01<br/>0.2 → 2.1<br/><small>브랜드 상세 확인</small>"]
+    C2["CR-02<br/>0.3 → 2.3<br/><small>철학 근거 확인</small>"]
+    C3["CR-03<br/>0.4 → 1.2<br/><small>제품군 탐색</small>"]
+    C4["CR-04<br/>0.5 → 1.3<br/><small>제품 정보 심화</small>"]
+    C5["CR-05·06<br/>1.3 ↔ 2.6<br/><small>제품 정보 ↔ 제품 원칙</small>"]
+    XHEAD ~~~ C1 ~~~ C2 ~~~ C3 ~~~ C4 ~~~ C5
+  end
+
+  H06 ~~~ XHEAD
+  P14 ~~~ XHEAD
+  B26 ~~~ XHEAD
+
+  subgraph RETURNS["Context Return · Anchor 원칙"]
+    direction LR
+    RHEAD["<b>맥락 복귀</b><br/><small>상태 복원이 아닌 Navigation Context Return</small>"]
+    R1["HOME 0.5 → PRODUCTS 1.3<br/>이전 HOME 맥락 복귀 가능"]
+    R2["PRODUCTS 1.3 ↔ BRAND 2.6<br/>상호 검증 후 Source 복귀"]
+    R3["PRODUCTS 1.4 → 1.3<br/>기준을 실제 정보에 재대조"]
+    R4["Return 범례<br/><small>Source Section · 이전 Section · Page Top<br/>GNB Return · Browser Back 기대</small>"]
+    RHEAD ~~~ R1 ~~~ R2 ~~~ R3 ~~~ R4
+  end
+
+  C3 ~~~ RHEAD
+
+  subgraph PATHS["대표 Navigation Path"]
+    direction LR
+    PHEAD["<b>PATH A/B/C</b><br/><small>대표 Navigation 요약</small>"]
+    PA["PATH A · 브랜드 발견<br/><small>외부 → HOME → BRAND</small>"]
+    PB["PATH B · 제품 정보<br/><small>GNB/HOME → PRODUCTS → BRAND 2.6</small>"]
+    PC["PATH C · 기록 경험 교차<br/><small>HOME 0.3 → 제품 또는 철학</small>"]
+    PHEAD ~~~ PA ~~~ PB ~~~ PC
+  end
+
+  R2 ~~~ PHEAD
+
+  subgraph SUPPORT["Exit · Re-entry · Scope"]
+    direction LR
+    SHEAD["<b>탐색 종료와 재진입</b><br/><small>Service 상태 처리 없음</small>"]
+    EXIT["<b>탐색 종료</b><br/>HOME 0.6 · Footer · 정보 확인 지점<br/><small>GNB 전환은 현재 Page Flow 종료</small>"]
+    REENTRY["<b>재진입</b><br/>GNB · Anchor · Source Return · Footer<br/><small>상태 자동 복원 없음</small>"]
+    INFO["<b>정보 관계만 유지</b><br/>2.5 매체 원칙 ↔ 0.4 기록 방식<br/><small>필수 Navigation Arrow 아님</small>"]
+    OUT["<b>현재 흐름에서 제외</b><br/>로그인·계정 · 구매·결제<br/>편집·저장·동기화 · 자동 추천·실행형 필터<br/>Product Detail · 20 Page App"]
+    SHEAD ~~~ EXIT ~~~ REENTRY ~~~ INFO ~~~ OUT
+  end
+
+  PB ~~~ SHEAD
+
+  classDef title fill:#243029,color:#ffffff,stroke:#243029,stroke-width:2px,font-size:24px;
+  classDef global fill:#eef3ef,stroke:#52635a,stroke-width:2px;
+  classDef home fill:#fbf7ed,stroke:#9b7b4f,stroke-width:1.5px;
+  classDef products fill:#f1f6ed,stroke:#6f835f,stroke-width:1.5px;
+  classDef brand fill:#f0f4f7,stroke:#687989,stroke-width:1.5px;
+  classDef cross fill:#fff8e8,stroke:#a37a36,stroke-width:1.5px,stroke-dasharray:5 3;
+  classDef return fill:#eef5f7,stroke:#527783,stroke-width:1.5px,stroke-dasharray:7 3;
+  classDef path fill:#f5f1f8,stroke:#766383,stroke-width:1.2px;
+  classDef support fill:#f7f7f7,stroke:#888888,stroke-width:1px;
+  classDef out fill:#fbf3f3,stroke:#a68a8a,stroke-width:1px,stroke-dasharray:5 4;
+
+  class TITLE title;
+  class ENTRY,GNB global;
+  class H01,H02,H03,H04,H05,H06 home;
+  class P11,P12,P13,P14 products;
+  class B21,B22,B23,B24,B25,B26 brand;
+  class XHEAD,C1,C2,C3,C4,C5 cross;
+  class RHEAD,R1,R2,R3,R4 return;
+  class PHEAD,PA,PB,PC path;
+  class SHEAD,EXIT,REENTRY,INFO support;
+  class OUT out;
+
+  linkStyle 0,1 stroke:#52635a,stroke-width:2px;

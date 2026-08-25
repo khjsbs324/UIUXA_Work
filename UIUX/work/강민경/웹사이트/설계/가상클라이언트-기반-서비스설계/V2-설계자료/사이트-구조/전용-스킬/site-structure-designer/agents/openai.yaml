@@ -1,0 +1,4 @@
+interface:
+  display_name: "Site Structure Designer"
+  short_description: "승인된 분석 결과를 사이트 구조맵과 사이트맵으로 변환"
+  default_prompt: "승인된 Client 요구와 메뉴·콘텐츠·기능 결과를 근거로 사이트 구조맵과 사이트맵을 설계해 주세요."

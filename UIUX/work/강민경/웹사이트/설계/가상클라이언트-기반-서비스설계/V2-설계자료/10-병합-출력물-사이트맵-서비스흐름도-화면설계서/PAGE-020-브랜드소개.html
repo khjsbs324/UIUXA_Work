@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAMORI (다모리) — 기억의 서재 (브랜드 소개)</title>
+  <link rel="stylesheet" href="damori-theme.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--damori-font-sans); background: var(--damori-paper-ivory); color: var(--damori-charcoal); line-height: 1.8; }
+    
+    .gnb { position: sticky; top: 0; z-index: 1000; height: var(--damori-header-height); background: rgba(251, 249, 245, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--damori-border-subtle); display: flex; align-items: center; justify-content: space-between; padding: 0 40px; }
+    .gnb-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--damori-charcoal); font-weight: 700; font-size: 1.25rem; }
+    .gnb-brand .logo-badge { background: var(--damori-charcoal); color: var(--damori-paper-ivory); width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 4px; font-family: var(--damori-font-serif); }
+    .gnb-nav { display: flex; gap: 28px; list-style: none; }
+    .gnb-nav a { text-decoration: none; color: var(--damori-ink-muted); font-size: 0.95rem; font-weight: 500; }
+    .gnb-nav a.active { color: var(--damori-seal-vermilion); font-weight: 600; }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+    /* Hero */
+    .brand-hero { padding: 80px 0 48px; text-align: center; border-bottom: 1px solid var(--damori-border-subtle); }
+    .brand-hero h1 { font-family: var(--damori-font-serif); font-size: 2.5rem; color: var(--damori-charcoal); margin-bottom: 20px; line-height: 1.3; }
+    .brand-hero .sub { font-size: 1.2rem; color: var(--damori-seal-vermilion); font-weight: 600; margin-bottom: 16px; }
+    .brand-hero p { font-size: 1.05rem; color: var(--damori-graphite); max-width: 720px; margin: 0 auto; }
+
+    /* Philosophy Section */
+    .section-block { padding: 64px 0; border-bottom: 1px solid var(--damori-border-subtle); }
+    .section-title { font-family: var(--damori-font-serif); font-size: 1.6rem; margin-bottom: 24px; color: var(--damori-charcoal); display: flex; align-items: center; gap: 12px; }
+    .section-title::before { content: ""; display: inline-block; width: 6px; height: 24px; background: var(--damori-seal-gold); border-radius: 2px; }
+
+    .card-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 24px; }
+    .philo-card { background: #fff; border: 1px solid var(--damori-border-subtle); border-radius: 8px; padding: 24px; box-shadow: var(--damori-shadow-sm); }
+    .philo-card h3 { font-size: 1.1rem; margin-bottom: 8px; color: var(--damori-charcoal); }
+    .philo-card p { font-size: 0.85rem; color: var(--damori-graphite); }
+
+    /* Process Showcase */
+    .process-box { background: #fff; border: 1px solid var(--damori-border-regular); border-radius: 8px; padding: 32px; margin-top: 24px; }
+    .process-step { display: flex; gap: 20px; margin-bottom: 24px; }
+    .step-num { width: 36px; height: 36px; border-radius: 50%; background: var(--damori-charcoal); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; flex-shrink: 0; }
+    .step-content h4 { font-size: 1rem; margin-bottom: 4px; }
+    .step-content p { font-size: 0.85rem; color: var(--damori-graphite); }
+
+    /* Stamp Section */
+    .stamp-box { background: var(--damori-paper-warm); border-radius: 8px; padding: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; }
+    .stamp-visual { width: 140px; height: 140px; border: 4px solid var(--damori-charcoal); border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0 auto; background: #fff; box-shadow: inset 0 0 10px rgba(0,0,0,0.05); }
+    .stamp-visual .char { font-family: var(--damori-font-serif); font-size: 2.5rem; font-weight: 700; color: var(--damori-seal-vermilion); }
+
+    footer { background: var(--damori-dark-surface); color: var(--damori-paper-ivory); padding: 48px 0; margin-top: 64px; }
+
+    @media (max-width: 768px) {
+      .card-grid-3 { grid-template-columns: 1fr; }
+      .stamp-box { grid-template-columns: 1fr; text-align: center; }
+      .gnb { padding: 0 16px; }
+      .gnb-nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="gnb">
+    <a href="PAGE-001-메인랜딩.html" class="gnb-brand">
+      <span class="logo-badge">多</span>
+      <span>DAMORI</span>
+    </a>
+    <ul class="gnb-nav">
+      <li><a href="PAGE-001-메인랜딩.html">기록 방식 찾기</a></li>
+      <li><a href="PAGE-021-카테고리솔루션허브.html">카테고리 솔루션 (200종)</a></li>
+      <li><a href="PAGE-020-브랜드소개.html" class="active">브랜드 소개 (기억의 서재)</a></li>
+    </ul>
+    <div style="font-size:0.85rem;color:var(--damori-seal-gold);font-weight:600;">
+      애착공방 서사
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="brand-hero">
+      <div class="sub">나만의 애착공방 기억의 서재</div>
+      <h1>종이의 촉감과 시간의 흐름을<br>동등하게 존중합니다</h1>
+      <p>다모리(DAMORI)는 넘쳐나는 일상의 기록 속에서 사용자가 자신만의 방식으로 생각과 삶을 보존할 수 있도록 돕는 통합 다이어리 솔루션 브랜드입니다.</p>
+    </section>
+
+    <!-- 3 Philosophies -->
+    <section class="section-block">
+      <h2 class="section-title">다모리의 3대 핵심 철학</h2>
+      <div class="card-grid-3">
+        <div class="philo-card">
+          <h3>1. 기록의 완전한 자율성</h3>
+          <p>틀에 갇힌 양식을 강요하지 않습니다. 1시간의 장문 사색이든 10초의 단문 스냅샷이든, 사용자의 모든 기록 행위는 동등한 가치를 지닙니다.</p>
+        </div>
+        <div class="philo-card">
+          <h3>2. 아날로그 물성에 대한 집착</h3>
+          <p>120gsm 미유광 평산지와 180도 Smyth Sewn 실제본. 손목의 피로를 덜고 잉크의 깊이를 머금는 정직한 재료만을 엄선합니다.</p>
+        </div>
+        <div class="philo-card">
+          <h3>3. 시간축 통제와 투명한 정보</h3>
+          <p>외부 자동 덮어쓰기를 통제하고 오프라인 무손실 저장을 보장합니다. 확인된 수치와 사실만을 투명하게 공개합니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Smyth Sewn Process -->
+    <section class="section-block">
+      <h2 class="section-title">180도 Smyth Sewn 실제본 공정 실측 검증</h2>
+      <p style="color:var(--damori-graphite);margin-bottom:16px;">일반 떡제본 노트의 중앙 솟아오름 통증과 잉크 번짐 문제를 해결하기 위한 다모리의 장인 제본 기준입니다.</p>
+      
+      <div class="process-box">
+        <div class="process-step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>120gsm 미유광 평산지 선별 (출처: 친환경 FSC 인증림)</h4>
+            <p>만년필 필기 시 실핏줄 번짐(Feathering) 0.0%, 뒷비침(Bleed-through) 3% 이하로 통제된 전용지를 사용합니다.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>16페이지 단위 묶음 실 엮음 (Smyth Sewn 실제본)</h4>
+            <p>접착제에만 의존하지 않고 각 내지를 면실로 교차 제본하여 180도 완전 평면으로 펼쳐집니다.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>단차 0mm 정밀 압착 검수 (VC-01 은재 검증)</h4>
+            <p>노트 중앙부가 솟아오르지 않아 30분 이상 연속 필기 시에도 손목 통증과 글씨 왜곡이 발생하지 않습니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stamp Branding -->
+    <section class="section-block">
+      <h2 class="section-title">16x16px 단색 불박 도장 각인 원칙</h2>
+      <div class="stamp-box">
+        <div>
+          <h3 style="font-size:1.15rem;margin-bottom:8px;">한국적 여백과 온기의 인장</h3>
+          <p style="font-size:0.85rem;color:var(--damori-graphite);margin-bottom:12px;">다모리의 심볼은 '많을 다(多)'의 포용과 모아둠의 의미를 16x16px 최소 규격의 단색 불박 도장 형태로 각인합니다.</p>
+          <div style="font-size:0.8rem;color:var(--damori-charcoal);font-weight:600;">시그니처 컬러: 붉은 인장(Seal Vermilion) & 먹빛 숯(Deep Charcoal)</div>
+        </div>
+        <div class="stamp-visual">
+          <div class="char">多</div>
+          <div style="font-size:0.65rem;letter-spacing:2px;font-weight:700;">DAMORI</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Accessibility -->
+    <section class="section-block" style="border-bottom:none;">
+      <h2 class="section-title">모두를 위한 장벽 없는 환경 (WCAG 2.1 AA)</h2>
+      <p style="color:var(--damori-graphite);margin-bottom:16px;">시각·지체 장애를 포함한 모든 사용자가 차별 없이 기록할 수 있도록 웹 접근성 기준을 충실히 실천합니다 (VC-13 여울).</p>
+      <div style="background:#fff;border:1px solid var(--damori-border-subtle);border-radius:8px;padding:20px;font-size:0.85rem;">
+        <ul style="padding-left:20px;color:var(--damori-graphite);">
+          <li style="margin-bottom:6px;">명도 대비 최소 4.5:1 이상 전 화면 보장</li>
+          <li style="margin-bottom:6px;">모든 대화형 요소 터치 타깃 최소 44x44px 준수</li>
+          <li style="margin-bottom:6px;">키보드 전용 내비게이션 및 3px 고대비 포커스 링 탑재</li>
+          <li>본문 바로가기 Skip Link 및 스크린리더 대체 텍스트(alt/aria) 100% 적용</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
+      <div>
+        <div style="font-family:var(--damori-font-serif);font-size:1.1rem;font-weight:700;">DAMORI 기억의 서재</div>
+        <div style="font-size:0.75rem;color:#8C827A;">비상업적 UX/UI 포트폴리오 프로젝트</div>
+      </div>
+      <div style="display:flex;gap:16px;font-size:0.85rem;">
+        <a href="PAGE-001-메인랜딩.html" style="color:#fff;text-decoration:none;">메인으로 가기</a>
+        <a href="PAGE-021-카테고리솔루션허브.html" style="color:#fff;text-decoration:none;">200개 솔루션 허브</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAMORI — 디지털 기록과 시간축 통제</title>
+  <style>
+    :root {
+      --bg-paper: #fcfbf9;
+      --bg-card: #ffffff;
+      --bg-subtle: #f4f0eb;
+      --bg-dark: #1e2522;
+      --text-main: #2b302d;
+      --text-sub: #5c635f;
+      --accent-sage: #4a5d55;
+      --accent-clay: #9e7b66;
+      --border-subtle: #e2ddd7;
+      --focus-ring: #2457A7;
+      --font-main: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-paper); color: var(--text-main); font-family: var(--font-main); line-height: 1.65; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; }
+
+    header { height: 76px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border-subtle); position: sticky; top: 0; z-index: 100; }
+    .header-container { max-width: 1240px; margin: 0 auto; height: 100%; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; }
+    .brand-logo-group { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-stamp { width: 36px; height: 36px; border-radius: 50%; background: var(--accent-sage); color: white; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 800; }
+    .brand-name { font-size: 20px; font-weight: 800; color: var(--text-main); }
+    .gnb-menu { display: flex; gap: 28px; list-style: none; }
+    .gnb-menu a { text-decoration: none; color: var(--text-sub); font-size: 15px; font-weight: 600; padding: 8px 12px; border-radius: 6px; }
+    .gnb-menu a[aria-current="page"] { color: var(--accent-sage); background-color: var(--bg-subtle); }
+
+    .hero-section { max-width: 1240px; margin: 0 auto; padding: 64px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .hero-badge { display: inline-block; padding: 4px 12px; background: var(--bg-subtle); border-radius: 4px; font-size: 12px; font-weight: 700; color: var(--accent-clay); margin-bottom: 16px; }
+    .hero-title { font-size: 38px; font-weight: 800; margin-bottom: 16px; letter-spacing: -1px; }
+    .hero-desc { font-size: 18px; color: var(--text-sub); margin-bottom: 28px; }
+
+    .section-wrapper { max-width: 1240px; margin: 0 auto; padding: 48px 24px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .card { background: var(--bg-card); border: 1.5px solid var(--border-subtle); border-radius: 14px; padding: 28px; }
+
+    footer { background: var(--bg-dark); color: #94a3b8; padding: 60px 24px; margin-top: 80px; }
+    .footer-inner { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; }
+
+    @media (max-width: 1023px) { .hero-section, .grid-2, .grid-4 { grid-template-columns: 1fr; } .footer-inner { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <a href="PAGE-001-메인페이지-반응형와이어프레임.html" class="brand-logo-group">
+        <div class="logo-stamp">多</div>
+        <span class="brand-name">DAMORI (다모리)</span>
+      </a>
+      <nav>
+        <ul class="gnb-menu">
+          <li><a href="PAGE-001-메인페이지-반응형와이어프레임.html">홈</a></li>
+          <li><a href="PAGE-002-기록방식찾기-반응형와이어프레임.html">기록 방식 찾기</a></li>
+          <li><a href="PAGE-004-아날로그기록-반응형와이어프레임.html">아날로그 기록</a></li>
+          <li><a href="#" aria-current="page">디지털 기록</a></li>
+          <li><a href="PAGE-013-템플릿과꾸미기-반응형와이어프레임.html">템플릿과 꾸미기</a></li>
+          <li><a href="PAGE-016-기록가이드-반응형와이어프레임.html">기록 가이드</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <div>
+        <span class="hero-badge">지안(VC-02) & 하람(VC-03) 디지털 서식</span>
+        <h1 class="hero-title">생각의 속도로 남기고,<br>시간의 흐름으로 다듬다</h1>
+        <p class="hero-desc">10초 저부담 빠른 기록부터 주간 일정 타임라인 통제, 다기기 백업 연속성까지 디지털의 효율성을 주도적으로 통제해보세요.</p>
+      </div>
+      <div style="height:340px; background:var(--bg-subtle); border-radius:14px; border:1.5px solid var(--border-subtle); display:flex; flex-direction:column; align-items:center; justify-content:center;">
+        <div style="font-size:56px;">📱 💻</div>
+        <div style="font-size:16px; font-weight:700; margin-top:12px;">주간 개요 → 일간 타임라인 시간축 통제</div>
+        <div style="font-size:13px; color:var(--text-sub);">외부 달력 연동 검증 진행 중 (HOLD) 투명 공지</div>
+      </div>
+    </section>
+
+    <section class="section-wrapper">
+      <h2 style="font-size:26px; font-weight:800; margin-bottom:12px;">시간축 통제 & 신뢰 명세</h2>
+      <p style="color:var(--text-sub); margin-bottom:32px;">외부 동기화 오류 피로를 회피하는 투명한 정보 안내입니다.</p>
+
+      <div class="grid-2">
+        <div class="card">
+          <span class="hero-badge" style="background:#e0f2fe; color:#0369a1;">지안(VC-02) 시간축 통제</span>
+          <h3 style="font-size:20px; margin-bottom:12px;">주간 개요 → 일간 시간대 리스트</h3>
+          <p style="color:var(--text-sub); font-size:14px;">주간 핵심 목표를 조망하고, 하루 24시간을 세부 블록으로 나누어 일관된 시간 흐름을 주도합니다.</p>
+        </div>
+        <div class="card">
+          <span class="hero-badge" style="background:#fef3c7; color:#92400e;">검증 진행 중 (HOLD)</span>
+          <h3 style="font-size:20px; margin-bottom:12px;">외부 달력 연동 안전 안내</h3>
+          <p style="color:var(--text-sub); font-size:14px;">외부 동기화 권한 오류 오인을 방지하기 위해 연동 기능은 현재 검증 진행 중이며, 직접 입력을 우선 추천합니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Entry Grid -->
+    <section class="section-wrapper" style="background:var(--bg-subtle); border-radius:16px;">
+      <h2 style="font-size:26px; font-weight:800; margin-bottom:12px;">하람(VC-03) 10초 저부담 4대 입력 모듈</h2>
+      <p style="color:var(--text-sub); margin-bottom:32px;">회원가입 피로나 긴 문장 부담 없이 클릭 한 번으로 시작합니다.</p>
+
+      <div class="grid-4">
+        <div class="card" style="text-align:center; cursor:pointer;" onclick="alert('사진 한 장 남기기 모듈 선택 완료')">
+          <div style="font-size:36px; margin-bottom:8px;">📷</div>
+          <h4 style="font-size:16px;">사진 한 장</h4>
+          <p style="font-size:13px; color:var(--text-sub);">오늘의 한 장면 남기기</p>
+        </div>
+        <div class="card" style="text-align:center; cursor:pointer;" onclick="alert('한 줄 메모 모듈 선택 완료')">
+          <div style="font-size:36px; margin-bottom:8px;">✍️</div>
+          <h4 style="font-size:16px;">한 줄 메모</h4>
+          <p style="font-size:13px; color:var(--text-sub);">떠오른 1문장 즉시 적기</p>
+        </div>
+        <div class="card" style="text-align:center; cursor:pointer;" onclick="alert('음성 녹음 모듈 선택 완료')">
+          <div style="font-size:36px; margin-bottom:8px;">🎙️</div>
+          <h4 style="font-size:16px;">음성 메모</h4>
+          <p style="font-size:13px; color:var(--text-sub);">짧은 목소리로 기록하기</p>
+        </div>
+        <div class="card" style="text-align:center; cursor:pointer;" onclick="alert('감정 이모지 선택 완료')">
+          <div style="font-size:36px; margin-bottom:8px;">😊</div>
+          <h4 style="font-size:16px;">오늘의 기분</h4>
+          <p style="font-size:13px; color:var(--text-sub);">이모티콘 1개로 기록하기</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div style="color:white; font-size:18px; font-weight:800; margin-bottom:16px;">[LOGO] DAMORI (다모리)</div>
+        <p>디지털이 주는 편리함과 시간축 연속성을 지원합니다.</p>
+      </div>
+      <div>
+        <h4 style="color:white; margin-bottom:16px;">디지털</h4>
+        <ul style="list-style:none;">
+          <li><a href="#" style="color:#94a3b8; text-decoration:none;">주간 플래너</a></li>
+          <li><a href="#" style="color:#94a3b8; text-decoration:none;">저부담 입력 모듈</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color:white; margin-bottom:16px;">도움말</h4>
+        <ul style="list-style:none;">
+          <li><a href="PAGE-016-기록가이드-반응형와이어프레임.html" style="color:#94a3b8; text-decoration:none;">기록 가이드</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color:white; margin-bottom:16px;">브랜드</h4>
+        <ul style="list-style:none;">
+          <li><a href="#" style="color:#94a3b8; text-decoration:none;">브랜드 소개</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,38 @@
+{
+  "version": "FIRST_INTEGRATED_REVIEW_DRAFT",
+  "projectWorkingName": "DAMORI / 다모리",
+  "scope": {"screenCount": 3, "sectionCount": 16, "officialCategoryConfirmed": false, "workingDisplaySetCount": 15},
+  "screens": [
+    {
+      "id": "PAGE-00", "name": "HOME / MAIN", "purpose": "브랜드 소개, 기록 경험, 제품 세계와 Portfolio를 연결하는 Long Scroll Landing",
+      "entryConditions": ["첫 진입", "전역 HOME 이동", "PATH A 또는 PATH C"],
+      "sections": [
+        {"id":"0.1","name":"First Impression"},{"id":"0.2","name":"Brand Core Summary"},{"id":"0.3","name":"Recording Experience"},{"id":"0.4","name":"Product Groups Intro"},{"id":"0.5","name":"Portfolio Showcase"},{"id":"0.6","name":"Navigation & Footer"}
+      ],
+      "actions": [{"type":"NAVIGATE","target":"PAGE-01"},{"type":"NAVIGATE","target":"PAGE-02"},{"type":"SECTION_NAVIGATE","target":"PAGE-01#1.3"}],
+      "states": ["DEFAULT_INFORMATION_VIEW","WORKING_DISPLAY_SET_FOR_LAYOUT_REVIEW","FINAL_PRODUCT_SELECTION_PENDING"],
+      "nextScreens": ["PAGE-01","PAGE-02"]
+    },
+    {
+      "id": "PAGE-01", "name": "PRODUCTS / CATEGORY-SUB", "purpose": "제품군 방향, 특성·사양, 비교 기준을 정보형으로 탐색",
+      "entryConditions": ["전역 PRODUCTS 이동", "HOME 0.4/0.5", "PATH B 또는 PATH C"],
+      "sections": [
+        {"id":"1.1","name":"Visual Hero"},{"id":"1.2","name":"Product Group Exploration"},{"id":"1.3","name":"Product Feature & Specification"},{"id":"1.4","name":"User-led Exploration"}
+      ],
+      "actions": [{"type":"VIEW_INFORMATION","target":"PAGE-01#1.2"},{"type":"VIEW_INFORMATION","target":"PAGE-01#1.3"},{"type":"VIEW_INFORMATION","target":"PAGE-01#1.4"},{"type":"SECTION_NAVIGATE","target":"PAGE-02#2.6"}],
+      "states": ["CATEGORY_UNCONFIRMED","NON_EXECUTABLE_EXPLORATION","GENERIC_INFO_PLACEHOLDER"],
+      "nextScreens": ["PAGE-00","PAGE-02"]
+    },
+    {
+      "id": "PAGE-02", "name": "BRAND", "purpose": "존재 이유, 기록 철학, 핵심 가치와 Analog/Digital 관계를 전달",
+      "entryConditions": ["전역 BRAND 이동", "HOME 또는 PRODUCTS의 관련 서사 이동"],
+      "sections": [
+        {"id":"2.1","name":"Brand Introduction"},{"id":"2.2","name":"Existence & Purpose"},{"id":"2.3","name":"Recording Philosophy"},{"id":"2.4","name":"Core Values"},{"id":"2.5","name":"Analog & Digital"},{"id":"2.6","name":"Product Principle Example"}
+      ],
+      "actions": [{"type":"NAVIGATE","target":"PAGE-00"},{"type":"SECTION_NAVIGATE","target":"PAGE-01#1.3"}],
+      "states": ["DEFAULT_EDITORIAL_VIEW","PROJECT_WORKING_NAME","PRODUCT_PRINCIPLE_EXAMPLE"],
+      "nextScreens": ["PAGE-00","PAGE-01"]
+    }
+  ],
+  "workingDisplaySet": ["PROD-001","PROD-021","PROD-041","PROD-061","PROD-081","PROD-101","PROD-121","PROD-141","PROD-161","PROD-181","PROD-002","PROD-042","PROD-082","PROD-122","PROD-162"]
+}

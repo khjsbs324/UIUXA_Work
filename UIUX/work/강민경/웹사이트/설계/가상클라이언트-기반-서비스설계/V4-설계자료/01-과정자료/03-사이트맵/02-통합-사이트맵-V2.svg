@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 920" width="1200" height="920" style="background-color: #F9FBF8; font-family: 'Pretendard', 'Malgun Gothic', sans-serif;">
+  <style>
+    .title { font-size: 24px; font-weight: bold; fill: #2C3527; }
+    .subtitle { font-size: 14px; fill: #6B7F5E; }
+    .box-gnb { fill: #6B7F5E; stroke: #3A4832; stroke-width: 2; rx: 8; }
+    .text-gnb { font-size: 16px; font-weight: bold; fill: #FFFFFF; text-anchor: middle; }
+    .box-sub { fill: #FFFFFF; stroke: #8A9A7E; stroke-width: 1.5; rx: 6; }
+    .text-sub-title { font-size: 14px; font-weight: bold; fill: #2C3527; }
+    .text-sub-desc { font-size: 12px; fill: #555555; }
+    .box-extra { fill: #F0F4EE; stroke: #A2B29F; stroke-width: 1.5; stroke-dasharray: 4; rx: 6; }
+    .text-extra { font-size: 13px; font-weight: bold; fill: #3A4832; }
+    .line { stroke: #A2B29F; stroke-width: 2; fill: none; }
+  </style>
+
+  <!-- Header -->
+  <text x="50" y="45" class="title">DAMORI (다모리) V4 통합 사이트맵 V2 Baseline</text>
+  <text x="50" y="70" class="subtitle">공식 브랜드: DAMORI / 다모리 | 상태: V4_SITE_MAP_BASELINE_V2 | 미니멀 GNB: [HOME] | PRODUCTS | BRAND</text>
+
+  <!-- GNB Section (3 Page Anchors Only, NO Search Node) -->
+  <g transform="translate(50, 100)">
+    <!-- HOME Anchor -->
+    <rect x="0" y="0" width="340" height="50" class="box-gnb"/>
+    <text x="170" y="31" class="text-gnb">[LOGO / HOME] 0.0 메인</text>
+
+    <!-- PRODUCTS Anchor -->
+    <rect x="380" y="0" width="340" height="50" class="box-gnb"/>
+    <text x="550" y="31" class="text-gnb">PRODUCTS 1.0 카테고리·서브</text>
+
+    <!-- BRAND Anchor -->
+    <rect x="760" y="0" width="340" height="50" class="box-gnb"/>
+    <text x="930" y="31" class="text-gnb">BRAND 2.0 브랜드 소개</text>
+  </g>
+
+  <!-- Connectors from GNB to Children -->
+  <path d="M 220 150 L 220 190" class="line"/>
+  <path d="M 600 150 L 600 190" class="line"/>
+  <path d="M 980 150 L 980 190" class="line"/>
+
+  <!-- 0.0 HOME / MAIN Tree -->
+  <g transform="translate(50, 190)">
+    <rect x="0" y="0" width="340" height="510" fill="#F4F7F2" stroke="#6B7F5E" stroke-width="1.5" rx="8"/>
+    <text x="20" y="30" font-size="15" font-weight="bold" fill="#3A4832">0.0 메인 (Long Scroll Landing)</text>
+
+    <!-- 0.1 -->
+    <rect x="15" y="45" width="310" height="65" class="box-sub"/>
+    <text x="25" y="70" class="text-sub-title">0.1 First Impression</text>
+    <text x="25" y="90" class="text-sub-desc">DAMORI 브랜드 존재 이유 요약</text>
+
+    <!-- 0.2 -->
+    <rect x="15" y="120" width="310" height="65" class="box-sub"/>
+    <text x="25" y="145" class="text-sub-title">0.2 Brand Core Summary</text>
+    <text x="25" y="165" class="text-sub-desc">사색의 깊이 &amp; 미안함 없는 기록 철학</text>
+
+    <!-- 0.3 -->
+    <rect x="15" y="195" width="310" height="65" class="box-sub"/>
+    <text x="25" y="220" class="text-sub-title">0.3 Recording Experience</text>
+    <text x="25" y="240" class="text-sub-desc">짧은 회고 / 글 보존 / 편안한 복귀 경험</text>
+
+    <!-- 0.4 -->
+    <rect x="15" y="270" width="310" height="65" class="box-sub"/>
+    <text x="25" y="295" class="text-sub-title">0.4 Product Groups Intro</text>
+    <text x="25" y="315" class="text-sub-desc">아날로그 &amp; 디지털 하이브리드 결합</text>
+
+    <!-- 0.5 -->
+    <rect x="15" y="345" width="310" height="65" class="box-sub"/>
+    <text x="25" y="370" class="text-sub-title">0.5 Portfolio Showcase</text>
+    <text x="25" y="390" class="text-sub-desc">대표 Product 최소 15개 이상 수용 영역</text>
+
+    <!-- 0.6 -->
+    <rect x="15" y="420" width="310" height="65" class="box-sub"/>
+    <text x="25" y="445" class="text-sub-title">0.6 Navigation &amp; Footer</text>
+    <text x="25" y="465" class="text-sub-desc">서브 연결 &amp; 전역 푸터 정보</text>
+  </g>
+
+  <!-- 1.0 PRODUCTS Tree -->
+  <g transform="translate(430, 190)">
+    <rect x="0" y="0" width="340" height="510" fill="#F4F7F2" stroke="#6B7F5E" stroke-width="1.5" rx="8"/>
+    <text x="20" y="30" font-size="15" font-weight="bold" fill="#3A4832">1.0 PRODUCTS (제품군 탐색)</text>
+
+    <!-- 1.1 -->
+    <rect x="15" y="45" width="310" height="70" class="box-sub"/>
+    <text x="25" y="70" class="text-sub-title">1.1 Visual Hero</text>
+    <text x="25" y="90" class="text-sub-desc">카테고리 비주얼 아이덴티티 표현</text>
+
+    <!-- 1.2 -->
+    <rect x="15" y="125" width="310" height="70" class="box-sub"/>
+    <text x="25" y="150" class="text-sub-title">1.2 Product Group Exploration</text>
+    <text x="25" y="170" class="text-sub-desc">약 200개 인벤토리 Pool 유연한 탐색</text>
+
+    <!-- 1.3 -->
+    <rect x="15" y="205" width="310" height="95" class="box-sub"/>
+    <text x="25" y="230" class="text-sub-title">1.3 Product Feature &amp; Spec</text>
+    <text x="25" y="250" class="text-sub-desc">소재, 제본 스펙, 잉크 번짐 저감 검토</text>
+    <text x="25" y="270" class="text-sub-desc">실측 치수 1:1 대조 정보 제공</text>
+
+    <!-- 1.4 -->
+    <rect x="15" y="310" width="310" height="70" class="box-sub"/>
+    <text x="25" y="335" class="text-sub-title">1.4 User-led Exploration</text>
+    <text x="25" y="355" class="text-sub-desc">사용자 기준 자율 조건 탐색 영역</text>
+  </g>
+
+  <!-- 2.0 BRAND Tree -->
+  <g transform="translate(810, 190)">
+    <rect x="0" y="0" width="340" height="510" fill="#F4F7F2" stroke="#6B7F5E" stroke-width="1.5" rx="8"/>
+    <text x="20" y="30" font-size="15" font-weight="bold" fill="#3A4832">2.0 BRAND (독립 브랜드 서사)</text>
+
+    <!-- 2.1 -->
+    <rect x="15" y="45" width="310" height="65" class="box-sub"/>
+    <text x="25" y="70" class="text-sub-title">2.1 DAMORI Introduction</text>
+    <text x="25" y="90" class="text-sub-desc">DAMORI 브랜드 존재 이유 &amp; 비전</text>
+
+    <!-- 2.2 -->
+    <rect x="15" y="120" width="310" height="65" class="box-sub"/>
+    <text x="25" y="145" class="text-sub-title">2.2 Brand Existence &amp; Purpose</text>
+    <text x="25" y="165" class="text-sub-desc">왜 존재하는가 (쉼표 메시지)</text>
+
+    <!-- 2.3 -->
+    <rect x="15" y="195" width="310" height="65" class="box-sub"/>
+    <text x="25" y="220" class="text-sub-title">2.3 Recording Philosophy</text>
+    <text x="25" y="240" class="text-sub-desc">의무가 아닌 쉼표로서의 기록 철학</text>
+
+    <!-- 2.4 -->
+    <rect x="15" y="270" width="310" height="65" class="box-sub"/>
+    <text x="25" y="295" class="text-sub-title">2.4 Core Values &amp; User Value</text>
+    <text x="25" y="315" class="text-sub-desc">Zero Strain / Data Integrity / Autonomy</text>
+
+    <!-- 2.5 -->
+    <rect x="15" y="345" width="310" height="65" class="box-sub"/>
+    <text x="25" y="370" class="text-sub-title">2.5 Analog &amp; Digital Principle</text>
+    <text x="25" y="390" class="text-sub-desc">물성과 편의성의 상호 보완 관계</text>
+
+    <!-- 2.6 -->
+    <rect x="15" y="420" width="310" height="65" class="box-sub"/>
+    <text x="25" y="445" class="text-sub-title">2.6 Product Principle</text>
+    <text x="25" y="465" class="text-sub-desc">기록 도구를 바라보는 DAMORI 원칙</text>
+  </g>
+
+  <!-- Global Rules Section -->
+  <g transform="translate(50, 720)">
+    <rect x="0" y="0" width="1100" height="140" fill="#FAFCF9" stroke="#A2B29F" stroke-width="1.5" rx="8"/>
+    <text x="20" y="28" font-size="15" font-weight="bold" fill="#3A4832">전역 설계 규범 (Global Rules)</text>
+
+    <!-- Global Rule Accessibility -->
+    <rect x="20" y="42" width="520" height="80" class="box-extra"/>
+    <text x="35" y="65" class="text-extra">GLOBAL RULE: ACCESSIBILITY_RULE</text>
+    <text x="35" y="87" font-size="12" fill="#555555">WCAG 2.1 AA 명도 대비 고려 (#6B7F5E / #FFFFFF 4.35:1 검증)</text>
+    <text x="35" y="105" font-size="12" fill="#555555">본문 텍스트용 다크 올리브(#4E5E43 6.98:1) 검토 필요성 명시</text>
+
+    <!-- Global Rule Responsive -->
+    <rect x="560" y="42" width="520" height="80" class="box-extra"/>
+    <text x="575" y="65" class="text-extra">GLOBAL RULE: RESPONSIVE_RULE</text>
+    <text x="575" y="87" font-size="12" fill="#555555">Desktop / Tablet / Mobile 3대 뷰포트 대응</text>
+    <text x="575" y="105" font-size="12" fill="#555555">동일 정보 구조 레이아웃 일관성 유지</text>
+  </g>
+</svg>
