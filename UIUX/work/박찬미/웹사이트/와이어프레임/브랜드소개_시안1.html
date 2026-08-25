@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HALO 브랜드 소개 & 하드웨어 랩 철학 와이어프레임 (수정본)</title>
+  <style>
+    @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+    :root {
+      --halo-black: #000000;
+      --halo-white: #FFFFFF;
+      --halo-gray-bg: #F8F9FA;
+      --halo-gray-light: #E5E7EB;
+      --halo-gray-mid: #9CA3AF;
+      --halo-gray-dark: #4B5563;
+      --halo-gray-900: #111827;
+      --halo-blue: #0284C7;
+      --halo-lime: #84CC16;
+      --border-thick: 2px solid #000000;
+      --border-thin: 1px solid #000000;
+      --border-gray: 1px solid #D1D5DB;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif; }
+    body { background: #FFFFFF; color: #000000; line-height: 1.5; padding-bottom: 90px; }
+
+    /* Layout Containers */
+    .container { max-width: 1320px; margin: 0 auto; padding: 0 20px; }
+    
+    /* Top Storyboard Meta Header */
+    .sb-meta-bar { background: #000000; color: #FFFFFF; padding: 14px 24px; border-bottom: 2px solid #333333; position: sticky; top: 0; z-index: 1000; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .sb-title-group { display: flex; align-items: center; gap: 10px; }
+    .sb-badge { background: #38BDF8; color: #000000; font-size: 11px; font-weight: 900; padding: 4px 8px; border-radius: 2px; }
+    .sb-title { font-size: 16px; font-weight: 900; letter-spacing: -0.02em; }
+    .sb-desc { font-size: 12px; color: #94A3B8; }
+
+    /* GNB */
+    .site-gnb { background: #FFFFFF; border-bottom: var(--border-thick); padding: 16px 0; }
+    .gnb-inner { display: flex; justify-content: space-between; align-items: center; }
+    .brand-logo { font-size: 20px; font-weight: 900; letter-spacing: -0.03em; color: #000; text-decoration: none; display: flex; align-items: center; gap: 6px; }
+    .gnb-menu { display: flex; gap: 16px; font-size: 13px; font-weight: 800; align-items: center; }
+    .gnb-menu a { color: #000; text-decoration: none; }
+    .gnb-menu a.active { border-bottom: 2px solid #000; padding-bottom: 2px; }
+
+    /* Section Utilities */
+    .section-spacing { padding: 72px 0; border-bottom: var(--border-thick); }
+    .section-header { margin-bottom: 40px; text-align: center; }
+    .section-tag { font-size: 12px; font-weight: 900; color: #0284C7; letter-spacing: 0.05em; display: inline-block; margin-bottom: 8px; }
+    .section-title { font-size: 32px; font-weight: 900; letter-spacing: -0.03em; line-height: 1.3; margin-bottom: 12px; }
+    .section-desc { font-size: 15px; color: var(--halo-gray-dark); max-width: 720px; margin: 0 auto; line-height: 1.6; }
+
+    /* Hero Manifesto */
+    .brand-hero { background: #000000; color: #FFFFFF; padding: 88px 0 72px; border-bottom: var(--border-thick); }
+    .hero-badge { background: #38BDF8; color: #000; font-size: 11px; font-weight: 900; padding: 3px 8px; display: inline-block; margin-bottom: 16px; }
+    .hero-manifesto-title { font-size: 42px; font-weight: 900; line-height: 1.25; letter-spacing: -0.03em; margin-bottom: 20px; }
+    .hero-manifesto-title span { color: #38BDF8; }
+    .hero-manifesto-sub { font-size: 17px; color: #94A3B8; max-width: 820px; line-height: 1.7; margin-bottom: 32px; }
+    
+    /* 1:1 Motion Contrast Stage */
+    .contrast-stage { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+    @media (max-width: 860px) { .contrast-stage { grid-template-columns: 1fr; } }
+    .contrast-card { border: 2px solid #333333; padding: 24px; background: #0F172A; }
+    .contrast-card.halo-side { border-color: #38BDF8; background: #0284C715; }
+    .contrast-card-tag { font-size: 11px; font-weight: 900; padding: 2px 8px; display: inline-block; margin-bottom: 12px; }
+    .contrast-card-title { font-size: 20px; font-weight: 900; margin-bottom: 8px; color: #FFF; }
+    .contrast-card-desc { font-size: 13px; color: #94A3B8; line-height: 1.6; }
+
+    /* 3 Core Values Grid */
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    @media (max-width: 900px) { .values-grid { grid-template-columns: 1fr; } }
+    .value-card { border: var(--border-thick); background: #FFFFFF; padding: 32px 24px; display: flex; flex-direction: column; justify-content: space-between; }
+    .value-num { font-size: 12px; font-weight: 900; color: #0284C7; letter-spacing: 0.1em; margin-bottom: 8px; }
+    .value-title { font-size: 22px; font-weight: 900; margin-bottom: 12px; line-height: 1.35; }
+    .value-desc { font-size: 13.5px; color: var(--halo-gray-dark); line-height: 1.65; margin-bottom: 20px; }
+    .value-spec-box { background: var(--halo-gray-bg); border: 1px solid #E2E8F0; padding: 12px 16px; font-size: 12px; font-weight: 800; }
+
+    /* 4-Step R&D Pipeline Cards */
+    .rnd-pipeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    @media (max-width: 1024px) { .rnd-pipeline { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .rnd-pipeline { grid-template-columns: 1fr; } }
+    .rnd-card { border: var(--border-thick); background: #FFFFFF; padding: 20px; position: relative; }
+    .rnd-step-badge { background: #000; color: #FFF; font-size: 10.5px; font-weight: 900; padding: 3px 8px; display: inline-block; margin-bottom: 10px; }
+    .rnd-step-title { font-size: 17px; font-weight: 900; margin-bottom: 6px; }
+    .rnd-step-desc { font-size: 12.5px; color: var(--halo-gray-dark); line-height: 1.55; margin-bottom: 14px; }
+    .rnd-metric-badge { background: #F0F9FF; border: 1px solid #BAE6FD; color: #0284C7; font-size: 11px; font-weight: 900; padding: 6px 10px; }
+
+    /* 5 Sports Fields Grid */
+    .sports-fields-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+    @media (max-width: 1100px) { .sports-fields-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .sports-fields-grid { grid-template-columns: 1fr; } }
+    .sport-box { border: var(--border-thick); background: #FFF; padding: 18px 14px; }
+    .sport-box-name { font-size: 15px; font-weight: 900; margin-bottom: 6px; }
+    .sport-box-criteria { font-size: 11px; font-weight: 900; color: #0284C7; margin-bottom: 8px; }
+    .sport-box-desc { font-size: 12px; color: var(--halo-gray-dark); line-height: 1.5; }
+
+    /* Materials / Sustainability Section */
+    .materials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    @media (max-width: 768px) { .materials-grid { grid-template-columns: 1fr; } }
+    .material-box { border: var(--border-thick); background: #FFF; padding: 28px; }
+
+    /* Storyboard Spec Area on Bottom */
+    .sb-spec-section { margin-top: 48px; border-top: var(--border-thick); padding-top: 32px; background: #F8F9FA; border: var(--border-thick); padding: 24px; }
+    .sb-spec-title { font-size: 18px; font-weight: 900; margin-bottom: 16px; }
+    .sb-spec-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    @media (max-width: 768px) { .sb-spec-grid { grid-template-columns: 1fr; } }
+    .sb-spec-box { background: #FFF; border: 1px solid #CBD5E1; padding: 16px; }
+    .sb-spec-box h4 { font-size: 13px; font-weight: 900; margin-bottom: 8px; border-bottom: 1px solid #E2E8F0; padding-bottom: 4px; }
+    .sb-spec-box p, .sb-spec-box li { font-size: 12px; color: #334155; line-height: 1.6; }
+
+    /* Modals & Buttons */
+    .btn-sku-action { border: var(--border-thick); background: #FFFFFF; color: #000000; font-size: 13px; font-weight: 900; padding: 10px 20px; cursor: pointer; text-decoration: none; display: inline-block; }
+    .btn-sku-action.primary { background: #000000; color: #FFFFFF; }
+    .btn-sku-action:hover { opacity: 0.9; }
+
+    .modal-backdrop { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.75); z-index: 2000; align-items: center; justify-content: center; padding: 16px; }
+    .modal-window { background: var(--halo-white); border: var(--border-thick); width: 100%; max-width: 520px; padding: 32px 28px; position: relative; }
+    .modal-close-btn { position: absolute; top: 16px; right: 16px; border: var(--border-thick); background: var(--halo-black); color: var(--halo-white); font-size: 13px; font-weight: 900; padding: 6px 12px; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+  <!-- Top Storyboard Header -->
+  <header class="sb-meta-bar">
+    <div class="sb-title-group">
+      <span class="sb-badge">WIREFRAME</span>
+      <span class="sb-title">HALO 브랜드 소개 & 하드웨어 랩 철학 와이어프레임</span>
+    </div>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <a href="0825_HALO_메인페이지_와이어프레임.html" style="background:#38BDF8; color:#000000; padding:6px 14px; font-size:12px; font-weight:900; text-decoration:none; border-radius:2px; display:inline-flex; align-items:center; gap:6px;">← 메인 홈으로 돌아가기</a>
+      <a href="수정_02_카테고리_와이어프레임.html" style="background:#FFFFFF; color:#000000; padding:6px 14px; font-size:12px; font-weight:900; text-decoration:none; border-radius:2px; display:inline-flex; align-items:center; gap:6px;">카테고리 기어 (16종) ➔</a>
+      <div class="sb-desc">
+        기준: <strong>2026-08-25 메인페이지 확정 브랜드 철학 & R&D 4단계 프로세스 100% 동기화</strong>
+      </div>
+    </div>
+  </header>
+
+  <!-- GNB -->
+  <nav class="site-gnb">
+    <div class="container gnb-inner">
+      <a href="0825_HALO_메인페이지_와이어프레임.html" class="brand-logo">
+        <span style="background:#000; color:#FFF; padding:2px 6px; font-size:12px;">HALO</span>
+        <span>GEAR LAB</span>
+      </a>
+      <div class="gnb-menu">
+        <a href="0825_HALO_메인페이지_와이어프레임.html">← 메인 홈 (Home)</a>
+        <a href="#" class="active">브랜드 소개 (Brand Story)</a>
+        <a href="0825_HALO_메인페이지_와이어프레임.html#rnd-process">R&D 연구실</a>
+        <a href="수정_02_카테고리_와이어프레임.html">카테고리 기어 (16 SKUs)</a>
+        <a href="0825_HALO_메인페이지_와이어프레임.html#routine">Pre/In/Post 루틴</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- SEC-01: Hero Manifesto -->
+  <section class="brand-hero">
+    <div class="container">
+      <span class="hero-badge">KINETIC SUNCARE GEAR MANIFESTO</span>
+      <h1 class="hero-manifesto-title">
+        "우리는 부드러운 화장품을 만들지 않는다.<br>
+        운동의 흐름을 <span>멈추지 않는 하드웨어</span>를 설계한다."
+      </h1>
+      <p class="hero-manifesto-sub">
+        기존 선케어의 45초 멈춤, 배낭 열기, 끈적이는 손바닥 오염은 스포츠의 흐름을 끊어놓았습니다.<br>
+        HALO는 AL6061 항공 알루미늄 카라비너와 크라이오 포뮬러를 결합하여, 질주 속도 그대로 <strong>3초 만에 덧바르는 노터치 쿨링 기어</strong>를 탄생시켰습니다.
+      </p>
+
+      <!-- 1:1 Motion Contrast -->
+      <div class="contrast-stage">
+        <div class="contrast-card">
+          <span class="contrast-card-tag" style="background:#EF4444; color:#FFF;">기존 뷰티 선케어의 비효율 (45초 지연)</span>
+          <div class="contrast-card-title">운동 중 멈춤, 배낭 벗기, 손바닥 끈적임</div>
+          <div class="contrast-card-desc">
+            달리기를 멈추고 지퍼를 열어 크림을 짜내고 손을 닦는 동안 심박수와 러닝 페이스가 급격히 무너집니다.
+          </div>
+        </div>
+
+        <div class="contrast-card halo-side">
+          <span class="contrast-card-tag" style="background:#38BDF8; color:#000;">HALO 하드웨어 기어 혁신 (0초 무정지)</span>
+          <div class="contrast-card-title">한 손 0.8초 탈착, 노터치 3초 롤링 쿨다운</div>
+          <div class="contrast-card-desc">
+            시속 15km로 달리며 셔츠나 힙색 고리에서 원터치로 분리하여 목선에 -4.2℃ 급속 냉각 방어막을 칩니다.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SEC-02: 3 Core Philosophy -->
+  <section class="section-spacing">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">[3 CORE ENGINEERING PILLARS]</span>
+        <h2 class="section-title">HALO를 정의하는 3대 하드웨어 철학</h2>
+        <p class="section-desc">
+          손을 대지 않는 무오염 구조, 피부 온도를 즉각 떨어뜨리는 크라이오 공학, 극한의 마찰에도 견디는 내구성.
+        </p>
+      </div>
+
+      <div class="values-grid">
+        <div class="value-card">
+          <div>
+            <div class="value-num">PILLAR 01</div>
+            <h3 class="value-title">No-Touch Architecture<br>(손 오염 0.0% 노터치)</h3>
+            <p class="value-desc">
+              땀과 흙먼지가 묻은 손으로 얼굴을 만질 필요가 없습니다. AL6061 합금 일체형 카라비너 래치와 360° 인체공학 롤러 볼이 손바닥 오염을 원천 차단합니다.
+            </p>
+          </div>
+          <div class="value-spec-box">
+            ● 손바닥 유분 잔여율: <strong>0.0% 입증</strong><br>
+            ● 탈착 소요 시간: <strong>평균 0.8초</strong>
+          </div>
+        </div>
+
+        <div class="value-card">
+          <div>
+            <div class="value-num">PILLAR 02</div>
+            <h3 class="value-title">Instant Cryo-Cooling<br>(체온 -4.2℃ 급속 냉각)</h3>
+            <p class="value-desc">
+              45℃ 아스팔트 지열과 폭염 속에서 피부 표면 열을 즉시 흡수하는 나노 크라이오 캡슐이 도포 즉시 기화열 반응을 일으켜 심박 과열을 방어합니다.
+            </p>
+          </div>
+          <div class="value-spec-box">
+            ● 피부 표면 온도 강하: <strong>즉각 -4.2℃</strong><br>
+            ● 질소 미스트 기화 시간: <strong>3초 퀵드라이</strong>
+          </div>
+        </div>
+
+        <div class="value-card">
+          <div>
+            <div class="value-num">PILLAR 03</div>
+            <h3 class="value-title">Extreme Endurance<br>(땀 흘림 98.4% 잔존)</h3>
+            <p class="value-desc">
+              흘러내리는 땀과 바다 염분, 배낭 스트랩 및 쇠 바벨 마찰에도 지워지지 않는 고밀착 UV 장벽이 풀코스 완주 순간까지 피부를 보호합니다.
+            </p>
+          </div>
+          <div class="value-spec-box">
+            ● 땀 흘림 후 UV 잔존율: <strong>98.4% 검증</strong><br>
+            ● 공인 방수 지속력: <strong>80분 내수성</strong>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SEC-03: 4-Step R&D Process -->
+  <section class="section-spacing" style="background: var(--halo-gray-bg);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">[4-STEP R&D PIPELINE]</span>
+        <h2 class="section-title">선수단 인터뷰부터 공인 인증까지</h2>
+        <p class="section-desc">
+          HALO의 모든 기어는 300명의 엘리트 선수단 필드 계측과 12차례의 CAD 프로토타이핑을 거쳐 완성됩니다.
+        </p>
+      </div>
+
+      <div class="rnd-pipeline">
+        <div class="rnd-card">
+          <span class="rnd-step-badge">STEP 01 | DISCOVER</span>
+          <h3 class="rnd-step-title">땀 배출 열지도 분석</h3>
+          <p class="rnd-step-desc">
+            마라토너와 트레일 러너의 운동 중 열화상 카메라 계측 및 45초 멈춤으로 인한 페이스 저하 로그 분석.
+          </p>
+          <div class="rnd-metric-badge">300명 선수단 인터뷰 완료</div>
+        </div>
+
+        <div class="rnd-card">
+          <span class="rnd-step-badge">STEP 02 | ENGINEER</span>
+          <h3 class="rnd-step-title">카라비너 CAD 분해 설계</h3>
+          <p class="rnd-step-desc">
+            AL6061 항공 알루미늄을 0.01mm 정밀도로 절삭하고 0.8초 원핸드 스프링 래치 메커니즘 개발.
+          </p>
+          <div class="rnd-metric-badge">12차 프로토타입 금형 검증</div>
+        </div>
+
+        <div class="rnd-card">
+          <span class="rnd-step-badge">STEP 03 | VALIDATE</span>
+          <h3 class="rnd-step-title">45℃ 극한 실전 계측</h3>
+          <p class="rnd-step-desc">
+            정오의 아스팔트 주로와 거친 파도 속에서 320시간 연속 착용 내구성 및 자외선 방어력 실측.
+          </p>
+          <div class="rnd-metric-badge">320시간 실전 테스트 통과</div>
+        </div>
+
+        <div class="rnd-card">
+          <span class="rnd-step-badge">STEP 04 | CERTIFY</span>
+          <h3 class="rnd-step-title">공인 안전성 시험</h3>
+          <p class="rnd-step-desc">
+            눈시림 0.00 No-Sting 안자극 테스트 통과, 100% 비건 성분 검증 및 Reef-Safe 산호초 보호 시험.
+          </p>
+          <div class="rnd-metric-badge">No-Sting & Reef-Safe 공인</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SEC-04: 5 Sports Extreme Fields -->
+  <section class="section-spacing">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">[5 EXTREME FIELD BENCHMARKS]</span>
+        <h2 class="section-title">5대 극한 스포츠 환경 기준과 솔루션</h2>
+        <p class="section-desc">
+          각 종목마다 부딪히는 고유한 환경의 문제에 정확히 개입하는 16종 하드웨어 풀 라인업.
+        </p>
+      </div>
+
+      <div class="sports-fields-grid">
+        <div class="sport-box">
+          <div class="sport-box-name">01. 러닝 & 마라톤</div>
+          <div class="sport-box-criteria">아스팔트 열기와 휴대</div>
+          <div class="sport-box-desc">
+            흘러내리는 땀과 45℃ 지열 속에서 멈추지 않는 카라비너 퀵스틱(#01)과 질소 미스트(#02)로 페이스 사수.
+          </div>
+        </div>
+
+        <div class="sport-box">
+          <div class="sport-box-name">02. 하이킹 & 클라이밍</div>
+          <div class="sport-box-criteria">먼지·고도와 마찰</div>
+          <div class="sport-box-desc">
+            고산 칼바람과 배낭 마찰을 막는 세라마이드 젤(#05)과 초크백 연동 미네랄 파우더(#06) 방어.
+          </div>
+        </div>
+
+        <div class="sport-box">
+          <div class="sport-box-name">03. 서핑 & 수상 액티브</div>
+          <div class="sport-box-criteria">물방울과 염분</div>
+          <div class="sport-box-desc">
+            거친 파도에 지워지지 않는 80분 지속 방수 무기자차(#08)와 소금 결정 중화 세정 미스트(#09).
+          </div>
+        </div>
+
+        <div class="sport-box">
+          <div class="sport-box-name">04. 테니스 & 골프</div>
+          <div class="sport-box-criteria">반사광과 그립</div>
+          <div class="sport-box-desc">
+            라켓 오버그립 유분 묻음 0.0% 무유분 메쉬 쿠션(#11)과 눈시림 없는 10초 흡수 플루이드(#13).
+          </div>
+        </div>
+
+        <div class="sport-box">
+          <div class="sport-box-name">05. 피트니스 & 크로스핏</div>
+          <div class="sport-box-criteria">땀과 기구 마찰</div>
+          <div class="sport-box-desc">
+            쇠 바벨 마찰력 99.1% 보존 마그네슘 스틱(#14)과 모공을 막지 않는 산소 플루이드(#15).
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SEC-05: Materials & Sustainability -->
+  <section class="section-spacing" style="background: #000000; color: #FFFFFF;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" style="color:#38BDF8;">[HARDWARE MATERIAL & SUSTAINABILITY]</span>
+        <h2 class="section-title" style="color:#FFF;">지속 가능한 엔지니어링 소재</h2>
+        <p class="section-desc" style="color:#94A3B8;">
+          일회용 플라스틱 용기를 거부하고, 수년간 리필 교체로 사용하는 항공 알루미늄 하우징.
+        </p>
+      </div>
+
+      <div class="materials-grid">
+        <div class="material-box" style="background:#0F172A; border-color:#333;">
+          <h3 style="font-size:20px; font-weight:900; margin-bottom:10px; color:#38BDF8;">AL6061 Anodized Aluminum</h3>
+          <p style="font-size:13px; color:#CBD5E1; line-height:1.6; margin-bottom:14px;">
+            항공기 부품에 쓰이는 AL6061 합금을 CNC 정밀 절삭하여 가볍고 견고한 하우징을 제작했습니다. 내부 리필 코어만 교체하여 평생 사용할 수 있는 지속 가능한 하드웨어입니다.
+          </p>
+          <div style="font-size:11.5px; color:#84CC16; font-weight:800;">● 플라스틱 폐기물 84% 감축 설계</div>
+        </div>
+
+        <div class="material-box" style="background:#0F172A; border-color:#333;">
+          <h3 style="font-size:20px; font-weight:900; margin-bottom:10px; color:#38BDF8;">100% Reef-Safe & Vegan Formula</h3>
+          <p style="font-size:13px; color:#CBD5E1; line-height:1.6; margin-bottom:14px;">
+            하와이와 팔라우 해양 국립공원 기준을 준수하여 옥시벤존, 옥티녹세이트를 100% 배제했습니다. 산호초 백화 현상을 막고 동물성 원료를 일체 배제한 클린 포뮬러입니다.
+          </p>
+          <div style="font-size:11.5px; color:#84CC16; font-weight:800;">● 해양 생태계 무해성 100% 검증 준비</div>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:40px;">
+        <button type="button" class="btn-sku-action primary" onclick="openLaunchModal('HALO 브랜드 라인업')" style="background:#38BDF8; color:#000; font-size:14px; padding:14px 32px; border:none;">
+          15% 얼리버드 출시 알림 신청하기 ➔
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  
+
+  <!-- Launch Alert Modal (4 States) -->
+  <div class="modal-backdrop" id="launchModalBackdrop" onclick="closeLaunchModal(event)">
+    <div class="modal-window" onclick="event.stopPropagation()">
+      <button type="button" class="modal-close-btn" onclick="closeLaunchModal()">[X] 닫기</button>
+      
+      <!-- State 1: Form -->
+      <div id="launchStateForm">
+        <div style="font-size:12px; font-weight:800; color:#0284C7; margin-bottom:4px;">15% EARLY-BIRD ALERT</div>
+        <h3 style="font-size:20px; font-weight:900; margin-bottom:8px;" id="launchTargetSkuTitle">출시 알림 신청</h3>
+        <p style="font-size:12px; color:#64748B; margin-bottom:20px;">
+          공식 출시 시점 알림과 함께 15% 얼리버드 쿠폰 코드를 발송해 드립니다.
+        </p>
+
+        <form onsubmit="handleLaunchSubmit(event)">
+          <div style="margin-bottom:12px;">
+            <label style="display:block; font-size:11.5px; font-weight:800; margin-bottom:4px;">알림 수신 연락처 (이메일 또는 휴대폰)</label>
+            <input type="text" id="launchContactInput" required placeholder="010-0000-0000 또는 example@halo.com" style="width:100%; padding:10px; border:1px solid #000; font-size:12.5px;" />
+          </div>
+
+          <div style="margin-bottom:16px;">
+            <label style="display:flex; align-items:center; gap:6px; font-size:11.5px; cursor:pointer;">
+              <input type="checkbox" required id="launchPrivacyCheck" checked />
+              <span>[필수] 개인정보 수집·이용 및 출시 알림 수신에 동의합니다.</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn-sku-action primary" style="width:100%; padding:12px; font-size:13px;">15% 얼리버드 알림 신청 완료</button>
+        </form>
+      </div>
+
+      <!-- State 2: Submitting -->
+      <div id="launchStateSubmitting" style="display:none; text-align:center; padding:32px 0;">
+        <div style="font-size:24px; font-weight:900; margin-bottom:8px;">● 신청 처리 중...</div>
+        <p style="font-size:12px; color:#64748B;">알림 시스템에 안전하게 등록 중입니다.</p>
+      </div>
+
+      <!-- State 3: Success -->
+      <div id="launchStateSuccess" style="display:none; text-align:center; padding:24px 0;">
+        <div style="font-size:32px; color:#84CC16; margin-bottom:12px;">✔</div>
+        <h4 style="font-size:18px; font-weight:900; margin-bottom:8px;">알림 신청이 완료되었습니다!</h4>
+        <p style="font-size:12px; color:#64748B; margin-bottom:20px;">
+          공식 출시일 00시에 15% 시크릿 할인 쿠폰이 발송됩니다.
+        </p>
+        <button type="button" class="btn-sku-action primary" onclick="closeLaunchModal()" style="padding:8px 24px;">확인</button>
+      </div>
+
+      <!-- State 4: Error -->
+      <div id="launchStateError" style="display:none; text-align:center; padding:24px 0;">
+        <div style="font-size:32px; color:#EF4444; margin-bottom:12px;">⚠</div>
+        <h4 style="font-size:18px; font-weight:900; margin-bottom:8px;">신청 처리 중 오류가 발생했습니다</h4>
+        <p style="font-size:12px; color:#64748B; margin-bottom:20px;">
+          입력하신 연락처 포맷을 다시 확인해 주세요.
+        </p>
+        <button type="button" class="btn-sku-action" onclick="showLaunchState('form')">다시 시도하기 ↺</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JavaScript Engine -->
+  <script>
+    function openLaunchModal(targetTitle) {
+      document.getElementById('launchTargetSkuTitle').textContent = '[' + (targetTitle || 'HALO 브랜드 기어') + '] 15% 얼리버드 출시 알림';
+      showLaunchState('form');
+      document.getElementById('launchModalBackdrop').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLaunchModal(e) {
+      if (!e || e.target.id === 'launchModalBackdrop' || e.target.classList.contains('modal-close-btn')) {
+        document.getElementById('launchModalBackdrop').style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    }
+
+    function showLaunchState(state) {
+      document.getElementById('launchStateForm').style.display = state === 'form' ? 'block' : 'none';
+      document.getElementById('launchStateSubmitting').style.display = state === 'submitting' ? 'block' : 'none';
+      document.getElementById('launchStateSuccess').style.display = state === 'success' ? 'block' : 'none';
+      document.getElementById('launchStateError').style.display = state === 'error' ? 'block' : 'none';
+    }
+
+    function handleLaunchSubmit(e) {
+      e.preventDefault();
+      const contact = document.getElementById('launchContactInput').value.trim();
+      const privacy = document.getElementById('launchPrivacyCheck').checked;
+
+      if (!contact || !privacy) {
+        showLaunchState('error');
+        return;
+      }
+
+      showLaunchState('submitting');
+      setTimeout(() => {
+        showLaunchState('success');
+      }, 700);
+    }
+  </script>
+</body>
+</html>

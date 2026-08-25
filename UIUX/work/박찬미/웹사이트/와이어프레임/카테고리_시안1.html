@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HALO 16종 전 카테고리 기어 카탈로그 & 스펙 횡단 비교 스토리보드 (수정본)</title>
+  <style>
+    @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+    :root {
+      --halo-black: #000000;
+      --halo-white: #FFFFFF;
+      --halo-gray-bg: #F8F9FA;
+      --halo-gray-light: #E5E7EB;
+      --halo-gray-mid: #9CA3AF;
+      --halo-gray-dark: #4B5563;
+      --halo-gray-900: #111827;
+      --halo-blue: #0284C7;
+      --halo-lime: #84CC16;
+      --border-thick: 2px solid #000000;
+      --border-thin: 1px solid #000000;
+      --border-gray: 1px solid #D1D5DB;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif; }
+    body { background: #FFFFFF; color: #000000; line-height: 1.5; padding-bottom: 90px; }
+
+    /* Layout Containers */
+    .container { max-width: 1400px; margin: 0 auto; padding: 0 20px; }
+    
+    /* Top Storyboard Meta Header */
+    .sb-meta-bar { background: #000000; color: #FFFFFF; padding: 14px 24px; border-bottom: 2px solid #333333; position: sticky; top: 0; z-index: 1000; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .sb-title-group { display: flex; align-items: center; gap: 10px; }
+    .sb-badge { background: #38BDF8; color: #000000; font-size: 11px; font-weight: 900; padding: 4px 8px; border-radius: 2px; }
+    .sb-title { font-size: 16px; font-weight: 900; letter-spacing: -0.02em; }
+    .sb-desc { font-size: 12px; color: #94A3B8; }
+
+    /* GNB */
+    .site-gnb { background: #FFFFFF; border-bottom: var(--border-thick); padding: 16px 0; }
+    .gnb-inner { display: flex; justify-content: space-between; align-items: center; }
+    .brand-logo { font-size: 20px; font-weight: 900; letter-spacing: -0.03em; color: #000; text-decoration: none; display: flex; align-items: center; gap: 6px; }
+    .gnb-menu { display: flex; gap: 16px; font-size: 13px; font-weight: 800; align-items: center; }
+    .gnb-menu a { color: #000; text-decoration: none; }
+    .gnb-menu a.active { border-bottom: 2px solid #000; padding-bottom: 2px; }
+
+    /* Category Header Banner */
+    .cat-hero-banner { background: #000000; color: #FFFFFF; border-bottom: var(--border-thick); padding: 48px 0; margin-bottom: 32px; }
+    .cat-hero-tag { font-size: 12px; font-weight: 900; color: #38BDF8; letter-spacing: 0.05em; margin-bottom: 8px; display: inline-block; }
+    .cat-hero-title { font-size: 32px; font-weight: 900; letter-spacing: -0.03em; line-height: 1.25; margin-bottom: 12px; }
+    .cat-hero-desc { font-size: 14.5px; color: #CBD5E1; max-width: 780px; line-height: 1.6; margin-bottom: 20px; }
+
+    /* 5 Sports Collection Switcher Tabs */
+    .col-tab-bar { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; border-bottom: 1px solid #333333; margin-top: 24px; }
+    .col-tab-btn { background: #1E293B; color: #CBD5E1; border: 1px solid #475569; padding: 10px 18px; font-size: 13px; font-weight: 800; cursor: pointer; white-space: nowrap; transition: all 0.2s; }
+    .col-tab-btn:hover { background: #334155; color: #FFF; }
+    .col-tab-btn.active { background: #38BDF8; color: #000000; border-color: #38BDF8; font-weight: 900; }
+
+    /* Scene Criteria Callout Bar */
+    .scene-criteria-callout { background: #0F172A; border: 1px solid #334155; padding: 14px 20px; margin-top: 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 12.5px; }
+    .scene-criteria-label { color: #84CC16; font-weight: 900; }
+    .scene-criteria-val { color: #FFFFFF; font-weight: 800; }
+
+    /* Layout Main: Filter Sidebar + Products Grid */
+    .cat-layout { display: grid; grid-template-columns: 280px 1fr; gap: 32px; align-items: start; }
+    @media (max-width: 1024px) {
+      .cat-layout { grid-template-columns: 1fr; }
+      .cat-sidebar { display: none; }
+    }
+
+    /* Filter Sidebar */
+    .cat-sidebar { border: var(--border-thick); background: #FFFFFF; padding: 24px; position: sticky; top: 80px; }
+    .filter-header-row { display: flex; justify-content: space-between; align-items: center; border-bottom: var(--border-thick); padding-bottom: 12px; margin-bottom: 20px; }
+    .filter-main-title { font-size: 16px; font-weight: 900; }
+    .btn-reset-filters { font-size: 11.5px; font-weight: 800; color: #000; text-decoration: underline; background: transparent; border: none; cursor: pointer; }
+
+    .filter-group { border-bottom: 1px solid var(--halo-gray-light); padding-bottom: 20px; margin-bottom: 20px; }
+    .filter-group:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .filter-group-title { font-size: 13px; font-weight: 900; margin-bottom: 10px; display: flex; justify-content: space-between; }
+    .filter-chips-grid { display: flex; flex-wrap: wrap; gap: 6px; }
+    
+    .filter-chip { background: var(--halo-gray-bg); border: 1px solid var(--halo-gray-mid); padding: 6px 12px; font-size: 12px; font-weight: 800; cursor: pointer; border-radius: 2px; transition: all 0.15s; }
+    .filter-chip:hover { border-color: #000; }
+    .filter-chip.active { background: #000000; color: #FFFFFF; border-color: #000000; }
+
+    /* Catalog Content Area */
+    .cat-controls-bar { background: var(--halo-gray-bg); border: var(--border-thick); padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
+    .result-count-label { font-size: 14px; font-weight: 900; }
+    .cat-view-options { display: flex; align-items: center; gap: 12px; }
+    .sort-select { padding: 6px 12px; font-size: 12px; font-weight: 800; border: 1px solid #000; background: #FFF; cursor: pointer; }
+
+    /* Active Filter Summary Box */
+    .active-chips-summary { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 20px; padding: 12px 16px; background: #FFF; border: 1px solid var(--halo-gray-light); }
+    .active-tag-chip { background: #000; color: #FFF; font-size: 11.5px; font-weight: 800; padding: 4px 10px; display: inline-flex; align-items: center; gap: 6px; }
+    .btn-remove-tag { cursor: pointer; color: #38BDF8; font-weight: 900; }
+
+    /* Products 3-Column Grid */
+    .sku-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    @media (max-width: 1200px) { .sku-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .sku-grid { grid-template-columns: 1fr; } }
+
+    /* SKU Card Component */
+    .sku-card { border: var(--border-thick); background: #FFFFFF; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; min-height: 520px; height: 100%; position: relative; }
+    .sku-card:hover { outline: 3px solid #000; }
+    
+    .sku-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    .sku-badges-row { display: flex; gap: 6px; flex-wrap: wrap; }
+    .wireframe-badge { border: 1px solid #000; font-size: 10px; font-weight: 900; padding: 2px 6px; background: #FFF; }
+    .wireframe-badge.dark { background: #000; color: #FFF; }
+
+    /* Silhouette / Render Box */
+    .sku-img-box { background: var(--halo-gray-bg); border: 1px solid var(--halo-gray-light); height: 140px; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 14px; position: relative; }
+    .silhouette-icon-box svg { width: 44px; height: 44px; }
+    .silhouette-label { font-size: 10.5px; font-weight: 800; color: var(--halo-gray-dark); margin-top: 4px; }
+
+    /* Role Accordion Box */
+    .sku-role-box { background: #F1F5F9; border: 1px solid #CBD5E1; padding: 10px 12px; margin-bottom: 14px; font-size: 11.5px; }
+    .sku-role-badge { font-size: 10px; font-weight: 900; padding: 2px 6px; display: inline-block; margin-bottom: 4px; }
+    .sku-role-badge.core { background: #000; color: #FFF; }
+    .sku-role-badge.extended { background: #0284C7; color: #FFF; }
+    .sku-role-badge.support { background: #475569; color: #FFF; }
+    
+    .sku-role-content-wrap.collapsed { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .btn-toggle-role-desc { background: transparent; border: none; color: #0284C7; font-size: 10.5px; font-weight: 900; cursor: pointer; padding: 2px 0 0; text-decoration: underline; }
+
+    .sku-card-title { font-size: 16px; font-weight: 900; line-height: 1.35; margin-bottom: 6px; }
+    .sku-card-feature { font-size: 12px; color: var(--halo-gray-dark); line-height: 1.45; margin-bottom: 10px; }
+    
+    .sku-meta-tags { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 16px; }
+    .sku-tag { background: #F1F5F9; font-size: 10.5px; font-weight: 800; padding: 2px 6px; border: 1px solid #E2E8F0; }
+
+    .sku-price-row { display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid var(--halo-gray-light); padding-top: 12px; margin-bottom: 10px; font-size: 18px; font-weight: 900; }
+    
+    .compare-check-label { font-size: 11.5px; font-weight: 800; color: #000; display: flex; align-items: center; gap: 6px; cursor: pointer; margin-bottom: 12px; }
+    
+    .sku-card-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .btn-sku-action { border: var(--border-thick); background: #FFFFFF; color: #000000; font-size: 12px; font-weight: 900; padding: 8px 12px; cursor: pointer; text-align: center; text-decoration: none; }
+    .btn-sku-action.primary { background: #000000; color: #FFFFFF; }
+    .btn-sku-action:hover { opacity: 0.9; }
+
+    /* Empty State */
+    .empty-state-view { text-align: center; padding: 64px 20px; border: var(--border-thick); background: var(--halo-gray-bg); grid-column: 1 / -1; }
+
+    /* 08. Floating Compare Tray (BC-S3, BC-M3 - Exactly Matched with Mainpage) */
+    .floating-compare-tray {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--halo-black);
+      color: var(--halo-white);
+      border-top: var(--border-thick);
+      z-index: 1000;
+      box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.25);
+      display: none;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .compare-tray-collapsed-bar {
+      display: none;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 24px;
+      background: #111111;
+      font-size: 12px;
+      font-weight: 800;
+      border-top: 1px solid #333333;
+    }
+    .floating-compare-tray.collapsed .compare-tray-main-content {
+      display: none;
+    }
+    .floating-compare-tray.collapsed .compare-tray-collapsed-bar {
+      display: flex;
+    }
+    .compare-tray-main-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .compare-tray-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .compare-tray-items {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .compare-mini-chip {
+      background: #222222;
+      border: 1px solid #444444;
+      padding: 6px 12px;
+      font-size: 11.5px;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .compare-mini-chip .btn-remove {
+      color: #999999;
+      cursor: pointer;
+      font-weight: 900;
+    }
+    .compare-mini-chip .btn-remove:hover {
+      color: #FFFFFF;
+    }
+    .compare-tray-actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .btn-open-compare-modal {
+      background: var(--halo-white);
+      color: var(--halo-black);
+      border: 2px solid var(--halo-white);
+      padding: 10px 24px;
+      font-size: 13px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-open-compare-modal:hover {
+      background: #000;
+      color: #FFF;
+    }
+    .btn-tray-collapse-toggle {
+      background: transparent;
+      border: 1px solid #444;
+      color: #AAA;
+      font-size: 11px;
+      padding: 4px 8px;
+      cursor: pointer;
+    }
+
+    /* 09. Modals (BC-S3, BC-V4 - Exactly Matched with Mainpage) */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.75);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .modal-window {
+      background: var(--halo-white);
+      border: var(--border-thick);
+      width: 100%;
+      max-width: 820px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 32px 28px;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    .compare-modal-window {
+      max-width: 980px;
+    }
+    .modal-close-btn {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      border: var(--border-thick);
+      background: var(--halo-black);
+      color: var(--halo-white);
+      font-size: 13px;
+      font-weight: 900;
+      padding: 6px 12px;
+      cursor: pointer;
+    }
+    .compare-table-scroll-container {
+      width: 100%;
+      overflow-x: auto;
+      border: var(--border-thick);
+      margin-top: 16px;
+      max-height: 60vh;
+      background: #FFF;
+    }
+    .compare-modal-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+      min-width: 600px;
+    }
+    .compare-modal-table th,
+    .compare-modal-table td {
+      border: var(--border-thin);
+      padding: 12px 14px;
+      vertical-align: middle;
+      text-align: left;
+    }
+    .compare-modal-table th.sticky-spec-col,
+    .compare-modal-table td.sticky-spec-col {
+      position: sticky;
+      left: 0;
+      background: var(--halo-gray-bg);
+      font-weight: 900;
+      width: 115px;
+      min-width: 115px;
+      max-width: 120px;
+      z-index: 2;
+      border-right: 2px solid #000000 !important;
+    }
+    .compare-modal-table thead tr th {
+      position: sticky;
+      top: 0;
+      background: #FAFAFA;
+      z-index: 3;
+      border-bottom: 2px solid #000000;
+    }
+    .compare-modal-table thead tr th.sticky-spec-col {
+      z-index: 4;
+      background: #EEEEEE;
+    }
+    .compare-cell-diff {
+      background: #F0F9FF !important;
+      font-weight: 800;
+      border-left: 3px solid #0284C7 !important;
+    }
+    .compare-cell-same {
+      color: #64748B;
+    }
+
+    /* Storyboard Spec Area on Bottom */
+    .sb-spec-section { margin-top: 48px; border-top: var(--border-thick); padding-top: 32px; background: #F8F9FA; border: var(--border-thick); padding: 24px; }
+    .sb-spec-title { font-size: 18px; font-weight: 900; margin-bottom: 16px; }
+    .sb-spec-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    @media (max-width: 768px) { .sb-spec-grid { grid-template-columns: 1fr; } }
+    .sb-spec-box { background: #FFF; border: 1px solid #CBD5E1; padding: 16px; }
+    .sb-spec-box h4 { font-size: 13px; font-weight: 900; margin-bottom: 8px; border-bottom: 1px solid #E2E8F0; padding-bottom: 4px; }
+    .sb-spec-box p, .sb-spec-box li { font-size: 12px; color: #334155; line-height: 1.6; }
+  </style>
+</head>
+<body>
+
+  <!-- Top Storyboard Header -->
+  <header class="sb-meta-bar">
+    <div class="sb-title-group">
+      <span class="sb-badge">SCR-0200</span>
+      <span class="sb-title">HALO 16종 전 카테고리 기어 카탈로그 & 스펙 횡단 비교 스토리보드</span>
+    </div>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <a href="0825_HALO_메인페이지_와이어프레임.html" style="background:#38BDF8; color:#000000; padding:6px 14px; font-size:12px; font-weight:900; text-decoration:none; border-radius:2px; display:inline-flex; align-items:center; gap:6px;">← 메인 홈으로 돌아가기</a>
+      <div class="sb-desc">
+        기준: <strong>2026-08-25 메인페이지 16종 하드웨어 스펙 & Salomon 다차원 필터링 축 100% 동기화</strong>
+      </div>
+    </div>
+  </header>
+
+  <!-- GNB -->
+  <nav class="site-gnb">
+    <div class="container gnb-inner">
+      <a href="0825_HALO_메인페이지_와이어프레임.html" class="brand-logo">
+        <span style="background:#000; color:#FFF; padding:2px 6px; font-size:12px;">HALO</span>
+        <span>GEAR LAB</span>
+      </a>
+      <div class="gnb-menu">
+        <a href="0825_HALO_메인페이지_와이어프레임.html" style="background:#000000; color:#FFFFFF; padding:6px 14px; border-radius:2px; font-size:12px; font-weight:900; display:inline-flex; align-items:center; gap:4px; text-decoration:none;">← 메인 홈 (Home)</a>
+        <a href="0825_HALO_메인페이지_와이어프레임.html#philosophy">브랜드 철학</a>
+        <a href="0825_HALO_메인페이지_와이어프레임.html#rnd-process">R&D 연구실</a>
+        <a href="#" class="active">카테고리 기어 (16 SKUs)</a>
+        <a href="0825_HALO_메인페이지_와이어프레임.html#routine">Pre/In/Post 루틴</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Category Hero Banner -->
+  <section class="cat-hero-banner">
+    <div class="container">
+      <span class="cat-hero-tag">[HALO 5 COLLECTIONS & 16 HARDWARE SKUS]</span>
+      <h1 class="cat-hero-title" id="catBannerTitle">5대 스포츠 극한 환경 속, 모션을 멈추지 않는 하드웨어 기어 시스템</h1>
+      <p class="cat-hero-desc" id="catBannerDesc">
+        아스팔트 열기·휴대, 먼지·고도·마찰, 물방울·염분, 반사광·그립, 땀·기구 마찰까지 종목별 5대 극한 환경 기준에 특화된 16종 하드웨어 풀 라인업입니다.
+      </p>
+
+      <!-- 5 Sports Collection Switcher Tabs -->
+      <div class="col-tab-bar">
+        <button type="button" class="col-tab-btn active" onclick="selectCollection('all', this)">전체 컬렉션 (16종)</button>
+        <button type="button" class="col-tab-btn" onclick="selectCollection('running', this)">러닝 & 마라톤 (4종)</button>
+        <button type="button" class="col-tab-btn" onclick="selectCollection('hiking', this)">하이킹 & 클라이밍 (3종)</button>
+        <button type="button" class="col-tab-btn" onclick="selectCollection('surfing', this)">수상 액티브 (3종)</button>
+        <button type="button" class="col-tab-btn" onclick="selectCollection('tennis', this)">테니스 & 골프 (3종)</button>
+        <button type="button" class="col-tab-btn" onclick="selectCollection('fitness', this)">피트니스 & 크로스핏 (3종)</button>
+      </div>
+
+      <!-- Prominent Scene Criteria Callout Bar -->
+      <div class="scene-criteria-callout">
+        <div>
+          <span class="scene-criteria-label">● 현재 종목 극한 환경 기준:</span>
+          <span class="scene-criteria-val" id="catSceneCriteria">아스팔트 열기 · 먼지·고도와 마찰 · 물방울과 염분 · 반사광과 그립 · 땀과 기구 마찰</span>
+        </div>
+        <div style="font-size:11px; color:#94A3B8;">
+          *살로몬식 다차원 필터 및 횡단 비교 시스템 연동
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Main Layout: Sidebar Filter + Catalog Grid -->
+  <main class="container">
+    <div class="cat-layout">
+
+      <!-- Left Sidebar: Salomon 4-Axis Multi-Dimensional Filters -->
+      <aside class="cat-sidebar">
+        <div class="filter-header-row">
+          <span class="filter-main-title">다차원 기어 필터</span>
+          <button type="button" class="btn-reset-filters" onclick="resetDetailFilters()">필터 초기화 ↺</button>
+        </div>
+
+        <!-- 1. 운동 시점 (Phase) - Single Select -->
+        <div class="filter-group">
+          <div class="filter-group-title">
+            <span>1. 운동 시점 (Phase)</span>
+            <span style="font-size:10px; color:var(--halo-gray-mid);">단일 선택</span>
+          </div>
+          <div class="filter-chips-grid" id="filterPhaseWrap">
+            <button type="button" class="filter-chip active" onclick="togglePhaseFilter('all', this)">전체 시점</button>
+            <button type="button" class="filter-chip" onclick="togglePhaseFilter('Pre', this)">Pre (출발 15분 전)</button>
+            <button type="button" class="filter-chip" onclick="togglePhaseFilter('In', this)">In (운동 중 3초)</button>
+            <button type="button" class="filter-chip" onclick="togglePhaseFilter('Post', this)">Post (운동 후 리셋)</button>
+          </div>
+        </div>
+
+        <!-- 2. 제형 (Formulation) - Multi Select -->
+        <div class="filter-group">
+          <div class="filter-group-title">
+            <span>2. 기어 제형 (Formulation)</span>
+            <span style="font-size:10px; color:var(--halo-gray-mid);">다중 선택</span>
+          </div>
+          <div class="filter-chips-grid" id="filterTypeWrap">
+            <button type="button" class="filter-chip active" onclick="toggleMultiFilter('type', 'all', this)">전체 제형</button>
+            <button type="button" class="filter-chip" onclick="toggleMultiFilter('type', '스틱', this)">스틱 (AL6061)</button>
+            <button type="button" class="filter-chip" onclick="toggleMultiFilter('type', '미스트', this)">미스트 (360° 질소)</button>
+            <button type="button" class="filter-chip" onclick="toggleMultiFilter('type', '젤', this)">젤 / 세럼</button>
+            <button type="button" class="filter-chip" onclick="toggleMultiFilter('type', '밤', this)">밤 (하드왁스)</button>
+            <button type="button" class="filter-chip" onclick="toggleMultiFilter('type', '쿠션', this)">쿠션 (메쉬)</button>
+            <button type="button" class="filter-chip" onclick="toggleMultiFilter('type', '파우더', this)">파우더</button>
+            <button type="button" class="filter-chip" onclick="toggleMultiFilter('type', '패치', this)">패치 / 키트</button>
+          </div>
+        </div>
+
+        <!-- 3. 핵심 기능 (Function) - Multi Select -->
+        <div class="filter-group">
+          <div class="filter-group-title">
+            <span>3. 핵심 기능 (Function)</span>
+            <span style="font-size:10px; color:var(--halo-gray-mid);">다중 선택</span>
+          </div>
+          <div class="filter-chips-grid" id="filterFuncWrap">
+            <button type="button" class="filter-chip active" onclick="toggleMultiFilter('func', 'all', this)">전체 기능</button>
+            <button type="button" class="filter-chip" onclick="toggleMultiFilter('func', '쿨링', this)">-4.2℃ 급속 쿨링</button>
+            <button type="button" class="filter-chip" onclick="toggleMultiFilter('func', '방수', this)">80분 내수성 / 방수</button>
+            <button type="button" class="filter-chip" onclick="toggleMultiFilter('func', '세범', this)">세범 제로 / 논슬립</button>
+            <button type="button" class="filter-chip" onclick="toggleMultiFilter('func', '휴대', this)">카라비너 원핸드 휴대</button>
+          </div>
+        </div>
+
+        <!-- 4. 정렬 기준 -->
+        <div class="filter-group">
+          <div class="filter-group-title">
+            <span>4. 정렬 방식</span>
+          </div>
+          <select class="sort-select" style="width:100%;" onchange="changeSortOrder(this.value)">
+            <option value="default">대표 플래그십 우선순 (#01~#16)</option>
+            <option value="price-asc">가격 낮은 순</option>
+            <option value="price-desc">가격 높은 순</option>
+            <option value="name">상품명 가나다순</option>
+          </select>
+        </div>
+
+      </aside>
+
+      <!-- Right Main: Catalog List & Controls -->
+      <section>
+
+        <!-- Controls Bar -->
+        <div class="cat-controls-bar">
+          <div>
+            <span class="result-count-label" id="resultCountText">검색 결과: 16개 하드웨어 기어 표시 중</span>
+          </div>
+          <div class="cat-view-options">
+            <span style="font-size:11.5px; color:#64748B;">*스펙 횡단 비교함에 최대 3개 선택 가능</span>
+          </div>
+        </div>
+
+        <!-- Active Filter Summary Chips -->
+        <div class="active-chips-summary" id="activeChipsSummary">
+          <span style="font-size:11.5px; color:#64748B; font-weight:800;">[전체 16종 기어가 필터 없이 표시되고 있습니다]</span>
+        </div>
+
+        <!-- 16 SKUs Grid -->
+        <div class="sku-grid" id="skuCardGrid">
+          <!-- Injected Dynamically by JS -->
+        </div>
+
+        <!-- Empty State -->
+        <div class="empty-state-view" id="emptyStateView" style="display:none;">
+          <h3 style="font-size:20px; font-weight:900; margin-bottom:8px;">선택하신 조건에 일치하는 기어가 없습니다</h3>
+          <p style="font-size:13px; color:#64748B; margin-bottom:20px;">
+            선택된 필터 조합에 해당하는 기어가 없습니다. 아래 버튼으로 필터를 초기화해 보세요.
+          </p>
+          <div style="display:flex; justify-content:center; gap:10px;">
+            <button type="button" class="btn-sku-action" onclick="resetDetailFilters()">상세 필터 초기화</button>
+            <button type="button" class="btn-sku-action primary" onclick="resetAllFilters()">컬렉션 포함 전체 초기화</button>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+
+    <!-- Storyboard Technical Specification Notes -->
+    <section class="sb-spec-section">
+      <h3 class="sb-spec-title">📐 카테고리 페이지 화면 설계 명세서 (Storyboard Specification)</h3>
+      <div class="sb-spec-grid">
+        
+        <div class="sb-spec-box">
+          <h4>1. Salomon 사용성 벤치마크 기반 다차원 탐색 아키텍처</h4>
+          <ul>
+            <li><strong>4대 축 교차 검색:</strong> 소속 컬렉션(5종), 운동 시점(Pre/In/Post 단일), 제형(스틱/미스트/젤 등 다중), 기능(쿨링/방수/세범 등 다중) 실시간 교차 필터링.</li>
+            <li><strong>실시간 조건 칩 요약:</strong> 사용자가 선택한 조건을 상단 요약 바에 칩 형태로 누적 노출하고 개별 [X] 해제 지원.</li>
+            <li><strong>2종류 스마트 리셋:</strong> 컬렉션 유지 상세 필터 초기화 vs 전체 16종 초기화 지원.</li>
+          </ul>
+        </div>
+
+        <div class="sb-spec-box">
+          <h4>2. 16종 하드웨어 정합성 & 카드 균일화 시스템</h4>
+          <ul>
+            <li><strong>높이 균일화:</strong> CSS Flex/Grid 구조 및 2줄 클램프 아코디언(<code>[상세 펼쳐보기 ▼]</code>)으로 카드 그리드 불일치 완전 해소.</li>
+            <li><strong>아이소메트릭 벡터 렌더:</strong> 이모지를 배제하고 동일 45° 쿼터뷰 회색조 렌더 실루엣 표준 적용.</li>
+            <li><strong>정합성 동기화:</strong> #01~#16 전 SKU의 역할(대표 Core / 파생 Ext / 보조 Supp), 가격, 용량, 추천 상황 100% 일치.</li>
+          </ul>
+        </div>
+
+        <div class="sb-spec-box">
+          <h4>3. 스펙 횡단 비교 시스템 (Difference Highlighting)</h4>
+          <ul>
+            <li><strong>하단 플로팅 바:</strong> 최대 3개 담김 실시간 집계 및 원클릭 모달 오픈.</li>
+            <li><strong>차이값 우선 강조:</strong> 선택된 기어 간 서로 다른 스펙 항목을 <code>● 차이</code> 배지와 볼드 하이라이트로 직관적 비교 지원.</li>
+            <li><strong>모바일 접근성:</strong> 첫 번째 기준 항목 열 115px <code>sticky</code> 고정 및 상단 상품명 행 상시 고정.</li>
+          </ul>
+        </div>
+
+        <div class="sb-spec-box">
+          <h4>4. 4단계 상태 뷰 출시 알림 모달</h4>
+          <ul>
+            <li><strong>개인정보 동의:</strong> 15% 얼리버드 혜택 안내 및 필수 동의 체크박스 유효성 검사.</li>
+            <li><strong>4종 상태 뷰:</strong> 입력 폼(Form) ➔ 처리 중(Submitting) ➔ 성공(Success) ➔ 오류 및 [다시 시도하기 ↺].</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 08. Floating Compare Tray (BC-S3, BC-M3 - Exactly Matched with Mainpage) -->
+  <div class="floating-compare-tray" id="floatingCompareTray">
+    <div class="compare-tray-collapsed-bar" id="compareTrayCollapsedBar" onclick="toggleTrayCollapse()" style="cursor: pointer;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span>선택 기어: <strong id="collapsedCompareCount">0</strong>개 담김</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <button class="btn-tray-expand-toggle" onclick="event.stopPropagation(); toggleTrayCollapse()">[펼치기 ▲]</button>
+        <button class="btn-open-compare-modal-mini" onclick="event.stopPropagation(); openCompareModal()" style="padding: 4px 10px; font-size: 11px; border: var(--border-thick); background: #FFF; font-weight: 900; cursor: pointer;">비교하기</button>
+      </div>
+    </div>
+    <div class="compare-tray-main-content">
+      <div class="compare-tray-left">
+        <button class="btn-tray-collapse-toggle" id="btnTrayCollapseToggle" onclick="toggleTrayCollapse()">[접기 ▼]</button>
+        <div class="compare-tray-items" id="compareTrayItems">
+          <!-- Dynamic mini chips inserted by JS -->
+        </div>
+      </div>
+      <div class="compare-tray-actions">
+        <button class="btn-open-compare-modal" onclick="openCompareModal()">스펙 횡단 비교하기</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 09. Comparison Modal (BC-S3, BC-V4 - Exactly Matched with Mainpage) -->
+  <div class="modal-backdrop" id="compareModalBackdrop" onclick="closeCompareModal(event)">
+    <div class="modal-window compare-modal-window" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" onclick="closeCompareModal()">[X]</button>
+      <div style="font-size: 13px; font-weight: 800; color: var(--halo-gray-mid); margin-bottom: 4px;">SPECIFICATION MATRIX</div>
+      <h3 style="font-size: 24px; font-weight: 900; margin-bottom: 16px;">선택 기어 횡단 스펙 비교</h3>
+      
+      <div class="compare-table-scroll-container">
+        <table class="compare-modal-table" id="compareModalTable">
+          <!-- Injected by JS with Diff Engine -->
+        </table>
+      </div>
+
+      <div style="text-align: right; margin-top: 20px;">
+        <button class="btn-sku-action primary" onclick="closeCompareModal()" style="display: inline-block; width: auto; padding: 10px 24px;">닫기</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Quick View Modal -->
+  <div class="modal-backdrop" id="productModalBackdrop" onclick="closeProductModal(event)">
+    <div class="modal-window" style="width:680px;" onclick="event.stopPropagation()">
+      <button type="button" class="modal-close-btn" onclick="closeProductModal()">[X] 닫기</button>
+      <div style="font-size:12px; font-weight:800; color:#64748B; margin-bottom:4px;" id="modalSkuSub">SKU QUICK VIEW</div>
+      <h3 style="font-size:22px; font-weight:900; margin-bottom:12px;" id="modalSkuName">상품명</h3>
+      
+      <div style="background:#F8F9FA; border:1px solid #E2E8F0; padding:16px; margin-bottom:16px;">
+        <div style="font-size:18px; font-weight:900; margin-bottom:4px;" id="modalSkuPrice">₩0</div>
+        <div style="font-size:12px; color:#64748B;" id="modalSkuVol">용량</div>
+      </div>
+
+      <div style="margin-bottom:16px;">
+        <h4 style="font-size:13px; font-weight:900; margin-bottom:6px;">하드웨어 핵심 기능</h4>
+        <p style="font-size:13px; color:#334155; line-height:1.6;" id="modalSkuFeature">설명</p>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <h4 style="font-size:13px; font-weight:900; margin-bottom:6px;">가상 임상 검증 수치</h4>
+        <div style="background:#000; color:#38BDF8; padding:10px 14px; font-size:12px; font-weight:900;" id="modalSkuClinical">수치</div>
+      </div>
+
+      <div style="display:flex; justify-content:flex-end; gap:10px;">
+        <button type="button" class="btn-sku-action" onclick="closeProductModal()">닫기</button>
+        <button type="button" class="btn-sku-action primary" id="btnModalLaunch" onclick="">15% 얼리버드 출시 알림</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Launch Alert Modal (4 States) -->
+  <div class="modal-backdrop" id="launchModalBackdrop" onclick="closeLaunchModal(event)">
+    <div class="modal-window" style="width:520px;" onclick="event.stopPropagation()">
+      <button type="button" class="modal-close-btn" onclick="closeLaunchModal()">[X] 닫기</button>
+      
+      <!-- State 1: Form -->
+      <div id="launchStateForm">
+        <div style="font-size:12px; font-weight:800; color:#0284C7; margin-bottom:4px;">15% EARLY-BIRD ALERT</div>
+        <h3 style="font-size:20px; font-weight:900; margin-bottom:8px;" id="launchTargetSkuTitle">출시 알림 신청</h3>
+        <p style="font-size:12px; color:#64748B; margin-bottom:20px;">
+          공식 출시 시점 알림과 함께 15% 얼리버드 쿠폰 코드를 발송해 드립니다.
+        </p>
+
+        <form onsubmit="handleLaunchSubmit(event)">
+          <div style="margin-bottom:12px;">
+            <label style="display:block; font-size:11.5px; font-weight:800; margin-bottom:4px;">알림 수신 연락처 (이메일 또는 휴대폰)</label>
+            <input type="text" id="launchContactInput" required placeholder="010-0000-0000 또는 example@halo.com" style="width:100%; padding:10px; border:1px solid #000; font-size:12.5px;" />
+          </div>
+
+          <div style="margin-bottom:16px;">
+            <label style="display:flex; align-items:center; gap:6px; font-size:11.5px; cursor:pointer;">
+              <input type="checkbox" required id="launchPrivacyCheck" checked />
+              <span>[필수] 개인정보 수집·이용 및 출시 알림 수신에 동의합니다.</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn-sku-action primary" style="width:100%; padding:12px; font-size:13px;">15% 얼리버드 알림 신청 완료</button>
+        </form>
+      </div>
+
+      <!-- State 2: Submitting -->
+      <div id="launchStateSubmitting" style="display:none; text-align:center; padding:32px 0;">
+        <div style="font-size:24px; font-weight:900; margin-bottom:8px;">● 신청 처리 중...</div>
+        <p style="font-size:12px; color:#64748B;">알림 시스템에 안전하게 등록 중입니다.</p>
+      </div>
+
+      <!-- State 3: Success -->
+      <div id="launchStateSuccess" style="display:none; text-align:center; padding:24px 0;">
+        <div style="font-size:32px; color:#84CC16; margin-bottom:12px;">✔</div>
+        <h4 style="font-size:18px; font-weight:900; margin-bottom:8px;">알림 신청이 완료되었습니다!</h4>
+        <p style="font-size:12px; color:#64748B; margin-bottom:20px;">
+          공식 출시일 00시에 15% 시크릿 할인 쿠폰이 발송됩니다.
+        </p>
+        <button type="button" class="btn-sku-action primary" onclick="closeLaunchModal()" style="padding:8px 24px;">확인</button>
+      </div>
+
+      <!-- State 4: Error -->
+      <div id="launchStateError" style="display:none; text-align:center; padding:24px 0;">
+        <div style="font-size:32px; color:#EF4444; margin-bottom:12px;">⚠</div>
+        <h4 style="font-size:18px; font-weight:900; margin-bottom:8px;">신청 처리 중 오류가 발생했습니다</h4>
+        <p style="font-size:12px; color:#64748B; margin-bottom:20px;">
+          입력하신 연락처 포맷을 다시 확인해 주세요.
+        </p>
+        <button type="button" class="btn-sku-action" onclick="showLaunchState('form')">다시 시도하기 ↺</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JavaScript Master Engine -->
+  <script>
+    // 16 SKUs Master Data (100% Synced with Mainpage)
+    const skuMasterList = [
+      { id: 1, name: '카라비너 퀵 스틱 SPF50+ PA++++', col: 'running', phase: 'In', type: '스틱', func: '쿨링 휴대', role: 'core', roleName: '대표 플래그십 (Core Flagship)', relation: 'AL6061 합금 바디 3초 원핸드 롤링', scenario: '폭염 아스팔트 러닝 및 마라톤', price: '₩38,000', vol: '22g', rawPrice: 38000, dur: '땀 흘림 98.4%', feature: '러닝 중 멈추지 않고 한 손으로 3초 만에 덧바르는 카라비너 결합 스틱', clinical: '피부 표면 즉각 -4.2℃ 강하' },
+      { id: 2, name: '에어로 쿨링 질소 미스트', col: 'running', phase: 'All', type: '미스트', func: '쿨링 휴대', role: 'extended', roleName: '파생 기어 (Extended Gear)', relation: '#01 퀵스틱 대비 전신 급속 냉각 확장', scenario: '사이클 주행 및 하프 마라톤', price: '₩39,000', vol: '120ml', rawPrice: 39000, dur: '3초 퀵드라이', feature: '질소 밸브 360도 전방위 분사 및 피부 -3.9℃ 급속 냉각', clinical: '분사 즉시 피부 온도 -3.9℃ 급속 쿨다운' },
+      { id: 3, name: '하이드로 쿨링 스타터 팩', col: 'running', phase: 'Pre/In', type: '패치', func: '쿨링 휴대', role: 'support', roleName: '보조 키트 (Support Kit)', relation: '#01 스틱 + #02 미스트 풀코스 결합 키트', scenario: '42.195km 공식 마라톤 대회', price: '₩69,000', vol: '2종 세트', rawPrice: 69000, dur: '2종 구성', feature: '퀵 스틱(#01)+질소 미스트(#02) 시티 러닝 필수 기어 세트', clinical: '손 오염 0.0% & 체온 -4.2℃ 듀얼 방어' },
+      { id: 4, name: '42.195km 엔듀런스 선 젤', col: 'running', phase: 'In', type: '젤', func: '쿨링', role: 'extended', roleName: '파생 기어 (Extended Gear)', relation: '#01 스틱 대비 5시간 지속 열 방출 확장', scenario: '혹서기 장거리 LSD 훈련', price: '₩55,000', vol: '90ml', rawPrice: 55000, dur: '5시간 지속', feature: '5시간 지속 열 방출 롱래스팅 수분 선 젤', clinical: '5시간 체온 과열 방어 임상 통과' },
+      { id: 5, name: '워터프루프 UV 디펜스 젤', col: 'hiking', phase: 'Pre', type: '젤', func: '방수', role: 'core', roleName: '대표 플래그십 (Core Flagship)', relation: '고산 칼바람·흙먼지·자외선 3중 방어 기준점', scenario: '고산 종주 트레킹 및 능선 강풍 구간', price: '₩52,000', vol: '50ml', rawPrice: 52000, dur: '12시간 보습', feature: '고산지대 칼바람+자외선+미세먼지 3중 방어 세라마이드 장벽 세럼', clinical: '미세먼지 흡착 방지 92.1%' },
+      { id: 6, name: '프릭션 논슬립 선 파우더', col: 'hiking', phase: 'In', type: '스틱', func: '세범 휴대', role: 'extended', roleName: '파생 기어 (Extended Gear)', relation: '#05 젤 대비 초크백 연동 마찰력 유지 확장', scenario: '하드록 클라이밍 및 릿지 산행', price: '₩35,000', vol: '12g', rawPrice: 35000, dur: '마찰계수 99.4%', feature: '초크백 장착형 마찰력 유지 피지 흡착 파우더', clinical: '홀드 마찰력 유지율 99.4% 입증' },
+      { id: 7, name: '트레일 리커버리 쿨링 패치', col: 'hiking', phase: 'Post', type: '패치', func: '쿨링', role: 'support', roleName: '보조 키트 (Support Kit)', relation: '#05 젤 도포 산행 완료 후 하산 급속 진정', scenario: '산행 완료 후 피니시 벤치', price: '₩28,000', vol: '5회분', rawPrice: 28000, dur: '-5℃ 지속', feature: '하산 후 달아오른 양 볼 -5℃ 지속 쿨다운 패치', clinical: '무자극 0.00 피부 안전성 입증' },
+      { id: 8, name: '오션 세이프 리프 쉴드', col: 'surfing', phase: 'Pre/In', type: '젤', func: '방수', role: 'core', roleName: '대표 플래그십 (Core Flagship)', relation: '80분 지속 방수 및 산호초 보호 기준점', scenario: '파도 서핑 세션 및 오픈워터 수영', price: '₩46,000', vol: '100ml', rawPrice: 46000, dur: '80분 내수성', feature: '파도 속 80분 지속 방수 및 산호초를 보호하는 100% 무기자차', clinical: '80분 지속 내수성 (Very Water Resistant)' },
+      { id: 9, name: '솔트 리셋 애프터 워터 미스트', col: 'surfing', phase: 'Post', type: '미스트', func: '쿨링', role: 'extended', roleName: '파생 기어 (Extended Gear)', relation: '#08 쉴드 사용 후 소금 결정 중화 세정 확장', scenario: '서핑 세션 직후 해변', price: '₩36,000', vol: '150ml', rawPrice: 36000, dur: '즉각 세정', feature: '해수 건조 후 피부 소금 결정 중화 세정 미스트', clinical: '염분 잔여물 98.7% 중화 세정 입증' },
+      { id: 10, name: '트라이애슬론 아이언 밤', col: 'surfing', phase: 'In', type: '밤', func: '방수', role: 'support', roleName: '보조 키트 (Support Kit)', relation: '#08 쉴드 대비 수영-사이클 6시간 지속 방수 확장', scenario: '트라이애슬론 철인 3종 경기', price: '₩58,000', vol: '40g', rawPrice: 58000, dur: '6시간 방수', feature: '수영→사이클→마라톤 6시간 지속 방수 왁스 밤', clinical: '해수/땀 혼합 6시간 지속 방수' },
+      { id: 11, name: '제로 슬립 그립 쿨링 쿠션', col: 'tennis', phase: 'Pre/In', type: '밤', func: '세범 쿨링', role: 'core', roleName: '대표 플래그십 (Core Flagship)', relation: '라켓 오버그립 유분 묻음 0.0% & 반사광 차단 기준점', scenario: '야외 하드코트 랠리 및 18홀 골프 라운딩', price: '₩44,000', vol: '15g', rawPrice: 44000, dur: '무유분 매트', feature: '라켓 오버그립 유분 묻음 방지 무유분 매트 쿨링 메쉬 쿠션', clinical: '오버그립 미끄럼 방지 테스트 통과' },
+      { id: 12, name: 'UV 반사 페어웨이 선 젤', col: 'tennis', phase: 'Pre', type: '젤', func: '방수', role: 'extended', roleName: '파생 기어 (Extended Gear)', relation: '#11 쿠션 대비 잔디 지면 반사광 5시간 차단 확장', scenario: '골프 18홀 주간 라운딩', price: '₩54,000', vol: '70ml', rawPrice: 54000, dur: '18홀 5시간', feature: '18홀 잔디 반사광 듀얼 차단 수분 젤', clinical: '잔디 반사광 차단율 97.8%' },
+      { id: 13, name: '퀵 앱소브 매치 선 플루이드', col: 'tennis', phase: 'In', type: '젤', func: '세범', role: 'extended', roleName: '파생 기어 (Extended Gear)', relation: '#11 쿠션 대비 빠른 10초 흡수 액상형 확장', scenario: '테니스 풀세트 랠리 및 타이브레이크', price: '₩39,000', vol: '60ml', rawPrice: 39000, dur: '10초 흡수', feature: '경기 중 땀 흘러도 눈에 안 시린 No-Sting 10초 흡수 플루이드', clinical: '안자극 인체 적용 시험 무자극 판정' },
+      { id: 14, name: '헤비듀티 세범 컨트롤 스틱', col: 'fitness', phase: 'In', type: '스틱', func: '세범 휴대', role: 'core', roleName: '대표 플래그십 (Core Flagship)', relation: '바벨 널링 마찰력 99.1% 보존 & 마그네슘 파우더 기준점', scenario: '고강도 웨이트 트레이닝 및 크로스핏 WOD', price: '₩41,000', vol: '30g', rawPrice: 41000, dur: '마찰저항 99.1%', feature: '바벨 마찰에도 밀림 없는 마그네슘 파우더 배합 하드 스틱', clinical: '기구 마찰 저항력 99.1% 검증' },
+      { id: 15, name: '스웨트프루프 옥시젠 플루이드', col: 'fitness', phase: 'Pre', type: '젤', func: '방수', role: 'extended', roleName: '파생 기어 (Extended Gear)', relation: '#14 스틱 대비 전신 모공 호흡 논코메도제닉 확장', scenario: '실내 체육관 고강도 인터벌', price: '₩48,000', vol: '50ml', rawPrice: 48000, dur: '모공 비폐색', feature: '고강도 웨이트 중 모공을 막지 않는 통기성 산소 플루이드', clinical: 'Non-Comedogenic 모공 비폐색 인증' },
+      { id: 16, name: '어반 쉴드 포켓 기어 키트', col: 'fitness', phase: 'All', type: '패치', func: '휴대', role: 'support', roleName: '보조 키트 (Support Kit)', relation: '#14 스틱 중심의 피트니스 전후 휴대용 올인원 키트', scenario: '헬스장 출퇴근 및 야외 인터벌 트레이닝', price: '₩45,000', vol: '3종 세트', rawPrice: 45000, dur: '지열 차단', feature: '지열 차단 포켓 스틱+스포츠 타올+파우치 3종 세트', clinical: '도심 아스팔트 지열 차단 91.5%' }
+    ];
+
+    const colMeta = {
+      all: { title: '5대 스포츠 극한 환경 속, 모션을 멈추지 않는 하드웨어 기어 시스템', desc: '아스팔트 열기·휴대, 먼지·고도·마찰, 물방울·염분, 반사광·그립, 땀·기구 마찰까지 종목별 5대 극한 환경 기준에 특화된 16종 하드웨어 풀 라인업입니다.', criteria: '아스팔트 열기 · 먼지·고도와 마찰 · 물방울과 염분 · 반사광과 그립 · 땀과 기구 마찰' },
+      running: { title: '폭염 아스팔트 열기 속, 페이스를 잃지 않고 3초 만에 덧바르는 순간', desc: '도심 러닝과 마라톤에서는 멈추지 않는 지속력이 생명입니다. 흘러내리는 땀 속에서도 눈시림 없이 3초 만에 덧바르는 알루미늄 카라비너 휴대성과 -4.2℃ 노터치 쿨링을 제공합니다.', criteria: '아스팔트 열기와 휴대' },
+      hiking: { title: '능선 칼바람과 강렬한 직사광선 아래, 흙먼지와 배낭 마찰을 뚫는 순간', desc: '고산지대 트레일과 암벽에서는 자외선뿐 아니라 건조한 칼바람과 흙먼지, 배낭 스트랩 마찰이 피부를 위협합니다. 세라마이드 3중 장벽과 초크백 연동 파우더로 피부를 완벽 방어합니다.', criteria: '먼지·고도와 마찰' },
+      surfing: { title: '거친 파도 속 80분 지속 방수와 산호초 보호, 물방울과 바다 염분을 이겨내는 순간', desc: '파도에 지워지지 않는 강력한 80분 지속 내수성과 해양 국립공원 입수가 가능한 옥시벤존 0% 리프세이프 포뮬러로 바다 염분과 강렬한 물방울 반사광으로부터 피부를 지킵니다.', criteria: '물방울과 염분' },
+      tennis: { title: '강한 코트 반사광과 땀범벅 교대 시간, 라켓 그립을 사수하는 순간', desc: '코트 위 1분 교대 시간 동안 손에 유분을 묻히지 않고 즉시 쿨링하며, 잔디와 하드코트의 강한 반사광을 완벽 차단하고 라켓 오버그립의 0.0% 논슬립을 유지합니다.', criteria: '반사광과 그립' },
+      fitness: { title: '밀폐된 땀 열기와 쇠 바벨 기구 마찰 속, 모공으로 호흡하는 순간', desc: '고강도 웨이트와 크로스핏 기구 마찰에도 밀리지 않는 마그네슘 하드 코팅으로 바벨 마찰력 99.1%를 보존하고 모공을 막지 않는 산소 통기성을 제공합니다.', criteria: '땀과 기구 마찰' }
+    };
+
+    let curCol = 'all';
+    let filterPhase = 'all';
+    let filterTypes = [];
+    let filterFuncs = [];
+    let curSort = 'default';
+    let selectedCompareIds = [];
+
+    // Initialize on Load
+    document.addEventListener('DOMContentLoaded', function() {
+      renderCatalog();
+    });
+
+    // Switch Collection
+    function selectCollection(colKey, btn) {
+      curCol = colKey;
+      document.querySelectorAll('.col-tab-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      const meta = colMeta[colKey] || colMeta.all;
+      document.getElementById('catBannerTitle').textContent = meta.title;
+      document.getElementById('catBannerDesc').textContent = meta.desc;
+      document.getElementById('catSceneCriteria').textContent = meta.criteria;
+
+      renderCatalog();
+    }
+
+    // Toggle Phase (Single-select)
+    function togglePhaseFilter(val, btn) {
+      filterPhase = val;
+      const wrap = document.getElementById('filterPhaseWrap');
+      wrap.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      renderCatalog();
+    }
+
+    // Toggle Multi-select (Type & Func)
+    function toggleMultiFilter(category, val, btn) {
+      const arr = (category === 'type') ? filterTypes : filterFuncs;
+      const wrap = (category === 'type') ? document.getElementById('filterTypeWrap') : document.getElementById('filterFuncWrap');
+      const allBtn = wrap.querySelectorAll('.filter-chip')[0];
+
+      if (val === 'all') {
+        if (category === 'type') filterTypes = [];
+        else filterFuncs = [];
+        wrap.querySelectorAll('.filter-chip').forEach((c, idx) => {
+          if (idx === 0) c.classList.add('active');
+          else c.classList.remove('active');
+        });
+      } else {
+        allBtn.classList.remove('active');
+        const idx = arr.indexOf(val);
+        if (idx > -1) {
+          arr.splice(idx, 1);
+          btn.classList.remove('active');
+        } else {
+          arr.push(val);
+          btn.classList.add('active');
+        }
+        if (arr.length === 0) {
+          allBtn.classList.add('active');
+        }
+      }
+      renderCatalog();
+    }
+
+    // Change Sort Order
+    function changeSortOrder(val) {
+      curSort = val;
+      renderCatalog();
+    }
+
+    // Reset Filters
+    function resetDetailFilters() {
+      filterPhase = 'all';
+      filterTypes = [];
+      filterFuncs = [];
+      
+      const pWrap = document.getElementById('filterPhaseWrap');
+      pWrap.querySelectorAll('.filter-chip').forEach((c, idx) => {
+        if (idx === 0) c.classList.add('active');
+        else c.classList.remove('active');
+      });
+
+      const tWrap = document.getElementById('filterTypeWrap');
+      tWrap.querySelectorAll('.filter-chip').forEach((c, idx) => {
+        if (idx === 0) c.classList.add('active');
+        else c.classList.remove('active');
+      });
+
+      const fWrap = document.getElementById('filterFuncWrap');
+      fWrap.querySelectorAll('.filter-chip').forEach((c, idx) => {
+        if (idx === 0) c.classList.add('active');
+        else c.classList.remove('active');
+      });
+
+      renderCatalog();
+    }
+
+    function resetAllFilters() {
+      const allTab = document.querySelectorAll('.col-tab-btn')[0];
+      selectCollection('all', allTab);
+      resetDetailFilters();
+    }
+
+    // Toggle Role Accordion
+    function toggleRole(skuId, btn) {
+      const wrap = document.getElementById('catRoleDescWrap_' + skuId);
+      if (!wrap) return;
+      if (wrap.classList.contains('collapsed')) {
+        wrap.classList.remove('collapsed');
+        btn.textContent = '간략히 접기 ▲';
+      } else {
+        wrap.classList.add('collapsed');
+        btn.textContent = '상세 펼쳐보기 ▼';
+      }
+    }
+
+    // Render Catalog Grid
+    function renderCatalog() {
+      const grid = document.getElementById('skuCardGrid');
+      const empty = document.getElementById('emptyStateView');
+      const countLabel = document.getElementById('resultCountText');
+      const summaryWrap = document.getElementById('activeChipsSummary');
+
+      // Filter Logic
+      let list = skuMasterList.filter(item => {
+        let matchCol = (curCol === 'all') || (item.col === curCol);
+        let matchPhase = (filterPhase === 'all') || item.phase.includes(filterPhase);
+        let matchType = (filterTypes.length === 0) || filterTypes.some(t => item.type.includes(t));
+        let matchFunc = (filterFuncs.length === 0) || filterFuncs.some(f => item.func.includes(f));
+        return matchCol && matchPhase && matchType && matchFunc;
+      });
+
+      // Sort Logic
+      if (curSort === 'price-asc') {
+        list.sort((a, b) => a.rawPrice - b.rawPrice);
+      } else if (curSort === 'price-desc') {
+        list.sort((a, b) => b.rawPrice - a.rawPrice);
+      } else if (curSort === 'name') {
+        list.sort((a, b) => a.name.localeCompare(b.name, 'ko'));
+      } else {
+        list.sort((a, b) => a.id - b.id);
+      }
+
+      // Update Count
+      countLabel.textContent = '검색 결과: ' + list.length + '개 하드웨어 기어 표시 중';
+
+      // Update Summary Chips
+      let chipsHtml = '';
+      if (curCol !== 'all') {
+        chipsHtml += '<span class="active-tag-chip">컬렉션: ' + curCol.toUpperCase() + ' <span class="btn-remove-tag" onclick="selectCollection(\'all\', document.querySelectorAll(\'.col-tab-btn\')[0])">✕</span></span>';
+      }
+      if (filterPhase !== 'all') {
+        chipsHtml += '<span class="active-tag-chip">시점: ' + filterPhase + ' <span class="btn-remove-tag" onclick="togglePhaseFilter(\'all\', document.querySelectorAll(\'#filterPhaseWrap .filter-chip\')[0])">✕</span></span>';
+      }
+      if (filterTypes.length > 0) {
+        chipsHtml += '<span class="active-tag-chip">제형: ' + filterTypes.join('+') + ' <span class="btn-remove-tag" onclick="toggleMultiFilter(\'type\', \'all\', document.querySelectorAll(\'#filterTypeWrap .filter-chip\')[0])">✕</span></span>';
+      }
+      if (filterFuncs.length > 0) {
+        chipsHtml += '<span class="active-tag-chip">기능: ' + filterFuncs.join('+') + ' <span class="btn-remove-tag" onclick="toggleMultiFilter(\'func\', \'all\', document.querySelectorAll(\'#filterFuncWrap .filter-chip\')[0])">✕</span></span>';
+      }
+      if (!chipsHtml) {
+        chipsHtml = '<span style="font-size:11.5px; color:#64748B; font-weight:800;">[전체 16종 기어가 필터 없이 표시되고 있습니다]</span>';
+      }
+      summaryWrap.innerHTML = chipsHtml;
+
+      // Render Cards
+      if (list.length === 0) {
+        grid.innerHTML = '';
+        empty.style.display = 'block';
+        return;
+      } else {
+        empty.style.display = 'none';
+      }
+
+      let html = '';
+      list.forEach(item => {
+        const snum = item.id < 10 ? '#0' + item.id : '#' + item.id;
+        const isCore = item.role === 'core';
+        const roleBadgeClass = isCore ? 'core' : (item.role === 'extended' ? 'extended' : 'support');
+        const isChecked = selectedCompareIds.includes(item.id);
+
+        html += `
+        <div class="sku-card" data-sku="${item.id}">
+          <div>
+            <div class="sku-card-header">
+              <div class="sku-badges-row">
+                ${isCore ? '<span class="wireframe-badge dark">대표 기어</span>' : ''}
+                <span class="wireframe-badge">${item.col.toUpperCase()}</span>
+              </div>
+              <span style="font-size:11px; font-weight:900; color:var(--halo-gray-mid);">${snum}</span>
+            </div>
+
+            <!-- Grayscale Silhouette Icon Box -->
+            <div class="sku-img-box">
+              <div class="silhouette-icon-box">
+                <svg viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2" stroke="#000" stroke-width="2" fill="#E5E7EB"/><circle cx="12" cy="7" r="2" fill="#000"/><line x1="7" y1="15" x2="17" y2="15" stroke="#000" stroke-width="2"/></svg>
+              </div>
+              <div class="silhouette-label">[${snum} 기어 45° 렌더]</div>
+            </div>
+
+            <!-- Role Accordion Box -->
+            <div class="sku-role-box">
+              <span class="sku-role-badge ${roleBadgeClass}">${item.roleName}</span>
+              <div class="sku-role-content-wrap collapsed" id="catRoleDescWrap_${item.id}">
+                <div><strong>파생 기준:</strong> ${item.relation}</div>
+                <div><strong>추천 상황:</strong> ${item.scenario}</div>
+              </div>
+              <button type="button" class="btn-toggle-role-desc" onclick="toggleRole(${item.id}, this)">상세 펼쳐보기 ▼</button>
+            </div>
+
+            <div class="sku-card-title">${item.name}</div>
+            <div class="sku-card-feature">${item.feature}</div>
+            <div class="sku-meta-tags">
+              <span class="sku-tag">시점: ${item.phase}</span>
+              <span class="sku-tag">제형: ${item.type}</span>
+              <span class="sku-tag">기능: ${item.func}</span>
+            </div>
+          </div>
+
+          <div>
+            <div class="sku-price-row">
+              <span>${item.price}</span>
+              <span style="font-size:12px; color:var(--halo-gray-mid);">${item.vol}</span>
+            </div>
+            
+            <label class="compare-check-label">
+              <input type="checkbox" ${isChecked ? 'checked' : ''} onchange="toggleCompareItem(${item.id}, this)"> 스펙 횡단 비교함에 추가 (최대 3개)
+            </label>
+
+            <div class="sku-card-actions">
+              <button type="button" class="btn-sku-action" onclick="openProductModal(${item.id})">상세 퀵뷰</button>
+              <button type="button" class="btn-sku-action primary" onclick="openLaunchModal('${item.name}')">출시 알림</button>
+            </div>
+          </div>
+        </div>
+        `;
+      });
+
+      grid.innerHTML = html;
+    }
+
+    // 08. Compare Tray & Comparison Modal Engine (100% Identical to Mainpage)
+    function toggleTrayCollapse() {
+      const tray = document.getElementById('floatingCompareTray');
+      tray.classList.toggle('collapsed');
+    }
+
+    function toggleCompareItem(skuId, cb) {
+      if (cb.checked) {
+        if (selectedCompareIds.length >= 3) {
+          alert('비교함에는 최대 3개 상품까지만 담을 수 있습니다.');
+          cb.checked = false;
+          return;
+        }
+        if (!selectedCompareIds.includes(skuId)) {
+          selectedCompareIds.push(skuId);
+        }
+      } else {
+        selectedCompareIds = selectedCompareIds.filter(id => id !== skuId);
+      }
+      renderCompareTray();
+    }
+
+    function removeCompareItem(skuId) {
+      selectedCompareIds = selectedCompareIds.filter(id => id !== skuId);
+      document.querySelectorAll('.sku-card[data-sku="' + skuId + '"] input[type="checkbox"]').forEach(cb => cb.checked = false);
+      renderCompareTray();
+      if (selectedCompareIds.length > 0) {
+        openCompareModal();
+      } else {
+        closeCompareModal();
+      }
+    }
+
+    function renderCompareTray() {
+      const tray = document.getElementById('floatingCompareTray');
+      const itemsWrap = document.getElementById('compareTrayItems');
+      const collapsedCount = document.getElementById('collapsedCompareCount');
+
+      if (collapsedCount) collapsedCount.textContent = selectedCompareIds.length;
+
+      if (selectedCompareIds.length > 0) {
+        tray.style.display = 'block';
+        const remainingCount = 3 - selectedCompareIds.length;
+        let chipsHtml = '<span style="font-size: 13px; font-weight: 900; margin-right: 4px;">선택된 기어 (' + selectedCompareIds.length + '/3):</span>';
+        
+        selectedCompareIds.forEach(id => {
+          const item = skuMasterList.find(s => s.id === id);
+          if (item) {
+            const snum = id < 10 ? '#0' + id : '#' + id;
+            chipsHtml += '<div class="compare-mini-chip"><span>' + snum + ' ' + item.name.split(' ')[0] + '</span><span class="btn-remove" onclick="removeCompareItem(' + id + ')">[X]</span></div>';
+          }
+        });
+
+        if (remainingCount > 0) {
+          chipsHtml += '<div class="compare-mini-chip empty-slot" style="background: transparent; border: 1px dashed #666; color: #AAA; font-size: 10px;">+ ' + remainingCount + '개 더 추가 가능</div>';
+        }
+
+        itemsWrap.innerHTML = chipsHtml;
+      } else {
+        tray.style.display = 'none';
+        if (itemsWrap) {
+          itemsWrap.innerHTML = '<span style="font-size: 13px; font-weight: 900;">선택된 기어 (0/3):</span>';
+        }
+      }
+    }
+
+    function quickAddCompare(skuId) {
+      if (!selectedCompareIds.includes(skuId)) {
+        if (selectedCompareIds.length >= 3) {
+          alert('비교함에는 최대 3개 상품까지만 담을 수 있습니다.');
+          return;
+        }
+        selectedCompareIds.push(skuId);
+        document.querySelectorAll('.sku-card[data-sku="' + skuId + '"] input[type="checkbox"]').forEach(cb => cb.checked = true);
+        renderCompareTray();
+        openCompareModal();
+      }
+    }
+
+    function openCompareModal() {
+      if (selectedCompareIds.length === 0) {
+        alert('비교할 상품을 1개 이상 선택해 주세요.');
+        return;
+      }
+      const modal = document.getElementById('compareModalBackdrop');
+      const table = document.getElementById('compareModalTable');
+      document.body.style.overflow = 'hidden';
+
+      const remainingCount = 3 - selectedCompareIds.length;
+      let guideBannerHtml = '';
+      if (remainingCount > 0) {
+        const candidates = [1, 2, 5, 8, 11, 14].filter(id => !selectedCompareIds.includes(id)).slice(0, 3);
+        let candidateBtns = candidates.map(id => {
+          const item = skuMasterList.find(s => s.id === id);
+          if (!item) return '';
+          const snum = id < 10 ? '#0' + id : '#' + id;
+          return '<button class="btn-quick-add-compare" onclick="quickAddCompare(' + id + ')" style="padding: 4px 10px; font-size: 11px; font-weight: 900; border: var(--border-thick); background: #FFF; cursor: pointer;">+ ' + snum + ' ' + item.name.split(' ')[0] + ' 추가</button>';
+        }).join(' ');
+
+        guideBannerHtml = `
+          <div class="compare-guide-banner" style="background: var(--halo-gray-bg); border: var(--border-thick); padding: 16px 20px; margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <span class="wireframe-badge dark" style="font-size: 10px;">COMPARISON GUIDE</span>
+              <span style="font-size: 11px; font-weight: 900; color: var(--halo-black);">현재 ${selectedCompareIds.length}개 선택됨 (최대 3개)</span>
+            </div>
+            <div style="font-size: 14px; font-weight: 900; margin-bottom: 4px; color: var(--halo-black);">
+              기어를 ${remainingCount}개 더 추가하여 스펙을 횡단 비교해 보세요!
+            </div>
+            <div style="font-size: 12px; color: var(--halo-gray-dark); margin-bottom: 12px; line-height: 1.5;">
+              차이가 있는 스펙(Different Values)은 굵은 테두리와 진한 대비로 자동 강조되며, 공통 스펙은 낮은 채도로 정돈됩니다.
+            </div>
+            <div class="quick-add-chips-wrap" style="display: flex; gap: 8px; flex-wrap: wrap;">
+              ${candidateBtns}
+            </div>
+          </div>
+        `;
+      }
+
+      // Helper to check if values across selected items are identical or different
+      const items = selectedCompareIds.map(id => skuMasterList.find(s => s.id === id)).filter(Boolean);
+      function isDiff(key) {
+        if (items.length <= 1) return false;
+        const first = items[0][key];
+        return items.some(it => it[key] !== first);
+      }
+
+      // Headers Row (Top Sticky Header)
+      let thead = '<thead><tr class="header-row"><th class="sticky-spec-col">비교 항목</th>';
+      selectedCompareIds.forEach(id => {
+        const item = skuMasterList.find(s => s.id === id);
+        if (item) {
+          const snum = id < 10 ? '#0' + id : '#' + id;
+          thead += '<th style="font-weight: 900; font-size: 13px; background: #FAFAFA; border: var(--border-thin);">' + snum + '<br>' + item.name.split(' ')[0] + '</th>';
+        }
+      });
+      for (let i = 0; i < remainingCount; i++) {
+        thead += '<th style="background: var(--halo-gray-bg); border: 2px dashed #000; text-align: center; color: var(--halo-gray-mid); font-size: 11px; font-weight: 900;">[+ 1개 추가 가능]</th>';
+      }
+      thead += '</tr></thead><tbody>';
+
+      // Row definitions with diff detection
+      const specFields = [
+        { label: '소속 컬렉션', key: 'col', render: it => it.col.toUpperCase() },
+        { label: '하드웨어 역할', key: 'roleName', render: it => '<span class="wireframe-badge dark" style="font-size:10px;">' + it.roleName + '</span>' },
+        { label: '운동 단계', key: 'phase', render: it => '<span class="wireframe-badge">' + it.phase + '</span>' },
+        { label: '기어 제형', key: 'type', render: it => it.type },
+        { label: '핵심 기능', key: 'func', render: it => it.func },
+        { label: '지속력 / 내수성', key: 'dur', render: it => it.dur },
+        { label: '가상 임상 검증', key: 'clinical', render: it => '<strong>' + it.clinical + '</strong>' },
+        { label: '용량 및 가격', key: 'price', render: it => '<strong style="font-size: 14px;">' + it.price + '</strong> (' + it.vol + ')' },
+        { label: '주요 특징', key: 'feature', render: it => it.feature },
+        { 
+          label: '상세 및 알림', 
+          key: 'action', 
+          render: it => '<div style="display:flex; flex-direction:column; gap:4px;"><button class="btn-sku-action" onclick="openProductModal(' + it.id + ')" style="padding:6px; font-size:11px;">상세 퀵뷰</button><button class="btn-sku-action primary" onclick="openLaunchModal(\'' + it.name + '\')" style="padding:6px; font-size:11px;">출시 알림</button></div>'
+        }
+      ];
+
+      let tbody = '';
+      specFields.forEach(spec => {
+        const different = (spec.key !== 'action') && isDiff(spec.key);
+        const cellClass = different ? 'compare-cell-diff' : 'compare-cell-same';
+        const diffBadge = different ? '<span style="display:inline-block; font-size:9.5px; background:#000; color:#FFF; padding:1px 5px; margin-right:4px; font-weight:900;">● 차이</span>' : '';
+
+        tbody += '<tr><th class="sticky-spec-col">' + spec.label + '</th>';
+        selectedCompareIds.forEach(id => {
+          const item = skuMasterList.find(s => s.id === id);
+          if (item) {
+            tbody += '<td class="' + cellClass + '">' + diffBadge + spec.render(item) + '</td>';
+          }
+        });
+        for (let i = 0; i < remainingCount; i++) {
+          tbody += '<td style="background: var(--halo-gray-bg); text-align: center; color: var(--halo-gray-mid); font-size: 11px;">-</td>';
+        }
+        tbody += '</tr>';
+      });
+      tbody += '</tbody>';
+
+      table.innerHTML = guideBannerHtml + '<div class="compare-table-scroll-container"><table class="compare-modal-table">' + thead + tbody + '</table></div>';
+      modal.style.display = 'flex';
+    }
+
+    function closeCompareModal(e) {
+      if (!e || e.target.id === 'compareModalBackdrop' || e.target.classList.contains('modal-close-btn') || e.target.tagName === 'BUTTON') {
+        document.getElementById('compareModalBackdrop').style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Product Quick View Modal
+    function openProductModal(skuId) {
+      const item = skuMasterList.find(s => s.id === skuId);
+      if (!item) return;
+
+      const snum = item.id < 10 ? '#0' + item.id : '#' + item.id;
+      document.getElementById('modalSkuSub').textContent = 'SKU ' + snum + ' | ' + item.col.toUpperCase();
+      document.getElementById('modalSkuName').textContent = item.name;
+      document.getElementById('modalSkuPrice').textContent = item.price;
+      document.getElementById('modalSkuVol').textContent = '용량 / 규격: ' + item.vol;
+      document.getElementById('modalSkuFeature').textContent = item.feature;
+      document.getElementById('modalSkuClinical').textContent = '임상 데이터: ' + item.clinical + ' (' + item.dur + ')';
+      
+      const btnLaunch = document.getElementById('btnModalLaunch');
+      btnLaunch.setAttribute('onclick', "closeProductModal(); openLaunchModal('" + item.name + "');");
+
+      document.getElementById('productModalBackdrop').style.display = 'flex';
+    }
+
+    function closeProductModal(e) {
+      if (!e || e.target.id === 'productModalBackdrop' || e.target.classList.contains('modal-close-btn')) {
+        document.getElementById('productModalBackdrop').style.display = 'none';
+      }
+    }
+
+    // Launch Modal
+    function openLaunchModal(productName) {
+      document.getElementById('launchTargetSkuTitle').textContent = '[' + productName + '] 15% 얼리버드 출시 알림';
+      showLaunchState('form');
+      document.getElementById('launchModalBackdrop').style.display = 'flex';
+    }
+
+    function closeLaunchModal(e) {
+      if (!e || e.target.id === 'launchModalBackdrop' || e.target.classList.contains('modal-close-btn')) {
+        document.getElementById('launchModalBackdrop').style.display = 'none';
+      }
+    }
+
+    function showLaunchState(state) {
+      document.getElementById('launchStateForm').style.display = state === 'form' ? 'block' : 'none';
+      document.getElementById('launchStateSubmitting').style.display = state === 'submitting' ? 'block' : 'none';
+      document.getElementById('launchStateSuccess').style.display = state === 'success' ? 'block' : 'none';
+      document.getElementById('launchStateError').style.display = state === 'error' ? 'block' : 'none';
+    }
+
+    function handleLaunchSubmit(e) {
+      e.preventDefault();
+      const contact = document.getElementById('launchContactInput').value.trim();
+      const privacy = document.getElementById('launchPrivacyCheck').checked;
+
+      if (!contact || !privacy) {
+        showLaunchState('error');
+        return;
+      }
+
+      showLaunchState('submitting');
+      setTimeout(() => {
+        showLaunchState('success');
+      }, 700);
+    }
+  </script>
+</body>
+</html>
