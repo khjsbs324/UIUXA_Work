@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HALO 브랜드 소개 & 하드웨어 철학 (현재버전 v2 - 출발장면 & 해무리 네이밍)</title>
+  <style>
+    @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+    :root {
+      --halo-black: #000000;
+      --halo-white: #FFFFFF;
+      --halo-gray-bg: #F8F9FA;
+      --halo-gray-light: #E5E7EB;
+      --halo-gray-mid: #9CA3AF;
+      --halo-gray-dark: #4B5563;
+      --halo-gray-900: #111827;
+      --halo-blue: #0284C7;
+      --halo-blue-light: #38BDF8;
+      --halo-lime: #84CC16;
+      --halo-red: #EF4444;
+      --border-thick: 2px solid #000000;
+      --border-thin: 1px solid #000000;
+      --border-gray: 1px solid #D1D5DB;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif; }
+    body { background: #FFFFFF; color: #000000; line-height: 1.6; padding-bottom: 90px; }
+
+    /* Layout */
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+    
+    /* GNB */
+    .site-gnb { background: #FFFFFF; border-bottom: var(--border-thick); padding: 16px 0; position: sticky; top: 0; z-index: 1000; }
+    .gnb-inner { display: flex; justify-content: space-between; align-items: center; }
+    .brand-logo { font-size: 20px; font-weight: 900; letter-spacing: -0.03em; color: #000; text-decoration: none; display: flex; align-items: center; gap: 6px; }
+    .gnb-menu { display: flex; gap: 16px; font-size: 13px; font-weight: 800; align-items: center; }
+    .gnb-menu a { color: #000; text-decoration: none; }
+    .gnb-menu a.active { border-bottom: 2px solid #000; padding-bottom: 2px; }
+
+    /* Section Utilities */
+    .section-spacing { padding: 88px 0; border-bottom: var(--border-thick); }
+    .section-header { margin-bottom: 48px; text-align: center; }
+    .section-tag { font-size: 12px; font-weight: 900; color: #0284C7; letter-spacing: 0.08em; display: inline-block; margin-bottom: 10px; }
+    .section-title { font-size: 34px; font-weight: 900; letter-spacing: -0.03em; line-height: 1.3; margin-bottom: 14px; }
+    .section-desc { font-size: 16px; color: var(--halo-gray-dark); max-width: 780px; margin: 0 auto; line-height: 1.65; }
+
+    /* SEC-01: Emotional Origin Hero */
+    .origin-hero { background: #000000; color: #FFFFFF; padding: 100px 0 88px; border-bottom: var(--border-thick); position: relative; overflow: hidden; }
+    .origin-hero-inner { position: relative; z-index: 2; max-width: 960px; }
+    .origin-badge { background: #38BDF8; color: #000000; font-size: 11px; font-weight: 900; padding: 4px 10px; display: inline-block; margin-bottom: 20px; border-radius: 2px; }
+    .origin-headline { font-size: 46px; font-weight: 900; line-height: 1.22; letter-spacing: -0.03em; margin-bottom: 24px; }
+    .origin-headline span { color: #38BDF8; }
+    .origin-story-text { font-size: 18px; color: #CBD5E1; line-height: 1.75; margin-bottom: 36px; }
+    
+    /* Emotional Moment Callout Box */
+    .moment-callout-box { background: #0F172A; border: 2px solid #334155; border-left: 6px solid #38BDF8; padding: 24px 28px; margin-top: 24px; }
+    .moment-callout-title { font-size: 16px; font-weight: 900; color: #38BDF8; margin-bottom: 8px; }
+    .moment-callout-desc { font-size: 14px; color: #94A3B8; line-height: 1.65; }
+
+    /* SEC-02: The Real Problem (4 Pain Points) */
+    .problems-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    @media (max-width: 1024px) { .problems-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .problems-grid { grid-template-columns: 1fr; } }
+    .problem-card { border: var(--border-thick); background: #FFFFFF; padding: 28px 20px; border-top: 6px solid var(--halo-red); display: flex; flex-direction: column; justify-content: space-between; }
+    .problem-tag { font-size: 11px; font-weight: 900; color: var(--halo-red); margin-bottom: 8px; }
+    .problem-title { font-size: 19px; font-weight: 900; margin-bottom: 10px; line-height: 1.35; }
+    .problem-desc { font-size: 13px; color: var(--halo-gray-dark); line-height: 1.6; margin-bottom: 16px; }
+    .problem-impact { background: #FEF2F2; border: 1px solid #FECACA; padding: 8px 12px; font-size: 11.5px; font-weight: 800; color: #991B1B; }
+
+    /* SEC-03: The Gear Perspective (Old Beauty vs HALO Gear) */
+    .perspective-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: stretch; }
+    @media (max-width: 860px) { .perspective-grid { grid-template-columns: 1fr; } }
+    
+    .perspective-card { border: var(--border-thick); padding: 36px 32px; background: #FFF; display: flex; flex-direction: column; justify-content: space-between; }
+    .perspective-card.halo-side { background: #000000; color: #FFFFFF; border-color: #000000; }
+    
+    .perspective-badge { font-size: 11px; font-weight: 900; padding: 3px 10px; display: inline-block; margin-bottom: 16px; }
+    .perspective-badge.old { background: #F1F5F9; color: #475569; border: 1px solid #CBD5E1; }
+    .perspective-badge.new { background: #38BDF8; color: #000000; }
+    
+    .perspective-title { font-size: 26px; font-weight: 900; margin-bottom: 16px; line-height: 1.3; }
+    .perspective-desc { font-size: 14.5px; line-height: 1.7; margin-bottom: 24px; }
+    .perspective-card.halo-side .perspective-desc { color: #CBD5E1; }
+    
+    .perspective-matrix-list { list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 13px; font-weight: 800; }
+    .perspective-matrix-list li { padding: 8px 12px; border: 1px solid #E2E8F0; background: var(--halo-gray-bg); display: flex; justify-content: space-between; }
+    .perspective-card.halo-side .perspective-matrix-list li { background: #0F172A; border-color: #334155; color: #FFF; }
+    .perspective-matrix-list li strong { color: #0284C7; }
+    .perspective-card.halo-side .perspective-matrix-list li strong { color: #38BDF8; }
+
+    /* SEC-04: 3 Design & Verification Principles */
+    .principles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    @media (max-width: 900px) { .principles-grid { grid-template-columns: 1fr; } }
+    .principle-card { border: var(--border-thick); background: #FFFFFF; padding: 36px 28px; display: flex; flex-direction: column; justify-content: space-between; position: relative; }
+    .principle-card:hover { outline: 3px solid #000; }
+    .principle-num { font-size: 13px; font-weight: 900; color: #0284C7; letter-spacing: 0.1em; margin-bottom: 10px; }
+    .principle-title { font-size: 22px; font-weight: 900; margin-bottom: 12px; line-height: 1.35; }
+    .principle-desc { font-size: 14px; color: var(--halo-gray-dark); line-height: 1.65; margin-bottom: 20px; }
+    .principle-verify-box { background: var(--halo-gray-bg); border: 1px solid #CBD5E1; padding: 14px 16px; font-size: 12.5px; line-height: 1.5; }
+    .principle-verify-box strong { color: #000; }
+
+    /* SEC-05: 5 Sports Field Connection */
+    .field-connect-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+    @media (max-width: 1100px) { .field-connect-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .field-connect-grid { grid-template-columns: 1fr; } }
+    .field-card { border: var(--border-thick); background: #FFFFFF; padding: 22px 18px; display: flex; flex-direction: column; justify-content: space-between; }
+    .field-sport-name { font-size: 16px; font-weight: 900; margin-bottom: 4px; }
+    .field-scene-tag { font-size: 11px; font-weight: 900; color: #0284C7; margin-bottom: 10px; }
+    .field-env-desc { font-size: 12.5px; color: var(--halo-gray-dark); line-height: 1.55; margin-bottom: 14px; }
+    .field-gear-match { background: #000; color: #FFF; padding: 8px 10px; font-size: 11.5px; font-weight: 900; text-align: center; }
+
+    /* SEC-06: Sustainable Materials */
+    .materials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    @media (max-width: 768px) { .materials-grid { grid-template-columns: 1fr; } }
+    .material-box { border: 2px solid #333333; background: #0F172A; padding: 32px 28px; color: #FFFFFF; }
+
+    /* CTA Section */
+    .cta-banner { background: var(--halo-gray-bg); border: var(--border-thick); padding: 56px 24px; text-align: center; margin-top: 72px; }
+    .btn-sku-action { border: var(--border-thick); background: #FFFFFF; color: #000000; font-size: 13px; font-weight: 900; padding: 12px 24px; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-sku-action.primary { background: #000000; color: #FFFFFF; }
+    .btn-sku-action.highlight { background: #38BDF8; color: #000000; border-color: #000000; }
+    .btn-sku-action:hover { opacity: 0.9; }
+
+    /* Modal (4-State Launch Alert) */
+    .modal-backdrop { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.75); z-index: 2000; align-items: center; justify-content: center; padding: 16px; }
+    .modal-window { background: var(--halo-white); border: var(--border-thick); width: 100%; max-width: 520px; padding: 32px 28px; position: relative; }
+    .modal-close-btn { position: absolute; top: 16px; right: 16px; border: var(--border-thick); background: var(--halo-black); color: var(--halo-white); font-size: 13px; font-weight: 900; padding: 6px 12px; cursor: pointer; }
+  
+    /* 100% Bulletproof Interactive Modal Styles */
+    .modal-backdrop {
+      display: none !important;
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      background: rgba(0, 0, 0, 0.85) !important;
+      z-index: 9999999 !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 16px !important;
+      box-sizing: border-box !important;
+    }
+    .modal-backdrop.active {
+      display: flex !important;
+    }
+    .modal-window {
+      background: #FFFFFF !important;
+      border: 3px solid #000000 !important;
+      width: 100% !important;
+      max-width: 520px !important;
+      padding: 32px 28px !important;
+      position: relative !important;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45) !important;
+      border-radius: 4px !important;
+      box-sizing: border-box !important;
+      color: #000000 !important;
+    }
+    .modal-close-btn {
+      position: absolute !important;
+      top: 16px !important;
+      right: 16px !important;
+      border: 2px solid #000000 !important;
+      background: #000000 !important;
+      color: #FFFFFF !important;
+      font-size: 13px !important;
+      font-weight: 900 !important;
+      padding: 6px 12px !important;
+      cursor: pointer !important;
+      border-radius: 2px !important;
+    }
+</style>
+</head>
+<body>
+
+  <!-- Top Global GNB -->
+  <nav class="site-gnb">
+    <div class="container gnb-inner">
+      <a href="../0825/0825_HALO_메인페이지_와이어프레임.html" class="brand-logo">
+        <span style="background:#000; color:#FFF; padding:2px 6px; font-size:12px;">HALO</span>
+        <span>GEAR LAB</span>
+      </a>
+      <div class="gnb-menu">
+        <a href="../0825/0825_HALO_메인페이지_와이어프레임.html">← 메인 홈 (Home)</a>
+        <a href="#" class="active">브랜드 소개 (Brand Story)</a>
+        <a href="../0825/수정_02_카테고리_스토리보드.html">16종 카테고리 기어 (16 SKUs) ➔</a>
+        <button type="button" class="btn-sku-action primary" onclick="openLaunchModal('HALO 공식 런칭')" style="padding:6px 14px; font-size:11.5px;">15% 얼리버드 알림</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- SEC-01: Hero Section (Entire Wide Black Screen is the Full Background Image Area - Specs Excluded) -->
+  <section class="origin-hero" id="hero" style="position: relative; overflow: hidden; border-bottom: var(--border-thick);">
+    
+    <!-- Top-Left Simple Indicator: Entire Black Screen is the Background Image Area -->
+    <div style="position: absolute; top: 18px; left: 24px; z-index: 10;">
+      <span style="background: #38BDF8; color: #000000; font-size: 11px; font-weight: 900; padding: 4px 10px; border-radius: 2px; letter-spacing: 0.05em;">
+        📷 [대표 배경 사진 영역 / HERO BACKGROUND IMAGE]
+      </span>
+    </div>
+
+    <div class="container" style="position: relative; z-index: 5; padding-top: 24px;">
+      <div class="origin-hero-inner" style="max-width: 860px;">
+        
+        <div style="margin-bottom: 16px;">
+          <span class="origin-badge">HALO KINETIC SUNCARE GEAR</span>
+        </div>
+
+        <!-- 1. HALO를 기억하게 하는 핵심 문장 하나 -->
+        <h1 class="origin-headline" style="font-size: 40px; line-height: 1.25; margin-bottom: 24px;">
+          "우리는 운동을 멈추게 하는 선케어를 만들지 않는다.<br>
+          운동의 흐름을 이어주는 <span>노터치 선케어 기어</span>를 설계한다."
+        </h1>
+
+        <!-- 2. 구체적인 출발 장면 (누가 / 어떤 실제 장면 / 어떤 불편과 질문) -->
+        <div style="background: rgba(15, 23, 42, 0.9); border: 2px solid #334155; border-left: 6px solid #38BDF8; padding: 24px 28px; margin-bottom: 28px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="font-size: 11.5px; font-weight: 900; color: #38BDF8; letter-spacing: 0.05em;">● THE ORIGIN SCENE: 정오의 30km 마라톤 주로</span>
+            <span style="font-size: 11px; font-weight: 800; color: #84CC16;">● 손바닥 오염 0.0% 검증</span>
+          </div>
+          <p class="origin-story-text" style="font-size: 15px; color: #E2E8F0; line-height: 1.75; margin-bottom: 0;">
+            정오의 폭염 속을 질주하던 한 러너는 자외선을 다시 바르기 위해 달리기를 멈춰 서야 했습니다. 땀과 흙먼지가 범벅된 손으로 얼굴을 문질러야 했던 끈적이는 불편함, 배낭 속을 뒤적이는 사이 급격히 무너져버린 호흡과 페이스. 그 절박한 순간 하나의 본질적인 질문이 시작되었습니다.<br>
+            <strong style="color: #FFFFFF; font-size: 15.5px; display: inline-block; margin-top: 6px;">
+              "왜 선케어는 다른 운동 장비처럼 몸에 언제나 연결되어 있고, 운동을 멈추지 않고 한 손으로 빠르게 덧바를 수 없는가?"
+            </strong>
+          </p>
+        </div>
+
+        <!-- 3. 브랜드 이야기를 계속 읽게 하는 이동 버튼 (CTA) -->
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a href="#philosophy" class="btn-sku-action highlight" style="font-size: 14px; padding: 13px 28px; text-decoration: none;">
+            HALO의 세 가지 설계 원칙 보기 ↓
+          </a>
+          <a href="#rnd-process" class="btn-sku-action" style="font-size: 14px; padding: 13px 22px; background: #1E293B; color: #FFF; border-color: #475569; text-decoration: none;">
+            연구 과정 보기 ↓
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SEC-02: The Real Problem (4 Pain Points - Restrained Color Palette) -->
+  <section class="section-spacing">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">[THE REAL PROBLEM]</span>
+        <h2 class="section-title">기존 뷰티 선케어의 4대 한계와 선수의 고통</h2>
+        <p class="section-desc">
+          스포츠 현장에서 선케어는 피부 미용이 아닌 생존의 문제입니다. 그러나 기존 화장품은 운동 환경을 전혀 고려하지 않았습니다.
+        </p>
+      </div>
+
+      <div class="problems-grid">
+        <!-- Problem 1 -->
+        <div class="problem-card" style="border-top: 4px solid #475569; background: #FFFFFF;">
+          <div>
+            <span class="problem-tag" style="color: #64748B;">PAIN POINT 01</span>
+            <h3 class="problem-title" style="color: #000000;">45초의 멈춤과<br>페이스 붕괴 (Delay)</h3>
+            <p class="problem-desc">
+              배낭을 벗고 지퍼를 열어 뚜껑을 돌리는 순간, 엘리트 러너와 하이커의 리듬과 호흡이 끊어집니다.
+            </p>
+          </div>
+          <div class="problem-impact" style="background: #F8FAFC; border: 1px solid #E2E8F0; color: #475569;">
+            <span style="color: #EF4444; font-weight: 900; margin-right: 4px;">●</span>평균 45초 페이스 저하 발생
+          </div>
+        </div>
+
+        <!-- Problem 2 -->
+        <div class="problem-card" style="border-top: 4px solid #475569; background: #FFFFFF;">
+          <div>
+            <span class="problem-tag" style="color: #64748B;">PAIN POINT 02</span>
+            <h3 class="problem-title" style="color: #000000;">손바닥 유분 오염과<br>그립 상실 (Sticky Palm)</h3>
+            <p class="problem-desc">
+              미끄러운 선크림이 묻은 손으로는 파워젤 섭취도, 테니스 라켓도, 클라이밍 홀드도 잡을 수 없습니다.
+            </p>
+          </div>
+          <div class="problem-impact" style="background: #F8FAFC; border: 1px solid #E2E8F0; color: #475569;">
+            <span style="color: #EF4444; font-weight: 900; margin-right: 4px;">●</span>기구 마찰력 최대 42% 손실
+          </div>
+        </div>
+
+        <!-- Problem 3 -->
+        <div class="problem-card" style="border-top: 4px solid #475569; background: #FFFFFF;">
+          <div>
+            <span class="problem-tag" style="color: #64748B;">PAIN POINT 03</span>
+            <h3 class="problem-title" style="color: #000000;">땀에 녹아내리는<br>눈시림 (Eye Stinging)</h3>
+            <p class="problem-desc">
+              이마의 땀과 뒤섞여 눈으로 흘러들어가며 극심한 통증과 시야 방해를 유발하여 안전 사고를 부릅니다.
+            </p>
+          </div>
+          <div class="problem-impact" style="background: #F8FAFC; border: 1px solid #E2E8F0; color: #475569;">
+            <span style="color: #EF4444; font-weight: 900; margin-right: 4px;">●</span>경기 중 순간 시야 상실 위험
+          </div>
+        </div>
+
+        <!-- Problem 4 -->
+        <div class="problem-card" style="border-top: 4px solid #475569; background: #FFFFFF;">
+          <div>
+            <span class="problem-tag" style="color: #64748B;">PAIN POINT 04</span>
+            <h3 class="problem-title" style="color: #000000;">30분 만에 지워지는<br>방어막 (Vanishing UV)</h3>
+            <p class="problem-desc">
+              물과 땀, 배낭 스트랩 마찰을 견디지 못하고 도포 후 30분도 채 되지 않아 자외선 방어막이 씻겨나갑니다.
+            </p>
+          </div>
+          <div class="problem-impact" style="background: #F8FAFC; border: 1px solid #E2E8F0; color: #475569;">
+            <span style="color: #EF4444; font-weight: 900; margin-right: 4px;">●</span>땀 흘림 시 잔존율 35% 미만
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SEC-03: The Gear Perspective (Action Motion Sequence Comparison) -->
+  <!-- SEC-03: The Gear Perspective (Action Motion Sequence Comparison with Explicit Image Boxes) -->
+  <section class="section-spacing" style="background: var(--halo-gray-bg);" id="perspective">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">[ACTION MOTION COMPARISON]</span>
+        <h2 class="section-title">행동의 차이가 스포츠의 결과를 바꿉니다</h2>
+        <p class="section-desc">
+          설명 문장을 길게 읽지 않아도 드러나는 압도적인 사용 방식의 차이. 멈춰 서서 손을 닦는 과거와 달리면서 3초 만에 덧바르는 혁신.
+        </p>
+      </div>
+
+      <div class="perspective-grid">
+        
+        <!-- Left: Old Cosmetic Way (5-Step Interrupted Action) -->
+        <div class="perspective-card" style="border: var(--border-thick); border-top: 4px solid #475569; background: #FFFFFF;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <span class="perspective-badge old" style="background: #F1F5F9; color: #475569; border-color: #CBD5E1;">기존 뷰티 선케어 방식 (화장품)</span>
+              <span style="font-size: 11px; font-weight: 800; color: #64748B;"><span style="color: #EF4444; font-weight: 900;">●</span> 운동 흐름 단절</span>
+            </div>
+            
+            <!-- Explicit Image Placeholder Box 02-A -->
+            <div style="border: 2px dashed #94A3B8; background: #F8FAFC; padding: 12px; margin-bottom: 16px; border-radius: 4px; text-align: center;">
+              <div style="font-size: 11px; font-weight: 900; color: #475569; margin-bottom: 4px;">📷 [이미지 들어갈 공간: 기존 선케어 사용 장면]</div>
+              <span style="font-size: 11px; color: #64748B; line-height: 1.4; display: block;">러닝 중 멈춰 서서 가방을 벗고 지퍼를 열며 손을 닦는 불편한 정지 컷 1장</span>
+            </div>
+
+            <h3 class="perspective-title" style="font-size: 21px; margin-bottom: 8px; color: #000000;">
+              멈춤과 손 오염이 반복되는 5단계
+            </h3>
+            <p class="perspective-desc" style="font-size: 13px; margin-bottom: 16px; color: var(--halo-gray-dark);">
+              가방을 벗고 멈춰 서서 손에 덜어 바르는 동안 호흡과 페이스가 완전히 무너집니다.
+            </p>
+
+            <!-- 5-Step Action Motion Flow Badges -->
+            <div style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px;">
+              <div style="background: #F8FAFC; border: 1px solid #E2E8F0; padding: 8px 12px; display: flex; align-items: center; justify-content: space-between; border-radius: 4px; font-size: 12px;">
+                <span style="font-weight: 900; color: #64748B;">STEP 1</span>
+                <strong style="color: #1E293B;">1. 달리기 멈춤 (Stop)</strong>
+                <span style="color: #64748B; font-size: 11px;">페이스 급락</span>
+              </div>
+              <div style="background: #F8FAFC; border: 1px solid #E2E8F0; padding: 8px 12px; display: flex; align-items: center; justify-content: space-between; border-radius: 4px; font-size: 12px;">
+                <span style="font-weight: 900; color: #64748B;">STEP 2</span>
+                <strong style="color: #1E293B;">2. 배낭 지퍼 열기 (Unpack)</strong>
+                <span style="color: #64748B; font-size: 11px;">수납 번거로움</span>
+              </div>
+              <div style="background: #F8FAFC; border: 1px solid #E2E8F0; padding: 8px 12px; display: flex; align-items: center; justify-content: space-between; border-radius: 4px; font-size: 12px;">
+                <span style="font-weight: 900; color: #64748B;">STEP 3</span>
+                <strong style="color: #1E293B;">3. 손에 크림 덜기 (Squeeze)</strong>
+                <span style="color: #64748B; font-size: 11px;">손바닥 유분 오염</span>
+              </div>
+              <div style="background: #F8FAFC; border: 1px solid #E2E8F0; padding: 8px 12px; display: flex; align-items: center; justify-content: space-between; border-radius: 4px; font-size: 12px;">
+                <span style="font-weight: 900; color: #64748B;">STEP 4</span>
+                <strong style="color: #1E293B;">4. 얼굴·목 도포 (Apply)</strong>
+                <span style="color: #64748B; font-size: 11px;">눈시림 번짐</span>
+              </div>
+              <div style="background: #F8FAFC; border: 1px solid #E2E8F0; padding: 8px 12px; display: flex; align-items: center; justify-content: space-between; border-radius: 4px; font-size: 12px;">
+                <span style="font-weight: 900; color: #64748B;">STEP 5</span>
+                <strong style="color: #1E293B;">5. 끈적이는 손 닦기 (Wipe)</strong>
+                <span style="color: #64748B; font-size: 11px;">그립력 42% 손실</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="background: #F1F5F9; border: 1px solid #CBD5E1; padding: 10px 12px; font-size: 11.5px; color: #475569; font-weight: 800; text-align: center;">
+            ● 총 소요 시간 평균 45초 지연 · 손바닥 오염 100%
+          </div>
+        </div>
+
+        <!-- Right: HALO Kinetic Gear Way (4-Step Seamless Action) -->
+        <div class="perspective-card halo-side" style="border: var(--border-thick); border-top: 4px solid #38BDF8; background: #000000;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <span class="perspective-badge new" style="background: #38BDF8; color: #000;">HALO 하드웨어 기어 방식</span>
+              <span style="font-size: 11px; font-weight: 900; color: #84CC16;">● 0초 무정지 페이스 유지</span>
+            </div>
+
+            <!-- Explicit Image Placeholder Box 02-B -->
+            <div style="border: 2px dashed #38BDF8; background: #0F172A; padding: 12px; margin-bottom: 16px; border-radius: 4px; text-align: center;">
+              <div style="font-size: 11px; font-weight: 900; color: #38BDF8; margin-bottom: 4px;">📷 [이미지 들어갈 공간: HALO 무정지 사용 장면]</div>
+              <span style="font-size: 11px; color: #CBD5E1; line-height: 1.4; display: block;">시속 15km로 달리며 한 손으로 카라비너를 분리해 목선에 롤링하는 찰나 1장</span>
+            </div>
+            
+            <h3 class="perspective-title" style="font-size: 21px; margin-bottom: 8px; color: #FFFFFF;">
+              멈추지 않고 한 손으로 끝내는 4단계
+            </h3>
+            <p class="perspective-desc" style="font-size: 13px; margin-bottom: 16px; color: #CBD5E1;">
+              시속 15km로 달리며 원터치로 분리하고 손에 묻히지 않고 즉시 쿨링합니다.
+            </p>
+
+            <!-- 4-Step Action Motion Flow Badges -->
+            <div style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px;">
+              <div style="background: #0F172A; border: 1px solid #334155; padding: 8px 12px; display: flex; align-items: center; justify-content: space-between; border-radius: 4px; font-size: 12px;">
+                <span style="font-weight: 900; color: #38BDF8;">STEP 1</span>
+                <strong style="color: #38BDF8;">1. 달리는 상태 유지 (Keep Moving)</strong>
+                <span style="color: #84CC16; font-size: 11px; font-weight: 800;">페이스 100% 사수</span>
+              </div>
+              <div style="background: #0F172A; border: 1px solid #334155; padding: 8px 12px; display: flex; align-items: center; justify-content: space-between; border-radius: 4px; font-size: 12px;">
+                <span style="font-weight: 900; color: #38BDF8;">STEP 2</span>
+                <strong style="color: #FFFFFF;">2. 한 손 분리 (One-hand Release)</strong>
+                <span style="color: #CBD5E1; font-size: 11px;">AL6061 스프링 래치</span>
+              </div>
+              <div style="background: #0F172A; border: 1px solid #334155; padding: 8px 12px; display: flex; align-items: center; justify-content: space-between; border-radius: 4px; font-size: 12px;">
+                <span style="font-weight: 900; color: #38BDF8;">STEP 3</span>
+                <strong style="color: #38BDF8;">3. 노터치 도포 (No-touch Glide)</strong>
+                <span style="color: #84CC16; font-size: 11px; font-weight: 800;">손 오염 0% / -4.2℃</span>
+              </div>
+              <div style="background: #0F172A; border: 1px solid #334155; padding: 8px 12px; display: flex; align-items: center; justify-content: space-between; border-radius: 4px; font-size: 12px;">
+                <span style="font-weight: 900; color: #38BDF8;">STEP 4</span>
+                <strong style="color: #FFFFFF;">4. 셔츠·벨트 재체결 (Re-attach)</strong>
+                <span style="color: #CBD5E1; font-size: 11px;">즉시 원위치 복귀</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="background: #064E3B; border: 1px solid #059669; padding: 10px 12px; font-size: 11.5px; color: #6EE7B7; font-weight: 900; text-align: center;">
+            ● 0초 무정지 페이스 사수 · 손바닥 오염 0.0% 검증
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SEC-04: 3 Design & Verification Principles (Visual Diagrams & Compact Specs) -->
+  <!-- SEC-04: 3 Design & Verification Principles (Visual Diagrams with Explicit Image Boxes) -->
+  <section class="section-spacing" id="philosophy">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">[3 CORE DESIGN PRINCIPLES]</span>
+        <h2 class="section-title">HALO를 정의하는 3대 하드웨어 설계 원칙</h2>
+        <p class="section-desc">
+          단순한 뷰티 문법을 거부하고, 하드웨어 공학으로 입증된 세 가지 원칙으로 제품을 설계합니다.
+        </p>
+      </div>
+
+      <div class="principles-grid">
+        
+        <!-- Principle 1: No-Touch Structure -->
+        <div class="principle-card">
+          <div>
+            <div class="principle-num">PRINCIPLE 01</div>
+            <h3 class="principle-title" style="font-size: 21px; margin-bottom: 6px;">
+              손을 대지 않는 사용 구조
+            </h3>
+            <span style="font-size: 11px; font-weight: 800; color: #64748B; display: block; margin-bottom: 12px;">No-Touch Architecture</span>
+            
+            <!-- Explicit Image Box 03 -->
+            <div style="border: 2px dashed #0284C7; background: #F0F9FF; padding: 14px; margin-bottom: 16px; border-radius: 4px; text-align: center;">
+              <div style="font-size: 11px; font-weight: 900; color: #0284C7; margin-bottom: 4px;">📷 [이미지 들어갈 공간: 제품 근접 분해도 1장]</div>
+              <strong style="font-size: 12px; color: #0F172A; display: block; margin-bottom: 2px;">AL6061 카라비너 래치 & 360° 롤러 헤드 3D CAD 분해도</strong>
+              <span style="font-size: 10.5px; color: #64748B;">원핸드 0.8초 탈착 스프링 메커니즘 & 롤러 볼 씰링 구조</span>
+            </div>
+
+            <!-- 1-Sentence Explanation -->
+            <p style="font-size: 13.5px; color: #334155; line-height: 1.6; margin-bottom: 14px;">
+              땀과 흙먼지가 묻은 손바닥을 얼굴에 대지 않도록 AL6061 알루미늄 카라비너 래치와 360° 롤러 헤드로 손 접촉을 원천 차단합니다.
+            </p>
+          </div>
+
+          <div>
+            <!-- 1 Confirmed Metric -->
+            <div style="background: #F0FDF4; border: 1px solid #BBF7D0; padding: 10px 12px; font-size: 12px; color: #166534; font-weight: 800; margin-bottom: 12px; border-radius: 2px;">
+              ● 확인된 근거: 손바닥 유분 잔여율 <strong>0.0% 검증</strong>
+            </div>
+            
+            <!-- Link to R&D Process -->
+            <a href="#rnd-process" style="font-size: 11.5px; font-weight: 800; color: #0284C7; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+              R&D 12차 목업 연구 과정 보기 ➔
+            </a>
+          </div>
+        </div>
+
+        <!-- Principle 2: Cryo Cooling Design -->
+        <div class="principle-card">
+          <div>
+            <div class="principle-num">PRINCIPLE 02</div>
+            <h3 class="principle-title" style="font-size: 21px; margin-bottom: 6px;">
+              피부 열감을 낮추는 쿨링 설계
+            </h3>
+            <span style="font-size: 11px; font-weight: 800; color: #64748B; display: block; margin-bottom: 12px;">Instant Cryo-Cooling</span>
+            
+            <!-- Explicit Image Box 04 -->
+            <div style="border: 2px dashed #0284C7; background: #F0F9FF; padding: 14px; margin-bottom: 16px; border-radius: 4px; text-align: center;">
+              <div style="font-size: 11px; font-weight: 900; color: #0284C7; margin-bottom: 4px;">📷 [이미지 들어갈 공간: 열 이동 기술 도해 1장]</div>
+              <strong style="font-size: 12px; color: #0F172A; display: block; margin-bottom: 2px;">미스트 입자 기화열 방출 & 피부 열 흡수 열역학 흐름도</strong>
+              <span style="font-size: 10.5px; color: #0284C7; font-weight: 800;">35℃ 폭염 ➔ -4.2℃ 급속 쿨다운 열화상 색상 분포도</span>
+            </div>
+
+            <!-- 1-Sentence Explanation -->
+            <p style="font-size: 13.5px; color: #334155; line-height: 1.6; margin-bottom: 14px;">
+              45℃ 아스팔트 지열 속에서 피부 표면 열을 즉각 흡수하여 기화열로 방출하는 질소 크라이오 미스트가 심박 과열을 방어합니다.
+            </p>
+          </div>
+
+          <div>
+            <!-- 1 Confirmed Metric -->
+            <div style="background: #F0F9FF; border: 1px solid #BAE6FD; padding: 10px 12px; font-size: 12px; color: #0369A1; font-weight: 800; margin-bottom: 12px; border-radius: 2px;">
+              ● 확인된 근거: 도포 즉시 피부 표면 <strong>-4.2℃ 강하 실측</strong>
+            </div>
+            
+            <!-- Link to R&D Process -->
+            <a href="#rnd-process" style="font-size: 11.5px; font-weight: 800; color: #0284C7; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+              열화상 카메라 계측 데이터 보기 ➔
+            </a>
+          </div>
+        </div>
+
+        <!-- Principle 3: Extreme Sport Endurance -->
+        <div class="principle-card">
+          <div>
+            <div class="principle-num">PRINCIPLE 03</div>
+            <h3 class="principle-title" style="font-size: 21px; margin-bottom: 6px;">
+              땀과 마찰을 견디는 지속력
+            </h3>
+            <span style="font-size: 11px; font-weight: 800; color: #64748B; display: block; margin-bottom: 12px;">Extreme Endurance</span>
+            
+            <!-- Explicit Image Box 05 -->
+            <div style="border: 2px dashed #0284C7; background: #F0F9FF; padding: 14px; margin-bottom: 16px; border-radius: 4px; text-align: center;">
+              <div style="font-size: 11px; font-weight: 900; color: #0284C7; margin-bottom: 4px;">📷 [이미지 들어갈 공간: 현장 시험 장면 1세트]</div>
+              <strong style="font-size: 12px; color: #0F172A; display: block; margin-bottom: 2px;">땀·물·마찰 챔버 내 UV 차단막 유지 시험 컷</strong>
+              <span style="font-size: 10.5px; color: #64748B;">320시간 연속 마찰 후 98.4% 잔존 코팅막 현미경 컷</span>
+            </div>
+
+            <!-- 1-Sentence Explanation -->
+            <p style="font-size: 13.5px; color: #334155; line-height: 1.6; margin-bottom: 14px;">
+              흘러내리는 땀과 바다 염분, 배낭 스트랩의 거친 마찰 속에서도 UV 방어막이 지워지지 않고 풀코스 완주까지 유지됩니다.
+            </p>
+          </div>
+
+          <div>
+            <!-- 1 Confirmed Metric -->
+            <div style="background: #FAF5FF; border: 1px solid #E9D5FF; padding: 10px 12px; font-size: 12px; color: #6B21A8; font-weight: 800; margin-bottom: 12px; border-radius: 2px;">
+              ● 확인된 근거: 땀 흘림 후 <strong>98.4% 잔존율 & 80분 내수성</strong>
+            </div>
+            
+            <!-- Link to R&D Process -->
+            <a href="#rnd-process" style="font-size: 11.5px; font-weight: 800; color: #0284C7; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+              320시간 필드 계측 리포트 보기 ➔
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SEC-05: 5 Sports Environments & Flagship Gear Expansion (4-Point Architecture) -->
+  <!-- SEC-05: 5 Sports Environments & Flagship Gear Expansion (with Explicit Image Boxes) -->
+  <section class="section-spacing" style="background: var(--halo-gray-bg);" id="sports-environments">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">[5 SPORTS ENVIRONMENTS & GEAR EXTENSION]</span>
+        <h2 class="section-title">5대 극한 환경에 맞춘 하드웨어 확장</h2>
+        <p class="section-desc">
+          단순히 제품 수만 늘린 것이 아닙니다. 열기, 먼지, 마찰, 파도, 피지 등 종목별 극한 환경에 대응하는 설계 기준을 세우고 기어를 확장했습니다.
+        </p>
+      </div>
+
+      <!-- 5 Sports Environment Grid -->
+      <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px;">
+        
+        <!-- 01. City Running & Marathon -->
+        <div class="problem-card" style="border: var(--border-thick); background: #FFFFFF; padding: 22px 18px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="font-size: 11.5px; font-weight: 900; color: #0284C7; margin-bottom: 2px;">FIELD 01</div>
+            <h3 style="font-size: 17px; font-weight: 900; margin-bottom: 10px; color: #000;">시티 러닝 & 마라톤</h3>
+            
+            <!-- Image Box 11-1 -->
+            <div style="border: 1px dashed #94A3B8; background: #F8FAFC; padding: 8px; margin-bottom: 10px; border-radius: 2px; text-align: center;">
+              <span style="font-size: 10px; font-weight: 900; color: #0284C7; display: block; margin-bottom: 2px;">📷 [이미지 공간: 러닝 대표 장면]</span>
+              <span style="font-size: 10px; color: #64748B;">폭염 45℃ 도심 아스팔트 지열 속 질주</span>
+            </div>
+
+            <div style="margin-bottom: 10px;">
+              <div style="font-size: 10.5px; font-weight: 900; color: #64748B; margin-bottom: 2px;">● 마주치는 문제</div>
+              <p style="font-size: 12px; color: #334155; line-height: 1.45;">45℃ 아스팔트 복사열과 땀으로 인한 페이스 붕괴 및 체온 과열</p>
+            </div>
+
+            <div style="margin-bottom: 14px;">
+              <div style="font-size: 10.5px; font-weight: 900; color: #0284C7; margin-bottom: 2px;">● HALO 설계 기준</div>
+              <p style="font-size: 12px; color: #334155; line-height: 1.45;">0.8초 한 손 분리 & -4.2℃ 즉각 크라이오 기화 냉각</p>
+            </div>
+          </div>
+
+          <div>
+            <div style="background: #0F172A; border: 1px solid #000; padding: 10px; border-radius: 2px; color: #FFF; margin-bottom: 8px; text-align: center;">
+              <div style="font-size: 9.5px; font-weight: 800; color: #38BDF8; margin-bottom: 2px;">대표 플래그십 기어</div>
+              <strong style="font-size: 12px; display: block; color: #FFF;">#01 카라비너 퀵 쿨링 선 스틱</strong>
+              <span style="font-size: 10px; color: #94A3B8;">SPF50+ PA++++ · 20g</span>
+            </div>
+            
+            <a href="../0825/수정_02_카테고리_스토리보드.html" style="font-size: 11px; font-weight: 900; color: #000; text-decoration: underline; display: block; text-align: center;">
+              러닝 확장 기어 전체보기 ➔
+            </a>
+          </div>
+        </div>
+
+        <!-- 02. Trail & Climbing -->
+        <div class="problem-card" style="border: var(--border-thick); background: #FFFFFF; padding: 22px 18px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="font-size: 11.5px; font-weight: 900; color: #0284C7; margin-bottom: 2px;">FIELD 02</div>
+            <h3 style="font-size: 17px; font-weight: 900; margin-bottom: 10px; color: #000;">트레일 & 클라이밍</h3>
+            
+            <!-- Image Box 11-2 -->
+            <div style="border: 1px dashed #94A3B8; background: #F8FAFC; padding: 8px; margin-bottom: 10px; border-radius: 2px; text-align: center;">
+              <span style="font-size: 10px; font-weight: 900; color: #0284C7; display: block; margin-bottom: 2px;">📷 [이미지 공간: 트레일 대표 장면]</span>
+              <span style="font-size: 10px; color: #64748B;">고산 능선 칼바람 & 암벽 홀드 그립</span>
+            </div>
+
+            <div style="margin-bottom: 10px;">
+              <div style="font-size: 10.5px; font-weight: 900; color: #64748B; margin-bottom: 2px;">● 마주치는 문제</div>
+              <p style="font-size: 12px; color: #334155; line-height: 1.45;">고산 칼바람 건조열상 & 손바닥 미끄러짐으로 인한 추락 위험</p>
+            </div>
+
+            <div style="margin-bottom: 14px;">
+              <div style="font-size: 10.5px; font-weight: 900; color: #0284C7; margin-bottom: 2px;">● HALO 설계 기준</div>
+              <p style="font-size: 12px; color: #334155; line-height: 1.45;">마찰 저항력 극대화 & 피부 장벽 세라마이드 실링</p>
+            </div>
+          </div>
+
+          <div>
+            <div style="background: #0F172A; border: 1px solid #000; padding: 10px; border-radius: 2px; color: #FFF; margin-bottom: 8px; text-align: center;">
+              <div style="font-size: 9.5px; font-weight: 800; color: #38BDF8; margin-bottom: 2px;">대표 플래그십 기어</div>
+              <strong style="font-size: 12px; display: block; color: #FFF;">#05 워터프루프 UV 디펜스 젤</strong>
+              <span style="font-size: 10px; color: #94A3B8;">SPF50+ PA++++ · 60ml</span>
+            </div>
+            
+            <a href="../0825/수정_02_카테고리_스토리보드.html" style="font-size: 11px; font-weight: 900; color: #000; text-decoration: underline; display: block; text-align: center;">
+              아웃도어 확장 기어 전체보기 ➔
+            </a>
+          </div>
+        </div>
+
+        <!-- 03. Surfing & Water Active -->
+        <div class="problem-card" style="border: var(--border-thick); background: #FFFFFF; padding: 22px 18px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="font-size: 11.5px; font-weight: 900; color: #0284C7; margin-bottom: 2px;">FIELD 03</div>
+            <h3 style="font-size: 17px; font-weight: 900; margin-bottom: 10px; color: #000;">서핑 & 수상 액티브</h3>
+            
+            <!-- Image Box 11-3 -->
+            <div style="border: 1px dashed #94A3B8; background: #F8FAFC; padding: 8px; margin-bottom: 10px; border-radius: 2px; text-align: center;">
+              <span style="font-size: 10px; font-weight: 900; color: #0284C7; display: block; margin-bottom: 2px;">📷 [이미지 공간: 서핑 대표 장면]</span>
+              <span style="font-size: 10px; color: #64748B;">거센 파도 스플레이 & 수면 자외선 반사</span>
+            </div>
+
+            <div style="margin-bottom: 10px;">
+              <div style="font-size: 10.5px; font-weight: 900; color: #64748B; margin-bottom: 2px;">● 마주치는 문제</div>
+              <p style="font-size: 12px; color: #334155; line-height: 1.45;">파도에 씻겨나가는 자외선막 & 소금 결정의 피부 마찰 자극</p>
+            </div>
+
+            <div style="margin-bottom: 14px;">
+              <div style="font-size: 10.5px; font-weight: 900; color: #0284C7; margin-bottom: 2px;">● HALO 설계 기준</div>
+              <p style="font-size: 12px; color: #334155; line-height: 1.45;">80분 지속 방수막 & 100% Non-Nano 산호초 보호</p>
+            </div>
+          </div>
+
+          <div>
+            <div style="background: #0F172A; border: 1px solid #000; padding: 10px; border-radius: 2px; color: #FFF; margin-bottom: 8px; text-align: center;">
+              <div style="font-size: 9.5px; font-weight: 800; color: #38BDF8; margin-bottom: 2px;">대표 플래그십 기어</div>
+              <strong style="font-size: 12px; display: block; color: #FFF;">#08 오션 세이프 징크 미네랄 리프 쉴드</strong>
+              <span style="font-size: 10px; color: #94A3B8;">SPF50+ PA++++ · 50g</span>
+            </div>
+            
+            <a href="../0825/수정_02_카테고리_스토리보드.html" style="font-size: 11px; font-weight: 900; color: #000; text-decoration: underline; display: block; text-align: center;">
+              수상 스포츠 확장 기어 전체보기 ➔
+            </a>
+          </div>
+        </div>
+
+        <!-- 04. Tennis & Golf -->
+        <div class="problem-card" style="border: var(--border-thick); background: #FFFFFF; padding: 22px 18px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="font-size: 11.5px; font-weight: 900; color: #0284C7; margin-bottom: 2px;">FIELD 04</div>
+            <h3 style="font-size: 17px; font-weight: 900; margin-bottom: 10px; color: #000;">테니스 & 골프</h3>
+            
+            <!-- Image Box 11-4 -->
+            <div style="border: 1px dashed #94A3B8; background: #F8FAFC; padding: 8px; margin-bottom: 10px; border-radius: 2px; text-align: center;">
+              <span style="font-size: 10px; font-weight: 900; color: #0284C7; display: block; margin-bottom: 2px;">📷 [이미지 공간: 테니스 대표 장면]</span>
+              <span style="font-size: 10px; color: #64748B;">하드코트 복사열 & 라켓 그립 임팩트</span>
+            </div>
+
+            <div style="margin-bottom: 10px;">
+              <div style="font-size: 10.5px; font-weight: 900; color: #64748B; margin-bottom: 2px;">● 마주치는 문제</div>
+              <p style="font-size: 12px; color: #334155; line-height: 1.45;">손바닥 유분으로 인한 라켓 그립 미끄러짐 & 땀에 녹는 눈시림</p>
+            </div>
+
+            <div style="margin-bottom: 14px;">
+              <div style="font-size: 10.5px; font-weight: 900; color: #0284C7; margin-bottom: 2px;">● HALO 설계 기준</div>
+              <p style="font-size: 12px; color: #334155; line-height: 1.45;">손 접촉 0.0% 메쉬 쿠션 & 안자극 무자극 No-Sting</p>
+            </div>
+          </div>
+
+          <div>
+            <div style="background: #0F172A; border: 1px solid #000; padding: 10px; border-radius: 2px; color: #FFF; margin-bottom: 8px; text-align: center;">
+              <div style="font-size: 9.5px; font-weight: 800; color: #38BDF8; margin-bottom: 2px;">대표 플래그십 기어</div>
+              <strong style="font-size: 12px; display: block; color: #FFF;">#11 제로 슬립 그립 쿨링 쿠션</strong>
+              <span style="font-size: 10px; color: #94A3B8;">SPF50+ PA++++ · 15g</span>
+            </div>
+            
+            <a href="../0825/수정_02_카테고리_스토리보드.html" style="font-size: 11px; font-weight: 900; color: #000; text-decoration: underline; display: block; text-align: center;">
+              라켓·필드 확장 기어 전체보기 ➔
+            </a>
+          </div>
+        </div>
+
+        <!-- 05. Fitness & CrossFit -->
+        <div class="problem-card" style="border: var(--border-thick); background: #FFFFFF; padding: 22px 18px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="font-size: 11.5px; font-weight: 900; color: #0284C7; margin-bottom: 2px;">FIELD 05</div>
+            <h3 style="font-size: 17px; font-weight: 900; margin-bottom: 10px; color: #000;">피트니스 & 크로스핏</h3>
+            
+            <!-- Image Box 11-5 -->
+            <div style="border: 1px dashed #94A3B8; background: #F8FAFC; padding: 8px; margin-bottom: 10px; border-radius: 2px; text-align: center;">
+              <span style="font-size: 10px; font-weight: 900; color: #0284C7; display: block; margin-bottom: 2px;">📷 [이미지 공간: 피트니스 대표 장면]</span>
+              <span style="font-size: 10px; color: #64748B;">고중량 쇠 바벨 널링 마찰 & 피지 폭발</span>
+            </div>
+
+            <div style="margin-bottom: 10px;">
+              <div style="font-size: 10.5px; font-weight: 900; color: #64748B; margin-bottom: 2px;">● 마주치는 문제</div>
+              <p style="font-size: 12px; color: #334155; line-height: 1.45;">미끄러운 쇠 바벨 그립력 상실 & 피지 폭발 모공 막힘</p>
+            </div>
+
+            <div style="margin-bottom: 14px;">
+              <div style="font-size: 10.5px; font-weight: 900; color: #0284C7; margin-bottom: 2px;">● HALO 설계 기준</div>
+              <p style="font-size: 12px; color: #334155; line-height: 1.45;">마그네슘 피지 흡착 널링 보존 & 고통기성 산소막</p>
+            </div>
+          </div>
+
+          <div>
+            <div style="background: #0F172A; border: 1px solid #000; padding: 10px; border-radius: 2px; color: #FFF; margin-bottom: 8px; text-align: center;">
+              <div style="font-size: 9.5px; font-weight: 800; color: #38BDF8; margin-bottom: 2px;">대표 플래그십 기어</div>
+              <strong style="font-size: 12px; display: block; color: #FFF;">#14 헤비듀티 세범 컨트롤 스틱</strong>
+              <span style="font-size: 10px; color: #94A3B8;">SPF50+ PA++++ · 20g</span>
+            </div>
+            
+            <a href="../0825/수정_02_카테고리_스토리보드.html" style="font-size: 11px; font-weight: 900; color: #000; text-decoration: underline; display: block; text-align: center;">
+              트레이닝 확장 기어 전체보기 ➔
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SEC-06: Sustainable Materials & Refill Engineering (Honest Specification) -->
+  <!-- SEC-06: Sustainable Materials & Refill Engineering (with Explicit Image Box) -->
+  <section class="section-spacing" style="background: #000000; color: #FFFFFF;" id="sustainable-materials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" style="color:#38BDF8;">[SUSTAINABLE HARDWARE & CLEAN FORMULA]</span>
+        <h2 class="section-title" style="color:#FFF;">지속 가능한 하드웨어 설계와 성분 기준</h2>
+        <p class="section-desc" style="color:#94A3B8;">
+          과장된 구호 대신, 실제 제품 구조와 부품 소재, 그리고 성분 배제 원칙을 있는 그대로 투명하게 공개합니다.
+        </p>
+      </div>
+
+      <!-- Explicit Image Box 10 for Sustainability -->
+      <div style="border: 2px dashed #38BDF8; background: #0F172A; padding: 16px 20px; border-radius: 4px; margin-bottom: 24px; text-align: center;">
+        <span style="font-size: 11.5px; font-weight: 900; color: #38BDF8; display: block; margin-bottom: 4px;">
+          📷 [이미지 들어갈 공간 10: 알루미늄 하우징 & 리필 코어 분해 3D 렌더 1장]
+        </span>
+        <span style="font-size: 11.5px; color: #CBD5E1;">
+          AL6061 외장 금속 바디(78%)와 내부 교체형 PP 리필 카트리지 코어(22%)의 정밀 체결 구조 분해 렌더링
+        </span>
+      </div>
+
+      <!-- 3 Sustainable Engineering Pillars Grid -->
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+        
+        <!-- 1. Current Engineering Design -->
+        <div class="material-box" style="background: #0F172A; border: 1px solid #334155; padding: 28px 24px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="font-size: 11px; font-weight: 900; color: #38BDF8; letter-spacing: 0.05em; margin-bottom: 6px;">CURRENT ENGINEERING DESIGN</div>
+            <h3 style="font-size: 20px; font-weight: 900; margin-bottom: 12px; color: #FFFFFF;">알루미늄 외장과 교체형 리필 구조</h3>
+            <p style="font-size: 13.5px; color: #CBD5E1; line-height: 1.65; margin-bottom: 16px;">
+              외부 충격과 낙하를 방어하는 하우징 프레임 및 카라비너 래치 부품에 AL6061 합금을 CNC 정밀 가공하여 적용했습니다.
+            </p>
+          </div>
+
+          <div style="background: #1E293B; border: 1px solid #334155; padding: 12px 14px; font-size: 12px;">
+            <div style="color: #94A3B8; margin-bottom: 4px;">• 부품 구성: <strong style="color: #FFF;">외장 알루미늄 78% · 리필 PP 22%</strong></div>
+            <div style="color: #94A3B8;">• 내구성: <strong style="color: #38BDF8;">최소 1,000회 이상 교체 체결 테스트</strong></div>
+          </div>
+        </div>
+
+        <!-- 2. Reduction Objective -->
+        <div class="material-box" style="background: #0F172A; border: 1px solid #334155; padding: 28px 24px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="font-size: 11px; font-weight: 900; color: #84CC16; letter-spacing: 0.05em; margin-bottom: 6px;">REDUCTION OBJECTIVE</div>
+            <h3 style="font-size: 20px; font-weight: 900; margin-bottom: 12px; color: #FFFFFF;">일회용 플라스틱을 줄이기 위한 리필 시스템</h3>
+            <p style="font-size: 13.5px; color: #CBD5E1; line-height: 1.65; margin-bottom: 16px;">
+              다 쓴 뒤 제품 전체를 통째로 버리지 않고, 내부의 포뮬러 카트리지 코어만 교체하여 사용하는 지속 가능한 기어 방식을 추구합니다.
+            </p>
+          </div>
+
+          <div style="background: #1E293B; border: 1px solid #334155; padding: 12px 14px; font-size: 12px;">
+            <div style="color: #94A3B8; margin-bottom: 4px;">• 본체 재사용: <strong style="color: #FFF;">금속 바디 영구 유지 (Zero Frame Waste)</strong></div>
+            <div style="color: #94A3B8;">• 플라스틱 감축: <strong style="color: #84CC16;">리필 교체 시 단일 용기 폐기물 최소화</strong></div>
+          </div>
+        </div>
+
+        <!-- 3. Formulation Standards -->
+        <div class="material-box" style="background: #0F172A; border: 1px solid #334155; padding: 28px 24px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="font-size: 11px; font-weight: 900; color: #38BDF8; letter-spacing: 0.05em; margin-bottom: 6px;">FORMULATION STANDARDS</div>
+            <h3 style="font-size: 20px; font-weight: 900; margin-bottom: 12px; color: #FFFFFF;">옥시벤존·옥티녹세이트 배제 포뮬러</h3>
+            <p style="font-size: 13.5px; color: #CBD5E1; line-height: 1.65; margin-bottom: 16px;">
+              하와이와 팔라우 등 해양 보호구역 법적 기준을 고려하여 산호초 백화를 유발하는 유기 자외선 차단 성분을 배제하고 안전하게 설계했습니다.
+            </p>
+          </div>
+
+          <div style="background: #1E293B; border: 1px solid #334155; padding: 12px 14px; font-size: 12px;">
+            <div style="color: #94A3B8; margin-bottom: 4px;">• 유해 성분: <strong style="color: #FFF;">Oxybenzone · Octinoxate 0% 배제</strong></div>
+            <div style="color: #94A3B8;">• 자차 베이스: <strong style="color: #38BDF8;">Non-Nano 미네랄 징크 안전성 충족</strong></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Action Banner inside Material section -->
+      <div class="cta-banner" style="background:#0F172A; border: 1px solid #334155; margin-top:48px; padding: 48px 24px;">
+        <h3 style="font-size:24px; font-weight:900; color:#FFF; margin-bottom:8px;">운동의 흐름을 멈추지 않는 HALO 기어 시스템을 경험해 보세요</h3>
+        <p style="font-size:14px; color:#94A3B8; margin-bottom:24px;">공식 런칭 시 15% 얼리버드 시크릿 할인 쿠폰과 한정판 카라비너 스트랩을 제공합니다.</p>
+        <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
+          <a href="../0825/수정_02_카테고리_스토리보드.html" class="btn-sku-action" style="background:#FFF; color:#000;">16종 전체 기어 카탈로그 탐색 ➔</a>
+          <button type="button" class="btn-sku-action highlight" onclick="openLaunchModal('HALO 브랜드 런칭')">15% 얼리버드 출시 알림 신청 ➔</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Launch Alert Modal (4 States) -->
+  <!-- 15% Launch Alert Modal (Complete 5-State Machine & Triple-Layer Event Listener) -->
+  <div class="modal-backdrop" id="launchModalBackdrop">
+    <div class="modal-window" onclick="event.stopPropagation()">
+      <button type="button" class="modal-close-btn" onclick="closeLaunchModal()">✕ 닫기</button>
+      
+      <!-- 1. Input State (Default) -->
+      <div id="modalStateInput">
+        <span class="wireframe-badge highlight" style="margin-bottom:8px; display:inline-block; background:#0284C7; color:#FFF; font-size:11px; font-weight:900; padding:3px 8px;">LAUNCH NOTIFICATION</span>
+        <h3 style="font-size:22px; font-weight:900; margin-bottom:6px; color:#000;">15% 얼리버드 출시 알림 신청</h3>
+        <p style="font-size:13px; color:#64748B; margin-bottom:16px;">
+          선택하신 <strong id="modalTargetName" style="color:#000;">HALO 노터치 선케어 기어</strong>의 공식 출시 일정과 15% 시크릿 할인 쿠폰을 가장 먼저 보내드립니다.
+        </p>
+
+        <form id="launchForm" onsubmit="handleLaunchSubmit(event)">
+          <div style="margin-bottom: 14px;">
+            <label style="font-size: 12px; font-weight: 900; color: #1E293B; display: block; margin-bottom: 4px;">알림 받으실 연락처 (휴대폰 또는 이메일)</label>
+            <input type="text" id="launchContact" placeholder="010-0000-0000 또는 email@domain.com" required style="width: 100%; box-sizing: border-box; padding: 10px 12px; border: 2px solid #000000; font-size: 13.5px; border-radius: 2px; color: #000; background: #FFF;">
+            <span id="contactValidationMsg" style="font-size: 11px; color: #EF4444; display: none; margin-top: 4px; font-weight: 800;">올바른 연락처 형식을 입력해 주세요.</span>
+          </div>
+
+          <!-- Privacy Consent (Unchecked by default as requested) -->
+          <div style="background: #F8FAFC; border: 1px solid #CBD5E1; padding: 12px; border-radius: 4px; margin-bottom: 16px;">
+            <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px;">
+              <input type="checkbox" id="privacyConsent" style="margin-top: 2px; cursor: pointer; width: 16px; height: 16px;">
+              <label for="privacyConsent" style="font-size: 12.5px; font-weight: 900; color: #0F172A; cursor: pointer;">
+                [필수] 개인정보 수집 및 출시 알림 수신 동의
+              </label>
+            </div>
+
+            <!-- Inline 4 Legal Items (수집항목, 이용목적, 보유기간, 미동의제한) -->
+            <div style="background: #FFFFFF; border: 1px solid #E2E8F0; padding: 10px; font-size: 11px; color: #475569; line-height: 1.55; border-radius: 2px;">
+              <div style="margin-bottom: 2px;">• <strong>수집 항목:</strong> 휴대폰 번호 또는 이메일 주소</div>
+              <div style="margin-bottom: 2px;">• <strong>이용 목적:</strong> HALO 15% 얼리버드 출시 알림 및 시크릿 할인 쿠폰 발송</div>
+              <div style="margin-bottom: 2px;">• <strong>보유 기간:</strong> <strong>출시 알림 발송 완료 후 30일 이내 파기</strong> (철회 시 즉시 파기)</div>
+              <div>• <strong>동의 거부 시 불이익:</strong> 본 동의를 거부할 권리가 있으며, 미동의 시 15% 출시 알림 혜택 수신이 제한됩니다.</div>
+            </div>
+            <span id="consentValidationMsg" style="font-size: 11px; color: #EF4444; display: none; margin-top: 6px; font-weight: 800;">
+              개인정보 수집 및 알림 수신에 동의해 주셔야 신청이 완료됩니다.
+            </span>
+          </div>
+
+          <div style="display: flex; gap: 10px;">
+            <button type="button" class="btn-sku-action" onclick="closeLaunchModal()" style="flex: 1; padding: 12px; background: #FFFFFF; color: #000; border: 2px solid #000; font-weight: 800; cursor: pointer;">취소</button>
+            <button type="submit" class="btn-sku-action primary" style="flex: 2; padding: 12px; font-weight: 900; font-size: 13.5px; background: #000; color: #FFF; border: 2px solid #000; cursor: pointer;">15% 알림 신청하기 ➔</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- 2. Loading State -->
+      <div id="modalStateLoading" style="display:none; text-align:center; padding: 32px 0;">
+        <div style="display:inline-block; width:36px; height:36px; border:3px solid #E2E8F0; border-top-color:#0284C7; border-radius:50%; animation:spin 0.8s linear infinite; margin-bottom:16px;"></div>
+        <h4 style="font-size:17px; font-weight:900; margin-bottom:6px; color:#000;">알림 토큰 암호화 및 등록 중...</h4>
+        <p style="font-size:12px; color:#64748B;">잠시만 기다려 주시면 신청이 완료됩니다.</p>
+      </div>
+
+      <!-- 3. Success State -->
+      <div id="modalStateSuccess" style="display:none; text-align:center; padding: 16px 0;">
+        <div style="width:44px; height:44px; background:#F0FDF4; border:2px solid #84CC16; color:#166534; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 12px; font-size:22px; font-weight:900;">✓</div>
+        <h4 style="font-size:19px; font-weight:900; margin-bottom:8px; color:#000;">15% 얼리버드 알림 신청 완료</h4>
+        <p style="font-size:13.5px; color:#334155; line-height:1.6; margin-bottom:16px;">
+          <span id="registeredContact" style="font-weight:900; color:#0284C7;"></span>님께 공식 런칭일에 맞추어 15% 시크릿 할인 쿠폰과 한정판 카라비너 스트랩 혜택을 발송해 드립니다.
+        </p>
+        <div style="background:#F8FAFC; border:1px solid #E2E8F0; padding:10px; font-size:11px; color:#64748B; margin-bottom:20px;">
+          *입력하신 정보는 발송 후 30일 이내에 안전하게 파기됩니다.
+        </div>
+        <button type="button" class="btn-sku-action primary" onclick="closeLaunchModal()" style="width:100%; padding:12px; font-weight:900; background:#000; color:#FFF; cursor: pointer;">확인 완료</button>
+      </div>
+
+      <!-- 4. Duplicate State (중복 신청) -->
+      <div id="modalStateDuplicate" style="display:none; text-align:center; padding: 16px 0;">
+        <div style="width:44px; height:44px; background:#FFFBEB; border:2px solid #F59E0B; color:#B45309; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 12px; font-size:22px; font-weight:900;">!</div>
+        <h4 style="font-size:19px; font-weight:900; margin-bottom:8px; color:#000;">이미 등록된 연락처입니다</h4>
+        <p style="font-size:13.5px; color:#334155; line-height:1.6; margin-bottom:16px;">
+          <span id="duplicateContact" style="font-weight:900; color:#0284C7;"></span>님은 이미 15% 얼리버드 출시 알림 명단에 안전하게 등록되어 있습니다. 공식 출시일에 혜택이 정상 발송됩니다.
+        </p>
+        <div style="display:flex; gap:10px;">
+          <button type="button" class="btn-sku-action" onclick="resetModalToInput()" style="flex:1; padding:12px; background:#FFF; border:2px solid #000; font-weight:800; cursor: pointer;">다른 연락처 입력</button>
+          <button type="button" class="btn-sku-action primary" onclick="closeLaunchModal()" style="flex:1; padding:12px; font-weight:900; background:#000; color:#FFF; cursor: pointer;">확인</button>
+        </div>
+      </div>
+
+      <!-- 5. Error & Retry State (전송 실패 및 재시도) -->
+      <div id="modalStateError" style="display:none; text-align:center; padding: 16px 0;">
+        <div style="width:44px; height:44px; background:#FEF2F2; border:2px solid #EF4444; color:#991B1B; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 12px; font-size:22px; font-weight:900;">✕</div>
+        <h4 style="font-size:19px; font-weight:900; margin-bottom:8px; color:#000;">네트워크 전송 오류가 발생했습니다</h4>
+        <p style="font-size:13px; color:#64748B; line-height:1.6; margin-bottom:16px;">
+          일시적인 통신 장애로 알림 등록이 완료되지 않았습니다. 아래 버튼을 눌러 다시 시도해 주세요.
+        </p>
+        <div style="display:flex; gap:10px;">
+          <button type="button" class="btn-sku-action" onclick="resetModalToInput()" style="flex:1; padding:12px; background:#FFF; border:2px solid #000; font-weight:800; cursor: pointer;">정보 수정</button>
+          <button type="button" class="btn-sku-action primary" onclick="retrySubmit()" style="flex:1; padding:12px; font-weight:900; background:#EF4444; border:2px solid #EF4444; color:#FFF; cursor: pointer;">다시 시도하기 ↺</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Unified Pure JavaScript Engine with Direct Event Binding -->
+  <script>
+    const registeredMockDB = new Set(["010-1234-5678", "test@test.com", "halo@runner.com"]);
+    let lastSubmittedContact = "";
+
+    function openLaunchModal(gearName) {
+      const modal = document.getElementById('launchModalBackdrop');
+      if (modal) {
+        const targetEl = document.getElementById('modalTargetName');
+        if (targetEl) targetEl.innerText = gearName || 'HALO 노터치 선케어 기어';
+        resetModalToInput();
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeLaunchModal(e) {
+      const modal = document.getElementById('launchModalBackdrop');
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        setTimeout(resetModalToInput, 200);
+      }
+    }
+
+    function resetModalToInput() {
+      const stateInput = document.getElementById('modalStateInput');
+      const stateLoading = document.getElementById('modalStateLoading');
+      const stateSuccess = document.getElementById('modalStateSuccess');
+      const stateDuplicate = document.getElementById('modalStateDuplicate');
+      const stateError = document.getElementById('modalStateError');
+      const consentMsg = document.getElementById('consentValidationMsg');
+      const contactMsg = document.getElementById('contactValidationMsg');
+      const privacyCheck = document.getElementById('privacyConsent');
+
+      if (stateInput) stateInput.style.display = 'block';
+      if (stateLoading) stateLoading.style.display = 'none';
+      if (stateSuccess) stateSuccess.style.display = 'none';
+      if (stateDuplicate) stateDuplicate.style.display = 'none';
+      if (stateError) stateError.style.display = 'none';
+      if (consentMsg) consentMsg.style.display = 'none';
+      if (contactMsg) contactMsg.style.display = 'none';
+      if (privacyCheck) privacyCheck.checked = false;
+    }
+
+    function handleLaunchSubmit(e) {
+      if (e) e.preventDefault();
+      const contactInput = document.getElementById('launchContact') ? document.getElementById('launchContact').value.trim() : "";
+      const privacyEl = document.getElementById('privacyConsent');
+      const consentChecked = privacyEl ? privacyEl.checked : false;
+
+      if (!contactInput) {
+        const msg = document.getElementById('contactValidationMsg');
+        if (msg) msg.style.display = 'block';
+        return;
+      } else {
+        const msg = document.getElementById('contactValidationMsg');
+        if (msg) msg.style.display = 'none';
+      }
+
+      if (!consentChecked) {
+        const msg = document.getElementById('consentValidationMsg');
+        if (msg) msg.style.display = 'block';
+        return;
+      } else {
+        const msg = document.getElementById('consentValidationMsg');
+        if (msg) msg.style.display = 'none';
+      }
+
+      lastSubmittedContact = contactInput;
+
+      document.getElementById('modalStateInput').style.display = 'none';
+      document.getElementById('modalStateLoading').style.display = 'block';
+
+      setTimeout(() => {
+        document.getElementById('modalStateLoading').style.display = 'none';
+
+        if (contactInput.toLowerCase().includes("error")) {
+          document.getElementById('modalStateError').style.display = 'block';
+        } else if (registeredMockDB.has(contactInput)) {
+          const dupEl = document.getElementById('duplicateContact');
+          if (dupEl) dupEl.innerText = maskContact(contactInput);
+          document.getElementById('modalStateDuplicate').style.display = 'block';
+        } else {
+          registeredMockDB.add(contactInput);
+          const regEl = document.getElementById('registeredContact');
+          if (regEl) regEl.innerText = maskContact(contactInput);
+          document.getElementById('modalStateSuccess').style.display = 'block';
+        }
+      }, 500);
+    }
+
+    function retrySubmit() {
+      document.getElementById('modalStateError').style.display = 'none';
+      document.getElementById('modalStateLoading').style.display = 'block';
+      setTimeout(() => {
+        document.getElementById('modalStateLoading').style.display = 'none';
+        const regEl = document.getElementById('registeredContact');
+        if (regEl) regEl.innerText = maskContact(lastSubmittedContact);
+        document.getElementById('modalStateSuccess').style.display = 'block';
+      }, 500);
+    }
+
+    function maskContact(str) {
+      if (str.includes('@')) {
+        const [user, domain] = str.split('@');
+        return user.slice(0, 2) + '***@' + domain;
+      } else if (str.length >= 10) {
+        return str.slice(0, 3) + '-****-' + str.slice(-4);
+      }
+      return str;
+    }
+
+    // Attach click listeners to all alert buttons on DOM loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('button, a').forEach(function(btn) {
+        const txt = btn.innerText || '';
+        if (txt.includes('알림') || txt.includes('얼리버드') || (btn.getAttribute('onclick') || '').includes('openLaunchModal')) {
+          btn.addEventListener('click', function(evt) {
+            evt.preventDefault();
+            evt.stopPropagation();
+            openLaunchModal(txt.replace(/[^가-힣a-zA-Z0-9\s]/g, '').trim());
+          });
+        }
+      });
+    });
+
+    // Global document click fallback
+    document.addEventListener('click', function(e) {
+      const btn = e.target.closest('button, a');
+      if (btn) {
+        const txt = btn.innerText || '';
+        const oc = btn.getAttribute('onclick') || '';
+        if (txt.includes('알림 신청') || txt.includes('얼리버드 알림') || oc.includes('openLaunchModal')) {
+          if (!oc.includes('closeLaunchModal') && !oc.includes('submit')) {
+            e.preventDefault();
+            e.stopPropagation();
+            openLaunchModal(txt.replace(/[^가-힣a-zA-Z0-9\s]/g, '').trim());
+          }
+        }
+      }
+      if (e.target && e.target.id === 'launchModalBackdrop') {
+        closeLaunchModal();
+      }
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeLaunchModal();
+      }
+    });
+  </script>
+</body>
+</html>
