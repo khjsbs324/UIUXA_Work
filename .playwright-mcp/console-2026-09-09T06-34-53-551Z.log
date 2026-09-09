@@ -1,0 +1,4 @@
+[      41ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://127.0.0.1:8766/js/products-data.js:0
+[    1646ms] TypeError: Cannot read properties of null (reading 'addEventListener')
+    at http://127.0.0.1:8766/%EC%99%80%EC%9D%B4%EC%96%B4%ED%94%84%EB%A0%88%EC%9E%84_%EC%8B%9C%EC%95%884.html:4209:25
+[    3116ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://127.0.0.1:8766/favicon.ico:0

@@ -1,0 +1,1107 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]: MASTER
+      - generic [ref=e5]: WICKETA 11인 통합 마스터 와이어프레임
+    - tablist "11인 통합 마스터 페르소나 모드 전환" [ref=e6]:
+      - tab "🌐 전체 올인원 뷰" [selected] [ref=e7] [cursor=pointer]
+      - tab "🏨 B2B 대량조달 (임태경/박지후)" [ref=e9] [cursor=pointer]:
+        - generic [ref=e10]: 🏨 B2B 대량조달
+        - generic [ref=e11]: (임태경/박지후)
+      - tab "🌌 숏폼 & 조향 (이지민/송아린/신유진)" [ref=e12] [cursor=pointer]:
+        - generic [ref=e13]: 🌌 숏폼 & 조향
+        - generic [ref=e14]: (이지민/송아린/신유진)
+      - tab "💻 데이터 & 텔레메트리 (윤기준)" [ref=e15] [cursor=pointer]:
+        - generic [ref=e16]: 💻 데이터 & 텔레메트리
+        - generic [ref=e17]: (윤기준)
+      - tab "🍵 마인드풀 웰니스 & 패밀리 (한명석/서지안)" [ref=e18] [cursor=pointer]:
+        - generic [ref=e19]: 🍵 마인드풀 웰니스 & 패밀리
+        - generic [ref=e20]: (한명석/서지안)
+      - tab "🎨 에디토리얼 & 3D각인 (차은채/윤서연/이도은)" [ref=e21] [cursor=pointer]:
+        - generic [ref=e22]: 🎨 에디토리얼 & 3D각인
+        - generic [ref=e23]: (차은채/윤서연/이도은)
+    - generic [ref=e24]:
+      - button "🔍 [이지뷰]" [ref=e25] [cursor=pointer]
+      - button "📱 [모바일 뷰]" [ref=e26] [cursor=pointer]
+  - generic [ref=e27]:
+    - banner [ref=e28]:
+      - generic [ref=e29]: WICKETA | 비밀정원 다과회
+      - navigation [ref=e30]:
+        - link "🕒 나를 위한 티 (24H 루틴)" [ref=e31] [cursor=pointer]:
+          - /url: "#routine-section"
+          - strong [ref=e32]: 🕒 나를 위한 티
+          - generic [ref=e33]: (24H 루틴)
+        - link "⚡ 믹솔로지 스튜디오 (감각 실험실)" [ref=e34] [cursor=pointer]:
+          - /url: "#studio-section"
+          - strong [ref=e35]: ⚡ 믹솔로지 스튜디오
+          - generic [ref=e36]: (감각 실험실)
+        - link "📦 전체 20종 (전수 도감)" [ref=e37] [cursor=pointer]:
+          - /url: "#catalog-section"
+          - strong [ref=e38]: 📦 전체 20종
+          - generic [ref=e39]: (전수 도감)
+        - link "📜 WICKETA 이야기 (헤리티지 룸)" [ref=e40] [cursor=pointer]:
+          - /url: "#brand-section"
+          - strong [ref=e41]: 📜 WICKETA 이야기
+          - generic [ref=e42]: (헤리티지 룸)
+        - generic "고대비 및 글자 확대 모드" [ref=e43] [cursor=pointer]:
+          - strong [ref=e44]: 🔍 [이지뷰]
+          - generic [ref=e45]: (큰글씨 모드)
+        - button "🛒 통합 주문 / 견적 ( 2 )" [ref=e46] [cursor=pointer]:
+          - text: 🛒 통합 주문 / 견적 (
+          - generic [ref=e47]: "2"
+          - text: )
+    - generic [ref=e48]:
+      - generic [ref=e49]:
+        - generic [ref=e50]:
+          - generic [ref=e51]: ✦ WICKETA SENSORY WELLNESS ✦
+          - generic [ref=e52]: 시안 3 마스터 통합
+        - generic [ref=e53]: 당류 0g • 카페인 0.00% • 캄테크 믹솔로지 티
+      - generic [ref=e54]:
+        - generic [ref=e55]:
+          - generic [ref=e57]:
+            - generic [ref=e58]: 🌌
+            - generic [ref=e59]: 3단 오로라 수색 비주얼
+            - generic [ref=e60]: 프리즘 더블 글래스 속에 찬물 1초 만에 피어나는 신비로운 보라빛 수색 변환의 순간
+          - generic [ref=e61]:
+            - generic [ref=e62]: "🔒 장면 연출 참고: 🎬 35° 로우접사 • 🌈 Blue ➔ Purple ➔ Pink 3단 렌더"
+            - generic [ref=e63]: "[설계 기준: 1초 융해 나노 분쇄]"
+        - generic [ref=e64]:
+          - generic [ref=e65]:
+            - generic [ref=e66]:
+              - generic [ref=e67]: ✦ BRAND MANIFESTO ✦
+              - heading "\"문을 열고, 현실에서 벗어나세요\"" [level=1] [ref=e68]
+              - generic [ref=e69]: ✦ Drink Me, Escape Reality ✦
+              - paragraph [ref=e70]: 바쁜 일상의 소음을 끄고, 찬물 1초 만에 피어나는 영롱한 보라빛 오로라로 나만의 프라이빗한 휴식시간을 만납니다.
+            - generic [ref=e71]:
+              - generic [ref=e72]:
+                - generic [ref=e73]: ⭐ 1위 대표 상품
+                - generic [ref=e74]: 39,000원
+              - generic [ref=e75]: 오로라 믹솔로지 시그니처 팩
+              - paragraph [ref=e76]: "\"당류 0g, 카페인 0.00% 100% 길티프리 — 찻잎을 우릴 필요 없이 찬물 1초 만에 피어나는 나만의 프라이빗 홈텐딩 티.\""
+              - generic [ref=e77]: ✓ 당류 0g • 카페인 0.00% (설계 영양 기준) • 찬물 1초 융해 (특허 출원 준비)
+          - 'button "🎯 [대표 행동]: 1위 대표 상품 쇼케이스 & 이야기 보기 ↓" [ref=e79] [cursor=pointer]'
+    - generic [ref=e80]:
+      - generic [ref=e81] [cursor=pointer]: 🏛️ 1. 브랜드 선언 & 시그니처
+      - generic [ref=e82] [cursor=pointer]: 🌿 2. 6단계 공정 & KTR 3無
+      - generic [ref=e83] [cursor=pointer]: ⏰ 3. 24H 하루 리추얼 & 타이머
+      - generic [ref=e84] [cursor=pointer]: 🧪 4. 5-in-1 감각 스튜디오
+      - generic [ref=e85] [cursor=pointer]: 📖 5. 전체 20종 비교 도감
+    - generic [ref=e86]:
+      - generic [ref=e87]: ✦ WICKETA BRAND MANIFESTO • 180S MINDFUL BREWING RITUAL ✦
+      - heading "\"차가 우러나는 180초, 나만의 공간이 열리는 시간\"" [level=2] [ref=e88]
+      - paragraph [ref=e89]: 물을 붓고 색과 향이 피어오르는 찰나의 순간마저 힐링이 되도록. 당신의 하루 끝에 온전한 나만의 여백을 채워드립니다.
+      - generic [ref=e90]:
+        - generic [ref=e91]:
+          - generic [ref=e92]: 🚨 [출발 문제 (Origin Friction)]
+          - generic [ref=e93]: 번거로운 다도 ➔ 일관되지 않은 맛 ➔ 과도한 당과 카페인
+          - generic [ref=e94]: 찻잎 세척 노동과 카페인 두근거림, 액상과당의 스트레스
+        - generic [ref=e95]: ➔
+        - generic [ref=e96]:
+          - generic [ref=e97]: 💡 [위케타의 해결 (1-Line Resolution)]
+          - generic [ref=e98]: "[1초 융해] • [180초 리추얼] • [감정 맞춤 처방]"
+          - generic [ref=e99]: 나노 파쇄 1초 용해 & 180s 사운드스케이프 & 1:1 감정 큐레이션
+      - generic [ref=e100]:
+        - generic [ref=e101]: "관련 리추얼 제품:"
+        - button "⏱️ 하동 어린잎 녹차 스틱 (20포) [31,000원] →" [ref=e102] [cursor=pointer]:
+          - text: ⏱️
+          - strong [ref=e103]: 하동 어린잎 녹차 스틱 (20포)
+          - generic [ref=e104]: "[31,000원] →"
+        - button "🎯 감정 다이얼 5무드 샘플러 세트 (15포) [34,000원 / 5무드×3포] →" [ref=e105] [cursor=pointer]:
+          - text: 🎯
+          - strong [ref=e106]: 감정 다이얼 5무드 샘플러 세트 (15포)
+          - generic [ref=e107]: "[34,000원 / 5무드×3포] →"
+    - generic [ref=e108]:
+      - generic [ref=e110]:
+        - generic [ref=e111]: ✦ 빛과 투명한 글래스 공간 (Luminous Glass) ✦
+        - generic [ref=e113]: 빛으로 비우는 3분의 쉼
+        - generic [ref=e114]:
+          - strong [ref=e115]: "[해답] ⭐ 오로라 믹솔로지 시그니처 팩 (39,000원)"
+          - text: — 태국 치앙마이 유기농 안토시아닌과 레몬머틀의 10포 + 3단 변색 매뉴얼 (※ 프리즘 더블 글래스 페어링 추천).
+      - generic [ref=e116]:
+        - generic [ref=e117]:
+          - generic [ref=e118]:
+            - generic [ref=e119]: 🌌 산도에 따라 색이 바뀌는 3단 오로라 수색(pH 반응)
+            - generic [ref=e120]: 치앙마이 안토시아닌 100%
+          - generic [ref=e121]:
+            - generic [ref=e122]: 🍵
+            - generic [ref=e123]: 프리즘 글래스에서 피어나는 영롱한 3단 오로라 수색
+            - generic [ref=e124]: 로열 블루 (pH 7.0) ➔ 바이올렛 노을 (pH 5.5) ➔ 로즈 핑크 (pH 3.5)
+          - generic [ref=e125]: 오로라 믹솔로지 시그니처 10포 + 3단 변색 매뉴얼 (39,000원 / 글래스 별도)
+        - generic [ref=e126]:
+          - generic [ref=e127]:
+            - generic [ref=e128]:
+              - generic [ref=e129]: 👑 BEST 01
+              - generic [ref=e130]: 당류 0g • 카페인 0.00%
+            - heading "⭐ 오로라 믹솔로지 시그니처 팩" [level=3] [ref=e131]
+            - paragraph [ref=e132]:
+              - strong [ref=e133]: "\"문을 열고, 현실에서 벗어나세요\""
+              - text: — 치앙마이 고산 안토시아닌의 영롱한 변색과 스페인 레몬머틀의 산뜻함이 지친 하루를 부드럽게 감싸줍니다.
+            - generic [ref=e134]:
+              - text: •
+              - strong [ref=e135]: "핵심 원료:"
+              - text: 치앙마이 유기농 버터플라이피 & 스페인산 레몬머틀 •
+              - strong [ref=e136]: "추출 공법:"
+              - text: 찬물 1초 융해 나노 파쇄 [특허 출원 준비/설계 기준] •
+              - strong [ref=e137]: "추천하는 시간과 상황(TPO):"
+              - text: PM 19:30 퇴근 후 나만의 홈텐딩 웰니스 바 •
+              - strong [ref=e138]: "세트 구성:"
+              - text: 파우더 10포 + 3단 변색 매뉴얼 (※ 프리즘 글래스 ware-01 페어링 추천)
+          - generic [ref=e139]:
+            - generic [ref=e140]:
+              - generic [ref=e141]: 공식 론칭가
+              - generic [ref=e142]: 39,000원
+            - button "🛒 1-Click 바로구매 (39,000원 / 10포 + 변색 매뉴얼) →" [ref=e143] [cursor=pointer]
+      - generic [ref=e144]:
+        - generic [ref=e145]:
+          - generic [ref=e146]: 🧪 [오로라 믹솔로지] 함께 즐기는 3대 시그니처 DIY 조합 레시피
+          - generic [ref=e148]: ※ DIY 재료는 단독 판매 상품이 아니며, 음용 경험을 위한 레시피 및 동봉 옵션으로 연결됩니다.
+        - generic [ref=e149]:
+          - generic [ref=e151]:
+            - generic [ref=e152]: 🍋 Recipe 1. 선셋 오로라 에이드
+            - generic [ref=e153]: "[3단 변색 & 청량한 스파클링]"
+            - generic [ref=e154]:
+              - text: "• 베이스: 오로라 티 1포 (sig-01) • 사용 재료: 콜드프레스 레몬즙 1개 + 제로 탄산 파우더 ➔"
+              - strong [ref=e155]: 로열블루 ➔ 바이올렛 ➔ 핑크
+              - text: 3단 변색!
+          - generic [ref=e157]:
+            - generic [ref=e158]: 🥛 Recipe 2. 저당 바닐라 오트 밀크티
+            - generic [ref=e159]: "[유당 0% 속 편한 비건 밀크티]"
+            - generic [ref=e160]:
+              - text: "• 베이스: 스모키 홍차 1포 (sig-02) • 사용 재료: 핀란드 귀리 오트밀크 스틱 + 바닐라빈 저당 시럽 ➔"
+              - strong [ref=e161]: 전문 티룸급 깊은 바닐라 풍미 & 당류 0g
+          - generic [ref=e163]:
+            - generic [ref=e164]: 🍸 Recipe 3. 논알콜 스모키 하이볼
+            - generic [ref=e165]: "[퇴근 후 숙취 없는 프라이빗 홈텐딩]"
+            - generic [ref=e166]:
+              - text: "• 베이스: 스모키 얼그레이 홍차 1포 (sig-02) • 사용 재료: 무알콜 칵테일 토닉 시럽 + 제로 탄산 파우더 ➔"
+              - strong [ref=e167]: 참나무 훈연향과 보태니컬 퀴닌의 청량한 피니시
+    - generic [ref=e168]:
+      - generic [ref=e169]:
+        - generic [ref=e170]:
+          - generic [ref=e171]:
+            - generic [ref=e172]: ✦ 고산의 안개와 순수 공정 공간 (Craft Pipeline & Trust Archive) ✦
+            - generic [ref=e173]: 공정 & 신뢰 아카이브
+          - generic [ref=e174]: 6단계 초저온 제조 공정 & KTR 공인 3無 성적서
+          - generic [ref=e175]: REQ-04 · 30일 콜드브루잉 헤리티지와 영하 40℃ 동결건조, KTR 공인 3無 성적서와 100% 알루미늄 에코 리필로 완성하는 기술적 신뢰.
+        - generic [ref=e176]:
+          - button "📑 성적서 PDF 다운로드" [ref=e177] [cursor=pointer]
+          - button "에코 리필 벌크팩 (48,000원)" [ref=e178] [cursor=pointer]
+      - generic [ref=e179]:
+        - generic [ref=e180]:
+          - text: 💡
+          - strong [ref=e181]: "[핵심 메시지]"
+          - text: 찻잎을 우리는 번거로움 없이 찬물 1초 만에 피어나는 초미세 나노 파쇄 공법
+        - generic [ref=e182]:
+          - text: "⭐ 대표 상품 사례:"
+          - strong [ref=e183]: 오로라 믹솔로지 시그니처 팩 & 100% 생분해 에코 리필 벌크팩
+      - generic [ref=e184]:
+        - generic [ref=e185]:
+          - generic [ref=e186]: "01"
+          - strong [ref=e187]: 원물 선별
+          - generic [ref=e188]: 🏔️
+          - generic [ref=e189]: 지리산 해발 1,200m 야생 유기농 찻잎 선별
+        - generic [ref=e190]:
+          - generic [ref=e191]: "02"
+          - strong [ref=e192]: 30일 콜드브루
+          - generic [ref=e193]: ❄️
+          - generic [ref=e194]: 4℃ 초저온 30일 장기 침출 헤리티지
+        - generic [ref=e195]:
+          - generic [ref=e196]: "03"
+          - strong [ref=e197]: 감압 농축
+          - generic [ref=e198]: 🧪
+          - generic [ref=e199]: 향기 분자 100% 보존 저온 진공 농축
+        - generic [ref=e200]:
+          - generic [ref=e201]: "04"
+          - strong [ref=e202]: 초저온 동결
+          - generic [ref=e203]: ⚡
+          - generic [ref=e204]: "-40℃ 급속 동결 & 1초 융해 나노 파쇄"
+        - generic [ref=e205]:
+          - generic [ref=e206]: "05"
+          - strong [ref=e207]: KTR 공인 검증
+          - generic [ref=e208]: 🔬
+          - generic [ref=e209]: 한국화학융합시험연구원 3無 성적서
+        - generic [ref=e210]:
+          - generic [ref=e211]: "06"
+          - strong [ref=e212]: 에코 실링
+          - generic [ref=e213]: 🌱
+          - generic [ref=e214]: 100% 무한 재활용 알루미늄 & 생분해 메쉬
+      - generic [ref=e215]:
+        - generic [ref=e216]:
+          - generic [ref=e217]:
+            - generic [ref=e218]: KTR 한국화학융합시험연구원 공인 성적서
+            - heading "3無 공인 시험성적서 인터랙티브 뷰어" [level=3] [ref=e219]
+            - paragraph [ref=e220]:
+              - text: "• 당류 (Sugar):"
+              - strong [ref=e221]: 0.00g (불검출 Verified)
+              - text: "• 카페인 (Caffeine):"
+              - strong [ref=e222]: 0.00% (불검출 Zero)
+              - text: "• 타르색소 (Synthetic Color):"
+              - strong [ref=e223]: 음성 (Negative Pass)
+              - text: "• 중금속 (납/비소/카드뮴):"
+              - strong [ref=e224]: 전 항목 적합 판정
+          - button "📑 KTR 시험성적서 원본 PDF 다운로드" [ref=e225] [cursor=pointer]
+        - generic [ref=e226]:
+          - generic [ref=e227]:
+            - generic [ref=e228]: 지속가능성 순환 모델
+            - heading "♻️ 에코 리필 벌크팩 (60포 / 48,000원)" [level=3] [ref=e229]
+            - paragraph [ref=e230]: 플라스틱을 전혀 쓰지 않는 무한 재활용 알루미늄 파우치로 매달 신선한 티 스틱을 15% 할인된 가격에 정기배송 받으세요. • 포장 폐기물 85% 감축 실현 • 상시 15% 구독 할인 & 친환경 탄소 마일리지 적립
+          - generic [ref=e231]:
+            - button "♻️ ️에코 리필 벌크팩 60포 담기 (48,000원) →" [ref=e232] [cursor=pointer]
+            - button "📖 20종 도감에서 보기 ↓" [ref=e233] [cursor=pointer]
+    - generic [ref=e234]:
+      - generic [ref=e236]:
+        - generic [ref=e237]: ✦ 자연과 순환의 정적 공간 (Eco Circulation) ✦
+        - generic [ref=e239]: 지구와 몸에 가벼운 쉼
+        - generic [ref=e240]:
+          - strong [ref=e241]: "[해답] ♻️ 대용량 에코 리필 60포 (48,000원 / [예상 절감 목표] 포장재 85% 절감)"
+          - text: — 100% 생분해 크라프트 무광 텍스처와 PLA 메쉬의 지속 가능한 자연 순환.
+      - generic [ref=e242]:
+        - generic [ref=e243]:
+          - generic [ref=e244]: 🌿 100% 생분해 PLA 메쉬
+          - paragraph [ref=e245]:
+            - strong [ref=e246]: "[시험 확인 예정]"
+            - text: 미세플라스틱 0.00% 불검출 기준 설계 (KTR 시험성적서 접수 및 검증 예정). 옥수수 전분 추출 친환경 메쉬 티백.
+        - generic [ref=e247]:
+          - generic [ref=e248]: 📦 포장재 85% 절감 리필
+          - paragraph [ref=e249]:
+            - strong [ref=e250]: "[예상 절감 목표]"
+            - text: 기존 메탈 틴케이스를 재사용하는 60포 대용량 크라프트 벌크 패키지 적용 시 포장 폐기물 85% 절감.
+        - generic [ref=e251]:
+          - generic [ref=e252]: 🔄 탄소 마일리지 15% 환급
+          - paragraph [ref=e253]:
+            - strong [ref=e254]: "[정기구독 혜택 기획안]"
+            - text: 에코 리필 정기구독 시 15% 상시 할인 혜택 제공 및 친환경 탄소 마일리지 포인트 적립 기획안.
+    - generic [ref=e255]:
+      - generic [ref=e257]:
+        - generic [ref=e258]: ✦ 시간에 따른 감정의 대비 공간 (24H Daily Ritual) ✦
+        - generic [ref=e260]:
+          - generic [ref=e261]:
+            - generic [ref=e262]:
+              - text: 24H 감정 타임라인 휠
+              - heading "🌙 23:00 이완 & 숙면 (Night Calm)" [level=3] [ref=e263]
+              - paragraph [ref=e264]: 하루의 긴장을 풀고 깊은 수면으로 인도하는 무카페인 숙면 전문 티 슬립 라벤더 루이보스 처방 (남아공 그린루이보스 & 프로방스 라벤더).
+            - generic [ref=e265]:
+              - generic [ref=e266] [cursor=pointer]: 🌅 08:00 각성
+              - generic [ref=e267] [cursor=pointer]: ☀️ 14:00 환기
+              - generic [ref=e268] [cursor=pointer]: 🌆 20:00 사색
+              - generic [ref=e269] [cursor=pointer]: 🌙 23:00 숙면
+            - generic [ref=e270]:
+              - button "📖 월간 리추얼 정기구독팩 담기 (68,000원) →" [ref=e271] [cursor=pointer]
+              - button "📖 20종 도감에서 보기 ↓" [ref=e272] [cursor=pointer]
+          - generic [ref=e273]:
+            - generic [ref=e274]: 180초 마인드풀 타이머
+            - generic [ref=e275]: 03:00
+            - generic [ref=e276]: 🎧 물안개 & 크리스탈 앰비언트 ASMR 재생 중
+            - generic [ref=e277]:
+              - button "▶ 쉼 타이머 시작" [ref=e278] [cursor=pointer]
+              - button "↺ 리셋" [ref=e279] [cursor=pointer]
+        - generic [ref=e280]: ✦ 4대 시간대별 명확한 장면(Scene) & TPO 큐레이션 트레이 ✦
+        - generic [ref=e281]: 24H 시간대별 맞춤 루틴
+        - generic [ref=e282]:
+          - strong [ref=e283]: "[4대 시간대별 맞춤 리추얼]"
+          - text: "— 낮(Day: 시작과 환기)과 밤(Night: 몽환적 오로라와 온전한 수면)의 2단계 감정 전환 아키텍처."
+      - generic [ref=e284]:
+        - generic [ref=e285]:
+          - generic [ref=e286]:
+            - generic [ref=e287]: ☀️
+            - generic [ref=e288]: DAYTIME RITUAL • 일상의 에너지와 산뜻한 환기 (07:30 AM ~ 14:00 PM)
+          - generic [ref=e289]: 아침의 맑은 빛과 한낮의 청량함
+        - generic [ref=e290]:
+          - generic [ref=e291]:
+            - generic [ref=e292]:
+              - generic [ref=e293]:
+                - generic [ref=e294]: "☀️ [장면 연출 참고: 아침 자연광 6,500K]"
+                - generic [ref=e295]: "[ 아침 안개 6500K • 스테인리스 텀블러 급속 침출 1초 • 청명한 어린 엽차 연둣빛 ]"
+              - generic [ref=e296]:
+                - generic [ref=e297]: 🌅 AM 07:30 • 22℃ 모닝 각성
+                - generic [ref=e298]: 31,000원
+              - generic [ref=e299]: "[SCENE 01: 시작과 집중]"
+              - heading "3분 급속 침출로 뇌를 깨우는 시작" [level=4] [ref=e300]
+              - generic [ref=e301]: ⏱️ 하동 어린잎 녹차 스틱 (20포)
+              - paragraph [ref=e302]: "\"바쁜 아침 출근길, 3분 만에 급속 추출되는 지리산 하동 유기농 어린 찻잎으로 뇌를 맑게 깨우고 활력을 충전하는 모닝 리추얼.\""
+            - button "⏱️ 하동 어린잎 녹차 스틱 담기 (31,000원)" [ref=e303] [cursor=pointer]
+          - generic [ref=e304]:
+            - generic [ref=e305]:
+              - generic [ref=e306]:
+                - generic [ref=e307]: "🫧 [장면 연출 참고: 한낮 자연광 5,000K]"
+                - generic [ref=e308]: "[ 한낮 자연광 5000K • 유리잔 속 차가운 탄산 기포 • 청량한 딥 사파이어 블루 ]"
+              - generic [ref=e309]:
+                - generic [ref=e310]: ☀️ PM 14:00 • 26℃ 오피스 환기
+                - generic [ref=e311]: 29,000원
+              - generic [ref=e312]: "[SCENE 02: 환기와 전환]"
+              - heading "나른한 오후 식곤증 0kcal 리셋" [level=4] [ref=e313]
+              - generic [ref=e314]: 💙 사파이어 블루 캐모마일 (15포)
+              - paragraph [ref=e315]: "\"나른한 식곤증과 연속된 회의 피로를 지우는 0kcal 천연 아줄렌 푸른빛 탄산 스파클링 에이드로 상쾌한 기분 전환.\""
+            - button "💙 사파이어 블루 캐모마일 담기 (29,000원)" [ref=e316] [cursor=pointer]
+      - generic [ref=e317]:
+        - generic [ref=e318]:
+          - generic [ref=e319]:
+            - generic [ref=e320]: 🌌
+            - generic [ref=e321]: NIGHTTIME RITUAL • 현실에서 벗어나는 몽환적 오로라 & 심야 이완 (19:30 PM ~ 23:00 PM)
+          - generic [ref=e322]: 조도 10Lux 어둠 속에서 피어나는 영롱한 수색
+        - generic [ref=e323]:
+          - generic [ref=e324]:
+            - generic [ref=e325]:
+              - generic [ref=e326]:
+                - generic [ref=e327]: "🌌 [장면 연출 참고: 황혼 조명 10Lux]"
+                - generic [ref=e328]: "[ 360° 프리즘 글래스 속 영롱한 3단 오로라 수색 발광 아트보드 (120px 캔버스) ]"
+              - generic [ref=e329]:
+                - generic [ref=e330]:
+                  - generic [ref=e331]: 👑 BEST 01
+                  - generic [ref=e332]: 🌆 PM 19:30 • 38℃ 몽환적 몰입
+                - generic [ref=e333]: 39,000원
+              - generic [ref=e334]: "[SCENE 03: 황혼의 바텐딩 • 클라이맥스 씬]"
+              - heading "퇴근 후 나만의 오로라 바텐딩" [level=4] [ref=e335]
+              - generic [ref=e336]: ⭐ 오로라 믹솔로지 시그니처 팩 (10포)
+              - generic [ref=e337]:
+                - text: •
+                - strong [ref=e338]: "[상황]"
+                - text: 세상의 모든 소음을 끄고 나만을 위한 조명을 켜는 시간. •
+                - strong [ref=e339]: "[변화]"
+                - text: 찬물을 붓는 순간, 잔 속에 피어나는 보랏빛 오로라가 지친 마음을 어루만집니다. •
+                - strong [ref=e340]: "[본질]"
+                - text: 당류 0g • 카페인 0.00%로 밤늦게 즐기는 100% 길티프리 홈텐딩 바.
+            - button "🥂 ⭐ 오로라 믹솔로지 시그니처 팩 담기 (39,000원) →" [ref=e341] [cursor=pointer]
+          - generic [ref=e342]:
+            - generic [ref=e343]:
+              - generic [ref=e344]:
+                - generic [ref=e345]: "🕯️ [장면 연출 참고: 캔들 라이트 1,800K]"
+                - generic [ref=e346]: "[ 캔들 라이트 1800K • 따뜻한 핸드크래프트 도기 머그 스팀 • 차분한 딥 라벤더 ]"
+              - generic [ref=e347]:
+                - generic [ref=e348]: 🌙 PM 23:00 • 18℃ 심야 수면
+                - generic [ref=e349]: 28,500원
+              - generic [ref=e350]: "[SCENE 04: 수면 전 안정]"
+              - heading "잠들기 전 온전한 수면 이완" [level=4] [ref=e351]
+              - generic [ref=e352]: 💜 슬립 라벤더 루이보스 (15포)
+              - paragraph [ref=e353]: "\"불을 끄고 침실로 향하기 전, 100% 무카페인 그린 루이보스와 프로방스 라벤더의 부드러운 수면 이완 리추얼.\""
+            - generic [ref=e354]:
+              - button "🌙 💜 슬립 라벤더 루이보스 담기 (28,500원)" [ref=e355] [cursor=pointer]
+              - button "📖 20종 도감에서 상품 위치 보기 ↓" [ref=e356] [cursor=pointer]
+    - generic [ref=e357]:
+      - generic [ref=e359]:
+        - generic [ref=e360]: ✦ 5대 감각 체험 공간 (Sensory Workstation) ✦
+        - generic [ref=e362]: 5-IN-1 감각 스튜디오 콘솔
+        - generic [ref=e363]: 5-in-1 감각 스튜디오 콘솔 (인터랙티브 창작 허브)
+        - generic [ref=e364]:
+          - text: REQ-05 · 단순한 기능 목록이 아닌
+          - strong [ref=e365]: 조색 랩, 커스텀 각인, 사운드 힐링, 기업 B2B 조달, 감정 처방
+          - text: 5대 고유의 브랜드 감각 경험을 제공하는 종합 콘솔입니다.
+      - generic [ref=e366]:
+        - button "🧪 01. 색과 산도 조색 (조색 랩 / Color Lab)" [ref=e367] [cursor=pointer]: 🧪 01. 색과 산도 조색(조색 랩 / Color Lab)
+        - button "🔤 02. 맞춤 메시지 각인 (선물 각인 랩 / Custom Lab)" [ref=e368] [cursor=pointer]: 🔤 02. 맞춤 메시지 각인(선물 각인 랩 / Custom Lab)
+        - button "🔔 03. 180초 온열 & 소리 다도 (사운드 힐링 랩 / Sound Lab)" [ref=e369] [cursor=pointer]: 🔔 03. 180초 온열 & 소리 다도(사운드 힐링 랩 / Sound Lab)
+        - button "📊 04. 기업 조달 & 원가 절감 (비즈니스 랩 / B2B Lab)" [ref=e370] [cursor=pointer]: 📊 04. 기업 조달 & 원가 절감(비즈니스 랩 / B2B Lab)
+        - button "🕒 05. 마음 상태 맞춤 처방 (감정 다이얼 랩 / Mood Lab)" [ref=e371] [cursor=pointer]: 🕒 05. 마음 상태 맞춤 처방(감정 다이얼 랩 / Mood Lab)
+      - generic [ref=e373]:
+        - generic [ref=e374]:
+          - generic [ref=e375]: 🧪 실험실 01 • 색과 산도 조색 실험실 (Workstation 01 • Color Mixology Lab)
+          - generic [ref=e376]:
+            - text: 🎯
+            - strong [ref=e377]: "[해결하는 상황]"
+            - text: "\"단조로운 음료 대신, 눈으로 먼저 즐기는 시각적 휴식과 특별한 홈카페 분위기가 필요할 때\""
+          - heading "3단 수색 변환 & 산도 조색 시뮬레이터 (pH Color Simulator)" [level=3] [ref=e378]
+          - generic [ref=e379]:
+            - strong [ref=e380]: "💡 선택의 이유:"
+            - text: 탄산수와 레몬 즙의 비율(산도 pH 변화)에 따라 내 잔 속 수색이 푸른빛에서 보랏빛으로 피어나는 시각적 힐링과 특별한 논알콜 칵테일 분위기를 완성합니다.
+        - generic [ref=e381]:
+          - generic [ref=e382]:
+            - generic [ref=e383]: 인터랙션 1 · 실시간 3단 수색 조색
+            - generic [ref=e384]: 🍵
+            - generic [ref=e385]: "산도(pH) 다이얼: pH 7.0 (로열 블루)"
+            - slider [ref=e387] [cursor=pointer]: "7"
+            - generic [ref=e388]:
+              - generic [ref=e389]: pH 3.0 (핑크)
+              - generic [ref=e390]: pH 5.0 (바이올렛)
+              - generic [ref=e391]: pH 7.0 (블루)
+          - generic [ref=e392]:
+            - generic [ref=e393]:
+              - generic [ref=e394]: 인터랙션 2 · 실시간 TDS 농도 시뮬레이터
+              - generic [ref=e395]: 탄산수 & 티 코디얼 황금 밸런스
+              - paragraph [ref=e396]: 투입량에 따른 최적의 농도(120~180ppm)를 실시간으로 측정합니다.
+              - generic [ref=e397]:
+                - generic [ref=e398]:
+                  - generic [ref=e399]: "코디얼 투입량:"
+                  - generic [ref=e400]: 30 ml
+                - slider [ref=e401] [cursor=pointer]: "30"
+              - generic [ref=e402]:
+                - strong [ref=e403]: "현재 농도:"
+                - text: 144 ppm
+                - strong [ref=e404]: "평가:"
+                - text: ✨ 황금 밸런스 달성 (120~180ppm)
+            - button "🧪 ⭐ 오로라 믹솔로지 시그니처 팩 담기 (39,000원) →" [ref=e405] [cursor=pointer]
+        - generic [ref=e406]:
+          - generic [ref=e407]:
+            - text: 💡
+            - strong [ref=e408]: 이 조색 실험의 대표 구현 상품 (1개)
+            - text: ": ⭐"
+            - strong [ref=e409]: 오로라 믹솔로지 시그니처 팩
+            - text: (10포 / 39,000원)
+          - generic [ref=e410]:
+            - link "📦 도감에서 스펙 비교 ↓" [ref=e411] [cursor=pointer]:
+              - /url: "#catalog-section"
+            - button "🛒 바로 담기 (39,000원)" [ref=e412] [cursor=pointer]
+    - generic [ref=e413]:
+      - generic [ref=e415]:
+        - generic [ref=e416]:
+          - generic [ref=e417]: ✦ 05 CATALOGUE RAISONNÉ ✦
+          - generic [ref=e418]: ·
+          - generic [ref=e419]: 전수 20종 블렌딩 & 기어 마스터 도감
+        - generic [ref=e420]: 취향별 20종 전수 라인업 & 마스터 비교 도감
+        - generic [ref=e421]:
+          - text: 앞선 서사(Hero 오로라 수색 변환, 24H 리추얼 휠, KTR 검증 크래프트 여정)에서 만난
+          - strong [ref=e422]: 4대 대표 상품
+          - text: 을 상단에서 즉시 확인하고, 하단 5대 핵심 카테고리 20종 전수 매트릭스를 통해 원산지 스펙과 추천 DIY 조합을 객관적으로 비교해 보세요.
+      - generic [ref=e423]:
+        - generic [ref=e424]:
+          - generic [ref=e425]:
+            - generic [ref=e426]: ✦ Storyline Flagships ✦
+            - generic [ref=e427]: 앞선 이야기 속 4대 대표 상품 바로보기
+            - generic [ref=e428]: 첫 화면부터 리추얼 휠, 크래프트 여정에서 소개된 핵심 대표 상품 4종입니다. 도감 위치로 즉시 찾아가거나 빠르게 담을 수 있습니다.
+          - generic [ref=e429]: SSOT 대표 4종 엄선 연계
+        - generic [ref=e430]:
+          - generic [ref=e431]:
+            - generic [ref=e432]:
+              - generic [ref=e433]:
+                - generic [ref=e434]: "여정 #1 Hero"
+                - generic [ref=e435]: 🍵 시그니처
+              - generic [ref=e436]:
+                - text: 🌌
+                - generic [ref=e437]: 오로라 믹솔로지 시그니처 팩
+                - generic [ref=e438]: (10포) · 3단 수색 변색 대표
+              - generic [ref=e439]: • 치앙마이 안토시아닌 100%• 레몬즙 산도 반응 변색• 찬물 1초 융해 마이크로파우더
+            - generic [ref=e440]:
+              - generic [ref=e441]:
+                - generic [ref=e442]: 공식 정가
+                - generic [ref=e443]: 39,000원
+              - generic [ref=e444]:
+                - button "📍 도감 위치" [ref=e445] [cursor=pointer]
+                - button "🛒 1-Click 담기" [ref=e446] [cursor=pointer]
+          - generic [ref=e447]:
+            - generic [ref=e448]:
+              - generic [ref=e449]:
+                - generic [ref=e450]: "여정 #2 리추얼 휠"
+                - generic [ref=e451]: 🌿 클린티
+              - generic [ref=e452]:
+                - text: 💜
+                - generic [ref=e453]: 슬립 라벤더 루이보스
+                - generic [ref=e454]: (15포) · 22:00 쉼 리추얼 대표
+              - generic [ref=e455]: • 남아공 비발효 그린루이보스• 프랑스산 프로방스 라벤더꽃• 카페인 0.00mg 편안한 밤
+            - generic [ref=e456]:
+              - generic [ref=e457]:
+                - generic [ref=e458]: 공식 정가
+                - generic [ref=e459]: 28,500원
+              - generic [ref=e460]:
+                - button "📍 도감 위치" [ref=e461] [cursor=pointer]
+                - button "🛒 1-Click 담기" [ref=e462] [cursor=pointer]
+          - generic [ref=e463]:
+            - generic [ref=e464]:
+              - generic [ref=e465]:
+                - generic [ref=e466]: "여정 #3 지속가능 크래프트"
+                - generic [ref=e467]: 📦 B2B·대용량
+              - generic [ref=e468]:
+                - text: ♻️
+                - generic [ref=e469]: 에코 리필 벌크팩 (60포)
+                - generic [ref=e470]: (60포) · 100% 생분해 PLA 에코
+              - generic [ref=e471]: • 비유전자변형 옥수수 PLA• 32% 플라스틱 저감 지퍼백• 1포당 800원 경제적 대용량
+            - generic [ref=e472]:
+              - generic [ref=e473]:
+                - generic [ref=e474]: 공식 정가
+                - generic [ref=e475]: 48,000원
+              - generic [ref=e476]:
+                - button "📍 도감 위치" [ref=e477] [cursor=pointer]
+                - button "🛒 1-Click 담기" [ref=e478] [cursor=pointer]
+          - generic [ref=e479]:
+            - generic [ref=e480]:
+              - generic [ref=e481]:
+                - generic [ref=e482]: "여정 #4 스튜디오 구독"
+                - generic [ref=e483]: 🎁 패키지·구독
+              - generic [ref=e484]:
+                - text: 📦
+                - generic [ref=e485]: 📖 월간 리추얼 30일 정기구독팩 (60포)
+                - generic [ref=e486]: (30일 분량) · 매월 맞춤 큐레이션
+              - generic [ref=e487]: • 30일 데일리 무카페인 60포 번들• 티 테이스팅 저널 & Lo-Fi 사운드 QR• 정기구독 15% 상시 할인 및 무료배송
+            - generic [ref=e488]:
+              - generic [ref=e489]:
+                - generic [ref=e490]: 월 구독료
+                - generic [ref=e491]: 68,000원
+              - generic [ref=e492]:
+                - button "📍 도감 위치" [ref=e493] [cursor=pointer]
+                - button "🛒 1-Click 담기" [ref=e494] [cursor=pointer]
+      - generic [ref=e496]:
+        - generic [ref=e497]:
+          - generic [ref=e498]: 🍹 3대 DIY 믹솔로지 조합 모아보기
+          - generic [ref=e499]: (레시피 클릭 시 필수 블렌딩 상품만 선별 비교)
+        - generic [ref=e500]:
+          - button "🍋 3단 오로라 에이드" [ref=e501] [cursor=pointer]
+          - button "🥛 비건 오트 밀크티" [ref=e502] [cursor=pointer]
+          - button "🍸 논알콜 스모키 하이볼" [ref=e503] [cursor=pointer]
+      - generic [ref=e504]:
+        - button "전체보기 (20)" [ref=e505] [cursor=pointer]
+        - button "🍵 시그니처 믹솔로지 (4)" [ref=e506] [cursor=pointer]
+        - button "🌿 0kcal 클린티 (4)" [ref=e507] [cursor=pointer]
+        - button "🎁 패키지·선물 (4)" [ref=e508] [cursor=pointer]
+        - button "🥂 홈카페 도구 (4)" [ref=e509] [cursor=pointer]
+        - button "📦 B2B 대용량 (4)" [ref=e510] [cursor=pointer]
+      - generic [ref=e512]:
+        - text: 현재
+        - strong [ref=e513]: 전체 20종 전수 라인업 (총 20개)
+        - text: 상품이 표시되고 있습니다.
+      - generic [ref=e514]:
+        - generic [ref=e515]:
+          - button "🤍" [ref=e516] [cursor=pointer]
+          - generic [ref=e517]:
+            - generic [ref=e518]:
+              - generic [ref=e519]: "⭐ 여정 #1 Hero 대표"
+              - generic [ref=e520]: 🚀 론칭 대표
+              - generic [ref=e521]: 🍵 시그니처
+            - generic [ref=e522]:
+              - generic [ref=e523]: 🌌
+              - generic [ref=e524]: "[ ⭐ 오로라 믹솔로지 시그니처 팩 (10포) ]"
+            - generic [ref=e525]: 치앙마이 안토시아닌 / 찬물 1초 융해 / 3단 수색 변환
+          - generic [ref=e526]:
+            - generic [ref=e527]: ⭐ 오로라 믹솔로지 시그니처 팩 (10포)
+            - generic [ref=e528]:
+              - text: "• 성분: 유기농 버터플라이피 100% & 레몬머틀• 특징: 산도에 반응하는 3단 변색 대표 팩•"
+              - strong [ref=e529]: "🧪 추천 DIY 조합:"
+              - text: +콜드프레스 레몬즙 / +제로 탄산 파우더
+          - generic [ref=e530]:
+            - generic [ref=e531]:
+              - generic [ref=e532]: 공식 정가
+              - generic [ref=e533]: 39,000원
+            - generic [ref=e534]:
+              - button "🔍 스펙상세" [ref=e535] [cursor=pointer]
+              - button "🛒 1-Click 담기" [ref=e536] [cursor=pointer]
+        - generic [ref=e537]:
+          - button "🤍" [ref=e538] [cursor=pointer]
+          - generic [ref=e539]:
+            - generic [ref=e540]:
+              - generic [ref=e541]: 🍵 시그니처
+              - generic [ref=e542]: SMOKY
+            - generic [ref=e543]:
+              - generic [ref=e544]: 🍹
+              - generic [ref=e545]: "[ 🍹 스모키 얼그레이 홍차 (15포) ]"
+            - generic [ref=e546]: 딤불라 훈연 홍차엽 & 베르가모트 / 당류 0g
+          - generic [ref=e547]:
+            - generic [ref=e548]: 🍹 스모키 얼그레이 홍차 스틱 (15포)
+            - generic [ref=e549]:
+              - text: "• 성분: 딤불라 훈연 홍차엽 100% & 베르가모트 오일• 특징: 참나무 훈연 향의 무알콜 하이볼·밀크티 베이스•"
+              - strong [ref=e550]: "🧪 추천 DIY 조합:"
+              - text: +오트밀크 & 바닐라시럽 (밀크티) / +토닉시럽 (하이볼)
+          - generic [ref=e551]:
+            - generic [ref=e552]:
+              - generic [ref=e553]: 공식 정가
+              - generic [ref=e554]: 28,000원
+            - generic [ref=e555]:
+              - button "🔍 스펙상세" [ref=e556] [cursor=pointer]
+              - button "🛒 1-Click 담기" [ref=e557] [cursor=pointer]
+        - generic [ref=e558]:
+          - button "🤍" [ref=e559] [cursor=pointer]
+          - generic [ref=e560]:
+            - generic [ref=e561]:
+              - generic [ref=e562]: 🍵 시그니처
+              - generic [ref=e563]: MORNING
+            - generic [ref=e564]:
+              - generic [ref=e565]: ⏱️
+              - generic [ref=e566]: "[ ⏱️ 하동 어린잎 녹차 (20포) ]"
+            - generic [ref=e567]: 하동 야생 다원 유기농 첫물엽 / 3분 마이크로 침출
+          - generic [ref=e568]:
+            - generic [ref=e569]: ⏱️ 하동 어린잎 녹차 스틱 (20포)
+            - generic [ref=e570]:
+              - text: "• 성분: 지리산 하동 야생 다원 첫물 어린 찻잎 100%• 특징: 3분 급속 침출로 테아닌을 활성화하는 모닝티•"
+              - strong [ref=e571]: "🧪 추천 DIY 조합:"
+              - text: +자작나무 제로설탕 (깔끔한 냉녹차)
+          - generic [ref=e572]:
+            - generic [ref=e573]:
+              - generic [ref=e574]: 공식 정가
+              - generic [ref=e575]: 31,000원
+            - generic [ref=e576]:
+              - button "🔍 스펙상세" [ref=e577] [cursor=pointer]
+              - button "🛒 1-Click 담기" [ref=e578] [cursor=pointer]
+        - generic [ref=e579]:
+          - button "🤍" [ref=e580] [cursor=pointer]
+          - generic [ref=e581]:
+            - generic [ref=e582]:
+              - generic [ref=e583]: 🍵 시그니처
+              - generic [ref=e584]: RUBY
+            - generic [ref=e585]:
+              - generic [ref=e586]: 🌺
+              - generic [ref=e587]: "[ 🌺 선셋 루비 히비스커스 (15포) ]"
+            - generic [ref=e588]: 유기농 히비스커스 & 다마스크 로즈 / 루비빛 에이드
+          - generic [ref=e589]:
+            - generic [ref=e590]: 🌺 선셋 루비 히비스커스 스틱 (15포)
+            - generic [ref=e591]:
+              - text: "• 성분: 이집트 히비스커스 & 다마스크 로즈• 특징: 붉은 노을 루비 수색의 항산화 에이드•"
+              - strong [ref=e592]: "🧪 추천 DIY 조합:"
+              - text: +제로 탄산 파우더 & 레몬즙 (선셋 에이드)
+          - generic [ref=e593]:
+            - generic [ref=e594]:
+              - generic [ref=e595]: 공식 정가
+              - generic [ref=e596]: 29,000원
+            - generic [ref=e597]:
+              - button "🔍 스펙상세" [ref=e598] [cursor=pointer]
+              - button "🛒 1-Click 담기" [ref=e599] [cursor=pointer]
+        - generic [ref=e600]:
+          - button "🤍" [ref=e601] [cursor=pointer]
+          - generic [ref=e602]:
+            - generic [ref=e603]:
+              - generic [ref=e604]: 🌿 클린티 론칭 대표
+              - generic [ref=e605]: 🚀 론칭 대표
+              - generic [ref=e606]: 🌿 클린티
+            - generic [ref=e607]:
+              - generic [ref=e608]: 🌿
+              - generic [ref=e609]: "[ 🌿 보태니컬 스파클링 (10포) ]"
+            - generic [ref=e610]: "[성적서 시험 준비] KTR 기준 / [설계 영양 기준] 천연 에리스리톨 당류 0g"
+          - generic [ref=e611]:
+            - generic [ref=e612]: 🌿 보태니컬 스파클링 티 (10포)
+            - generic [ref=e613]: "• 성분: 레몬버베나 & 유기농 페퍼민트 & 레몬머틀• 특징: [시험 확인 예정] KTR 공인 3대 유해물질 0.00% 기준 / 미세플라스틱 0.00% 불검출 기준 설계 / 0kcal 스파클링"
+          - generic [ref=e614]:
+            - generic [ref=e615]:
+              - generic [ref=e616]: 공식 정가
+              - generic [ref=e617]: 27,000원
+            - generic [ref=e618]:
+              - button "🔍 스펙상세" [ref=e619] [cursor=pointer]
+              - button "🛒 1-Click 담기" [ref=e620] [cursor=pointer]
+        - generic [ref=e621]:
+          - button "🤍" [ref=e622] [cursor=pointer]
+          - generic [ref=e623]:
+            - generic [ref=e624]:
+              - generic [ref=e625]: 🌿 클린티
+              - generic [ref=e626]: AZULENE
+            - generic [ref=e627]:
+              - generic [ref=e628]: 💙
+              - generic [ref=e629]: "[ 💙 사파이어 블루 캐모마일 (15포) ]"
+            - generic [ref=e630]: 저먼 캐모마일 & 버터플라이피 / 천연 아줄렌 추출
+          - generic [ref=e631]:
+            - generic [ref=e632]: 💙 사파이어 블루 캐모마일 (15포)
+            - generic [ref=e633]: "• 성분: 크로아티아 저먼 캐모마일 & 블루 안토시아닌• 특징: 100% 무카페인 & 천연 아줄렌 성분으로 오후 번아웃 완화"
+          - generic [ref=e634]:
+            - generic [ref=e635]:
+              - generic [ref=e636]: 공식 정가
+              - generic [ref=e637]: 29,000원
+            - generic [ref=e638]:
+              - button "🔍 스펙상세" [ref=e639] [cursor=pointer]
+              - button "🛒 1-Click 담기" [ref=e640] [cursor=pointer]
+        - generic [ref=e641]:
+          - button "🤍" [ref=e642] [cursor=pointer]
+          - generic [ref=e643]:
+            - generic [ref=e644]:
+              - generic [ref=e645]: "⭐ 여정 #2 나이트 쉼 대표"
+              - generic [ref=e646]: 🌙 론칭 밤 리추얼
+              - generic [ref=e647]: 🌿 클린티
+            - generic [ref=e648]:
+              - generic [ref=e649]: 💜
+              - generic [ref=e650]: "[ 💜 슬립 라벤더 루이보스 (15포) ]"
+            - generic [ref=e651]: 프로방스 라벤더 & 그린 루이보스 / 100% 무카페인
+          - generic [ref=e652]:
+            - generic [ref=e653]: 💜 슬립 라벤더 루이보스 (15포)
+            - generic [ref=e654]: "• 성분: 남아공 유기농 그린 루이보스 & 프랑스 프로방스 라벤더• 특징: 100% 무카페인 & 무가당, 23:00 심야 수면 웰니스 전용 티"
+          - generic [ref=e655]:
+            - generic [ref=e656]:
+              - generic [ref=e657]: 공식 정가
+              - generic [ref=e658]: 28,500원
+            - generic [ref=e659]:
+              - button "🔍 스펙상세" [ref=e660] [cursor=pointer]
+              - button "🛒 1-Click 담기" [ref=e661] [cursor=pointer]
+        - generic [ref=e662]:
+          - button "🤍" [ref=e663] [cursor=pointer]
+          - generic [ref=e664]:
+            - generic [ref=e665]:
+              - generic [ref=e666]: 🌿 클린티
+              - generic [ref=e667]: FOCUS
+            - generic [ref=e668]:
+              - generic [ref=e669]: ⚡
+              - generic [ref=e670]: "[ ⚡ 포커스 마테 클린티 (15포) ]"
+            - generic [ref=e671]: 유기농 그린 마테 & 레몬그라스 / 심장 무자극 집중력
+          - generic [ref=e672]:
+            - generic [ref=e673]: ⚡ 포커스 마테 클린티 (15포)
+            - generic [ref=e674]: "• 성분: 아르헨티나 유기농 그린 마테 & 레몬그라스• 특징: 커피의 불안감 없는 자연 유래 마테인으로 맑고 깨끗한 집중력 부스팅"
+          - generic [ref=e675]:
+            - generic [ref=e676]:
+              - generic [ref=e677]: 공식 정가
+              - generic [ref=e678]: 29,000원
+            - generic [ref=e679]:
+              - button "🔍 스펙상세" [ref=e680] [cursor=pointer]
+              - button "🛒 1-Click 담기" [ref=e681] [cursor=pointer]
+        - generic [ref=e682]:
+          - button "🤍" [ref=e683] [cursor=pointer]
+          - generic [ref=e684]:
+            - generic [ref=e685]:
+              - generic [ref=e686]: ⭐ [앞서 소개된 No.1 대표 상품]
+              - generic [ref=e687]: 🚀 론칭 대표
+              - generic [ref=e688]: 🎁 기프트
+            - generic [ref=e689]:
+              - generic [ref=e690]: 🎁
+              - generic [ref=e691]: "[ 🎁 VIP 커스텀 각인 틴 세트 ]"
+            - generic [ref=e692]: 매트 블랙 SUS316 틴 / 3D 파이버 레이저 각인
+          - generic [ref=e693]:
+            - generic [ref=e694]: 🎁 VIP 커스텀 각인 틴 세트
+            - generic [ref=e695]: "• 성분: 메탈 틴케이스 + 시그니처 4종 20포 + 쇼핑백• 특징: 받는 분의 이름을 3D 파이버 레이저로 각인하는 프라이빗 커스텀 기프트"
+          - generic [ref=e696]:
+            - generic [ref=e697]:
+              - generic [ref=e698]: 공식 정가
+              - generic [ref=e699]: 49,000원
+            - generic [ref=e700]:
+              - button "🔍 스펙상세" [ref=e701] [cursor=pointer]
+              - button "🛒 1-Click 담기" [ref=e702] [cursor=pointer]
+        - generic [ref=e703]:
+          - button "🤍" [ref=e704] [cursor=pointer]
+          - generic [ref=e705]:
+            - generic [ref=e706]:
+              - generic [ref=e707]: "⭐ 여정 #4 정기 구독 대표"
+              - generic [ref=e708]: 🎁 선물·구독
+              - generic [ref=e709]: MONTHLY
+            - generic [ref=e710]:
+              - generic [ref=e711]: 📖
+              - generic [ref=e712]: "[ 📖 월간 리추얼 정기구독팩 ]"
+            - generic [ref=e713]: "[정기구독 혜택 기획안] 30일 데일리 60포 번들 / 15% 상시 할인"
+          - generic [ref=e714]:
+            - generic [ref=e715]: 📖 월간 리추얼 30일 정기구독팩
+            - generic [ref=e716]: "• 성분: 30일 데일리 무카페인 60포 번들• 특징: 매월 자동 정기배송 & 15% 상시 할인 + 180초 Lo-Fi 사운드트랙 전용 QR"
+          - generic [ref=e717]:
+            - generic [ref=e718]:
+              - generic [ref=e719]: 공식 정가
+              - generic [ref=e720]: 68,000원
+            - generic [ref=e721]:
+              - button "🔍 스펙상세" [ref=e722] [cursor=pointer]
+              - button "🛒 1-Click 담기" [ref=e723] [cursor=pointer]
+        - generic [ref=e724]:
+          - button "🤍" [ref=e725] [cursor=pointer]
+          - generic [ref=e726]:
+            - generic [ref=e727]:
+              - generic [ref=e728]: ⭐ [앞서 소개된 No.1 대표 상품]
+              - generic [ref=e729]: 🚀 론칭 대표
+              - generic [ref=e730]: 🎁 기프트
+            - generic [ref=e731]:
+              - generic [ref=e732]: 🎯
+              - generic [ref=e733]: "[ 🎯 감정 다이얼 5무드 샘플러 (15포) ]"
+            - generic [ref=e734]: 5가지 감정 무드별 맞춤 티 15포 / 처방 차트 동봉
+          - generic [ref=e735]:
+            - generic [ref=e736]: 🎯 감정 다이얼 5무드 샘플러 세트 (15포)
+            - generic [ref=e737]: "• 성분: 5개 감정 무드별 맞춤 티 각 3포 = 총 15포• 특징: 오늘의 감정 상태에 맞춰 골라 마시는 1:1 맞춤 처방 차트 동봉"
+          - generic [ref=e738]:
+            - generic [ref=e739]:
+              - generic [ref=e740]: 공식 정가
+              - generic [ref=e741]: 34,000원
+            - generic [ref=e742]:
+              - button "🔍 스펙상세" [ref=e743] [cursor=pointer]
+              - button "🛒 1-Click 담기" [ref=e744] [cursor=pointer]
+        - generic [ref=e745]:
+          - button "🤍" [ref=e746] [cursor=pointer]
+          - generic [ref=e747]:
+            - generic [ref=e748]:
+              - generic [ref=e749]: 🎁 선물·구독
+              - generic [ref=e750]: CERAMIC
+            - generic [ref=e751]:
+              - generic [ref=e752]: 🏺
+              - generic [ref=e753]: "[ 🏺 크리스탈 보태니컬 티 세트 ]"
+            - generic [ref=e754]: 도예 명장 매트 세라믹 머그 2P + 크리스탈 인퓨저
+          - generic [ref=e755]:
+            - generic [ref=e756]: 🏺 크리스탈 보태니컬 티 세트
+            - generic [ref=e757]: "• 성분: 크리스탈 인퓨저 + 매트 세라믹 머그 2P + 시그니처 10포 + 하드박스• 특징: 80℃ 온열을 40분간 유지하는 단열 세라믹과 크리스탈 다도 기프팅"
+          - generic [ref=e758]:
+            - generic [ref=e759]:
+              - generic [ref=e760]: 공식 정가
+              - generic [ref=e761]: 78,000원
+            - generic [ref=e762]:
+              - button "🔍 스펙상세" [ref=e763] [cursor=pointer]
+              - button "🛒 1-Click 담기" [ref=e764] [cursor=pointer]
+        - generic [ref=e765]:
+          - button "🤍" [ref=e766] [cursor=pointer]
+          - generic [ref=e767]:
+            - generic [ref=e768]:
+              - generic [ref=e769]: ⭐ [앞서 소개된 No.1 대표 상품]
+              - generic [ref=e770]: 🚀 론칭 대표
+              - generic [ref=e771]: 🥂 도구·기어
+            - generic [ref=e772]:
+              - generic [ref=e773]: 🥂
+              - generic [ref=e774]: "[ 🥂 프리즘 더블 글래스 (2P) ]"
+            - generic [ref=e775]: 360° 홀로그램 코팅 내열유리 / 이중 진공 결로 방지
+          - generic [ref=e776]:
+            - generic [ref=e777]: 🥂 프리즘 더블 글래스 (2P)
+            - generic [ref=e778]: "• 성분: 붕규산 내열 강화유리 2P 세트• 특징: 360도 오로라 굴절 코팅과 결로 없는 이중 진공 구조로 수색의 매력을 극대화"
+          - generic [ref=e779]:
+            - generic [ref=e780]:
+              - generic [ref=e781]: 공식 정가
+              - generic [ref=e782]: 38,000원
+            - generic [ref=e783]:
+              - button "🔍 스펙상세" [ref=e784] [cursor=pointer]
+              - button "🛒 1-Click 담기" [ref=e785] [cursor=pointer]
+        - generic [ref=e786]:
+          - button "🤍" [ref=e787] [cursor=pointer]
+          - generic [ref=e788]:
+            - generic [ref=e789]:
+              - generic [ref=e790]: 🥂 도구·기어
+              - generic [ref=e791]: MIXER KIT
+            - generic [ref=e792]:
+              - generic [ref=e793]: 🥄
+              - generic [ref=e794]: "[ 🥄 믹솔로지 쉐이커 & 머들러 ]"
+            - generic [ref=e795]: SUS304 스테인리스 / 0.1ml 미세 지거
+          - generic [ref=e796]:
+            - generic [ref=e797]: 🥄 믹솔로지 쉐이커 & 머들러 세트
+            - generic [ref=e798]: "• 성분: SUS304 쉐이커 + 롱 스푼 머들러 + 미세 지거• 특징: 방탄 버터티 유화 및 아이스 티 에이드 제조에 최적화된 바텐딩 키트"
+          - generic [ref=e799]:
+            - generic [ref=e800]:
+              - generic [ref=e801]: 공식 정가
+              - generic [ref=e802]: 38,000원
+            - generic [ref=e803]:
+              - button "🔍 스펙상세" [ref=e804] [cursor=pointer]
+              - button "🛒 1-Click 담기" [ref=e805] [cursor=pointer]
+        - generic [ref=e806]:
+          - button "🤍" [ref=e807] [cursor=pointer]
+          - generic [ref=e808]:
+            - generic [ref=e809]:
+              - generic [ref=e810]: 🥂 도구·기어
+              - generic [ref=e811]: SOUND TIMER
+            - generic [ref=e812]:
+              - generic [ref=e813]: 🎵
+              - generic [ref=e814]: "[ 🎵 180초 싱잉볼 사운드 타이머 ]"
+            - generic [ref=e815]: 아노다이징 티타늄 / 432Hz 싱잉볼 사운드 모듈
+          - generic [ref=e816]:
+            - generic [ref=e817]: 🎵 180초 싱잉볼 사운드 타이머
+            - generic [ref=e818]: "• 성분: 아노다이징 티타늄 바디 + 싱잉볼 음향 칩• 특징: 3분 브루잉 시간 동안 432Hz 주파수 음향으로 뇌파를 알파파로 이완"
+          - generic [ref=e819]:
+            - generic [ref=e820]:
+              - generic [ref=e821]: 공식 정가
+              - generic [ref=e822]: 58,000원
+            - generic [ref=e823]:
+              - button "🔍 스펙상세" [ref=e824] [cursor=pointer]
+              - button "🛒 1-Click 담기" [ref=e825] [cursor=pointer]
+        - generic [ref=e826]:
+          - button "🤍" [ref=e827] [cursor=pointer]
+          - generic [ref=e828]:
+            - generic [ref=e829]:
+              - generic [ref=e830]: 🥂 도구·기어
+              - generic [ref=e831]: TUMBLER
+            - generic [ref=e832]:
+              - generic [ref=e833]: 🧊
+              - generic [ref=e834]: "[ 🧊 티 인퓨저 진공 텀블러 (450ml) ]"
+            - generic [ref=e835]: SUS316 의료용 스틸 / 12H 보온보냉 거름망 일체형
+          - generic [ref=e836]:
+            - generic [ref=e837]: 🧊 티 인퓨저 진공 텀블러 (450ml)
+            - generic [ref=e838]: "• 성분: SUS316 의료용 스테인리스 + 분리형 인퓨저 망• 특징: 출근길 1초 테이크아웃 및 12시간 완벽한 온도 유지"
+          - generic [ref=e839]:
+            - generic [ref=e840]:
+              - generic [ref=e841]: 공식 정가
+              - generic [ref=e842]: 39,000원
+            - generic [ref=e843]:
+              - button "🔍 스펙상세" [ref=e844] [cursor=pointer]
+              - button "🛒 1-Click 담기" [ref=e845] [cursor=pointer]
+        - generic [ref=e846]:
+          - button "🤍" [ref=e847] [cursor=pointer]
+          - generic [ref=e848]:
+            - generic [ref=e849]:
+              - generic [ref=e850]: ⭐ [앞서 소개된 No.1 대표 상품]
+              - generic [ref=e851]: 🚀 론칭 대표
+              - generic [ref=e852]: 📦 B2B 조달
+            - generic [ref=e853]:
+              - generic [ref=e854]: 📦
+              - generic [ref=e855]: "[ 📦 호텔 객실 어메니티 1,000포 ]"
+            - generic [ref=e856]: 질소충전 은박 삼면포장 / 100% 생분해 PLA
+          - generic [ref=e857]:
+            - generic [ref=e858]: 📦 호텔 객실 어메니티 1,000포 번들
+            - generic [ref=e859]: "• 성분: 1,000포 대용량 벌크 번들 (질소 충전 위생 삼면포장)• 특징: 찻잎 세척 노동 제로, 전자세금계산서 청구 및 분기 정기 출고"
+          - generic [ref=e860]:
+            - generic [ref=e861]:
+              - generic [ref=e862]: B2B 납품가
+              - generic [ref=e863]: 850,000원
+            - generic [ref=e864]:
+              - button "🔍 스펙상세" [ref=e865] [cursor=pointer]
+              - button "🏨 B2B 견적" [ref=e866] [cursor=pointer]
+        - generic [ref=e867]:
+          - button "🤍" [ref=e868] [cursor=pointer]
+          - generic [ref=e869]:
+            - generic [ref=e870]:
+              - generic [ref=e871]: 📦 B2B 조달
+              - generic [ref=e872]: RENTAL
+            - generic [ref=e873]:
+              - generic [ref=e874]: 🌱
+              - generic [ref=e875]: "[ 🌱 탕비실 4단 거치대 번들 ]"
+            - generic [ref=e876]: 180포 보관 모듈형 아크릴 디스플레이 / 구독 시 0원
+          - generic [ref=e877]:
+            - generic [ref=e878]: 🌱 탕비실 4단 거치대 번들 (0원 렌탈)
+            - generic [ref=e879]: "• 성분: 180포 보관 모듈형 아크릴 거치대 1EA• 특징: 오피스 탕비실 정기구독(월 60포 이상) 신청 시 거치대 0원 무상 렌탈"
+          - generic [ref=e880]:
+            - generic [ref=e881]:
+              - generic [ref=e882]: 렌탈료
+              - generic [ref=e883]: 0원 (무상 렌탈)
+            - generic [ref=e884]:
+              - button "🔍 스펙상세" [ref=e885] [cursor=pointer]
+              - button "🏢 신청" [ref=e886] [cursor=pointer]
+        - generic [ref=e887]:
+          - button "🤍" [ref=e888] [cursor=pointer]
+          - generic [ref=e889]:
+            - generic [ref=e890]:
+              - generic [ref=e891]: "⭐ 여정 #3 에코 벌크 대표"
+              - generic [ref=e892]: 📦 B2B 조달
+              - generic [ref=e893]: ECO REFILL
+            - generic [ref=e894]:
+              - generic [ref=e895]: ♻️
+              - generic [ref=e896]: "[ ♻️ 에코 리필 벌크팩 (60포) ]"
+            - generic [ref=e897]: "[예상 절감 목표] 틴케이스 재사용 크라프트 벌크 / 탄소 15% 감축 목표"
+          - generic [ref=e898]:
+            - generic [ref=e899]: ♻️ 에코 리필 벌크팩 (60포)
+            - generic [ref=e900]: "• 성분: 100% 생분해 크라프트 무광 지퍼백 60포• 특징: [예상 절감 목표] 포장재 85% 절감 및 탄소 15% 감축 목표, 기존 메탈 틴케이스에 리필하여 사용하는 친환경 에코 팩"
+          - generic [ref=e901]:
+            - generic [ref=e902]:
+              - generic [ref=e903]: 공식 정가
+              - generic [ref=e904]: 48,000원
+            - generic [ref=e905]:
+              - button "🔍 스펙상세" [ref=e906] [cursor=pointer]
+              - button "🛒 1-Click 담기" [ref=e907] [cursor=pointer]
+        - generic [ref=e908]:
+          - button "🤍" [ref=e909] [cursor=pointer]
+          - generic [ref=e910]:
+            - generic [ref=e911]:
+              - generic [ref=e912]: 📦 B2B 조달
+              - generic [ref=e913]: CORP GIFT
+            - generic [ref=e914]:
+              - generic [ref=e915]: 🏢
+              - generic [ref=e916]: "[ 🏢 오피스 웰니스 기프팅 세트 ]"
+            - generic [ref=e917]: 4종 40포 + 더블월 잔 2P + 기업 로고 각인
+          - generic [ref=e918]:
+            - generic [ref=e919]: 🏢 오피스 웰니스 기프팅 세트
+            - generic [ref=e920]: "• 성분: 시그니처 4종 40포 + 프리즘 더블월 잔 2P + 머들러• 특징: 기업 VIP 고객 및 임직원 복지 선물용 기업 로고 레이저 각인 지원"
+          - generic [ref=e921]:
+            - generic [ref=e922]:
+              - generic [ref=e923]: 기업 특판가
+              - generic [ref=e924]: 120,000원
+            - generic [ref=e925]:
+              - button "🔍 스펙상세" [ref=e926] [cursor=pointer]
+              - button "🏢 B2B 견적" [ref=e927] [cursor=pointer]
+    - generic [ref=e928]:
+      - generic [ref=e930]:
+        - generic [ref=e931]: ✦ 오감 만남의 오프라인 공간 (Offline Atelier) ✦
+        - generic [ref=e933]: 성수 쇼룸 아틀리에
+        - generic [ref=e934]:
+          - strong [ref=e935]: "[공간 기획안] 성수 WICKETA 쇼룸 1:1 프라이빗 도슨트 & 다도 세션 (공간 확정 예정)"
+          - text: — 성수동 거점 후보지에서 전문 티 믹솔로지스트가 선사하는 3단 조색 시음 리추얼.
+      - generic [ref=e936]:
+        - generic [ref=e937]:
+          - generic [ref=e938]: 🏛️ WICKETA ATELIER SEONGSU [공간 기획안 / 오픈 예정]
+          - paragraph [ref=e939]: 서울 성수동 거점 후보지에 준비 중인 WICKETA 아틀리에는 온라인에서 경험한 3단 변색과 사운드 리추얼을 오감으로 직접 체험할 수 있도록 기획된 프라이빗 쇼룸 공간 기획안입니다.
+          - generic [ref=e940]:
+            - text: •
+            - strong [ref=e941]: "1:1 도슨트 프로그램 [운영 기획안]:"
+            - text: 1인당 40분 프라이빗 조색 & 시음 •
+            - strong [ref=e942]: "나만의 티 블렌딩 [체험 기획안]:"
+            - text: R&D 연구원과 함께하는 커스텀 조향 •
+            - strong [ref=e943]: "수용 인원 [운영 예시]:"
+            - text: 시간대별 최대 4인 제한 (100% 사전 예약제 운영 예정)
+        - generic [ref=e944]:
+          - generic [ref=e945]:
+            - text: 오프라인 서사 공간
+            - generic [ref=e946]: 성수 아틀리에 프라이빗 티 코스 예약
+            - generic [ref=e947]: 온라인 서사에서 성수동 아틀리에 4인 프라이빗 도슨트 세션으로 이어지는 감각 연계 프로그램입니다.
+            - generic [ref=e948]:
+              - generic [ref=e949]:
+                - generic [ref=e950]: 예약 희망 일자
+                - textbox [ref=e951]: 2026-09-01
+              - generic [ref=e952]:
+                - generic [ref=e953]: 희망 타임슬롯
+                - combobox [ref=e954]:
+                  - option "14:00 (프라이빗 4인 코스 - 잔여 2석)" [selected]
+                  - option "16:30 (오로라 믹솔로지 세션 - 잔여 4석)"
+                  - option "19:00 (나이트 카밍 도슨트 - 잔여 1석)"
+              - generic [ref=e955]:
+                - generic [ref=e956]: 사전 웰컴 티 선택
+                - combobox [ref=e957]:
+                  - option "⭐ No.1 오로라 믹솔로지 3단 변색 티" [selected]
+                  - option "🌿 0.00% 무카페인 허브 릴랙스 (슬립 라벤더)"
+                  - option "🪵 30일 콜드브루잉 앰버 인퓨전"
+          - generic [ref=e958]:
+            - button "🏛️ 프라이빗 도슨트 세션 예약 신청하기 (사전 무료 접수) →" [ref=e959] [cursor=pointer]
+            - button "🏢 기업용 단체 대관 및 B2B 쇼룸 방문 문의" [ref=e960] [cursor=pointer]
+      - generic [ref=e961]:
+        - generic [ref=e962]:
+          - text: 📍
+          - strong [ref=e963]: 위치 [공간 기획안]
+          - text: ": 서울 성동구 성수이로 88 WICKETA 아틀리에 2F (성수동 거점 후보지 / 공간 확정 예정)"
+        - generic [ref=e964]:
+          - text: ⏰
+          - strong [ref=e965]: 운영 [운영 예시]
+          - text: ": 화~일 11:00 ~ 20:00 (월요일 휴무 / 타임당 최대 4인 제한 예정) | 🅿️ 무료 주차 지원 (협의 확정 예정)"
+  - contentinfo [ref=e966]:
+    - generic [ref=e967]:
+      - generic [ref=e968]:
+        - generic [ref=e969]: "📌 데이터 신뢰도:"
+        - generic [ref=e970]: ✅ [확정] 철학 & 20종 라인업
+        - generic [ref=e971]: ✅ [확정] 5대 스튜디오 & 3-in-1 드로어
+        - generic [ref=e972]: 📑 [증빙준비] KTR 성적서
+        - generic [ref=e973]: 🔍 [설계예시] 사업자번호 & 법인대표
+        - generic [ref=e974]: 🏛️ [공간확인중] 성수 쇼룸
+      - generic [ref=e975]:
+        - generic [ref=e976]:
+          - generic [ref=e977]:
+            - generic [ref=e978]:
+              - generic [ref=e979]: WICKETA
+              - generic [ref=e980]: "| (주)WONDERSCAPE"
+            - generic [ref=e981]: 2030 캄테크 웰니스 믹솔로지 티
+          - group [ref=e982] [cursor=pointer]:
+            - generic "✦ 브랜드 슬로건 & 아키텍처 (펼치기 ▾)" [ref=e983]:
+              - generic [ref=e984]: ✦ 브랜드 슬로건 & 아키텍처
+              - generic [ref=e985]: (펼치기 ▾)
+        - generic [ref=e986]:
+          - generic [ref=e987]:
+            - generic [ref=e988]:
+              - generic [ref=e989]: 👥 참여 주체 및 사업자 명세
+              - generic [ref=e990]: "[기획/디렉터 ≠ 법인대표]"
+            - generic [ref=e991]:
+              - text: •
+              - strong [ref=e992]: "디렉터:"
+              - text: 차은채 외 10인 [페르소나]
+            - generic [ref=e993]:
+              - text: •
+              - strong [ref=e994]: "운영 법인:"
+              - text: (주)WONDERSCAPE |
+              - strong [ref=e995]: "대표이사:"
+              - text: "[확인/법무 검토 중]"
+            - generic [ref=e996]:
+              - text: •
+              - strong [ref=e997]: "사업자등록번호:"
+              - text: 120-88-01001 [예시]
+            - generic [ref=e998]:
+              - text: •
+              - strong [ref=e999]: "통신판매:"
+              - text: 제2026-서울성동-0088호 [예시]
+          - generic [ref=e1000]:
+            - text: •
+            - strong [ref=e1001]: "쇼룸:"
+            - text: 서울시 성동구 성수이로 88 WICKETA ATELIER
+        - generic [ref=e1002]:
+          - generic [ref=e1003]:
+            - generic [ref=e1004]: VIP CONCIERGE DESK
+            - generic [ref=e1005]: ☎️ 1588-1111
+            - paragraph [ref=e1006]: 평일 09:00 - 18:00 (호텔 B2B 조달 및 시니어 간편 주문 지원)
+          - generic [ref=e1007]: "• B2B 세금계산서 청구 & 4종 샘플 킷 신청 • 문의: contact@wicketa-tea.com"
+        - generic [ref=e1008]:
+          - generic [ref=e1009]:
+            - generic [ref=e1010]: 간편 컨시어지 데스크
+            - generic [ref=e1011]: 부모님 대리주문 및 음성 안내 간편 접수
+          - button "📞 간편 컨시어지 (부모님 대리주문) →" [ref=e1012] [cursor=pointer]
+      - generic [ref=e1013]:
+        - generic [ref=e1014]: © 2026 WICKETA & (주)WONDERSCAPE. All rights reserved.
+        - generic [ref=e1015]:
+          - link "이용약관" [ref=e1016] [cursor=pointer]:
+            - /url: javascript:void(0)
+          - generic [ref=e1017]: "|"
+          - link "개인정보처리방침" [ref=e1018] [cursor=pointer]:
+            - /url: javascript:void(0)
+          - generic [ref=e1019]: "|"
+          - link "사업자정보확인" [ref=e1020] [cursor=pointer]:
+            - /url: javascript:void(0)
+          - generic [ref=e1021]: "|"
+          - link "성수 쇼룸 오시는 길" [ref=e1022] [cursor=pointer]:
+            - /url: "#showroom-section"
+  - dialog "🛒 3-in-1 패스트 체크아웃 드로어" [ref=e1023]:
+    - generic [ref=e1024]:
+      - generic [ref=e1025]: 🛒 3-in-1 패스트 체크아웃 드로어
+      - button "드로어 닫기" [ref=e1026] [cursor=pointer]: ✕
+    - tablist [ref=e1027]:
+      - tab "D2C 1초 결제" [selected] [ref=e1028] [cursor=pointer]
+      - tab "B2B 세금계산서" [ref=e1029] [cursor=pointer]
+      - tab "☎️ 간편 전화주문" [ref=e1030] [cursor=pointer]
+    - generic [ref=e1031]:
+      - generic [ref=e1032]:
+        - generic [ref=e1033]: "최종 결제 금액:"
+        - generic [ref=e1034]: 39,000원
+      - button "🚀 1-Click 간편 결제 완료" [ref=e1035] [cursor=pointer]
