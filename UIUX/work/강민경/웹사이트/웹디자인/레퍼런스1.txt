@@ -1,0 +1,21 @@
+[ 메인페이지 ]
+상단바 :기후변화주간2026의 상단바 형태 https://www.gdweb.co.kr/sub/view.asp?Txt_fgbn=5&str_no=26889 혹은
+https://www.gdweb.co.kr/sub/view.asp?Txt_fgbn=5&str_no=21815
+
+메인 레이아웃 구성 :
+https://www.soopsori.co.kr/
+
+
+부족한 글 레이아웃 보완 :
+https://www.gdweb.co.kr/sub/view.asp?Txt_fgbn=5&str_no=21430
+
+
+[서브페이지/제품 카테고리]
+숲소리의 프로덕트 베스트 페이지 -> 이미지 상단에 이미지 라운드형태로 배치되고 하단의 상품 카테고리와 깔끔한 상품 나열
+
+https://www.soopsori.co.kr/goods/goods_list.php?cateCd=010 숲소리 베스트 상품 페이지 형태로 제품 시각화
+
+
+[브랜드 소개페이지]
+-> 글씨가 조금 작은 것만 보완하고, 레이아웃 등 참고
+https://www.gdweb.co.kr/sub/view.asp?displayrow=60&Txt_key=all&Txt_word=&Txt_agnumber=&Txt_fgbn=5&Txt_bcode1=&Txt_gbflag=&Txt_bcode2=&Txt_bcode3=&Txt_bcode4=051410001&Txt_bcode5=&Page=1&str_no=27394

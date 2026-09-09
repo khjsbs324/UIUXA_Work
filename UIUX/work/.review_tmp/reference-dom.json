@@ -1,0 +1,262 @@
+[
+  {
+    "tag": "H1",
+    "cls": "",
+    "text": "",
+    "src": null,
+    "rect": {
+      "w": 157.3125,
+      "h": 49.484375
+    },
+    "font": "Pretendard",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)"
+  },
+  {
+    "tag": "IMG",
+    "cls": "",
+    "text": "",
+    "src": "http://madechiel.co.kr/img/main/main_visual.jpg",
+    "rect": {
+      "w": 1979.375,
+      "h": 1000
+    },
+    "font": "Pretendard",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)"
+  },
+  {
+    "tag": "IMG",
+    "cls": "",
+    "text": "",
+    "src": "http://madechiel.co.kr/img/main/intro.png",
+    "rect": {
+      "w": 677,
+      "h": 585
+    },
+    "font": "Pretendard",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)"
+  },
+  {
+    "tag": "IMG",
+    "cls": "",
+    "text": "",
+    "src": "http://madechiel.co.kr/img/main/intro1.png",
+    "rect": {
+      "w": 636,
+      "h": 585
+    },
+    "font": "Pretendard",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)"
+  },
+  {
+    "tag": "IMG",
+    "cls": "",
+    "text": "",
+    "src": "http://madechiel.co.kr/img/main/intro2.png",
+    "rect": {
+      "w": 663,
+      "h": 525
+    },
+    "font": "Pretendard",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)"
+  },
+  {
+    "tag": "IMG",
+    "cls": "",
+    "text": "",
+    "src": "http://madechiel.co.kr/img/main/made_bg.jpg",
+    "rect": {
+      "w": 1080,
+      "h": 613.25
+    },
+    "font": "Pretendard",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)"
+  },
+  {
+    "tag": "IMG",
+    "cls": "",
+    "text": "",
+    "src": "http://madechiel.co.kr/img/main/main_con02.png",
+    "rect": {
+      "w": 900,
+      "h": 617.75
+    },
+    "font": "Pretendard",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)"
+  },
+  {
+    "tag": "IMG",
+    "cls": "",
+    "text": "",
+    "src": "http://madechiel.co.kr/img/main/main_con02_icon.png",
+    "rect": {
+      "w": 630,
+      "h": 432.425048828125
+    },
+    "font": "Pretendard",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)"
+  },
+  {
+    "tag": "IMG",
+    "cls": "",
+    "text": "",
+    "src": "http://madechiel.co.kr/img/main/main_con02_txt.png",
+    "rect": {
+      "w": 900,
+      "h": 617.75
+    },
+    "font": "Pretendard",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)"
+  },
+  {
+    "tag": "IMG",
+    "cls": "",
+    "text": "",
+    "src": "http://madechiel.co.kr/img/main/before.png",
+    "rect": {
+      "w": 1400,
+      "h": 560
+    },
+    "font": "Pretendard",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)"
+  },
+  {
+    "tag": "IMG",
+    "cls": "",
+    "text": "",
+    "src": "http://madechiel.co.kr/img/main/after.png",
+    "rect": {
+      "w": 1400,
+      "h": 560
+    },
+    "font": "Pretendard",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)"
+  },
+  {
+    "tag": "IMG",
+    "cls": "",
+    "text": "",
+    "src": "http://madechiel.co.kr/img/main/benefit.jpg",
+    "rect": {
+      "w": 1920,
+      "h": 970
+    },
+    "font": "Pretendard",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)"
+  },
+  {
+    "tag": "IMG",
+    "cls": "",
+    "text": "",
+    "src": "http://madechiel.co.kr/img/main/ltg01.jpg",
+    "rect": {
+      "w": 325,
+      "h": 325
+    },
+    "font": "Pretendard",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)"
+  },
+  {
+    "tag": "IMG",
+    "cls": "",
+    "text": "",
+    "src": "http://madechiel.co.kr/img/main/ltg02.jpg",
+    "rect": {
+      "w": 325,
+      "h": 325
+    },
+    "font": "Pretendard",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)"
+  },
+  {
+    "tag": "IMG",
+    "cls": "",
+    "text": "",
+    "src": "http://madechiel.co.kr/img/main/ltg03.jpg",
+    "rect": {
+      "w": 325,
+      "h": 325
+    },
+    "font": "Pretendard",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)"
+  },
+  {
+    "tag": "IMG",
+    "cls": "",
+    "text": "",
+    "src": "http://madechiel.co.kr/img/main/ltg04.jpg",
+    "rect": {
+      "w": 325,
+      "h": 325
+    },
+    "font": "Pretendard",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)"
+  },
+  {
+    "tag": "IMG",
+    "cls": "",
+    "text": "",
+    "src": "http://madechiel.co.kr/img/main/face.jpg",
+    "rect": {
+      "w": 1436.734375,
+      "h": 600
+    },
+    "font": "Pretendard",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)"
+  },
+  {
+    "tag": "IMG",
+    "cls": "",
+    "text": "",
+    "src": "http://madechiel.co.kr/img/main/face_line.jpg",
+    "rect": {
+      "w": 1436.734375,
+      "h": 600
+    },
+    "font": "Pretendard",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)"
+  },
+  {
+    "tag": "IMG",
+    "cls": "",
+    "text": "",
+    "src": "http://madechiel.co.kr/img/main/product.png",
+    "rect": {
+      "w": 346.5,
+      "h": 512.3994140625
+    },
+    "font": "Pretendard",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)"
+  },
+  {
+    "tag": "IMG",
+    "cls": "",
+    "text": "",
+    "src": "http://madechiel.co.kr/img/common/ft_logo.png",
+    "rect": {
+      "w": 138,
+      "h": 53
+    },
+    "font": "Pretendard",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)"
+  }
+]

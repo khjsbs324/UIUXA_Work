@@ -1,0 +1,1319 @@
+body {} 
+ header {'class': 'halo-gnb'} 
+  div {'class': 'gnb-inner'} 
+   a {'href': '#', 'class': 'gnb-logo'} 
+    span {'class': 'logo-tag'} GEAR
+   nav {'class': 'gnb-nav', 'id': 'mainGnbNa'} 
+    a {'href': '#philosophy', 'class': 'gnb-link'} 브랜드
+    a {'href': '#spotlight', 'class': 'gnb-link'} 핵심 기어
+    a {'href': '#process', 'class': 'gnb-link'} 기술·검증
+    a {'href': '#routine', 'class': 'gnb-link'} 루틴
+    a {'href': '#shop-all', 'class': 'gnb-link'} 전체 기어
+   div {'class': 'gnb-actions'} 
+    button {'class': 'btn-compare-gnb', 'onclick': 'openCompareModal()'} 
+     span {'class': 'count-badge', 'id': 'gnbCompareCount'} 0
+    button {'class': 'btn-alert-gnb', 'onclick': "openLaunchModal('전체 라인업')"} 빠른 출시 알림 신청
+    button {'class': 'btn-mobile-menu-toggle', 'id': 'btnMobileMenuToggle', 'onclick': 'openMobileDrawer()', 'aria-label': '메뉴 열기'} MENU
+ section {'class': 'hero-section', 'id': 'hero'} 
+  div {'class': 'container'} 
+   div {'class': 'hero-grid'} 
+    div {'class': 'hero-content'} 
+     div {'class': 'hero-manifesto'} 
+      span {'class': 'wireframe-badge', 'style': 'border:none; padding:2px 8px; font-size:10px;'} KINETIC GEAR LAB
+      span {} NO-TOUCH COOLING SUNCARE GEAR
+     h1 {'class': 'hero-headline'} 운동의 흐름을멈추지 않는 선케어 기어
+      br {} 
+     p {'class': 'hero-subhead', 'style': 'font-size: 16px; font-weight: 700; color: var(--halo-gray-dark); line-height: 1.5; margin: 8px 0 16px;'} 멈추지 않고 꺼내고, 묻히지 않고 덧바르는 노터치 쿨링 기어
+     div {'class': 'portfolio-disclaimer', 'style': 'font-size: 11px; color: var(--halo-gray-mid); line-height: 1.5; border-left: 2px solid #000000; padding-left: 12px;'} ※ 본 페이지의 제품, 수치, 임상 및 사용자 데이터는 포트폴리오 설계를 위한 가상 정보입니다.
+     div {'class': 'hero-cta-wrap'} 
+      a {'href': '#philosophy', 'class': 'btn-hero-primary', 'style': 'display:flex; align-items:center; justify-content:center; gap:6px;'} 핵심 기술 보기 ↓
+      a {'href': '#shop-all', 'class': 'btn-hero-secondary', 'style': 'display:flex; align-items:center; justify-content:center; gap:6px;'} 16종 기어 탐색 ➔
+     div {'style': 'font-size: 11.5px; color: var(--halo-gray-mid); margin-top: 4px; display:flex; align-items:center; gap:6px;'} 
+      span {} 💡 15% 얼리버드 알림은 기어 탐색 후 신청 가능합니다.
+      a {'href': "javascript:openLaunchModal('전체 라인업')", 'style': 'color:var(--halo-black); text-decoration:underline; font-weight:800;'} [알림 신청]
+    div {'class': 'hero-gear-box'} 
+     div {'class': 'hero-cinematic-placeholder'} 
+      span {'class': 'tag'} [100vw ATHLETIC MOTION CANVAS]
+      span {'class': 'hero-temp-indicator'} -4.2℃ CRYO SHOCK
+      div {'style': 'font-size: 26px; font-weight: 900; letter-spacing: -0.02em;'} NEVER STOP THE MOTION
+      div {'style': 'font-size: 13px; color: var(--halo-gray-dark); font-weight: 800; max-width: 400px; line-height: 1.6;'} [아스팔트 45℃ 지열 파동 속 페이스 유지 3초 도포 & 초경량 알루미늄 6061 바디 클로즈업 씬]
+      div {'style': 'display: flex; gap: 8px; margin-top: 8px;'} 
+       span {'class': 'wireframe-badge', 'style': 'font-size:10px; background:#000; color:#FFF;'} 페이스 지연 0초
+       span {'class': 'wireframe-badge', 'style': 'font-size:10px;'} 손 오염 0.0%
+     div {'style': 'font-size: 13px; font-weight: 900; color: #000000;'} 
+      span {'id': 'heroColorName'} 에어 블랙 (Air Black)
+     div {'class': 'carabiner-selector-bar'} 
+      div {'class': 'carabiner-dot black active', 'onclick': "selectHeroColor('에어 블랙 (Air Black)', this)", 'title': 'Air Black'} 
+      div {'class': 'carabiner-dot stealth', 'onclick': "selectHeroColor('스텔스 그레이 (Stealth Gray)', this)", 'title': 'Stealth Gray'} 
+      div {'class': 'carabiner-dot silver', 'onclick': "selectHeroColor('매트 실버 (Matte Silver)', this)", 'title': 'Matte Silver'} 
+      div {'class': 'carabiner-dot white', 'onclick': "selectHeroColor('알파 화이트 (Alpha White)', this)", 'title': 'Alpha White'} 
+ section {'class': 'philosophy-section', 'id': 'philosophy', 'style': 'background:#FFFFFF; border-bottom:var(--border-thick); padding: 80px 0;'} 
+  div {'class': 'container'} 
+   div {'class': 'section-header', 'style': 'text-align:left; margin-bottom:36px;'} 
+    div {'class': 'sub-title', 'style': 'margin-bottom:6px; font-size:12px; font-weight:900; letter-spacing:0.12em; color:var(--halo-gray-mid);'} 01. BRAND PHILOSOPHY & R&D MANIFESTO
+    h2 {'class': 'main-title', 'style': 'font-size:32px; font-weight:900; line-height:1.3; margin-bottom:12px; letter-spacing:-0.03em;'} "우리는 화장품을 만들지 않습니다. 극한의 모션 속에서도 퍼포먼스를 지키는 정밀 하드웨어 기어를 설계합니다."
+     br {} 
+    p {'class': 'desc', 'style': 'margin:0; font-size:15px; color:var(--halo-gray-dark); max-width:820px; line-height:1.7;'} 손바닥에 덜어 문지르는 기존 선크림은 고강도 트레이닝 중인 선수들의 손을 오염시키고 라켓과 바벨 그립을 미끄러지게 합니다. HALO는 알루미늄 카라비너 결합 구조와 세범 제로 쿨링 포뮬러로 스포츠의 본질에 응답합니다.
+   div {'style': 'border:var(--border-thick); background:var(--halo-gray-bg); margin-bottom:40px; overflow:hidden;'} 
+    div {'style': 'display:flex; justify-content:space-between; align-items:center; padding:12px 20px; border-bottom:var(--border-thick); background:#FFFFFF;'} 
+     span {'class': 'wireframe-badge dark', 'style': 'font-size:10.5px;'} [ATHLETIC FIELD COMPARISON SCENE]
+     span {'style': 'font-size:11.5px; font-weight:800; color:var(--halo-gray-mid);'} 20 ATHLETES MOTION EFFICIENCY BENCHMARK
+    div {'style': 'display:grid; grid-template-columns: 1fr 1fr; gap:0;', 'class': 'split-contrast-grid'} 
+     div {'style': 'padding:32px 28px; border-right:var(--border-thick); background:#FFFFFF; text-align:center;'} 
+      div {'style': 'display:inline-block; padding:4px 10px; font-size:11px; font-weight:900; background:var(--halo-gray-light); color:var(--halo-gray-dark); margin-bottom:14px;'} 기존 방식 (CONVENTIONAL SUNCARE)
+      div {'style': 'height:140px; border:var(--border-dash); background:var(--halo-gray-bg); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:16px; margin-bottom:16px;'} 
+       span {'style': 'font-size:11px; font-weight:900; color:var(--halo-gray-mid); margin-bottom:4px;'} [PAIN SCENE VIEW]
+       strong {'style': 'font-size:15px; color:#000000;'} [운동을 멈추고 주머니를 뒤져 손으로 문지르고 닦아내는 장면]
+      div {'style': 'font-size:12.5px; color:var(--halo-gray-dark); line-height:1.6; text-align:left;'} 
+       br {} 
+       br {} 
+     div {'style': 'padding:32px 28px; background:#000000; color:#FFFFFF; text-align:center;'} 
+      div {'style': 'display:inline-block; padding:4px 10px; font-size:11px; font-weight:900; background:#FFFFFF; color:#000000; margin-bottom:14px;'} HALO 하드웨어 혁신 (KINETIC GEAR)
+      div {'style': 'height:140px; border:1px dashed #555555; background:#1A1A1A; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:16px; margin-bottom:16px;'} 
+       span {'style': 'font-size:11px; font-weight:900; color:#94A3B8; margin-bottom:4px;'} [MOTION SCENE VIEW]
+       strong {'style': 'font-size:15px; color:#FFFFFF;'} [페이스 유지 상태로 카라비너 원터치 탈착 후 3초 바로 덧바르는 장면]
+      div {'style': 'font-size:12.5px; color:#CCCCCC; line-height:1.6; text-align:left;'} 
+       br {} 
+       br {} 
+   div {'style': 'margin-bottom:40px;'} 
+    div {'style': 'font-size:12px; font-weight:900; letter-spacing:0.1em; color:var(--halo-gray-mid); margin-bottom:12px;'} THREE CORE PRODUCT VALUES
+    div {'style': 'display:grid; grid-template-columns: repeat(3, 1fr); gap:16px;', 'class': 'three-values-grid'} 
+     div {'style': 'border:var(--border-thick); padding:24px; background:#FFFFFF;'} 
+      div {'style': 'display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;'} 
+       span {'style': 'font-size:12px; font-weight:900; padding:2px 8px; background:#000; color:#FFF;'} VALUE 01
+       span {'style': 'font-size:11px; font-weight:800; color:var(--halo-gray-mid);'} PACE PRESERVATION
+      h3 {'style': 'font-size:18px; font-weight:900; margin-bottom:8px;'} 멈춤 제거 (Zero Stop)
+      p {'style': 'font-size:12.5px; color:var(--halo-gray-dark); line-height:1.6; margin-bottom:12px;'} 가방이나 주머니를 뒤적거리는 번거로움을 완전히 제거합니다. 카라비너 하드웨어를 통해 달리는 모션을 멈추지 않고 1초 만에 분리합니다.
+      div {'style': 'font-size:11.5px; font-weight:900; color:#000000; padding-top:8px; border-top:1px solid var(--halo-gray-light);'} 지연율: 0.0초 · 원터치 탈착
+     div {'style': 'border:var(--border-thick); padding:24px; background:#FFFFFF;'} 
+      div {'style': 'display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;'} 
+       span {'style': 'font-size:12px; font-weight:900; padding:2px 8px; background:#000; color:#FFF;'} VALUE 02
+       span {'style': 'font-size:11px; font-weight:800; color:var(--halo-gray-mid);'} ZERO DIRT
+      h3 {'style': 'font-size:18px; font-weight:900; margin-bottom:8px;'} 손 오염 제거 (Zero Dirt)
+      p {'style': 'font-size:12.5px; color:var(--halo-gray-dark); line-height:1.6; margin-bottom:12px;'} 손바닥에 내용물을 일체 묻히지 않는 롤러 헤드와 질소 미스트 기술로 격렬한 라켓 랠리와 고중량 리프팅 그립을 완벽히 지켜냅니다.
+      div {'style': 'font-size:11.5px; font-weight:900; color:#000000; padding-top:8px; border-top:1px solid var(--halo-gray-light);'} 손 오염: 0.0% · 그립 마찰 99.1%
+     div {'style': 'border:var(--border-thick); padding:24px; background:#FFFFFF;'} 
+      div {'style': 'display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;'} 
+       span {'style': 'font-size:12px; font-weight:900; padding:2px 8px; background:#000; color:#FFF;'} VALUE 03
+       span {'style': 'font-size:11px; font-weight:800; color:var(--halo-gray-mid);'} HEAT SHIFT
+      h3 {'style': 'font-size:18px; font-weight:900; margin-bottom:8px;'} 열기 전환 (Heat Shift)
+      p {'style': 'font-size:12.5px; color:var(--halo-gray-dark); line-height:1.6; margin-bottom:12px;'} 단순 차단을 넘어 폭염 속 피부 과열을 즉각 강하합니다. 기화열 흡수와 크라이오 포뮬러로 피부 표면 -4.2℃를 즉시 냉각합니다.
+      div {'style': 'font-size:11.5px; font-weight:900; color:#000000; padding-top:8px; border-top:1px solid var(--halo-gray-light);'} 표면 온도: -4.2℃ 즉각 강하
+   div {'style': 'margin-bottom:40px;'} 
+    div {'style': 'font-size:12px; font-weight:900; letter-spacing:0.1em; color:var(--halo-gray-mid); margin-bottom:12px;'} HARDWARE MATERIAL & SCHEMATIC BLUEPRINTS
+    div {'style': 'display:grid; grid-template-columns: repeat(3, 1fr); gap:16px;', 'class': 'three-components-grid'} 
+     div {'style': 'border:var(--border-thick); padding:20px; background:var(--halo-gray-bg);'} 
+      div {'style': 'height:120px; border:var(--border-dash); background:#FFFFFF; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:12px; margin-bottom:12px;'} 
+       span {'style': 'font-size:10px; font-weight:900; color:var(--halo-gray-mid);'} [소재 근접 렌더 도해 1]
+       strong {'style': 'font-size:13px; color:#000;'} [AL6061 초경량 카라비너 래치]
+       span {'style': 'font-size:10px; color:var(--halo-gray-dark); margin-top:4px;'} CNC 정밀 절삭 · 아노다이징 내마모
+      div {'style': 'font-size:13px; font-weight:900; margin-bottom:4px;'} 알루미늄 6061 합금 래치
+      p {'style': 'font-size:11.5px; color:var(--halo-gray-dark); line-height:1.5; margin:0;'} 항공기 등급 18.4g 초경량 바디와 1,000회 개폐 내구성 시험을 통과한 스프링 래치 메커니즘.
+     div {'style': 'border:var(--border-thick); padding:20px; background:var(--halo-gray-bg);'} 
+      div {'style': 'height:120px; border:var(--border-dash); background:#FFFFFF; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:12px; margin-bottom:12px;'} 
+       span {'style': 'font-size:10px; font-weight:900; color:var(--halo-gray-mid);'} [소재 근접 렌더 도해 2]
+       strong {'style': 'font-size:13px; color:#000;'} [세범 제로 360도 롤러 헤드]
+       span {'style': 'font-size:10px; color:var(--halo-gray-dark); margin-top:4px;'} 무유분 에어로겔 볼 · 안면 곡면 추종
+      div {'style': 'font-size:13px; font-weight:900; margin-bottom:4px;'} 노터치 360 롤러 볼
+      p {'style': 'font-size:11.5px; color:var(--halo-gray-dark); line-height:1.5; margin:0;'} 손을 전혀 쓰지 않고 굴곡진 안면과 목선에 균일한 두께로 초밀착 도포되는 하드웨어 볼 헤드.
+     div {'style': 'border:var(--border-thick); padding:20px; background:var(--halo-gray-bg);'} 
+      div {'style': 'height:120px; border:var(--border-dash); background:#FFFFFF; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:12px; margin-bottom:12px;'} 
+       span {'style': 'font-size:10px; font-weight:900; color:var(--halo-gray-mid);'} [소재 근접 렌더 도해 3]
+       strong {'style': 'font-size:13px; color:#000;'} [질소 가압 미스트 밸브 & 나노 노즐]
+       span {'style': 'font-size:10px; color:var(--halo-gray-dark); margin-top:4px;'} 360도 분사 · 기화열 급속 흡수 입자
+      div {'style': 'font-size:13px; font-weight:900; margin-bottom:4px;'} 질소 360도 마이크로 밸브
+      p {'style': 'font-size:11.5px; color:var(--halo-gray-dark); line-height:1.5; margin:0;'} 거꾸로 들어도 균일하게 안개 분사되는 질소 가압 캔으로 전신 피부 체온을 즉각 쿨다운.
+   div {'style': 'border:var(--border-thick); background:var(--halo-gray-bg); padding:20px 24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;'} 
+    div {'style': 'display:flex; align-items:center; gap:16px; flex-wrap:wrap;'} 
+     div {'style': 'font-size:12px; font-weight:900; color:var(--halo-black);'} FIELD PROVEN METRICS:
+     div {'style': 'display:flex; gap:10px; flex-wrap:wrap;'} 
+      span {'class': 'wireframe-badge dark', 'style': 'font-size:11px; padding:4px 10px;'} 손 오염도 0.0% (지연 0초)
+      span {'class': 'wireframe-badge dark', 'style': 'font-size:11px; padding:4px 10px;'} 피부 표면 -4.2℃ 강하 (180분 지속)
+    a {'href': '#process', 'class': 'btn-sku-action primary', 'style': 'padding:10px 20px; font-size:12px; font-weight:900;'} 4단계 기술·검증(R&D) 상세 확인 ↓
+ section {'class': 'flagship-showcase-section', 'id': 'spotlight', 'style': 'background:#FFFFFF; color:#000000; border-bottom:var(--border-thick); padding:80px 0;'} 
+  div {'class': 'container'} 
+   div {'style': 'display:flex; justify-content:space-between; align-items:center; margin-bottom:28px; border-bottom:var(--border-thick); padding-bottom:14px; flex-wrap:wrap; gap:10px;'} 
+    div {'style': 'display:flex; gap:10px; flex-wrap:wrap;'} 
+     a {'href': '#spotlight', 'class': 'btn-sku-action primary', 'style': 'padding:8px 18px; font-size:12px; font-weight:900;'} #01 카라비너 퀵 스틱 (러닝)
+     a {'href': '#spotlight-mist', 'class': 'btn-sku-action', 'style': 'padding:8px 18px; font-size:12px; font-weight:900; background:var(--halo-white);'} #02 에어로 질소 미스트 (사이클링) ➔
+    span {'class': 'wireframe-badge dark', 'style': 'font-size:11px; padding:4px 10px;'} [DESIGN VARIATION 02 · INTEGRATED STAGE]
+   div {'class': 'flagship-header-bar', 'style': 'border-bottom:var(--border-thick); padding-bottom:16px; margin-bottom:32px;'} 
+    div {} 
+     span {'class': 'wireframe-badge', 'style': 'margin-bottom:8px;'} FLAGSHIP HARDWARE SHOWCASE 01
+     h2 {'style': 'font-size: 32px; font-weight: 900; letter-spacing: -0.03em; margin-top: 6px;'} #01 카라비너 퀵 쿨링 선 스틱
+    div {'style': 'font-size: 12px; font-weight: 900; display:flex; align-items:center; gap:8px;'} 
+     span {'class': 'wireframe-badge dark'} CITY RUNNING & MARATHON
+     span {'style': 'color:var(--halo-gray-dark);'} 45℃ HEAT FIELD VERIFIED
+   div {'style': 'display:grid; grid-template-columns: 1.15fr 1fr; gap:32px; align-items:stretch;', 'class': 'flagship-02-main-grid'} 
+    div {'style': 'border:var(--border-thick); background:var(--halo-gray-bg); padding:28px; display:flex; flex-direction:column; justify-content:space-between; position:relative;'} 
+     div {'style': 'display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;'} 
+      span {'class': 'wireframe-badge dark', 'style': 'font-size:10px;'} [3D HARDWARE MATERIAL STAGE]
+      span {'style': 'font-size:11px; font-weight:900; color:var(--halo-gray-mid);'} SCALE 1:1 CNC SCHEMATIC
+     div {'style': 'height:360px; border:var(--border-dash); background:#FFFFFF; position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:24px; text-align:center; margin-bottom:20px;'} 
+      div {'style': 'position:absolute; top:20px; right:20px; background:#000000; color:#FFFFFF; padding:6px 12px; font-size:10.5px; font-weight:900; text-align:left; border:1px solid #FFF;'} 
+       br {} 
+       span {'style': 'font-size:9.5px; color:#94A3B8; font-weight:normal;'} CNC 초경량 밀링 절삭
+      div {'style': 'position:absolute; top:45%; left:20px; background:#000000; color:#FFFFFF; padding:6px 12px; font-size:10.5px; font-weight:900; text-align:left; border:1px solid #FFF;'} 
+       br {} 
+       span {'style': 'font-size:9.5px; color:#94A3B8; font-weight:normal;'} 땀 미끄럼 방지 마이크로 샌딩
+      div {'style': 'position:absolute; bottom:20px; right:20px; background:#000000; color:#FFFFFF; padding:6px 12px; font-size:10.5px; font-weight:900; text-align:left; border:1px solid #FFF;'} 
+       br {} 
+       span {'style': 'font-size:9.5px; color:#38BDF8; font-weight:normal;'} 손 안 대는 안면 곡면 밀착
+      div {'style': 'font-size:11px; font-weight:900; letter-spacing:0.12em; color:var(--halo-gray-mid); margin-bottom:6px;'} PRECISION HARDWARE VIEW
+      strong {'style': 'font-size:18px; font-weight:900; color:#000000; line-height:1.4;'} 
+       br {} 
+      p {'style': 'font-size:12px; color:var(--halo-gray-dark); max-width:320px; margin-top:8px; line-height:1.5;'} 아노다이징 산화 피막 가공으로 땀과 마찰에 부식되지 않는 내구성 설계
+     div {'style': 'border-top:var(--border-thick); padding-top:14px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;'} 
+      span {'style': 'font-size:11px; font-weight:900; color:#000000;'} • 하드웨어 소재: 항공기 등급 알루미늄 6061-T6
+      span {'style': 'font-size:11px; font-weight:900; color:var(--halo-gray-dark);'} • 표면 피니시: Matte Hard Anodized 35㎛
+    div {'style': 'display:flex; flex-direction:column; gap:20px;'} 
+     div {'style': 'border:var(--border-thick); padding:20px; background:#FFFFFF;'} 
+      div {'style': 'font-size:11px; font-weight:900; letter-spacing:0.1em; color:var(--halo-gray-mid); margin-bottom:10px;'} 4-STEP MECHANISM SEQUENCE
+      div {'style': 'display:grid; grid-template-columns: repeat(4, 1fr); gap:8px; text-align:center;'} 
+       div {'style': 'border:var(--border-thin); padding:8px 4px; background:var(--halo-gray-bg);'} 
+        div {'style': 'font-size:10px; font-weight:900; color:var(--halo-gray-mid);'} STEP 1
+        strong {'style': 'font-size:11px; color:#000;'} 가방/벨트 체결
+       div {'style': 'border:var(--border-thin); padding:8px 4px; background:var(--halo-gray-bg);'} 
+        div {'style': 'font-size:10px; font-weight:900; color:var(--halo-gray-mid);'} STEP 2
+        strong {'style': 'font-size:11px; color:#000;'} 한 손 1초 분리
+       div {'style': 'border:var(--border-thin); padding:8px 4px; background:var(--halo-gray-bg);'} 
+        div {'style': 'font-size:10px; font-weight:900; color:var(--halo-gray-mid);'} STEP 3
+        strong {'style': 'font-size:11px; color:#000;'} 3초 노터치 도포
+       div {'style': 'border:var(--border-thin); padding:8px 4px; background:var(--halo-gray-bg);'} 
+        div {'style': 'font-size:10px; font-weight:900; color:var(--halo-gray-mid);'} STEP 4
+        strong {'style': 'font-size:11px; color:#000;'} 다시 체결 완료
+     div {'style': 'border:var(--border-thick); padding:16px 20px; background:#000000; color:#FFFFFF;'} 
+      div {'style': 'display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;'} 
+       span {'class': 'wireframe-badge', 'style': 'font-size:9.5px; background:#FFF; color:#000;'} CROPPED MOTION SCENE
+       span {'style': 'font-size:10.5px; font-weight:900; color:#38BDF8;'} 0-SEC DELAY RETOUCH
+      div {'style': 'height:100px; border:1px dashed #555555; background:#1A1A1A; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:8px; margin-bottom:8px;'} 
+       strong {'style': 'font-size:12.5px; color:#FFFFFF;'} [검지-엄지 원핸드 래치 파지 위치 & 턱선·목선 상향 3초 롤링 궤적]
+       span {'style': 'font-size:10.5px; color:#94A3B8; margin-top:4px;'} 손바닥 유분 오염 0.0% · 러닝 페이스 완벽 유지
+     div {'style': 'border:var(--border-thick); padding:20px; background:#FFFFFF; flex-grow:1; display:flex; flex-direction:column; justify-content:space-between;'} 
+      div {} 
+       div {'style': 'display:grid; grid-template-columns: 1fr 1fr; gap:8px; margin-bottom:16px;'} 
+        div {'style': 'padding:8px 12px; border:var(--border-thin); background:var(--halo-gray-bg);'} 
+         div {'style': 'font-size:10px; font-weight:800; color:var(--halo-gray-mid);'} 자외선 차단 지수
+         strong {'style': 'font-size:13px; color:#000;'} SPF50+ PA++++
+        div {'style': 'padding:8px 12px; border:var(--border-thin); background:var(--halo-gray-bg);'} 
+         div {'style': 'font-size:10px; font-weight:800; color:var(--halo-gray-mid);'} 용량 및 기어 중량
+         strong {'style': 'font-size:13px; color:#000;'} 22g (총 38.4g)
+        div {'style': 'padding:8px 12px; border:var(--border-thin); background:var(--halo-gray-bg);'} 
+         div {'style': 'font-size:10px; font-weight:800; color:var(--halo-gray-mid);'} 사용 단계
+         strong {'style': 'font-size:13px; color:#000;'} In-Workout (운동 중)
+        div {'style': 'padding:8px 12px; border:var(--border-thin); background:var(--halo-gray-bg);'} 
+         div {'style': 'font-size:10px; font-weight:800; color:var(--halo-gray-mid);'} 가상 성능 목표
+         strong {'style': 'font-size:13px; color:#000;'} -4.2℃ & 오염 0.0%
+       div {'style': 'display:flex; justify-content:space-between; align-items:baseline; margin-bottom:12px; padding:0 4px;'} 
+        span {'style': 'font-size:12px; font-weight:800; color:var(--halo-gray-mid);'} 공식 런칭가
+        span {'style': 'font-size:26px; font-weight:900; color:#000;'} ₩38,000
+      div {'style': 'display:flex; gap:10px;'} 
+       button {'class': 'btn-hero-primary', 'onclick': 'openProductModal(1)', 'style': 'flex:1.2; padding:12px; font-size:12px; font-weight:900; display:flex; justify-content:center; align-items:center;'} 상세 스펙 퀵뷰 (8대 매트릭스) ➔
+       button {'class': 'btn-hero-secondary', 'onclick': "openLaunchModal('카라비너 퀵 스틱')", 'style': 'flex:1; padding:12px; font-size:12px; font-weight:900;'} 15% 출시 알림
+ section {'class': 'flagship-showcase-section alt', 'id': 'spotlight-mist', 'style': 'background:#FFFFFF; color:#000000; border-bottom:var(--border-thick); padding:80px 0;'} 
+  div {'class': 'container'} 
+   div {'style': 'display:flex; justify-content:space-between; align-items:center; margin-bottom:28px; border-bottom:var(--border-thick); padding-bottom:14px; flex-wrap:wrap; gap:10px;'} 
+    div {'style': 'display:flex; gap:10px; flex-wrap:wrap;'} 
+     a {'href': '#spotlight', 'class': 'btn-sku-action', 'style': 'padding:8px 18px; font-size:12px; font-weight:900; background:var(--halo-white);'} #01 카라비너 퀵 스틱 (러닝) ➔
+     a {'href': '#spotlight-mist', 'class': 'btn-sku-action primary', 'style': 'padding:8px 18px; font-size:12px; font-weight:900;'} #02 에어로 질소 미스트 (사이클링)
+    span {'class': 'wireframe-badge dark', 'style': 'font-size:11px; padding:4px 10px;'} [DESIGN VARIATION 02 · REVERSED STAGE]
+   div {'class': 'flagship-header-bar', 'style': 'border-bottom:var(--border-thick); padding-bottom:16px; margin-bottom:32px;'} 
+    div {} 
+     span {'class': 'wireframe-badge', 'style': 'margin-bottom:8px;'} FLAGSHIP HARDWARE SHOWCASE 02
+     h2 {'style': 'font-size: 32px; font-weight: 900; letter-spacing: -0.03em; margin-top: 6px;'} #02 에어로 쿨링 질소 미스트
+    div {'style': 'font-size: 12px; font-weight: 900; display:flex; align-items:center; gap:8px;'} 
+     span {'class': 'wireframe-badge dark'} CYCLING & OUTDOOR
+     span {'style': 'color:var(--halo-gray-dark);'} 360° ALL-ANGLE NITROGEN DISPERSION
+   div {'style': 'display:grid; grid-template-columns: 1fr 1.15fr; gap:32px; align-items:stretch;', 'class': 'flagship-mist-main-grid'} 
+    div {'style': 'display:flex; flex-direction:column; gap:20px;'} 
+     div {'style': 'border:var(--border-thick); padding:20px; background:#FFFFFF;'} 
+      div {'style': 'font-size:11px; font-weight:900; letter-spacing:0.1em; color:var(--halo-gray-mid); margin-bottom:10px;'} 4-STEP NITROGEN VAPORIZATION FLOW
+      div {'style': 'display:grid; grid-template-columns: repeat(4, 1fr); gap:8px; text-align:center;'} 
+       div {'style': 'border:var(--border-thin); padding:8px 4px; background:var(--halo-gray-bg);'} 
+        div {'style': 'font-size:10px; font-weight:900; color:var(--halo-gray-mid);'} STEP 1
+        strong {'style': 'font-size:11px; color:#000;'} 질소 가압 충전
+       div {'style': 'border:var(--border-thin); padding:8px 4px; background:var(--halo-gray-bg);'} 
+        div {'style': 'font-size:10px; font-weight:900; color:var(--halo-gray-mid);'} STEP 2
+        strong {'style': 'font-size:11px; color:#000;'} 360° 전방위 분사
+       div {'style': 'border:var(--border-thin); padding:8px 4px; background:var(--halo-gray-bg);'} 
+        div {'style': 'font-size:10px; font-weight:900; color:var(--halo-gray-mid);'} STEP 3
+        strong {'style': 'font-size:11px; color:#000;'} 나노 기화열 흡수
+       div {'style': 'border:var(--border-thin); padding:8px 4px; background:var(--halo-gray-bg);'} 
+        div {'style': 'font-size:10px; font-weight:900; color:var(--halo-gray-mid);'} STEP 4
+        strong {'style': 'font-size:11px; color:#000;'} 3초 퀵드라이
+     div {'style': 'border:var(--border-thick); padding:16px 20px; background:#000000; color:#FFFFFF;'} 
+      div {'style': 'display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;'} 
+       span {'class': 'wireframe-badge', 'style': 'font-size:9.5px; background:#FFF; color:#000;'} CROPPED MOTION SCENE
+       span {'style': 'font-size:10.5px; font-weight:900; color:#38BDF8;'} INVERTED 180° CYCLING RETOUCH
+      div {'style': 'height:105px; border:1px dashed #555555; background:#1A1A1A; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:8px; margin-bottom:8px;'} 
+       strong {'style': 'font-size:12.5px; color:#FFFFFF;'} [고속 사이클 주행 중 캔을 180° 거꾸로 들어 등·목덜미에 분사하는 장면]
+       span {'style': 'font-size:10.5px; color:#94A3B8; margin-top:4px;'} 주행 중단 없이 전신 급속 쿨다운 · 안개 분사 뭉침 0.0%
+     div {'style': 'border:var(--border-thick); padding:20px; background:#FFFFFF; flex-grow:1; display:flex; flex-direction:column; justify-content:space-between;'} 
+      div {} 
+       div {'style': 'display:grid; grid-template-columns: 1fr 1fr; gap:8px; margin-bottom:16px;'} 
+        div {'style': 'padding:8px 12px; border:var(--border-thin); background:var(--halo-gray-bg);'} 
+         div {'style': 'font-size:10px; font-weight:800; color:var(--halo-gray-mid);'} 자외선 차단 지수
+         strong {'style': 'font-size:13px; color:#000;'} SPF50+ PA++++
+        div {'style': 'padding:8px 12px; border:var(--border-thin); background:var(--halo-gray-bg);'} 
+         div {'style': 'font-size:10px; font-weight:800; color:var(--halo-gray-mid);'} 용량 및 총중량
+         strong {'style': 'font-size:13px; color:#000;'} 120ml (총 142g)
+        div {'style': 'padding:8px 12px; border:var(--border-thin); background:var(--halo-gray-bg);'} 
+         div {'style': 'font-size:10px; font-weight:800; color:var(--halo-gray-mid);'} 추천 사용 단계
+         strong {'style': 'font-size:13px; color:#000;'} All-Workout (전신)
+        div {'style': 'padding:8px 12px; border:var(--border-thin); background:var(--halo-gray-bg);'} 
+         div {'style': 'font-size:10px; font-weight:800; color:var(--halo-gray-mid);'} 가상 성능 목표
+         strong {'style': 'font-size:13px; color:#000;'} 체온 -3.9℃ & 3초 건조
+       div {'style': 'display:flex; justify-content:space-between; align-items:baseline; margin-bottom:12px; padding:0 4px;'} 
+        span {'style': 'font-size:12px; font-weight:800; color:var(--halo-gray-mid);'} 공식 런칭가
+        span {'style': 'font-size:26px; font-weight:900; color:#000;'} ₩39,000
+      div {'style': 'display:flex; gap:10px;'} 
+       button {'class': 'btn-hero-primary', 'onclick': 'openProductModal(2)', 'style': 'flex:1.2; padding:12px; font-size:12px; font-weight:900; display:flex; justify-content:center; align-items:center;'} 상세 스펙 퀵뷰 (8대 매트릭스) ➔
+       button {'class': 'btn-hero-secondary', 'onclick': "openLaunchModal('에어로 쿨링 질소 미스트')", 'style': 'flex:1; padding:12px; font-size:12px; font-weight:900;'} 15% 출시 알림
+    div {'style': 'border:var(--border-thick); background:var(--halo-gray-bg); padding:28px; display:flex; flex-direction:column; justify-content:space-between; position:relative;'} 
+     div {'style': 'display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;'} 
+      span {'class': 'wireframe-badge dark', 'style': 'font-size:10px;'} [3D NITROGEN DISPERSION BLUEPRINT]
+      span {'style': 'font-size:11px; font-weight:900; color:var(--halo-gray-mid);'} CRYO AEROSOL SPEED-LINE
+     div {'style': 'height:360px; border:var(--border-dash); background:#FFFFFF; position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:24px; text-align:center; margin-bottom:20px;'} 
+      div {'style': 'position:absolute; top:20px; left:20px; background:#000000; color:#FFFFFF; padding:6px 12px; font-size:10.5px; font-weight:900; text-align:left; border:1px solid #FFF;'} 
+       br {} 
+       span {'style': 'font-size:9.5px; color:#94A3B8; font-weight:normal;'} 거꾸로 들어도 균일 가압 분사
+      div {'style': 'position:absolute; top:45%; right:20px; background:#000000; color:#FFFFFF; padding:6px 12px; font-size:10.5px; font-weight:900; text-align:left; border:1px solid #FFF;'} 
+       br {} 
+       span {'style': 'font-size:9.5px; color:#94A3B8; font-weight:normal;'} 공기 역학 초미세 분산 (뭉침 0%)
+      div {'style': 'position:absolute; bottom:20px; left:20px; background:#000000; color:#FFFFFF; padding:6px 12px; font-size:10.5px; font-weight:900; text-align:left; border:1px solid #FFF;'} 
+       br {} 
+       span {'style': 'font-size:9.5px; color:#38BDF8; font-weight:normal;'} 피부 접촉 즉시 체온 강하 & 3초 건조
+      div {'style': 'font-size:11px; font-weight:900; letter-spacing:0.12em; color:var(--halo-gray-mid); margin-bottom:6px;'} AERODYNAMIC CRYO ENGINE
+      strong {'style': 'font-size:18px; font-weight:900; color:#000000; line-height:1.4;'} 
+       br {} 
+      p {'style': 'font-size:12px; color:var(--halo-gray-dark); max-width:340px; margin-top:8px; line-height:1.5;'} LPG 가스 대신 순수 질소를 사용하여 폭염 속 과열된 전신 피부를 3초 만에 급속 냉각
+     div {'style': 'border-top:var(--border-thick); padding-top:14px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;'} 
+      span {'style': 'font-size:11px; font-weight:900; color:#000000;'} • 분사 추진체: 친환경 고순도 N2 (질소) 가압 캔
+      span {'style': 'font-size:11px; font-weight:900; color:var(--halo-gray-dark);'} • 쿨다운 지속: 도포 즉시 -3.9℃ 강하 및 180분 지속
+   div {'style': 'border:var(--border-thick); background:var(--halo-gray-bg); padding:18px 24px; display:flex; justify-content:space-between; align-items:center; margin-top:32px; flex-wrap:wrap; gap:16px;'} 
+    div {'style': 'display:flex; align-items:center; gap:12px;'} 
+     span {'style': 'font-size:12px; font-weight:900;'} NEXT SECTION:
+     span {'style': 'font-size:13px; color:var(--halo-gray-dark);'} 2대 대표 기어가 거친 극한의 필드 실증 과정을 확인하세요
+    a {'href': '#process', 'class': 'btn-sku-action primary', 'style': 'padding:10px 22px; font-size:12px; font-weight:900;'} 기술·검증 4단계 R&D 보기 ↓
+ section {'class': 'process-section', 'id': 'process', 'style': 'background:#FFFFFF; border-bottom:var(--border-thick); padding:88px 0;'} 
+  div {'class': 'container'} 
+   div {'class': 'process-header-ancors', 'style': 'display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:32px; border-bottom:var(--border-thick); padding-bottom:18px; flex-wrap:wrap; gap:16px;'} 
+    div {} 
+     div {'class': 'process-headline-ancors', 'style': 'font-size:36px; font-weight:900; line-height:1.15; letter-spacing:-0.03em; margin-bottom:8px;'} 
+      br {} 
+     p {'class': 'process-subhead-ancors', 'style': 'font-size:15px; color:var(--halo-gray-dark); margin:0;'} 단순한 화장품을 넘어, 선수는 모션에 집중하고 우리는 퍼포먼스를 지킵니다.
+    div {'style': 'display:flex; align-items:center; gap:12px; flex-wrap:wrap;'} 
+     div {'style': 'padding:6px 14px; border:var(--border-thick); background:var(--halo-gray-bg); font-size:12px; font-weight:900;'} 
+      span {'id': 'processLiveStepBadge', 'style': 'color:#000000;'} 1 / 4 (DISCOVER)
+     span {'style': 'font-size: 11px; font-weight: 900; padding:5px 10px; border:var(--border-thick); background:#000; color:#FFF;'} [STATUS: ACTIVE]
+   div {'class': 'process-horizontal-track', 'id': 'processHorizontalTrack', 'onscroll': 'syncProcessScrollCounter()', 'style': 'display:flex; gap:24px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; padding-bottom:16px; -webkit-overflow-scrolling:touch;'} 
+    div {'class': 'process-large-card', 'id': 'procCard0', 'style': 'flex:0 0 640px; max-width:85vw; height:450px; scroll-snap-align:center; border:var(--border-thick); background:var(--halo-gray-bg); padding:36px; display:flex; flex-direction:column; justify-content:space-between; position:relative; box-sizing:border-box;'} 
+     div {'style': 'display:flex; justify-content:space-between; align-items:center;'} 
+      span {'class': 'card-step-badge', 'style': 'background:#000000; color:#FFFFFF; font-size:12px; font-weight:900; padding:6px 14px;'} STEP 01
+      span {'style': 'font-size:12px; font-weight:900; letter-spacing:0.08em; color:var(--halo-gray-mid);'} PROBLEM DISCOVERY
+     div {'style': 'text-align:center; margin:auto 0;'} 
+      div {'class': 'card-center-title', 'style': 'font-size:52px; font-weight:900; letter-spacing:0.06em; color:#000000; line-height:1; margin-bottom:10px;'} DISCOVER
+      div {'style': 'font-size:12px; font-weight:900; color:var(--halo-gray-mid); letter-spacing:0.08em;'} [선수단 인터뷰 사진 · 땀/오염 위치 신체 지도 · 페이스 멈춤 행동 기록]
+     div {'class': 'card-bottom-caption-box', 'style': 'border:2px solid #000000; background:#FFFFFF; padding:16px 22px; text-align:left;'} 
+      div {'style': 'font-size:13px; font-weight:800; color:#000000; line-height:1.6;'} 20인 전문 선수단 심층 인터뷰 사진과 땀·유분 배출 집중 영역 신체 지도를 맵핑하고, 기존 선크림 사용 시 페이스 45초 멈춤 행동 로그를 정량 분석
+    div {'class': 'process-large-card', 'id': 'procCard1', 'style': 'flex:0 0 640px; max-width:85vw; height:450px; scroll-snap-align:center; border:var(--border-thick); background:var(--halo-gray-bg); padding:36px; display:flex; flex-direction:column; justify-content:space-between; position:relative; box-sizing:border-box;'} 
+     div {'style': 'display:flex; justify-content:space-between; align-items:center;'} 
+      span {'class': 'card-step-badge', 'style': 'background:#000000; color:#FFFFFF; font-size:12px; font-weight:900; padding:6px 14px;'} STEP 02
+      span {'style': 'font-size:12px; font-weight:900; letter-spacing:0.08em; color:var(--halo-gray-mid);'} HARDWARE PROTOTYPE
+     div {'style': 'text-align:center; margin:auto 0;'} 
+      div {'class': 'card-center-title', 'style': 'font-size:52px; font-weight:900; letter-spacing:0.06em; color:#000000; line-height:1; margin-bottom:10px;'} ENGINEER
+      div {'style': 'font-size:12px; font-weight:900; color:var(--halo-gray-mid); letter-spacing:0.08em;'} [카라비너 CAD 분해도 · 360° 질소 노즐 단면도 · 래치 금형 #01~#12 프로토타입 반복]
+     div {'class': 'card-bottom-caption-box', 'style': 'border:2px solid #000000; background:#FFFFFF; padding:16px 22px; text-align:left;'} 
+      div {'style': 'font-size:13px; font-weight:800; color:#000000; line-height:1.6;'} AL6061 합금 카라비너 3D CAD 분해도와 360도 전방위 질소 마이크로 노즐 단면 절삭 설계, 12회 금형 수정을 거친 원터치 래치 프로토타입 내구성 반복 시험
+    div {'class': 'process-large-card', 'id': 'procCard2', 'style': 'flex:0 0 640px; max-width:85vw; height:450px; scroll-snap-align:center; border:var(--border-thick); background:var(--halo-gray-bg); padding:36px; display:flex; flex-direction:column; justify-content:space-between; position:relative; box-sizing:border-box;'} 
+     div {'style': 'display:flex; justify-content:space-between; align-items:center;'} 
+      span {'class': 'card-step-badge', 'style': 'background:#000000; color:#FFFFFF; font-size:12px; font-weight:900; padding:6px 14px;'} STEP 03
+      span {'style': 'font-size:12px; font-weight:900; letter-spacing:0.08em; color:var(--halo-gray-mid);'} EXTREME FIELD TEST
+     div {'style': 'text-align:center; margin:auto 0;'} 
+      div {'class': 'card-center-title', 'style': 'font-size:52px; font-weight:900; letter-spacing:0.06em; color:#000000; line-height:1; margin-bottom:10px;'} VALIDATE
+      div {'style': 'font-size:12px; font-weight:900; color:var(--halo-gray-mid); letter-spacing:0.08em;'} [러닝 45℃ · 수상 80분 · 피트니스 현장 시험 씬 & 가상 R&D 테스트 계획]
+     div {'class': 'card-bottom-caption-box', 'style': 'border:2px solid #000000; background:#FFFFFF; padding:16px 22px; text-align:left;'} 
+      div {'style': 'font-size:13px; font-weight:800; color:#000000; line-height:1.6;'} 시티 러닝(-4.2℃ 강하), 80분 수상 스포츠 내수성, 피트니스 바벨 마찰(99.1% 보존) 현장 시험 장면 및 320시간 누적 가상 R&D 성능 테스트 계획 수립
+    div {'class': 'process-large-card', 'id': 'procCard3', 'style': 'flex:0 0 640px; max-width:85vw; height:450px; scroll-snap-align:center; border:var(--border-thick); background:var(--halo-gray-bg); padding:36px; display:flex; flex-direction:column; justify-content:space-between; position:relative; box-sizing:border-box;'} 
+     div {'style': 'display:flex; justify-content:space-between; align-items:center;'} 
+      span {'class': 'card-step-badge', 'style': 'background:#000000; color:#FFFFFF; font-size:12px; font-weight:900; padding:6px 14px;'} STEP 04
+      span {'style': 'font-size:12px; font-weight:900; letter-spacing:0.08em; color:var(--halo-gray-mid);'} AUDIT CHECKLIST
+     div {'style': 'text-align:center; margin:auto 0;'} 
+      div {'class': 'card-center-title', 'style': 'font-size:52px; font-weight:900; letter-spacing:0.06em; color:#000000; line-height:1; margin-bottom:10px;'} CERTIFY
+      div {'style': 'font-size:12px; font-weight:900; color:var(--halo-gray-mid); letter-spacing:0.08em;'} [안전성 확인 절차 & 비건·리프세이프 인증 준비 체크리스트]
+     div {'class': 'card-bottom-caption-box', 'style': 'border:2px solid #000000; background:#FFFFFF; padding:14px 20px; text-align:left;'} 
+      div {'style': 'font-size:11.5px; font-weight:900; color:#000000; margin-bottom:4px;'} ☑️ 안전성 & 글로벌 규격 확인 절차 체크리스트:
+      div {'style': 'font-size:12px; color:var(--halo-gray-dark); line-height:1.5;'} 
+       br {} 
+       br {} 
+   div {'class': 'process-scroll-controls', 'style': 'display:flex; justify-content:space-between; align-items:center; margin-top:20px; flex-wrap:wrap; gap:16px;'} 
+    span {'class': 'process-scroll-hint', 'style': 'font-size:12px; font-weight:800; color:var(--halo-gray-mid);'} ← 좌우로 가로 스크롤하여 4단계 제작 과정을 탐색하세요 →
+    div {'class': 'process-nav-btns', 'style': 'display:flex; gap:10px;'} 
+     button {'class': 'btn-process-scroll', 'onclick': 'scrollProcessTrack(-1)', 'aria-label': '이전 카드 보기', 'style': 'padding:10px 22px; font-size:13px; font-weight:900; border:var(--border-thick); background:#FFFFFF; cursor:pointer;'} [< 이전]
+     button {'class': 'btn-process-scroll', 'onclick': 'scrollProcessTrack(1)', 'aria-label': '다음 카드 보기', 'style': 'padding:10px 22px; font-size:13px; font-weight:900; border:var(--border-thick); background:#000000; color:#FFFFFF; cursor:pointer;'} [다음 >]
+   div {'class': 'metrics-bar', 'style': 'margin-top: 36px;'} 
+    div {'class': 'metric-item'} 
+     div {'class': 'val'} -4.2 ℃
+     div {'class': 'lbl'} 즉각 크라이오 쿨다운 목표
+    div {'class': 'metric-item'} 
+     div {'class': 'val'} 80 Min
+     div {'class': 'lbl'} 공인 지속 내수성 목표 설계
+    div {'class': 'metric-item'} 
+     div {'class': 'val'} 320 Hr
+     div {'class': 'lbl'} 누적 필드 실전 계측 계획
+    div {'class': 'metric-item'} 
+     div {'class': 'val'} 100 %
+     div {'class': 'lbl'} 비건 & 리프세이프 성분 설계
+   div {'style': 'font-size: 11px; color: var(--halo-gray-mid); text-align: center; margin-top: 14px;'} *본 페이지의 제품, 수치, 임상, 인증 및 사용자 데이터는 포트폴리오 설계를 위한 가상 정보입니다.
+   div {'class': 'section-connector-banner', 'style': 'margin-top:28px;'} 
+    div {'class': 'connector-text'} 
+     span {} ⚙️ NEXT SECTION
+     span {} 실제 스포츠 현장에서 어떻게 사용하는지 3단계 완결 루틴을 확인하세요
+    a {'href': '#routine', 'class': 'connector-link'} 3단계 스포츠 루틴 & 컬렉션 보기 ↓
+ section {'class': 'section-spacing', 'id': 'routine', 'style': 'background:#FFFFFF; border-bottom:var(--border-thick); padding:88px 0;'} 
+  div {'class': 'container'} 
+   div {'class': 'section-header', 'style': 'margin-bottom:48px; border-bottom:var(--border-thick); padding-bottom:20px;'} 
+    div {'class': 'sub-title', 'style': 'font-size:12px; font-weight:900; letter-spacing:0.12em; color:var(--halo-gray-mid); margin-bottom:6px;'} 04. ONE ATHLETE CONTINUOUS KINETIC JOURNEY
+    h2 {'class': 'main-title', 'style': 'font-size:32px; font-weight:900; letter-spacing:-0.03em; margin:0 0 8px;'} 운동 전·중·후 3단계 단일 흐름 시퀀스
+    p {'class': 'desc', 'style': 'font-size:14.5px; color:var(--halo-gray-dark); margin:0;'} 세 개의 분리된 카드가 아닌, 동일한 선수가 출발 준비부터 폭염 속 훈련, 훈련 직후 회복까지 이어지는 단 하나의 스포츠 여정입니다.
+   div {'class': 'routine-sequence-wrap', 'style': 'display:flex; flex-direction:column; gap:0; border:var(--border-thick); background:var(--halo-gray-bg); overflow:hidden;'} 
+    div {'class': 'routine-phase-screen', 'style': 'display:grid; grid-template-columns: 1.1fr 1fr; border-bottom:var(--border-thick); background:#FFFFFF;'} 
+     div {'style': 'padding:36px; border-right:var(--border-thick); background:#F8FAFC; display:flex; flex-direction:column; justify-content:space-between;'} 
+      div {} 
+       div {'style': 'display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;'} 
+        span {'class': 'wireframe-badge', 'style': 'background:#64748B; color:#FFFFFF; border:none; font-size:10.5px;'} PHASE 01 · PRE-WORKOUT
+        span {'style': 'font-size:11px; font-weight:900; color:#64748B;'} START-UP PREPARATION
+       div {'style': 'height:160px; border:var(--border-dash); background:#FFFFFF; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:16px; margin-bottom:14px;'} 
+        span {'style': 'font-size:10px; font-weight:900; color:#64748B; margin-bottom:4px;'} [1-ATHLETE JOURNEY SCENE 1]
+        strong {'style': 'font-size:14.5px; color:#000000;'} [야외 출발 15분 전: 땀·물 튕겨내는 방수 젤 도포]
+        span {'style': 'font-size:11px; color:var(--halo-gray-dark); margin-top:6px;'} 피부 마이크로 보호막 코팅 & 자외선 원천 차단
+      div {'style': 'padding:10px 14px; border:1px solid #CBD5E1; background:#FFFFFF; font-size:12px; color:#334155; font-weight:700;'} 
+       strong {} 대표 행동:
+     div {'style': 'padding:36px; display:flex; flex-direction:column; justify-content:space-between; background:#FFFFFF;'} 
+      div {} 
+       div {'style': 'font-size:11px; font-weight:900; letter-spacing:0.1em; color:#64748B; margin-bottom:6px;'} 01. START-UP PROTECTION
+       h3 {'style': 'font-size:22px; font-weight:900; margin-bottom:10px; letter-spacing:-0.02em;'} 출발 전 방수 젤과 피부 준비
+       p {'style': 'font-size:13.5px; color:var(--halo-gray-dark); line-height:1.6; margin:0 0 16px;'} 야외 진입 직전, 세라마이드 3중 마이크로 UV 배리어로 자외선과 미세먼지를 원천 차단하여 땀을 흘려도 지워지지 않는 밀착 베이스를 완성합니다.
+       div {'style': 'border:var(--border-thick); padding:12px 16px; background:#F8FAFC; display:flex; justify-content:space-between; align-items:center;'} 
+        div {'style': 'display:flex; align-items:center; gap:12px;'} 
+         div {'style': 'width:40px; height:40px; border:var(--border-thick); background:#64748B; color:#FFF; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:13px;'} #05
+         div {} 
+          strong {'style': 'font-size:13px; color:#000;'} #05 워터프루프 UV 디펜스 젤
+          div {'style': 'font-size:11px; color:var(--halo-gray-mid);'} SPF50+ PA++++ · 50ml · ₩52,000
+        button {'class': 'btn-sku-action primary', 'onclick': 'openProductModal(5)', 'style': 'padding:6px 12px; font-size:11px;'} 스펙 퀵뷰
+      div {'style': 'margin-top:16px; padding-top:12px; border-top:1px solid #E2E8F0; display:flex; justify-content:space-between; align-items:center;'} 
+       span {'style': 'font-size:11.5px; color:#64748B; font-weight:800;'} 전(Pre) 단계 맞춤 기어 4종 보유
+       button {'onclick': "filterCatalogByPhase('pre')", 'style': 'border:none; background:transparent; font-size:12px; font-weight:900; color:#000000; cursor:pointer; text-decoration:underline;'} 내 운동 단계로 기어 찾기 (전/Pre) ➔
+    div {'class': 'routine-phase-screen', 'style': 'display:grid; grid-template-columns: 1fr 1.1fr; border-bottom:var(--border-thick); background:#FFFFFF;'} 
+     div {'style': 'padding:36px; border-right:var(--border-thick); display:flex; flex-direction:column; justify-content:space-between; background:#FFFFFF;'} 
+      div {} 
+       div {'style': 'font-size:11px; font-weight:900; letter-spacing:0.1em; color:#0284C7; margin-bottom:6px;'} 02. NON-STOP KINETIC MOTION
+       h3 {'style': 'font-size:22px; font-weight:900; margin-bottom:10px; letter-spacing:-0.02em;'} 퀵 스틱과 미스트로 무중단 흐름 유지
+       p {'style': 'font-size:13.5px; color:var(--halo-gray-dark); line-height:1.6; margin:0 0 16px;'} 폭염 속 페이스를 단 0초도 늦추지 않고, 한 손으로 카라비너 스틱을 분리하여 손 오염 없이 얼굴에 덧바르고 360도 미스트로 전신 체온을 급속 냉각합니다.
+       div {'style': 'display:flex; flex-direction:column; gap:8px;'} 
+        div {'style': 'border:var(--border-thick); padding:10px 14px; background:#F0F9FF; display:flex; justify-content:space-between; align-items:center;'} 
+         div {'style': 'display:flex; align-items:center; gap:10px;'} 
+          div {'style': 'width:36px; height:36px; border:var(--border-thick); background:#000000; color:#38BDF8; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:12px;'} #01
+          div {} 
+           strong {'style': 'font-size:12.5px; color:#000;'} #01 카라비너 퀵 쿨링 선 스틱
+           div {'style': 'font-size:10.5px; color:var(--halo-gray-mid);'} SPF50+ PA++++ · 22g · ₩38,000
+         button {'class': 'btn-sku-action primary', 'onclick': 'openProductModal(1)', 'style': 'padding:5px 10px; font-size:10.5px;'} 스펙 퀵뷰
+        div {'style': 'border:var(--border-thick); padding:10px 14px; background:#F0F9FF; display:flex; justify-content:space-between; align-items:center;'} 
+         div {'style': 'display:flex; align-items:center; gap:10px;'} 
+          div {'style': 'width:36px; height:36px; border:var(--border-thick); background:#000000; color:#38BDF8; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:12px;'} #02
+          div {} 
+           strong {'style': 'font-size:12.5px; color:#000;'} #02 에어로 쿨링 질소 미스트
+           div {'style': 'font-size:10.5px; color:var(--halo-gray-mid);'} SPF50+ PA++++ · 120ml · ₩39,000
+         button {'class': 'btn-sku-action primary', 'onclick': 'openProductModal(2)', 'style': 'padding:5px 10px; font-size:10.5px;'} 스펙 퀵뷰
+      div {'style': 'margin-top:16px; padding-top:12px; border-top:1px solid #BAE6FD; display:flex; justify-content:space-between; align-items:center;'} 
+       span {'style': 'font-size:11.5px; color:#0284C7; font-weight:800;'} 중(In) 단계 맞춤 기어 6종 보유
+       button {'onclick': "filterCatalogByPhase('in')", 'style': 'border:none; background:transparent; font-size:12px; font-weight:900; color:#000000; cursor:pointer; text-decoration:underline;'} 내 운동 단계로 기어 찾기 (중/In) ➔
+     div {'style': 'padding:36px; background:#F0F9FF; display:flex; flex-direction:column; justify-content:space-between;'} 
+      div {} 
+       div {'style': 'display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;'} 
+        span {'class': 'wireframe-badge', 'style': 'background:#0284C7; color:#FFFFFF; border:none; font-size:10.5px;'} PHASE 02 · IN-WORKOUT
+        span {'style': 'font-size:11px; font-weight:900; color:#0284C7;'} NON-STOP KINETIC RETOUCH
+       div {'style': 'height:160px; border:var(--border-dash); background:#000000; color:#FFFFFF; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:16px; margin-bottom:14px;'} 
+        span {'style': 'font-size:10px; font-weight:900; color:#38BDF8; margin-bottom:4px;'} [1-ATHLETE JOURNEY SCENE 2]
+        strong {'style': 'font-size:14.5px; color:#FFFFFF;'} [45℃ 지열 속 3초 롤링 덧바름 & 전신 미스트 분사]
+        span {'style': 'font-size:11px; color:#94A3B8; margin-top:6px;'} 페이스 지연 0.0초 · 피부 표면 체온 즉각 -4.2℃ 강하
+      div {'style': 'padding:10px 14px; border:1px solid #BAE6FD; background:#FFFFFF; font-size:12px; color:#0369A1; font-weight:700;'} 
+       strong {} 대표 행동:
+    div {'class': 'routine-phase-screen', 'style': 'display:grid; grid-template-columns: 1.1fr 1fr; background:#FFFFFF;'} 
+     div {'style': 'padding:36px; border-right:var(--border-thick); background:#F1F5F9; display:flex; flex-direction:column; justify-content:space-between;'} 
+      div {} 
+       div {'style': 'display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;'} 
+        span {'class': 'wireframe-badge', 'style': 'background:#475569; color:#FFFFFF; border:none; font-size:10.5px;'} PHASE 03 · POST-WORKOUT
+        span {'style': 'font-size:11px; font-weight:900; color:#475569;'} DEEP COOLING & RECOVERY
+       div {'style': 'height:160px; border:var(--border-dash); background:#FFFFFF; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:16px; margin-bottom:14px;'} 
+        span {'style': 'font-size:10px; font-weight:900; color:#475569; margin-bottom:4px;'} [1-ATHLETE JOURNEY SCENE 3]
+        strong {'style': 'font-size:14.5px; color:#000000;'} [훈련 직후 5분: 염분 세정 & -5℃ 하이드로겔 패치]
+        span {'style': 'font-size:11px; color:var(--halo-gray-dark); margin-top:6px;'} 달아오른 피부 홍조 열감 배출 & 피부 장벽 급속 리셋
+      div {'style': 'padding:10px 14px; border:1px solid #CBD5E1; background:#FFFFFF; font-size:12px; color:#334155; font-weight:700;'} 
+       strong {} 대표 행동:
+     div {'style': 'padding:36px; display:flex; flex-direction:column; justify-content:space-between; background:#FFFFFF;'} 
+      div {} 
+       div {'style': 'font-size:11px; font-weight:900; letter-spacing:0.1em; color:#475569; margin-bottom:6px;'} 03. SKIN RESET & RECOVERY
+       h3 {'style': 'font-size:22px; font-weight:900; margin-bottom:10px; letter-spacing:-0.02em;'} 세정·쿨링·회복으로 마무리
+       p {'style': 'font-size:13.5px; color:var(--halo-gray-dark); line-height:1.6; margin:0 0 16px;'} 운동 직후 피부에 엉겨 붙은 땀의 염분 결정을 부드럽게 세정하고, 달아오른 양 볼 열감을 즉각 -5℃ 지속 방출하여 다음 세션을 위한 피부 컨디션을 복원합니다.
+       div {'style': 'border:var(--border-thick); padding:12px 16px; background:#F1F5F9; display:flex; justify-content:space-between; align-items:center;'} 
+        div {'style': 'display:flex; align-items:center; gap:12px;'} 
+         div {'style': 'width:40px; height:40px; border:var(--border-thick); background:#475569; color:#FFF; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:13px;'} #07
+         div {} 
+          strong {'style': 'font-size:13px; color:#000;'} #07 트레일 리커버리 쿨링 패치
+          div {'style': 'font-size:11px; color:var(--halo-gray-mid);'} -5℃ 하이드로겔 · 5회분 · ₩28,000
+        button {'class': 'btn-sku-action primary', 'onclick': 'openProductModal(7)', 'style': 'padding:6px 12px; font-size:11px;'} 스펙 퀵뷰
+      div {'style': 'margin-top:16px; padding-top:12px; border-top:1px solid #E2E8F0; display:flex; justify-content:space-between; align-items:center;'} 
+       span {'style': 'font-size:11.5px; color:#475569; font-weight:800;'} 후(Post) 단계 맞춤 기어 6종 보유
+       button {'onclick': "filterCatalogByPhase('post')", 'style': 'border:none; background:transparent; font-size:12px; font-weight:900; color:#000000; cursor:pointer; text-decoration:underline;'} 내 운동 단계로 기어 찾기 (후/Post) ➔
+   div {'style': 'border:var(--border-thick); background:#000000; color:#FFFFFF; padding:24px 32px; display:flex; justify-content:space-between; align-items:center; margin-top:32px; flex-wrap:wrap; gap:16px;'} 
+    div {} 
+     div {'style': 'font-size:12px; font-weight:900; letter-spacing:0.1em; color:#38BDF8; margin-bottom:4px;'} 16-SKU MODULAR SYSTEM
+     div {'style': 'font-size:18px; font-weight:900;'} 당신의 운동 단계에 맞는 16종 스포츠 뷰티 기어를 직접 탐색하세요
+    div {'style': 'display:flex; gap:10px; flex-wrap:wrap;'} 
+     button {'onclick': "filterCatalogByPhase('all')", 'class': 'btn-hero-secondary', 'style': 'padding:10px 18px; font-size:12px; font-weight:900; background:#1A1A1A; color:#FFF; border:1px solid #555; cursor:pointer;'} 전체 16종 보기
+     button {'onclick': "filterCatalogByPhase('in')", 'class': 'btn-hero-primary', 'style': 'padding:10px 22px; font-size:12px; font-weight:900; background:#FFFFFF; color:#000000; border:none; cursor:pointer;'} 내 운동 단계(In-Workout)로 기어 찾기 ➔
+ section {'class': 'section-spacing', 'id': 'collections', 'style': 'background:#FFFFFF; border-bottom:var(--border-thick); padding:88px 0;'} 
+  div {'class': 'container'} 
+   div {'class': 'section-header', 'style': 'margin-bottom:36px; border-bottom:var(--border-thick); padding-bottom:18px;'} 
+    div {'class': 'sub-title', 'style': 'font-size:12px; font-weight:900; letter-spacing:0.12em; color:var(--halo-gray-mid); margin-bottom:6px;'} 05. 5 SPORTS SPECIFIC COLLECTIONS & GEAR SPOTLIGHT
+    h2 {'class': 'main-title', 'style': 'font-size:32px; font-weight:900; letter-spacing:-0.03em; margin:0 0 8px;'} 5대 스포츠 종목별 풀 비주얼 & 대표 기어
+    p {'class': 'desc', 'style': 'font-size:14.5px; color:var(--halo-gray-dark); margin:0;'} 러닝, 하이킹, 수상, 테니스, 피트니스까지 종목별 극한 환경 기준과 1대 대표 플래그십 기어 및 파생 관계도를 확인하세요.
+   div {'class': 'collection-tabs-bar', 'style': 'display:flex; gap:8px; margin-bottom:28px; overflow-x:auto; padding-bottom:8px; border-bottom:var(--border-thick); flex-wrap:wrap;'} 
+    button {'class': 'col-tab-btn active', 'onclick': "switchCollectionTab('all', this)", 'id': 'tabColAll', 'style': 'padding:10px 18px; font-size:12px; font-weight:900; border:var(--border-thick); background:#000; color:#FFF; cursor:pointer;'} 전체 컬렉션 (16 SKUs)
+    button {'class': 'col-tab-btn', 'onclick': "switchCollectionTab('running', this)", 'id': 'tabColRunning', 'style': 'padding:10px 18px; font-size:12px; font-weight:900; border:var(--border-thick); background:var(--halo-gray-bg); cursor:pointer;'} ① 시티 러닝 & 마라톤 (4)
+    button {'class': 'col-tab-btn', 'onclick': "switchCollectionTab('hiking', this)", 'id': 'tabColHiking', 'style': 'padding:10px 18px; font-size:12px; font-weight:900; border:var(--border-thick); background:var(--halo-gray-bg); cursor:pointer;'} ② 트레일 하이킹 & 클라이밍 (3)
+    button {'class': 'col-tab-btn', 'onclick': "switchCollectionTab('surfing', this)", 'id': 'tabColSurfing', 'style': 'padding:10px 18px; font-size:12px; font-weight:900; border:var(--border-thick); background:var(--halo-gray-bg); cursor:pointer;'} ③ 서핑 & 수상 액티브 (3)
+    button {'class': 'col-tab-btn', 'onclick': "switchCollectionTab('tennis', this)", 'id': 'tabColTennis', 'style': 'padding:10px 18px; font-size:12px; font-weight:900; border:var(--border-thick); background:var(--halo-gray-bg); cursor:pointer;'} ④ 테니스 & 골프 라운딩 (3)
+    button {'class': 'col-tab-btn', 'onclick': "switchCollectionTab('fitness', this)", 'id': 'tabColFitness', 'style': 'padding:10px 18px; font-size:12px; font-weight:900; border:var(--border-thick); background:var(--halo-gray-bg); cursor:pointer;'} ⑤ 피트니스 & 크로스핏 (3)
+   div {'class': 'collection-showcase-grid', 'style': 'display:grid; grid-template-columns: 1.15fr 1fr; gap:32px; align-items:stretch;'} 
+    div {'class': 'collection-visual-hero', 'style': 'border:var(--border-thick); background:#FFFFFF; padding:28px; display:flex; flex-direction:column; justify-content:space-between;'} 
+     div {} 
+      div {'class': 'scene-header-block', 'style': 'display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:16px; flex-wrap:wrap; gap:10px;'} 
+       div {} 
+        span {'class': 'wireframe-badge dark', 'style': 'margin-bottom:6px;', 'id': 'colCategoryBadge'} COLLECTION 01 | CITY RUNNING
+        div {'class': 'scene-title', 'id': 'sceneTitle', 'style': 'font-size:26px; font-weight:900; letter-spacing:-0.02em; line-height:1.35;'} 폭염 아스팔트 열기 속, 페이스를 잃지 않고 3초 만에 덧바르는 순간
+        div {'class': 'scene-desc', 'id': 'sceneDesc', 'style': 'font-size:14px; color:var(--halo-gray-dark); margin-top:8px; line-height:1.6;'} 도심 러닝과 마라톤에서는 멈추지 않는 지속력이 생명입니다. 흘러내리는 땀 속에서도 눈시림 없이 3초 만에 덧바르는 알루미늄 카라비너 휴대성과 -4.2℃ 노터치 쿨링을 제공합니다.
+       a {'href': '#shop-all', 'class': 'scene-jump-btn', 'id': 'sceneJumpBtn', 'onclick': "syncFilterWithCollection('running')", 'style': 'padding:8px 16px; border:var(--border-thick); background:#000; color:#FFF; font-size:12px; font-weight:900; text-decoration:none;'} 
+        span {'id': 'sceneJumpBtnText'} 러닝 기어 (4종) 카탈로그 보기 ➔
+      div {'style': 'border:2px solid #000000; background:#000000; color:#FFFFFF; padding:12px 18px; margin-bottom:16px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;'} 
+       span {'style': 'font-size:11px; font-weight:900; letter-spacing:0.1em; color:#38BDF8;'} FIELD SCENE CRITERIA:
+       strong {'style': 'font-size:13.5px; color:#FFFFFF;', 'id': 'prominentSceneCriteriaText'} 아스팔트 열기(-4.2℃ 쿨다운) & 페이스 유지 카라비너 휴대
+      div {'class': 'scene-canvas-box', 'id': 'sceneCanvasBox', 'style': 'height:210px; border:var(--border-dash); background:var(--halo-gray-bg); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:20px; margin-bottom:20px; position:relative;'} 
+       span {'class': 'scene-canvas-tag', 'id': 'sceneCanvasTag', 'style': 'font-size:10px; font-weight:900; color:var(--halo-gray-mid); margin-bottom:6px;'} [100% FIELD SCENE BENCHMARK]
+       div {'class': 'scene-canvas-title', 'id': 'sceneCanvasTitle', 'style': 'font-size:16px; font-weight:900; color:#000000;'} [아스팔트 45℃ 지열 파동 & 카라비너 원핸드 3초 체결 모션 씬]
+       div {'class': 'scene-canvas-desc', 'id': 'sceneCanvasDesc', 'style': 'font-size:12px; color:var(--halo-gray-dark); margin-top:6px; max-width:440px; line-height:1.5;'} 지면 반사열 흡수 텍스처 · 땀과 마찰에도 미끄러지지 않는 무광 아노다이징 금속 질감
+     div {'class': 'scene-specs-grid', 'style': 'display:grid; grid-template-columns: repeat(3, 1fr); gap:12px;'} 
+      div {'class': 'scene-spec-box', 'style': 'border:var(--border-thin); padding:12px; background:var(--halo-gray-bg);'} 
+       div {'class': 'box-lbl', 'style': 'font-size:10px; font-weight:900; color:var(--halo-gray-mid); margin-bottom:4px;'} 대표 기술 (CORE TECH)
+       div {'class': 'box-title', 'id': 'sceneCoreTechTitle', 'style': 'font-size:12px; font-weight:900; color:#000;'} 원터치 카라비너 & -4.2℃ 쿨다운
+       div {'class': 'box-desc', 'id': 'sceneCoreTechDesc', 'style': 'font-size:11px; color:var(--halo-gray-dark); margin-top:4px; line-height:1.4;'} #01 카라비너 퀵 스틱 중심의 3초 노터치 고정 메커니즘
+      div {'class': 'scene-spec-box', 'style': 'border:var(--border-thin); padding:12px; background:var(--halo-gray-bg);'} 
+       div {'class': 'box-lbl', 'style': 'font-size:10px; font-weight:900; color:var(--halo-gray-mid); margin-bottom:4px;'} 파생 기준 (EXTENSION LOGIC)
+       div {'class': 'box-title', 'id': 'sceneExtLogicTitle', 'style': 'font-size:12px; font-weight:900; color:#000;'} 페이스 유지형 전신 분사 · 5회분 소분
+       div {'class': 'box-desc', 'id': 'sceneExtLogicDesc', 'style': 'font-size:11px; color:var(--halo-gray-dark); margin-top:4px; line-height:1.4;'} 360° 질소 미스트(#02), 풀코스 팩(#03), 세범 파우더(#04)로 기능 확장
+      div {'class': 'scene-spec-box', 'style': 'border:var(--border-thin); padding:12px; background:var(--halo-gray-bg);'} 
+       div {'class': 'box-lbl', 'style': 'font-size:10px; font-weight:900; color:var(--halo-gray-mid); margin-bottom:4px;'} 장면 기준 (SCENE CRITERIA)
+       div {'class': 'box-title', 'id': 'sceneRecScenarioTitle', 'style': 'font-size:12px; font-weight:900; color:#000;'} 아스팔트 열기 & 카라비너 휴대
+       div {'class': 'box-desc', 'id': 'sceneRecScenarioDesc', 'style': 'font-size:11px; color:var(--halo-gray-dark); margin-top:4px; line-height:1.4;'} 도심 아스팔트 주행 / 혹서기 장거리 트레이닝 / 42.195km 공식 대회
+    div {'class': 'col-flagship-card', 'id': 'colFlagshipCard', 'style': 'border:var(--border-thick); background:var(--halo-gray-bg); padding:28px; display:flex; flex-direction:column; justify-content:space-between;'} 
+     div {} 
+      div {'class': 'col-flagship-header', 'style': 'display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;'} 
+       span {'class': 'wireframe-badge dark', 'style': 'font-size:10px;'} REPRESENTATIVE CORE GEAR
+       span {'style': 'font-size:12px; font-weight:900;', 'id': 'colFlagshipSkuNum'} SKU #01
+      div {'class': 'col-flagship-img-box', 'style': 'height:200px; border:var(--border-dash); background:#FFFFFF; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:16px; margin-bottom:16px;'} 
+       div {'style': 'font-size:16px; font-weight:900; color:#000;', 'id': 'colFlagshipDiagramTitle'} [#01 카라비너 퀵 쿨링 선 스틱 3D 정면 렌더]
+       div {'style': 'font-size:11.5px; color:var(--halo-gray-dark); margin-top:6px;', 'id': 'colFlagshipDiagramSub'} AL6061 아노다이징 합금 바디 & 세범 제로 360° 롤러 볼
+      h3 {'class': 'col-flagship-name', 'id': 'colFlagshipName', 'style': 'font-size:22px; font-weight:900; margin-bottom:8px; letter-spacing:-0.02em;'} 카라비너 퀵 스틱 SPF50+ PA++++
+      p {'class': 'col-flagship-feature', 'id': 'colFlagshipFeature', 'style': 'font-size:13px; color:var(--halo-gray-dark); line-height:1.5; margin:0 0 14px;'} 러닝 중 멈추지 않고 한 손으로 3초 만에 덧바르는 알루미늄 카라비너 일체형 쿨링 스틱
+      div {'class': 'col-flagship-specs-row', 'id': 'colFlagshipSpecs', 'style': 'display:flex; gap:6px; flex-wrap:wrap; margin-bottom:16px;'} 
+       span {'class': 'wireframe-badge dark', 'style': 'font-size:10.5px;'} SPF50+ PA++++
+       span {'class': 'wireframe-badge', 'style': 'font-size:10.5px;'} 용량 22g
+       span {'class': 'wireframe-badge', 'style': 'font-size:10.5px;'} 체온 -4.2℃
+       span {'class': 'wireframe-badge', 'style': 'font-size:10.5px;'} 무유분 매트
+      div {'style': 'border:var(--border-thin); background:#FFFFFF; padding:12px; margin-bottom:16px;', 'id': 'colDependencyFlowBox'} 
+       div {'style': 'font-size:10.5px; font-weight:900; color:var(--halo-gray-mid); margin-bottom:6px;'} 기어 파생 관계도 (DEPENDENCY FLOW)
+       div {'style': 'font-size:11.5px; font-weight:800; color:#000000;', 'id': 'colDependencyFlowText'} [대표 기어 #01] ➔ [전신 분사 확장 #02] ➔ [풀코스 소분 팩 #03]
+     div {} 
+      div {'class': 'col-flagship-price-row', 'style': 'display:flex; justify-content:space-between; align-items:baseline; margin-bottom:12px;'} 
+       span {'style': 'font-size:26px; font-weight:900;', 'id': 'colFlagshipPrice'} ₩38,000
+       span {'style': 'font-size:12px; color:var(--halo-gray-mid);', 'id': 'colFlagshipVol'} 22g
+      div {'class': 'col-flagship-actions', 'style': 'display:flex; gap:10px;'} 
+       button {'class': 'btn-sku-action', 'id': 'btnColFlagshipQuickView', 'onclick': 'openProductModal(1)', 'style': 'flex:1.2; padding:12px; font-size:12px; font-weight:900;'} 기어 상세 퀵뷰
+       button {'class': 'btn-sku-action primary', 'id': 'btnColFlagshipLaunchAlert', 'onclick': "openLaunchModal('카라비너 퀵 스틱')", 'style': 'flex:1; padding:12px; font-size:12px; font-weight:900;'} 15% 출시 알림
+   div {'class': 'section-connector-banner', 'style': 'margin-top: 32px;'} 
+    div {'class': 'connector-text'} 
+     span {} ⚙️ NEXT SECTION
+     span {} 5대 스포츠 16종 전체 기어를 다차원 필터로 탐색하고 스펙을 횡단 비교해 보세요
+    a {'href': '#shop-all', 'class': 'connector-link'} 16종 전체 기어 카탈로그 & 비교하기 ↓
+ section {'class': 'section-spacing shop-all-section', 'id': 'shop-all'} 
+  div {'class': 'container'} 
+   div {'class': 'catalog-transition-banner'} 
+    div {} 
+     span {'class': 'catalog-tag-badge'} [END OF BRAND NARRATIVE · SYSTEM ARCHITECTURE CATALOG]
+     h2 {'class': 'catalog-title'} HALO 16종 전체 기어 시스템 카탈로그
+     p {'style': 'font-size: 13px; color: var(--halo-gray-dark); margin-top: 4px;'} 위의 브랜드 철학과 5대 컬렉션 설계를 바탕으로 완성된 16종 전체 하드웨어를 규칙적인 카탈로그 그리드로 탐색하고 횡단 비교하세요.
+    div {'style': 'font-size: 12px; font-weight: 900; color: var(--halo-black);'} TOTAL 16 HARDWARE SKUS
+   div {'class': 'active-filter-summary-bar', 'id': 'activeFilterSummaryBar'} 
+    div {'class': 'summary-left'} 
+     span {'style': 'font-size:12px; font-weight:900; color:var(--halo-black);'} 현재 선택 조건:
+     div {'class': 'active-chips-container', 'id': 'activeChipsContainer'} 
+    div {'class': 'summary-actions'} 
+     button {'class': 'btn-reset-filters', 'onclick': 'resetDetailFilters()', 'title': '운동 시점/제형/기능만 초기화하고 컬렉션은 유지합니다'} 상세 필터 초기화
+     button {'class': 'btn-reset-filters dark', 'onclick': 'resetAllIncludingCollection()', 'title': '컬렉션을 포함한 모든 필터를 16종 전체 상태로 초기화합니다'} 컬렉션 포함 전체 초기화
+   div {'id': 'a11yFilterAnnounce', 'class': 'sr-only', 'aria-lie': 'polite'} 
+   div {'class': 'filter-panel-box'} 
+    div {'class': 'filter-rules-notice'} 
+     span {} 
+      strong {} 필터 선택 규칙:
+      strong {} 운동 단계(Pre/In/Post)
+      strong {} 제형
+      strong {} 기능
+      code {} In 단계 + 스틱 + 미스트
+    div {'class': 'filter-group-row'} 
+     div {'class': 'filter-label'} 운동 시점
+     div {'class': 'filter-chips-scroll-wrapper'} 
+      div {'class': 'filter-chips-wrap'} 
+       button {'class': 'filter-chip active', 'onclick': "toggleFilter('phase', 'all', this)"} 시점 전체
+       button {'class': 'filter-chip', 'onclick': "toggleFilter('phase', 'Pre', this)"} Pre (운동 전)
+       button {'class': 'filter-chip', 'onclick': "toggleFilter('phase', 'In', this)"} In (운동 중)
+       button {'class': 'filter-chip', 'onclick': "toggleFilter('phase', 'Post', this)"} Post (운동 후)
+    div {'class': 'filter-group-row'} 
+     div {'class': 'filter-label'} 제형 타입
+     div {'class': 'filter-chips-scroll-wrapper'} 
+      div {'class': 'filter-chips-wrap'} 
+       button {'class': 'filter-chip active', 'onclick': "toggleFilter('type', 'all', this)"} 제형 전체
+       button {'class': 'filter-chip', 'onclick': "toggleFilter('type', '스틱', this)"} 스틱 (Stick)
+       button {'class': 'filter-chip', 'onclick': "toggleFilter('type', '미스트', this)"} 미스트 (Mist)
+       button {'class': 'filter-chip', 'onclick': "toggleFilter('type', '젤', this)"} 젤 / 세럼 (Gel/Serum)
+       button {'class': 'filter-chip', 'onclick': "toggleFilter('type', '밤', this)"} 밤 / 쿠션 (Balm/Cushion)
+       button {'class': 'filter-chip', 'onclick': "toggleFilter('type', '패치', this)"} 패치 / 키트 (Patch/Kit)
+    div {'class': 'filter-group-row'} 
+     div {'class': 'filter-label'} 핵심 기능
+     div {'class': 'filter-chips-scroll-wrapper'} 
+      div {'class': 'filter-chips-wrap'} 
+       button {'class': 'filter-chip active', 'onclick': "toggleFilter('func', 'all', this)"} 기능 전체
+       button {'class': 'filter-chip', 'onclick': "toggleFilter('func', '쿨링', this)"} -4.2℃ 쿨링
+       button {'class': 'filter-chip', 'onclick': "toggleFilter('func', '방수', this)"} 80분 내수성
+       button {'class': 'filter-chip', 'onclick': "toggleFilter('func', '세범', this)"} 피지 / 논슬립
+       button {'class': 'filter-chip', 'onclick': "toggleFilter('func', '휴대', this)"} 카라비너 휴대
+   div {'class': 'filter-meta-bar'} 
+    div {} 
+     span {} 
+      strong {'id': 'filterResultCount'} 16
+     span {'style': 'color: var(--halo-gray-mid); margin-left: 8px;'} (최대 3개 선택하여 횡단 스펙 비교 가능)
+    button {'class': 'btn-reset-filters', 'onclick': 'resetDetailFilters()'} 상세 필터 초기화
+   div {'class': 'mobile-view-ctrl-bar'} 
+    span {'class': 'mobile-swipe-hint'} 모바일 목록 보기 방식:
+    div {'style': 'display: flex; gap: 4px;'} 
+     button {'class': 'btn-view-toggle active', 'id': 'btnModeCarousel', 'onclick': "setShopViewMode('carousel', this)"} 스와이프 카드
+     button {'class': 'btn-view-toggle', 'id': 'btnModeStack', 'onclick': "setShopViewMode('stack', this)"} 전체 세로 펼침
+   div {'class': 'shop-all-grid carousel-mode', 'id': 'skuGridContainer'} 
+    div {'class': 'sku-card', 'data-sku': '1', 'data-col': 'running', 'data-phase': 'In', 'data-type': '스틱', 'data-func': '쿨링 휴대'} 
+     div {} 
+      div {'class': 'sku-card-header'} 
+       div {'class': 'sku-badges-row'} 
+        span {'class': 'wireframe-badge dark'} COLLECTION 01 대표
+        span {'class': 'wireframe-badge'} IN-WORKOUT
+       span {'style': 'font-size: 11px; font-weight: 800; color: var(--halo-gray-mid);'} #01
+      div {'class': 'sku-img-box'} 
+       div {'class': 'silhouette-icon-box'} 
+       div {'class': 'silhouette-label'} [#01 기어 45° 렌더]
+      div {'class': 'sku-role-box'} 
+       div {'class': 'sku-role-badge-row'} 
+        span {'class': 'sku-role-badge core'} 대표 플래그십 (Core Flagship)
+       div {'class': 'sku-role-content-wrap collapsed', 'id': 'roleDescWrap_1'} 
+        div {'class': 'sku-relation-text'} 
+         strong {} 파생 기준:
+        div {'class': 'sku-scenario-text'} 
+         strong {} 추천 상황:
+       button {'type': 'button', 'class': 'btn-toggle-role-desc', 'onclick': 'toggleRoleDesc(1, this)'} 상세 펼쳐보기 ▼
+      div {'class': 'sku-card-title'} 카라비너 퀵 스틱 SPF50+ PA++++
+      div {'class': 'sku-card-feature'} 러닝 중 멈추지 않고 한 손으로 3초 만에 덧바르는 카라비너 결합 스틱
+      div {'class': 'sku-meta-tags'} 
+       span {'class': 'sku-tag'} 적용: 얼굴/목
+       span {'class': 'sku-tag'} 제형: 세범매트스틱
+       span {'class': 'sku-tag'} 지속: 땀 흘림 98.4%
+       span {'class': 'sku-tag'} 기능: -4.2℃ 쿨링
+     div {} 
+      div {'class': 'sku-price-row'} 
+       span {} ₩38,000
+       span {'style': 'font-size: 12px; color: var(--halo-gray-mid);'} 22g
+      label {'class': 'compare-check-label'} 
+       input {'type': 'checkbox', 'onchange': 'toggleCompareItem(1, this)'} 
+      div {'class': 'sku-card-actions'} 
+       button {'class': 'btn-sku-action', 'onclick': 'openProductModal(1)'} 상세 퀵뷰
+       button {'class': 'btn-sku-action primary', 'onclick': "openLaunchModal('카라비너 퀵 스틱 SPF50+ PA++++')"} 출시 알림
+    div {'class': 'sku-card', 'data-sku': '2', 'data-col': 'running', 'data-phase': 'In Post', 'data-type': '미스트', 'data-func': '쿨링 휴대'} 
+     div {} 
+      div {'class': 'sku-card-header'} 
+       div {'class': 'sku-badges-row'} 
+        span {'class': 'wireframe-badge'} ALL-ROUND
+       span {'style': 'font-size: 11px; font-weight: 800; color: var(--halo-gray-mid);'} #02
+      div {'class': 'sku-img-box'} 
+       div {'class': 'silhouette-icon-box'} 
+       div {'class': 'silhouette-label'} [#02 기어 45° 렌더]
+      div {'class': 'sku-role-box'} 
+       div {'class': 'sku-role-badge-row'} 
+        span {'class': 'sku-role-badge extended'} 파생 기어 (Extended Gear)
+       div {'class': 'sku-role-content-wrap collapsed', 'id': 'roleDescWrap_2'} 
+        div {'class': 'sku-relation-text'} 
+         strong {} 파생 기준:
+        div {'class': 'sku-scenario-text'} 
+         strong {} 추천 상황:
+       button {'type': 'button', 'class': 'btn-toggle-role-desc', 'onclick': 'toggleRoleDesc(2, this)'} 상세 펼쳐보기 ▼
+      div {'class': 'sku-card-title'} 에어로 쿨링 질소 미스트
+      div {'class': 'sku-card-feature'} 질소 밸브 360도 전방위 분사 및 피부 -3.9℃ 급속 냉각
+      div {'class': 'sku-meta-tags'} 
+       span {'class': 'sku-tag'} 적용: 전신
+       span {'class': 'sku-tag'} 제형: 미세미스트
+       span {'class': 'sku-tag'} 용량: 120ml
+       span {'class': 'sku-tag'} 기능: -3.9℃ 급랭
+     div {} 
+      div {'class': 'sku-price-row'} 
+       span {} ₩39,000
+       span {'style': 'font-size: 12px; color: var(--halo-gray-mid);'} 120ml
+      label {'class': 'compare-check-label'} 
+       input {'type': 'checkbox', 'onchange': 'toggleCompareItem(2, this)'} 
+      div {'class': 'sku-card-actions'} 
+       button {'class': 'btn-sku-action', 'onclick': 'openProductModal(2)'} 상세 퀵뷰
+       button {'class': 'btn-sku-action primary', 'onclick': "openLaunchModal('에어로 쿨링 질소 미스트')"} 출시 알림
+    div {'class': 'sku-card', 'data-sku': '3', 'data-col': 'running', 'data-phase': 'Pre In Post', 'data-type': '패치', 'data-func': '휴대 쿨링'} 
+     div {} 
+      div {'class': 'sku-card-header'} 
+       div {'class': 'sku-badges-row'} 
+        span {'class': 'wireframe-badge dark'} ALL-IN-ONE
+        span {'class': 'wireframe-badge'} RACE-READY
+       span {'style': 'font-size: 11px; font-weight: 800; color: var(--halo-gray-mid);'} #03
+      div {'class': 'sku-img-box'} 
+       div {'class': 'silhouette-icon-box'} 
+       div {'class': 'silhouette-label'} [#03 기어 45° 렌더]
+      div {'class': 'sku-role-box'} 
+       div {'class': 'sku-role-badge-row'} 
+        span {'class': 'sku-role-badge support'} 보조 키트 (Support Kit)
+       div {'class': 'sku-role-content-wrap collapsed', 'id': 'roleDescWrap_3'} 
+        div {'class': 'sku-relation-text'} 
+         strong {} 파생 기준:
+        div {'class': 'sku-scenario-text'} 
+         strong {} 추천 상황:
+       button {'type': 'button', 'class': 'btn-toggle-role-desc', 'onclick': 'toggleRoleDesc(3, this)'} 상세 펼쳐보기 ▼
+      div {'class': 'sku-card-title'} 풀코스 마라톤 스타터 팩
+      div {'class': 'sku-card-feature'} 퀵스틱+질소미스트+카라비너+방수 파우치 3종 세트
+      div {'class': 'sku-meta-tags'} 
+       span {'class': 'sku-tag'} 적용: 올인원
+       span {'class': 'sku-tag'} 제형: 3종 키트
+       span {'class': 'sku-tag'} 지속: 풀코스 완주
+     div {} 
+      div {'class': 'sku-price-row'} 
+       span {} ₩69,000
+       span {'style': 'font-size: 12px; color: var(--halo-gray-mid);'} 3종 세트
+      label {'class': 'compare-check-label'} 
+       input {'type': 'checkbox', 'onchange': 'toggleCompareItem(3, this)'} 
+      div {'class': 'sku-card-actions'} 
+       button {'class': 'btn-sku-action', 'onclick': 'openProductModal(3)'} 상세 퀵뷰
+       button {'class': 'btn-sku-action primary', 'onclick': "openLaunchModal('풀코스 마라톤 스타터 팩')"} 출시 알림
+    div {'class': 'sku-card', 'data-sku': '4', 'data-col': 'running', 'data-phase': 'In', 'data-type': '젤', 'data-func': '쿨링'} 
+     div {} 
+      div {'class': 'sku-card-header'} 
+       div {'class': 'sku-badges-row'} 
+        span {'class': 'wireframe-badge'} LONG-DISTANCE
+       span {'style': 'font-size: 11px; font-weight: 800; color: var(--halo-gray-mid);'} #04
+      div {'class': 'sku-img-box'} 
+       div {'class': 'silhouette-icon-box'} 
+       div {'class': 'silhouette-label'} [#04 기어 45° 렌더]
+      div {'class': 'sku-role-box'} 
+       div {'class': 'sku-role-badge-row'} 
+        span {'class': 'sku-role-badge extended'} 파생 기어 (Extended Gear)
+       div {'class': 'sku-role-content-wrap collapsed', 'id': 'roleDescWrap_4'} 
+        div {'class': 'sku-relation-text'} 
+         strong {} 파생 기준:
+        div {'class': 'sku-scenario-text'} 
+         strong {} 추천 상황:
+       button {'type': 'button', 'class': 'btn-toggle-role-desc', 'onclick': 'toggleRoleDesc(4, this)'} 상세 펼쳐보기 ▼
+      div {'class': 'sku-card-title'} 42.195km 엔듀런스 선 젤
+      div {'class': 'sku-card-feature'} 5시간 지속 열 방출 롱래스팅 수분 선 젤
+      div {'class': 'sku-meta-tags'} 
+       span {'class': 'sku-tag'} 적용: 팔다리/전신
+       span {'class': 'sku-tag'} 제형: 수분 젤
+       span {'class': 'sku-tag'} 지속: 5시간 방어
+     div {} 
+      div {'class': 'sku-price-row'} 
+       span {} ₩55,000
+       span {'style': 'font-size: 12px; color: var(--halo-gray-mid);'} 90ml
+      label {'class': 'compare-check-label'} 
+       input {'type': 'checkbox', 'onchange': 'toggleCompareItem(4, this)'} 
+      div {'class': 'sku-card-actions'} 
+       button {'class': 'btn-sku-action', 'onclick': 'openProductModal(4)'} 상세 퀵뷰
+       button {'class': 'btn-sku-action primary', 'onclick': "openLaunchModal('42.195km 엔듀런스 선 젤')"} 출시 알림
+    div {'class': 'sku-card', 'data-sku': '5', 'data-col': 'hiking', 'data-phase': 'Pre', 'data-type': '젤', 'data-func': '방수'} 
+     div {} 
+      div {'class': 'sku-card-header'} 
+       div {'class': 'sku-badges-row'} 
+        span {'class': 'wireframe-badge dark'} COLLECTION 02 대표
+        span {'class': 'wireframe-badge'} PRE-HIKE
+       span {'style': 'font-size: 11px; font-weight: 800; color: var(--halo-gray-mid);'} #05
+      div {'class': 'sku-img-box'} 
+       div {'class': 'silhouette-icon-box'} 
+       div {'class': 'silhouette-label'} [#05 기어 45° 렌더]
+      div {'class': 'sku-role-box'} 
+       div {'class': 'sku-role-badge-row'} 
+        span {'class': 'sku-role-badge core'} 대표 플래그십 (Core Flagship)
+       div {'class': 'sku-role-content-wrap collapsed', 'id': 'roleDescWrap_5'} 
+        div {'class': 'sku-relation-text'} 
+         strong {} 파생 기준:
+        div {'class': 'sku-scenario-text'} 
+         strong {} 추천 상황:
+       button {'type': 'button', 'class': 'btn-toggle-role-desc', 'onclick': 'toggleRoleDesc(5, this)'} 상세 펼쳐보기 ▼
+      div {'class': 'sku-card-title'} 워터프루프 UV 디펜스 젤
+      div {'class': 'sku-card-feature'} 고산지대 칼바람+자외선+흙먼지 3중 방어 세라마이드 장벽 세럼
+      div {'class': 'sku-meta-tags'} 
+       span {'class': 'sku-tag'} 적용: 얼굴/목
+       span {'class': 'sku-tag'} 제형: 세라마이드 젤
+       span {'class': 'sku-tag'} 지속: 12시간 보습
+       span {'class': 'sku-tag'} 기능: 미세먼지 92.1% 차단
+     div {} 
+      div {'class': 'sku-price-row'} 
+       span {} ₩52,000
+       span {'style': 'font-size: 12px; color: var(--halo-gray-mid);'} 50ml
+      label {'class': 'compare-check-label'} 
+       input {'type': 'checkbox', 'onchange': 'toggleCompareItem(5, this)'} 
+      div {'class': 'sku-card-actions'} 
+       button {'class': 'btn-sku-action', 'onclick': 'openProductModal(5)'} 상세 퀵뷰
+       button {'class': 'btn-sku-action primary', 'onclick': "openLaunchModal('워터프루프 UV 디펜스 젤')"} 출시 알림
+    div {'class': 'sku-card', 'data-sku': '6', 'data-col': 'hiking', 'data-phase': 'In', 'data-type': '스틱', 'data-func': '세범 휴대'} 
+     div {} 
+      div {'class': 'sku-card-header'} 
+       div {'class': 'sku-badges-row'} 
+        span {'class': 'wireframe-badge'} CHALK-POWDER
+       span {'style': 'font-size: 11px; font-weight: 800; color: var(--halo-gray-mid);'} #06
+      div {'class': 'sku-img-box'} 
+       div {'class': 'silhouette-icon-box'} 
+       div {'class': 'silhouette-label'} [#06 기어 45° 렌더]
+      div {'class': 'sku-role-box'} 
+       div {'class': 'sku-role-badge-row'} 
+        span {'class': 'sku-role-badge extended'} 파생 기어 (Extended Gear)
+       div {'class': 'sku-role-content-wrap collapsed', 'id': 'roleDescWrap_6'} 
+        div {'class': 'sku-relation-text'} 
+         strong {} 파생 기준:
+        div {'class': 'sku-scenario-text'} 
+         strong {} 추천 상황:
+       button {'type': 'button', 'class': 'btn-toggle-role-desc', 'onclick': 'toggleRoleDesc(6, this)'} 상세 펼쳐보기 ▼
+      div {'class': 'sku-card-title'} 프릭션 논슬립 선 파우더
+      div {'class': 'sku-card-feature'} 초크백 장착형 마찰력 유지 피지 흡착 파우더
+      div {'class': 'sku-meta-tags'} 
+       span {'class': 'sku-tag'} 적용: 이마/손등
+       span {'class': 'sku-tag'} 제형: 미네랄 파우더
+       span {'class': 'sku-tag'} 기능: 마찰계수 99.4%
+     div {} 
+      div {'class': 'sku-price-row'} 
+       span {} ₩35,000
+       span {'style': 'font-size: 12px; color: var(--halo-gray-mid);'} 12g
+      label {'class': 'compare-check-label'} 
+       input {'type': 'checkbox', 'onchange': 'toggleCompareItem(6, this)'} 
+      div {'class': 'sku-card-actions'} 
+       button {'class': 'btn-sku-action', 'onclick': 'openProductModal(6)'} 상세 퀵뷰
+       button {'class': 'btn-sku-action primary', 'onclick': "openLaunchModal('프릭션 논슬립 선 파우더')"} 출시 알림
+    div {'class': 'sku-card', 'data-sku': '7', 'data-col': 'hiking', 'data-phase': 'Post', 'data-type': '패치', 'data-func': '쿨링'} 
+     div {} 
+      div {'class': 'sku-card-header'} 
+       div {'class': 'sku-badges-row'} 
+        span {'class': 'wireframe-badge'} RECOVERY
+       span {'style': 'font-size: 11px; font-weight: 800; color: var(--halo-gray-mid);'} #07
+      div {'class': 'sku-img-box'} 
+       div {'class': 'silhouette-icon-box'} 
+       div {'class': 'silhouette-label'} [#07 기어 45° 렌더]
+      div {'class': 'sku-role-box'} 
+       div {'class': 'sku-role-badge-row'} 
+        span {'class': 'sku-role-badge support'} 보조 키트 (Support Kit)
+       div {'class': 'sku-role-content-wrap collapsed', 'id': 'roleDescWrap_7'} 
+        div {'class': 'sku-relation-text'} 
+         strong {} 파생 기준:
+        div {'class': 'sku-scenario-text'} 
+         strong {} 추천 상황:
+       button {'type': 'button', 'class': 'btn-toggle-role-desc', 'onclick': 'toggleRoleDesc(7, this)'} 상세 펼쳐보기 ▼
+      div {'class': 'sku-card-title'} 트레일 리커버리 쿨링 패치
+      div {'class': 'sku-card-feature'} 하산 후 달아오른 양 볼 -5℃ 지속 쿨다운 패치
+      div {'class': 'sku-meta-tags'} 
+       span {'class': 'sku-tag'} 적용: 양 볼/콧등
+       span {'class': 'sku-tag'} 제형: 하이드로겔 패치
+       span {'class': 'sku-tag'} 기능: -5℃ 급속 진정
+     div {} 
+      div {'class': 'sku-price-row'} 
+       span {} ₩28,000
+       span {'style': 'font-size: 12px; color: var(--halo-gray-mid);'} 5회분
+      label {'class': 'compare-check-label'} 
+       input {'type': 'checkbox', 'onchange': 'toggleCompareItem(7, this)'} 
+      div {'class': 'sku-card-actions'} 
+       button {'class': 'btn-sku-action', 'onclick': 'openProductModal(7)'} 상세 퀵뷰
+       button {'class': 'btn-sku-action primary', 'onclick': "openLaunchModal('트레일 리커버리 쿨링 패치')"} 출시 알림
+    div {'class': 'sku-card', 'data-sku': '8', 'data-col': 'surfing', 'data-phase': 'Pre In', 'data-type': '젤', 'data-func': '방수'} 
+     div {} 
+      div {'class': 'sku-card-header'} 
+       div {'class': 'sku-badges-row'} 
+        span {'class': 'wireframe-badge dark'} COLLECTION 03 대표
+        span {'class': 'wireframe-badge'} REEF-SAFE
+       span {'style': 'font-size: 11px; font-weight: 800; color: var(--halo-gray-mid);'} #08
+      div {'class': 'sku-img-box'} 
+       div {'class': 'silhouette-icon-box'} 
+       div {'class': 'silhouette-label'} [#08 기어 45° 렌더]
+      div {'class': 'sku-role-box'} 
+       div {'class': 'sku-role-badge-row'} 
+        span {'class': 'sku-role-badge core'} 대표 플래그십 (Core Flagship)
+       div {'class': 'sku-role-content-wrap collapsed', 'id': 'roleDescWrap_8'} 
+        div {'class': 'sku-relation-text'} 
+         strong {} 파생 기준:
+        div {'class': 'sku-scenario-text'} 
+         strong {} 추천 상황:
+       button {'type': 'button', 'class': 'btn-toggle-role-desc', 'onclick': 'toggleRoleDesc(8, this)'} 상세 펼쳐보기 ▼
+      div {'class': 'sku-card-title'} 오션 세이프 리프 쉴드
+      div {'class': 'sku-card-feature'} 파도 속 80분 지속 방수 및 산호초를 보호하는 100% 무기자차
+      div {'class': 'sku-meta-tags'} 
+       span {'class': 'sku-tag'} 적용: 얼굴/바디
+       span {'class': 'sku-tag'} 제형: 무기자차 젤
+       span {'class': 'sku-tag'} 지속: 80분 내수성
+       span {'class': 'sku-tag'} 기능: 옥시벤존 0%
+     div {} 
+      div {'class': 'sku-price-row'} 
+       span {} ₩46,000
+       span {'style': 'font-size: 12px; color: var(--halo-gray-mid);'} 80ml
+      label {'class': 'compare-check-label'} 
+       input {'type': 'checkbox', 'onchange': 'toggleCompareItem(8, this)'} 
+      div {'class': 'sku-card-actions'} 
+       button {'class': 'btn-sku-action', 'onclick': 'openProductModal(8)'} 상세 퀵뷰
+       button {'class': 'btn-sku-action primary', 'onclick': "openLaunchModal('오션 세이프 리프 쉴드')"} 출시 알림
+    div {'class': 'sku-card', 'data-sku': '9', 'data-col': 'surfing', 'data-phase': 'Post', 'data-type': '미스트', 'data-func': '쿨링'} 
+     div {} 
+      div {'class': 'sku-card-header'} 
+       div {'class': 'sku-badges-row'} 
+        span {'class': 'wireframe-badge'} SALT-RESET
+       span {'style': 'font-size: 11px; font-weight: 800; color: var(--halo-gray-mid);'} #09
+      div {'class': 'sku-img-box'} 
+       div {'class': 'silhouette-icon-box'} 
+       div {'class': 'silhouette-label'} [#09 기어 45° 렌더]
+      div {'class': 'sku-role-box'} 
+       div {'class': 'sku-role-badge-row'} 
+        span {'class': 'sku-role-badge extended'} 파생 기어 (Extended Gear)
+       div {'class': 'sku-role-content-wrap collapsed', 'id': 'roleDescWrap_9'} 
+        div {'class': 'sku-relation-text'} 
+         strong {} 파생 기준:
+        div {'class': 'sku-scenario-text'} 
+         strong {} 추천 상황:
+       button {'type': 'button', 'class': 'btn-toggle-role-desc', 'onclick': 'toggleRoleDesc(9, this)'} 상세 펼쳐보기 ▼
+      div {'class': 'sku-card-title'} 솔트 리셋 애프터 워터 미스트
+      div {'class': 'sku-card-feature'} 해수 건조 후 피부 소금 결정 중화 세정 미스트
+      div {'class': 'sku-meta-tags'} 
+       span {'class': 'sku-tag'} 적용: 얼굴/전신
+       span {'class': 'sku-tag'} 제형: 워터 미스트
+       span {'class': 'sku-tag'} 기능: 염분 98.7% 중화
+     div {} 
+      div {'class': 'sku-price-row'} 
+       span {} ₩36,000
+       span {'style': 'font-size: 12px; color: var(--halo-gray-mid);'} 150ml
+      label {'class': 'compare-check-label'} 
+       input {'type': 'checkbox', 'onchange': 'toggleCompareItem(9, this)'} 
+      div {'class': 'sku-card-actions'} 
+       button {'class': 'btn-sku-action', 'onclick': 'openProductModal(9)'} 상세 퀵뷰
+       button {'class': 'btn-sku-action primary', 'onclick': "openLaunchModal('솔트 리셋 애프터 워터 미스트')"} 출시 알림
+    div {'class': 'sku-card', 'data-sku': '10', 'data-col': 'surfing', 'data-phase': 'In', 'data-type': '밤', 'data-func': '방수'} 
+     div {} 
+      div {'class': 'sku-card-header'} 
+       div {'class': 'sku-badges-row'} 
+        span {'class': 'wireframe-badge'} IRON-BARRIER
+       span {'style': 'font-size: 11px; font-weight: 800; color: var(--halo-gray-mid);'} #10
+      div {'class': 'sku-img-box'} 
+       div {'class': 'silhouette-icon-box'} 
+       div {'class': 'silhouette-label'} [#10 기어 45° 렌더]
+      div {'class': 'sku-role-box'} 
+       div {'class': 'sku-role-badge-row'} 
+        span {'class': 'sku-role-badge extended'} 파생 기어 (Extended Gear)
+       div {'class': 'sku-role-content-wrap collapsed', 'id': 'roleDescWrap_10'} 
+        div {'class': 'sku-relation-text'} 
+         strong {} 파생 기준:
+        div {'class': 'sku-scenario-text'} 
+         strong {} 추천 상황:
+       button {'type': 'button', 'class': 'btn-toggle-role-desc', 'onclick': 'toggleRoleDesc(10, this)'} 상세 펼쳐보기 ▼
+      div {'class': 'sku-card-title'} 트라이애슬론 아이언 밤
+      div {'class': 'sku-card-feature'} 수영→사이클→마라톤 6시간 지속 방수 왁스 밤
+      div {'class': 'sku-meta-tags'} 
+       span {'class': 'sku-tag'} 적용: 전신 취약부
+       span {'class': 'sku-tag'} 제형: 하드 밤
+       span {'class': 'sku-tag'} 지속: 6시간 방수
+     div {} 
+      div {'class': 'sku-price-row'} 
+       span {} ₩58,000
+       span {'style': 'font-size: 12px; color: var(--halo-gray-mid);'} 40g
+      label {'class': 'compare-check-label'} 
+       input {'type': 'checkbox', 'onchange': 'toggleCompareItem(10, this)'} 
+      div {'class': 'sku-card-actions'} 
+       button {'class': 'btn-sku-action', 'onclick': 'openProductModal(10)'} 상세 퀵뷰
+       button {'class': 'btn-sku-action primary', 'onclick': "openLaunchModal('트라이애슬론 아이언 밤')"} 출시 알림
+    div {'class': 'sku-card', 'data-sku': '11', 'data-col': 'tennis', 'data-phase': 'Pre In', 'data-type': '밤', 'data-func': '세범 쿨링'} 
+     div {} 
+      div {'class': 'sku-card-header'} 
+       div {'class': 'sku-badges-row'} 
+        span {'class': 'wireframe-badge dark'} COLLECTION 04 대표
+        span {'class': 'wireframe-badge'} NO-GRIP-SLIP
+       span {'style': 'font-size: 11px; font-weight: 800; color: var(--halo-gray-mid);'} #11
+      div {'class': 'sku-img-box'} 
+       div {'class': 'silhouette-icon-box'} 
+       div {'class': 'silhouette-label'} [#11 기어 45° 렌더]
+      div {'class': 'sku-role-box'} 
+       div {'class': 'sku-role-badge-row'} 
+        span {'class': 'sku-role-badge core'} 대표 플래그십 (Core Flagship)
+       div {'class': 'sku-role-content-wrap collapsed', 'id': 'roleDescWrap_11'} 
+        div {'class': 'sku-relation-text'} 
+         strong {} 파생 기준:
+        div {'class': 'sku-scenario-text'} 
+         strong {} 추천 상황:
+       button {'type': 'button', 'class': 'btn-toggle-role-desc', 'onclick': 'toggleRoleDesc(11, this)'} 상세 펼쳐보기 ▼
+      div {'class': 'sku-card-title'} 제로 슬립 그립 쿨링 쿠션
+      div {'class': 'sku-card-feature'} 라켓 오버그립 유분 묻음 방지 무유분 매트 쿨링 메쉬 쿠션
+      div {'class': 'sku-meta-tags'} 
+       span {'class': 'sku-tag'} 적용: 얼굴/이마
+       span {'class': 'sku-tag'} 제형: 무유분 메쉬 쿠션
+       span {'class': 'sku-tag'} 기능: 그립 논슬립
+       span {'class': 'sku-tag'} 특징: No-Sting 안자극 0.00
+     div {} 
+      div {'class': 'sku-price-row'} 
+       span {} ₩44,000
+       span {'style': 'font-size: 12px; color: var(--halo-gray-mid);'} 15g
+      label {'class': 'compare-check-label'} 
+       input {'type': 'checkbox', 'onchange': 'toggleCompareItem(11, this)'} 
+      div {'class': 'sku-card-actions'} 
+       button {'class': 'btn-sku-action', 'onclick': 'openProductModal(11)'} 상세 퀵뷰
+       button {'class': 'btn-sku-action primary', 'onclick': "openLaunchModal('제로 슬립 그립 쿨링 쿠션')"} 출시 알림
+    div {'class': 'sku-card', 'data-sku': '12', 'data-col': 'tennis', 'data-phase': 'Pre', 'data-type': '젤', 'data-func': '방수'} 
+     div {} 
+      div {'class': 'sku-card-header'} 
+       div {'class': 'sku-badges-row'} 
+        span {'class': 'wireframe-badge'} GRASS-REFLECT
+       span {'style': 'font-size: 11px; font-weight: 800; color: var(--halo-gray-mid);'} #12
+      div {'class': 'sku-img-box'} 
+       div {'class': 'silhouette-icon-box'} 
+       div {'class': 'silhouette-label'} [#12 기어 45° 렌더]
+      div {'class': 'sku-role-box'} 
+       div {'class': 'sku-role-badge-row'} 
+        span {'class': 'sku-role-badge extended'} 파생 기어 (Extended Gear)
+       div {'class': 'sku-role-content-wrap collapsed', 'id': 'roleDescWrap_12'} 
+        div {'class': 'sku-relation-text'} 
+         strong {} 파생 기준:
+        div {'class': 'sku-scenario-text'} 
+         strong {} 추천 상황:
+       button {'type': 'button', 'class': 'btn-toggle-role-desc', 'onclick': 'toggleRoleDesc(12, this)'} 상세 펼쳐보기 ▼
+      div {'class': 'sku-card-title'} UV 반사 페어웨이 선 젤
+      div {'class': 'sku-card-feature'} 18홀 잔디 반사광 듀얼 차단 수분 젤
+      div {'class': 'sku-meta-tags'} 
+       span {'class': 'sku-tag'} 적용: 얼굴/팔다리
+       span {'class': 'sku-tag'} 제형: 듀얼 차단 젤
+       span {'class': 'sku-tag'} 지속: 18홀 5시간
+     div {} 
+      div {'class': 'sku-price-row'} 
+       span {} ₩54,000
+       span {'style': 'font-size: 12px; color: var(--halo-gray-mid);'} 70ml
+      label {'class': 'compare-check-label'} 
+       input {'type': 'checkbox', 'onchange': 'toggleCompareItem(12, this)'} 
+      div {'class': 'sku-card-actions'} 
+       button {'class': 'btn-sku-action', 'onclick': 'openProductModal(12)'} 상세 퀵뷰
+       button {'class': 'btn-sku-action primary', 'onclick': "openLaunchModal('UV 반사 페어웨이 선 젤')"} 출시 알림
+    div {'class': 'sku-card', 'data-sku': '13', 'data-col': 'tennis', 'data-phase': 'In', 'data-type': '젤', 'data-func': '세범'} 
+     div {} 
+      div {'class': 'sku-card-header'} 
+       div {'class': 'sku-badges-row'} 
+        span {'class': 'wireframe-badge'} NO-STING
+       span {'style': 'font-size: 11px; font-weight: 800; color: var(--halo-gray-mid);'} #13
+      div {'class': 'sku-img-box'} 
+       div {'class': 'silhouette-icon-box'} 
+       div {'class': 'silhouette-label'} [#13 기어 45° 렌더]
+      div {'class': 'sku-role-box'} 
+       div {'class': 'sku-role-badge-row'} 
+        span {'class': 'sku-role-badge extended'} 파생 기어 (Extended Gear)
+       div {'class': 'sku-role-content-wrap collapsed', 'id': 'roleDescWrap_13'} 
+        div {'class': 'sku-relation-text'} 
+         strong {} 파생 기준:
+        div {'class': 'sku-scenario-text'} 
+         strong {} 추천 상황:
+       button {'type': 'button', 'class': 'btn-toggle-role-desc', 'onclick': 'toggleRoleDesc(13, this)'} 상세 펼쳐보기 ▼
+      div {'class': 'sku-card-title'} 퀵 앱소브 매치 선 플루이드
+      div {'class': 'sku-card-feature'} 경기 중 땀 흘러도 눈에 안 시린 No-Sting 10초 흡수 플루이드
+      div {'class': 'sku-meta-tags'} 
+       span {'class': 'sku-tag'} 적용: 얼굴/이마
+       span {'class': 'sku-tag'} 제형: 플루이드
+       span {'class': 'sku-tag'} 기능: 10초 흡수
+     div {} 
+      div {'class': 'sku-price-row'} 
+       span {} ₩39,000
+       span {'style': 'font-size: 12px; color: var(--halo-gray-mid);'} 60ml
+      label {'class': 'compare-check-label'} 
+       input {'type': 'checkbox', 'onchange': 'toggleCompareItem(13, this)'} 
+      div {'class': 'sku-card-actions'} 
+       button {'class': 'btn-sku-action', 'onclick': 'openProductModal(13)'} 상세 퀵뷰
+       button {'class': 'btn-sku-action primary', 'onclick': "openLaunchModal('퀵 앱소브 매치 선 플루이드')"} 출시 알림
+    div {'class': 'sku-card', 'data-sku': '14', 'data-col': 'fitness', 'data-phase': 'In', 'data-type': '스틱', 'data-func': '세범 휴대'} 
+     div {} 
+      div {'class': 'sku-card-header'} 
+       div {'class': 'sku-badges-row'} 
+        span {'class': 'wireframe-badge dark'} COLLECTION 05 대표
+        span {'class': 'wireframe-badge'} HEAVY-DUTY
+       span {'style': 'font-size: 11px; font-weight: 800; color: var(--halo-gray-mid);'} #14
+      div {'class': 'sku-img-box'} 
+       div {'class': 'silhouette-icon-box'} 
+       div {'class': 'silhouette-label'} [#14 기어 45° 렌더]
+      div {'class': 'sku-role-box'} 
+       div {'class': 'sku-role-badge-row'} 
+        span {'class': 'sku-role-badge core'} 대표 플래그십 (Core Flagship)
+       div {'class': 'sku-role-content-wrap collapsed', 'id': 'roleDescWrap_14'} 
+        div {'class': 'sku-relation-text'} 
+         strong {} 파생 기준:
+        div {'class': 'sku-scenario-text'} 
+         strong {} 추천 상황:
+       button {'type': 'button', 'class': 'btn-toggle-role-desc', 'onclick': 'toggleRoleDesc(14, this)'} 상세 펼쳐보기 ▼
+      div {'class': 'sku-card-title'} 헤비듀티 세범 컨트롤 스틱
+      div {'class': 'sku-card-feature'} 바벨 마찰에도 밀림 없는 마그네슘 파우더 배합 하드 스틱
+      div {'class': 'sku-meta-tags'} 
+       span {'class': 'sku-tag'} 적용: 이마/목
+       span {'class': 'sku-tag'} 제형: 슈퍼 하드 스틱
+       span {'class': 'sku-tag'} 기능: 마찰 저항 99.1%
+       span {'class': 'sku-tag'} 특징: 땀 즉각 흡착
+     div {} 
+      div {'class': 'sku-price-row'} 
+       span {} ₩41,000
+       span {'style': 'font-size: 12px; color: var(--halo-gray-mid);'} 30g
+      label {'class': 'compare-check-label'} 
+       input {'type': 'checkbox', 'onchange': 'toggleCompareItem(14, this)'} 
+      div {'class': 'sku-card-actions'} 
+       button {'class': 'btn-sku-action', 'onclick': 'openProductModal(14)'} 상세 퀵뷰
+       button {'class': 'btn-sku-action primary', 'onclick': "openLaunchModal('헤비듀티 세범 컨트롤 스틱')"} 출시 알림
+    div {'class': 'sku-card', 'data-sku': '15', 'data-col': 'fitness', 'data-phase': 'Pre', 'data-type': '젤', 'data-func': '방수'} 
+     div {} 
+      div {'class': 'sku-card-header'} 
+       div {'class': 'sku-badges-row'} 
+        span {'class': 'wireframe-badge'} OXYGEN-FLOW
+       span {'style': 'font-size: 11px; font-weight: 800; color: var(--halo-gray-mid);'} #15
+      div {'class': 'sku-img-box'} 
+       div {'class': 'silhouette-icon-box'} 
+       div {'class': 'silhouette-label'} [#15 기어 45° 렌더]
+      div {'class': 'sku-role-box'} 
+       div {'class': 'sku-role-badge-row'} 
+        span {'class': 'sku-role-badge extended'} 파생 기어 (Extended Gear)
+       div {'class': 'sku-role-content-wrap collapsed', 'id': 'roleDescWrap_15'} 
+        div {'class': 'sku-relation-text'} 
+         strong {} 파생 기준:
+        div {'class': 'sku-scenario-text'} 
+         strong {} 추천 상황:
+       button {'type': 'button', 'class': 'btn-toggle-role-desc', 'onclick': 'toggleRoleDesc(15, this)'} 상세 펼쳐보기 ▼
+      div {'class': 'sku-card-title'} 스웨트프루프 옥시젠 플루이드
+      div {'class': 'sku-card-feature'} 고강도 웨이트 중 모공을 막지 않는 통기성 산소 플루이드
+      div {'class': 'sku-meta-tags'} 
+       span {'class': 'sku-tag'} 적용: 얼굴/전신
+       span {'class': 'sku-tag'} 제형: 산소 플루이드
+       span {'class': 'sku-tag'} 특징: 모공 비폐색 인증
+     div {} 
+      div {'class': 'sku-price-row'} 
+       span {} ₩48,000
+       span {'style': 'font-size: 12px; color: var(--halo-gray-mid);'} 50ml
+      label {'class': 'compare-check-label'} 
+       input {'type': 'checkbox', 'onchange': 'toggleCompareItem(15, this)'} 
+      div {'class': 'sku-card-actions'} 
+       button {'class': 'btn-sku-action', 'onclick': 'openProductModal(15)'} 상세 퀵뷰
+       button {'class': 'btn-sku-action primary', 'onclick': "openLaunchModal('스웨트프루프 옥시젠 플루이드')"} 출시 알림
+    div {'class': 'sku-card', 'data-sku': '16', 'data-col': 'fitness', 'data-phase': 'All', 'data-type': '패치', 'data-func': '휴대'} 
+     div {} 
+      div {'class': 'sku-card-header'} 
+       div {'class': 'sku-badges-row'} 
+        span {'class': 'wireframe-badge dark'} ALL-IN-ONE
+        span {'class': 'wireframe-badge'} URBAN-GEAR
+       span {'style': 'font-size: 11px; font-weight: 800; color: var(--halo-gray-mid);'} #16
+      div {'class': 'sku-img-box'} 
+       div {'class': 'silhouette-icon-box'} 
+       div {'class': 'silhouette-label'} [#16 기어 45° 렌더]
+      div {'class': 'sku-role-box'} 
+       div {'class': 'sku-role-badge-row'} 
+        span {'class': 'sku-role-badge support'} 보조 키트 (Support Kit)
+       div {'class': 'sku-role-content-wrap collapsed', 'id': 'roleDescWrap_16'} 
+        div {'class': 'sku-relation-text'} 
+         strong {} 파생 기준:
+        div {'class': 'sku-scenario-text'} 
+         strong {} 추천 상황:
+       button {'type': 'button', 'class': 'btn-toggle-role-desc', 'onclick': 'toggleRoleDesc(16, this)'} 상세 펼쳐보기 ▼
+      div {'class': 'sku-card-title'} 어반 쉴드 포켓 기어 키트
+      div {'class': 'sku-card-feature'} 지열 차단 포켓 스틱+스포츠 타올+파우치 3종 세트
+      div {'class': 'sku-meta-tags'} 
+       span {'class': 'sku-tag'} 적용: 전신
+       span {'class': 'sku-tag'} 제형: 3종 기어 세트
+       span {'class': 'sku-tag'} 특징: 지열 차단 91.5%
+     div {} 
+      div {'class': 'sku-price-row'} 
+       span {} ₩45,000
+       span {'style': 'font-size: 12px; color: var(--halo-gray-mid);'} 3종 세트
+      label {'class': 'compare-check-label'} 
+       input {'type': 'checkbox', 'onchange': 'toggleCompareItem(16, this)'} 
+      div {'class': 'sku-card-actions'} 
+       button {'class': 'btn-sku-action', 'onclick': 'openProductModal(16)'} 상세 퀵뷰
+       button {'class': 'btn-sku-action primary', 'onclick': "openLaunchModal('어반 쉴드 포켓 기어 키트')"} 출시 알림
+    div {'class': 'empty-state-view', 'id': 'emptyStateView', 'style': 'display: none; text-align: center; padding: 48px 24px; border: var(--border-thick); background: var(--halo-gray-bg); margin: 32px 0; grid-column: 1 / -1;'} 
+     div {'style': 'font-size: 32px; margin-bottom: 12px;'} 
+     h4 {'style': 'font-size: 20px; font-weight: 900; margin-bottom: 8px;'} 선택하신 조건에 일치하는 기어가 없습니다
+     p {'style': 'font-size: 13px; color: var(--halo-gray-dark); max-width: 580px; margin: 0 auto 20px; line-height: 1.6;'} 현재 선택된 조건 조합(조건 조합)에 해당하는 하드웨어 기어가 없습니다. 아래 3가지 복구 옵션 중 하나를 선택하여 기어 탐색을 바로 이어가세요.
+      strong {'id': 'emptyConditionText'} 조건 조합
+      br {} 
+     div {'style': 'display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;'} 
+      button {'class': 'btn-sku-action', 'onclick': 'undoLastFilter()', 'style': 'padding: 10px 18px; font-size: 12px; font-weight: 900; background: var(--halo-white);'} 1. 마지막 추가 조건만 해제 [되돌리기]
+      button {'class': 'btn-sku-action', 'onclick': 'resetDetailFilters()', 'style': 'padding: 10px 18px; font-size: 12px; font-weight: 900; background: var(--halo-white);'} 2. 상세 필터 초기화 (컬렉션 유지)
+      button {'class': 'btn-sku-action primary', 'onclick': 'resetAllIncludingCollection()', 'style': 'padding: 10px 22px; font-size: 12px; font-weight: 900;'} 3. 컬렉션 포함 전체 초기화 (16종 전체)
+ div {'class': 'floating-compare-tray', 'id': 'floatingCompareTray'} 
+  div {'class': 'compare-tray-collapsed-bar', 'id': 'compareTrayCollapsedBar', 'onclick': 'toggleTrayCollapse()', 'style': 'cursor: pointer;'} 
+   div {'style': 'display: flex; align-items: center; gap: 8px;'} 
+    span {} 
+     strong {'id': 'collapsedCompareCount'} 0
+   div {'style': 'display: flex; align-items: center; gap: 8px;'} 
+    button {'class': 'btn-tray-expand-toggle', 'onclick': 'event.stopPropagation(); toggleTrayCollapse()'} [펼치기 ]
+    button {'class': 'btn-open-compare-modal-mini', 'onclick': 'event.stopPropagation(); openCompareModal()', 'style': 'padding: 4px 10px; font-size: 11px; border: var(--border-thick); background: #FFF; font-weight: 900;'} 비교하기
+  div {'class': 'compare-tray-main-content'} 
+   div {'class': 'compare-tray-left'} 
+    button {'class': 'btn-tray-collapse-toggle', 'id': 'btnTrayCollapseToggle', 'onclick': 'toggleTrayCollapse()'} [접기 ]
+    div {'class': 'compare-tray-items', 'id': 'compareTrayItems'} 
+   div {'class': 'compare-tray-actions'} 
+    button {'class': 'btn-open-compare-modal', 'onclick': 'openCompareModal()'} 스펙 횡단 비교하기
+ div {'class': 'modal-backdrop', 'id': 'compareModalBackdrop', 'onclick': 'closeCompareModal(event)'} 
+  div {'class': 'modal-window compare-modal-window', 'onclick': 'event.stopPropagation()'} 
+   button {'class': 'modal-close-btn', 'onclick': 'closeCompareModal()'} [X]
+   div {'style': 'font-size: 13px; font-weight: 800; color: var(--halo-gray-mid); margin-bottom: 4px;'} SPECIFICATION MATRIX
+   h3 {'style': 'font-size: 24px; font-weight: 900; margin-bottom: 16px;'} 선택 기어 횡단 스펙 비교
+   div {'class': 'compare-table-scroll-container'} 
+    table {'class': 'compare-modal-table', 'id': 'compareModalTable'} 
+   div {'style': 'text-align: right; margin-top: 20px;'} 
+    button {'class': 'btn-sku-action primary', 'onclick': 'closeCompareModal()', 'style': 'display: inline-block; width: auto; padding: 10px 24px;'} 닫기
+ div {'class': 'modal-backdrop', 'id': 'skuModalBackdrop', 'onclick': 'closeProductModal(event)'} 
+  div {'class': 'modal-window', 'onclick': 'event.stopPropagation()'} 
+   button {'class': 'modal-close-btn', 'onclick': 'closeProductModal()'} [X]
+   div {'id': 'skuModalContent'} 
+ div {'class': 'modal-backdrop', 'id': 'launchModalBackdrop', 'onclick': 'closeLaunchModal(event)'} 
+  div {'class': 'modal-window', 'onclick': 'event.stopPropagation()', 'style': 'max-width: 600px;'} 
+   button {'type': 'button', 'class': 'modal-close-btn', 'onclick': 'closeLaunchModal()', 'aria-label': '출시 알림 창 닫기'} [X]
+   div {'id': 'launchModalFormSection'} 
+    div {'style': 'display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;'} 
+     span {'class': 'wireframe-badge dark'} SCR-0610 얼리버드
+     span {'style': 'font-size:11px; font-weight:800; color:var(--halo-gray-mid);'} 15% SECRET BENEFIT
+    h3 {'style': 'font-size: 22px; font-weight: 900; margin-bottom: 6px;'} 빠른 출시 알림 신청
+    p {'style': 'font-size: 13px; color: var(--halo-gray-dark); margin-bottom: 20px; line-height:1.5;'} 선택 대상: 전체 라인업 공식 런칭 즉시 15% 시크릿 할인 쿠폰과 한정판 전용 카라비너 스트랩 증정 혜택을 보내드립니다.
+     strong {'id': 'launchTargetItemName'} 전체 라인업
+     br {} 
+     strong {} 15% 시크릿 할인 쿠폰
+    form {'id': 'launchAlertForm', 'onsubmit': 'handleLaunchSubmit(event)', 'novalidate': None} 
+     div {'class': 'form-group'} 
+      label {'for': 'alertName'} 
+       span {'style': 'color:#000000; font-weight:900;'} *
+      input {'type': 'text', 'class': 'form-input', 'id': 'alertName', 'name': 'alertName', 'placeholder': '홍길동', 'required': None, 'autocomplete': 'name'} 
+      div {'class': 'form-field-error', 'id': 'nameErrorMsg', 'style': 'display:none; color:#000000; font-size:11.5px; font-weight:800; margin-top:4px;'} 성함을 2자 이상 입력해 주세요.
+     div {'class': 'form-group'} 
+      label {'for': 'alertPhone'} 
+       span {'style': 'color:#000000; font-weight:900;'} *
+      input {'type': 'tel', 'class': 'form-input', 'id': 'alertPhone', 'name': 'alertPhone', 'placeholder': '010-1234-5678', 'required': None, 'autocomplete': 'tel'} 
+      div {'class': 'form-field-error', 'id': 'phoneErrorMsg', 'style': 'display:none; color:#000000; font-size:11.5px; font-weight:800; margin-top:4px;'} 올바른 휴대폰 번호 형식(010-XXXX-XXXX)으로 입력해 주세요.
+     div {'class': 'form-group'} 
+      label {'for': 'alertEmail'} 
+       span {'style': 'color:#666666; font-size:11px; font-weight:800;'} (선택)
+      input {'type': 'email', 'class': 'form-input', 'id': 'alertEmail', 'name': 'alertEmail', 'placeholder': 'athlete@halo.gear', 'autocomplete': 'email'} 
+      div {'class': 'form-field-error', 'id': 'emailErrorMsg', 'style': 'display:none; color:#000000; font-size:11.5px; font-weight:800; margin-top:4px;'} 올바른 이메일 주소 형식(example@domain.com)으로 입력해 주세요.
+     div {'style': 'margin: 20px 0 16px;'} 
+      label {'for': 'alertTerms', 'class': 'form-checkbox-label', 'style': 'display:flex; align-items:flex-start; gap:8px; cursor:pointer; font-size:12.5px; font-weight:900;'} 
+       input {'type': 'checkbox', 'id': 'alertTerms', 'name': 'alertTerms', 'style': 'margin-top:2px; width:16px; height:16px; cursor:pointer;'} 
+       span {} [필수] 개인정보 수집 및 이용에 동의합니다.
+      div {'class': 'form-field-error', 'id': 'priacyErrorMsg', 'style': 'display:none; color:#000000; font-size:11.5px; font-weight:800; margin-top:4px; margin-left:24px;'} 출시 알림 발송을 위해 개인정보 수집 및 이용에 동의해 주세요.
+      div {'class': 'priacy-detail-box', 'style': 'background:#FAFAFA; border:1px solid #E5E5E5; padding:12px 14px; font-size:11.5px; line-height:1.6; color:#555555; margin-top:10px;'} 
+       div {'style': 'font-weight:900; color:#000000; margin-bottom:4px;'} [개인정보 수집·이용 내역]
+       div {} 
+        strong {} 수집 항목:
+       div {} 
+        strong {} 이용 목적:
+       div {} 
+        strong {} 보유 기간:
+       div {} 
+        strong {} 동의 거부 시 제한:
+     button {'type': 'submit', 'class': 'form-submit-btn', 'id': 'btnLaunchSubmit', 'style': 'cursor:pointer;'} 알림 신청 완료 (15% 쿠폰 수령)
+    div {'style': 'display:flex; justify-content:center; gap:8px; margin-top:16px; padding-top:12px; border-top:1px dashed #DDD; flex-wrap:wrap;'} 
+     span {'style': 'font-size:10px; font-weight:800; color:#999; width:100%; text-align:center;'} [설계 검토용 상태 시뮬레이션]
+     button {'type': 'button', 'onclick': "showLaunchState('success')", 'style': 'font-size:10px; padding:3px 8px; border:1px solid #999; background:#FFF; cursor:pointer;'} 성공 상태
+     button {'type': 'button', 'onclick': "showLaunchState('duplicate')", 'style': 'font-size:10px; padding:3px 8px; border:1px solid #999; background:#FFF; cursor:pointer;'} 중복 신청
+     button {'type': 'button', 'onclick': "showLaunchState('error')", 'style': 'font-size:10px; padding:3px 8px; border:1px solid #999; background:#FFF; cursor:pointer;'} 서버 오류
+   div {'class': 'form-inline-success', 'id': 'launchSuccessCard', 'style': 'display:none; text-align:center; padding:32px 20px;'} 
+    div {'style': 'font-size: 36px; margin-bottom: 8px;'} 
+    div {'class': 'wireframe-badge dark', 'style': 'margin-bottom:8px;'} 신청 완료 화면 예시
+    h4 {'style': 'font-size:18px; font-weight:900; margin-bottom:8px;'} 출시 알림 신청이 정상 접수되었습니다
+    p {'style': 'font-size: 13px; color: var(--halo-gray-dark); line-height: 1.6; margin-bottom: 20px; max-width:440px; margin-left:auto; margin-right:auto;'} ※ 본 화면은 와이어프레임 설계 예시입니다. 실제 공식 런칭 시 입력하신 연락처(010-****-5678)로 15% 얼리버드 시크릿 쿠폰이 가장 먼저 발송됩니다.
+     strong {} 와이어프레임 설계 예시
+     br {} 
+     strong {'id': 'successPhoneDisplay'} 010-****-5678
+     strong {} 15% 얼리버드 시크릿 쿠폰
+    button {'type': 'button', 'class': 'btn-sku-action primary', 'onclick': 'closeLaunchModal()', 'style': 'display:inline-block; width: auto; padding: 10px 28px; font-weight:900;'} 확인
+   div {'class': 'form-inline-success', 'id': 'launchDuplicateCard', 'style': 'display:none; text-align:center; padding:32px 20px; background:#FAFAFA; border:2px solid #000000;'} 
+    div {'style': 'font-size: 36px; margin-bottom: 8px;'} 
+    div {'class': 'wireframe-badge dark', 'style': 'background:#000000; margin-bottom:8px;'} 중복 신청 확인 예시
+    h4 {'style': 'font-size:18px; font-weight:900; margin-bottom:8px; color:#000000;'} 이미 알림 신청이 완료된 연락처입니다
+    p {'style': 'font-size: 13px; color: #000000; line-height: 1.6; margin-bottom: 20px; max-width:440px; margin-left:auto; margin-right:auto;'} 해당 휴대폰 번호는 이미 얼리버드 15% 시크릿 할인 대상자로 등록되어 있습니다. 런칭 당일 정상적으로 쿠폰과 알림이 발송될 예정입니다.
+     br {} 
+    div {'style': 'display:flex; justify-content:center; gap:10px;'} 
+     button {'type': 'button', 'class': 'btn-sku-action', 'onclick': "showLaunchState('form')", 'style': 'padding:10px 20px; font-weight:900; background:#FFF;'} 정보 수정
+     button {'type': 'button', 'class': 'btn-sku-action primary', 'onclick': 'closeLaunchModal()', 'style': 'padding:10px 24px; font-weight:900; background:#000000; color:#FFF;'} 확인 완료
+   div {'class': 'form-inline-success', 'id': 'launchErrorCard', 'style': 'display:none; text-align:center; padding:32px 20px; background:#FAFAFA; border:2px solid #000000;'} 
+    div {'style': 'font-size: 36px; margin-bottom: 8px;'} 
+    div {'class': 'wireframe-badge dark', 'style': 'background:#000000; margin-bottom:8px;'} 통신 오류 예시
+    h4 {'style': 'font-size:18px; font-weight:900; margin-bottom:8px; color:#000000;'} 일시적인 네트워크 오류로 신청에 실패했습니다
+    p {'style': 'font-size: 13px; color: #000000; line-height: 1.6; margin-bottom: 20px; max-width:440px; margin-left:auto; margin-right:auto;'} 네트워크 연결 상태를 확인하시거나 잠시 후 다시 시도해 주세요. 문제가 지속될 경우 고객센터로 문의해 주시기 바랍니다.
+     br {} 
+    div {'style': 'display:flex; justify-content:center; gap:10px;'} 
+     button {'type': 'button', 'class': 'btn-sku-action', 'onclick': 'closeLaunchModal()', 'style': 'padding:10px 20px; font-weight:900; background:#FFF;'} 닫기
+     button {'type': 'button', 'class': 'btn-sku-action primary', 'onclick': "showLaunchState('form'); document.getElementById('btnLaunchSubmit').click();", 'style': 'padding:10px 24px; font-weight:900; background:#000000; color:#FFF;'} 다시 시도하기 ↺
+ footer {'class': 'section-spacing', 'style': 'background: #000000; color: #FFFFFF; border-top: var(--border-thick); padding: 56px 0 40px;'} 
+  div {'class': 'container'} 
+   div {'style': 'display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 32px; border-bottom: 1px solid #333333; padding-bottom: 32px; margin-bottom: 28px;'} 
+    div {'style': 'max-width: 440px;'} 
+     div {'style': 'display: flex; align-items: center; gap: 8px; margin-bottom: 8px;'} 
+      div {'style': 'font-size: 20px; font-weight: 900; letter-spacing: -0.02em;'} HALO GEAR LAB
+      span {'class': 'wireframe-badge dark', 'style': 'background: #38BDF8; color: #000; font-size: 10px; font-weight: 900;'} 가상 프로젝트 상태 (R&D DEMO)
+     p {'style': 'font-size: 12.5px; color: #94A3B8; line-height: 1.6; margin: 0 0 12px;'} HALO는 익스트림 스포츠 선수의 페이스 유지를 위한 No-Touch Cooling Sun Gear 가상 R&D 컨셉 프로젝트입니다. 본 화면에 표기된 수치와 인증은 가상 테스트 시나리오를 바탕으로 설계되었습니다.
+     div {'style': 'font-size: 11.5px; color: #64748B;'} © 2026 HALO Inc. No-Touch Cooling Suncare & Active Sports Beauty Gear. All rights reserved.
+    div {} 
+     div {'style': 'font-size: 12px; font-weight: 900; color: #E2E8F0; margin-bottom: 8px;'} 공식 판매처 & 채널 연동 안내
+     div {'style': 'display: flex; gap: 12px; font-size: 12px; font-weight: 800; margin-bottom: 8px; flex-wrap: wrap;'} 
+      a {'href': '#shop-all', 'style': 'color: #FFFFFF; text-decoration: underline;'} 네이버 스마트스토어 (가상)
+      a {'href': '#shop-all', 'style': 'color: #FFFFFF; text-decoration: underline;'} 무신사 (가상)
+      a {'href': '#shop-all', 'style': 'color: #FFFFFF; text-decoration: underline;'} 29CM (가상)
+     div {'style': 'font-size: 11px; color: #94A3B8;'} *현재 프로토타입 단계로 외부 몰 링크는 카탈로그 뷰로 안내됩니다.
+    div {} 
+     div {'style': 'font-size: 12px; font-weight: 900; color: #E2E8F0; margin-bottom: 8px;'} 정책 및 웹 접근성
+     div {'style': 'display: flex; flex-direction: column; gap: 6px; font-size: 11.5px;'} 
+      a {'href': '#', 'style': 'color: #94A3B8; text-decoration: none;', 'onmouseover': "this.style.color='#FFF'", 'onmouseout': "this.style.color='#94A3B8'"} 이용약관 (Terms of Service)
+      a {'href': '#', 'style': 'color: #94A3B8; text-decoration: none;', 'onmouseover': "this.style.color='#FFF'", 'onmouseout': "this.style.color='#94A3B8'"} 개인정보처리방침 (Privacy Policy)
+      a {'href': '#', 'style': 'color: #38BDF8; text-decoration: none;', 'onmouseover': "this.style.textDecoration='underline'", 'onmouseout': "this.style.textDecoration='none'"} 웹 접근성 정책 (WCAG 2.1 AA 준수)
+      a {'href': '#', 'style': 'color: #94A3B8; text-decoration: none;', 'onmouseover': "this.style.color='#FFF'", 'onmouseout': "this.style.color='#94A3B8'"} 고객센터 및 가상 알림 문의
+   div {'style': 'display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: #64748B; flex-wrap: wrap; gap: 8px;'} 
+    div {} 
+     span {'style': 'color: #84CC16; font-weight: 800;'} ● 정상 가동 중 (16 SKUs Active)
+    div {} 최종 빌드: 2026-08-25 HALO Production Spec v4.0
+ div {'class': 'mobile-drawer-backdrop', 'id': 'mobileDrawerBackdrop', 'onclick': 'closeMobileDrawer(event)'} 
+  div {'class': 'mobile-drawer-panel', 'id': 'mobileDrawerPanel'} 
+   div {} 
+    div {'class': 'drawer-top-header'} 
+     div {'class': 'drawer-logo'} HALO GEAR
+     button {'class': 'btn-drawer-close', 'onclick': 'closeMobileDrawerDirect()', 'aria-label': '메뉴 닫기'} [X]
+    nav {'class': 'drawer-nav-list'} 
+     a {'href': '#philosophy', 'class': 'drawer-nav-item', 'onclick': 'closeMobileDrawerDirect()'} 
+      span {} 01. 브랜드 (철학 & 2대 R&D)
+      span {} >
+     a {'href': '#spotlight', 'class': 'drawer-nav-item', 'onclick': 'closeMobileDrawerDirect()'} 
+      span {} 02. 핵심 기어 (퀵스틱 & 질소미스트)
+      span {} >
+     a {'href': '#process', 'class': 'drawer-nav-item', 'onclick': 'closeMobileDrawerDirect()'} 
+      span {} 03. 기술·검증 (4-Step R&D)
+      span {} >
+     a {'href': '#routine', 'class': 'drawer-nav-item', 'onclick': 'closeMobileDrawerDirect()'} 
+      span {} 04. 루틴 (3단계 시퀀스 & 컬렉션)
+      span {} >
+     a {'href': '#shop-all', 'class': 'drawer-nav-item', 'onclick': 'closeMobileDrawerDirect()'} 
+      span {} 05. 전체 기어 (16종 카탈로그 & 비교)
+      span {} >
+   div {'class': 'drawer-bottom-actions'} 
+    button {'class': 'btn-hero-primary', 'style': 'width:100%;', 'onclick': "openLaunchModal('모바일 GNB'); closeMobileDrawerDirect();"} 15% 얼리버드 알림 신청
+    button {'class': 'btn-hero-secondary', 'style': 'width:100%;', 'onclick': 'openCompareModal(); closeMobileDrawerDirect();'} 스펙 비교함 열기
+    div {'class': 'drawer-slogan'} NEVER STOP THE MOTION

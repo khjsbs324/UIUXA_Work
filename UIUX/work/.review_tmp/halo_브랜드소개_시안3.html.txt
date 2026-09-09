@@ -1,0 +1,449 @@
+body {} 
+ nav {'class': 'site-gnb'} 
+  div {'class': 'container gnb-inner'} 
+   a {'href': '../0825/0825_HALO_메인페이지_와이어프레임.html', 'class': 'brand-logo'} 
+    span {'style': 'background:#000; color:#FFF; padding:2px 6px; font-size:12px;'} HALO
+    span {} GEAR LAB
+   div {'class': 'gnb-menu'} 
+    a {'href': '../0825/0825_HALO_메인페이지_와이어프레임.html'} ← 메인 홈 (Home)
+    a {'href': '#', 'class': 'active'} 브랜드 소개 (Brand Story)
+    a {'href': '../0825/수정_02_카테고리_스토리보드.html'} 16종 카테고리 기어 (16 SKUs) ➔
+ section {'class': 'origin-hero', 'id': 'hero', 'style': 'position: relative; overflow: hidden; border-bottom: var(--border-thick);'} 
+  div {'style': 'position: absolute; top: 18px; left: 24px; z-index: 10;'} 
+   span {'style': 'background: #38BDF8; color: #000000; font-size: 11px; font-weight: 900; padding: 4px 10px; border-radius: 2px; letter-spacing: 0.05em;'} 📷 [대표 배경 사진 영역 / HERO BACKGROUND IMAGE]
+  div {'class': 'container', 'style': 'position: relative; z-index: 5; padding-top: 24px;'} 
+   div {'class': 'origin-hero-inner', 'style': 'max-width: 860px;'} 
+    div {'style': 'margin-bottom: 16px;'} 
+     span {'class': 'origin-badge'} HALO KINETIC SUNCARE GEAR
+    h1 {'class': 'origin-headline', 'style': 'font-size: 40px; line-height: 1.25; margin-bottom: 24px;'} "우리는 운동을 멈추게 하는 선케어를 만들지 않는다. 운동의 흐름을 이어주는 노터치 선케어 기어를 설계한다."
+     br {} 
+     span {} 노터치 선케어 기어
+    div {'style': 'background: rgba(15, 23, 42, 0.9); border: 2px solid #334155; border-left: 6px solid #38BDF8; padding: 24px 28px; margin-bottom: 28px;'} 
+     div {'style': 'font-size: 11.5px; font-weight: 900; color: #38BDF8; letter-spacing: 0.05em; margin-bottom: 10px;'} ● HALO가 주목한 운동 장면 (브랜드 출발 장면 설정)
+     p {'class': 'origin-story-text', 'style': 'font-size: 15.5px; color: #E2E8F0; line-height: 1.8; margin-bottom: 0;'} 정오의 폭염 속, 목표를 향해 한계까지 질주하던 러너에게 가장 절박했던 것은 지치지 않는 호흡과 리듬이었습니다. 그러나 강렬한 태양빛 아래에서 무너져 내리는 집중력을 마주하며, 하나의 본질적인 질문이 시작되었습니다. "왜 선케어는 다른 운동 장비처럼 몸에 언제나 연결되어 있고, 운동의 흐름을 깨지 않는 장비가 될 수 없는가?"
+      br {} 
+      strong {'style': 'color: #FFFFFF; font-size: 16px; display: inline-block; margin-top: 8px;'} "왜 선케어는 다른 운동 장비처럼 몸에 언제나 연결되어 있고, 운동의 흐름을 깨지 않는 장비가 될 수 없는가?"
+    div {} 
+     a {'href': '#philosophy', 'class': 'btn-sku-action highlight', 'style': 'font-size: 14.5px; padding: 14px 32px; text-decoration: none; display: inline-block;'} HALO의 세 가지 설계 원칙 보기 ↓
+ div {'style': 'background: #0F172A; border-bottom: var(--border-thick); padding: 26px 0; text-align: center; color: #FFFFFF;'} 
+  div {'class': 'container'} 
+   span {'style': 'font-size: 11px; font-weight: 900; color: #38BDF8; letter-spacing: 0.08em; display: block; margin-bottom: 6px;'} THE MEANING OF HALO · 해무리
+   p {'style': 'font-size: 15.5px; line-height: 1.7; color: #F1F5F9; margin: 0; font-weight: 500;'} HALO는 강한 빛 둘레에 생기는 해무리에서 이름을 가져왔습니다. 움직이는 동안에도 몸 가까이에서 이어지는 보호의 고리를 기어의 형태로 설계합니다.
+    br {} 
+    strong {'style': 'color: #FFFFFF; font-weight: 800;'} 보호의 고리를 기어의 형태로 설계
+ section {'class': 'section-spacing', 'style': 'background: #F1F5F9; border-bottom: var(--border-thick);', 'id': 'pain-points'} 
+  div {'class': 'container'} 
+   div {'class': 'section-header', 'style': 'margin-bottom: 32px;'} 
+    span {'class': 'section-tag', 'style': 'color: #64748B;'} [INCONVENIENCES IN ACTION]
+    h2 {'class': 'section-title'} 운동 중 마주치는 네 가지 불편
+    p {'class': 'section-desc'} 야외 스포츠 환경에서 선케어를 사용할 때 자연스럽게 겪게 되는 불편을 정리했습니다.
+   div {'style': 'background: #FFFFFF; border: var(--border-thick); border-radius: 4px; padding: 28px 24px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);'} 
+    div {'style': 'display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; position: relative;'} 
+     div {'style': 'border-right: 1px solid #E2E8F0; padding-right: 16px;'} 
+      div {'style': 'display: flex; align-items: center; gap: 6px; margin-bottom: 8px;'} 
+       span {'style': 'font-size: 11px; font-weight: 900; background: #0F172A; color: #FFF; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%;'} 1
+       h3 {'style': 'font-size: 17px; font-weight: 900; margin: 0; color: #000;'} 멈춤
+      span {'style': 'font-size: 10px; color: #94A3B8; font-weight: 700; display: block; margin-bottom: 6px;'} Flow Stop
+      p {'style': 'font-size: 12.5px; color: #334155; line-height: 1.55; margin: 0;'} 다시 바르기 위해 운동 흐름을 끊어야 하는 불편
+     div {'style': 'border-right: 1px solid #E2E8F0; padding-right: 16px;'} 
+      div {'style': 'display: flex; align-items: center; gap: 6px; margin-bottom: 8px;'} 
+       span {'style': 'font-size: 11px; font-weight: 900; background: #0F172A; color: #FFF; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%;'} 2
+       h3 {'style': 'font-size: 17px; font-weight: 900; margin: 0; color: #000;'} 손 오염
+      span {'style': 'font-size: 10px; color: #94A3B8; font-weight: 700; display: block; margin-bottom: 6px;'} Hand Contamination
+      p {'style': 'font-size: 12.5px; color: #334155; line-height: 1.55; margin: 0;'} 크림이 묻은 손으로 장비를 다시 잡아야 하는 불편
+     div {'style': 'border-right: 1px solid #E2E8F0; padding-right: 16px;'} 
+      div {'style': 'display: flex; align-items: center; gap: 6px; margin-bottom: 8px;'} 
+       span {'style': 'font-size: 11px; font-weight: 900; background: #0F172A; color: #FFF; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%;'} 3
+       h3 {'style': 'font-size: 17px; font-weight: 900; margin: 0; color: #000;'} 눈시림
+      span {'style': 'font-size: 10px; color: #94A3B8; font-weight: 700; display: block; margin-bottom: 6px;'} Eye Irritation
+      p {'style': 'font-size: 12.5px; color: #334155; line-height: 1.55; margin: 0;'} 땀과 제품이 섞여 눈가로 흐를 수 있는 불편
+     div {} 
+      div {'style': 'display: flex; align-items: center; gap: 6px; margin-bottom: 8px;'} 
+       span {'style': 'font-size: 11px; font-weight: 900; background: #0F172A; color: #FFF; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%;'} 4
+       h3 {'style': 'font-size: 17px; font-weight: 900; margin: 0; color: #000;'} 지속력 저하
+      span {'style': 'font-size: 10px; color: #94A3B8; font-weight: 700; display: block; margin-bottom: 6px;'} Short Durability
+      p {'style': 'font-size: 12.5px; color: #334155; line-height: 1.55; margin: 0;'} 물과 땀과 마찰이 반복되는 환경에서 다시 바를 시점을 놓치기 쉬운 불편
+ section {'class': 'section-spacing', 'style': 'background: #FFFFFF; border-bottom: var(--border-thick);', 'id': 'perspective'} 
+  div {'class': 'container'} 
+   div {'class': 'section-header', 'style': 'margin-bottom: 36px;'} 
+    span {'class': 'section-tag'} [ACTION SEQUENCE COMPARISON]
+    h2 {'class': 'section-title'} 행동의 차이가 스포츠의 결과를 바꿉니다
+    p {'class': 'section-desc'} 숫자의 경쟁보다 중요한 것은 행동의 차이입니다. 화장품의 복잡한 5단계 사용 방식과 HALO의 간결한 4단계 기어 방식을 비교해 보세요.
+   div {'style': 'display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch;'} 
+    div {'style': 'border: 2px solid #E2E8F0; background: #F8FAFC; padding: 26px 24px; border-radius: 4px; display: flex; flex-direction: column; justify-content: space-between;'} 
+     div {} 
+      div {'style': 'display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;'} 
+       span {'style': 'font-size: 11.5px; font-weight: 900; color: #64748B;'} CONVENTIONAL USE
+       span {'style': 'font-size: 10.5px; font-weight: 900; background: #FEE2E2; color: #DC2626; padding: 3px 8px; border-radius: 2px;'} ● 5단계 멈춤 발생
+      h3 {'style': 'font-size: 19px; font-weight: 900; margin-bottom: 18px; color: #000;'} 기존 선케어의 5단계 사용 방식
+      div {'style': 'display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px;'} 
+       div {'style': 'background: #FFFFFF; border: 1px solid #E2E8F0; padding: 10px 14px; font-size: 13px; color: #334155; font-weight: 700; border-radius: 2px;'} 1. 멈춤
+       div {'style': 'background: #FFFFFF; border: 1px solid #E2E8F0; padding: 10px 14px; font-size: 13px; color: #334155; font-weight: 700; border-radius: 2px;'} 2. 수납 공간 열기
+       div {'style': 'background: #FFFFFF; border: 1px solid #E2E8F0; padding: 10px 14px; font-size: 13px; color: #334155; font-weight: 700; border-radius: 2px;'} 3. 손에 덜기
+       div {'style': 'background: #FFFFFF; border: 1px solid #E2E8F0; padding: 10px 14px; font-size: 13px; color: #334155; font-weight: 700; border-radius: 2px;'} 4. 얼굴과 목에 바르기
+       div {'style': 'background: #FFFFFF; border: 1px solid #E2E8F0; padding: 10px 14px; font-size: 13px; color: #334155; font-weight: 700; border-radius: 2px;'} 5. 손 닦기
+     div {'style': 'border-top: 1px solid #E2E8F0; padding-top: 14px; font-size: 12px; color: #64748B; text-align: center;'} 
+      strong {} 여러 단계를 거치며 운동 흐름이 중단되는 기존 방식
+    div {'style': 'border: 2px solid #000000; background: #0F172A; color: #FFFFFF; padding: 26px 24px; border-radius: 4px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 12px rgba(0,0,0,0.1);'} 
+     div {} 
+      div {'style': 'display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;'} 
+       span {'style': 'font-size: 11.5px; font-weight: 900; color: #38BDF8;'} HALO KINETIC GEAR
+       span {'style': 'font-size: 10.5px; font-weight: 900; background: #0284C7; color: #FFFFFF; padding: 3px 8px; border-radius: 2px;'} ⚡ 4단계 무정지 도포
+      h3 {'style': 'font-size: 19px; font-weight: 900; margin-bottom: 18px; color: #FFFFFF;'} HALO 기어의 4단계 사용 방식
+      div {'style': 'display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px;'} 
+       div {'style': 'background: #1E293B; border: 1px solid #334155; padding: 10px 14px; font-size: 13px; color: #F1F5F9; font-weight: 700; border-radius: 2px;'} 1. 움직임 유지
+       div {'style': 'background: #1E293B; border: 1px solid #334155; padding: 10px 14px; font-size: 13px; color: #F1F5F9; font-weight: 700; border-radius: 2px;'} 2. 한 손 분리 (원핸드 빠른 분리 설계 목표)
+       div {'style': 'background: #1E293B; border: 1px solid #334155; padding: 10px 14px; font-size: 13px; color: #F1F5F9; font-weight: 700; border-radius: 2px;'} 3. 노터치 도포 (손을 대지 않는 직관적 롤링)
+       div {'style': 'background: #1E293B; border: 1px solid #334155; padding: 10px 14px; font-size: 13px; color: #F1F5F9; font-weight: 700; border-radius: 2px;'} 4. 다시 체결 (0초 정지를 목표로 한 하드웨어 래치)
+     div {'style': 'border-top: 1px solid #334155; padding-top: 14px; font-size: 12.5px; color: #38BDF8; text-align: center; font-weight: 800;'} 
+      strong {} 운동을 멈추지 않고 손 접촉을 줄이는 사용 구조
+ section {'class': 'section-spacing', 'id': 'philosophy'} 
+  div {'class': 'container'} 
+   div {'class': 'section-header', 'style': 'margin-bottom: 36px;'} 
+    span {'class': 'section-tag'} [3 CORE DESIGN PRINCIPLES]
+    h2 {'class': 'section-title'} HALO를 정의하는 3대 하드웨어 설계 원칙
+    p {'class': 'section-desc'} 복잡한 사양표 대신, 사용자가 겪는 문제와 HALO가 무엇을 중요하게 설계하는지에 집중했습니다.
+   div {'class': 'principles-grid'} 
+    div {'class': 'principle-card', 'style': 'display: flex; flex-direction: column; justify-content: space-between;'} 
+     div {} 
+      div {'style': 'margin-bottom: 8px;'} 
+       span {'class': 'principle-num', 'style': 'margin: 0;'} PRINCIPLE 01
+      h3 {'class': 'principle-title', 'style': 'font-size: 20px; margin-bottom: 4px;'} 손 접촉을 줄이는 구조
+      span {'style': 'font-size: 11px; font-weight: 800; color: #64748B; display: block; margin-bottom: 14px;'} No-Touch Architecture
+      div {'style': 'border: 2px dashed #0284C7; background: #F0F9FF; padding: 12px; margin-bottom: 16px; border-radius: 4px; text-align: center;'} 
+       div {'style': 'font-size: 10.5px; font-weight: 900; color: #0284C7; margin-bottom: 2px;'} 📷 [시각 자료: 제품 근접 분해도]
+       strong {'style': 'font-size: 11.5px; color: #0F172A; display: block;'} 카라비너 래치와 롤러 헤드 제품 근접 이미지
+      div {'style': 'margin-bottom: 10px;'} 
+       div {'style': 'font-size: 11px; font-weight: 900; color: #64748B; margin-bottom: 2px;'} ● 사용자가 겪는 문제
+       p {'style': 'font-size: 12.5px; color: #334155; line-height: 1.5; margin: 0;'} 땀과 흙먼지가 묻은 손으로 크림을 문질러 바를 때 생기는 끈적임과 위생 문제
+      div {'style': 'margin-bottom: 16px;'} 
+       div {'style': 'font-size: 11px; font-weight: 900; color: #0284C7; margin-bottom: 2px;'} ● 설계 방향
+       p {'style': 'font-size: 12.5px; color: #0F172A; font-weight: 700; line-height: 1.5; margin: 0;'} 손으로 제품을 덜어 바르는 과정을 줄이도록 설계합니다.
+     div {'style': 'background: #F8FAFC; border: 1px solid #CBD5E1; padding: 10px 12px; border-radius: 2px;'} 
+      span {'style': 'font-size: 10px; font-weight: 900; color: #0284C7; display: block; margin-bottom: 2px;'} ⚙️ [설계안: 목표 사양]
+      span {'style': 'font-size: 11.5px; color: #334155; font-weight: 700;'} 원핸드 분리 래치 및 롤러 볼 구조 적용 (CAD-2026)
+    div {'class': 'principle-card', 'style': 'display: flex; flex-direction: column; justify-content: space-between;'} 
+     div {} 
+      div {'style': 'margin-bottom: 8px;'} 
+       span {'class': 'principle-num', 'style': 'margin: 0;'} PRINCIPLE 02
+      h3 {'class': 'principle-title', 'style': 'font-size: 20px; margin-bottom: 4px;'} 피부 열감을 낮추는 쿨링
+      span {'style': 'font-size: 11px; font-weight: 800; color: #64748B; display: block; margin-bottom: 14px;'} Cryo-Cooling Experience
+      div {'style': 'border: 2px dashed #0284C7; background: #F0F9FF; padding: 12px; margin-bottom: 16px; border-radius: 4px; text-align: center;'} 
+       div {'style': 'font-size: 10.5px; font-weight: 900; color: #0284C7; margin-bottom: 2px;'} 📷 [시각 자료: 열 이동 기술 도해]
+       strong {'style': 'font-size: 11.5px; color: #0F172A; display: block;'} 미스트 입자와 피부 열 이동을 보여주는 도해
+      div {'style': 'margin-bottom: 10px;'} 
+       div {'style': 'font-size: 11px; font-weight: 900; color: #64748B; margin-bottom: 2px;'} ● 사용자가 겪는 문제
+       p {'style': 'font-size: 12.5px; color: #334155; line-height: 1.5; margin: 0;'} 뜨거운 야외 지열과 직사광선으로 인해 급격히 달아오르는 피부 열감과 체력 저하
+      div {'style': 'margin-bottom: 16px;'} 
+       div {'style': 'font-size: 11px; font-weight: 900; color: #0284C7; margin-bottom: 2px;'} ● 설계 방향
+       p {'style': 'font-size: 12.5px; color: #0F172A; font-weight: 700; line-height: 1.5; margin: 0;'} 뜨거운 야외 환경에서 피부 열감을 낮추는 사용 경험을 목표로 합니다.
+     div {'style': 'background: #F0F9FF; border: 1px solid #BAE6FD; padding: 10px 12px; border-radius: 2px;'} 
+      span {'style': 'font-size: 10px; font-weight: 900; color: #0369A1; display: block; margin-bottom: 2px;'} 📋 [시험 계획: 검증 계획]
+      span {'style': 'font-size: 11.5px; color: #0369A1; font-weight: 700;'} 기화열 방출 열화상 카메라 계측 계획 (VAL-2026)
+    div {'class': 'principle-card', 'style': 'display: flex; flex-direction: column; justify-content: space-between;'} 
+     div {} 
+      div {'style': 'margin-bottom: 8px;'} 
+       span {'class': 'principle-num', 'style': 'margin: 0;'} PRINCIPLE 03
+      h3 {'class': 'principle-title', 'style': 'font-size: 20px; margin-bottom: 4px;'} 땀·물·마찰을 고려한 지속력
+      span {'style': 'font-size: 11px; font-weight: 800; color: #64748B; display: block; margin-bottom: 14px;'} Sport Endurance
+      div {'style': 'border: 2px dashed #0284C7; background: #F0F9FF; padding: 12px; margin-bottom: 16px; border-radius: 4px; text-align: center;'} 
+       div {'style': 'font-size: 10.5px; font-weight: 900; color: #0284C7; margin-bottom: 2px;'} 📷 [시각 자료: 현장 시험 장면]
+       strong {'style': 'font-size: 11.5px; color: #0F172A; display: block;'} 땀, 물과 마찰 환경을 비교하는 시험 장면
+      div {'style': 'margin-bottom: 10px;'} 
+       div {'style': 'font-size: 11px; font-weight: 900; color: #64748B; margin-bottom: 2px;'} ● 사용자가 겪는 문제
+       p {'style': 'font-size: 12.5px; color: #334155; line-height: 1.5; margin: 0;'} 흘러내리는 땀과 거친 움직임 속에서 자외선 차단막이 쉽게 지워지고 씻겨나가는 현상
+      div {'style': 'margin-bottom: 16px;'} 
+       div {'style': 'font-size: 11px; font-weight: 900; color: #0284C7; margin-bottom: 2px;'} ● 설계 방향
+       p {'style': 'font-size: 12.5px; color: #0F172A; font-weight: 700; line-height: 1.5; margin: 0;'} 땀·물·마찰 환경에서도 자외선 차단막이 유지되는지 시험할 계획입니다.
+     div {'style': 'background: #FFFBEB; border: 1px solid #FDE68A; padding: 10px 12px; border-radius: 2px;'} 
+      span {'style': 'font-size: 10px; font-weight: 900; color: #92400E; display: block; margin-bottom: 2px;'} 📋 [시험 계획: 검증 계획]
+      span {'style': 'font-size: 11.5px; color: #92400E; font-weight: 700;'} 스포츠 환경별 자외선 차단막 유지 시험 (VAL-2026)
+ section {'class': 'section-spacing', 'id': 'rnd-process', 'style': 'background: #FFFFFF; border-bottom: var(--border-thick);'} 
+  div {'class': 'container'} 
+   div {'class': 'section-header', 'style': 'margin-bottom: 32px;'} 
+    span {'class': 'section-tag'} [4-STAGE R&D PROCESS]
+    h2 {'class': 'section-title'} 설계 원칙을 실전 기어로 입증하는 4단계 연구 과정
+    p {'class': 'section-desc'} 세 가지 하드웨어 원칙을 실전 기어로 구현하기 위한 4단계 연구 및 검증 계획입니다.
+   div {'style': 'display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 24px; position: relative;'} 
+    div {'style': 'border: 2px solid #E2E8F0; background: #F8FAFC; padding: 20px 16px; border-radius: 4px; display: flex; flex-direction: column; justify-content: space-between; position: relative;'} 
+     div {} 
+      div {'style': 'display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;'} 
+       span {'style': 'font-size: 11px; font-weight: 900; color: #0284C7;'} 1단계
+       span {'style': 'font-size: 9.5px; font-weight: 900; background: #F0FDF4; color: #166534; border: 1px solid #BBF7D0; padding: 2px 6px; border-radius: 2px;'} 기획 / 인터뷰 진행
+      h3 {'style': 'font-size: 16.5px; font-weight: 900; margin-bottom: 2px; color: #000;'} 문제 발견
+      span {'style': 'font-size: 10px; color: #94A3B8; font-weight: 700; display: block; margin-bottom: 10px;'} Discover
+      div {'style': 'border: 1px dashed #CBD5E1; background: #FFFFFF; padding: 8px; margin-bottom: 10px; border-radius: 2px; text-align: center;'} 
+       span {'style': 'font-size: 9.5px; font-weight: 900; color: #0284C7; display: block; margin-bottom: 2px;'} 📷 [시각 자료: 인터뷰·열지도]
+       span {'style': 'font-size: 9.5px; color: #64748B;'} 선수단 인터뷰 분석 자료
+      p {'style': 'font-size: 12px; color: #334155; line-height: 1.5; margin-bottom: 12px;'} 운동 중 선케어 사용의 불편과 요구 조건을 찾는 단계입니다.
+     div {'style': 'background: #FFFFFF; border: 1px solid #E2E8F0; padding: 6px 8px; font-size: 10.5px; color: #166534; font-weight: 800; text-align: center; border-radius: 2px;'} 
+      strong {} 20인 전문 선수 인터뷰 기획
+    div {'style': 'border: 2px solid #E2E8F0; background: #F8FAFC; padding: 20px 16px; border-radius: 4px; display: flex; flex-direction: column; justify-content: space-between; position: relative;'} 
+     div {} 
+      div {'style': 'display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;'} 
+       span {'style': 'font-size: 11px; font-weight: 900; color: #0284C7;'} 2단계
+       span {'style': 'font-size: 9.5px; font-weight: 900; background: #F8FAFC; color: #334155; border: 1px solid #CBD5E1; padding: 2px 6px; border-radius: 2px;'} 기구 설계 / 목업
+      h3 {'style': 'font-size: 16.5px; font-weight: 900; margin-bottom: 2px; color: #000;'} 구조 설계
+      span {'style': 'font-size: 10px; color: #94A3B8; font-weight: 700; display: block; margin-bottom: 10px;'} Engineer
+      div {'style': 'border: 1px dashed #CBD5E1; background: #FFFFFF; padding: 8px; margin-bottom: 10px; border-radius: 2px; text-align: center;'} 
+       span {'style': 'font-size: 9.5px; font-weight: 900; color: #0284C7; display: block; margin-bottom: 2px;'} 📷 [시각 자료: CAD 분해도·목업]
+       span {'style': 'font-size: 9.5px; color: #64748B;'} AL6061 래치 CAD 도면
+      p {'style': 'font-size: 12px; color: #334155; line-height: 1.5; margin-bottom: 12px;'} 카라비너, 롤러 헤드와 리필 구조를 반복 설계하는 단계입니다.
+     div {'style': 'background: #FFFFFF; border: 1px solid #E2E8F0; padding: 6px 8px; font-size: 10.5px; color: #334155; font-weight: 800; text-align: center; border-radius: 2px;'} 
+      strong {} 12차 프로토타입 설계안
+    div {'style': 'border: 2px solid #E2E8F0; background: #F8FAFC; padding: 20px 16px; border-radius: 4px; display: flex; flex-direction: column; justify-content: space-between; position: relative;'} 
+     div {} 
+      div {'style': 'display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;'} 
+       span {'style': 'font-size: 11px; font-weight: 900; color: #0284C7;'} 3단계
+       span {'style': 'font-size: 9.5px; font-weight: 900; background: #FFFBEB; color: #92400E; border: 1px solid #FDE68A; padding: 2px 6px; border-radius: 2px;'} 실전 계측 계획
+      h3 {'style': 'font-size: 16.5px; font-weight: 900; margin-bottom: 2px; color: #000;'} 시험 계획
+      span {'style': 'font-size: 10px; color: #94A3B8; font-weight: 700; display: block; margin-bottom: 10px;'} Validate
+      div {'style': 'border: 1px dashed #CBD5E1; background: #FFFFFF; padding: 8px; margin-bottom: 10px; border-radius: 2px; text-align: center;'} 
+       span {'style': 'font-size: 9.5px; font-weight: 900; color: #0284C7; display: block; margin-bottom: 2px;'} 📷 [시각 자료: 스포츠 시험 계획]
+       span {'style': 'font-size: 9.5px; color: #64748B;'} 러닝·수상·피트니스 시험 계획
+      p {'style': 'font-size: 12px; color: #334155; line-height: 1.5; margin-bottom: 12px;'} 열기·땀·물·마찰 환경에서 성능을 확인하는 단계입니다.
+     div {'style': 'background: #FFFFFF; border: 1px solid #E2E8F0; padding: 6px 8px; font-size: 10.5px; color: #92400E; font-weight: 800; text-align: center; border-radius: 2px;'} 
+      strong {} 320시간 누적 가상 테스트 계획
+    div {'style': 'border: 2px solid #E2E8F0; background: #F8FAFC; padding: 20px 16px; border-radius: 4px; display: flex; flex-direction: column; justify-content: space-between; position: relative;'} 
+     div {} 
+      div {'style': 'display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;'} 
+       span {'style': 'font-size: 11px; font-weight: 900; color: #0284C7;'} 4단계
+       span {'style': 'font-size: 9.5px; font-weight: 900; background: #FAF5FF; color: #6B21A8; border: 1px solid #E9D5FF; padding: 2px 6px; border-radius: 2px;'} 인증 준비
+      h3 {'style': 'font-size: 16.5px; font-weight: 900; margin-bottom: 2px; color: #000;'} 안전 기준 확인
+      span {'style': 'font-size: 10px; color: #94A3B8; font-weight: 700; display: block; margin-bottom: 10px;'} Certify
+      div {'style': 'border: 1px dashed #CBD5E1; background: #FFFFFF; padding: 8px; margin-bottom: 10px; border-radius: 2px; text-align: center;'} 
+       span {'style': 'font-size: 9.5px; font-weight: 900; color: #0284C7; display: block; margin-bottom: 2px;'} 📷 [시각 자료: 확인 항목 상태]
+       span {'style': 'font-size: 9.5px; color: #64748B;'} 비건·Reef-Safe 확인 항목
+      p {'style': 'font-size: 12px; color: #334155; line-height: 1.5; margin-bottom: 12px;'} 안자극, 비건 기준과 해양 성분 원칙을 확인하는 단계입니다.
+     div {'style': 'background: #FFFFFF; border: 1px solid #E2E8F0; padding: 6px 8px; font-size: 10.5px; color: #6B21A8; font-weight: 800; text-align: center; border-radius: 2px;'} 
+      strong {} 시험·인증 항목 검토 및 준비
+   div {'style': 'background: #0F172A; border: 1px solid #334155; padding: 12px 18px; border-radius: 2px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;'} 
+    div {'style': 'display: flex; align-items: center; gap: 8px;'} 
+     span {'style': 'font-size: 11.5px; font-weight: 900; color: #38BDF8;'} ⚙️ R&D 기어 확장
+     span {'style': 'font-size: 11.5px; color: #CBD5E1;'} 
+      strong {} 5대 극한 스포츠 환경별 특화 기어
+    a {'href': '#sports-environments', 'style': 'font-size: 11.5px; font-weight: 900; color: #38BDF8; text-decoration: underline;'} 5대 환경별 대표 기어 보기 ↓
+ section {'class': 'section-spacing', 'style': 'background: var(--halo-gray-bg); border-bottom: var(--border-thick);', 'id': 'sports-environments'} 
+  div {'class': 'container'} 
+   div {'class': 'section-header', 'style': 'margin-bottom: 36px;'} 
+    span {'class': 'section-tag'} [5 SPORTS ENVIRONMENTS & 5 FLAGSHIP GEARS]
+    h2 {'class': 'section-title'} 5대 극한 환경에 맞춘 하드웨어 확장
+    p {'class': 'section-desc'} 카테고리 16종 마스터 기준 데이터와 100% 일치하는 5대 환경별 대표 플래그십 기어를 소개합니다.
+   div {'style': 'display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px;'} 
+    div {'class': 'problem-card', 'style': 'border: var(--border-thick); background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; justify-content: space-between; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);'} 
+     div {} 
+      div {'style': 'display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;'} 
+       span {'style': 'font-size: 11.5px; font-weight: 900; color: #0284C7; letter-spacing: 0.05em;'} FIELD 01 · FLAGSHIP
+       span {'style': 'font-size: 10.5px; font-weight: 900; background: #0284C7; color: #FFFFFF; padding: 3px 8px; border-radius: 2px;'} In (운동 중)
+      h3 {'style': 'font-size: 20px; font-weight: 900; margin-bottom: 12px; color: #000;'} 시티 러닝 & 마라톤
+      div {'style': 'border: 1px dashed #94A3B8; background: #F8FAFC; padding: 10px; margin-bottom: 14px; border-radius: 2px; text-align: center;'} 
+       span {'style': 'font-size: 10.5px; font-weight: 900; color: #0284C7; display: block; margin-bottom: 2px;'} 📷 [시각 자료: 폭염 러닝 대표 장면]
+       span {'style': 'font-size: 10.5px; color: #64748B;'} 도심 아스팔트 지열 속 질주 장면
+      div {'style': 'margin-bottom: 10px;'} 
+       div {'style': 'font-size: 11px; font-weight: 900; color: #64748B; margin-bottom: 3px;'} ● 환경 문제
+       p {'style': 'font-size: 13px; color: #334155; line-height: 1.5; margin: 0;'} 아스팔트 열기와 땀으로 인해 흐름이 끊기기 쉬운 환경
+      div {'style': 'margin-bottom: 16px;'} 
+       div {'style': 'font-size: 11px; font-weight: 900; color: #0284C7; margin-bottom: 3px;'} ● 설계 방향
+       p {'style': 'font-size: 13px; color: #0F172A; font-weight: 700; line-height: 1.5; margin: 0;'} 아스팔트 열기와 땀 속에서 움직임을 유지하는 휴대·쿨링 설계
+     div {} 
+      div {'style': 'background: #0F172A; border: 1px solid #000; padding: 14px; border-radius: 4px; color: #FFF; margin-bottom: 10px; text-align: center;'} 
+       div {'style': 'font-size: 10px; font-weight: 800; color: #38BDF8; margin-bottom: 3px;'} 대표 플래그십 기어 (SKU #01)
+       strong {'style': 'font-size: 14px; display: block; color: #FFF; margin-bottom: 3px;'} #01 카라비너 퀵 쿨링 선 스틱
+       span {'style': 'font-size: 11px; color: #94A3B8;'} 에어리 밤 스틱 · 20g · SPF50+ PA++++
+      a {'href': '../0825/수정_02_카테고리_스토리보드.html', 'style': 'font-size: 11.5px; font-weight: 900; color: #0284C7; text-decoration: underline; display: block; text-align: center;'} 러닝 확장 기어 전체보기 (카테고리 이동) ➔
+    div {'class': 'problem-card', 'style': 'border: var(--border-thick); background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; justify-content: space-between; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);'} 
+     div {} 
+      div {'style': 'display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;'} 
+       span {'style': 'font-size: 11.5px; font-weight: 900; color: #0284C7; letter-spacing: 0.05em;'} FIELD 02 · FLAGSHIP
+       span {'style': 'font-size: 10.5px; font-weight: 900; background: #0F172A; color: #FFFFFF; padding: 3px 8px; border-radius: 2px;'} In (운동 중)
+      h3 {'style': 'font-size: 20px; font-weight: 900; margin-bottom: 12px; color: #000;'} 트레일 & 클라이밍
+      div {'style': 'border: 1px dashed #94A3B8; background: #F8FAFC; padding: 10px; margin-bottom: 14px; border-radius: 2px; text-align: center;'} 
+       span {'style': 'font-size: 10.5px; font-weight: 900; color: #0284C7; display: block; margin-bottom: 2px;'} 📷 [시각 자료: 트레일 대표 장면]
+       span {'style': 'font-size: 10.5px; color: #64748B;'} 고산 능선과 암벽 홀드 그립 장면
+      div {'style': 'margin-bottom: 10px;'} 
+       div {'style': 'font-size: 11px; font-weight: 900; color: #64748B; margin-bottom: 3px;'} ● 환경 문제
+       p {'style': 'font-size: 13px; color: #334155; line-height: 1.5; margin: 0;'} 건조한 고산 바람과 거친 마찰 속에서 피부와 장비 그립을 지켜야 하는 환경
+      div {'style': 'margin-bottom: 16px;'} 
+       div {'style': 'font-size: 11px; font-weight: 900; color: #0284C7; margin-bottom: 3px;'} ● 설계 방향
+       p {'style': 'font-size: 13px; color: #0F172A; font-weight: 700; line-height: 1.5; margin: 0;'} 건조한 바람과 장비 마찰을 고려한 밀착·그립 설계
+     div {} 
+      div {'style': 'background: #0F172A; border: 1px solid #000; padding: 14px; border-radius: 4px; color: #FFF; margin-bottom: 10px; text-align: center;'} 
+       div {'style': 'font-size: 10px; font-weight: 800; color: #38BDF8; margin-bottom: 3px;'} 대표 플래그십 기어 (SKU #05)
+       strong {'style': 'font-size: 14px; display: block; color: #FFF; margin-bottom: 3px;'} #05 워터프루프 UV 디펜스 젤
+       span {'style': 'font-size: 11px; color: #94A3B8;'} 수분 젤 · 60ml · SPF50+ PA++++
+      a {'href': '../0825/수정_02_카테고리_스토리보드.html', 'style': 'font-size: 11.5px; font-weight: 900; color: #0284C7; text-decoration: underline; display: block; text-align: center;'} 아웃도어 확장 기어 전체보기 (카테고리 이동) ➔
+   div {'style': 'display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;'} 
+    div {'class': 'problem-card', 'style': 'border: var(--border-thick); background: #FFFFFF; padding: 22px 18px; display: flex; flex-direction: column; justify-content: space-between; border-radius: 4px;'} 
+     div {} 
+      div {'style': 'display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;'} 
+       span {'style': 'font-size: 11px; font-weight: 900; color: #0284C7;'} FIELD 03 · FLAGSHIP
+       span {'style': 'font-size: 10px; font-weight: 800; background: #E0F2FE; color: #0369A1; padding: 2px 6px; border-radius: 2px;'} In (운동 중)
+      h3 {'style': 'font-size: 18px; font-weight: 900; margin-bottom: 10px; color: #000;'} 수상 스포츠
+      div {'style': 'border: 1px dashed #94A3B8; background: #F8FAFC; padding: 8px; margin-bottom: 10px; border-radius: 2px; text-align: center;'} 
+       span {'style': 'font-size: 10px; font-weight: 900; color: #0284C7; display: block; margin-bottom: 2px;'} 📷 [시각 자료: 서핑 대표 장면]
+       span {'style': 'font-size: 10px; color: #64748B;'} 거센 파도와 수면 반사 자외선
+      div {'style': 'margin-bottom: 8px;'} 
+       div {'style': 'font-size: 10.5px; font-weight: 900; color: #64748B; margin-bottom: 2px;'} ● 환경 문제
+       p {'style': 'font-size: 12px; color: #334155; line-height: 1.45; margin: 0;'} 거센 물살과 염분 속에서 차단막이 쉽게 씻겨나갈 수 있는 환경
+      div {'style': 'margin-bottom: 14px;'} 
+       div {'style': 'font-size: 10.5px; font-weight: 900; color: #0284C7; margin-bottom: 2px;'} ● 설계 방향
+       p {'style': 'font-size: 12px; color: #0F172A; font-weight: 700; line-height: 1.45; margin: 0;'} 물과 염분 환경에서 다시 바르기 쉬운 내수성 설계
+     div {} 
+      div {'style': 'background: #0F172A; border: 1px solid #000; padding: 12px; border-radius: 4px; color: #FFF; margin-bottom: 8px; text-align: center;'} 
+       div {'style': 'font-size: 9.5px; font-weight: 800; color: #38BDF8; margin-bottom: 2px;'} 대표 플래그십 기어 (SKU #08)
+       strong {'style': 'font-size: 12.5px; display: block; color: #FFF; margin-bottom: 2px;'} #08 오션 세이프 징크 미네랄 리프 쉴드
+       span {'style': 'font-size: 10.5px; color: #94A3B8;'} 논나노 무기자차 크림 · 50g · SPF50+ PA++++
+      a {'href': '../0825/수정_02_카테고리_스토리보드.html', 'style': 'font-size: 11px; font-weight: 900; color: #0284C7; text-decoration: underline; display: block; text-align: center;'} 수상 스포츠 기어 전체보기 ➔
+    div {'class': 'problem-card', 'style': 'border: var(--border-thick); background: #FFFFFF; padding: 22px 18px; display: flex; flex-direction: column; justify-content: space-between; border-radius: 4px;'} 
+     div {} 
+      div {'style': 'display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;'} 
+       span {'style': 'font-size: 11px; font-weight: 900; color: #0284C7;'} FIELD 04 · FLAGSHIP
+       span {'style': 'font-size: 10px; font-weight: 800; background: #E0F2FE; color: #0369A1; padding: 2px 6px; border-radius: 2px;'} In (운동 중)
+      h3 {'style': 'font-size: 18px; font-weight: 900; margin-bottom: 10px; color: #000;'} 테니스 & 골프
+      div {'style': 'border: 1px dashed #94A3B8; background: #F8FAFC; padding: 8px; margin-bottom: 10px; border-radius: 2px; text-align: center;'} 
+       span {'style': 'font-size: 10px; font-weight: 900; color: #0284C7; display: block; margin-bottom: 2px;'} 📷 [시각 자료: 테니스 대표 장면]
+       span {'style': 'font-size: 10px; color: #64748B;'} 하드코트 복사열과 라켓 그립 임팩트
+      div {'style': 'margin-bottom: 8px;'} 
+       div {'style': 'font-size: 10.5px; font-weight: 900; color: #64748B; margin-bottom: 2px;'} ● 환경 문제
+       p {'style': 'font-size: 12px; color: #334155; line-height: 1.45; margin: 0;'} 손에 묻은 유분으로 그립이 미끄러지거나 땀이 눈가로 번지기 쉬운 환경
+      div {'style': 'margin-bottom: 14px;'} 
+       div {'style': 'font-size: 10.5px; font-weight: 900; color: #0284C7; margin-bottom: 2px;'} ● 설계 방향
+       p {'style': 'font-size: 12px; color: #0F172A; font-weight: 700; line-height: 1.45; margin: 0;'} 손 오염과 눈가 번짐을 줄이는 노터치·빠른 흡수 설계
+     div {} 
+      div {'style': 'background: #0F172A; border: 1px solid #000; padding: 12px; border-radius: 4px; color: #FFF; margin-bottom: 8px; text-align: center;'} 
+       div {'style': 'font-size: 9.5px; font-weight: 800; color: #38BDF8; margin-bottom: 2px;'} 대표 플래그십 기어 (SKU #11)
+       strong {'style': 'font-size: 12.5px; display: block; color: #FFF; margin-bottom: 2px;'} #11 제로 슬립 그립 쿨링 쿠션
+       span {'style': 'font-size: 10.5px; color: #94A3B8;'} 무유분 메쉬 쿠션 · 15g · SPF50+ PA++++
+      a {'href': '../0825/수정_02_카테고리_스토리보드.html', 'style': 'font-size: 11px; font-weight: 900; color: #0284C7; text-decoration: underline; display: block; text-align: center;'} 라켓·필드 기어 전체보기 ➔
+    div {'class': 'problem-card', 'style': 'border: var(--border-thick); background: #FFFFFF; padding: 22px 18px; display: flex; flex-direction: column; justify-content: space-between; border-radius: 4px;'} 
+     div {} 
+      div {'style': 'display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;'} 
+       span {'style': 'font-size: 11px; font-weight: 900; color: #0284C7;'} FIELD 05 · FLAGSHIP
+       span {'style': 'font-size: 10px; font-weight: 800; background: #E0F2FE; color: #0369A1; padding: 2px 6px; border-radius: 2px;'} In (운동 중)
+      h3 {'style': 'font-size: 18px; font-weight: 900; margin-bottom: 10px; color: #000;'} 피트니스 & 트레이닝
+      div {'style': 'border: 1px dashed #94A3B8; background: #F8FAFC; padding: 8px; margin-bottom: 10px; border-radius: 2px; text-align: center;'} 
+       span {'style': 'font-size: 10px; font-weight: 900; color: #0284C7; display: block; margin-bottom: 2px;'} 📷 [시각 자료: 피트니스 대표 장면]
+       span {'style': 'font-size: 10px; color: #64748B;'} 고중량 쇠 바벨 마찰과 땀 배출 장면
+      div {'style': 'margin-bottom: 8px;'} 
+       div {'style': 'font-size: 10.5px; font-weight: 900; color: #64748B; margin-bottom: 2px;'} ● 환경 문제
+       p {'style': 'font-size: 12px; color: #334155; line-height: 1.45; margin: 0;'} 격렬한 실내 훈련 중 땀 배출과 기구 마찰로 끈적임이 발생하기 쉬운 환경
+      div {'style': 'margin-bottom: 14px;'} 
+       div {'style': 'font-size: 10.5px; font-weight: 900; color: #0284C7; margin-bottom: 2px;'} ● 설계 방향
+       p {'style': 'font-size: 12px; color: #0F172A; font-weight: 700; line-height: 1.45; margin: 0;'} 피지와 기구 마찰을 고려한 가벼운 사용감과 휴대 설계
+     div {} 
+      div {'style': 'background: #0F172A; border: 1px solid #000; padding: 12px; border-radius: 4px; color: #FFF; margin-bottom: 8px; text-align: center;'} 
+       div {'style': 'font-size: 9.5px; font-weight: 800; color: #38BDF8; margin-bottom: 2px;'} 대표 플래그십 기어 (SKU #14)
+       strong {'style': 'font-size: 12.5px; display: block; color: #FFF; margin-bottom: 2px;'} #14 헤비듀티 세범 컨트롤 스틱
+       span {'style': 'font-size: 10.5px; color: #94A3B8;'} 마그네슘 세범 스틱 · 20g · SPF50+ PA++++
+      a {'href': '../0825/수정_02_카테고리_스토리보드.html', 'style': 'font-size: 11px; font-weight: 900; color: #0284C7; text-decoration: underline; display: block; text-align: center;'} 트레이닝 기어 전체보기 ➔
+ section {'class': 'section-spacing', 'style': 'background: #000000; color: #FFFFFF;', 'id': 'sustainable-materials'} 
+  div {'class': 'container'} 
+   div {'class': 'section-header'} 
+    span {'class': 'section-tag', 'style': 'color:#38BDF8;'} [SUSTAINABLE HARDWARE & CLEAN FORMULA]
+    h2 {'class': 'section-title', 'style': 'color:#FFF;'} 지속 가능한 하드웨어 설계와 성분 기준
+    p {'class': 'section-desc', 'style': 'color:#94A3B8;'} 과장된 구호 대신, 실제 제품의 기획 사양과 성분 인증 준비 상태를 투명하게 공개합니다.
+   div {'style': 'border: 2px dashed #38BDF8; background: #0F172A; padding: 16px 20px; border-radius: 4px; margin-bottom: 24px; text-align: center;'} 
+    span {'style': 'font-size: 11.5px; font-weight: 900; color: #38BDF8; display: block; margin-bottom: 4px;'} 📷 [이미지 들어갈 공간 10: 알루미늄 하우징 & 리필 코어 분해 3D 렌더 1장]
+    span {'style': 'font-size: 11.5px; color: #CBD5E1;'} AL6061 외장 금속 바디(78%)와 내부 교체형 PP 리필 카트리지 코어(22%)의 정밀 체결 구조 분해 렌더링
+   div {'style': 'display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;'} 
+    div {'class': 'material-box', 'style': 'background: #0F172A; border: 1px solid #334155; padding: 28px 24px; display: flex; flex-direction: column; justify-content: space-between;'} 
+     div {} 
+      div {'style': 'display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;'} 
+       span {'style': 'font-size: 10.5px; font-weight: 900; color: #38BDF8; letter-spacing: 0.05em;'} CURRENT DESIGN
+       span {'style': 'font-size: 10px; font-weight: 900; background: #1E293B; color: #38BDF8; border: 1px solid #334155; padding: 2px 6px; border-radius: 2px;'} ⚙️ [설계안: 구조 제안]
+      h3 {'style': 'font-size: 20px; font-weight: 900; margin-bottom: 12px; color: #FFFFFF;'} 알루미늄 외장과 교체형 리필 구조
+      p {'style': 'font-size: 13.5px; color: #CBD5E1; line-height: 1.65; margin-bottom: 16px;'} 외부 충격과 낙하를 방어하는 하우징 프레임 및 카라비너 래치 부품에 AL6061 합금을 CNC 정밀 가공하여 적용했습니다.
+     div {'style': 'background: #1E293B; border: 1px solid #334155; padding: 12px 14px; font-size: 12px;'} 
+      div {'style': 'color: #94A3B8; margin-bottom: 4px;'} 
+       strong {} 기획 사양:
+      div {'style': 'color: #94A3B8;'} 
+       strong {} 시험 계획:
+    div {'class': 'material-box', 'style': 'background: #0F172A; border: 1px solid #334155; padding: 28px 24px; display: flex; flex-direction: column; justify-content: space-between;'} 
+     div {} 
+      div {'style': 'display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;'} 
+       span {'style': 'font-size: 10.5px; font-weight: 900; color: #84CC16; letter-spacing: 0.05em;'} REDUCTION TARGET
+       span {'style': 'font-size: 10px; font-weight: 900; background: #1E293B; color: #84CC16; border: 1px solid #334155; padding: 2px 6px; border-radius: 2px;'} ⚙️ [설계안: 구조 제안]
+      h3 {'style': 'font-size: 20px; font-weight: 900; margin-bottom: 12px; color: #FFFFFF;'} 일회용 플라스틱 감축 리필 시스템
+      p {'style': 'font-size: 13.5px; color: #CBD5E1; line-height: 1.65; margin-bottom: 16px;'} 다 쓴 뒤 제품 전체를 통째로 버리지 않고, 내부의 포뮬러 카트리지 코어만 교체하여 사용하는 지속 가능한 기어 방식을 추구합니다.
+     div {'style': 'background: #1E293B; border: 1px solid #334155; padding: 12px 14px; font-size: 12px;'} 
+      div {'style': 'color: #94A3B8; margin-bottom: 4px;'} 
+       strong {} 기획 사양:
+      div {'style': 'color: #94A3B8;'} 
+       strong {} 감축 목표:
+    div {'class': 'material-box', 'style': 'background: #0F172A; border: 1px solid #334155; padding: 28px 24px; display: flex; flex-direction: column; justify-content: space-between;'} 
+     div {} 
+      div {'style': 'display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;'} 
+       span {'style': 'font-size: 10.5px; font-weight: 900; color: #38BDF8; letter-spacing: 0.05em;'} FORMULATION STANDARDS
+       span {'style': 'font-size: 10px; font-weight: 900; background: #1E293B; color: #C084FC; border: 1px solid #334155; padding: 2px 6px; border-radius: 2px;'} 🏛️ [인증 준비: 규격 검토]
+      h3 {'style': 'font-size: 20px; font-weight: 900; margin-bottom: 12px; color: #FFFFFF;'} 옥시벤존·옥티녹세이트 배제 포뮬러
+      p {'style': 'font-size: 13.5px; color: #CBD5E1; line-height: 1.65; margin-bottom: 16px;'} 하와이와 팔라우 등 해양 보호구역 법적 기준을 고려하여 산호초 백화를 유발하는 유기 자외선 차단 성분을 배제하고 안전하게 설계했습니다.
+     div {'style': 'background: #1E293B; border: 1px solid #334155; padding: 12px 14px; font-size: 12px;'} 
+      div {'style': 'color: #94A3B8; margin-bottom: 4px;'} 
+       strong {} 기획 사양:
+      div {'style': 'color: #94A3B8;'} 
+       strong {} 인증 준비:
+   div {'class': 'cta-banner', 'style': 'background:#0F172A; border: 1px solid #334155; margin-top:48px; padding: 44px 24px; text-align:center; border-radius: 4px;'} 
+    span {'style': 'font-size:11px; font-weight:900; background:#1E293B; color:#94A3B8; border:1px solid #334155; padding:3px 10px; border-radius:2px; display:inline-block; margin-bottom:14px;'} NEXT ACTION · 다음 행동 선택
+    h3 {'style': 'font-size:24px; font-weight:900; color:#FFF; margin-bottom:10px;'} 운동의 흐름을 멈추지 않는 HALO 기어 시스템을 경험해 보세요
+    p {'style': 'font-size:14px; color:#CBD5E1; margin-bottom:28px; max-width:620px; margin-left:auto; margin-right:auto; line-height:1.6;'} 5대 환경에 특화된 16종 전체 기어 카탈로그를 탐색하거나, 공식 출시 소식 알림을 받아보실 수 있습니다.
+    div {'style': 'display:flex; justify-content:center; align-items:center; gap:14px; flex-wrap:wrap;'} 
+     a {'href': '../0825/수정_02_카테고리_스토리보드.html', 'class': 'btn-sku-action', 'style': 'background:#FFFFFF; color:#000000; font-weight:900; font-size:14px; padding:14px 28px; border-radius:3px; text-decoration:none; box-shadow:0 2px 8px rgba(255,255,255,0.15);'} 16종 전체 기어 카탈로그 탐색 ➔
+     button {'type': 'button', 'class': 'btn-sku-action', 'onclick': "openLaunchModal('HALO 브랜드 런칭')", 'style': 'background:#1E293B; color:#E2E8F0; border:1px solid #475569; font-weight:800; font-size:13.5px; padding:14px 24px; border-radius:3px; cursor:pointer;'} 얼리버드 알림 확인 ➔
+    div {'style': 'font-size:11px; color:#64748B; margin-top:14px;'} *얼리버드 알림 신청은 출시 캠페인 기획안을 바탕으로 안내됩니다.
+ div {'class': 'modal-backdrop', 'id': 'launchModalBackdrop'} 
+  div {'class': 'modal-window', 'onclick': 'event.stopPropagation()'} 
+   button {'type': 'button', 'class': 'modal-close-btn', 'onclick': 'closeLaunchModal()'} ✕ 닫기
+   div {'id': 'modalStateInput'} 
+    span {'class': 'wireframe-badge', 'style': 'margin-bottom:8px; display:inline-block; background:#0F172A; color:#FFF; font-size:10.5px; font-weight:900; padding:3px 8px;'} CAMPAIGN PLANNING · 출시 캠페인 기획안
+    h3 {'style': 'font-size:21px; font-weight:900; margin-bottom:6px; color:#000;'} 얼리버드 출시 알림 신청 (기획안)
+    p {'style': 'font-size:13px; color:#64748B; margin-bottom:16px;'} HALO 노터치 선케어 기어의 공식 출시 일정 및 얼리버드 알림을 받아보실 수 있습니다.
+     strong {'id': 'modalTargetName', 'style': 'color:#000;'} HALO 노터치 선케어 기어
+    form {'id': 'launchForm', 'onsubmit': 'handleLaunchSubmit(event)'} 
+     div {'style': 'margin-bottom: 14px;'} 
+      label {'style': 'font-size: 12px; font-weight: 900; color: #1E293B; display: block; margin-bottom: 4px;'} 알림 받으실 연락처 (휴대폰 또는 이메일)
+      input {'type': 'text', 'id': 'launchContact', 'placeholder': '010-0000-0000 또는 email@domain.com', 'required': None, 'style': 'width: 100%; box-sizing: border-box; padding: 10px 12px; border: 2px solid #000000; font-size: 13.5px; border-radius: 2px; color: #000; background: #FFF;'} 
+      span {'id': 'contactValidationMsg', 'style': 'font-size: 11px; color: #EF4444; display: none; margin-top: 4px; font-weight: 800;'} 올바른 연락처 형식을 입력해 주세요.
+     div {'style': 'background: #F8FAFC; border: 1px solid #CBD5E1; padding: 12px; border-radius: 4px; margin-bottom: 16px;'} 
+      div {'style': 'display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px;'} 
+       input {'type': 'checkbox', 'id': 'privacyConsent', 'style': 'margin-top: 2px; cursor: pointer; width: 16px; height: 16px;'} 
+       label {'for': 'privacyConsent', 'style': 'font-size: 12.5px; font-weight: 900; color: #0F172A; cursor: pointer;'} [필수] 개인정보 수집 및 출시 알림 수신 동의
+      div {'style': 'background: #FFFFFF; border: 1px solid #E2E8F0; padding: 10px; font-size: 11px; color: #475569; line-height: 1.55; border-radius: 2px;'} 
+       div {'style': 'margin-bottom: 2px;'} 
+        strong {} 수집 항목:
+       div {'style': 'margin-bottom: 2px;'} 
+        strong {} 이용 목적:
+       div {'style': 'margin-bottom: 2px;'} 
+        strong {} 보유 기간:
+        strong {} 출시 알림 발송 완료 후 30일 이내 파기
+       div {} 
+        strong {} 동의 거부 시 불이익:
+      span {'id': 'consentValidationMsg', 'style': 'font-size: 11px; color: #EF4444; display: none; margin-top: 6px; font-weight: 800;'} 개인정보 수집 및 알림 수신에 동의해 주셔야 신청이 완료됩니다.
+     div {'style': 'display: flex; gap: 10px;'} 
+      button {'type': 'button', 'class': 'btn-sku-action', 'onclick': 'closeLaunchModal()', 'style': 'flex: 1; padding: 12px; background: #FFFFFF; color: #000; border: 2px solid #000; font-weight: 800; cursor: pointer;'} 취소
+      button {'type': 'submit', 'class': 'btn-sku-action primary', 'style': 'flex: 2; padding: 12px; font-weight: 900; font-size: 13.5px; background: #000; color: #FFF; border: 2px solid #000; cursor: pointer;'} 15% 알림 신청하기 ➔
+   div {'id': 'modalStateLoading', 'style': 'display:none; text-align:center; padding: 32px 0;'} 
+    div {'style': 'display:inline-block; width:36px; height:36px; border:3px solid #E2E8F0; border-top-color:#0284C7; border-radius:50%; animation:spin 0.8s linear infinite; margin-bottom:16px;'} 
+    h4 {'style': 'font-size:17px; font-weight:900; margin-bottom:6px; color:#000;'} 알림 토큰 암호화 및 등록 중...
+    p {'style': 'font-size:12px; color:#64748B;'} 잠시만 기다려 주시면 신청이 완료됩니다.
+   div {'id': 'modalStateSuccess', 'style': 'display:none; text-align:center; padding: 16px 0;'} 
+    div {'style': 'width:44px; height:44px; background:#F0FDF4; border:2px solid #84CC16; color:#166534; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 12px; font-size:22px; font-weight:900;'} ✓
+    h4 {'style': 'font-size:19px; font-weight:900; margin-bottom:8px; color:#000;'} 15% 얼리버드 알림 신청 완료
+    p {'style': 'font-size:13.5px; color:#334155; line-height:1.6; margin-bottom:16px;'} 님께 공식 런칭일에 맞추어 15% 시크릿 할인 쿠폰과 한정판 카라비너 스트랩 혜택을 발송해 드립니다.
+     span {'id': 'registeredContact', 'style': 'font-weight:900; color:#0284C7;'} 
+    div {'style': 'background:#F8FAFC; border:1px solid #E2E8F0; padding:10px; font-size:11px; color:#64748B; margin-bottom:20px;'} *입력하신 정보는 발송 후 30일 이내에 안전하게 파기됩니다.
+    button {'type': 'button', 'class': 'btn-sku-action primary', 'onclick': 'closeLaunchModal()', 'style': 'width:100%; padding:12px; font-weight:900; background:#000; color:#FFF; cursor: pointer;'} 확인 완료
+   div {'id': 'modalStateDuplicate', 'style': 'display:none; text-align:center; padding: 16px 0;'} 
+    div {'style': 'width:44px; height:44px; background:#FFFBEB; border:2px solid #F59E0B; color:#B45309; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 12px; font-size:22px; font-weight:900;'} !
+    h4 {'style': 'font-size:19px; font-weight:900; margin-bottom:8px; color:#000;'} 이미 등록된 연락처입니다
+    p {'style': 'font-size:13.5px; color:#334155; line-height:1.6; margin-bottom:16px;'} 님은 이미 15% 얼리버드 출시 알림 명단에 안전하게 등록되어 있습니다. 공식 출시일에 혜택이 정상 발송됩니다.
+     span {'id': 'duplicateContact', 'style': 'font-weight:900; color:#0284C7;'} 
+    div {'style': 'display:flex; gap:10px;'} 
+     button {'type': 'button', 'class': 'btn-sku-action', 'onclick': 'resetModalToInput()', 'style': 'flex:1; padding:12px; background:#FFF; border:2px solid #000; font-weight:800; cursor: pointer;'} 다른 연락처 입력
+     button {'type': 'button', 'class': 'btn-sku-action primary', 'onclick': 'closeLaunchModal()', 'style': 'flex:1; padding:12px; font-weight:900; background:#000; color:#FFF; cursor: pointer;'} 확인
+   div {'id': 'modalStateError', 'style': 'display:none; text-align:center; padding: 16px 0;'} 
+    div {'style': 'width:44px; height:44px; background:#FEF2F2; border:2px solid #EF4444; color:#991B1B; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 12px; font-size:22px; font-weight:900;'} ✕
+    h4 {'style': 'font-size:19px; font-weight:900; margin-bottom:8px; color:#000;'} 네트워크 전송 오류가 발생했습니다
+    p {'style': 'font-size:13px; color:#64748B; line-height:1.6; margin-bottom:16px;'} 일시적인 통신 장애로 알림 등록이 완료되지 않았습니다. 아래 버튼을 눌러 다시 시도해 주세요.
+    div {'style': 'display:flex; gap:10px;'} 
+     button {'type': 'button', 'class': 'btn-sku-action', 'onclick': 'resetModalToInput()', 'style': 'flex:1; padding:12px; background:#FFF; border:2px solid #000; font-weight:800; cursor: pointer;'} 정보 수정
+     button {'type': 'button', 'class': 'btn-sku-action primary', 'onclick': 'retrySubmit()', 'style': 'flex:1; padding:12px; font-weight:900; background:#EF4444; border:2px solid #EF4444; color:#FFF; cursor: pointer;'} 다시 시도하기 ↺

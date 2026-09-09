@@ -1,0 +1,355 @@
+{
+  "javaScriptEnabled": false,
+  "structure": {
+    "scripts": 0,
+    "handlers": 0,
+    "duplicateIds": [],
+    "badLinks": [],
+    "mainProducts": 16,
+    "catalogProducts": 16,
+    "details": 16
+  },
+  "sizes": [
+    {
+      "w": 1440,
+      "hash": "home",
+      "overflow": 0,
+      "view": [
+        "home"
+      ],
+      "offenders": []
+    },
+    {
+      "w": 1440,
+      "hash": "philosophy",
+      "overflow": 0,
+      "view": [
+        "home"
+      ],
+      "offenders": []
+    },
+    {
+      "w": 1440,
+      "hash": "spotlight",
+      "overflow": 0,
+      "view": [
+        "home"
+      ],
+      "offenders": []
+    },
+    {
+      "w": 1440,
+      "hash": "process",
+      "overflow": 0,
+      "view": [
+        "home"
+      ],
+      "offenders": []
+    },
+    {
+      "w": 1440,
+      "hash": "routine",
+      "overflow": 0,
+      "view": [
+        "home"
+      ],
+      "offenders": []
+    },
+    {
+      "w": 1440,
+      "hash": "collections",
+      "overflow": 0,
+      "view": [
+        "home"
+      ],
+      "offenders": []
+    },
+    {
+      "w": 1440,
+      "hash": "shop-all",
+      "overflow": 0,
+      "view": [
+        "home"
+      ],
+      "offenders": []
+    },
+    {
+      "w": 1440,
+      "hash": "brand",
+      "overflow": 0,
+      "view": [
+        "brand"
+      ],
+      "offenders": [
+        [
+          "DIV",
+          "halo-orbit",
+          1462
+        ]
+      ]
+    },
+    {
+      "w": 1440,
+      "hash": "brand-philosophy",
+      "overflow": 0,
+      "view": [
+        "brand"
+      ],
+      "offenders": [
+        [
+          "DIV",
+          "halo-orbit",
+          1462
+        ]
+      ]
+    },
+    {
+      "w": 1440,
+      "hash": "brand-rnd-process",
+      "overflow": 0,
+      "view": [
+        "brand"
+      ],
+      "offenders": [
+        [
+          "DIV",
+          "halo-orbit",
+          1462
+        ]
+      ]
+    },
+    {
+      "w": 1440,
+      "hash": "catalog",
+      "overflow": 0,
+      "view": [
+        "catalog"
+      ],
+      "offenders": []
+    },
+    {
+      "w": 1440,
+      "hash": "gear-1",
+      "overflow": 0,
+      "view": [
+        "catalog"
+      ],
+      "offenders": []
+    },
+    {
+      "w": 390,
+      "hash": "home",
+      "overflow": 0,
+      "view": [
+        "home"
+      ],
+      "offenders": [
+        [
+          "DIV",
+          "hero-object",
+          464
+        ]
+      ]
+    },
+    {
+      "w": 390,
+      "hash": "philosophy",
+      "overflow": 0,
+      "view": [
+        "home"
+      ],
+      "offenders": [
+        [
+          "DIV",
+          "hero-object",
+          464
+        ]
+      ]
+    },
+    {
+      "w": 390,
+      "hash": "spotlight",
+      "overflow": 0,
+      "view": [
+        "home"
+      ],
+      "offenders": [
+        [
+          "DIV",
+          "hero-object",
+          464
+        ]
+      ]
+    },
+    {
+      "w": 390,
+      "hash": "process",
+      "overflow": 0,
+      "view": [
+        "home"
+      ],
+      "offenders": [
+        [
+          "DIV",
+          "hero-object",
+          464
+        ]
+      ]
+    },
+    {
+      "w": 390,
+      "hash": "routine",
+      "overflow": 0,
+      "view": [
+        "home"
+      ],
+      "offenders": [
+        [
+          "DIV",
+          "hero-object",
+          464
+        ]
+      ]
+    },
+    {
+      "w": 390,
+      "hash": "collections",
+      "overflow": 0,
+      "view": [
+        "home"
+      ],
+      "offenders": [
+        [
+          "DIV",
+          "hero-object",
+          464
+        ]
+      ]
+    },
+    {
+      "w": 390,
+      "hash": "shop-all",
+      "overflow": 0,
+      "view": [
+        "home"
+      ],
+      "offenders": [
+        [
+          "DIV",
+          "hero-object",
+          464
+        ]
+      ]
+    },
+    {
+      "w": 390,
+      "hash": "brand",
+      "overflow": 0,
+      "view": [
+        "brand"
+      ],
+      "offenders": [
+        [
+          "DIV",
+          "halo-orbit",
+          418
+        ]
+      ]
+    },
+    {
+      "w": 390,
+      "hash": "brand-philosophy",
+      "overflow": 0,
+      "view": [
+        "brand"
+      ],
+      "offenders": [
+        [
+          "DIV",
+          "halo-orbit",
+          418
+        ]
+      ]
+    },
+    {
+      "w": 390,
+      "hash": "brand-rnd-process",
+      "overflow": 0,
+      "view": [
+        "brand"
+      ],
+      "offenders": [
+        [
+          "DIV",
+          "halo-orbit",
+          418
+        ]
+      ]
+    },
+    {
+      "w": 390,
+      "hash": "catalog",
+      "overflow": 0,
+      "view": [
+        "catalog"
+      ],
+      "offenders": []
+    },
+    {
+      "w": 390,
+      "hash": "gear-1",
+      "overflow": 0,
+      "view": [
+        "catalog"
+      ],
+      "offenders": []
+    }
+  ],
+  "filters": {
+    "runningCount": 4,
+    "postCount": 1,
+    "emptyCount": 0,
+    "emptyMessage": true,
+    "resetCount": 16,
+    "sorted": [
+      28000,
+      35000,
+      36000,
+      38000,
+      39000,
+      39000,
+      41000,
+      44000,
+      45000,
+      46000,
+      48000,
+      52000,
+      54000,
+      55000,
+      58000,
+      69000
+    ]
+  },
+  "images": {
+    "hero": {
+      "valueLength": 154540,
+      "width": 1536,
+      "height": 1024
+    },
+    "running": {
+      "valueLength": 443140,
+      "width": 1672,
+      "height": 941
+    },
+    "catalog": {
+      "valueLength": 198948,
+      "width": 1254,
+      "height": 1254
+    }
+  },
+  "formPreview": true,
+  "menuVisible": true,
+  "menuClosed": true,
+  "errors": [],
+  "requests": []
+}
