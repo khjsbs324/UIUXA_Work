@@ -1,0 +1,848 @@
+- generic [active] [ref=e1]:
+  - link "본문 바로가기" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - complementary "상단 안내 띠배너" [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: "[4차 정련 100% 완제품]"
+      - generic [ref=e6]: 택배 상자를 여는 순간부터 뽀송하게, 삶을 필요 없는 순수 소창
+    - generic [ref=e7]:
+      - button "1분 세안 명상 오디오" [ref=e8] [cursor=pointer]
+      - button "큰 글씨 모드 토글" [ref=e14] [cursor=pointer]:
+        - generic [ref=e15]: "[+] 큰 글씨 모드"
+      - link "1588-7241 직통전화" [ref=e16] [cursor=pointer]:
+        - /url: tel:1588-7241
+  - banner [ref=e17]:
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - link "플로뜰리에 홈" [ref=e20] [cursor=pointer]:
+          - /url: index.html
+          - text: F
+        - generic [ref=e21]:
+          - link "FLOTTELLIER" [ref=e22] [cursor=pointer]:
+            - /url: index.html
+          - generic [ref=e23]: "[ACHROMATIC WIREFRAME]"
+      - navigation "메인 메뉴" [ref=e24]:
+        - listitem [ref=e25]:
+          - link "HOME" [ref=e26] [cursor=pointer]:
+            - /url: index.html
+        - listitem [ref=e27]:
+          - link "BRAND STORY" [ref=e28] [cursor=pointer]:
+            - /url: chlwlgP/brand.html
+        - listitem [ref=e29]:
+          - link "COLLECTION" [ref=e30] [cursor=pointer]:
+            - /url: chlwlgP/category.html
+        - listitem [ref=e31]:
+          - link "자수 아틀리에" [ref=e32] [cursor=pointer]:
+            - /url: "#embroidery"
+        - listitem [ref=e33]:
+          - link "B2B 특판 센터" [ref=e34] [cursor=pointer]:
+            - /url: "#b2b"
+        - listitem [ref=e35]:
+          - link "SITEMAP" [ref=e36] [cursor=pointer]:
+            - /url: chlwlgP/사이트맵.html
+        - listitem [ref=e37]:
+          - link "스토리보드 뷰어" [ref=e38] [cursor=pointer]:
+            - /url: chlwlgP/스토리보드_전체_통합_뷰어.html
+      - generic [ref=e39]:
+        - button "1장 안심 체험팩" [ref=e40] [cursor=pointer]
+        - button "장바구니 열기" [ref=e42] [cursor=pointer]:
+          - generic [ref=e46]: "0"
+  - main [ref=e47]:
+    - region "브랜드 히어로" [ref=e48]:
+      - generic [aria-hidden]:
+        - generic: "[ HERO 풀 비주얼: 파란 하늘과 햇빛 아래 기분 좋은 바람에 흩날리는 4차 정련 순면 소창 ]"
+      - generic [ref=e49]:
+        - generic [ref=e50]: "[ 4-FREE REFINING 100% READY TO USE ]"
+        - heading [level=1] [ref=e51]:
+          - text: 시간과 손길이 만드는
+          - emphasis [ref=e52]: 고요한 에코 리추얼
+        - paragraph [ref=e53]: 삶지 않아도 첫날부터 사용할 수 있는 4차 정련 소창
+        - generic [ref=e54]:
+          - link "플로뜰리에 15종 컬렉션 둘러보기 ↓" [ref=e55] [cursor=pointer]:
+            - /url: "#collection"
+            - generic [ref=e56]: 플로뜰리에 15종 컬렉션 둘러보기
+            - generic [ref=e57]: ↓
+          - link "4차 정련 전통 공정 이야기" [ref=e58] [cursor=pointer]:
+            - /url: "#refining"
+        - paragraph [ref=e60]: "[ * 하단에서 3,000원 소창 손수건 안심 체험(써보고 안 맞으면 100% 환불)을 신청하실 수 있습니다 ]"
+        - generic [ref=e61]:
+          - generic [ref=e62]:
+            - generic [ref=e63]: 4-Free
+            - generic [ref=e64]: 형광·표백·염색·향료 4無
+          - generic [ref=e65]:
+            - generic [ref=e66]: 3x Speed
+            - generic [ref=e67]: 일반 타월 대비 3배 빠른 건조
+          - generic [ref=e68]:
+            - generic [ref=e69]: 1/3 Slim
+            - generic [ref=e70]: 욕실 상부장 1/3 슬림 수납
+          - generic [ref=e71]:
+            - generic [ref=e72]: 3 Years
+            - generic [ref=e73]: 세탁할수록 부드러운 3년 수명
+    - region "4無 안심 철학 및 4차 정련 완제품" [ref=e74]:
+      - generic [ref=e75]:
+        - generic [aria-hidden] [ref=e76]:
+          - generic [ref=e77]:
+            - generic [ref=e78]: "[ 1/4 무형광 ]"
+            - paragraph [ref=e79]: 형광증백제 0% 자연 채광 목화 순면 원사 텍스처
+          - generic [ref=e80]:
+            - generic [ref=e81]: "[ 2/4 무표백 ]"
+            - paragraph [ref=e82]: 인공 탈색 없는 내추럴 웜 아이보리 순면 결 질감
+          - generic [ref=e83]:
+            - generic [ref=e84]: "[ 3/4 무염색 ]"
+            - paragraph [ref=e85]: 화학 염료 0% 순수 오가닉 코튼의 숨결
+          - generic [ref=e86]:
+            - generic [ref=e87]: "[ 4/4 무향료 ]"
+            - paragraph [ref=e88]: 합성 향료 배제, 맑은 바람과 햇살로 건조된 청정 섬유
+        - generic [ref=e89]:
+          - generic [ref=e90]:
+            - generic [ref=e91]: "[ PURE ORGANIC 100% ]"
+            - heading "4無 안심 철학" [level=3] [ref=e92]
+            - paragraph [ref=e93]: 형광증백제 · 화학표백 · 인공염색 · 합성향료 0% 순수 순면
+          - generic [ref=e94]:
+            - generic [ref=e95]: KC 공인 KATRI 유해물질 불검출 & 독일 Dermatest Excellent 무자극 최고등급 획득
+            - paragraph [ref=e97]: 무형광, 무표백, 무염색, 무향료로 민감한 아기 피부부터 성인 피부까지, 화학물질 0% 자연 그대로의 목화 순면만을 정직하게 전합니다. 인위적인 가공을 일절 배제하여 섬유 본연의 통기성과 맑은 감촉을 오롯이 간직했습니다.
+            - generic [ref=e98]:
+              - generic [ref=e99]: 피부 자극도 0.00 안심 보증
+              - generic [ref=e100]: 독일 피부과학연구소 Dermatest 공식 패치 테스트 최고 안전 등급 완료.
+              - button "시험성적서 원본보기 →" [ref=e101] [cursor=pointer]:
+                - generic [ref=e102]: 시험성적서 원본보기
+                - generic [ref=e103]: →
+      - generic [aria-hidden] [ref=e104]: "[ SECTION SEPARATOR RULE ]"
+      - generic [ref=e105]:
+        - generic [ref=e107]:
+          - text: "[ 4차 정련 공정 연출 가이드 ]"
+          - paragraph [ref=e108]: 50℃ 지하수 침지 → 100℃ 전통 가마솥 열탕 삶음 → 3회 청정수 린스 → 에어 텀블링으로 뽀송하게 완성된 완제품 소창 타월 텍스처 클로즈업
+        - generic [ref=e109]:
+          - generic [ref=e110]:
+            - generic [ref=e111]: "[ 4차 정련 완제품 ]"
+            - heading "4차 정련 완제품" [level=3] [ref=e112]
+            - paragraph [ref=e113]: 12시간 침지 · 100℃ 열탕 · 3회 린스 · 에어 텀블링 장인 공정
+          - generic [ref=e114]:
+            - generic [ref=e115]: 삶는 수고를 플로뜰리에가 대신한 4차 정련 완제품 공정
+            - paragraph [ref=e117]: 전통 소창의 가장 큰 불편함이었던 풀기 삶기. 공방의 4단계 정련 공정(침지·열탕·린스·건조)을 100% 완료하여, 택배 상자를 여는 순간부터 번거롭게 삶을 필요 없이 첫날부터 뽀송하게 사용하실 수 있습니다.
+            - generic [ref=e118]:
+              - generic [ref=e119]: 100% 완제품 안심 보증 (Ready-to-Use)
+              - generic [ref=e120]: 번거롭게 삶을 필요 없이 수령 즉시 피부에 닿는 순간 뽀송한 감촉을 경험하세요.
+              - button "4차 정련 공정 과정 전체보기 →" [ref=e121] [cursor=pointer]:
+                - generic [ref=e122]: 4차 정련 공정 과정 전체보기
+                - generic [ref=e123]: →
+    - region "플로뜰리에 베스트 상품 TOP 3" [ref=e124]:
+      - generic [ref=e126]:
+        - generic [ref=e127]: "[ SIGNATURE HERITAGE TOP 3 ]"
+        - heading "플로뜰리에 베스트 상품 TOP 3" [level=2] [ref=e128]
+        - paragraph [ref=e129]: 4차 정련으로 번거로운 삶기 없이 첫날부터 뽀송하게, 가장 사랑받는 시그니처 3선
+      - generic [ref=e130]:
+        - generic [ref=e131]:
+          - generic [ref=e132]:
+            - generic [ref=e134]:
+              - generic [ref=e135]: "01"
+              - generic [ref=e136]: DAILY 3-PLY
+              - generic [ref=e137]: "[ 대표 1 이미지 연출 가이드 ]"
+              - paragraph [ref=e138]: 제품 전체 형태 + 세안 후 얼굴을 눌러 닦는 사용 장면
+            - generic [ref=e139]: "[ PURE ORGANIC 100% COTTON · 35×85cm ]"
+          - generic [ref=e141]:
+            - generic [ref=e142]: BEST 01
+            - generic [ref=e144]: FLOTTELLIER SIGNATURE
+            - generic [ref=e147]:
+              - term [ref=e148]: 4차 정련 3겹 데일리 소창 타월
+              - definition [ref=e149]:
+                - generic [ref=e150]:
+                  - strong [ref=e151]: 18,000원
+                  - generic [ref=e152]: 1장 단품 / 4차 정련 완료 완제품
+                - generic [ref=e153]:
+                  - button "장바구니 담기" [ref=e154] [cursor=pointer]
+                  - button "자수 각인 커스텀 →" [ref=e155] [cursor=pointer]
+        - generic [ref=e156]:
+          - generic [ref=e158]:
+            - generic [ref=e159]: BEST 02
+            - generic [ref=e161]: SENSITIVE & BABY CARE
+            - generic [ref=e164]:
+              - term [ref=e165]: 4차 정련 2겹 세안·베이비 케어 3선
+              - definition [ref=e166]:
+                - generic [ref=e167]:
+                  - strong [ref=e168]: 10,000원 ~ 19,000원
+                  - generic [ref=e169]: 가제 와입스 · 베이비 손수건 · 클렌징 패드 (극초부드러움 무자극)
+                - generic [ref=e170]:
+                  - button "장바구니 담기" [ref=e171] [cursor=pointer]
+                  - button "자수 각인 커스텀 →" [ref=e172] [cursor=pointer]
+          - generic [ref=e173]:
+            - generic [ref=e175]:
+              - generic [ref=e176]: "02"
+              - generic [ref=e177]: GAUZE 2-PLY
+              - generic [ref=e178]: "[ 대표 2 이미지 연출 가이드 ]"
+              - paragraph [ref=e179]: 2겹 세안·베이비 케어 3선 (가제 와입스, 신생아 손수건, 클렌징 패드)의 보드라운 질감 비교
+            - generic [ref=e180]: "[ DERMATEST EXCELLENT · BABY SAFE ]"
+        - generic [ref=e181]:
+          - generic [ref=e182]:
+            - generic [ref=e184]:
+              - generic [ref=e185]: "03"
+              - generic [ref=e186]: ALL-CHANGE BUNDLE
+              - generic [ref=e187]: "[ 대표 3 이미지 연출 가이드 ]"
+              - paragraph [ref=e188]: 욕실 선반의 수납 전후 + 세탁건조 로테이션 장면 + 실제 세트 구성
+            - generic [ref=e189]: "[ 45% BUNDLE DISCOUNT · 10-PACK ]"
+          - generic [ref=e191]:
+            - generic [ref=e192]: BEST 03
+            - generic [ref=e194]: LIFESTYLE INNOVATION
+            - generic [ref=e197]:
+              - term [ref=e198]: 4차 정련 세트·번들 3선 (10장 올체인지 대표)
+              - definition [ref=e199]:
+                - generic [ref=e200]:
+                  - strong [ref=e201]: 64,000원 ~ 158,000원
+                  - generic [ref=e202]: 6장 하프팩 · 10장 올체인지 · 16장 패밀리 풀세트
+                - generic [ref=e203]:
+                  - button "장바구니 담기" [ref=e204] [cursor=pointer]
+                  - button "자수 각인 커스텀 →" [ref=e205] [cursor=pointer]
+    - region "건조 및 수납 비교 시뮬레이터" [ref=e206]:
+      - generic [ref=e207]:
+        - generic [ref=e208]:
+          - generic [ref=e209]: "[ Interactive Simulator ]"
+          - heading "눈으로 직접 확인하는 소창의 놀라운 스펙" [level=2] [ref=e210]
+          - paragraph [ref=e211]: 테리 타월 대비 건조 속도, 수납 부피, 세탁 회차별 길들이기 감촉 변화를 직접 비교해보세요.
+        - generic [ref=e212]:
+          - generic [ref=e213]:
+            - generic [ref=e214]:
+              - button "3배 빠른 건조" [ref=e215] [cursor=pointer]
+              - button "1/3 슬림 수납" [ref=e216] [cursor=pointer]
+              - button "세탁 에이징" [ref=e217] [cursor=pointer]
+            - generic [ref=e218]:
+              - heading "장마철에도 1시간 만에 바짝 마르는 쾌속 건조" [level=3] [ref=e219]
+              - paragraph [ref=e220]: 소창 특유의 성근 평직 구조가 통풍을 극대화하여 세균과 꿉꿉한 냄새 번식을 원천 차단합니다.
+              - generic [ref=e222]:
+                - generic [ref=e223]: 플로뜰리에 3겹 소창
+                - strong [ref=e224]: 약 55분 완전 건조 (3배속)
+              - generic [ref=e228]:
+                - generic [ref=e229]: 일반 40수 테리 타월
+                - generic [ref=e230]: 약 180분 소요
+          - generic [ref=e233]:
+            - generic [ref=e234]: "Day 1 : 뽀송한 순면"
+            - generic [ref=e236]: "[ 100% Pure Organic Cotton 3-Ply Wireframe ]"
+    - region "시그니처 상품 컬렉션" [ref=e237]:
+      - generic [ref=e238]:
+        - generic [ref=e239]:
+          - generic [ref=e240]: "[ Signature Lineup ]"
+          - heading "일상을 바꾸는 플로뜰리에 컬렉션" [level=2] [ref=e241]
+          - paragraph [ref=e242]: 3겹 데일리(5종), 2겹 세안·베이비(3종), 4겹 바스·가운(3종), 세트·번들(3종), 선물·기프트(1종)의 15종 라인업을 라이프스타일에 맞게 선택하세요.
+        - generic [ref=e243]:
+          - button "전체 15" [ref=e244] [cursor=pointer]
+          - button "3겹 데일리 5" [ref=e245] [cursor=pointer]
+          - button "2겹 세안·베이비 케어 3" [ref=e246] [cursor=pointer]
+          - button "4겹 바스·가운 3" [ref=e247] [cursor=pointer]
+          - button "세트·번들 3" [ref=e248] [cursor=pointer]
+          - button "선물·기프트 1" [ref=e249] [cursor=pointer]
+        - paragraph [ref=e252]: FLOTTELLIER COLLECTIONS
+        - generic [ref=e253]:
+          - article [ref=e254] [cursor=pointer]:
+            - generic [ref=e255]:
+              - generic [ref=e256]:
+                - generic [ref=e257]: 3겹
+                - generic [ref=e258]: BEST
+              - generic [ref=e259]:
+                - generic [ref=e260]: "01"
+                - generic [ref=e261]: 데일리 소창 타월
+                - generic [ref=e262]: 35 × 85 cm
+                - generic [ref=e263]:
+                  - strong [ref=e264]: "[ 대표 1 (3겹 데일리 타월) ]"
+                  - text: 제품 전체 형태 + 세안 후 얼굴을 눌러 닦는 사용 장면
+            - generic [ref=e265]:
+              - heading "데일리 소창 타월" [level=3] [ref=e266]
+              - paragraph [ref=e267]: 3겹 데일리 · 35 × 85 cm (1장 단품)
+              - generic [ref=e268]:
+                - strong [ref=e269]: 18,000원
+                - generic [ref=e270]: 1장 단품
+              - generic [ref=e271]:
+                - button "자수 각인" [ref=e272]
+                - button "담기" [ref=e273]
+          - article [ref=e274] [cursor=pointer]:
+            - generic [ref=e275]:
+              - generic [ref=e276]:
+                - generic [ref=e277]: 3겹
+                - generic [ref=e278]: 판매중
+              - generic [ref=e279]:
+                - generic [ref=e280]: "02"
+                - generic [ref=e281]: 스포츠러닝 롱타월
+                - generic [ref=e282]: 20 × 110 cm
+                - generic [ref=e283]: 목에 걸친 슬림 롱 비율 + 땀 흡수 러닝 야외 연출
+            - generic [ref=e284]:
+              - heading "스포츠러닝 롱타월" [level=3] [ref=e285]
+              - paragraph [ref=e286]: 3겹 데일리 · 20 × 110 cm (1장 단품)
+              - generic [ref=e287]:
+                - strong [ref=e288]: 16,000원
+                - generic [ref=e289]: 1장 단품
+              - generic [ref=e290]:
+                - button "자수 각인" [ref=e291]
+                - button "담기" [ref=e292]
+          - article [ref=e293] [cursor=pointer]:
+            - generic [ref=e294]:
+              - generic [ref=e295]:
+                - generic [ref=e296]: 3겹
+                - generic [ref=e297]: 판매중
+              - generic [ref=e298]:
+                - generic [ref=e299]: "03"
+                - generic [ref=e300]: 콤팩트 핸드타월
+                - generic [ref=e301]: 30 × 45 cm
+                - generic [ref=e302]: 주방 식기 건조 매트 및 욕실 고리 거치 연출
+            - generic [ref=e303]:
+              - heading "콤팩트 핸드타월" [level=3] [ref=e304]
+              - paragraph [ref=e305]: 3겹 데일리 · 30 × 45 cm (1장 단품)
+              - generic [ref=e306]:
+                - strong [ref=e307]: 11,000원
+                - generic [ref=e308]: 1장 단품
+              - generic [ref=e309]:
+                - button "자수 각인" [ref=e310]
+                - button "담기" [ref=e311]
+          - article [ref=e312] [cursor=pointer]:
+            - generic [ref=e313]:
+              - generic [ref=e314]:
+                - generic [ref=e315]: 3겹
+                - generic [ref=e316]: 판매중
+              - generic [ref=e317]:
+                - generic [ref=e318]: "04"
+                - generic [ref=e319]: 와이드 페이스타월
+                - generic [ref=e320]: 40 × 90 cm
+                - generic [ref=e321]: 긴 머리를 감싸 올린 와이드 헤어 드라이 연출
+            - generic [ref=e322]:
+              - heading "와이드 페이스타월" [level=3] [ref=e323]
+              - paragraph [ref=e324]: 3겹 데일리 · 40 × 90 cm (1장 단품)
+              - generic [ref=e325]:
+                - strong [ref=e326]: 22,000원
+                - generic [ref=e327]: 1장 단품
+              - generic [ref=e328]:
+                - button "자수 각인" [ref=e329]
+                - button "담기" [ref=e330]
+          - article [ref=e331] [cursor=pointer]:
+            - generic [ref=e332]:
+              - generic [ref=e333]:
+                - generic [ref=e334]: 3겹
+                - generic [ref=e335]: 판매중
+              - generic [ref=e336]:
+                - generic [ref=e337]: "05"
+                - generic [ref=e338]: 데일리 3장 스타터 팩
+                - generic [ref=e339]: 35 × 85 cm (3장)
+                - generic [ref=e340]: 1인 가구 3장 로테이션 정갈한 거치 연출
+            - generic [ref=e341]:
+              - heading "데일리 3장 스타터 팩" [level=3] [ref=e342]
+              - paragraph [ref=e343]: 3겹 데일리 · 35 × 85 cm (3장) (3장 세트)
+              - generic [ref=e344]:
+                - strong [ref=e345]: 49,000원
+                - generic [ref=e346]: 3장 세트
+              - generic [ref=e347]:
+                - button "자수 각인" [ref=e348]
+                - button "담기" [ref=e349]
+          - article [ref=e350] [cursor=pointer]:
+            - generic [ref=e351]:
+              - generic [ref=e352]:
+                - generic [ref=e353]: 2겹
+                - generic [ref=e354]: BEST
+              - generic [ref=e355]:
+                - generic [ref=e356]: "06"
+                - generic [ref=e357]: 가제 세안 와입스
+                - generic [ref=e358]: 30 × 30 cm
+                - generic [ref=e359]:
+                  - strong [ref=e360]: "[ 대표 2 (2겹 세안·베이비 케어 3선) ]"
+                  - text: 2겹 세안·베이비 케어 3선 (가제 와입스, 손수건, 클렌징패드) 비교 연출
+            - generic [ref=e361]:
+              - heading "가제 세안 와입스" [level=3] [ref=e362]
+              - paragraph [ref=e363]: 2겹 세안·베이비 케어 · 30 × 30 cm (2장 세트)
+              - generic [ref=e364]:
+                - strong [ref=e365]: 12,000원
+                - generic [ref=e366]: 2장 세트
+              - generic [ref=e367]:
+                - button "자수 각인" [ref=e368]
+                - button "담기" [ref=e369]
+          - article [ref=e370] [cursor=pointer]:
+            - generic [ref=e371]:
+              - generic [ref=e372]:
+                - generic [ref=e373]: 2겹
+                - generic [ref=e374]: 판매중
+              - generic [ref=e375]:
+                - generic [ref=e376]: "07"
+                - generic [ref=e377]: 베이비 손수건 5장
+                - generic [ref=e378]: 35 × 35 cm
+                - generic [ref=e379]: 신생아 수유·목욕 부드러운 터치 안심 연출
+            - generic [ref=e380]:
+              - heading "베이비 손수건 5장" [level=3] [ref=e381]
+              - paragraph [ref=e382]: 2겹 세안·베이비 케어 · 35 × 35 cm (5장 세트)
+              - generic [ref=e383]:
+                - strong [ref=e384]: 19,000원
+                - generic [ref=e385]: 5장 세트
+              - generic [ref=e386]:
+                - button "자수 각인" [ref=e387]
+                - button "담기" [ref=e388]
+          - article [ref=e389] [cursor=pointer]:
+            - generic [ref=e390]:
+              - generic [ref=e391]:
+                - generic [ref=e392]: 2겹
+                - generic [ref=e393]: 판매중
+              - generic [ref=e394]:
+                - generic [ref=e395]: "08"
+                - generic [ref=e396]: 필링클렌징 패드 4장
+                - generic [ref=e397]: 15 × 15 cm
+                - generic [ref=e398]: 토너를 적셔 피부결을 닦아내는 클렌징 연출
+            - generic [ref=e399]:
+              - heading "필링클렌징 패드 4장" [level=3] [ref=e400]
+              - paragraph [ref=e401]: 2겹 세안·베이비 케어 · 15 × 15 cm (4장 세트)
+              - generic [ref=e402]:
+                - strong [ref=e403]: 10,000원
+                - generic [ref=e404]: 4장 세트
+              - generic [ref=e405]:
+                - button "자수 불가" [disabled] [ref=e406]
+                - button "담기" [ref=e407]
+          - article [ref=e408] [cursor=pointer]:
+            - generic [ref=e409]:
+              - generic [ref=e410]:
+                - generic [ref=e411]: 4겹
+                - generic [ref=e412]: BEST
+              - generic [ref=e413]:
+                - generic [ref=e414]: "09"
+                - generic [ref=e415]: 전신용 바스타월
+                - generic [ref=e416]: 70 × 140 cm
+                - generic [ref=e417]: 샤워 후 전신을 포근하게 감싸는 호텔 바스 연출
+            - generic [ref=e418]:
+              - heading "전신용 바스타월" [level=3] [ref=e419]
+              - paragraph [ref=e420]: 4겹 바스·가운 · 70 × 140 cm (1장 단품)
+              - generic [ref=e421]:
+                - strong [ref=e422]: 34,000원
+                - generic [ref=e423]: 1장 단품
+              - generic [ref=e424]:
+                - button "자수 각인" [ref=e425]
+                - button "담기" [ref=e426]
+          - article [ref=e427] [cursor=pointer]:
+            - generic [ref=e428]:
+              - generic [ref=e429]:
+                - generic [ref=e430]: 4겹
+                - generic [ref=e431]: 판매중
+              - generic [ref=e432]:
+                - generic [ref=e433]: "10"
+                - generic [ref=e434]: 패밀리 빅 바스시트
+                - generic [ref=e435]: 90 × 160 cm
+                - generic [ref=e436]: 특대형 160cm 바스시트 & 여름 홑이불 연출
+            - generic [ref=e437]:
+              - heading "패밀리 빅 바스시트" [level=3] [ref=e438]
+              - paragraph [ref=e439]: 4겹 바스·가운 · 90 × 160 cm (1장 단품)
+              - generic [ref=e440]:
+                - strong [ref=e441]: 46,000원
+                - generic [ref=e442]: 1장 단품
+              - generic [ref=e443]:
+                - button "자수 각인" [ref=e444]
+                - button "담기" [ref=e445]
+          - article [ref=e446] [cursor=pointer]:
+            - generic [ref=e447]:
+              - generic [ref=e448]:
+                - generic [ref=e449]: 4겹
+                - generic [ref=e450]: 판매중
+              - generic [ref=e451]:
+                - generic [ref=e452]: "11"
+                - generic [ref=e453]: 후드 베이비 바스가운
+                - generic [ref=e454]: 75 × 75 cm
+                - generic [ref=e455]: 아기 머리부터 씌운 삼각 후드 바스가운 연출
+            - generic [ref=e456]:
+              - heading "후드 베이비 바스가운" [level=3] [ref=e457]
+              - paragraph [ref=e458]: 4겹 바스·가운 · 75 × 75 cm (1장 단품)
+              - generic [ref=e459]:
+                - strong [ref=e460]: 39,000원
+                - generic [ref=e461]: 1장 단품
+              - generic [ref=e462]:
+                - button "자수 각인" [ref=e463]
+                - button "담기" [ref=e464]
+          - article [ref=e465] [cursor=pointer]:
+            - generic [ref=e466]:
+              - generic [ref=e467]:
+                - generic [ref=e468]: 3겹
+                - generic [ref=e469]: BEST
+              - generic [ref=e470]:
+                - generic [ref=e471]: "12"
+                - generic [ref=e472]: 10장 올체인지 데일리 팩
+                - generic [ref=e473]: 35 × 85 cm (10장)
+                - generic [ref=e474]:
+                  - strong [ref=e475]: "[ 대표 3 (10장 올체인지 팩) ]"
+                  - text: 욕실 선반의 수납 전후 + 세탁건조 로테이션 장면 + 실제 세트 구성
+            - generic [ref=e476]:
+              - heading "10장 올체인지 데일리 팩" [level=3] [ref=e477]
+              - paragraph [ref=e478]: 세트·번들 · 35 × 85 cm (10장) (10장 세트)
+              - generic [ref=e479]:
+                - strong [ref=e480]: 99,000원
+                - generic [ref=e481]: 10장 세트
+              - generic [ref=e482]:
+                - button "자수 각인" [ref=e483]
+                - button "담기" [ref=e484]
+          - article [ref=e485] [cursor=pointer]:
+            - generic [ref=e486]:
+              - generic [ref=e487]:
+                - generic [ref=e488]: 3겹
+                - generic [ref=e489]: 판매중
+              - generic [ref=e490]:
+                - generic [ref=e491]: "13"
+                - generic [ref=e492]: 6장 하프체인지 데일리 팩
+                - generic [ref=e493]: 35 × 85 cm (6장)
+                - generic [ref=e494]: 2인 신혼 욕실 6장 슬림 수납 연출
+            - generic [ref=e495]:
+              - heading "6장 하프체인지 데일리 팩" [level=3] [ref=e496]
+              - paragraph [ref=e497]: 세트·번들 · 35 × 85 cm (6장) (6장 세트)
+              - generic [ref=e498]:
+                - strong [ref=e499]: 64,000원
+                - generic [ref=e500]: 6장 세트
+              - generic [ref=e501]:
+                - button "자수 각인" [ref=e502]
+                - button "담기" [ref=e503]
+          - article [ref=e504] [cursor=pointer]:
+            - generic [ref=e505]:
+              - generic [ref=e506]:
+                - generic [ref=e507]: 3겹
+                - generic [ref=e508]: 판매중
+              - generic [ref=e509]:
+                - generic [ref=e510]: "14"
+                - generic [ref=e511]: 올인원 패밀리 마스터 번들
+                - generic [ref=e512]: 데일리10 + 바스2 + 세안4 (16장)
+                - generic [ref=e513]: 데일리10+바스2+세안4 16장 풀 번들 박스 연출
+            - generic [ref=e514]:
+              - heading "올인원 패밀리 마스터 번들" [level=3] [ref=e515]
+              - paragraph [ref=e516]: 세트·번들 · 데일리10 + 바스2 + 세안4 (16장) (16장 풀세트)
+              - generic [ref=e517]:
+                - strong [ref=e518]: 158,000원
+                - generic [ref=e519]: 16장 풀세트
+              - generic [ref=e520]:
+                - button "자수 각인" [ref=e521]
+                - button "담기" [ref=e522]
+          - article [ref=e523] [cursor=pointer]:
+            - generic [ref=e524]:
+              - generic [ref=e525]:
+                - generic [ref=e526]: 3겹
+                - generic [ref=e527]: BEST
+              - generic [ref=e528]:
+                - generic [ref=e529]: "15"
+                - generic [ref=e530]: 신혼 혼수답례 선물세트
+                - generic [ref=e531]: 35 × 85 cm (5장)
+                - generic [ref=e532]: 전통 패브릭 보자기와 노리개 매듭 선물 패키징 연출
+            - generic [ref=e533]:
+              - heading "신혼 혼수답례 선물세트" [level=3] [ref=e534]
+              - paragraph [ref=e535]: 선물·기프트 · 35 × 85 cm (5장) (3겹 5장 + 보자기 & 노리개 포장)
+              - generic [ref=e536]:
+                - strong [ref=e537]: 58,000원
+                - generic [ref=e538]: 3겹 5장 + 보자기 & 노리개 포장
+              - generic [ref=e539]:
+                - button "자수 각인" [ref=e540]
+                - button "담기" [ref=e541]
+        - link "카테고리 전체 상품 카탈로그 (P-04) 상세 보기 →" [ref=e543] [cursor=pointer]:
+          - /url: chlwlgP/category.html
+    - region "3,000원 손수건 안심 체험" [ref=e545]:
+      - generic [ref=e547]:
+        - generic [ref=e548]:
+          - generic [ref=e549]: "[ 100% 안심 환불 보장 프로그램 ]"
+          - heading "3,000원에 순면 손수건 먼저 써보세요" [level=2] [ref=e550]
+          - paragraph [ref=e551]:
+            - text: 4차 정련 순면 소창 손수건(35×35cm)을 3,000원 체험 쿠폰가로 먼저 부담 없이 경험해 보세요. 직접 써보시고 내 피부에 맞지 않거나 불만족 시
+            - strong [ref=e552]: 결제하신 3,000원을 100% 전액 환불
+            - text: 해 드립니다.
+          - generic [ref=e553]:
+            - generic [ref=e554]:
+              - strong [ref=e555]: STEP 01
+              - text: 3,000원 손수건 신청
+            - generic [ref=e556]:
+              - strong [ref=e557]: STEP 02
+              - text: 4차 정련 완제품 배송
+            - generic [ref=e558]:
+              - strong [ref=e559]: STEP 03
+              - text: 써보고 안 맞으면 100% 환불
+          - button "3,000원 손수건 안심 체험 신청하기 →" [ref=e560] [cursor=pointer]
+        - generic [ref=e562]:
+          - generic [ref=e563]: "[ 3,000원 손수건 안심 체험 ]"
+          - generic [ref=e564]: 3,000원
+          - generic [ref=e565]: 4차 정련 순면 소창 손수건 (35×35cm) · 써보고 안 맞으면 100% 전액 환불
+    - region "실시간 자수 아틀리에" [ref=e566]:
+      - generic [ref=e567]:
+        - generic [ref=e568]:
+          - generic [ref=e569]: "[ Custom Embroidery Atelier ]"
+          - heading "나만의 이름을 새기는 실시간 자수 아틀리에" [level=2] [ref=e570]
+          - paragraph [ref=e571]: 내 이름, 가족의 이니셜, 소중한 기념일을 6종의 무채색 실 톤과 서체로 시뮬레이션해보세요.
+        - generic [ref=e572]:
+          - generic [ref=e573]: "[ Canvas 0.05s Live Rendering ]"
+          - generic [ref=e576]:
+            - generic [ref=e577]:
+              - generic [ref=e578]:
+                - generic [ref=e579]: 자수 각인 문구 (최대 12자)
+                - textbox "자수 각인 문구 (최대 12자)" [ref=e580]:
+                  - /placeholder: 새길 문구를 입력하세요
+                  - text: FLOTTELLIER Ritual
+              - generic [ref=e581]:
+                - generic [ref=e582]: 서체 선택 (Typography)
+                - generic [ref=e583]:
+                  - button "영문 이탤릭" [ref=e584] [cursor=pointer]
+                  - button "전통 명조" [ref=e585] [cursor=pointer]
+                  - button "모던 고딕" [ref=e586] [cursor=pointer]
+              - generic [ref=e587]:
+                - generic [ref=e588]: 무채색 실 톤 선택 (Monochrome Palette)
+                - generic [ref=e589]:
+                  - button "블랙 (#000000)" [ref=e590] [cursor=pointer]
+                  - button "차콜 (#333333)" [ref=e591] [cursor=pointer]
+                  - button "다크그레이 (#666666)" [ref=e592] [cursor=pointer]
+                  - button "미드그레이 (#999999)" [ref=e593] [cursor=pointer]
+                  - button "라이트그레이 (#CCCCCC)" [ref=e594] [cursor=pointer]
+                  - button "슬레이트 (#555555)" [ref=e595] [cursor=pointer]
+              - generic [ref=e596]:
+                - generic [ref=e597]: 자수 위치 (Position)
+                - generic [ref=e598]:
+                  - button "우측 하단" [ref=e599] [cursor=pointer]
+                  - button "중앙 정렬" [ref=e600] [cursor=pointer]
+                  - button "우측 상단" [ref=e601] [cursor=pointer]
+            - button "이 자수 옵션으로 장바구니에 담기 (+2,000원)" [ref=e602] [cursor=pointer]
+    - region "B2B 특판 및 견적 센터" [ref=e603]:
+      - generic [ref=e605]:
+        - generic [ref=e606]:
+          - text: "[ B2B & Hospitality ]"
+          - heading "숙소·어메니티·기업 대량 주문 및 직인 공식 견적서" [level=4] [ref=e607]
+          - paragraph [ref=e608]: 50개 이상 발주 시 최대 25% 구간 할인 · 기업/스테이 로고 자수 무료 펀칭 · 전국 분할 직배송 지원
+        - button "[ 직인 날인 견적서 1초 산출 / 상담 → ]" [ref=e610] [cursor=pointer]
+  - complementary "장바구니" [ref=e611]:
+    - generic [ref=e612]:
+      - heading "장바구니 (0)" [level=3] [ref=e613]
+      - button "장바구니 닫기" [ref=e614] [cursor=pointer]: ×
+    - generic [ref=e615]: "[ 장바구니가 비어 있습니다 ]"
+    - generic [ref=e617]:
+      - generic [ref=e618]:
+        - generic [ref=e619]: 총 결제금액
+        - generic [ref=e620]: 0원
+      - button "1초 네이버페이 / 간편결제 진행하기" [ref=e621] [cursor=pointer]
+  - generic [ref=e622]:
+    - generic [ref=e623]: "[✓]"
+    - generic [ref=e624]: 장바구니에 상품이 담겼습니다.
+  - generic:
+    - generic:
+      - button "×"
+      - generic:
+        - heading "성수 쇼룸 \"시간을 짓는 공간\" 1초 사전예약" [level=3]
+        - paragraph: 방문 일시와 인원을 선택하시면 모바일 카카오 알림톡 바코드 티켓이 자동 발송됩니다.
+      - generic:
+        - generic:
+          - generic: 방문 날짜
+          - textbox "방문 날짜": 2026-08-24
+        - generic:
+          - generic: 방문 시간대
+          - combobox "방문 시간대":
+            - option "14:00 (잔여 3석)" [selected]
+            - option "15:30 (잔여 5석)"
+            - option "17:00 (잔여 2석)"
+            - option "18:30 (잔여 4석)"
+        - generic:
+          - generic: 예약자 성명
+          - textbox "예약자 성명":
+            - /placeholder: 홍길동
+        - generic:
+          - generic: 휴대폰 번호 (알림톡 수신용)
+          - textbox "휴대폰 번호 (알림톡 수신용)":
+            - /placeholder: 010-1234-5678
+        - button "예약 확정 및 모바일 티켓 받기"
+  - generic:
+    - generic:
+      - button "×"
+      - generic:
+        - heading "KC 공인 4無 시험성적서 & 독일 Dermatest" [level=3]
+        - paragraph: 한국의류시험연구원(KATRI) 및 독일 Dermatest 피부자극 0% 최고 등급 성적서 원본
+      - generic:
+        - generic: "[KATRI 한국의류시험연구원 공식 성적서 NO. KATRI-2026-FL092]"
+        - generic:
+          - text: "• 형광증백제 시험:"
+          - strong: 불검출 (적합)
+          - text: "• 포름알데히드:"
+          - strong: 0.0 mg/kg (기준치 이하 적합)
+          - text: "• pH 농도:"
+          - strong: 6.8 (중성 무자극)
+          - text: "• 독일 더마테스트 패치 테스트:"
+          - strong: Excellent (무자극 판정)
+      - generic:
+        - button "공식 성적서 원본 PDF 다운로드"
+  - generic:
+    - generic:
+      - button "×"
+      - generic:
+        - generic: "[ Craftsmanship Process ]"
+        - heading "삶는 수고를 플로뜰리에가 대신한 4차 정련 공정 과정 전체" [level=3]
+        - paragraph: 12시간 침지 · 100℃ 열탕 · 3회 린스 · 에어 텀블링 장인 공정 (100% 완료 완제품)
+      - generic:
+        - button "1차 정련 온수 침지":
+          - generic: 1차 정련
+          - generic: 온수 침지
+        - button "2차 정련 100℃ 열탕":
+          - generic: 2차 정련
+          - generic: 100℃ 열탕
+        - button "3차 정련 고압 린스":
+          - generic: 3차 정련
+          - generic: 고압 린스
+        - button "4차 정련 자연 건조 & 텀블링":
+          - generic: 4차 정련
+          - generic: 자연 건조 & 텀블링
+      - generic:
+        - generic:
+          - generic: "[ WIREFRAME IMAGE AREA ]"
+          - generic: "[ 1차 온수 침지 ]"
+          - paragraph: 강화도 50℃ 청정 지하수 대야에 순면이 침지된 공정 영역
+        - generic:
+          - generic: 1차 정련
+          - heading "온수 침지 (Soaking)" [level=4]
+          - paragraph: 강화도 50℃ 청정 지하수에 12시간 동안 정성스럽게 담가 직조 시 사용된 천연 풀기를 1차 분해합니다.
+          - generic:
+            - text: •
+            - strong: 온도/시간
+            - text: ": 50℃ 지하수 / 12시간 침지 •"
+            - strong: 주요 효과
+            - text: ": 직조 천연 풀기 1차 자연 분해"
+      - generic:
+        - generic: "* 플로뜰리에 아틀리에 4차 전통 정련 공정 100% 완료 완제품"
+        - button "확인 완료"
+  - generic:
+    - generic:
+      - button "×"
+      - generic:
+        - heading "플로뜰리에 B2B 공식 견적서 (직인 날인)" [level=3]
+        - paragraph: 입력하신 수량과 옵션에 따른 공식 거래 견적서입니다.
+      - generic:
+        - text: ================================================
+        - strong: 공 식 견 적 서 (FLOTTELLIER Enterprise)
+        - text: "발행일: 2026년 08월 24일 | 견적번호: FLOT-B2B-844 공급자: 플로뜰리에 아틀리에 (대표: 김예민) ------------------------------------------------ 품목: 4차 정련 강화 순면 소창 타월 수량: 50 EA 기본 단가: 18,000원 대량 할인: -10% (-90,000원)"
+        - strong: "최종 견적 공급가액: 810,000원 (VAT 포함)"
+        - text: "납품일정: 발주 확정 후 3영업일 이내 출고 [플로뜰리에 법인 직인 날인 생략]"
+      - button "PDF 다운로드 및 담당자 발송"
+  - generic:
+    - generic:
+      - button "×"
+      - generic:
+        - heading "3,000원 소창 손수건 안심 체험 신청" [level=3]
+        - paragraph: 4차 정련 순면 소창 손수건(35×35cm)을 3,000원에 체험해보세요. 직접 사용 후 피부에 안 맞으면 100% 전액 환불해 드립니다.
+      - generic:
+        - generic:
+          - generic: 받으시는 분 성함
+          - textbox "받으시는 분 성함":
+            - /placeholder: 홍길동
+        - generic:
+          - generic: 연락처
+          - textbox "연락처":
+            - /placeholder: 010-0000-0000
+        - generic:
+          - generic: 배송지 주소
+          - textbox "배송지 주소":
+            - /placeholder: 서울시 강남구 테헤란로 123
+        - button "3,000원 결제하고 손수건 받기 (안 맞으면 100% 환불)"
+  - generic:
+    - generic:
+      - button "×"
+      - generic:
+        - text: "[ CUSTOM EMBROIDERY ATELIER ]"
+        - heading "자수 각인 커스텀 에디터" [level=3]
+        - paragraph: 선택하신 순면 소창 타월에 나만의 감성 이니셜을 실시간으로 수놓아보세요.
+      - generic:
+        - generic: "[ Canvas 0.05s Live Rendering ]"
+        - generic:
+          - generic:
+            - generic: 자수 각인 문구 (최대 12자)
+            - textbox "새길 문구를 입력하세요": FLOTTELLIER
+          - generic:
+            - generic: 서체 선택 (Typography)
+            - generic:
+              - button "영문 이탤릭"
+              - button "전통 명조"
+              - button "모던 고딕"
+          - generic:
+            - generic: 무채색 실 톤 (Thread Tone)
+            - generic:
+              - button "블랙"
+              - button "차콜"
+              - button "다크그레이"
+              - button "미드그레이"
+              - button "라이트그레이"
+          - generic:
+            - generic: 자수 위치
+            - generic:
+              - button "우측 하단"
+              - button "중앙"
+              - button "우측 상단"
+          - generic:
+            - generic:
+              - generic: 자수 각인 추가 공임
+              - generic: + 2,000원
+            - text: "* 1:1 핸드메이드 자수 각인 후 개별 포장 출고"
+          - button "자수 옵션 적용하여 장바구니 담기"
+  - generic:
+    - generic:
+      - button "×"
+      - generic:
+        - generic:
+          - generic: 3겹
+          - generic: BEST
+          - generic: "#P001"
+        - heading "데일리 소창 타월" [level=3]
+        - paragraph: 3겹 데일리 · 35 × 85 cm
+      - generic:
+        - heading "[ 10개 통합 스펙 & 세부 구성 안내 ]" [level=4]
+        - generic:
+          - term: • 정식 상품명
+          - definition: 데일리 소창 타월
+          - term: • 카테고리/겹수
+          - definition: 3겹 데일리 (3겹 순면 직조)
+          - term: • 규격/크기
+          - definition: 35 × 85 cm
+          - term: • 세트 구성 상세
+          - definition: 데일리 소창 타월 (35 × 85 cm) × 1장 단품
+          - term: • 판매 가격
+          - definition: 18,000원
+          - term: • 자수 가능 여부
+          - definition: 1:1 핸드메이드 실시간 자수 각인 지원 (+2,000원)
+          - term: • 정련/안전 인증
+          - definition: 4차 가마솥 열탕 정련 완료 (삶기 불필요) · KC 4無 안심 인증
+      - generic:
+        - generic: "[ 이미지 연출 가이드 & 라이프스타일 씬 ]"
+        - paragraph: 제품 전체 형태 + 세안 후 얼굴을 눌러 닦는 사용 장면
+      - generic:
+        - button "자수 각인 시뮬레이터 →"
+        - button "장바구니 담기"
+  - contentinfo [ref=e625]:
+    - generic [ref=e626]:
+      - generic [ref=e627]:
+        - heading "FLOTTELLIER" [level=4] [ref=e628]
+        - paragraph [ref=e629]: 플로뜰리에(FLOTTELLIER)는 강화도 4차 정련 순면 소창을 통해 일상의 고요한 에코 리추얼을 만드는 라이프스타일 아틀리에입니다.
+      - generic [ref=e630]:
+        - heading "ABOUT & STORY" [level=5] [ref=e631]
+        - list [ref=e632]:
+          - listitem [ref=e633]:
+            - link "브랜드 철학 & 스토리" [ref=e634] [cursor=pointer]:
+              - /url: chlwlgP/brand.html
+          - listitem [ref=e635]:
+            - link "4차 정련 전통 공정" [ref=e636] [cursor=pointer]:
+              - /url: "#refining"
+          - listitem [ref=e637]:
+            - link "4無 안심 시험성적서" [ref=e638] [cursor=pointer]:
+              - /url: "#assurance"
+          - listitem [ref=e639]:
+            - link "성수 플래그십 쇼룸" [ref=e640] [cursor=pointer]:
+              - /url: "#wellness"
+      - generic [ref=e641]:
+        - heading "COLLECTION" [level=5] [ref=e642]
+        - list [ref=e643]:
+          - listitem [ref=e644]:
+            - link "전체 상품 카탈로그" [ref=e645] [cursor=pointer]:
+              - /url: chlwlgP/category.html
+          - listitem [ref=e646]:
+            - link "3겹 데일리 소창 타월" [ref=e647] [cursor=pointer]:
+              - /url: "#collection"
+          - listitem [ref=e648]:
+            - link "10장 올체인지 데일리 팩" [ref=e649] [cursor=pointer]:
+              - /url: "#collection"
+          - listitem [ref=e650]:
+            - link "실시간 자수 커스텀" [ref=e651] [cursor=pointer]:
+              - /url: "#embroidery"
+      - generic [ref=e652]:
+        - heading "B2B & SITEMAP" [level=5] [ref=e653]
+        - list [ref=e654]:
+          - listitem [ref=e655]:
+            - link "B2B 대량 발주 및 견적" [ref=e656] [cursor=pointer]:
+              - /url: "#b2b"
+          - listitem [ref=e657]:
+            - link "마스터 사이트맵 (Sitemap)" [ref=e658] [cursor=pointer]:
+              - /url: chlwlgP/사이트맵.html
+          - listitem [ref=e659]:
+            - link "12대 화면 스토리보드" [ref=e660] [cursor=pointer]:
+              - /url: chlwlgP/스토리보드_전체_통합_뷰어.html
+          - listitem [ref=e661]:
+            - 'link "고객센터: 1588-7241" [ref=e662] [cursor=pointer]':
+              - /url: tel:1588-7241
+    - generic [ref=e663]:
+      - generic [ref=e664]: "(주)플로뜰리에 아틀리에 | 대표: 김예민 | 사업자등록번호: 120-88-99412 통신판매업신고: 제2026-서울성동-0192호 | KC안전인증: KATRI-2026-FL092"
+      - generic [ref=e665]: © 2026 FLOTTELLIER Atelier. 100% Achromatic Monochrome Wireframe Edition.
