@@ -1,0 +1,2 @@
+[    2394ms] [WARNING] Allow attribute will take precedence over 'allowfullscreen'. @ https://www.drinkzoi.co/:128
+[    3295ms] [WARNING] The powerPreference option is currently ignored when calling requestAdapter() on Windows. See https://crbug.com/369219127 @ :0

@@ -1,0 +1,137 @@
+{
+  "source_sha256": "7dca607410f8c2d69e467c7ab12c048b45ee76d34470ff621725b1c05029b4ed",
+  "wireframe_text_edits": 20,
+  "wireframe_edits": [
+    {
+      "from": "WICKETA 전사 통합 와이어프레임 [시안 4] | 12 배서율 감각 서사 아키텍처 통합 에디션",
+      "to": "WICKETA 메인페이지 와이어프레임 [시안 6 최종]"
+    },
+    {
+      "from": "WICKETA 11인 통합 마스터 와이어프레임",
+      "to": "WICKETA 11인 통합 와이어프레임"
+    },
+    {
+      "from": "3D각인",
+      "to": "입체 각인"
+    },
+    {
+      "from": "(전수 도감)",
+      "to": "(전체 상품)"
+    },
+    {
+      "from": "시안 4 마스터 통합",
+      "to": "시안 6 최종"
+    },
+    {
+      "from": "🚨 [출발 문제 (Origin Friction)]",
+      "to": "🚨 [일상 속 불편함]"
+    },
+    {
+      "from": "💡 [위케타의 해결 (1-Line Resolution)]",
+      "to": "💡 [위케타의 해결]"
+    },
+    {
+      "from": "* [설계 기준 REQ-04] 6단계 공정 및 공인 시험성적서 신뢰 규격",
+      "to": "* [제작 과정 안내] 6단계 공정 및 공인 시험성적서 신뢰 규격"
+    },
+    {
+      "from": "* KTR 공인 시험성적서 접수 및 검증 예정 기준",
+      "to": "* KTR 시험 자료 안내"
+    },
+    {
+      "from": "5-IN-1 감각 스튜디오 콘솔",
+      "to": "다섯 가지 감각 스튜디오"
+    },
+    {
+      "from": "5-in-1 감각 스튜디오 콘솔 (인터랙티브 창작 허브)",
+      "to": "다섯 가지 감각 체험 공간"
+    },
+    {
+      "from": "* [설계 기준 REQ-05] 5대 인터랙티브 감각 경험 아키텍처",
+      "to": "* [감각 체험 안내] 다섯 가지 감각 체험 구성"
+    },
+    {
+      "from": "✦ 20종 전수 상품 컬렉션 ✦",
+      "to": "✦ 20종 전체 상품 컬렉션 ✦"
+    },
+    {
+      "from": "앞선 서사(Hero 오로라 수색 변환, 24H 리추얼 휠, KTR 검증 크래프트 여정)에서 만난",
+      "to": "앞선 이야기(첫 화면의 오로라 색 변화, 24H 리추얼 휠, KTR 시험 안내와 제작 과정)에서 만난"
+    },
+    {
+      "from": "을 상단에서 즉시 확인하고, 하단 5대 핵심 카테고리 20종 전수 매트릭스를 통해 원산지 스펙과 추천 DIY 조합을 객관적으로 비교해 보세요.",
+      "to": "을 상단에서 즉시 확인하고, 하단 다섯 분류의 전체 20종 상품 목록을 통해 원산지 스펙과 추천 DIY 조합을 객관적으로 비교해 보세요."
+    },
+    {
+      "from": "첫 화면부터 리추얼 휠, 크래프트 여정에서 소개된 핵심 대표 상품 4종입니다. 도감 위치로 즉시 찾아가거나 빠르게 담을 수 있습니다.",
+      "to": "첫 화면부터 리추얼 휠, 제작 과정에서 소개된 핵심 대표 상품 4종입니다. 도감 위치로 즉시 찾아가거나 빠르게 담을 수 있습니다."
+    },
+    {
+      "from": "✨ 서사 연계 4대 대표 상품",
+      "to": "✨ 이야기 속 대표 상품 4종"
+    },
+    {
+      "from": "(기준표 SSOT 4대 핵심 라인업)",
+      "to": "(대표 상품 4종 안내)"
+    },
+    {
+      "from": "📑 [증빙준비] KTR 성적서",
+      "to": "📑 KTR 시험 자료 안내"
+    },
+    {
+      "from": "* [기획 아키텍처 규격] 20종 SSOT 데이터 연동",
+      "to": "* [브랜드 안내] 20종 상품 정보 안내"
+    }
+  ],
+  "products": 20,
+  "categories": {
+    "sig": 4,
+    "clean": 4,
+    "gift": 4,
+    "ware": 4,
+    "bulk": 4
+  },
+  "studio_panes": 5,
+  "missing_source_texts": [],
+  "scripts": 0,
+  "event_attributes": 0,
+  "output_bytes": 1475383,
+  "sections": [
+    [
+      "hero-section",
+      "hero-manifesto-box chapter"
+    ],
+    [
+      "bridge-section",
+      "editorial-manifesto-strip chapter"
+    ],
+    [
+      "spotlight-section",
+      "wf-section-box section-spotlight chapter"
+    ],
+    [
+      "craft-section",
+      "craft-timeline-box chapter"
+    ],
+    [
+      "eco-section",
+      "wf-section-box section-eco chapter"
+    ],
+    [
+      "routine-section",
+      "routine-mosaic-box chapter"
+    ],
+    [
+      "studio-section",
+      "bento-studio-box chapter"
+    ],
+    [
+      "catalog-section",
+      "wf-section-box section-catalog chapter"
+    ],
+    [
+      "showroom-section",
+      "wf-section-box section-showroom chapter"
+    ]
+  ]
+}

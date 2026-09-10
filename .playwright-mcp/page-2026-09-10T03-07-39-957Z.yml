@@ -1,0 +1,575 @@
+- generic [active] [ref=f4e1]:
+  - generic:
+    - generic:
+      - banner [ref=f4e2]:
+        - generic [ref=f4e4]:
+          - link [ref=f4e7] [cursor=pointer]:
+            - /url: /
+            - img "netrix logo" [ref=f4e8]
+            - img "netrix logo" [ref=f4e9]
+          - generic [ref=f4e10]:
+            - link "Work" [ref=f4e11] [cursor=pointer]:
+              - /url: /work
+            - link "Our Story" [ref=f4e12] [cursor=pointer]:
+              - /url: /our-story
+            - link "Labs" [ref=f4e13] [cursor=pointer]:
+              - /url: https://labs.noomoagency.com/
+            - link "Insights" [ref=f4e14] [cursor=pointer]:
+              - /url: /insights
+            - link "Connect" [ref=f4e15] [cursor=pointer]:
+              - /url: /connect
+      - generic [ref=f4e16]:
+        - generic [ref=f4e20]:
+          - generic [ref=f4e22]:
+            - generic [ref=f4e23]:
+              - generic [ref=f4e24]:
+                - heading "At Noomo, we create 3D storytelling websites and immersive digital experiences where craft and narrative become one." [level=1] [ref=f4e25]
+                - heading "From immersive 3D websites to cinematic brand videos, we let the story dictate the medium—whether that's real-time rendering, editorial design, or interactive experiences." [level=2] [ref=f4e26]
+              - paragraph [ref=f4e28]: We partner with brands like Salesforce, AMD, Red Bull and Vogue Business who believe craft makes the difference. Companies that value innovation, obsess over details, and understand great digital work requires time, trust, and true collaboration.
+            - generic [ref=f4e29]:
+              - generic [ref=f4e31]:
+                - paragraph [ref=f4e32]: Services
+                - paragraph [ref=f4e33]: 3D websites Storytelling websites 3D storytelling videos Immersive web experiences WebGL development Brand activation microsites Digital event experiences Interactive website design AI-driven experiences Digital branding
+              - generic [ref=f4e34]:
+                - generic [ref=f4e35]:
+                  - paragraph [ref=f4e36]: Clients
+                  - paragraph [ref=f4e37]: Salesforce AMD Coinbase Red Bull Intel | ai.io Yolo Federal Credit Union Percipio Health Dandy Vision Vibrant Wellness
+                - generic [ref=f4e38]:
+                  - paragraph [ref=f4e39]: ♥‿♥
+                  - paragraph [ref=f4e40]: Vogue Business Samsung Cadence Design Systems Space Needle OneLine Health Middle Finance The Art of Living Life House Battalion
+          - generic [ref=f4e42]:
+            - heading "Recognition for innovative work that pushes what's possible in digital design." [level=3] [ref=f4e43]
+            - generic [ref=f4e44]:
+              - generic [ref=f4e45]:
+                - paragraph: FWA
+                - paragraph: / 12
+                - img "arrow"
+                - generic:
+                  - generic:
+                    - paragraph: Project
+                    - paragraph: Nomination
+                    - paragraph: Year
+                  - generic:
+                    - paragraph: Vibrant Wellness
+                    - paragraph: FWA of the day
+                    - paragraph: "2026"
+                  - generic:
+                    - paragraph: "Vogue Business | Archrival: Gen Z Broke The Marketing Funnel"
+                    - paragraph: FWA of the day
+                    - paragraph: "2025"
+                  - generic:
+                    - paragraph: Noomo Valentime
+                    - paragraph: FWA of the day
+                    - paragraph: "2025"
+                  - generic:
+                    - paragraph: Noomo Beat
+                    - paragraph: FWA of the day - AI
+                    - paragraph: "2025"
+                  - generic:
+                    - paragraph: Noomo Beat
+                    - paragraph: FWA of the day
+                    - paragraph: "2025"
+                  - generic:
+                    - paragraph: Intel | ai.io interactive AI experience for AWS re:Invent
+                    - paragraph: FWA of the day
+                    - paragraph: "2024"
+                  - generic:
+                    - paragraph: Noomo Playground
+                    - paragraph: FWA of the day
+                    - paragraph: "2024"
+                  - generic:
+                    - paragraph: Noomo Labs
+                    - paragraph: FWA of the day - Mobile
+                    - paragraph: "2024"
+                  - generic:
+                    - paragraph: Noomo Labs
+                    - paragraph: FWA of the day
+                    - paragraph: "2024"
+                  - generic:
+                    - paragraph: The Silly Bunny
+                    - paragraph: FWA of the day
+                    - paragraph: "2024"
+                  - generic:
+                    - paragraph: Noomo Agency
+                    - paragraph: FWA of the day
+                    - paragraph: "2023"
+                  - generic:
+                    - paragraph
+                    - paragraph
+                    - paragraph
+              - generic [ref=f4e46]:
+                - paragraph: The Webby Awards
+                - paragraph: / 08
+                - img "arrow"
+                - generic:
+                  - generic:
+                    - paragraph: Project
+                    - paragraph: Nomination
+                    - paragraph: Year
+                  - generic:
+                    - paragraph: Noomo Labs
+                    - paragraph: Winner, Websites and Mobile Sites - Best Use of Animation or Motion Graphics
+                    - paragraph: "2025"
+                  - generic:
+                    - paragraph: Noomo Labs
+                    - paragraph: Winner, Websites and Mobile Sites - Technical Achievement
+                    - paragraph: "2025"
+                  - generic:
+                    - paragraph: Noomo Beat
+                    - paragraph: Winner, Websites and Mobile Sites - Best Use of AI
+                    - paragraph: "2025"
+                  - generic:
+                    - paragraph: Percipio Health
+                    - paragraph: Winner, Websites and Mobile Sites - Web Services & Applications
+                    - paragraph: "2025"
+                  - generic:
+                    - paragraph: Noomo Beat
+                    - paragraph: Nomination, AI, Immersive & Games - Media & Entertainment
+                    - paragraph: "2025"
+                  - generic:
+                    - paragraph: Jasmina Denner
+                    - paragraph: Honors, Websites and Mobile Sites - Personal Blog/Website
+                    - paragraph: "2025"
+                  - generic:
+                    - paragraph: Middle
+                    - paragraph: Winner, Financial Services/Banking
+                    - paragraph: "2023"
+                  - generic:
+                    - paragraph: ITG Digital
+                    - paragraph: Nomination, Web Services & Applications
+                    - paragraph: "2020"
+              - generic [ref=f4e47]:
+                - paragraph: Red Dot Design Award
+                - paragraph: / 01
+                - img "arrow"
+                - generic:
+                  - generic:
+                    - paragraph: Project
+                    - paragraph: Nomination
+                    - paragraph: Year
+                  - generic:
+                    - paragraph: ITG Digital
+                    - paragraph: Winner, Online platforms
+                    - paragraph: "2020"
+              - generic [ref=f4e48]:
+                - paragraph: San Francisco Design Week
+                - paragraph: / 01
+                - img "arrow"
+                - generic:
+                  - generic:
+                    - paragraph: Project
+                    - paragraph: Nomination
+                    - paragraph: Year
+                  - generic:
+                    - paragraph: Crisis Clean Up
+                    - paragraph: Honorable Mentions, Civic and Government
+                    - paragraph: "2020"
+              - generic [ref=f4e49]:
+                - paragraph: Awwwards
+                - paragraph: / 23
+                - img "arrow"
+                - generic:
+                  - generic:
+                    - paragraph: Project
+                    - paragraph: Nomination
+                    - paragraph: Year
+                  - generic:
+                    - paragraph: Noomo Beat
+                    - paragraph: Site of the day
+                    - paragraph: "2024"
+                  - generic:
+                    - paragraph: Noomo Beat
+                    - paragraph: Developer award
+                    - paragraph: "2024"
+                  - generic:
+                    - paragraph: Jasmina Denner
+                    - paragraph: Honorable mentions
+                    - paragraph: "2024"
+                  - generic:
+                    - paragraph: Noomo XR
+                    - paragraph: Honorable mentions
+                    - paragraph: "2024"
+                  - generic:
+                    - paragraph: Noomo XR
+                    - paragraph: No-code honors
+                    - paragraph: "2024"
+                  - generic:
+                    - paragraph: Noomo Labs
+                    - paragraph: Portfolio honors
+                    - paragraph: "2024"
+                  - generic:
+                    - paragraph: Noomo Labs
+                    - paragraph: Developer award
+                    - paragraph: "2024"
+                  - generic:
+                    - paragraph: Noomo Labs
+                    - paragraph: Site of the day
+                    - paragraph: "2024"
+                  - generic:
+                    - paragraph: Noomo Agency
+                    - paragraph: Website of the year
+                    - paragraph: "2024"
+                  - generic:
+                    - paragraph: Cathey & Miles Attorneys Website
+                    - paragraph: Honorable mentions
+                    - paragraph: "2024"
+                  - generic:
+                    - paragraph: Noomo Agency
+                    - paragraph: Developer award
+                    - paragraph: "2023"
+                  - generic:
+                    - paragraph: Noomo Agency
+                    - paragraph: Website of the day
+                    - paragraph: "2023"
+                  - generic:
+                    - paragraph: The Silly Bunny
+                    - paragraph: Honorable mentions
+                    - paragraph: "2023"
+                  - generic:
+                    - paragraph: Middle Finance
+                    - paragraph: Honorable mentions
+                    - paragraph: "2023"
+                  - generic:
+                    - paragraph: Olha Uzhykova portfolio
+                    - paragraph: Site of the day
+                    - paragraph: "2022"
+                  - generic:
+                    - paragraph: Netrix
+                    - paragraph: nominated for “Mobile website of the year”
+                    - paragraph: "2021"
+                  - generic:
+                    - paragraph: Netrix
+                    - paragraph: Site of the day
+                    - paragraph: "2021"
+                  - generic:
+                    - paragraph: Netrix
+                    - paragraph: Mobile website of the week
+                    - paragraph: "2021"
+                  - generic:
+                    - paragraph: Netrix
+                    - paragraph: Developer award
+                    - paragraph: "2021"
+                  - generic:
+                    - paragraph: MadDad
+                    - paragraph: Honorable mentions
+                    - paragraph: "2020"
+                  - generic:
+                    - paragraph: MadDad
+                    - paragraph: Mobile design excellence
+                    - paragraph: "2019"
+                  - generic:
+                    - paragraph: Netrix
+                    - paragraph: Honorable mentions
+                    - paragraph: "2018"
+                  - generic:
+                    - paragraph: Netrix
+                    - paragraph: Mobile design excellence
+                    - paragraph: "2018"
+              - generic [ref=f4e50]:
+                - paragraph: CSS Design Award
+                - paragraph: / 07
+                - img "arrow"
+                - generic:
+                  - generic:
+                    - paragraph: Project
+                    - paragraph: Nomination
+                    - paragraph: Year
+                  - generic:
+                    - paragraph: Noomo Beat
+                    - paragraph: Website of the day
+                    - paragraph: "2024"
+                  - generic:
+                    - paragraph: Jasmina Denner
+                    - paragraph: Website of the day
+                    - paragraph: "2024"
+                  - generic:
+                    - paragraph: The Future Of XR
+                    - paragraph: Website of the day
+                    - paragraph: "2024"
+                  - generic:
+                    - paragraph: Noomo Labs
+                    - paragraph: Website of the day
+                    - paragraph: "2024"
+                  - generic:
+                    - paragraph: The Silly Bunny
+                    - paragraph: Website of the day
+                    - paragraph: "2023"
+                  - generic:
+                    - paragraph: Olha Uzhykova Portfolio
+                    - paragraph: Website of the day
+                    - paragraph: "2023"
+                  - generic:
+                    - paragraph: Noomo Agency
+                    - paragraph: Website of the day
+                    - paragraph: "2023"
+              - generic [ref=f4e51]:
+                - paragraph: ADC Europe
+                - paragraph: / 01
+                - img "arrow"
+                - generic:
+                  - generic:
+                    - paragraph: Project
+                    - paragraph: Nomination
+                    - paragraph: Year
+                  - generic:
+                    - paragraph: ITG Digital
+                    - paragraph: Nomination in category Interactive & Mobile
+                    - paragraph: "2020"
+              - generic:
+                - img "image"
+                - img "image"
+                - img "image"
+                - img "image"
+                - img "image"
+                - img "image"
+                - img "image"
+                - img "image"
+                - img "image"
+                - img "image"
+                - img "image"
+                - img "image"
+                - img "image"
+                - img "image"
+                - img "image"
+                - img "image"
+                - img "image"
+                - img "image"
+                - img "image"
+            - paragraph [ref=f4e53]: + 50 more awards
+          - generic [ref=f4e55]:
+            - generic [ref=f4e56]:
+              - heading "Our Insights" [level=4] [ref=f4e57]
+              - link "View All" [ref=f4e58] [cursor=pointer]:
+                - /url: /insights
+            - generic [ref=f4e61]:
+              - 'link "Interactive editorial design for Vogue Business Gen Z Report showing headline ''Gen Z broke the marketing funnel part II what now?'' with pixelated gradient background, diverse Gen Z portraits, and nature vs digital aesthetic by Noomo Agency Interactive editorial design for Vogue Business Gen Z Report showing headline ''Gen Z broke the marketing funnel part II what now?'' with pixelated gradient background, diverse Gen Z portraits, and nature vs digital aesthetic by Noomo Agency icon Editorial Interactive Web icon READ Designing Vogue Business'' Gen Z Report: Interactive Editorial Website Editorial Jan 8, 2026 icon" [ref=f4e63] [cursor=pointer]':
+                - /url: /insights/vogue-business-gen-z-interactive-editorial-design
+                - generic [ref=f4e65]:
+                  - img "Interactive editorial design for Vogue Business Gen Z Report showing headline 'Gen Z broke the marketing funnel part II what now?' with pixelated gradient background, diverse Gen Z portraits, and nature vs digital aesthetic by Noomo Agency" [ref=f4e66]
+                  - img "Interactive editorial design for Vogue Business Gen Z Report showing headline 'Gen Z broke the marketing funnel part II what now?' with pixelated gradient background, diverse Gen Z portraits, and nature vs digital aesthetic by Noomo Agency"
+                  - img "icon" [ref=f4e67]
+                  - generic [ref=f4e68]:
+                    - generic [ref=f4e69]: Editorial
+                    - generic [ref=f4e70]: Interactive
+                    - generic [ref=f4e71]: Web
+                  - generic [ref=f4e72]:
+                    - img "icon" [ref=f4e73]
+                    - generic [ref=f4e74]: READ
+                - generic [ref=f4e75]:
+                  - 'heading "Designing Vogue Business'' Gen Z Report: Interactive Editorial Website" [level=3] [ref=f4e76]'
+                  - generic [ref=f4e77]:
+                    - paragraph [ref=f4e78]: Editorial
+                    - paragraph [ref=f4e79]: Jan 8, 2026
+                - img "icon" [ref=f4e81]
+              - link "Digital storytelling in web design combining 3D environments, interactive animations, and immersive experiences to create memorable brand narratives Digital storytelling in web design combining 3D environments, interactive animations, and immersive experiences to create memorable brand narratives icon Storytelling Website 3D icon READ The Power of Digital Storytelling or How to Tell the Story Without Words Storytelling Jul 28, 2025 icon" [ref=f4e83] [cursor=pointer]:
+                - /url: /insights/the-power-of-digital-storytelling
+                - generic [ref=f4e85]:
+                  - img "Digital storytelling in web design combining 3D environments, interactive animations, and immersive experiences to create memorable brand narratives" [ref=f4e86]
+                  - img "Digital storytelling in web design combining 3D environments, interactive animations, and immersive experiences to create memorable brand narratives"
+                  - img "icon" [ref=f4e87]
+                  - generic [ref=f4e88]:
+                    - generic [ref=f4e89]: Storytelling
+                    - generic [ref=f4e90]: Website
+                    - generic [ref=f4e91]: 3D
+                  - generic [ref=f4e92]:
+                    - img "icon" [ref=f4e93]
+                    - generic [ref=f4e94]: READ
+                - generic [ref=f4e95]:
+                  - heading "The Power of Digital Storytelling or How to Tell the Story Without Words" [level=3] [ref=f4e96]
+                  - generic [ref=f4e97]:
+                    - paragraph [ref=f4e98]: Storytelling
+                    - paragraph [ref=f4e99]: Jul 28, 2025
+                - img "icon" [ref=f4e101]
+              - link "Noomo ValenTime immersive 3D storytelling experience featuring magical portal, floating heart, gold accents, and interactive 3D customizer Noomo ValenTime immersive 3D storytelling experience featuring magical portal, floating heart, gold accents, and interactive 3D customizer icon 3D Immersive Website icon READ Noomo ValenTime, an Immersive Storytelling About Love 3D May 1, 2025 icon" [ref=f4e103] [cursor=pointer]:
+                - /url: /insights/noomo-valentime-immersive-storytelling
+                - generic [ref=f4e105]:
+                  - img "Noomo ValenTime immersive 3D storytelling experience featuring magical portal, floating heart, gold accents, and interactive 3D customizer" [ref=f4e106]
+                  - img "Noomo ValenTime immersive 3D storytelling experience featuring magical portal, floating heart, gold accents, and interactive 3D customizer"
+                  - img "icon" [ref=f4e107]
+                  - generic [ref=f4e108]:
+                    - generic [ref=f4e109]: 3D
+                    - generic [ref=f4e110]: Immersive
+                    - generic [ref=f4e111]: Website
+                  - generic [ref=f4e112]:
+                    - img "icon" [ref=f4e113]
+                    - generic [ref=f4e114]: READ
+                - generic [ref=f4e115]:
+                  - heading "Noomo ValenTime, an Immersive Storytelling About Love" [level=3] [ref=f4e116]
+                  - generic [ref=f4e117]:
+                    - paragraph [ref=f4e118]: 3D
+                    - paragraph [ref=f4e119]: May 1, 2025
+                - img "icon" [ref=f4e121]
+              - 'link "Interactive 3D visualization that responds in real-time to AI-generated music Interactive 3D visualization that responds in real-time to AI-generated music icon AI Immersive 3D icon READ AI-powered Brand Activation: Building Interactive 3D Music Experiences AI Nov 06, 2024 icon" [ref=f4e123] [cursor=pointer]':
+                - /url: /insights/ai-brand-activation-3d-music-case-study
+                - generic [ref=f4e125]:
+                  - img "Interactive 3D visualization that responds in real-time to AI-generated music" [ref=f4e126]
+                  - img "Interactive 3D visualization that responds in real-time to AI-generated music"
+                  - img "icon" [ref=f4e127]
+                  - generic [ref=f4e128]:
+                    - generic [ref=f4e129]: AI
+                    - generic [ref=f4e130]: Immersive
+                    - generic [ref=f4e131]: 3D
+                  - generic [ref=f4e132]:
+                    - img "icon" [ref=f4e133]
+                    - generic [ref=f4e134]: READ
+                - generic [ref=f4e135]:
+                  - 'heading "AI-powered Brand Activation: Building Interactive 3D Music Experiences" [level=3] [ref=f4e136]'
+                  - generic [ref=f4e137]:
+                    - paragraph [ref=f4e138]: AI
+                    - paragraph [ref=f4e139]: Nov 06, 2024
+                - img "icon" [ref=f4e141]
+              - link "Abstract geometric background for immersive web experiences marketing Abstract geometric background for immersive web experiences marketing icon Immersive 3D AR icon READ Elevate Marketing and Sales by Using Immersive Web Experiences Immersive Experiences May 10, 2024 icon" [ref=f4e143] [cursor=pointer]:
+                - /url: /insights/3d-websites-and-immersive-web-experiences-for-marketing
+                - generic [ref=f4e145]:
+                  - img "Abstract geometric background for immersive web experiences marketing" [ref=f4e146]
+                  - img "Abstract geometric background for immersive web experiences marketing"
+                  - img "icon" [ref=f4e147]
+                  - generic [ref=f4e148]:
+                    - generic [ref=f4e149]: Immersive
+                    - generic [ref=f4e150]: 3D
+                    - generic [ref=f4e151]: AR
+                  - generic [ref=f4e152]:
+                    - img "icon" [ref=f4e153]
+                    - generic [ref=f4e154]: READ
+                - generic [ref=f4e155]:
+                  - heading "Elevate Marketing and Sales by Using Immersive Web Experiences" [level=3] [ref=f4e156]
+                  - generic [ref=f4e157]:
+                    - paragraph [ref=f4e158]: Immersive Experiences
+                    - paragraph [ref=f4e159]: May 10, 2024
+                - img "icon" [ref=f4e161]
+          - generic [ref=f4e163]:
+            - heading "BUT WE'RE HERE NOT TO TALK ABOUT OURSELVES - WE'RE HERE TO TALK ABOUT YOU, YOUR COMPANY, YOUR PRODUCT, AND YOUR GOALS." [level=3] [ref=f4e165]
+            - generic [ref=f4e166]:
+              - paragraph [ref=f4e168]: With us it happens. We would love to hear from you.
+              - generic [ref=f4e169]:
+                - textbox "Your name" [ref=f4e171]
+                - textbox "Your email" [ref=f4e173]
+                - textbox "Your project is about" [ref=f4e175]
+                - paragraph [ref=f4e176]: Project budget (USD)
+                - generic [ref=f4e177]:
+                  - generic [ref=f4e178]:
+                    - radio "50K–100K" [ref=f4e179]
+                    - generic [ref=f4e180] [cursor=pointer]: 50K–100K
+                    - radio "100K–300K" [ref=f4e181]
+                    - generic [ref=f4e182] [cursor=pointer]: 100K–300K
+                    - radio "300K+" [ref=f4e183]
+                    - generic [ref=f4e184] [cursor=pointer]: 300K+
+                  - button "Send arrow Send arrow" [ref=f4e185] [cursor=pointer]:
+                    - generic [ref=f4e186]: Send
+                    - img "arrow" [ref=f4e187]
+                    - generic [ref=f4e188]:
+                      - generic [ref=f4e189]: Send
+                      - img "arrow" [ref=f4e190]
+                - generic:
+                  - paragraph: Thank you
+                  - img "done"
+          - generic [ref=f4e191]:
+            - generic [ref=f4e192]:
+              - generic [ref=f4e194]:
+                - link "Work" [ref=f4e195] [cursor=pointer]:
+                  - /url: /work
+                - link "Our story" [ref=f4e196] [cursor=pointer]:
+                  - /url: /our-story
+                - link "Insights" [ref=f4e197] [cursor=pointer]:
+                  - /url: /insights
+                - link "Connect" [ref=f4e198] [cursor=pointer]:
+                  - /url: /connect
+                - link "Privacy policy" [ref=f4e199] [cursor=pointer]:
+                  - /url: /privacy-policy
+              - generic [ref=f4e201]:
+                - generic [ref=f4e202]:
+                  - link "LinkedIn" [ref=f4e203] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/company/noomoagency
+                  - link "Instagram" [ref=f4e204] [cursor=pointer]:
+                    - /url: https://www.instagram.com/noomoagency/
+                  - link "Dribbble" [ref=f4e205] [cursor=pointer]:
+                    - /url: https://dribbble.com/noomoagency
+                  - link "X" [ref=f4e206] [cursor=pointer]:
+                    - /url: https://x.com/noomoagency
+                - link "hello@noomoagency.com" [ref=f4e208] [cursor=pointer]:
+                  - /url: mailto:hello@noomoagency.com
+              - generic [ref=f4e209]:
+                - paragraph [ref=f4e210]: Let’s grab some coffee.
+                - paragraph [ref=f4e211]: We are based in Los Angeles but often come to San Francisco ☕
+            - generic [ref=f4e212]:
+              - link [ref=f4e214] [cursor=pointer]:
+                - /url: /
+                - img "netrix logo" [ref=f4e215]
+              - img "icons" [ref=f4e217]
+        - paragraph [ref=f4e221]: We work as one team with our clients. Through discovery workshops, we uncover your story and translate it into digital experiences that reflect your vision. Our agency combines storytelling craft with technical expertise to create work that connects emotionally and drives engagement.
+        - generic:
+          - paragraph: Award-winning design agency building websites, activations, and experiences that make people stop scrolling.
+        - generic [ref=f4e222]:
+          - generic:
+            - generic:
+              - generic:
+                - generic: Website
+                - generic: Immersive / 3D / Interactive
+            - generic:
+              - generic:
+                - generic: View project
+                - img "arrow"
+                - generic:
+                  - generic: View project
+                  - img "arrow"
+            - generic:
+              - generic:
+                - paragraph:
+                  - strong: Noomo Labs
+                - paragraph: Immersive 3D web experience with customizable jellyfish showcasing transformation and motion. Real-time WebGL rendering, interactive storytelling, and experimental design pushing boundaries of what's possible on the web.
+          - generic:
+            - generic:
+              - generic:
+                - generic: Website
+                - generic: Web 3 / Brand Activation
+            - generic:
+              - generic:
+                - generic: View project
+                - img "arrow"
+                - generic:
+                  - generic: View project
+                  - img "arrow"
+            - generic:
+              - generic:
+                - paragraph:
+                  - strong: Coinbase and Golden State Warriors
+                - paragraph: Mobile-first brand activation microsite bringing game-day excitement to life through golden-hour aesthetics and real-time NFT minting. Interactive storytelling experience celebrating Warriors legacy through immersive 3D design.
+          - generic:
+            - generic:
+              - generic:
+                - generic: Website
+                - generic: Enterprise / Storytelling / 3D
+            - generic:
+              - generic:
+                - generic: View project
+                - img "arrow"
+                - generic:
+                  - generic: View project
+                  - img "arrow"
+            - generic:
+              - generic:
+                - paragraph:
+                  - strong: Salesforce 360 Platform
+                - paragraph: Enterprise website design using interactive 3D elements to visualize Salesforce AI ecosystem. Glassy 3D tiles, modular UX, and spatial storytelling make complex enterprise platform accessible for CIOs, developers, and architects.
+          - generic:
+            - generic:
+              - generic:
+                - generic: Website
+                - generic: Storytelling / 3D / Product
+            - generic:
+              - generic:
+                - generic: View project
+                - img "arrow"
+                - generic:
+                  - generic: View project
+                  - img "arrow"
+            - generic:
+              - generic:
+                - paragraph:
+                  - strong: Vision by Dandy
+                - paragraph: Interactive product website transforming dental technology into cinematic narrative. High-end 3D product visualization, scroll-based storytelling, and refined UI design showcase intraoral scanner through craft-driven digital experience for modern practices.
+        - generic:
+          - generic:
+            - paragraph: Scroll
+            - img "scroll"
+      - img "logo" [ref=f4e225]
