@@ -1,0 +1,333 @@
+- generic [ref=f21e224]:
+  - generic [ref=f21e225]:
+    - generic [ref=f21e1081]:
+      - generic [ref=f21e1084]:
+        - application [active] [aria-hidden] [ref=f21e1093]
+        - status [ref=f21e1094]: Screenreader support for the board is currently disabled. To enable it via Accessibility settings, press Ctrl+K, type Accessibility Settings, and press Enter. To see available keyboard shortcuts, enter Ctrl+Shift+Question mark .
+        - status [ref=f21e1096]
+        - generic:
+          - generic:
+            - generic:
+              - region "Comments on canvas":
+                - button "Create new comment"
+        - region "Left sidebar" [ref=f21e2231]:
+          - toolbar "Navigation Bar" [ref=f21e2232]:
+            - generic [ref=f21e1100]:
+              - button "Main menu" [ref=f21e2233]
+              - separator [ref=f21e1102]
+              - button "File" [expanded] [ref=f21e2234]
+              - button "Assets" [ref=f21e2235]
+              - button "Tools" [ref=f21e2236]
+              - separator [ref=f21e1106]
+              - button "Variables" [ref=f21e2237]
+            - generic [ref=f21e1108]:
+              - generic [ref=f21e1109]:
+                - status
+              - button "Missing fonts" [ref=f21e2238]
+          - generic [ref=f21e1111]:
+            - generic [ref=f21e1113]:
+              - generic [ref=f21e1114]:
+                - generic [ref=f21e1115]:
+                  - generic [ref=f21e1117]:
+                    - generic [ref=f21e1119]:
+                      - button "(강의장)UIUX A, file name" [ref=f21e2239]: (강의장)UIUX A
+                      - generic [ref=f21e1121]: File name
+                    - button "Edit file menu" [ref=f21e2240]
+                  - button "Minimize UI" [ref=f21e2241]
+                - link "Team project" [ref=f21e2242]:
+                  - /url: https://www.figma.com/files/team/1639195563683790465/project/604082686
+              - generic [ref=f21e1130]:
+                - generic [ref=f21e1132]:
+                  - heading [level=2] [ref=f21e2243]:
+                    - generic [ref=f21e1134]:
+                      - button "Pages" [expanded] [ref=f21e2244]
+                      - button "Find" [ref=f21e2245]
+                      - button "Add new page" [ref=f21e2246]
+                  - generic [ref=f21e1143]:
+                    - grid [ref=f21e1151]:
+                      - row [ref=f21e2247]:
+                        - gridcell [ref=f21e2248]:
+                          - button "FLow" [ref=f21e2249]
+                      - row [ref=f21e2250]:
+                        - gridcell [ref=f21e2251]:
+                          - button "flex 학습" [ref=f21e2252]
+                      - row [ref=f21e2253]:
+                        - gridcell [ref=f21e2254]:
+                          - button "AI" [ref=f21e2255]
+                      - row [ref=f21e2256]:
+                        - gridcell [ref=f21e2257]:
+                          - button "figma(Auto Layout) &Coding" [ref=f21e2258]
+                      - row [ref=f21e2259]:
+                        - gridcell [ref=f21e2260]:
+                          - button "반응형 사이트" [ref=f21e2261]
+                      - row [ref=f21e2262]:
+                        - gridcell [ref=f21e2263]:
+                          - button "coding 평가" [ref=f21e2264]
+                      - row [ref=f21e2265]:
+                        - gridcell [ref=f21e2266]:
+                          - button "coding 평가 정답" [ref=f21e2267]
+                      - row [ref=f21e2268]:
+                        - gridcell [ref=f21e2269]:
+                          - button "시각디자인 리서치 기획 및 분석 평가 Ready for dev" [ref=f21e2270]:
+                            - generic [ref=f21e1214]: 시각디자인 리서치 기획 및 분석 평가
+                            - img "Ready for dev" [ref=f21e2271]
+                      - row [ref=f21e2272]:
+                        - gridcell [ref=f21e2273]:
+                          - button "시안디자인 개발 심화" [ref=f21e2274]
+                      - row [ref=f21e2275]:
+                        - gridcell [ref=f21e2276]:
+                          - button "디자인 구성요소 설계" [ref=f21e2277]
+                      - row [ref=f21e2278]:
+                        - gridcell [ref=f21e2279]:
+                          - button "패키지" [ref=f21e2280]
+                      - row [ref=f21e2281]:
+                        - gridcell [ref=f21e2282]:
+                          - button "웹디자인(60%)" [ref=f21e2283]
+                      - row [ref=f21e2284]:
+                        - gridcell [ref=f21e2285]:
+                          - button "웹디자인(80%)" [ref=f21e2286]
+                      - row [ref=f21e2287]:
+                        - gridcell [ref=f21e2288]:
+                          - button "앱디자인&프로세스" [ref=f21e2289]
+                    - slider "Resize handle" [ref=f21e2290]
+                - generic [ref=f21e1269]:
+                  - heading [level=2] [ref=f21e2291]:
+                    - button "Layers" [expanded] [ref=f21e2292]
+                  - treegrid [ref=f21e1275]:
+                    - generic [ref=f21e1277]:
+                      - row [ref=f21e2293]:
+                        - generic [ref=f21e1280]:
+                          - gridcell [aria-hidden] [ref=f21e1283]
+                          - gridcell "image 51" [ref=f21e2294]
+                      - row [ref=f21e2295]:
+                        - generic [ref=f21e1296]:
+                          - gridcell [aria-hidden] [ref=f21e1299]
+                          - gridcell "image 49" [ref=f21e2296]
+                      - row [ref=f21e2297]:
+                        - generic [ref=f21e1312]:
+                          - gridcell [aria-hidden] [ref=f21e1315]
+                          - gridcell "image 48" [ref=f21e2298]
+                      - row [ref=f21e2299]:
+                        - generic [ref=f21e1328]:
+                          - gridcell [aria-hidden] [ref=f21e1331]
+                          - gridcell "image 47" [ref=f21e2300]
+                      - row [ref=f21e2301]:
+                        - generic [ref=f21e1344]:
+                          - gridcell [aria-hidden] [ref=f21e1347]
+                          - gridcell "image 41" [ref=f21e2302]
+                      - row [ref=f21e2303]:
+                        - generic [ref=f21e1360]:
+                          - gridcell [aria-hidden] [ref=f21e1363]
+                          - gridcell "image 39" [ref=f21e2304]
+                      - row [ref=f21e2305]:
+                        - generic [ref=f21e1376]:
+                          - gridcell [aria-hidden] [ref=f21e1379]
+                          - gridcell "gemini" [ref=f21e2306]
+                      - row [ref=f21e2307]:
+                        - generic [ref=f21e1392]:
+                          - generic [ref=f21e1393]:
+                            - button [aria-hidden] [ref=f21e1394]
+                            - gridcell [aria-hidden] [ref=f21e1395]
+                          - gridcell "최지혜" [ref=f21e2308]
+                      - row [ref=f21e2309]:
+                        - generic [ref=f21e1408]:
+                          - generic [ref=f21e1409]:
+                            - button [aria-hidden] [ref=f21e1410]
+                            - gridcell [aria-hidden] [ref=f21e1411]
+                          - gridcell "박주연" [ref=f21e2310]
+                      - row [ref=f21e2311]:
+                        - generic [ref=f21e1424]:
+                          - generic [ref=f21e1425]:
+                            - button [aria-hidden] [ref=f21e1426]
+                            - gridcell [aria-hidden] [ref=f21e1427]
+                          - gridcell "이은수" [ref=f21e2312]
+                      - row [ref=f21e2313]:
+                        - generic [ref=f21e1440]:
+                          - generic [ref=f21e1441]:
+                            - button [aria-hidden] [ref=f21e1442]
+                            - gridcell [aria-hidden] [ref=f21e1443]
+                          - gridcell "박찬미" [ref=f21e2314]
+                      - row [ref=f21e2315]:
+                        - generic [ref=f21e1456]:
+                          - generic [ref=f21e1457]:
+                            - button [aria-hidden] [ref=f21e1458]
+                            - gridcell [aria-hidden] [ref=f21e1459]
+                          - gridcell "허지민" [ref=f21e2316]
+                      - row [ref=f21e2317]:
+                        - generic [ref=f21e1472]:
+                          - generic [ref=f21e1473]:
+                            - button [aria-hidden] [ref=f21e1474]
+                            - gridcell [aria-hidden] [ref=f21e1475]
+                          - gridcell "이지희" [ref=f21e2318]
+                      - row [ref=f21e2319]:
+                        - generic [ref=f21e1488]:
+                          - generic [ref=f21e1489]:
+                            - button [aria-hidden] [ref=f21e1490]
+                            - gridcell [aria-hidden] [ref=f21e1491]
+                          - gridcell "김정은" [ref=f21e2320]
+                      - row [ref=f21e2321]:
+                        - generic [ref=f21e1504]:
+                          - generic [ref=f21e1505]:
+                            - button [aria-hidden] [ref=f21e1506]
+                            - gridcell [aria-hidden] [ref=f21e1507]
+                          - gridcell "임연우" [ref=f21e2322]
+                      - row [ref=f21e2323]:
+                        - generic [ref=f21e1520]:
+                          - generic [ref=f21e1521]:
+                            - button [aria-hidden] [ref=f21e1522]
+                            - gridcell [aria-hidden] [ref=f21e1523]
+                          - gridcell "이은경" [ref=f21e2324]
+                      - row [ref=f21e2325]:
+                        - generic [ref=f21e1536]:
+                          - gridcell [aria-hidden] [ref=f21e1539]
+                          - gridcell "강의장" [ref=f21e2326]
+            - slider "Resize handle" [ref=f21e2327]
+        - generic:
+          - generic:
+            - region "Right sidebar":
+              - generic [ref=f21e1553]:
+                - generic [ref=f21e1555]:
+                  - generic [ref=f21e1557]:
+                    - generic [ref=f21e1559]:
+                      - button "Multiplayer tools" [ref=f21e2328]:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic [aria-hidden]: S
+                        - generic [ref=f21e1562]: "4"
+                      - generic:
+                        - generic:
+                          - button "Follow 강민경" [ref=f21e2401]
+                          - button "Follow wl8339" [ref=f21e2331]
+                    - generic [ref=f21e1587]:
+                      - group "Prototype view" [ref=f21e2340]:
+                        - button "Present" [ref=f21e2341]
+                        - button "Prototype view" [ref=f21e2342]
+                      - generic [ref=f21e1591]:
+                        - button "Share" [ref=f21e2343]
+                        - status
+                  - generic [ref=f21e1593]:
+                    - tablist [ref=f21e1595]:
+                      - tab "Design" [selected] [ref=f21e2344]:
+                        - generic [aria-hidden] [ref=f21e1597]: Design
+                      - tab "Prototype" [ref=f21e2345]:
+                        - generic [aria-hidden] [ref=f21e1600]: Prototype
+                    - button "11%, zoom and view options" [ref=f21e2346]: 11%
+                  - generic [ref=f21e2409]:
+                    - generic [ref=f21e2410]: Frame
+                    - group [ref=f21e2415]:
+                      - generic [ref=f21e2416]:
+                        - button "Phone" [expanded] [ref=f21e2418]
+                        - list [ref=f21e2420]:
+                          - listitem [ref=f21e2421]:
+                            - button "iPhone 17 402 × 874" [ref=f21e2424]:
+                              - generic: iPhone 17
+                              - generic: 402 × 874
+                          - listitem [ref=f21e2425]:
+                            - button "iPhone 16 & 17 Pro 402 × 874" [ref=f21e2428]:
+                              - generic: iPhone 16 & 17 Pro
+                              - generic: 402 × 874
+                          - listitem [ref=f21e2429]:
+                            - button "iPhone 16 393 × 852" [ref=f21e2432]:
+                              - generic: iPhone 16
+                              - generic: 393 × 852
+                          - listitem [ref=f21e2433]:
+                            - button "iPhone 16 & 17 Pro Max 440 × 956" [ref=f21e2436]:
+                              - generic: iPhone 16 & 17 Pro Max
+                              - generic: 440 × 956
+                          - listitem [ref=f21e2437]:
+                            - button "iPhone 16 Plus 430 × 932" [ref=f21e2440]:
+                              - generic: iPhone 16 Plus
+                              - generic: 430 × 932
+                          - listitem [ref=f21e2441]:
+                            - button "iPhone Air 420 × 912" [ref=f21e2444]:
+                              - generic: iPhone Air
+                              - generic: 420 × 912
+                          - listitem [ref=f21e2445]:
+                            - button "iPhone 14 & 15 Pro Max 430 × 932" [ref=f21e2448]:
+                              - generic: iPhone 14 & 15 Pro Max
+                              - generic: 430 × 932
+                          - listitem [ref=f21e2449]:
+                            - button "iPhone 14 & 15 Pro 393 × 852" [ref=f21e2452]:
+                              - generic: iPhone 14 & 15 Pro
+                              - generic: 393 × 852
+                          - listitem [ref=f21e2453]:
+                            - button "iPhone 13 & 14 390 × 844" [ref=f21e2456]:
+                              - generic: iPhone 13 & 14
+                              - generic: 390 × 844
+                          - listitem [ref=f21e2457]:
+                            - button "iPhone 14 Plus 428 × 926" [ref=f21e2460]:
+                              - generic: iPhone 14 Plus
+                              - generic: 428 × 926
+                          - listitem [ref=f21e2461]:
+                            - button "Android Compact 412 × 917" [ref=f21e2464]:
+                              - generic: Android Compact
+                              - generic: 412 × 917
+                          - listitem [ref=f21e2465]:
+                            - button "Android Medium 700 × 840" [ref=f21e2468]:
+                              - generic: Android Medium
+                              - generic: 700 × 840
+                      - button "Tablet" [ref=f21e2471]
+                      - button "Desktop" [ref=f21e2474]
+                      - button "Presentation" [ref=f21e2477]
+                      - button "Watch" [ref=f21e2480]
+                      - button "Paper" [ref=f21e2483]
+                      - button "Social media" [ref=f21e2486]
+                      - button "Figma Community" [ref=f21e2489]
+                      - button "Archive" [ref=f21e2492]
+                - slider "Resize handle" [ref=f21e2398]
+      - generic:
+        - generic:
+          - generic:
+            - region "Application toolbar":
+              - toolbar "Editor" [ref=f21e1741]:
+                - generic [ref=f21e1747]:
+                  - group "Move" [ref=f21e1748]:
+                    - button "Move" [ref=f21e1749]
+                    - button "Move tools" [ref=f21e1750]
+                  - group "Frame" [ref=f21e1751]:
+                    - button "Frame" [pressed] [ref=f21e1752]
+                    - button "Region tools" [ref=f21e1753]
+                  - group "Rectangle" [ref=f21e1754]:
+                    - button "Rectangle" [ref=f21e1755]
+                    - button "Shape tools" [ref=f21e1756]
+                  - group "Pen" [ref=f21e1757]:
+                    - button "Pen" [ref=f21e1758]
+                    - button "Creation tools" [ref=f21e1759]
+                  - group "Text" [ref=f21e1760]:
+                    - button "Text" [ref=f21e1761]
+                    - button "Type tools" [ref=f21e1762]
+                  - group "Comment" [ref=f21e1763]:
+                    - button "Comment (13 unread)" [ref=f21e2493]
+                    - button "Comment tools" [ref=f21e1765]
+                  - button "Actions" [ref=f21e1766]
+                - radiogroup "Toolbelt Mode" [ref=f21e1770]:
+                  - generic [ref=f21e1772]:
+                    - generic [ref=f21e1774]:
+                      - radio "Draw" [ref=f21e1775]
+                      - generic [ref=f21e1779]: Draw
+                    - generic [ref=f21e1780]:
+                      - radio "Design" [checked] [ref=f21e1781]
+                      - generic [ref=f21e1785]: Design
+                    - generic [ref=f21e1786]:
+                      - radio "Motion" [ref=f21e1787]
+                      - generic [ref=f21e1791]: Motion
+                    - generic [ref=f21e1792]:
+                      - radio "Dev Mode" [ref=f21e1793]
+                      - generic [ref=f21e1797]: Dev Mode
+    - region "Help/zoom toolbar" [ref=f21e1799]:
+      - toolbar "Help/zoom toolbar" [ref=f21e1801]:
+        - button "Help" [ref=f21e1803]
+  - generic:
+    - status
+    - group [ref=f21e1805]:
+      - alert [ref=f21e1807]
+      - alert [ref=f21e1809]
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - generic: Frame
+          - generic: F

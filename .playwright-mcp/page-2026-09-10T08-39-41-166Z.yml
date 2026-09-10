@@ -1,0 +1,453 @@
+- generic [ref=f21e224]:
+  - generic [ref=f21e225]:
+    - generic [ref=f21e1081]:
+      - generic [ref=f21e1084]:
+        - application [aria-hidden] [ref=f21e1093]
+        - status [ref=f21e1094]: Screenreader support for the board is currently disabled. To enable it via Accessibility settings, press Ctrl+K, type Accessibility Settings, and press Enter. To see available keyboard shortcuts, enter Ctrl+Shift+Question mark .
+        - status [ref=f21e1096]
+        - region [ref=f21e1967]:
+          - toolbar [ref=f21e1968]:
+            - generic [ref=f21e1100]:
+              - button [ref=f21e1969]
+              - separator [ref=f21e1102]
+              - button [expanded] [ref=f21e1970]:
+                - generic: File
+              - button [ref=f21e1971]:
+                - generic: Assets
+              - button [ref=f21e1972]:
+                - generic: Tools
+              - separator [ref=f21e1106]
+              - button [ref=f21e1973]:
+                - generic: Variables
+            - button [ref=f21e1974]
+          - generic [ref=f21e1111]:
+            - generic [ref=f21e1113]:
+              - generic [ref=f21e1114]:
+                - generic [ref=f21e1115]:
+                  - generic [ref=f21e1117]:
+                    - generic [ref=f21e1119]:
+                      - button [ref=f21e1975]: (강의장)UIUX A
+                      - generic [ref=f21e1121]: File name
+                    - button [ref=f21e1976]
+                  - button [ref=f21e1977]
+                - link [ref=f21e1978]:
+                  - /url: https://www.figma.com/files/team/1639195563683790465/project/604082686
+                  - text: Team project
+              - generic [ref=f21e1130]:
+                - generic [ref=f21e1132]:
+                  - heading [level=2] [ref=f21e1979]:
+                    - generic [ref=f21e1134]:
+                      - button [expanded] [ref=f21e1980]:
+                        - generic: Pages
+                      - button [ref=f21e1981]
+                      - button [ref=f21e1982]
+                  - generic [ref=f21e1143]:
+                    - grid [ref=f21e1151]:
+                      - row [ref=f21e1983]:
+                        - gridcell [ref=f21e1984]:
+                          - button [ref=f21e1985]:
+                            - generic [ref=f21e1158]: FLow
+                      - row [ref=f21e1986]:
+                        - gridcell [ref=f21e1987]:
+                          - button [ref=f21e1988]:
+                            - generic [ref=f21e1166]: flex 학습
+                      - row [ref=f21e1989]:
+                        - gridcell [ref=f21e1990]:
+                          - button [ref=f21e1991]:
+                            - generic [ref=f21e1174]: AI
+                      - row [ref=f21e1992]:
+                        - gridcell [ref=f21e1993]:
+                          - button [ref=f21e1994]:
+                            - generic [ref=f21e1182]: figma(Auto Layout) &Coding
+                      - row [ref=f21e1995]:
+                        - gridcell [ref=f21e1996]:
+                          - button [ref=f21e1997]:
+                            - generic [ref=f21e1190]: 반응형 사이트
+                      - row [ref=f21e1998]:
+                        - gridcell [ref=f21e1999]:
+                          - button [ref=f21e2000]:
+                            - generic [ref=f21e1198]: coding 평가
+                      - row [ref=f21e2001]:
+                        - gridcell [ref=f21e2002]:
+                          - button [ref=f21e2003]:
+                            - generic [ref=f21e1206]: coding 평가 정답
+                      - row [ref=f21e2004]:
+                        - gridcell [ref=f21e2005]:
+                          - button [ref=f21e2006]:
+                            - generic [ref=f21e1214]: 시각디자인 리서치 기획 및 분석 평가
+                      - row [ref=f21e2008]:
+                        - gridcell [ref=f21e2009]:
+                          - button [ref=f21e2010]:
+                            - generic [ref=f21e1225]: 시안디자인 개발 심화
+                      - row [ref=f21e2011]:
+                        - gridcell [ref=f21e2012]:
+                          - button [ref=f21e2013]:
+                            - generic [ref=f21e1233]: 디자인 구성요소 설계
+                      - row [ref=f21e2014]:
+                        - gridcell [ref=f21e2015]:
+                          - button [ref=f21e2016]:
+                            - generic [ref=f21e1241]: 패키지
+                      - row [ref=f21e2017]:
+                        - gridcell [ref=f21e2018]:
+                          - button [ref=f21e2019]:
+                            - generic [ref=f21e1249]: 웹디자인(60%)
+                      - row [ref=f21e2020]:
+                        - gridcell [ref=f21e2021]:
+                          - button [ref=f21e2022]:
+                            - generic [ref=f21e1257]: 웹디자인(80%)
+                      - row [ref=f21e2023]:
+                        - gridcell [ref=f21e2024]:
+                          - button [ref=f21e2025]:
+                            - generic [ref=f21e1265]: 앱디자인&프로세스
+                    - slider [ref=f21e2026]
+                - generic [ref=f21e1269]:
+                  - heading [level=2] [ref=f21e2027]:
+                    - button [expanded] [ref=f21e2028]:
+                      - generic: Layers
+                  - treegrid [ref=f21e1275]:
+                    - generic [ref=f21e1277]:
+                      - row [ref=f21e2029]:
+                        - generic [ref=f21e1280]:
+                          - gridcell [aria-hidden] [ref=f21e1283]
+                          - gridcell [ref=f21e2030]:
+                            - generic [ref=f21e1292]: image 51
+                      - row [ref=f21e2031]:
+                        - generic [ref=f21e1296]:
+                          - gridcell [aria-hidden] [ref=f21e1299]
+                          - gridcell [ref=f21e2032]:
+                            - generic [ref=f21e1308]: image 49
+                      - row [ref=f21e2033]:
+                        - generic [ref=f21e1312]:
+                          - gridcell [aria-hidden] [ref=f21e1315]
+                          - gridcell [ref=f21e2034]:
+                            - generic [ref=f21e1324]: image 48
+                      - row [ref=f21e2035]:
+                        - generic [ref=f21e1328]:
+                          - gridcell [aria-hidden] [ref=f21e1331]
+                          - gridcell [ref=f21e2036]:
+                            - generic [ref=f21e1340]: image 47
+                      - row [ref=f21e2037]:
+                        - generic [ref=f21e1344]:
+                          - gridcell [aria-hidden] [ref=f21e1347]
+                          - gridcell [ref=f21e2038]:
+                            - generic [ref=f21e1356]: image 41
+                      - row [ref=f21e2039]:
+                        - generic [ref=f21e1360]:
+                          - gridcell [aria-hidden] [ref=f21e1363]
+                          - gridcell [ref=f21e2040]:
+                            - generic [ref=f21e1372]: image 39
+                      - row [ref=f21e2041]:
+                        - generic [ref=f21e1376]:
+                          - gridcell [aria-hidden] [ref=f21e1379]
+                          - gridcell [ref=f21e2042]:
+                            - generic [ref=f21e1388]: gemini
+                      - row [ref=f21e2043]:
+                        - generic [ref=f21e1392]:
+                          - generic [ref=f21e1393]:
+                            - button [aria-hidden] [ref=f21e1394]
+                            - gridcell [aria-hidden] [ref=f21e1395]
+                          - gridcell [ref=f21e2044]:
+                            - generic [ref=f21e1404]: 최지혜
+                      - row [ref=f21e2045]:
+                        - generic [ref=f21e1408]:
+                          - generic [ref=f21e1409]:
+                            - button [aria-hidden] [ref=f21e1410]
+                            - gridcell [aria-hidden] [ref=f21e1411]
+                          - gridcell [ref=f21e2046]:
+                            - generic [ref=f21e1420]: 박주연
+                      - row [ref=f21e2047]:
+                        - generic [ref=f21e1424]:
+                          - generic [ref=f21e1425]:
+                            - button [aria-hidden] [ref=f21e1426]
+                            - gridcell [aria-hidden] [ref=f21e1427]
+                          - gridcell [ref=f21e2048]:
+                            - generic [ref=f21e1436]: 이은수
+                      - row [ref=f21e2049]:
+                        - generic [ref=f21e1440]:
+                          - generic [ref=f21e1441]:
+                            - button [aria-hidden] [ref=f21e1442]
+                            - gridcell [aria-hidden] [ref=f21e1443]
+                          - gridcell [ref=f21e2050]:
+                            - generic [ref=f21e1452]: 박찬미
+                      - row [ref=f21e2051]:
+                        - generic [ref=f21e1456]:
+                          - generic [ref=f21e1457]:
+                            - button [aria-hidden] [ref=f21e1458]
+                            - gridcell [aria-hidden] [ref=f21e1459]
+                          - gridcell [ref=f21e2052]:
+                            - generic [ref=f21e1468]: 허지민
+                      - row [ref=f21e2053]:
+                        - generic [ref=f21e1472]:
+                          - generic [ref=f21e1473]:
+                            - button [aria-hidden] [ref=f21e1474]
+                            - gridcell [aria-hidden] [ref=f21e1475]
+                          - gridcell [ref=f21e2054]:
+                            - generic [ref=f21e1484]: 이지희
+                      - row [ref=f21e2055]:
+                        - generic [ref=f21e1488]:
+                          - generic [ref=f21e1489]:
+                            - button [aria-hidden] [ref=f21e1490]
+                            - gridcell [aria-hidden] [ref=f21e1491]
+                          - gridcell [ref=f21e2056]:
+                            - generic [ref=f21e1500]: 김정은
+                      - row [ref=f21e2057]:
+                        - generic [ref=f21e1504]:
+                          - generic [ref=f21e1505]:
+                            - button [aria-hidden] [ref=f21e1506]
+                            - gridcell [aria-hidden] [ref=f21e1507]
+                          - gridcell [ref=f21e2058]:
+                            - generic [ref=f21e1516]: 임연우
+                      - row [ref=f21e2059]:
+                        - generic [ref=f21e1520]:
+                          - generic [ref=f21e1521]:
+                            - button [aria-hidden] [ref=f21e1522]
+                            - gridcell [aria-hidden] [ref=f21e1523]
+                          - gridcell [ref=f21e2060]:
+                            - generic [ref=f21e1532]: 이은경
+                      - row [ref=f21e2061]:
+                        - generic [ref=f21e1536]:
+                          - gridcell [aria-hidden] [ref=f21e1539]
+                          - gridcell [ref=f21e2062]:
+                            - generic [ref=f21e1548]: 강의장
+            - slider [ref=f21e2063]
+        - generic [ref=f21e1553]:
+          - generic [ref=f21e1555]:
+            - generic [ref=f21e1557]:
+              - generic [ref=f21e1559]:
+                - button [ref=f21e2064]:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic [aria-hidden]: S
+                  - generic [ref=f21e1562]: "5"
+                - generic:
+                  - generic:
+                    - button [ref=f21e2065]
+                    - button [ref=f21e2066]
+              - generic [ref=f21e1587]:
+                - group [ref=f21e2067]:
+                  - button [ref=f21e2068]
+                  - button [ref=f21e2069]
+                - button [ref=f21e2070]: Share
+            - generic [ref=f21e1593]:
+              - tablist [ref=f21e1595]:
+                - tab [selected] [ref=f21e2071]:
+                  - generic [aria-hidden] [ref=f21e1597]: Design
+                  - generic [ref=f21e1598]: Design
+                - tab [ref=f21e2072]:
+                  - generic [aria-hidden] [ref=f21e1600]: Prototype
+                  - generic [ref=f21e1601]: Prototype
+              - button [ref=f21e2073]: 11%
+            - generic [ref=f21e1609]:
+              - generic [ref=f21e1612]:
+                - generic [ref=f21e1613]: Page
+                - generic [ref=f21e1618]:
+                  - generic [ref=f21e1620]:
+                    - button [ref=f21e2074]
+                    - generic [ref=f21e1622]:
+                      - generic [ref=f21e1623]: Color
+                      - spinbutton [ref=f21e2075]: F5F5F5
+                    - generic [ref=f21e1628]:
+                      - textbox [ref=f21e2076]: "100"
+                      - generic [ref=f21e1630]: "%"
+                  - generic [ref=f21e1634]:
+                    - checkbox [checked] [ref=f21e2077]
+                    - generic: Toggle visibility
+              - generic [ref=f21e1638]:
+                - generic [ref=f21e1639]:
+                  - heading [level=2] [ref=f21e2078]: Styles
+                  - button [ref=f21e2079]
+                - generic [ref=f21e1643]:
+                  - generic [ref=f21e1644]:
+                    - heading [level=3] [ref=f21e2080]: Text styles
+                    - button [ref=f21e2081]
+                  - tree [ref=f21e1648]:
+                    - treeitem [ref=f21e2082]:
+                      - gridcell [ref=f21e2083]
+                      - generic [ref=f21e1653]:
+                        - button [ref=f21e2085]: window
+                        - generic [ref=f21e1655]: · 16/Auto
+                    - row [level=1] [ref=f21e2086]:
+                      - gridcell [ref=f21e2087]:
+                        - button [ref=f21e2088]
+                      - gridcell [ref=f21e2089]:
+                        - button [ref=f21e2090]: beautyofjoseon.co.kr
+                      - gridcell [ref=f21e2091]:
+                        - button [ref=f21e2092]
+                    - row [level=1] [ref=f21e2093]:
+                      - gridcell [ref=f21e2094]:
+                        - button [ref=f21e2095]
+                      - gridcell [ref=f21e2096]:
+                        - button [ref=f21e2097]: www.ssense.com
+                      - gridcell [ref=f21e2098]:
+                        - button [ref=f21e2099]
+                - generic [ref=f21e1675]:
+                  - generic [ref=f21e1676]:
+                    - heading [level=3] [ref=f21e2100]: Color styles
+                    - button [ref=f21e2101]
+                  - tree [ref=f21e1680]:
+                    - row [level=1] [ref=f21e2102]:
+                      - gridcell [ref=f21e2103]:
+                        - button [ref=f21e2104]
+                      - gridcell [ref=f21e2105]:
+                        - button [ref=f21e2106]: beautyofjoseon.co.kr
+                      - gridcell [ref=f21e2107]:
+                        - button [ref=f21e2108]
+                    - row [level=1] [ref=f21e2109]:
+                      - gridcell [ref=f21e2110]:
+                        - button [ref=f21e2111]
+                      - gridcell [ref=f21e2112]:
+                        - button [ref=f21e2113]: www.ssense.com
+                      - gridcell [ref=f21e2114]:
+                        - button [ref=f21e2115]
+              - generic [ref=f21e1703]:
+                - button [ref=f21e2116]:
+                  - generic: Export
+                - button [ref=f21e2117]
+              - generic [ref=f21e1710]:
+                - generic [ref=f21e1716]:
+                  - generic [ref=f21e1717]: MCP
+                  - strong [ref=f21e1719]:
+                    - generic [ref=f21e1720]: 3 connections
+                - button [ref=f21e2118]
+              - generic [ref=f21e1724]:
+                - heading [level=2] [ref=f21e2119]: Tools
+                - grid [ref=f21e1732]:
+                  - row [ref=f21e2120]:
+                    - gridcell [ref=f21e2121]:
+                      - button [ref=f21e2122]:
+                        - generic: Open html.to.design
+                    - gridcell [ref=f21e2123]:
+                      - button [ref=f21e2124]
+          - slider [ref=f21e2125]
+      - generic:
+        - generic:
+          - generic:
+            - region "Application toolbar":
+              - toolbar "Editor" [ref=f21e1741]:
+                - generic [ref=f21e1747]:
+                  - group "Move" [ref=f21e1748]:
+                    - button "Move" [pressed] [ref=f21e1749]
+                    - button "Move tools" [ref=f21e1750]
+                  - group "Frame" [ref=f21e1751]:
+                    - button "Frame" [ref=f21e1752]
+                    - button "Region tools" [ref=f21e1753]
+                  - group "Rectangle" [ref=f21e1754]:
+                    - button "Rectangle" [ref=f21e1755]
+                    - button "Shape tools" [ref=f21e1756]
+                  - group "Pen" [ref=f21e1757]:
+                    - button "Pen" [ref=f21e1758]
+                    - button "Creation tools" [ref=f21e1759]
+                  - group "Text" [ref=f21e1760]:
+                    - button "Text" [ref=f21e1761]
+                    - button "Type tools" [ref=f21e1762]
+                  - group "Comment" [ref=f21e1763]:
+                    - button "Comment (12 unread)" [ref=f21e1764]
+                    - button "Comment tools" [ref=f21e1765]
+                  - button "Actions" [ref=f21e1766]
+                - radiogroup "Toolbelt Mode" [ref=f21e1770]:
+                  - generic [ref=f21e1772]:
+                    - generic [ref=f21e1774]:
+                      - radio "Draw" [ref=f21e1775]
+                      - generic [ref=f21e1779]: Draw
+                    - generic [ref=f21e1780]:
+                      - radio "Design" [checked] [ref=f21e1781]
+                      - generic [ref=f21e1785]: Design
+                    - generic [ref=f21e1786]:
+                      - radio "Motion" [ref=f21e1787]
+                      - generic [ref=f21e1791]: Motion
+                    - generic [ref=f21e1792]:
+                      - radio "Dev Mode" [ref=f21e1793]
+                      - generic [ref=f21e1797]: Dev Mode
+    - region "Help/zoom toolbar" [ref=f21e1799]:
+      - toolbar "Help/zoom toolbar" [ref=f21e1801]:
+        - button "Help" [ref=f21e1803]
+  - dialog [active] [ref=f21e2126]:
+    - generic [ref=f21e2128]:
+      - generic:
+        - generic [ref=f21e2129]:
+          - generic [ref=f21e2130]:
+            - heading "Settings" [level=2] [ref=f21e2131]
+            - tablist [ref=f21e2132]:
+              - tab "Account" [selected] [ref=f21e2133]:
+                - generic [aria-hidden] [ref=f21e2134]: Account
+              - tab "Community" [ref=f21e2136]:
+                - generic [aria-hidden] [ref=f21e2137]: Community
+              - tab "Notifications" [ref=f21e2139]:
+                - generic [aria-hidden] [ref=f21e2140]: Notifications
+              - tab "Security" [ref=f21e2142]:
+                - generic [aria-hidden] [ref=f21e2143]: Security
+          - tabpanel "Account" [ref=f21e2145]:
+            - generic [ref=f21e2146]:
+              - button "Edit current user avatar, no image uploaded" [ref=f21e2156]:
+                - generic: Edit
+              - generic [ref=f21e2158]:
+                - generic [ref=f21e2160]:
+                  - heading "Name" [level=3] [ref=f21e2161]
+                  - generic [ref=f21e2162]: SBS_Daejeon
+                  - button "Change name" [ref=f21e2164]
+                  - heading "Email" [level=3] [ref=f21e2165]
+                  - generic [ref=f21e2166]: khjsbs324@koreaedugroup.com
+                  - button "Change email" [ref=f21e2168]
+                  - heading "Role" [level=3] [ref=f21e2169]
+                  - generic [ref=f21e2170]: Education
+                  - button "Change role" [ref=f21e2172]
+                - generic [ref=f21e2174]:
+                  - heading "Your spaces" [level=3] [ref=f21e2175]
+                  - generic [ref=f21e2178]:
+                    - link "Learn" [ref=f21e2179] [cursor=pointer]:
+                      - /url: https://www.figma.com/pricing/
+                    - text: what products are included in each seat.
+                - generic [ref=f21e2180]:
+                  - heading "Language" [level=3] [ref=f21e2181]
+                  - generic [ref=f21e2182]: English
+                  - button "Change language" [ref=f21e2183]
+                - generic [ref=f21e2184]:
+                  - heading "Theme" [level=3] [ref=f21e2185]
+                  - generic [ref=f21e2187]:
+                    - combobox "System theme" [ref=f21e2188]
+                    - generic: System theme
+                  - generic [ref=f21e2190]:
+                    - checkbox "Enhance contrast" [ref=f21e2192]
+                    - generic [ref=f21e2193]: Enhance contrast
+                    - paragraph [ref=f21e2194]: When enabled, contrast between text and controls and their backgrounds will be increased
+                - generic [ref=f21e2195]:
+                  - heading "New features" [level=3] [ref=f21e2196]
+                  - generic [ref=f21e2197]:
+                    - text: Closed captions
+                    - generic [ref=f21e2198]: Beta
+                  - generic [ref=f21e2200]:
+                    - text: Learn more about captioning
+                    - link "here" [ref=f21e2201] [cursor=pointer]:
+                      - /url: https://help.figma.com/hc/articles/4402390110743
+                - generic [ref=f21e2202]:
+                  - heading "Fonts" [level=3] [ref=f21e2203]
+                  - generic [ref=f21e2204]: Local fonts are currently not enabled. To use them, you’ll need to download Figma’s font installer or desktop app.
+                  - button "Use local fonts" [ref=f21e2206]
+                - generic [ref=f21e2207]:
+                  - heading "Your uploaded fonts" [level=3] [ref=f21e2208]
+                  - generic [ref=f21e2209]: Upload fonts for your personal use with a paid plan.
+                  - button "View plans" [ref=f21e2211]
+                - generic [ref=f21e2212]:
+                  - heading "Library" [level=3] [ref=f21e2213]
+                  - generic [ref=f21e2215]:
+                    - button "Enable libraries" [ref=f21e2216] [cursor=pointer]
+                    - text: for all files in your drafts
+                - generic [ref=f21e2217]:
+                  - heading "View history" [level=3] [ref=f21e2218]
+                  - generic [ref=f21e2220]:
+                    - text: You can currently see teammates’ view history in your files, and they can see yours.
+                    - link "Learn more" [ref=f21e2221] [cursor=pointer]:
+                      - /url: https://help.figma.com/hc/articles/29638316371479
+                  - button "Change preference" [ref=f21e2223]
+                - generic [ref=f21e2224]:
+                  - heading "Account" [level=3] [ref=f21e2225]
+                  - button "Delete account" [ref=f21e2227]
+        - button "Close" [ref=f21e2230]
+  - generic:
+    - status
+    - group [ref=f21e1805]:
+      - alert [ref=f21e1807]
+      - alert [ref=f21e1809]
