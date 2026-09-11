@@ -1,0 +1,20 @@
+[    2185ms] [LOG] [GORGIAS-CHAT] Loading chat 01H5AA2K0WY8HRJWNMP2H4TPW1... @ https://config.gorgias.chat/bundle-loader/01H5AA2K0WY8HRJWNMP2H4TPW1:0
+[    2233ms] [WARNING] No ID defined. @ https://www.glossier.com/cdn/shop/t/1462/assets/app.min.js?v=116181505507905838551788895253:0
+[    2234ms] [WARNING] No ID defined. @ https://www.glossier.com/cdn/shop/t/1462/assets/app.min.js?v=116181505507905838551788895253:0
+[    2316ms] [INFO] k-web-pixel-version 2 @ https://www.glossier.com/web-pixels/strict/app/web-pixel-1319502069@c63c5b72c8d77be5f2d27d14c081da38.js:0
+[    2828ms] [LOG] Shopify Consent captured @ https://www.glossier.com/en-kr/products/cloud-paint:1136
+[    2858ms] [LOG] Shopify Consent captured @ https://www.glossier.com/en-kr/products/cloud-paint:1136
+[    3301ms] [WARNING] No ID defined. @ https://www.glossier.com/cdn/shop/t/1462/assets/app.min.js?v=116181505507905838551788895253:0
+[    3406ms] [WARNING] In a sandboxed environment, addEventListener may not behave as expected. @ https://www.glossier.com/cdn/wpm/sd761896cw652752b9p53817278m7665fce0m.js:0
+[    3441ms] [WARNING] In a sandboxed environment, addEventListener may not behave as expected. @ https://www.glossier.com/cdn/wpm/sd761896cw652752b9p53817278m7665fce0m.js:0
+[    3497ms] [WARNING] In a sandboxed environment, addEventListener may not behave as expected. @ https://www.glossier.com/cdn/wpm/sd761896cw652752b9p53817278m7665fce0m.js:0
+[    4413ms] [INFO] Clear-Site-Data header on 'https://www.glossier.com/en-kr/cart/update.js': Cleared data types: "prefetchCache", "prerenderCache". @ https://www.glossier.com/en-kr/products/cloud-paint:0
+[    4642ms] [WARNING] In a sandboxed environment, addEventListener may not behave as expected. @ https://www.glossier.com/cdn/wpm/sd761896cw652752b9p53817278m7665fce0m.js:0
+[    4862ms] [INFO] Clear-Site-Data header on 'https://www.glossier.com/cart/update.js': Cleared data types: "prefetchCache", "prerenderCache". @ https://www.glossier.com/en-kr/products/cloud-paint:0
+[    5401ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://pixel.pointmediatracker.com/kpi?c=glossier&kpi=visit&fpc=850b1554-dd6b-46f5-8611-ee7b057d967e&utm_source=&utm_medium=&utm_campaign=:0
+[    6005ms] [WARNING] Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://www.glossier.com') does not match the recipient window's origin ('null'). @ (program):2:0
+[    6139ms] [WARNING] Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://www.glossier.com') does not match the recipient window's origin ('null'). @ (program):2:0
+[    6211ms] [WARNING] [Recharge] Not showing the widget because it is disabled in the admin settings. @ https://static.rechargecdn.com/assets/js/widget.min.js?shop=glossier-admin.myshopify.com:3
+[    6230ms] [INFO] Clear-Site-Data header on 'https://www.glossier.com/cart/update.js?from_update_cart_attributes': Cleared data types: "prefetchCache", "prerenderCache". @ https://www.glossier.com/en-kr/products/cloud-paint:0
+[    7025ms] [INFO] Clear-Site-Data header on 'https://www.glossier.com/cart/update.js': Cleared data types: "prefetchCache", "prerenderCache". @ https://www.glossier.com/en-kr/products/cloud-paint:0
+[    7501ms] [INFO] Clear-Site-Data header on 'https://www.glossier.com/cart/update.js?from_update_cart_attributes': Cleared data types: "prefetchCache", "prerenderCache". @ https://www.glossier.com/en-kr/products/cloud-paint:0

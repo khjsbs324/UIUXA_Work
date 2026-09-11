@@ -1,0 +1,451 @@
+- generic [active] [ref=f18e1]:
+  - generic [ref=f18e3]:
+    - generic [ref=f18e6]:
+      - 'link "NEW IN: Serum Mascara T50 now available in Brown, still enriched with 1% pea peptides." [ref=f18e8] [cursor=pointer]':
+        - /url: /products/serum-mascara-new-generation-pea-peptides-castor-oil
+      - 'link "Coming soon: limited-edition Advent Calendar 2026. Join the waitlist today." [ref=f18e10] [cursor=pointer]':
+        - /url: /edito/advent-calendar-2026
+      - link "Your skin evolves; your routine should, too. Take your diagnostic." [ref=f18e12] [cursor=pointer]:
+        - /url: /diagnostic
+      - generic [ref=f18e13]: Complimentary gift with every purchase over $100
+      - 'link "NEW IN: Serum Mascara T50 now available in Brown, still enriched with 1% pea peptides." [ref=f18e15] [cursor=pointer]':
+        - /url: /products/serum-mascara-new-generation-pea-peptides-castor-oil
+    - banner [ref=f18e16]:
+      - generic [ref=f18e17]:
+        - generic [ref=f18e18]:
+          - navigation [ref=f18e19]:
+            - list [ref=f18e20]:
+              - listitem [ref=f18e21]:
+                - button "Products" [ref=f18e23] [cursor=pointer]
+              - listitem [ref=f18e24]:
+                - link "Diagnostic" [ref=f18e26] [cursor=pointer]:
+                  - /url: /diagnostic?source=diagnostic_menu
+          - list [ref=f18e27]:
+            - listitem [ref=f18e28]:
+              - button [ref=f18e30] [cursor=pointer]
+        - link "home" [ref=f18e33] [cursor=pointer]:
+          - /url: /
+          - img "Logo" [ref=f18e34]
+        - list [ref=f18e36]:
+          - listitem [ref=f18e37]:
+            - button "EN/$" [ref=f18e39] [cursor=pointer]
+          - listitem [ref=f18e43]:
+            - link [ref=f18e44] [cursor=pointer]:
+              - /url: /account/login
+          - listitem [ref=f18e49]:
+            - button "cart" [ref=f18e50] [cursor=pointer]
+    - generic [ref=f18e53]:
+      - navigation [ref=f18e55]:
+        - list [ref=f18e56]:
+          - listitem [ref=f18e57]:
+            - link "Home" [ref=f18e58] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=f18e59]:
+            - text: /
+            - link "Tinted care" [ref=f18e60] [cursor=pointer]:
+              - /url: /collections/tinted-care
+          - listitem [ref=f18e61]: / Tinted Serum
+      - generic [ref=f18e62]:
+        - generic [ref=f18e64]:
+          - generic [ref=f18e66]:
+            - generic [ref=f18e73]:
+              - img "Tinted Serum Vitamin C + Aloe Vera — Typology"
+            - generic [ref=f18e92]:
+              - img "Tinted Serum Vitamin C + Aloe Vera — Typology"
+          - generic [ref=f18e95]:
+            - generic [ref=f18e96] [cursor=pointer]
+            - generic [ref=f18e98] [cursor=pointer]
+            - generic [ref=f18e100] [cursor=pointer]
+            - generic [ref=f18e102] [cursor=pointer]
+        - generic [ref=f18e105]:
+          - generic [ref=f18e106]: Bestseller
+          - generic [ref=f18e108]:
+            - generic [ref=f18e109]: TEINTÉ-100X
+            - generic [ref=f18e110]: 1 floz
+          - heading "Tinted Serum T10 Vitamin C + Aloe Vera" [level=1] [ref=f18e111]
+          - button "To reviews" [ref=f18e112] [cursor=pointer]:
+            - generic [ref=f18e115]: 9382 reviews
+          - generic [ref=f18e117]:
+            - paragraph [ref=f18e118]: A silicone-free, non-clogging tinted serum for light coverage and a natural, no-makeup finish.Formulated with vitamin C for radiance and squalane & aloe vera for deep, long-lasting hydration.
+            - paragraph [ref=f18e119]: Non-comedogenic. 99% naturally derived.
+          - generic [ref=f18e120]:
+            - paragraph [ref=f18e122]: Select your shade
+            - generic [ref=f18e124]:
+              - generic [ref=f18e125] [cursor=pointer]
+              - generic [ref=f18e127] [cursor=pointer]
+              - generic [ref=f18e129] [cursor=pointer]
+              - generic [ref=f18e131] [cursor=pointer]
+              - generic [ref=f18e133] [cursor=pointer]
+              - generic [ref=f18e135] [cursor=pointer]
+          - button "Select a shade - $47.90" [disabled] [ref=f18e139]
+          - button "Find your ideal shade" [ref=f18e149] [cursor=pointer]
+          - generic [ref=f18e151]:
+            - link [ref=f18e152] [cursor=pointer]:
+              - /url: /products/tinted-radiance-duo
+            - link "Make it a routine Natural Radiance Duo 4.3/5 2 products $78.40 View the 19 others routines" [ref=f18e153] [cursor=pointer]:
+              - /url: /products/tinted-radiance-duo
+              - generic [ref=f18e154]: Make it a routine
+              - generic [ref=f18e155]: Natural Radiance Duo
+              - generic [ref=f18e156]:
+                - generic [ref=f18e157]: 4.3/5
+                - text: 2 products $78.40
+              - button "View the 19 others routines" [ref=f18e160]
+          - generic [ref=f18e162]:
+            - generic [ref=f18e164]:
+              - generic [ref=f18e167]:
+                - generic [ref=f18e168]: Free shipping
+                - generic [ref=f18e170]: starts at $60
+              - generic [ref=f18e173]:
+                - generic [ref=f18e174]: Complimentary gift
+                - generic [ref=f18e176]: With every purchase over $100
+            - generic [ref=f18e177]:
+              - generic [ref=f18e178] [cursor=pointer]
+              - generic [ref=f18e179] [cursor=pointer]
+      - generic [ref=f18e180]:
+        - generic [ref=f18e182]:
+          - paragraph [ref=f18e184]: Tinted SerumVitamin C + Aloe Vera
+          - generic [ref=f18e185]:
+            - generic [ref=f18e188]:
+              - generic [ref=f18e189] [cursor=pointer]
+              - generic [ref=f18e191] [cursor=pointer]
+              - generic [ref=f18e193] [cursor=pointer]
+              - generic [ref=f18e195] [cursor=pointer]
+              - generic [ref=f18e197] [cursor=pointer]
+              - generic [ref=f18e199] [cursor=pointer]
+            - button "Select a shade — $47.90" [disabled] [ref=f18e202]
+        - paragraph [ref=f18e214]:
+          - generic [ref=f18e215]: This product is
+          - generic [ref=f18e216]: Made in France,
+          - generic [ref=f18e217]: Silicone Free,
+          - generic [ref=f18e218]: Fragrance-free,
+          - generic [ref=f18e219]: Vegan,
+          - generic [ref=f18e220]: 90/100 Yuka Rating
+        - generic [ref=f18e227]:
+          - paragraph [ref=f18e228]: T10 - Tinted Serum
+          - paragraph [ref=f18e230]: A hybrid formula that bridges skincare and makeup. The complexion appears even, the skin stays hydrated, and the finish remains natural throughout the day.
+          - list [ref=f18e232]:
+            - listitem [ref=f18e233]:
+              - generic [ref=f18e234]:
+                - heading "A serum suitable for all skin types" [level=3] [ref=f18e236] [cursor=pointer]
+                - generic [ref=f18e238]:
+                  - paragraph [ref=f18e239]: Suitable for all skin types, the Tinted Serum T10 evens out the complexion with light coverage and a natural finish.
+                  - paragraph [ref=f18e240]: Designed for daily use, it combines vitamin C, plant-based squalane, and aloe vera to support hydration, radiance, and skin comfort throughout the day.
+                  - paragraph [ref=f18e241]: Tested non-comedogenic, it is also suitable for skin prone to blemishes.
+            - listitem [ref=f18e242]:
+              - heading "A natural finish, second-skin effect" [level=3] [ref=f18e245] [cursor=pointer]
+            - listitem [ref=f18e246]:
+              - heading "A serum available in 6 shades" [level=3] [ref=f18e249] [cursor=pointer]
+            - listitem [ref=f18e250]:
+              - heading "A formula enriched with Vitamin C, Aloe Vera, and Squalane" [level=3] [ref=f18e253] [cursor=pointer]
+            - listitem [ref=f18e254]:
+              - heading "Clinically proven efficacy" [level=3] [ref=f18e257] [cursor=pointer]
+            - listitem [ref=f18e258]:
+              - heading "A recyclable glass bottle" [level=3] [ref=f18e261] [cursor=pointer]
+            - listitem [ref=f18e262]:
+              - heading "Complete list of ingredients" [level=3] [ref=f18e265] [cursor=pointer]
+        - generic [ref=f18e266]:
+          - generic [ref=f18e267]:
+            - generic [ref=f18e268]: Find the perfect shade
+            - button "Start" [ref=f18e269] [cursor=pointer]
+          - generic [ref=f18e274]:
+            - img "Shades block"
+        - generic [ref=f18e277]:
+          - paragraph
+          - generic [ref=f18e279]:
+            - heading "How to choose the right shade of Tinted Serum T10?" [level=3] [ref=f18e282] [cursor=pointer]
+            - heading "How to apply the Tinted Serum T10?" [level=3] [ref=f18e285] [cursor=pointer]
+            - heading "How to use the dropper for the Tinted Serum T10?" [level=3] [ref=f18e288] [cursor=pointer]
+            - heading "What is the return policy?" [level=3] [ref=f18e291] [cursor=pointer]
+            - heading "Where can the full ingredient list for the tinted serum be found?" [level=3] [ref=f18e294] [cursor=pointer]
+            - heading "Is the tinted serum suitable for rosacea-prone skin?" [level=3] [ref=f18e297] [cursor=pointer]
+            - heading "Is the tinted serum suitable for acne-prone skin?" [level=3] [ref=f18e300] [cursor=pointer]
+            - heading "What happens if the expiration date has passed?" [level=3] [ref=f18e303] [cursor=pointer]
+          - navigation [ref=f18e304]:
+            - button "01" [ref=f18e305] [cursor=pointer]
+            - button "02" [ref=f18e306] [cursor=pointer]
+            - button "03" [ref=f18e307] [cursor=pointer]
+            - button "04" [ref=f18e308] [cursor=pointer]
+            - button "05" [ref=f18e309] [cursor=pointer]
+        - generic [ref=f18e315]:
+          - generic [ref=f18e318]:
+            - img "Product FAQ"
+          - generic [ref=f18e321]:
+            - heading "FAQ" [level=2] [ref=f18e322]
+            - generic [ref=f18e323]: Questions about this product?
+            - generic [ref=f18e325]:
+              - textbox "Ask the AI assistant" [ref=f18e329]
+              - button "Newsletter subscribe" [disabled] [ref=f18e330]
+        - generic [ref=f18e331]:
+          - generic [ref=f18e332]:
+            - generic:
+              - generic:
+                - generic:
+                  - img "Sérum teinté texture"
+          - generic [ref=f18e334]:
+            - generic [ref=f18e335]:
+              - paragraph [ref=f18e336]: 4.1/5
+              - generic [ref=f18e339]: This product is rated 4.1/5, based on over 9382 reviews from verified purchases.
+            - generic [ref=f18e341]:
+              - generic [ref=f18e342]:
+                - button "Level of sebum" [ref=f18e343] [cursor=pointer]
+                - generic:
+                  - generic:
+                    - list:
+                      - listitem: All
+                      - listitem: Dry
+                      - listitem: Oily
+                      - listitem: Combination
+                      - listitem: Normal
+              - generic [ref=f18e347]:
+                - button "Age range" [ref=f18e348] [cursor=pointer]
+                - generic:
+                  - generic:
+                    - list:
+                      - listitem: All
+                      - listitem: 18-24 years old
+                      - listitem: 25-34 years old
+                      - listitem: 35-44 years old
+                      - listitem: 45-54 years old
+                      - listitem: 55-64 years old
+                      - listitem: 65+ years old
+              - generic [ref=f18e352]:
+                - button "Sensitive skin" [ref=f18e353] [cursor=pointer]
+                - generic:
+                  - generic:
+                    - list:
+                      - listitem: All
+                      - listitem: "Yes"
+                      - listitem: "No"
+              - generic [ref=f18e357]:
+                - button "Skin Typology" [ref=f18e358] [cursor=pointer]
+                - generic:
+                  - generic:
+                    - list:
+                      - listitem: All
+                      - listitem: AE(•)
+                      - listitem: AE(-)
+                      - listitem: AE(+)
+                      - listitem: AP(+)
+                      - listitem: AP(•)
+                      - listitem: AP(-)
+                      - listitem: DE(+)
+                      - listitem: DE(•)
+                      - listitem: DE(-)
+                      - listitem: DP(+)
+                      - listitem: DP(•)
+                      - listitem: DP(-)
+                      - listitem: VE(+)
+                      - listitem: VE(•)
+                      - listitem: VE(-)
+                      - listitem: VP(+)
+                      - listitem: VP(•)
+                      - listitem: VP(-)
+                      - listitem: PE(+)
+                      - listitem: PE(•)
+                      - listitem: PE(-)
+                      - listitem: PP(+)
+                      - listitem: PP(-)
+                      - listitem: PP(•)
+            - list [ref=f18e362]:
+              - listitem [ref=f18e363]:
+                - generic [ref=f18e365]:
+                  - generic [ref=f18e366]:
+                    - generic [ref=f18e367]: Francesca C.
+                    - generic [ref=f18e368]: Verified buyer
+                    - paragraph [ref=f18e369]: 8/18/26
+                    - list [ref=f18e370]:
+                      - listitem [ref=f18e371]: "Sensitive skin: No"
+                  - generic [ref=f18e372]:
+                    - paragraph [ref=f18e376]: HAPPY
+                    - generic [ref=f18e377]: the ideal alternative to foundation for anyone looking for a natural, radiant and hydrating everyday result. Halfway between makeup and skincare, this product evens out the complexion with sheer coverage, without any cakey effect or visible lines
+                    - paragraph [ref=f18e379]:
+                      - text: Translated from French.
+                      - button "See original." [ref=f18e380] [cursor=pointer]
+              - listitem [ref=f18e381]:
+                - generic [ref=f18e383]:
+                  - generic [ref=f18e384]:
+                    - generic [ref=f18e385]: Anonymous
+                    - generic [ref=f18e386]: Verified buyer
+                    - paragraph [ref=f18e387]: 8/8/26
+                    - list [ref=f18e388]:
+                      - listitem [ref=f18e389]: "Sensitive skin: No"
+                  - generic [ref=f18e390]:
+                    - paragraph [ref=f18e394]: Excellent product
+                    - generic [ref=f18e395]:
+                      - generic [ref=f18e396]: Excellent product! Evens out my complexion without making my rosacea worse—on the contrary, it tends to decrease. I still use my Rosex cream alongside it during major flare-ups, but this treatment really soothes the dryness caused by the medication. The coverage is light, but that’s exactly what I want for a natural finish. It doesn’t leave a greasy film on my combination skin.
+                      - button "Show more" [ref=f18e397] [cursor=pointer]
+                    - paragraph [ref=f18e398]:
+                      - text: Translated from French.
+                      - button "See original." [ref=f18e399] [cursor=pointer]
+              - listitem [ref=f18e400]:
+                - generic [ref=f18e402]:
+                  - generic [ref=f18e403]:
+                    - generic [ref=f18e404]: YASMINA T.
+                    - generic [ref=f18e405]: Verified buyer
+                    - paragraph [ref=f18e406]: 5/20/26
+                    - list [ref=f18e407]:
+                      - listitem [ref=f18e408]: "Sensitive skin: No"
+                  - generic [ref=f18e409]:
+                    - paragraph [ref=f18e413]: Finally, a tinted serum that enhances without emphasizing imperfections!
+                    - generic [ref=f18e414]:
+                      - generic [ref=f18e415]: "A really great discovery! This tinted serum is very easy to apply and I love how fluid it is. It blends perfectly into the skin for a natural, lightweight, radiant finish. Big plus: it doesn’t emphasize dark circles or wrinkles, which is really appreciated. The complexion is evened out with no mask effect and no cakiness. On top of that, I really appreciate that Typology products are clean, with a reassuring ingredient list. I’m truly delighted with this purchase!"
+                      - button "Show more" [ref=f18e416] [cursor=pointer]
+                    - paragraph [ref=f18e417]:
+                      - text: Translated from French.
+                      - button "See original." [ref=f18e418] [cursor=pointer]
+              - listitem [ref=f18e419]:
+                - generic [ref=f18e421]:
+                  - generic [ref=f18e422]:
+                    - generic [ref=f18e423]: Anonymous
+                    - generic [ref=f18e424]: Verified buyer
+                    - paragraph [ref=f18e425]: 4/24/26
+                    - list [ref=f18e426]:
+                      - listitem [ref=f18e427]: "Sensitive skin: No"
+                  - generic [ref=f18e428]:
+                    - paragraph [ref=f18e432]: I love it!
+                    - generic [ref=f18e433]:
+                      - generic [ref=f18e434]: "I bought the tinted serum for the first time because I was seeing it almost everywhere and I really liked the brand’s approach. Having extremely difficult skin that reacts with breakouts/allergies/redness to almost every product on the market, I told myself I’d give it a try anyway, you never know. And I think I’ve pretty much found the best serum of my life – no reaction at all, it doesn’t clog my pores, the coverage is perfect for me: light but gives that healthy glow and “good skin” effect. On top of all that, I have oily skin and the serum doesn’t get shiny after 2 hours, I can wear it all day long without any problem. I use a mineral sunscreen from another brand on top and they work really well together, I think I’ve finally found my perfect skincare routine. I also tried the peppermint hydrosol and I’m blown away – the feeling afterwards is very pleasant and it really does tighten the pores while being natural. I’m honestly SO, SO happy with my purchase and I’d recommend it with my eyes closed!"
+                      - button "Show more" [ref=f18e435] [cursor=pointer]
+                    - paragraph [ref=f18e436]:
+                      - text: Translated from French.
+                      - button "See original." [ref=f18e437] [cursor=pointer]
+              - listitem [ref=f18e438]:
+                - generic [ref=f18e440]:
+                  - generic [ref=f18e441]:
+                    - generic [ref=f18e442]: Anonymous
+                    - generic [ref=f18e443]: Verified buyer
+                    - paragraph [ref=f18e444]: 2/9/26
+                    - list [ref=f18e445]:
+                      - listitem [ref=f18e446]: "Sensitive skin: No"
+                  - generic [ref=f18e447]:
+                    - paragraph [ref=f18e451]: Really a gem.
+                    - generic [ref=f18e452]: This is an excellent product, super easy to apply, with good coverage, but the big plus is that it truly brightens the complexion. Well moisturizing, it is also ideal for not emphasizing the first wrinkles.
+                    - paragraph [ref=f18e454]:
+                      - text: Translated from French.
+                      - button "See original." [ref=f18e455] [cursor=pointer]
+              - listitem [ref=f18e456]:
+                - generic [ref=f18e458]:
+                  - generic [ref=f18e459]:
+                    - generic [ref=f18e460]: Anonymous
+                    - generic [ref=f18e461]: Verified buyer
+                    - paragraph [ref=f18e462]: 1/23/26
+                    - list [ref=f18e463]:
+                      - listitem [ref=f18e464]: "Level of sebum: Combination"
+                      - listitem [ref=f18e465]: "Age range: 65+ years old"
+                      - listitem [ref=f18e466]: "Sensitive skin: No"
+                  - generic [ref=f18e467]:
+                    - paragraph [ref=f18e471]: Tinted serum 2
+                    - generic [ref=f18e472]: I've given up on primer and foundation to only use tinted serums now. My skin feels like it's covered in a light velvet and gives a natural effect.
+                    - paragraph [ref=f18e474]:
+                      - text: Translated from French.
+                      - button "See original." [ref=f18e475] [cursor=pointer]
+            - navigation [ref=f18e476]:
+              - button "01" [ref=f18e477] [cursor=pointer]
+              - button "02" [ref=f18e478] [cursor=pointer]
+              - button "03" [ref=f18e479] [cursor=pointer]
+              - button "04" [ref=f18e480] [cursor=pointer]
+              - button "05" [ref=f18e481] [cursor=pointer]
+              - generic [ref=f18e482]: ...
+              - button "1564" [ref=f18e483] [cursor=pointer]
+        - generic [ref=f18e485]:
+          - button "You may also like" [ref=f18e487] [cursor=pointer]
+          - generic [ref=f18e491]:
+            - link "Glow Drops 5% Vitamin C + Aloe Vera — Typology Radiance Glow Drops T31 — 5% Vitamin C + Aloe Vera — $39.50" [ref=f18e495] [cursor=pointer]:
+              - /url: /products/glow-drops
+              - generic [ref=f18e501]:
+                - img "Glow Drops 5% Vitamin C + Aloe Vera — Typology"
+              - generic [ref=f18e502]: Radiance
+              - heading "Glow Drops T31 — 5% Vitamin C + Aloe Vera — $39.50" [level=2] [ref=f18e507]
+            - link "Sérum au squalane texture Nourishing Serum 100% Olive Squalane — Typology Save -10% Nourishing Serum L34 — 100% Olive Squalane — from $27.81" [ref=f18e511] [cursor=pointer]:
+              - /url: /products/squalane-serum
+              - generic [ref=f18e514]:
+                - img "Sérum au squalane texture"
+              - generic [ref=f18e518]:
+                - img "Nourishing Serum 100% Olive Squalane — Typology"
+              - generic [ref=f18e519]: Save -10%
+              - heading "Nourishing Serum L34 — 100% Olive Squalane — from $27.81" [level=2] [ref=f18e524]
+            - link "Radiance Serum 0.50 fl.oz. 15% Vitamin C Complex + 1% Vitamin E — Typology Bestseller Radiance Serum 0.50 fl.oz. L32 — 15% Vitamin C Complex + 1% Vitamin E — from $30.50" [ref=f18e528] [cursor=pointer]:
+              - /url: /products/vitamin-c-serum
+              - generic [ref=f18e534]:
+                - img "Radiance Serum 0.50 fl.oz. 15% Vitamin C Complex + 1% Vitamin E — Typology"
+              - generic [ref=f18e535]: Bestseller
+              - heading "Radiance Serum 0.50 fl.oz. L32 — 15% Vitamin C Complex + 1% Vitamin E — from $30.50" [level=2] [ref=f18e540]
+            - link "Firming Night Serum Botanical Blend with Nopal Cells — Typology Bestseller Firming Night Serum P63 — Botanical Blend with Nopal Cells — from $50.90" [ref=f18e544] [cursor=pointer]:
+              - /url: /products/firming-botanical-night-serum
+              - generic [ref=f18e550]:
+                - img "Firming Night Serum Botanical Blend with Nopal Cells — Typology"
+              - generic [ref=f18e551]: Bestseller
+              - heading "Firming Night Serum P63 — Botanical Blend with Nopal Cells — from $50.90" [level=2] [ref=f18e556]
+    - generic [ref=f18e559]:
+      - generic [ref=f18e560]:
+        - paragraph [ref=f18e561]: Keep the essential.
+        - paragraph [ref=f18e562]: Our formulas are short, with only essential ingredients.
+        - paragraph [ref=f18e563]: Made in France
+        - img "Logo" [ref=f18e565]
+      - img "B Corp Certified"
+    - contentinfo [ref=f18e566]:
+      - generic [ref=f18e568]:
+        - generic [ref=f18e569]:
+          - generic [ref=f18e570]: About
+          - list [ref=f18e572]:
+            - listitem [ref=f18e573]:
+              - link "Fewer Ingredients, Higher Standards" [ref=f18e574] [cursor=pointer]:
+                - /url: /our-formulations
+            - listitem [ref=f18e575]:
+              - link "100% made in France" [ref=f18e576] [cursor=pointer]:
+                - /url: /made-in-france
+            - listitem [ref=f18e577]:
+              - link "Your Trust in Us" [ref=f18e578] [cursor=pointer]:
+                - /url: /your-trust-in-us
+            - listitem [ref=f18e579]:
+              - link "Always improving" [ref=f18e580] [cursor=pointer]:
+                - /url: /our-promise
+            - listitem [ref=f18e581]:
+              - link "Jobs" [ref=f18e582] [cursor=pointer]:
+                - /url: /jobs
+            - listitem [ref=f18e583]:
+              - link "Affiliate Program" [ref=f18e584] [cursor=pointer]:
+                - /url: /affiliate-program
+            - listitem [ref=f18e585]:
+              - link "The Library" [ref=f18e586] [cursor=pointer]:
+                - /url: /library
+        - generic [ref=f18e587]:
+          - generic [ref=f18e588]: Help
+          - list [ref=f18e590]:
+            - listitem [ref=f18e591]:
+              - link "Frequently asked questions" [ref=f18e592] [cursor=pointer]:
+                - /url: /support
+            - listitem [ref=f18e593]:
+              - link "Orders and Delivery" [ref=f18e594] [cursor=pointer]:
+                - /url: /support/orders-and-delivery
+            - listitem [ref=f18e595]:
+              - link "Terms of sales" [ref=f18e596] [cursor=pointer]:
+                - /url: /terms-of-sales
+            - listitem [ref=f18e597]:
+              - link "Privacy policy" [ref=f18e598] [cursor=pointer]:
+                - /url: /privacy-policy
+            - listitem [ref=f18e599]:
+              - link "Get in touch" [ref=f18e600] [cursor=pointer]:
+                - /url: /support
+            - listitem [ref=f18e601]:
+              - link "Press" [ref=f18e602] [cursor=pointer]:
+                - /url: mailto:partnershipus@typology.com
+        - generic [ref=f18e603]:
+          - paragraph [ref=f18e604]: Change delivery country
+          - button [ref=f18e606] [cursor=pointer]:
+            - generic [ref=f18e607]:
+              - img "flag" [ref=f18e608]
+              - text: United States
+      - paragraph [ref=f18e612]:
+        - text: Follow us on
+        - link "Instagram" [ref=f18e613] [cursor=pointer]:
+          - /url: https://www.instagram.com/typologyparis/
+        - generic [ref=f18e614]: and
+        - link "Tiktok" [ref=f18e615] [cursor=pointer]:
+          - /url: https://www.tiktok.com/@typologyparis
+    - generic [ref=f18e617]:
+      - generic [ref=f18e620]:
+        - button "Global" [ref=f18e622] [cursor=pointer]
+        - button "Go" [ref=f18e626] [cursor=pointer]
+      - button "close" [ref=f18e636] [cursor=pointer]
+  - iframe [aria-hidden] [ref=f18e640]
