@@ -1,0 +1,55 @@
+*Winget과 Codex는 강의 중
+사용되는 툴이라 번거로우시겠지만 부탁 드리겠습니다!
+
+1.github desktop
+2.vscode
+3.figma
+4.Winget
+5.Codex
+
+
+■github desktop
+https://github.com/apps/desktop?locale=ko-kr
+
+
+
+■vscode
+https://code.visualstudio.com/
+
+
+
+■figma
+https://www.figma.com/ko-kr/downloads/
+
+
+
+■discord 다운로드
+https://discord.com/
+
+
+
+■Winget
+(1)
+Add-AppxPackage -Path "C:\Users\SBS\Downloads\DesktopAppInstaller_Dependencies\x64\Microsoft.VCLibs.140.00.UWPDesktop_14.0.33728.0_x64.appx"
+
+
+(2)
+Add-AppxPackage -Path "C:\Users\SBS\Downloads\DesktopAppInstaller_Dependencies\x64\Microsoft.VCLibs.140.00_14.0.33519.0_x64.appx"
+
+
+(3)
+Add-AppxPackage -Path "C:\Users\SBS\Downloads\DesktopAppInstaller_Dependencies\x64\Microsoft.WindowsAppRuntime.1.8_8000.616.304.0_x64.appx"
+
+
+(4)
+Add-AppxPackage -Path "C:\Users\SBS\Downloads\DesktopAppInstaller_Dependencies\x64\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
+
+
+(5)
+winget --version
+
+
+
+
+■Codex
+npm install -g @openai/codex

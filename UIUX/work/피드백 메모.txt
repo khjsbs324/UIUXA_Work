@@ -78,7 +78,7 @@ work에서 작업 할거야, AGNETS.md 규칙 다 확인해
 
 
 [figma 생성]
-웹디자인(60%)/이은수 섹션안에 강사_제작예시.html를 outolayout없이 frame만 사용해서 생성해
+피드백/이지희 섹션안에 웹디자인_메인_초안1.html를 outolayout없이 frame만 사용해서 생성해, 디자인이나 이미지 수정이나 변경없이 동일하게 생성, 생성하기 전 playwirght MCP로 디자인 확인 후 생성
 
 
 

@@ -1,0 +1,704 @@
+- generic [ref=f16e12]:
+  - generic [ref=f16e13]:
+    - generic [ref=f16e14]: UIUXA
+    - generic [ref=f16e18]:
+      - button "받은 편지함" [ref=f16e21] [cursor=pointer]
+      - link [ref=f16e25] [cursor=pointer]:
+        - /url: https://support.discord.com
+        - button "도움말" [ref=f16e26]
+  - generic [ref=f16e30]:
+    - generic [ref=f16e31]:
+      - navigation "서버 사이드바" [ref=f16e32]:
+        - tree [ref=f16e33]:
+          - generic [ref=f16e34]:
+            - treeitem "다이렉트 메시지 다이렉트 메시지" [level=1] [ref=f16e43] [cursor=pointer]:
+              - generic [ref=f16e44]: 다이렉트 메시지
+              - group "다이렉트 메시지" [ref=f16e48]:
+                - generic [ref=f16e50]:
+                  - generic [ref=f16e54]:
+                    - treeitem "Midjourney Bot, 읽지 않은 메시지 2개" [level=2] [ref=f16e56]
+                    - generic:
+                      - generic [aria-hidden]: "2"
+                  - generic [ref=f16e58]: Midjourney Bot
+            - group "서버" [ref=f16e61]:
+              - generic [ref=f16e62]:
+                - treeitem "UIUXA" [level=1] [selected] [ref=f16e72] [cursor=pointer]
+                - generic [ref=f16e74]: UIUXA
+              - generic [ref=f16e75]:
+                - treeitem "SBS김정훈팀장님의 서버" [level=1] [ref=f16e85] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f16e87]: S김정훈팀장님의서버
+                - generic [ref=f16e88]: SBS김정훈팀장님의 서버
+              - generic [ref=f16e89]:
+                - treeitem "숨김배그" [level=1] [ref=f16e99] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f16e101]: 숨김배그
+                - generic [ref=f16e102]: 숨김배그
+              - generic [ref=f16e103]:
+                - treeitem "김도밥" [level=1] [ref=f16e113] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f16e115]: 김도밥
+                - generic [ref=f16e116]: 김도밥
+              - generic [ref=f16e117]:
+                - generic [ref=f16e122]:
+                  - treeitem "멘션 119개, Midjourney, 음성 통화가 활성화" [level=1] [ref=f16e127] [cursor=pointer]
+                  - generic: "119"
+                - generic [ref=f16e129]:
+                  - generic:
+                    - generic:
+                      - img "인증됨"
+                      - generic:
+                        - generic:
+                          - generic: 커뮤니티 서버
+                          - generic: 인증됨
+                          - generic: 누구나 이 서버에 참가할 수 있어요.
+                        - generic:
+                          - generic: 레벨 3
+                          - generic: 부스트 251번
+                      - generic: Midjourney
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img "mantou1212"
+            - treeitem "서버 추가하기" [level=1] [ref=f16e136] [cursor=pointer]
+            - treeitem "찾기" [level=1] [ref=f16e147] [cursor=pointer]
+            - treeitem "앱 다운로드" [level=1] [ref=f16e158] [cursor=pointer]
+      - navigation "UIUXA (서버)" [ref=f16e162]:
+        - generic [ref=f16e165]:
+          - button "UIUXA, 서버 활동" [ref=f16e166] [cursor=pointer]:
+            - heading "UIUXA" [level=2] [ref=f16e168]
+          - button "서버에 초대하기" [ref=f16e173] [cursor=pointer]
+        - heading "채널" [level=2] [ref=f16e178]
+        - list "채널" [ref=f16e180]:
+          - listitem [ref=f16e182]:
+            - generic [ref=f16e183]:
+              - button "이벤트"
+              - generic [aria-hidden] [ref=f16e188] [cursor=pointer]: 이벤트
+          - listitem [ref=f16e189]:
+            - generic [ref=f16e190]:
+              - button "서버 부스트"
+              - generic [aria-hidden] [ref=f16e195] [cursor=pointer]: 서버 부스트
+          - listitem [ref=f16e197]:
+            - generic [ref=f16e198] [cursor=pointer]:
+              - button "정보 (카테고리)" [expanded] [ref=f16e199]:
+                - heading "정보" [level=3] [ref=f16e200]
+              - generic [ref=f16e204]:
+                - button "채널 만들기" [ref=f16e205]
+                - generic [ref=f16e208]: 채널 만들기
+          - listitem [ref=f16e209]:
+            - link "강의준비 (채팅 채널)" [ref=f16e212] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550041524023336981
+              - generic [ref=f16e213]:
+                - img "텍스트 icon" [ref=f16e214]
+                - generic [ref=f16e217]: 텍스트
+                - generic [aria-hidden] [ref=f16e218]: 강의준비
+                - generic:
+                  - generic [ref=f16e219]: 채널로 초대하기
+                  - generic [ref=f16e220]: 채널 편집
+          - listitem [ref=f16e221]:
+            - link "에이전트 (채팅 채널)" [ref=f16e224] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550049388406116372
+              - generic [ref=f16e225]:
+                - img "텍스트 icon" [ref=f16e226]
+                - generic [ref=f16e229]: 텍스트
+                - generic [aria-hidden] [ref=f16e230]: 에이전트
+                - generic:
+                  - generic [ref=f16e231]: 채널로 초대하기
+                  - generic [ref=f16e232]: 채널 편집
+          - listitem [ref=f16e233]:
+            - link "공지 (채팅 채널)" [ref=f16e236] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550041524023336982
+              - generic [ref=f16e237]:
+                - img "텍스트 icon" [ref=f16e238]
+                - generic [ref=f16e241]: 텍스트
+                - generic [aria-hidden] [ref=f16e242]: 공지
+                - generic:
+                  - generic [ref=f16e243]: 채널로 초대하기
+                  - generic [ref=f16e244]: 채널 편집
+          - listitem [ref=f16e245]:
+            - link "자료 (채팅 채널)" [ref=f16e248] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550041524023336983
+              - generic [ref=f16e249]:
+                - img "텍스트 icon" [ref=f16e250]
+                - generic [ref=f16e253]: 텍스트
+                - generic [aria-hidden] [ref=f16e254]: 자료
+                - generic:
+                  - generic [ref=f16e255]: 채널로 초대하기
+                  - generic [ref=f16e256]: 채널 편집
+          - listitem [ref=f16e257]:
+            - generic [ref=f16e258] [cursor=pointer]:
+              - button "채팅 채널 (카테고리)" [expanded] [ref=f16e259]:
+                - heading "채팅 채널" [level=3] [ref=f16e260]
+              - generic [ref=f16e264]:
+                - button "채널 만들기" [ref=f16e265]
+                - generic [ref=f16e268]: 채널 만들기
+          - listitem [ref=f16e269]:
+            - link "단체 (채팅 채널)" [ref=f16e272] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550041524023336985
+              - generic [ref=f16e273]:
+                - img "텍스트 icon" [ref=f16e274]
+                - generic [ref=f16e277]: 텍스트
+                - generic [aria-hidden] [ref=f16e278]: 단체
+                - generic:
+                  - generic [ref=f16e279]: 채널로 초대하기
+                  - generic [ref=f16e280]: 채널 편집
+          - listitem [ref=f16e281]:
+            - link "강민경 (채팅 채널), 비공개 채널(잠김)" [ref=f16e284] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550041524023336986
+              - generic [ref=f16e285]:
+                - img "텍스트 (제한) icon" [ref=f16e286]
+                - generic [ref=f16e290]: 텍스트 (제한)
+                - generic [aria-hidden] [ref=f16e291]: 강민경
+                - generic:
+                  - generic [ref=f16e292]: 채널로 초대하기
+                  - generic [ref=f16e293]: 채널 편집
+          - listitem [ref=f16e294]:
+            - link "박주연 (채팅 채널), 비공개 채널(잠김)" [ref=f16e297] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550042859443593337
+              - generic [ref=f16e298]:
+                - img "텍스트 (제한) icon" [ref=f16e299]
+                - generic [ref=f16e303]: 텍스트 (제한)
+                - generic [aria-hidden] [ref=f16e304]: 박주연
+                - generic:
+                  - generic [ref=f16e305]: 채널로 초대하기
+                  - generic [ref=f16e306]: 채널 편집
+          - listitem [ref=f16e307]:
+            - link "박찬미 (채팅 채널), 비공개 채널(잠김)" [ref=f16e310] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550041524023336987
+              - generic [ref=f16e311]:
+                - img "텍스트 (제한) icon" [ref=f16e312]
+                - generic [ref=f16e316]: 텍스트 (제한)
+                - generic [aria-hidden] [ref=f16e317]: 박찬미
+                - generic:
+                  - generic [ref=f16e318]: 채널로 초대하기
+                  - generic [ref=f16e319]: 채널 편집
+          - listitem [ref=f16e320]:
+            - link "이은경 (채팅 채널), 비공개 채널(잠김)" [ref=f16e323] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550043079048958013
+              - generic [ref=f16e324]:
+                - img "텍스트 (제한) icon" [ref=f16e325]
+                - generic [ref=f16e329]: 텍스트 (제한)
+                - generic [aria-hidden] [ref=f16e330]: 이은경
+                - generic:
+                  - generic [ref=f16e331]: 채널로 초대하기
+                  - generic [ref=f16e332]: 채널 편집
+          - listitem [ref=f16e333]:
+            - link "이은수 (채팅 채널), 비공개 채널(잠김)" [ref=f16e336] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550043114926768159
+              - generic [ref=f16e337]:
+                - img "텍스트 (제한) icon" [ref=f16e338]
+                - generic [ref=f16e342]: 텍스트 (제한)
+                - generic [aria-hidden] [ref=f16e343]: 이은수
+                - generic:
+                  - generic [ref=f16e344]: 채널로 초대하기
+                  - generic [ref=f16e345]: 채널 편집
+          - listitem [ref=f16e346]:
+            - link "이지희 (채팅 채널), 비공개 채널(잠김)" [ref=f16e349] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550043163035701369
+              - generic [ref=f16e350]:
+                - img "텍스트 (제한) icon" [ref=f16e351]
+                - generic [ref=f16e355]: 텍스트 (제한)
+                - generic [aria-hidden] [ref=f16e356]: 이지희
+                - generic:
+                  - generic [ref=f16e357]: 채널로 초대하기
+                  - generic [ref=f16e358]: 채널 편집
+          - listitem [ref=f16e359]:
+            - link "임연우 (채팅 채널), 비공개 채널(잠김)" [ref=f16e362] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550043253410373652
+              - generic [ref=f16e363]:
+                - img "텍스트 (제한) icon" [ref=f16e364]
+                - generic [ref=f16e368]: 텍스트 (제한)
+                - generic [aria-hidden] [ref=f16e369]: 임연우
+                - generic:
+                  - generic [ref=f16e370]: 채널로 초대하기
+                  - generic [ref=f16e371]: 채널 편집
+          - listitem [ref=f16e372]:
+            - link "최지혜 (채팅 채널), 비공개 채널(잠김)" [ref=f16e375] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550043359240790026
+              - generic [ref=f16e376]:
+                - img "텍스트 (제한) icon" [ref=f16e377]
+                - generic [ref=f16e381]: 텍스트 (제한)
+                - generic [aria-hidden] [ref=f16e382]: 최지혜
+                - generic:
+                  - generic [ref=f16e383]: 채널로 초대하기
+                  - generic [ref=f16e384]: 채널 편집
+          - listitem [ref=f16e385]:
+            - link "허지민 (채팅 채널), 비공개 채널(잠김)" [ref=f16e388] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550043482377420800
+              - generic [ref=f16e389]:
+                - img "텍스트 (제한) icon" [ref=f16e390]
+                - generic [ref=f16e394]: 텍스트 (제한)
+                - generic [aria-hidden] [ref=f16e395]: 허지민
+                - generic:
+                  - generic [ref=f16e396]: 채널로 초대하기
+                  - generic [ref=f16e397]: 채널 편집
+          - listitem [ref=f16e398]:
+            - generic [ref=f16e399] [cursor=pointer]:
+              - button "포트폴리오 (카테고리)" [expanded] [ref=f16e400]:
+                - heading "포트폴리오" [level=3] [ref=f16e401]
+              - generic [ref=f16e405]:
+                - button "채널 만들기" [ref=f16e406]
+                - generic [ref=f16e409]: 채널 만들기
+          - listitem [ref=f16e410]:
+            - link "강민경 (채팅 채널), 비공개 채널(잠김)" [ref=f16e413] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550062820702560296
+              - generic [ref=f16e414]:
+                - img "텍스트 (제한) icon" [ref=f16e415]
+                - generic [ref=f16e419]: 텍스트 (제한)
+                - generic [aria-hidden] [ref=f16e420]: 강민경
+                - generic:
+                  - generic [ref=f16e421]: 채널로 초대하기
+                  - generic [ref=f16e422]: 채널 편집
+          - listitem [ref=f16e423]:
+            - link "박주연 (채팅 채널), 비공개 채널(잠김)" [ref=f16e426] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550062872690950156
+              - generic [ref=f16e427]:
+                - img "텍스트 (제한) icon" [ref=f16e428]
+                - generic [ref=f16e432]: 텍스트 (제한)
+                - generic [aria-hidden] [ref=f16e433]: 박주연
+                - generic:
+                  - generic [ref=f16e434]: 채널로 초대하기
+                  - generic [ref=f16e435]: 채널 편집
+          - listitem [ref=f16e436]:
+            - link "박찬미 (채팅 채널), 비공개 채널(잠김)" [ref=f16e439] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550063460606410792
+              - generic [ref=f16e440]:
+                - img "텍스트 (제한) icon" [ref=f16e441]
+                - generic [ref=f16e445]: 텍스트 (제한)
+                - generic [aria-hidden] [ref=f16e446]: 박찬미
+                - generic:
+                  - generic [ref=f16e447]: 채널로 초대하기
+                  - generic [ref=f16e448]: 채널 편집
+          - listitem [ref=f16e449]:
+            - link "이은경 (채팅 채널), 비공개 채널(잠김)" [ref=f16e452] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550063572220903434
+              - generic [ref=f16e453]:
+                - img "텍스트 (제한) icon" [ref=f16e454]
+                - generic [ref=f16e458]: 텍스트 (제한)
+                - generic [aria-hidden] [ref=f16e459]: 이은경
+                - generic [ref=f16e460]:
+                  - button "채널로 초대하기" [ref=f16e462]
+                  - generic [ref=f16e466]: 채널로 초대하기
+                  - button "채널 편집" [ref=f16e468]
+                  - generic [ref=f16e471]: 채널 편집
+          - listitem [ref=f16e472]:
+            - link "이은수 (채팅 채널), 비공개 채널(잠김)" [ref=f16e475] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550063617108480060
+              - generic [ref=f16e476]:
+                - img "텍스트 (제한) icon" [ref=f16e477]
+                - generic [ref=f16e481]: 텍스트 (제한)
+                - generic [aria-hidden] [ref=f16e482]: 이은수
+                - generic:
+                  - generic [ref=f16e483]: 채널로 초대하기
+                  - generic [ref=f16e484]: 채널 편집
+          - listitem [ref=f16e485]:
+            - link "이지희 (채팅 채널), 비공개 채널(잠김)" [ref=f16e488] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550063659798110238
+              - generic [ref=f16e489]:
+                - img "텍스트 (제한) icon" [ref=f16e490]
+                - generic [ref=f16e494]: 텍스트 (제한)
+                - generic [aria-hidden] [ref=f16e495]: 이지희
+                - generic:
+                  - generic [ref=f16e496]: 채널로 초대하기
+                  - generic [ref=f16e497]: 채널 편집
+          - listitem [ref=f16e498]:
+            - link "임연우 (채팅 채널), 비공개 채널(잠김)" [ref=f16e501] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550063704765239386
+              - generic [ref=f16e502]:
+                - img "텍스트 (제한) icon" [ref=f16e503]
+                - generic [ref=f16e507]: 텍스트 (제한)
+                - generic [aria-hidden] [ref=f16e508]: 임연우
+                - generic:
+                  - generic [ref=f16e509]: 채널로 초대하기
+                  - generic [ref=f16e510]: 채널 편집
+          - listitem [ref=f16e511]:
+            - link "최지혜 (채팅 채널), 비공개 채널(잠김)" [ref=f16e514] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550063752001355877
+              - generic [ref=f16e515]:
+                - img "텍스트 (제한) icon" [ref=f16e516]
+                - generic [ref=f16e520]: 텍스트 (제한)
+                - generic [aria-hidden] [ref=f16e521]: 최지혜
+                - generic:
+                  - generic [ref=f16e522]: 채널로 초대하기
+                  - generic [ref=f16e523]: 채널 편집
+          - listitem [ref=f16e524]:
+            - link "허지민 (채팅 채널), 비공개 채널(잠김)" [ref=f16e527] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550063822536966255
+              - generic [ref=f16e528]:
+                - img "텍스트 (제한) icon" [ref=f16e529]
+                - generic [ref=f16e533]: 텍스트 (제한)
+                - generic [aria-hidden] [ref=f16e534]: 허지민
+                - generic:
+                  - generic [ref=f16e535]: 채널로 초대하기
+                  - generic [ref=f16e536]: 채널 편집
+          - listitem [ref=f16e537]:
+            - generic [ref=f16e538] [cursor=pointer]:
+              - button "음성 채널 (카테고리)" [expanded] [ref=f16e539]:
+                - heading "음성 채널" [level=3] [ref=f16e540]
+              - generic [ref=f16e544]:
+                - button "채널 만들기" [ref=f16e545]
+                - generic [ref=f16e548]: 채널 만들기
+          - listitem [ref=f16e549]:
+            - button "⛔⛔ (음성 채널)" [ref=f16e553] [cursor=pointer]:
+              - generic [ref=f16e554]:
+                - img "음성 icon" [ref=f16e555]
+                - generic [ref=f16e559]: 음성
+                - generic [aria-hidden] [ref=f16e560]: ⛔⛔
+                - generic:
+                  - generic [ref=f16e561]: 채팅 열기
+                  - generic [ref=f16e562]: 음성으로 초대하기
+                  - generic [ref=f16e563]: 채널 편집
+      - separator "Resize Sidebar" [ref=f16e564]
+      - region "사용자 상태 및 설정" [ref=f16e565]:
+        - generic [ref=f16e566]:
+          - generic [ref=f16e567] [cursor=pointer]:
+            - button "프로필 및 상태 관리"
+            - generic [ref=f16e570]:
+              - generic [ref=f16e571]: 김혜지
+              - generic [ref=f16e575]:
+                - generic: gimhyeji3907
+                - generic: 오프라인 표시
+          - generic [ref=f16e576]:
+            - generic [ref=f16e577]:
+              - switch "음소거" [checked] [ref=f16e578] [cursor=pointer]
+              - generic [ref=f16e599]: 음소거 해제
+              - button "입력 옵션" [ref=f16e600] [cursor=pointer]
+            - generic [ref=f16e604]:
+              - switch "헤드셋 음소거" [ref=f16e605] [cursor=pointer]
+              - button "출력 옵션" [ref=f16e617] [cursor=pointer]
+            - button "사용자 설정" [ref=f16e621] [cursor=pointer]
+    - generic [ref=f16e632]:
+      - region "채널 헤더" [ref=f16e634]:
+        - generic [ref=f16e635]:
+          - generic [ref=f16e636]:
+            - generic [ref=f16e641]: 채팅 채널
+            - 'heading "UIUXA: 이은경" [level=1] [ref=f16e643]':
+              - generic [ref=f16e644]: "UIUXA:"
+              - text: 이은경
+          - generic [ref=f16e645]:
+            - button "스레드" [ref=f16e646] [cursor=pointer]
+            - button "알림 설정" [ref=f16e649] [cursor=pointer]
+            - button "고정된 메시지" [ref=f16e652] [cursor=pointer]
+            - button "멤버 목록 표시하기" [ref=f16e655] [cursor=pointer]
+            - generic [ref=f16e660]:
+              - combobox "UIUXA 검색" [ref=f16e661]
+              - button [aria-hidden] [ref=f16e663]
+      - main "이은경 (채널)" [ref=f16e670]:
+        - heading "이은경 채팅" [level=2] [ref=f16e672]
+        - group [ref=f16e674]:
+          - list "이은경의 메시지" [ref=f16e676]:
+            - generic [ref=f16e677]:
+              - heading [level=3] [aria-hidden] [ref=f16e682]: "#이은경에 오신 걸 환영합니다!"
+              - generic [ref=f16e683]:
+                - strong [ref=f16e684]: 비공개
+                - text: "채널 #이은경의 시작이에요."
+              - generic [ref=f16e685]:
+                - button "멤버 또는 역할 추가" [ref=f16e686] [cursor=pointer]
+                - button "채널 편집" [ref=f16e692] [cursor=pointer]
+              - generic [ref=f16e699]:
+                - img "김혜지" [ref=f16e700]
+                - generic [ref=f16e701]: 김혜지
+                - generic [ref=f16e702]: (나만 이 채널을 볼 수 있어요)
+            - separator "2026년 9월 17일"
+            - listitem [ref=f16e1025]:
+              - article [ref=f16e1026]:
+                - generic [ref=f16e1027]:
+                  - img [aria-hidden] [ref=f16e1028] [cursor=pointer]
+                  - heading [level=3] [ref=f16e1029]:
+                    - button "김혜지" [ref=f16e1031]
+                    - generic [ref=f16e1451]:
+                      - time [ref=f16e1453]:
+                        - generic [aria-hidden] [ref=f16e1454]: —
+                        - text: 오후 6:04
+                      - generic [ref=f16e1455]: 2026년 9월 17일 목요일 오후 6:04
+                - generic [ref=f16e1033]:
+                  - generic [ref=f16e1035]:
+                    - generic [ref=f16e1036]:
+                      - code [ref=f16e1039]: "<!doctype html><html lang=\"ko\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>SOAPHE Unified 메인페이지</title><style>:root{--ink:#202421;--muted:#6a716c;--paper:#f4f1eb;--card:#fff;--line:#d5d2ca;--soft:#e2e5e2;--dark:#262a27;--r:18px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,\"Noto Sans KR\",sans-serif;line-height:1.6}button,input,select,textarea{font:inherit}button{cursor:pointer}.wrap{width:min(1120px,calc(100% - 32px));margin:auto}.top{position:sticky;top:0;z-index:10;background:#f4f1ebef;border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}nav{min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:14px}.brand{font-weight:900;letter-spacing:.08em}.links{display:flex;gap:8px;align-items:center}.links a,.btn{color:inherit;text-decoration:none;border:1px solid var(--ink);border-radius:999px;padding:9px 14px;background:transparent}.btn.primary{background:var(--ink);color:#fff}.hero{min-height:76vh;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:34px;padding:60px 0}.hero h1{font-size:clamp(2.5rem,7vw,5.6rem);line-height:.94;margin:14px 0}.lead{font-size:1.13rem;color:var(--muted)}.tag{display:inline-block;border:1px solid var(--line);border-radius:999px;background:#fff;padding:5px 10px;font-size:.78rem;color:var(--muted)}.object{aspect-ratio:1;border-radius:48% 52% 56% 44%;display:grid;place-items:center;text-align:center;background:radial-gradient(circle at 35% 30%,#fff,#ccc8bd 50%,#747974);box-shadow:0 24px 60px #0002;font-weight:900;transition:.5s}.object:hover{transform:rotate(8deg)}section{padding:58px 0;border-top:1px solid var(--line)}h2{font-size:clamp(1.7rem,4vw,2.8rem);line-height:1.15;margin:8px 0 25px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px;text-align:left}.card h3{margin:7px 0}.visual{height:140px;border-radius:12px;background:repeating-linear-gradient(135deg,#d4d1c9 0 8px,#ebe8e0 8px 16px);display:grid;place-items:center;font-weight:800}.chips{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.chips button{border:1px solid var(--line);border-radius:10px;background:#fff;padding:10px 13px}.chips button.active{background:var(--ink);color:#fff}.muted{color:var(--muted)}.dark{background:var(--dark);color:#fff}.dark .muted{color:#c9ceca}.field{display:grid;gap:6px;margin:12px 0}.field input,.field select,.field textarea{width:100%;padding:12px;border:1px solid #999;border-radius:10px;background:#fff}.status{background:#eee;padding:11px;border-radius:10px;margin:12px 0}.status.good{background:#dfe9e2}.status.error{background:#f0d8d8}.faq details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 16px;margin:8px 0}.modal{display:none;position:fixed;inset:0;z-index:30;background:#0009;place-items:center;padding:18px}.modal.open{display:grid}.dialog{width:min(540px,100%);background:#fff;border-radius:22px;padding:25px}.close{float:right;border:0;background:transparent;font-size:1.5rem}.footer{padding:40px 0;color:var(--muted)}.product[hidden],.story[hidden]{display:none}.timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.metric{font-size:2rem;font-weight:900}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #8b8b8b;outline-offset:3px}@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:40px}.grid{grid-template-columns:1fr}.timeline{grid-template-columns:1fr}.links a:not(:last-child){display:none}.object{max-width:420px;margin:auto}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}</style></head><body><header class=\"top\"><nav class=\"wrap\"><span class=\"brand\">SOAPHE Unified</span><div class=\"links\"><a href=\"#story\">Story</a><a href=\"#collection\">Collection</a><a href=\"#proof\">Proof</a><a class=\"btn primary\" href=\"#contact\">내 목적 찾기</a></div></nav></header><main><section><div class=\"wrap hero\"><div><span class=\"tag\">INTERACTIVE WIREFRAME · HOME</span><h1>열 가지 목적을 연결하는 통합 경험<br>일상에 오래 남도록.</h1><p class=\"lead\">기능, 공간, 선물과 순환의 경험을 한 흐름에서 확인하고 나에게 맞는 다음 행동을 선택하세요.</p><p><a class=\"btn primary\" href=\"#collection\">컬렉션 보기</a> <a class=\"btn\" href=\"#proof\">근거 확인</a></p></div><div class=\"object\" role=\"img\" aria-label=\"회색 SOAPHE 오브젝트 제품 이미지 자리\">360° OBJECT<br>HOVER</div></div></section><section id=\"story\"><div class=\"wrap\"><span class=\"tag\">01 · PROBLEM & SOLUTION</span><h2>사용의 불편에서 시작했습니다</h2><div class=\"grid\"><article class=\"card\"><h3>물러지는 비누</h3><p>물 고임과 잔여물로 관리가 복잡해집니다.</p></article><article class=\"card\"><h3>공간과 맞지 않는 도구</h3><p>기능만 남은 받침대가 공간의 인상을 해칩니다.</p></article><article class=\"card\"><h3>SOAPHE의 제안</h3><p>열 가지 목적을 연결하는 통합 경험을 중심으로 쓰임과 선택 과정을 다시 설계합니다.</p></article></div></div></section><section id=\"collection\"><div class=\"wrap\"><span class=\"tag\">02 · COLLECTION</span><h2>목적에 맞는 구성을 선택하세요</h2><div class=\"chips\" id=\"tabs\"><button class=\"active\" data-k=\"all\">전체</button><button data-k=\"daily\">일상</button><button data-k=\"gift\">선물</button><button data-k=\"space\">공간</button></div><div class=\"grid\"><article class=\"card product\" data-k=\"daily\"><div class=\"visual\">DAILY</div><h3>Daily Ritual</h3><p>매일 사용하기 좋은 기본 구성</p></article><article class=\"card product\" data-k=\"gift\"><div class=\"visual\">GIFT</div><h3>Meaningful Gift</h3><p>메시지와 포장을 함께 구성</p></article><article class=\"card product\" data-k=\"space\"><div class=\"visual\">SPACE</div><h3>Space Object</h3><p>욕실에서 책상까지 이어지는 쓰임</p></article></div></div></section><section id=\"proof\"><div class=\"wrap\"><span class=\"tag\">03 · PROCESS & PROOF</span><h2>확인 가능한 정보만 말합니다</h2><div class=\"timeline\"><article class=\"card\"><b>01</b><p>원료 확인</p></article><article class=\"card\"><b>02</b><p>제작</p></article><article class=\"card\"><b>03</b><p>검수</p></article><article class=\"card\"><b>04</b><p>포장</p></article><article class=\"card\"><b>05</b><p>사용 이후</p></article></div><p class=\"status\">검증 완료 · 검증 진행 · 자료 준비 중을 구분해 표시합니다.</p></div></section><section><div class=\"wrap faq\"><span class=\"tag\">04 · FAQ</span><h2>자주 묻는 질문</h2><details><summary>여기서 바로 결제할 수 있나요?</summary><p>현재 와이어프레임의 전환 범위는 상담·샘플·알림 접수까지입니다.</p></details><details><summary>환경 효과는 어떻게 확인하나요?</summary><p>정량 자료가 확인된 경우에만 출처와 함께 표시합니다.</p></details></div></section><section id=\"contact\" class=\"dark\"><div class=\"wrap\"><span class=\"tag\">05 · CONTACT</span><h2>내 목적 찾기</h2><form id=\"form\" class=\"card\" novalidate><label class=\"field\">이름<input name=\"name\" required></label><label class=\"field\">연락처<input name=\"contact\" required></label><label><input type=\"checkbox\" name=\"ok\"> 개인정보 수집 동의</label><p><button class=\"btn primary\">신청하기</button></p><div id=\"status\" class=\"status\">필수 정보를 입력해 주세요.</div></form></div></section></main><div id=\"done\" class=\"modal\" role=\"dialog\" aria-modal=\"true\"><div class=\"dialog\"><button class=\"close\" aria-label=\"닫기\">×</button><h2>신청 완료</h2><p>입력하신 목적에 맞춰 다음 절차를 안내합니다.</p></div></div><footer class=\"wrap footer\">SOAPHE Unified · Visual Storyboard Prototype</footer><script>document.querySelectorAll('#tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#tabs button').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('.product').forEach(x=>x.hidden=b.dataset.k!=='all'&&x.dataset.k!==b.dataset.k)});const f=document.querySelector('#form');f.onsubmit=e=>{e.preventDefault();const s=document.querySelector('#status');if(!f.name.value.trim()||f.contact.value.trim().length<5||!f.ok.checked){s.className='status error';s.textContent='이름, 연락처, 개인정보 동의를 확인해 주세요.';return}s.className='status good';s.textContent='입력 확인 완료';document.querySelector('#done').classList.add('open')};document.querySelector('.close').onclick=()=>document.querySelector('#done').classList.remove('open');</script></body></html>"
+                      - group "일반 텍스트 파일 미리 보기 컨트롤" [ref=f16e1040]:
+                        - generic [ref=f16e1041]:
+                          - generic [ref=f16e1042]:
+                            - generic [ref=f16e1043]: 메인페이지_와이어프레임_시안1.html
+                            - generic [ref=f16e1044]: 메인페이지_와이어프레임_시안1.html (9KB)
+                          - generic [ref=f16e1045]: 9KB
+                        - button "언어 변경" [ref=f16e1046] [cursor=pointer]
+                        - button "파일 전체 보기" [ref=f16e1049] [cursor=pointer]
+                        - button "기타" [ref=f16e1052] [cursor=pointer]
+                    - generic [ref=f16e1055]:
+                      - button "첨부 파일 수정" [ref=f16e1056] [cursor=pointer]
+                      - generic [ref=f16e1059]: 첨부 파일 수정
+                      - button "메시지 첨부 파일 제거" [ref=f16e1060] [cursor=pointer]
+                      - generic [ref=f16e1064]: 삭제
+                  - generic [ref=f16e1066]:
+                    - generic [ref=f16e1067]:
+                      - code [ref=f16e1070]: "<!doctype html><html lang=\"ko\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>SOAPHE Main · Design Supplement</title><style> :root{--i:#111;--m:#777;--l:#bbb;--w:#e8e8e8;--p:#fff}*{box-sizing:border-box}body{margin:0;color:var(--i);background:var(--p);font-family:Arial,\"Noto Sans KR\",sans-serif}a{color:inherit}button,input,select{font:inherit;color:inherit;background:#fff;border:1px solid #222}button{padding:12px 18px}button:focus,a:focus,input:focus,select:focus{outline:3px double #111;outline-offset:3px}.skip{position:absolute;left:-9999px}.skip:focus{left:10px;top:10px;background:#fff;padding:10px;z-index:20}.serif{font-family:Georgia,serif}.cap{font-size:11px;letter-spacing:.12em}header{height:72px;border-bottom:1px solid;display:flex;align-items:center;justify-content:space-between;padding:0 36px;position:sticky;top:0;background:#fff;z-index:5}nav{display:flex;gap:24px;font-size:12px}.hero{min-height:700px;display:grid;grid-template-columns:5fr 7fr;border-bottom:1px solid}.copy{padding:80px 36px;display:flex;flex-direction:column;justify-content:space-between}.hero h1{font-size:clamp(64px,8vw,132px);line-height:.83;font-weight:400;margin:0}.scene,.stage{background:#e5e5e5;position:relative;overflow:hidden}.obj{position:absolute;width:30%;height:47%;left:38%;top:20%;border:2px solid;border-radius:50% 50% 8px 8px;background:#fafafa}.shadow{position:absolute;width:46%;height:14%;left:25%;bottom:16%;border-radius:50%;background:#888;filter:blur(16px);transform:skewX(-20deg)}section{padding:110px 36px;border-bottom:1px solid var(--l)}.manifesto{display:grid;grid-template-columns:3fr 7fr 2fr}.manifesto p{grid-column:2;font:46px/1.15 Georgia,serif;margin:0}.finder{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.finder label{border:1px solid;padding:16px}.finder select{display:block;width:100%;margin-top:8px;padding:11px}.study,.proof,.reserve{display:grid;grid-template-columns:7fr 5fr;gap:42px}.stage{height:500px;border:1px solid}.controls{align-self:end}.controls input{width:100%}.index{display:grid;grid-template-columns:5fr 3fr 4fr;gap:18px}.tile{border-top:1px solid;padding-top:12px}.tile div{height:180px;background:#ddd;margin:18px 0}.materials{display:grid;grid-template-columns:4fr 3fr 5fr;gap:18px;align-items:end}.mat{border:1px solid;padding:20px}.mat:nth-child(1){height:260px}.mat:nth-child(2){height:390px}.mat:nth-child(3){height:320px}.diagram{height:380px;border:1px solid;background:repeating-linear-gradient(0deg,#fff,#fff 39px,#ddd 40px)}form{display:grid;gap:12px}form input,form select{width:100%;padding:12px}.status{border:2px dashed #555;padding:15px}.faq button{width:100%;text-align:left;border-width:1px 0 0;padding:18px 0}.answer{display:none;padding:0 0 20px}.footer{padding:55px 36px;background:#111;color:#fff;display:flex;justify-content:space-between}@media(max-width:1000px){.finder{grid-template-columns:repeat(2,1fr)}}@media(max-width:760px){nav{display:none}.hero,.study,.proof,.reserve{grid-template-columns:1fr}.scene{min-height:500px}section{padding:70px 18px}.manifesto{display:block}.manifesto p{font-size:32px}.index,.materials,.finder{grid-template-columns:1fr}.mat:nth-child(n){height:240px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.shadow{filter:none;transform:none!important}} </style></head><body><a class=\"skip\" href=\"#main\">본문 바로가기</a><header><b>SOAPHE / 05</b><nav aria-label=\"주요 메뉴\"><a href=\"#finder\">FINDER</a><a href=\"#light\">DISCOVER</a><a href=\"#forms\">COLLECTION</a><a href=\"브랜드소개페이지_스토리보드.html\">STORY</a></nav><button onclick=\"go('preview')\">PREVIEW</button></header><main id=\"main\"> <div class=\"hero\"><div class=\"copy\"><span class=\"cap\">HM-01 · EDITORIAL HOME</span><h1 class=\"serif\">WHAT<br>REMAINS<br>IN SPACE.</h1><div><button onclick=\"go('light')\">빛 탐색</button> <button onclick=\"go('forms')\">16개 형태</button></div></div><div class=\"scene\"><div class=\"shadow\"></div><div class=\"obj\"></div></div></div> <section class=\"manifesto\"><span class=\"cap\">SCR-120 · MANIFESTO</span><p>비누는 사라지지만 형태는 남습니다. SOAPHE는 건조의 구조를 공간의 오브제로 바꿉니다.</p></section> <section id=\"finder\"><span class=\"cap\">SCR-140 · QUICK FINDER</span><h2 class=\"serif\">네 가지 조건으로 먼저 좁혀보세요.</h2><div class=\"finder\"><label>예산<select id=\"budget\"><option>3만원 이하</option><option>5만원 이하</option><option>제한 없음</option></select></label><label>향<select id=\"scent\"><option>0 무향</option><option>1 미향</option><option>2 은은함</option></select></label><label>공간<select id=\"space\"><option>작은 세면대</option><option>넓은 욕실</option><option>책상·선반</option></select></label><label>관리<select id=\"care\"><option>주 1회</option><option>주 2회</option><option>간편 관리</option></select></label></div><p id=\"finderResult\" class=\"status\" aria-live=\"polite\">현재 조건에 맞는 추천 3개를 확인할 수 있습니다.</p><button id=\"findButton\">추천 갱신</button> <button id=\"resetFinder\">조건 초기화</button></section>"
+                      - group "일반 텍스트 파일 미리 보기 컨트롤" [ref=f16e1071]:
+                        - generic [ref=f16e1072]:
+                          - button "확장 (14줄)" [ref=f16e1073] [cursor=pointer]
+                          - generic [ref=f16e1078]: 확장 (14줄)
+                        - generic [ref=f16e1079]:
+                          - generic [ref=f16e1080]:
+                            - generic [ref=f16e1081]: 메인페이지_와이어프레임_시안2.html
+                            - generic [ref=f16e1082]: 메인페이지_와이어프레임_시안2.html (10KB)
+                          - generic [ref=f16e1083]: 10KB
+                        - button "언어 변경" [ref=f16e1084] [cursor=pointer]
+                        - button "파일 전체 보기" [ref=f16e1087] [cursor=pointer]
+                        - button "기타" [ref=f16e1090] [cursor=pointer]
+                    - generic [ref=f16e1093]:
+                      - button "첨부 파일 수정" [ref=f16e1094] [cursor=pointer]
+                      - generic [ref=f16e1097]: 첨부 파일 수정
+                      - button "메시지 첨부 파일 제거" [ref=f16e1098] [cursor=pointer]
+                      - generic [ref=f16e1102]: 삭제
+                  - generic [ref=f16e1104]:
+                    - generic [ref=f16e1105]:
+                      - code [ref=f16e1108]: "<!doctype html><html lang=\"ko\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>SOAPHE — 오래 남는 온기</title><link rel=\"stylesheet\" href=\"common.css\"><style>.hero{min-height:760px;display:grid;grid-template-columns:5fr 7fr;border-bottom:1px solid var(--line)}.hero-copy{padding:90px max(32px,calc((100vw - var(--max))/2));padding-right:40px;display:flex;flex-direction:column;justify-content:space-between}.hero h1{font-size:clamp(70px,9vw,145px);line-height:.78;margin:0}.hero-copy p{max-width:430px}.hero-media{min-height:640px}.intro{display:grid;grid-template-columns:3fr 8fr 1fr}.intro p{grid-column:2;font:clamp(34px,4.2vw,66px)/1.12 Georgia,serif;margin:0}.finder{background:#dfe1d7}.finder-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.finder label{font-size:12px}.finder select{display:block;width:100%;margin-top:8px;padding:14px;background:transparent;border:1px solid}.feature{display:grid;grid-template-columns:7fr 5fr;min-height:620px}.feature-copy{padding:90px;display:flex;flex-direction:column;justify-content:flex-end;background:var(--cream)}.feature-copy h2{font-size:clamp(46px,6vw,92px);line-height:.9;margin:15px 0}.feature-image{min-height:500px}.ticker{padding:20px 0;white-space:nowrap;overflow:hidden;font:24px Georgia,serif;letter-spacing:.06em}.newsletter{display:grid;grid-template-columns:7fr 5fr;gap:50px;align-items:end}.newsletter h2{font-size:clamp(48px,7vw,105px);line-height:.85;margin:0}.newsletter form{display:grid;gap:12px}.newsletter input{padding:15px;background:transparent;border:0;border-bottom:1px solid}@media(max-width:800px){.hero,.feature,.newsletter{grid-template-columns:1fr}.hero-copy{padding:70px 24px;min-height:520px}.intro{display:block}.finder-grid{grid-template-columns:1fr 1fr}.feature-copy{padding:60px 24px}}</style></head><body><a class=\"skip\" href=\"#main\">본문 바로가기</a><header class=\"top\"><div class=\"wrap\"><a class=\"brand\" href=\"메인페이지_스토리보드.html\">SOAPHE</a><nav class=\"nav\" aria-label=\"주요 메뉴\"><a href=\"#new\">NEW FORMS</a><a href=\"#space\">SPACE EDIT</a><a href=\"#gift\">GIFT NOTES</a><a href=\"브랜드소개페이지_스토리보드.html\">OUR STORY</a></nav><div class=\"tools\"><a class=\"pill\" href=\"카테고리페이지_스토리보드.html\">ALL 15</a><a class=\"pill dark\" href=\"#finder\">FIND YOURS</a></div></div></header><main id=\"main\"><section class=\"hero\"><div class=\"hero-copy\"><span class=\"eyebrow\">Soap in the air · Object in your life</span><h1 class=\"serif\">WHAT<br>STAYS.</h1><div><p>비누를 띄워 더 잘 마르게 하고, 비누가 사라진 뒤에도 공간에 남는 오브제.</p><a class=\"plain dark\" href=\"#new\">15개 형태 만나보기</a></div></div><div class=\"hero-media hero-photo\" role=\"img\" aria-label=\"공중에 떠 있는 SOAPHE 비누와 오브제\"></div></section><section class=\"section\"><div class=\"wrap intro\"><span class=\"eyebrow\">Our proposition</span><p>사라지는 비누와 오래 남는 오브제 사이, SOAPHE는 씻는 시간 이후의 쓰임까지 디자인합니다.</p></div></section><section class=\"section finder\" id=\"finder\"><div class=\"wrap\"><div class=\"section-head\"><div><span class=\"eyebrow\">Quick finder</span><h2 class=\"serif\">당신의 장면부터<br>골라보세요.</h2></div><p>엔코스 라이브러리의 목적별 탐색 방식을 참고해 공간, 향, 소재, 선물 목적을 먼저 고릅니다.</p></div><div class=\"finder-grid\"><label>공간<select id=\"space\"><option>욕실</option><option>현관</option><option>책상</option></select></label><label>향<select id=\"scent\"><option>무향</option><option>포근한 향</option><option>허브 향</option></select></label><label>소재<select id=\"material\"><option>Stone</option><option>Porcelain</option><option>Glass</option></select></label><label>목적<select id=\"purpose\"><option>나를 위한 선택</option><option>집들이 선물</option><option>감사 선물</option></select></label></div><p class=\"status\" id=\"recommend\" aria-live=\"polite\">추천: ARCH SET · 접점은 줄이고 온기는 오래 남기는 시그니처 구성</p><button class=\"plain dark\" id=\"recommendBtn\">추천 갱신</button></div></section><section class=\"section\" id=\"new\"><div class=\"wrap\"><div class=\"section-head\"><div><span class=\"eyebrow\">01 · New forms</span><h2 class=\"serif\">새롭게 놓이는 형태</h2></div><p>첫인상이 선명한 신규 오브제와 세트를 큰 리듬으로 배치했습니다.</p></div><div class=\"product-row\" data-group=\"new\"></div></div></section><section class=\"feature\"><div class=\"feature-image tray-photo\" role=\"img\" aria-label=\"책상 위 라이프스타일 트레이로 쓰이는 SOAPHE 오브제\"></div><div class=\"feature-copy\"><span class=\"eyebrow\">Second life</span><h2 class=\"serif\">BATH<br>TO DESK.</h2><p>욕실에서 비누를 받치던 형태는 책상 위에서 열쇠와 주얼리, 작은 기억을 받아냅니다.</p><a href=\"브랜드소개페이지_스토리보드.html\">쓰임의 여정 보기 →</a></div></section><section class=\"section\" id=\"space\"><div class=\"wrap\"><div class=\"section-head\"><div><span class=\"eyebrow\">02 · Space essentials</span><h2 class=\"serif\">공간이 고른 오브제</h2></div><p>욕실·현관·책상의 크기와 빛에 자연스럽게 어울리는 다섯 가지 형태.</p></div><div class=\"product-row\" data-group=\"space\"></div></div></section><div class=\"ticker\">AIR BETWEEN · LESS CONTACT · LONGER USE · SECOND LIFE · AIR BETWEEN · LESS CONTACT · LONGER USE</div><section class=\"section\" id=\"gift\"><div class=\"wrap\"><div class=\"section-head\"><div><span class=\"eyebrow\">03 · Gift notes</span><h2 class=\"serif\">온기를 건네는 구성</h2></div><p>향과 메시지를 함께 고를 수 있는 다섯 가지 선물 및 리필 구성.</p></div><div class=\"product-row\" data-group=\"gift\"></div></div></section><section class=\"section\"><div class=\"wrap newsletter\"><h2 class=\"serif\">A NOTE<br>THAT STAYS.</h2><form id=\"news\"><label>새 컬렉션 소식 받기<input type=\"email\" required placeholder=\"email@example.com\"></label><button class=\"plain dark\">구독하기</button><div id=\"newsStatus\" aria-live=\"polite\"></div></form></div></section></main><footer class=\"footer\"><div class=\"wrap\"><b>SOAPHE</b><span>오래 남는 온기를 선물하다.</span><span>© 2026 SOAPHE</span></div></footer><script> const products={new:[['01','ARCH SET','Stone · warm soap','48,000원'],['02','HALO SET','Glass · soft soap','52,000원'],['03','FOLD SET','Porcelain · zero soap','46,000원'],['04','ORBIT SET','Glass · herb soap','56,000원'],['05','COVE SET','Porcelain · warm soap','45,000원']],space:[['06','ARCH OBJECT','Wide bath · Stone','33,000원'],['07','FOLD OBJECT','Desk · Porcelain','31,000원'],['08','HALO OBJECT','Entry · Glass','36,000원'],['09','PLINTH OBJECT','Wide bath · Stone','35,000원'],['10','COVE OBJECT','Small bath · Porcelain','29,000원']],gift:[['11','ZERO BAR DUO','Unscented · 2 bars','32,000원'],['12','SOFT BAR DUO','Soft scent · 2 bars','35,000원'],['13','HERB BAR DUO','Herb scent · 2 bars','38,000원'],['14','WARM REFILL','Warm scent · 3 bars','45,000원'],['15','SEASON NOTE','Limited scent · gift','58,000원']]};document.querySelectorAll('[data-group]').forEach(row=>{row.innerHTML=products[row.dataset.group].map(p=>`<article class=\"product\"><div class=\"visual\" role=\"img\" aria-label=\"${p[1]} 제품 이미지 자리\"></div><div class=\"meta\"><span>${p[0]}</span><span>${p[3]}</span></div><h3>${p[1]}</h3><small>${p[2]}</small><br><button onclick=\"location.href='카테고리페이지_스토리보드.html#${p[0]}'\">제품 보기 +</button></article>`).join('')});recommendBtn.onclick=()=>recommend.textContent=`추천: ${space.value==='책상'?'FOLD OBJECT':space.value==='현관'?'HALO OBJECT':'ARCH SET'} · ${space.value}과 ${material.value}, ${scent.value} 조건을 반영했습니다.`;news.onsubmit=e=>{e.preventDefault();newsStatus.textContent='구독 신청이 완료되었습니다.'}</script></body></html>"
+                      - group "일반 텍스트 파일 미리 보기 컨트롤" [ref=f16e1109]:
+                        - generic [ref=f16e1110]:
+                          - generic [ref=f16e1111]:
+                            - generic [ref=f16e1112]: 메인페이지_와이어프레임_시안3.html
+                            - generic [ref=f16e1113]: 메인페이지_와이어프레임_시안3.html (9KB)
+                          - generic [ref=f16e1114]: 9KB
+                        - button "언어 변경" [ref=f16e1115] [cursor=pointer]
+                        - button "파일 전체 보기" [ref=f16e1118] [cursor=pointer]
+                        - button "기타" [ref=f16e1121] [cursor=pointer]
+                    - generic [ref=f16e1124]:
+                      - button "첨부 파일 수정" [ref=f16e1125] [cursor=pointer]
+                      - generic [ref=f16e1128]: 첨부 파일 수정
+                      - button "메시지 첨부 파일 제거" [ref=f16e1129] [cursor=pointer]
+                      - generic [ref=f16e1133]: 삭제
+                  - generic [ref=f16e1135]:
+                    - generic [ref=f16e1136]:
+                      - code [ref=f16e1139]:
+                        - generic [ref=f16e1140]: <!doctype html>
+                        - generic [ref=f16e1141]: <html lang="ko">
+                        - generic [ref=f16e1142]: <head>
+                        - generic [ref=f16e1143]: <meta charset="utf-8">
+                        - generic [ref=f16e1144]: <meta name="viewport" content="width=device-width,initial-scale=1">
+                        - generic [ref=f16e1145]: <title>
+                        - text: SOAPHE 메인페이지 · 7차 보완
+                        - generic [ref=f16e1146]: </title>
+                      - group "일반 텍스트 파일 미리 보기 컨트롤" [ref=f16e1147]:
+                        - generic [ref=f16e1148]:
+                          - button "확장 (78줄)" [ref=f16e1149] [cursor=pointer]
+                          - generic [ref=f16e1154]: 확장 (78줄)
+                        - generic [ref=f16e1155]:
+                          - generic [ref=f16e1156]:
+                            - generic [ref=f16e1157]: 메인페이지_와이어프레임_시안4.html
+                            - generic [ref=f16e1158]: 메인페이지_와이어프레임_시안4.html (29KB)
+                          - generic [ref=f16e1159]: 29KB
+                        - button "언어 변경" [ref=f16e1160] [cursor=pointer]
+                        - button "파일 전체 보기" [ref=f16e1163] [cursor=pointer]
+                        - button "기타" [ref=f16e1166] [cursor=pointer]
+                    - generic [ref=f16e1169]:
+                      - button "첨부 파일 수정" [ref=f16e1170] [cursor=pointer]
+                      - generic [ref=f16e1173]: 첨부 파일 수정
+                      - button "메시지 첨부 파일 제거" [ref=f16e1174] [cursor=pointer]
+                      - generic [ref=f16e1178]: 삭제
+                  - generic [ref=f16e1180]:
+                    - generic [ref=f16e1181]:
+                      - code [ref=f16e1184]:
+                        - generic [ref=f16e1185]: <!doctype html>
+                        - generic [ref=f16e1186]: <html lang="ko">
+                        - generic [ref=f16e1187]: <head>
+                        - generic [ref=f16e1188]: <meta charset="utf-8">
+                        - generic [ref=f16e1189]: <meta name="viewport" content="width=device-width,initial-scale=1">
+                        - generic [ref=f16e1190]: <title>
+                        - text: SOAPHE · 오래 남는 온기 (13차 감성 에디토리얼 리디자인)
+                        - generic [ref=f16e1191]: </title>
+                        - text: ... (118KB 남음)
+                      - group "일반 텍스트 파일 미리 보기 컨트롤" [ref=f16e1192]:
+                        - generic [ref=f16e1193]:
+                          - button "확장 (1,760줄 초과)" [ref=f16e1194] [cursor=pointer]
+                          - generic [ref=f16e1199]: 확장 (1,760줄 초과)
+                        - generic [ref=f16e1200]:
+                          - generic [ref=f16e1201]:
+                            - generic [ref=f16e1202]: 메인페이지_와이어프레임_시안5.html
+                            - generic [ref=f16e1203]: 메인페이지_와이어프레임_시안5.html (168KB)
+                          - generic [ref=f16e1204]: 168KB
+                        - button "언어 변경" [ref=f16e1205] [cursor=pointer]
+                        - button "파일 전체 보기" [ref=f16e1208] [cursor=pointer]
+                        - button "기타" [ref=f16e1211] [cursor=pointer]
+                    - generic [ref=f16e1214]:
+                      - button "첨부 파일 수정" [ref=f16e1215] [cursor=pointer]
+                      - generic [ref=f16e1218]: 첨부 파일 수정
+                      - button "메시지 첨부 파일 제거" [ref=f16e1219] [cursor=pointer]
+                      - generic [ref=f16e1223]: 삭제
+                  - generic [ref=f16e1225]:
+                    - generic [ref=f16e1226]:
+                      - code [ref=f16e1229]:
+                        - generic [ref=f16e1230]: <!doctype html>
+                        - generic [ref=f16e1231]: <html lang="ko">
+                        - generic [ref=f16e1232]: <head>
+                        - generic [ref=f16e1233]: <meta charset="utf-8">
+                        - generic [ref=f16e1234]: <meta name="viewport" content="width=device-width,initial-scale=1">
+                        - generic [ref=f16e1235]: <title>
+                        - text: SOAPHE · 오래 남는 온기 (12차 감성 에디토리얼 리디자인)
+                        - generic [ref=f16e1236]: </title>
+                        - text: ... (86KB 남음)
+                      - group "일반 텍스트 파일 미리 보기 컨트롤" [ref=f16e1237]:
+                        - generic [ref=f16e1238]:
+                          - button "확장 (1,434줄 초과)" [ref=f16e1239] [cursor=pointer]
+                          - generic [ref=f16e1244]: 확장 (1,434줄 초과)
+                        - generic [ref=f16e1245]:
+                          - generic [ref=f16e1246]:
+                            - generic [ref=f16e1247]: 브랜드소개_시안1.html
+                            - generic [ref=f16e1248]: 브랜드소개_시안1.html (136KB)
+                          - generic [ref=f16e1249]: 136KB
+                        - button "언어 변경" [ref=f16e1250] [cursor=pointer]
+                        - button "파일 전체 보기" [ref=f16e1253] [cursor=pointer]
+                        - button "기타" [ref=f16e1256] [cursor=pointer]
+                    - generic [ref=f16e1259]:
+                      - button "첨부 파일 수정" [ref=f16e1260] [cursor=pointer]
+                      - generic [ref=f16e1263]: 첨부 파일 수정
+                      - button "메시지 첨부 파일 제거" [ref=f16e1264] [cursor=pointer]
+                      - generic [ref=f16e1268]: 삭제
+                  - generic [ref=f16e1270]:
+                    - generic [ref=f16e1271]:
+                      - code [ref=f16e1274]:
+                        - generic [ref=f16e1275]: <!doctype html>
+                        - generic [ref=f16e1276]: <html lang="ko">
+                        - generic [ref=f16e1277]: <head>
+                        - generic [ref=f16e1278]: <meta charset="utf-8">
+                        - generic [ref=f16e1279]: <meta name="viewport" content="width=device-width,initial-scale=1">
+                        - generic [ref=f16e1280]: <title>
+                        - text: SOAPHE · 오래 남는 온기 (13차 감성 에디토리얼 리디자인)
+                        - generic [ref=f16e1281]: </title>
+                        - text: ... (117KB 남음)
+                      - group "일반 텍스트 파일 미리 보기 컨트롤" [ref=f16e1282]:
+                        - generic [ref=f16e1283]:
+                          - button "확장 (1,731줄 초과)" [ref=f16e1284] [cursor=pointer]
+                          - generic [ref=f16e1289]: 확장 (1,731줄 초과)
+                        - generic [ref=f16e1290]:
+                          - generic [ref=f16e1291]:
+                            - generic [ref=f16e1292]: 브랜드소개_시안2.html
+                            - generic [ref=f16e1293]: 브랜드소개_시안2.html (167KB)
+                          - generic [ref=f16e1294]: 167KB
+                        - button "언어 변경" [ref=f16e1295] [cursor=pointer]
+                        - button "파일 전체 보기" [ref=f16e1298] [cursor=pointer]
+                        - button "기타" [ref=f16e1301] [cursor=pointer]
+                    - generic [ref=f16e1304]:
+                      - button "첨부 파일 수정" [ref=f16e1305] [cursor=pointer]
+                      - generic [ref=f16e1308]: 첨부 파일 수정
+                      - button "메시지 첨부 파일 제거" [ref=f16e1309] [cursor=pointer]
+                      - generic [ref=f16e1313]: 삭제
+                  - generic [ref=f16e1315]:
+                    - generic [ref=f16e1316]:
+                      - code [ref=f16e1319]:
+                        - generic [ref=f16e1320]: <!doctype html>
+                        - generic [ref=f16e1321]: <html lang="ko">
+                        - generic [ref=f16e1322]: <head>
+                        - generic [ref=f16e1323]: <meta charset="utf-8">
+                        - generic [ref=f16e1324]: <meta name="viewport" content="width=device-width,initial-scale=1">
+                        - generic [ref=f16e1325]: <title>
+                        - text: SOAPHE · 오래 남는 온기 (13차 감성 에디토리얼 리디자인)
+                        - generic [ref=f16e1326]: </title>
+                        - text: ... (110KB 남음)
+                      - group "일반 텍스트 파일 미리 보기 컨트롤" [ref=f16e1327]:
+                        - generic [ref=f16e1328]:
+                          - button "확장 (1,729줄 초과)" [ref=f16e1329] [cursor=pointer]
+                          - generic [ref=f16e1334]: 확장 (1,729줄 초과)
+                        - generic [ref=f16e1335]:
+                          - generic [ref=f16e1336]:
+                            - generic [ref=f16e1337]: 브랜드소개_시안3.html
+                            - generic [ref=f16e1338]: 브랜드소개_시안3.html (160KB)
+                          - generic [ref=f16e1339]: 160KB
+                        - button "언어 변경" [ref=f16e1340] [cursor=pointer]
+                        - button "파일 전체 보기" [ref=f16e1343] [cursor=pointer]
+                        - button "기타" [ref=f16e1346] [cursor=pointer]
+                    - generic [ref=f16e1349]:
+                      - button "첨부 파일 수정" [ref=f16e1350] [cursor=pointer]
+                      - generic [ref=f16e1353]: 첨부 파일 수정
+                      - button "메시지 첨부 파일 제거" [ref=f16e1354] [cursor=pointer]
+                      - generic [ref=f16e1358]: 삭제
+                  - generic [ref=f16e1360]:
+                    - generic [ref=f16e1361]:
+                      - code [ref=f16e1364]:
+                        - generic [ref=f16e1365]: <!doctype html>
+                        - generic [ref=f16e1366]: <html lang="ko">
+                        - generic [ref=f16e1367]: <head>
+                        - generic [ref=f16e1368]: <meta charset="utf-8">
+                        - generic [ref=f16e1369]: <meta name="viewport" content="width=device-width,initial-scale=1">
+                        - generic [ref=f16e1370]: <title>
+                        - text: SOAPHE(소피) · 브랜드 소개
+                        - generic [ref=f16e1371]: </title>
+                      - group "일반 텍스트 파일 미리 보기 컨트롤" [ref=f16e1372]:
+                        - generic [ref=f16e1373]:
+                          - button "확장 (1,443줄)" [ref=f16e1374] [cursor=pointer]
+                          - generic [ref=f16e1379]: 확장 (1,443줄)
+                        - generic [ref=f16e1380]:
+                          - generic [ref=f16e1381]:
+                            - generic [ref=f16e1382]: 브랜드소개_시안4.html
+                            - generic [ref=f16e1383]: 브랜드소개_시안4.html (49KB)
+                          - generic [ref=f16e1384]: 49KB
+                        - button "언어 변경" [ref=f16e1385] [cursor=pointer]
+                        - button "파일 전체 보기" [ref=f16e1388] [cursor=pointer]
+                        - button "기타" [ref=f16e1391] [cursor=pointer]
+                    - generic [ref=f16e1394]:
+                      - button "첨부 파일 수정" [ref=f16e1395] [cursor=pointer]
+                      - generic [ref=f16e1398]: 첨부 파일 수정
+                      - button "메시지 첨부 파일 제거" [ref=f16e1399] [cursor=pointer]
+                      - generic [ref=f16e1403]: 삭제
+                  - generic [ref=f16e1405]:
+                    - generic [ref=f16e1406]:
+                      - code [ref=f16e1409]:
+                        - generic [ref=f16e1410]: <!doctype html>
+                        - generic [ref=f16e1411]: <html lang="ko">
+                        - generic [ref=f16e1412]: <head>
+                        - generic [ref=f16e1413]: <meta charset="utf-8">
+                        - generic [ref=f16e1414]: <meta name="viewport" content="width=device-width,initial-scale=1">
+                        - generic [ref=f16e1415]: <title>
+                        - text: SOAPHE · 25 MASTER FORMS (13차 전체 컬렉션 아카이브)
+                        - generic [ref=f16e1416]: </title>
+                      - group "일반 텍스트 파일 미리 보기 컨트롤" [ref=f16e1417]:
+                        - generic [ref=f16e1418]:
+                          - button "확장 (962줄)" [ref=f16e1419] [cursor=pointer]
+                          - generic [ref=f16e1424]: 확장 (962줄)
+                        - generic [ref=f16e1425]:
+                          - generic [ref=f16e1426]:
+                            - generic [ref=f16e1427]: 카테고리_시안1.html
+                            - generic [ref=f16e1428]: 카테고리_시안1.html (38KB)
+                          - generic [ref=f16e1429]: 38KB
+                        - button "언어 변경" [ref=f16e1430] [cursor=pointer]
+                        - button "파일 전체 보기" [ref=f16e1433] [cursor=pointer]
+                        - button "기타" [ref=f16e1436] [cursor=pointer]
+                    - generic [ref=f16e1439]:
+                      - button "첨부 파일 수정" [ref=f16e1440] [cursor=pointer]
+                      - generic [ref=f16e1443]: 첨부 파일 수정
+                      - button "메시지 첨부 파일 제거" [ref=f16e1444] [cursor=pointer]
+                      - generic [ref=f16e1448]: 삭제
+        - generic [ref=f16e707]:
+          - list [ref=f16e1488]:
+            - listitem [ref=f16e1489]:
+              - generic [ref=f16e1490]:
+                - generic [ref=f16e1493]: 카테고리_시안2.html
+                - generic "첨부 유틸리티 업로드" [ref=f16e1494]:
+                  - generic [ref=f16e1495]:
+                    - button "스포일러 포함" [ref=f16e1496] [cursor=pointer]
+                    - generic [ref=f16e1500]: 스포일러 포함
+                    - button "첨부 파일 수정" [ref=f16e1501] [cursor=pointer]
+                    - generic [ref=f16e1504]: 첨부 파일 수정
+                    - button "첨부 파일 제거" [ref=f16e1505] [cursor=pointer]
+                    - generic [ref=f16e1509]: 첨부 파일 제거
+            - listitem [ref=f16e1510]:
+              - generic [ref=f16e1511]:
+                - generic [ref=f16e1514]: 강사_제작예시.html
+                - generic "첨부 유틸리티 업로드" [ref=f16e1515]:
+                  - generic [ref=f16e1516]:
+                    - button "스포일러 포함" [ref=f16e1517] [cursor=pointer]
+                    - generic [ref=f16e1521]: 스포일러 포함
+                    - button "첨부 파일 수정" [ref=f16e1522] [cursor=pointer]
+                    - generic [ref=f16e1525]: 첨부 파일 수정
+                    - button "첨부 파일 제거" [ref=f16e1526] [cursor=pointer]
+                    - generic [ref=f16e1530]: 첨부 파일 제거
+          - generic [ref=f16e708]:
+            - button "더 많은 메시지 옵션" [ref=f16e710] [cursor=pointer]
+            - generic [ref=f16e715]:
+              - generic [aria-hidden]: "#이은경에 메시지 보내기"
+              - textbox "#이은경에 메시지 보내기" [active] [ref=f16e716]
+            - generic [ref=f16e718]:
+              - generic [ref=f16e719]:
+                - button "선물 보내기" [ref=f16e720] [cursor=pointer]
+                - generic [ref=f16e736]: 친구를 업그레이드하세요! Nitro의 멋진 채팅 특전을 선물하세요.
+              - button "GIF 선택기 열기" [ref=f16e738] [cursor=pointer]
+              - generic [ref=f16e748]: GIF 보내기
+              - button "스티커 선택기 열기" [ref=f16e750] [cursor=pointer]
+              - button "이모지 추가" [ref=f16e760] [cursor=pointer]
+              - button "앱" [ref=f16e765] [cursor=pointer]

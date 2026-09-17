@@ -1,0 +1,426 @@
+- generic [ref=f12e4]:
+  - generic [ref=f12e11]:
+    - generic [ref=f12e12]:
+      - generic [ref=f12e13]: UIUXA
+      - generic [ref=f12e17]:
+        - button "받은 편지함" [ref=f12e20] [cursor=pointer]
+        - link [ref=f12e24] [cursor=pointer]:
+          - /url: https://support.discord.com
+          - button "도움말" [ref=f12e25]
+    - generic [ref=f12e29]:
+      - button "닫기" [ref=f12e30] [cursor=pointer]
+      - text: 성능 개선과 게임 내 오버레이 등 Discord의 모든 기능을 사용하고 싶으신가요? PC 앱을 사용하세요!
+      - button "다운로드" [ref=f12e36] [cursor=pointer]
+    - generic [ref=f12e37]:
+      - generic [ref=f12e38]:
+        - navigation "서버 사이드바" [ref=f12e39]:
+          - tree [ref=f12e40]:
+            - generic [ref=f12e41]:
+              - treeitem "다이렉트 메시지 다이렉트 메시지" [level=1] [ref=f12e50] [cursor=pointer]:
+                - generic [ref=f12e51]: 다이렉트 메시지
+                - group "다이렉트 메시지" [ref=f12e55]:
+                  - generic [ref=f12e57]:
+                    - generic [ref=f12e61]:
+                      - treeitem "Midjourney Bot, 읽지 않은 메시지 2개" [level=2] [ref=f12e63]
+                      - generic:
+                        - generic [aria-hidden]: "2"
+                    - generic [ref=f12e65]: Midjourney Bot
+              - group "서버" [ref=f12e68]:
+                - generic [ref=f12e69]:
+                  - treeitem "UIUXA" [level=1] [selected] [ref=f12e79] [cursor=pointer]
+                  - generic [ref=f12e81]: UIUXA
+                - generic [ref=f12e82]:
+                  - treeitem "SBS김정훈팀장님의 서버" [level=1] [ref=f12e92] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=f12e94]: S김정훈팀장님의서버
+                  - generic [ref=f12e95]: SBS김정훈팀장님의 서버
+                - generic [ref=f12e96]:
+                  - treeitem "숨김배그" [level=1] [ref=f12e106] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=f12e108]: 숨김배그
+                  - generic [ref=f12e109]: 숨김배그
+                - generic [ref=f12e110]:
+                  - treeitem "김도밥" [level=1] [ref=f12e120] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=f12e122]: 김도밥
+                  - generic [ref=f12e123]: 김도밥
+                - generic [ref=f12e124]:
+                  - generic [ref=f12e129]:
+                    - treeitem "멘션 119개, Midjourney, 음성 통화가 활성화" [level=1] [ref=f12e134] [cursor=pointer]
+                    - generic: "119"
+                  - generic [ref=f12e136]:
+                    - generic:
+                      - generic:
+                        - img "인증됨"
+                        - generic:
+                          - generic:
+                            - generic: 커뮤니티 서버
+                            - generic: 인증됨
+                            - generic: 누구나 이 서버에 참가할 수 있어요.
+                          - generic:
+                            - generic: 레벨 3
+                            - generic: 부스트 251번
+                        - generic: Midjourney
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - img "mantou1212"
+              - treeitem "서버 추가하기" [level=1] [ref=f12e143] [cursor=pointer]
+              - treeitem "찾기" [level=1] [ref=f12e154] [cursor=pointer]
+              - treeitem "앱 다운로드" [level=1] [ref=f12e165] [cursor=pointer]
+        - navigation "UIUXA (서버)" [ref=f12e169]:
+          - generic [ref=f12e172]:
+            - button "UIUXA, 서버 활동" [ref=f12e173] [cursor=pointer]:
+              - heading "UIUXA" [level=2] [ref=f12e175]
+            - button "서버에 초대하기" [ref=f12e180] [cursor=pointer]
+          - heading "채널" [level=2] [ref=f12e185]
+          - list "채널" [ref=f12e187]:
+            - listitem [ref=f12e189]:
+              - generic [ref=f12e190]:
+                - button "이벤트"
+                - generic [aria-hidden] [ref=f12e195] [cursor=pointer]: 이벤트
+            - listitem [ref=f12e196]:
+              - generic [ref=f12e197]:
+                - button "서버 부스트"
+                - generic [aria-hidden] [ref=f12e202] [cursor=pointer]: 서버 부스트
+            - listitem [ref=f12e204]:
+              - generic [ref=f12e205] [cursor=pointer]:
+                - button "정보 (카테고리)" [expanded] [ref=f12e206]:
+                  - heading "정보" [level=3] [ref=f12e207]
+                - generic [ref=f12e211]:
+                  - button "채널 만들기" [ref=f12e212]
+                  - generic [ref=f12e215]: 채널 만들기
+            - listitem [ref=f12e216]:
+              - link "강의준비 (채팅 채널)" [ref=f12e219] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550041524023336981
+                - generic [ref=f12e220]:
+                  - img "텍스트 icon" [ref=f12e221]
+                  - generic [ref=f12e224]: 텍스트
+                  - generic [aria-hidden] [ref=f12e225]: 강의준비
+                  - generic:
+                    - generic [ref=f12e226]: 채널로 초대하기
+                    - generic [ref=f12e227]: 채널 편집
+            - listitem [ref=f12e228]:
+              - link "에이전트 (채팅 채널)" [ref=f12e231] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550049388406116372
+                - generic [ref=f12e232]:
+                  - img "텍스트 icon" [ref=f12e233]
+                  - generic [ref=f12e236]: 텍스트
+                  - generic [aria-hidden] [ref=f12e237]: 에이전트
+                  - generic:
+                    - generic [ref=f12e238]: 채널로 초대하기
+                    - generic [ref=f12e239]: 채널 편집
+            - listitem [ref=f12e240]:
+              - link "공지 (채팅 채널)" [ref=f12e243] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550041524023336982
+                - generic [ref=f12e244]:
+                  - img "텍스트 icon" [ref=f12e245]
+                  - generic [ref=f12e248]: 텍스트
+                  - generic [aria-hidden] [ref=f12e249]: 공지
+                  - generic:
+                    - generic [ref=f12e250]: 채널로 초대하기
+                    - generic [ref=f12e251]: 채널 편집
+            - listitem [ref=f12e252]:
+              - link "자료 (채팅 채널)" [ref=f12e255] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550041524023336983
+                - generic [ref=f12e256]:
+                  - img "텍스트 icon" [ref=f12e257]
+                  - generic [ref=f12e260]: 텍스트
+                  - generic [aria-hidden] [ref=f12e261]: 자료
+                  - generic:
+                    - generic [ref=f12e262]: 채널로 초대하기
+                    - generic [ref=f12e263]: 채널 편집
+            - listitem [ref=f12e264]:
+              - generic [ref=f12e265] [cursor=pointer]:
+                - button "채팅 채널 (카테고리)" [expanded] [ref=f12e266]:
+                  - heading "채팅 채널" [level=3] [ref=f12e267]
+                - generic [ref=f12e271]:
+                  - button "채널 만들기" [ref=f12e272]
+                  - generic [ref=f12e275]: 채널 만들기
+            - listitem [ref=f12e276]:
+              - link "단체 (채팅 채널)" [ref=f12e279] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550041524023336985
+                - generic [ref=f12e280]:
+                  - img "텍스트 icon" [ref=f12e281]
+                  - generic [ref=f12e284]: 텍스트
+                  - generic [aria-hidden] [ref=f12e285]: 단체
+                  - generic:
+                    - generic [ref=f12e286]: 채널로 초대하기
+                    - generic [ref=f12e287]: 채널 편집
+            - listitem [ref=f12e288]:
+              - link "강민경 (채팅 채널), 비공개 채널(잠김)" [ref=f12e291] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550041524023336986
+                - generic [ref=f12e292]:
+                  - img "텍스트 (제한) icon" [ref=f12e293]
+                  - generic [ref=f12e297]: 텍스트 (제한)
+                  - generic [aria-hidden] [ref=f12e298]: 강민경
+                  - generic:
+                    - generic [ref=f12e299]: 채널로 초대하기
+                    - generic [ref=f12e300]: 채널 편집
+            - listitem [ref=f12e301]:
+              - link "박주연 (채팅 채널), 비공개 채널(잠김)" [ref=f12e304] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550042859443593337
+                - generic [ref=f12e305]:
+                  - img "텍스트 (제한) icon" [ref=f12e306]
+                  - generic [ref=f12e310]: 텍스트 (제한)
+                  - generic [aria-hidden] [ref=f12e311]: 박주연
+                  - generic:
+                    - generic [ref=f12e312]: 채널로 초대하기
+                    - generic [ref=f12e313]: 채널 편집
+            - listitem [ref=f12e314]:
+              - link "박찬미 (채팅 채널), 비공개 채널(잠김)" [ref=f12e317] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550041524023336987
+                - generic [ref=f12e318]:
+                  - img "텍스트 (제한) icon" [ref=f12e319]
+                  - generic [ref=f12e323]: 텍스트 (제한)
+                  - generic [aria-hidden] [ref=f12e324]: 박찬미
+                  - generic:
+                    - generic [ref=f12e325]: 채널로 초대하기
+                    - generic [ref=f12e326]: 채널 편집
+            - listitem [ref=f12e327]:
+              - link "이은경 (채팅 채널), 비공개 채널(잠김)" [ref=f12e330] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550043079048958013
+                - generic [ref=f12e331]:
+                  - img "텍스트 (제한) icon" [ref=f12e332]
+                  - generic [ref=f12e336]: 텍스트 (제한)
+                  - generic [aria-hidden] [ref=f12e337]: 이은경
+                  - generic:
+                    - generic [ref=f12e338]: 채널로 초대하기
+                    - generic [ref=f12e339]: 채널 편집
+            - listitem [ref=f12e340]:
+              - link "이은수 (채팅 채널), 비공개 채널(잠김)" [ref=f12e343] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550043114926768159
+                - generic [ref=f12e344]:
+                  - img "텍스트 (제한) icon" [ref=f12e345]
+                  - generic [ref=f12e349]: 텍스트 (제한)
+                  - generic [aria-hidden] [ref=f12e350]: 이은수
+                  - generic:
+                    - generic [ref=f12e351]: 채널로 초대하기
+                    - generic [ref=f12e352]: 채널 편집
+            - listitem [ref=f12e353]:
+              - link "이지희 (채팅 채널), 비공개 채널(잠김)" [ref=f12e356] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550043163035701369
+                - generic [ref=f12e357]:
+                  - img "텍스트 (제한) icon" [ref=f12e358]
+                  - generic [ref=f12e362]: 텍스트 (제한)
+                  - generic [aria-hidden] [ref=f12e363]: 이지희
+                  - generic:
+                    - generic [ref=f12e364]: 채널로 초대하기
+                    - generic [ref=f12e365]: 채널 편집
+            - listitem [ref=f12e366]:
+              - link "임연우 (채팅 채널), 비공개 채널(잠김)" [ref=f12e369] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550043253410373652
+                - generic [ref=f12e370]:
+                  - img "텍스트 (제한) icon" [ref=f12e371]
+                  - generic [ref=f12e375]: 텍스트 (제한)
+                  - generic [aria-hidden] [ref=f12e376]: 임연우
+                  - generic:
+                    - generic [ref=f12e377]: 채널로 초대하기
+                    - generic [ref=f12e378]: 채널 편집
+            - listitem [ref=f12e379]:
+              - link "최지혜 (채팅 채널), 비공개 채널(잠김)" [ref=f12e382] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550043359240790026
+                - generic [ref=f12e383]:
+                  - img "텍스트 (제한) icon" [ref=f12e384]
+                  - generic [ref=f12e388]: 텍스트 (제한)
+                  - generic [aria-hidden] [ref=f12e389]: 최지혜
+                  - generic:
+                    - generic [ref=f12e390]: 채널로 초대하기
+                    - generic [ref=f12e391]: 채널 편집
+            - listitem [ref=f12e392]:
+              - link "허지민 (채팅 채널), 비공개 채널(잠김)" [ref=f12e395] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550043482377420800
+                - generic [ref=f12e396]:
+                  - img "텍스트 (제한) icon" [ref=f12e397]
+                  - generic [ref=f12e401]: 텍스트 (제한)
+                  - generic [aria-hidden] [ref=f12e402]: 허지민
+                  - generic:
+                    - generic [ref=f12e403]: 채널로 초대하기
+                    - generic [ref=f12e404]: 채널 편집
+            - listitem [ref=f12e405]:
+              - generic [ref=f12e406] [cursor=pointer]:
+                - button "포트폴리오 (카테고리)" [expanded] [ref=f12e407]:
+                  - heading "포트폴리오" [level=3] [ref=f12e408]
+                - generic [ref=f12e412]:
+                  - button "채널 만들기" [ref=f12e413]
+                  - generic [ref=f12e416]: 채널 만들기
+            - listitem [ref=f12e417]:
+              - link "강민경 (채팅 채널), 비공개 채널(잠김)" [ref=f12e420] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550062820702560296
+                - generic [ref=f12e421]:
+                  - img "텍스트 (제한) icon" [ref=f12e422]
+                  - generic [ref=f12e426]: 텍스트 (제한)
+                  - generic [aria-hidden] [ref=f12e427]: 강민경
+                  - generic:
+                    - generic [ref=f12e428]: 채널로 초대하기
+                    - generic [ref=f12e429]: 채널 편집
+            - listitem [ref=f12e430]:
+              - link "박주연 (채팅 채널), 비공개 채널(잠김)" [ref=f12e433] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550062872690950156
+                - generic [ref=f12e434]:
+                  - img "텍스트 (제한) icon" [ref=f12e435]
+                  - generic [ref=f12e439]: 텍스트 (제한)
+                  - generic [aria-hidden] [ref=f12e440]: 박주연
+                  - generic [ref=f12e441]:
+                    - button "채널로 초대하기" [ref=f12e443]
+                    - generic [ref=f12e447]: 채널로 초대하기
+                    - button "채널 편집" [ref=f12e449]
+                    - generic [ref=f12e452]: 채널 편집
+            - listitem [ref=f12e453]:
+              - link "박찬미 (채팅 채널), 비공개 채널(잠김)" [ref=f12e456] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550063460606410792
+                - generic [ref=f12e457]:
+                  - img "텍스트 (제한) icon" [ref=f12e458]
+                  - generic [ref=f12e462]: 텍스트 (제한)
+                  - generic [aria-hidden] [ref=f12e463]: 박찬미
+                  - generic:
+                    - generic [ref=f12e464]: 채널로 초대하기
+                    - generic [ref=f12e465]: 채널 편집
+            - listitem [ref=f12e466]:
+              - link "이은경 (채팅 채널), 비공개 채널(잠김)" [ref=f12e469] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550063572220903434
+                - generic [ref=f12e470]:
+                  - img "텍스트 (제한) icon" [ref=f12e471]
+                  - generic [ref=f12e475]: 텍스트 (제한)
+                  - generic [aria-hidden] [ref=f12e476]: 이은경
+                  - generic:
+                    - generic [ref=f12e477]: 채널로 초대하기
+                    - generic [ref=f12e478]: 채널 편집
+            - listitem [ref=f12e479]:
+              - link "이은수 (채팅 채널), 비공개 채널(잠김)" [ref=f12e482] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550063617108480060
+                - generic [ref=f12e483]:
+                  - img "텍스트 (제한) icon" [ref=f12e484]
+                  - generic [ref=f12e488]: 텍스트 (제한)
+                  - generic [aria-hidden] [ref=f12e489]: 이은수
+                  - generic:
+                    - generic [ref=f12e490]: 채널로 초대하기
+                    - generic [ref=f12e491]: 채널 편집
+            - listitem [ref=f12e492]:
+              - link "이지희 (채팅 채널), 비공개 채널(잠김)" [ref=f12e495] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550063659798110238
+                - generic [ref=f12e496]:
+                  - img "텍스트 (제한) icon" [ref=f12e497]
+                  - generic [ref=f12e501]: 텍스트 (제한)
+                  - generic [aria-hidden] [ref=f12e502]: 이지희
+                  - generic:
+                    - generic [ref=f12e503]: 채널로 초대하기
+                    - generic [ref=f12e504]: 채널 편집
+            - listitem [ref=f12e505]:
+              - link "임연우 (채팅 채널), 비공개 채널(잠김)" [ref=f12e508] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550063704765239386
+                - generic [ref=f12e509]:
+                  - img "텍스트 (제한) icon" [ref=f12e510]
+                  - generic [ref=f12e514]: 텍스트 (제한)
+                  - generic [aria-hidden] [ref=f12e515]: 임연우
+                  - generic:
+                    - generic [ref=f12e516]: 채널로 초대하기
+                    - generic [ref=f12e517]: 채널 편집
+            - listitem [ref=f12e518]:
+              - link "최지혜 (채팅 채널), 비공개 채널(잠김)" [ref=f12e521] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550063752001355877
+                - generic [ref=f12e522]:
+                  - img "텍스트 (제한) icon" [ref=f12e523]
+                  - generic [ref=f12e527]: 텍스트 (제한)
+                  - generic [aria-hidden] [ref=f12e528]: 최지혜
+                  - generic:
+                    - generic [ref=f12e529]: 채널로 초대하기
+                    - generic [ref=f12e530]: 채널 편집
+            - listitem [ref=f12e531]:
+              - link "허지민 (채팅 채널), 비공개 채널(잠김)" [ref=f12e534] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550063822536966255
+                - generic [ref=f12e535]:
+                  - img "텍스트 (제한) icon" [ref=f12e536]
+                  - generic [ref=f12e540]: 텍스트 (제한)
+                  - generic [aria-hidden] [ref=f12e541]: 허지민
+                  - generic:
+                    - generic [ref=f12e542]: 채널로 초대하기
+                    - generic [ref=f12e543]: 채널 편집
+            - listitem [ref=f12e544]:
+              - generic [ref=f12e545] [cursor=pointer]:
+                - button "음성 채널 (카테고리)" [expanded] [ref=f12e546]:
+                  - heading "음성 채널" [level=3] [ref=f12e547]
+                - generic [ref=f12e551]:
+                  - button "채널 만들기" [ref=f12e552]
+                  - generic [ref=f12e555]: 채널 만들기
+            - listitem [ref=f12e556]:
+              - button "⛔⛔ (음성 채널)" [ref=f12e560] [cursor=pointer]:
+                - generic [ref=f12e561]:
+                  - img "음성 icon" [ref=f12e562]
+                  - generic [ref=f12e566]: 음성
+                  - generic [aria-hidden] [ref=f12e567]: ⛔⛔
+                  - generic:
+                    - generic [ref=f12e568]: 채팅 열기
+                    - generic [ref=f12e569]: 음성으로 초대하기
+                    - generic [ref=f12e570]: 채널 편집
+        - separator "Resize Sidebar" [ref=f12e571]
+        - region "사용자 상태 및 설정" [ref=f12e572]:
+          - generic [ref=f12e573]:
+            - generic [ref=f12e574] [cursor=pointer]:
+              - button "프로필 및 상태 관리"
+              - generic [ref=f12e577]:
+                - generic [ref=f12e578]: 김혜지
+                - generic [ref=f12e582]:
+                  - generic: gimhyeji3907
+                  - generic: 오프라인 표시
+            - generic [ref=f12e583]:
+              - generic [ref=f12e584]:
+                - switch "음소거" [checked] [ref=f12e585] [cursor=pointer]
+                - generic [ref=f12e606]: 음소거 해제
+                - button "입력 옵션" [ref=f12e607] [cursor=pointer]
+              - generic [ref=f12e611]:
+                - switch "헤드셋 음소거" [ref=f12e612] [cursor=pointer]
+                - button "출력 옵션" [ref=f12e624] [cursor=pointer]
+              - button "사용자 설정" [ref=f12e628] [cursor=pointer]
+      - generic [ref=f12e639]:
+        - region "채널 헤더" [ref=f12e641]:
+          - generic [ref=f12e642]:
+            - generic [ref=f12e643]:
+              - generic [ref=f12e648]: 채팅 채널
+              - 'heading "UIUXA: 박주연" [level=1] [ref=f12e650]':
+                - generic [ref=f12e651]: "UIUXA:"
+                - text: 박주연
+            - generic [ref=f12e652]:
+              - button "스레드" [ref=f12e653] [cursor=pointer]
+              - button "알림 설정" [ref=f12e656] [cursor=pointer]
+              - button "고정된 메시지" [ref=f12e659] [cursor=pointer]
+              - button "멤버 목록 표시하기" [ref=f12e662] [cursor=pointer]
+              - generic [ref=f12e667]:
+                - combobox "UIUXA 검색" [ref=f12e668]
+                - button [aria-hidden] [ref=f12e670]
+        - main "박주연 (채널)" [ref=f12e677]:
+          - heading "박주연 채팅" [level=2] [ref=f12e679]
+          - group [ref=f12e681]:
+            - list "박주연의 메시지" [ref=f12e683]:
+              - generic [ref=f12e684]:
+                - heading [level=3] [aria-hidden] [ref=f12e689]: "#박주연에 오신 걸 환영합니다!"
+                - generic [ref=f12e690]:
+                  - strong [ref=f12e691]: 비공개
+                  - text: "채널 #박주연의 시작이에요."
+                - generic [ref=f12e692]:
+                  - button "멤버 또는 역할 추가" [ref=f12e693] [cursor=pointer]
+                  - button "채널 편집" [ref=f12e699] [cursor=pointer]
+                - group [ref=f12e706]:
+                  - list [ref=f12e707]:
+                    - listitem [ref=f12e708]:
+                      - img "김혜지" [ref=f12e709]
+                    - listitem [ref=f12e711]:
+                      - img "뽕빠링" [ref=f12e712]
+          - generic [ref=f12e719]:
+            - button "더 많은 메시지 옵션" [expanded] [ref=f12e721] [cursor=pointer]
+            - generic [ref=f12e726]:
+              - generic [aria-hidden]: "#박주연에 메시지 보내기"
+              - textbox "#박주연에 메시지 보내기" [ref=f12e727]
+            - generic [ref=f12e729]:
+              - generic [ref=f12e730]:
+                - button "선물 보내기" [ref=f12e731] [cursor=pointer]
+                - generic [ref=f12e747]: 친구를 업그레이드하세요! Nitro의 멋진 채팅 특전을 선물하세요.
+              - button "GIF 선택기 열기" [ref=f12e749] [cursor=pointer]
+              - generic [ref=f12e759]: GIF 보내기
+              - button "스티커 선택기 열기" [ref=f12e761] [cursor=pointer]
+              - button "이모지 추가" [ref=f12e771] [cursor=pointer]
+              - button "앱" [ref=f12e776] [cursor=pointer]
+  - menu "채널 동작" [active] [ref=f12e794]:
+    - generic [ref=f12e795]:
+      - menuitem "파일 업로드" [ref=f12e796] [cursor=pointer]
+      - menuitem "스레드 만들기" [ref=f12e804] [cursor=pointer]
+      - menuitem "투표 만들기" [ref=f12e811] [cursor=pointer]
+      - menuitem "앱 사용" [ref=f12e818] [cursor=pointer]

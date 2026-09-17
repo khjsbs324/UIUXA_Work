@@ -1,0 +1,47 @@
+- generic [ref=f15e5]:
+  - generic [ref=f15e11]:
+    - generic [ref=f15e14]:
+      - button "받은 편지함" [ref=f15e17] [cursor=pointer]
+      - link [ref=f15e21] [cursor=pointer]:
+        - /url: https://support.discord.com
+        - button "도움말" [ref=f15e22]
+    - generic [ref=f15e26]:
+      - generic [ref=f15e27]:
+        - navigation "서버 사이드바" [ref=f15e28]:
+          - tree [ref=f15e29]:
+            - generic [ref=f15e30]:
+              - group "서버"
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - treeitem "서버 추가하기" [level=1]
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - treeitem "찾기" [level=1]
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - treeitem "앱 다운로드" [level=1]
+        - status [ref=f15e32]
+        - separator "Resize Sidebar" [ref=f15e75]
+        - region "사용자 상태 및 설정" [ref=f15e76]
+      - status [ref=f15e78]
+  - generic [ref=f15e84]:
+    - generic [ref=f15e86]:
+      - generic [ref=f15e87]: 알고 계셨나요?
+      - generic [ref=f15e88]: /tableflip이나 /unflip이라고 입력하면 메시지를 재밌게 만들 수 있어요.
+    - generic [ref=f15e89]:
+      - generic [ref=f15e90]: 연결하는 데 문제가 있나요? 저희에게 알려주세요!
+      - generic [ref=f15e91]:
+        - link "Twitter를 통해 알려주세요" [ref=f15e92] [cursor=pointer]:
+          - /url: https://twitter.com/discord_support
+        - link "서버 상태" [ref=f15e95] [cursor=pointer]:
+          - /url: https://discordstatus.com

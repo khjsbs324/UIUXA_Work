@@ -1,0 +1,454 @@
+- generic [active] [ref=f48e1]:
+  - banner [ref=f48e2]:
+    - link "WICKETA" [ref=f48e3] [cursor=pointer]:
+      - /url: "#hero-section"
+      - text: WICKETA
+      - generic [ref=f48e4]: TEA, BEYOND REALITY
+    - navigation [ref=f48e5]:
+      - link [ref=f48e6] [cursor=pointer]:
+        - /url: "#bridge-section"
+        - strong [ref=f48e7]: STORY
+      - link [ref=f48e8] [cursor=pointer]:
+        - /url: "#spotlight-section"
+        - strong [ref=f48e9]: MIXOLOGY
+      - link [ref=f48e10] [cursor=pointer]:
+        - /url: "#routine-section"
+        - strong [ref=f48e11]: 24H RITUAL
+      - link [ref=f48e12] [cursor=pointer]:
+        - /url: "#flagship-section"
+        - strong [ref=f48e13]: COLLECTION
+      - link [ref=f48e14] [cursor=pointer]:
+        - /url: "#curation-section"
+        - strong [ref=f48e15]: CURATION
+      - link [ref=f48e16] [cursor=pointer]:
+        - /url: "#studio-section"
+        - strong [ref=f48e17]: STUDIO
+      - link [ref=f48e18] [cursor=pointer]:
+        - /url: "#showroom-section"
+        - strong [ref=f48e19]: SHOWROOM
+      - link "CART / QUOTE ( 2 )" [ref=f48e20] [cursor=pointer]:
+        - /url: "#cart-drawer"
+        - text: CART / QUOTE (
+        - generic [ref=f48e21]: "2"
+        - text: )
+  - main [ref=f48e22]:
+    - generic [ref=f48e23]:
+      - img "히어로 비주얼 영역" [ref=f48e24]
+      - heading [level=1] [ref=f48e26]:
+        - text: Drink Me,
+        - emphasis [ref=f48e27]: Escape Reality.
+    - generic [ref=f48e28]:
+      - generic [ref=f48e29]:
+        - generic [ref=f48e30]:
+          - generic [ref=f48e31]: "[ 01 ]"
+          - generic [ref=f48e32]: BRAND PHILOSOPHY
+        - heading "내 기분대로, 내 방식대로 완성하는 나만의 티" [level=2] [ref=f48e33]
+        - paragraph [ref=f48e34]: 오늘의 기분에 맞춰 자유롭게 조합하는 나만의 블렌딩 티
+      - generic [ref=f48e35]:
+        - generic [ref=f48e36]: "[ 이미지 영역 ]"
+        - generic [ref=f48e37]:
+          - generic [ref=f48e38]: "\"매일 달라지는 기분처럼, 차를 즐기는 방식도 자유롭게. 오늘의 무드를 온전히 담아내는 세상에 하나뿐인 블렌드.\""
+          - generic [ref=f48e39]:
+            - generic [ref=f48e40]:
+              - generic [ref=f48e41]: 01 EMOTION BLEND
+              - generic [ref=f48e42]: 오늘의 감정과 컨디션에 맞춰 직접 조합하는 DIY 믹솔로지
+            - generic [ref=f48e43]:
+              - generic [ref=f48e44]: 02 COLD & INSTANT
+              - generic [ref=f48e45]: 끓일 필요 없이 찬물에도 1초 만에 투명하게 녹아드는 마이크로 파우더
+            - generic [ref=f48e46]:
+              - generic [ref=f48e47]: 03 FREE RITUAL
+              - generic [ref=f48e48]: 고루한 형식과 격식에서 벗어나 일상 어디서나 즐기는 자유로운 감각 해방
+    - generic [ref=f48e50]:
+      - generic [ref=f48e51]:
+        - generic [ref=f48e52]:
+          - generic [ref=f48e53]: "[ 02 ]"
+          - generic [ref=f48e54]: SCIENCE & CRAFT
+        - heading "찬물 1초 미세 융해 추출 기술" [level=2] [ref=f48e55]
+        - paragraph [ref=f48e56]: 찬물에 닿는 순간 녹아드는 새로운 웰니스 티 리추얼
+      - generic [ref=f48e57]:
+        - generic [ref=f48e58]:
+          - generic [ref=f48e59]: 찬물에 붓는 순간 완성되는 나만의 무드 티
+          - paragraph [ref=f48e60]: 티백 없이 찬물·탄산수에 사르르 녹아들어, 오늘 내 기분에 맞춘 맛과 색을 바로 완성합니다.
+          - generic [ref=f48e61]:
+            - button "MOOD 01 • 기분 전환 퇴근 후 기분 전환 — 선셋 오로라 에이드 3단 변색 ✦" [ref=f48e62] [cursor=pointer]:
+              - generic [ref=f48e63]:
+                - generic [ref=f48e64]: MOOD 01 • 기분 전환
+                - strong [ref=f48e65]: 퇴근 후 기분 전환 — 선셋 오로라 에이드
+              - generic [ref=f48e66]: 3단 변색 ✦
+            - button "MOOD 02 • 편안한 쉼 깊은 밤 편안한 쉼 — 바닐라 오트 나이트캡 무카페인 ✦" [ref=f48e67] [cursor=pointer]:
+              - generic [ref=f48e68]:
+                - generic [ref=f48e69]: MOOD 02 • 편안한 쉼
+                - strong [ref=f48e70]: 깊은 밤 편안한 쉼 — 바닐라 오트 나이트캡
+              - generic [ref=f48e71]: 무카페인 ✦
+            - button "MOOD 03 • 맑은 몰입 오후의 맑은 몰입 — 스모키 제로 하이볼 0kcal ✦" [ref=f48e72] [cursor=pointer]:
+              - generic [ref=f48e73]:
+                - generic [ref=f48e74]: MOOD 03 • 맑은 몰입
+                - strong [ref=f48e75]: 오후의 맑은 몰입 — 스모키 제로 하이볼
+              - generic [ref=f48e76]: 0kcal ✦
+          - generic [ref=f48e77]:
+            - strong [ref=f48e78]: "MOOD 01 레시피:"
+            - text: 오로라 티 1포 + 저온 착즙(콜드프레스) 레몬즙 + 탄산수 180ml로 완성하는 나만의 무가당 선셋 오로라 에이드 (산도 3단 변색).
+        - generic [ref=f48e79]:
+          - generic [ref=f48e80]: "[ 이미지 영역 ]"
+          - generic [ref=f48e81]: 찬물 급속 융해 및 감정 믹솔로지 비주얼
+      - generic [ref=f48e82]:
+        - generic [ref=f48e83]:
+          - generic [ref=f48e84]: SAFETY ARCHIVE
+          - generic [ref=f48e85]: 국가공인 KTR 3無 성분 검증 · FITI 잔류농약 0% · 100% 생분해 PLA 안전 기준 통과
+        - generic [ref=f48e86]:
+          - generic [ref=f48e87]: KTR 3無
+          - generic [ref=f48e88]: FITI 0%
+          - generic [ref=f48e89]: PLA 100%
+        - link "성적서 원본 확인 →" [ref=f48e91] [cursor=pointer]:
+          - /url: "#spotlight-section"
+    - generic [ref=f48e93]:
+      - generic [ref=f48e94]:
+        - generic [ref=f48e95]:
+          - generic [ref=f48e96]: "[ 03 ]"
+          - generic [ref=f48e97]: SUSTAINABILITY
+        - heading "지구와 몸에 가벼운 쉼" [level=2] [ref=f48e98]
+        - paragraph [ref=f48e99]: 자연에서 와서 다시 자연으로, 지구와 몸에 남지 않는 순환
+      - generic [ref=f48e100]:
+        - generic [ref=f48e101]:
+          - generic [ref=f48e102]: "[ 이미지 영역 ]"
+          - generic [ref=f48e103]: 100% 식물성 생분해 PLA & 무광 반투명 에코 리필
+        - generic [ref=f48e104]:
+          - generic [ref=f48e105]: CALM-TECH FORMULA = 감정 믹솔로지 (MOOD BLEND) + 순환 과학 (CIRCULAR)
+          - generic [ref=f48e107]:
+            - generic [ref=f48e108]: "01"
+            - generic [ref=f48e109]:
+              - strong [ref=f48e110]: 100% 옥수수 생분해 거름망 (PLA)
+              - paragraph [ref=f48e111]: 옥수수 전분에서 추출한 식물성 생분해 거름망 티백으로 미세플라스틱 0.00% 불검출을 실현합니다.
+          - generic [ref=f48e112]:
+            - generic [ref=f48e113]: "02"
+            - generic [ref=f48e114]:
+              - strong [ref=f48e115]: 85% 패키지 폐기물 절감 에코 리필
+              - paragraph [ref=f48e116]: 메탈 틴케이스를 재사용하는 대용량 60포 벌크 패키지로 석유계 플라스틱과 일회용 포장 폐기물을 85% 절감합니다.
+          - generic [ref=f48e117]:
+            - generic [ref=f48e118]: "03"
+            - generic [ref=f48e119]:
+              - strong [ref=f48e120]: 180일 자연 생분해 퇴비화 복원
+              - paragraph [ref=f48e121]: 음용 후 흙 속에 묻으면 180일 만에 유해 잔여물 없이 자연의 흙으로 온전히 분해되어 순환합니다.
+          - link "에코 리필 벌크팩 60포 자세히 보기 →" [ref=f48e123] [cursor=pointer]:
+            - /url: "#order-section"
+    - generic [ref=f48e125]:
+      - generic [ref=f48e126]:
+        - generic [ref=f48e127]:
+          - generic [ref=f48e128]: "[ 04 ]"
+          - generic [ref=f48e129]: 24H RITUAL
+        - heading "생체 리듬에 맞춘 24시간 티 리추얼" [level=2] [ref=f48e130]
+        - paragraph [ref=f48e131]: 하루의 리듬에 맞춰 집중이 필요한 낮과 휴식이 필요한 밤을 위한 티를 제안합니다.
+      - generic [ref=f48e132]:
+        - tablist "낮과 밤 리추얼 선택" [ref=f48e133]:
+          - tab "DAY RITUAL 07:00 — 18:00" [selected] [ref=f48e134] [cursor=pointer]:
+            - generic [ref=f48e135]: DAY RITUAL
+            - generic [ref=f48e136]: 07:00 — 18:00
+          - tab "NIGHT RITUAL 20:00 — 02:00" [ref=f48e137] [cursor=pointer]:
+            - generic [ref=f48e138]: NIGHT RITUAL
+            - generic [ref=f48e139]: 20:00 — 02:00
+        - generic [ref=f48e140]: 선택한 시간대에 맞춰 추천 제품과 화면의 조도가 전환됩니다.
+      - tabpanel "DAY RITUAL 07:00 — 18:00" [ref=f48e141]:
+        - generic [ref=f48e142]:
+          - generic [ref=f48e143]:
+            - img "햇빛 아래 즐기는 낮 시간 티 리추얼" [ref=f48e144]: "[ 이미지 영역 ]"
+            - generic [ref=f48e145]:
+              - generic [ref=f48e146]: DAY · 07:00—18:00
+              - strong [ref=f48e147]: 집중이 필요한 아침부터 산뜻한 전환이 필요한 오후까지
+          - generic [ref=f48e148]:
+            - generic [ref=f48e149]:
+              - strong [ref=f48e150]: DAY ROUTINE
+              - generic [ref=f48e151]: 맑은 시작과 오후의 환기를 위한 두 가지 제안
+            - article [ref=f48e152]:
+              - generic [ref=f48e153]: "01"
+              - generic [ref=f48e154]:
+                - generic [ref=f48e155]: MORNING · 07:00—11:00
+                - heading "하루를 맑게 시작하고 싶을 때" [level=4] [ref=f48e156]
+                - generic [ref=f48e157]: 하동 어린잎 녹차 스틱 · 20포
+                - paragraph [ref=f48e158]: 3분 급속 추출로 바쁜 아침에도 지리산 첫물 어린 찻잎의 산뜻한 활력을 채우는 모닝 리추얼.
+              - generic [ref=f48e159]:
+                - generic [ref=f48e160]: 31,000원
+                - link "제품 보기" [ref=f48e161] [cursor=pointer]:
+                  - /url: "#order-section"
+                  - text: 제품 보기
+                  - generic [aria-hidden] [ref=f48e162]: →
+            - article [ref=f48e163]:
+              - generic [ref=f48e164]: "02"
+              - generic [ref=f48e165]:
+                - generic [ref=f48e166]: AFTERNOON · 14:00—18:00
+                - heading "나른한 오후를 환기하고 싶을 때" [level=4] [ref=f48e167]
+                - generic [ref=f48e168]: 사파이어 블루 캐모마일 · 15포
+                - paragraph [ref=f48e169]: 0kcal 아줄렌의 푸른빛과 탄산의 청량감으로 식곤증과 이어진 회의 사이에 리듬을 전환합니다.
+              - generic [ref=f48e170]:
+                - generic [ref=f48e171]: 29,000원
+                - link "제품 보기" [ref=f48e172] [cursor=pointer]:
+                  - /url: "#order-section"
+                  - text: 제품 보기
+                  - generic [aria-hidden] [ref=f48e173]: →
+      - text: "[ 이미지 영역 ]"
+      - generic [ref=f48e174]:
+        - generic [ref=f48e175]:
+          - generic [ref=f48e176]: 24H ALL-DAY BUNDLE
+          - heading "월간 리추얼 30일 정기구독팩" [level=3] [ref=f48e178]
+          - paragraph [ref=f48e179]: • 30일 데일리 무카페인 60포 풀세트 (시그니처 오로라 + 클린티 조합) • 매월 자동 정기배송 & 15% 상시 할인 + 180초 Lo-Fi 사운드트랙 전용 QR 제공
+        - generic [ref=f48e180]:
+          - generic [ref=f48e181]:
+            - generic [ref=f48e182]: 정가 68,000원
+            - generic [ref=f48e183]:
+              - generic [ref=f48e184]: 15% OFF
+              - strong [ref=f48e185]: 월 57,800원
+          - link "30일 정기구독 신청하기 →" [ref=f48e186] [cursor=pointer]:
+            - /url: "#order-section"
+      - generic [ref=f48e187]:
+        - generic [ref=f48e188]: 더 다양한 블렌딩 티와 전용 도구를 찾고 계신가요?
+        - button "취향별 전체 20종 상품 컬렉션 보러가기 →" [ref=f48e189] [cursor=pointer]:
+          - generic [ref=f48e190]: 취향별 전체 20종 상품 컬렉션 보러가기
+          - generic [ref=f48e191]: →
+    - generic [ref=f48e192]:
+      - generic [ref=f48e193]:
+        - generic [ref=f48e194]:
+          - generic [ref=f48e195]: "[ 05 ]"
+          - generic [ref=f48e196]: FLAGSHIP COLLECTION
+        - heading "위케티 4대 대표 시그니처" [level=2] [ref=f48e197]
+        - paragraph [ref=f48e198]: 이야기 속 핵심 기술과 리추얼이 집약된 위케티 4대 시그니처 대표 상품입니다.
+      - generic [ref=f48e199]:
+        - article [ref=f48e200]:
+          - generic [ref=f48e201]:
+            - button "위시리스트 추가" [ref=f48e202] [cursor=pointer]
+            - generic [ref=f48e205]: "[ 이미지 영역 ]"
+            - generic [ref=f48e206]: 오로라 믹솔로지 팩
+          - generic [ref=f48e207]:
+            - generic [ref=f48e208]:
+              - generic [ref=f48e209]: SIGNATURE
+              - generic [ref=f48e210]: 01 / 04
+            - heading "오로라 믹솔로지 시그니처 팩" [level=3] [ref=f48e211]
+            - generic [ref=f48e212]:
+              - generic [ref=f48e213]: INCLUDES
+              - generic [ref=f48e214]: 블루멜로우티 · 레몬 시럽 · 오로라 글라스 · 유리 머들러
+            - paragraph [ref=f48e215]: 10포 번들 · 찬물 1초 융해 마이크로파우더
+            - generic [ref=f48e216]: 39,000원
+            - link "Add to Cart +" [ref=f48e219] [cursor=pointer]:
+              - /url: javascript:void(0);
+        - article [ref=f48e220]:
+          - generic [ref=f48e221]:
+            - button "위시리스트 추가" [ref=f48e222] [cursor=pointer]
+            - generic [ref=f48e225]: "[ 이미지 영역 ]"
+            - generic [ref=f48e226]: 슬립 라벤더 루이보스
+          - generic [ref=f48e227]:
+            - generic [ref=f48e228]:
+              - generic [ref=f48e229]: NIGHT REST
+              - generic [ref=f48e230]: 02 / 04
+            - heading "슬립 라벤더 루이보스" [level=3] [ref=f48e231]
+            - generic [ref=f48e232]:
+              - generic [ref=f48e233]: INCLUDES
+              - generic [ref=f48e234]: 그린루이보스 · 프로방스 라벤더꽃 · 22:00 슬립 가이드
+            - paragraph [ref=f48e235]: 15포 번들 · 22:00 슬립 케어 대표
+            - generic [ref=f48e236]: 28,500원
+            - link "Add to Cart +" [ref=f48e239] [cursor=pointer]:
+              - /url: javascript:void(0);
+        - article [ref=f48e240]:
+          - generic [ref=f48e241]:
+            - button "위시리스트 추가" [ref=f48e242] [cursor=pointer]
+            - generic [ref=f48e245]: "[ 이미지 영역 ]"
+            - generic [ref=f48e246]: 에코 리필 벌크팩 60포
+          - generic [ref=f48e247]:
+            - generic [ref=f48e248]:
+              - generic [ref=f48e249]: CIRCULAR ECO
+              - generic [ref=f48e250]: 03 / 04
+            - heading "에코 리필 벌크팩" [level=3] [ref=f48e251]
+            - paragraph [ref=f48e252]: 60포 대용량 · 100% 생분해 PLA 패키지
+            - generic [ref=f48e253]: 48,000원
+            - link "Add to Cart +" [ref=f48e256] [cursor=pointer]:
+              - /url: javascript:void(0);
+        - article [ref=f48e257]:
+          - generic [ref=f48e258]:
+            - button "위시리스트 추가" [ref=f48e259] [cursor=pointer]
+            - generic [ref=f48e262]: "[ 이미지 영역 ]"
+            - generic [ref=f48e263]: 30일 월간 정기구독팩
+          - generic [ref=f48e264]:
+            - generic [ref=f48e265]:
+              - generic [ref=f48e266]: SUBSCRIPTION
+              - generic [ref=f48e267]: 04 / 04
+            - heading "월간 리추얼 30일 정기구독팩" [level=3] [ref=f48e268]
+            - paragraph [ref=f48e269]: 60포 번들 · 30일 데일리 루틴 맞춤팩
+            - generic [ref=f48e270]:
+              - generic [ref=f48e271]:
+                - generic [ref=f48e272]: 57,800원
+                - generic [ref=f48e273]: 68,000원
+              - generic [ref=f48e274]: 15%
+            - link "Add to Cart +" [ref=f48e275] [cursor=pointer]:
+              - /url: javascript:void(0);
+    - generic [ref=f48e277]:
+      - generic [ref=f48e278]:
+        - generic [ref=f48e279]:
+          - generic [ref=f48e280]: "[ 06 ]"
+          - generic [ref=f48e281]: SENSORY CURATION
+        - heading "감각 유형별 시그니처 블렌드 제안" [level=2] [ref=f48e282]
+        - paragraph [ref=f48e283]: 일상의 컨디션과 스트레스는 각기 다르기에, 솔루션 또한 맞춤이어야 합니다. 5대 감각 분석을 기반으로 오늘 당신의 상태에 최적화된 WICKETA 맞춤 블렌드를 확인해보세요.
+      - generic [ref=f48e284]:
+        - generic [ref=f48e285] [cursor=pointer]:
+          - generic [ref=f48e286]: 🌙
+          - generic [ref=f48e287]: ( 불면 · 야간수면 )
+          - generic [ref=f48e288]: 깊은 숙면 (Deep Sleep)
+          - generic [ref=f48e289]: 미드나잇 라벤더
+          - paragraph [ref=f48e290]: 유기농 그린 루이보스와 프랑스산 야생 라벤더의 아로마가 뇌파를 안정시키고 깊은 야간 수면 주기를 완성합니다.
+        - generic [ref=f48e291] [cursor=pointer]:
+          - generic [ref=f48e292]: 🌿
+          - generic [ref=f48e293]: ( 예민 · 스트레스 )
+          - generic [ref=f48e294]: 긴장 완화 (Stress Release)
+          - generic [ref=f48e295]: 오로라 카모마일
+          - paragraph [ref=f48e296]: 천연 아줄렌 성분의 저먼 캐모마일과 블루멜로우가 일상의 긴장과 스트레스를 부드럽게 감싸 안아줍니다.
+        - generic [ref=f48e297] [cursor=pointer]:
+          - generic [ref=f48e298]: 🌲
+          - generic [ref=f48e299]: ( 몰입 · 두뇌집중 )
+          - generic [ref=f48e300]: 맑은 몰입 (Mind Focus)
+          - generic [ref=f48e301]: 포레스트 민트
+          - paragraph [ref=f48e302]: 천연 멘톨과 로즈마리의 상쾌한 허브 아로마가 두뇌의 피로를 씻어내고 명료한 몰입 상태를 이끕니다.
+        - generic [ref=f48e303] [cursor=pointer]:
+          - generic [ref=f48e304]: ☀️
+          - generic [ref=f48e305]: ( 무기력 · 활력 )
+          - generic [ref=f48e306]: 아침 활력 (Morning Vital)
+          - generic [ref=f48e307]: 앰버 시트러스
+          - paragraph [ref=f48e308]: 유기농 히비스커스와 천연 유자·자몽의 비타민 성분이 아침의 무기력함을 깨우고 상쾌한 생기를 불어넣습니다.
+        - generic [ref=f48e309] [cursor=pointer]:
+          - generic [ref=f48e310]: 🫖
+          - generic [ref=f48e311]: ( 식후 · 디톡스 )
+          - generic [ref=f48e312]: 가벼운 비움 (Clean Reset)
+          - generic [ref=f48e313]: 블랑 자스민
+          - paragraph [ref=f48e314]: 은은한 자스민 꽃잎과 발효 보이차의 카테킨 성분이 식후 묵직함을 가볍게 정돈하고 몸을 정화해 줍니다.
+    - generic [ref=f48e316]:
+      - generic [ref=f48e317]:
+        - generic [ref=f48e318]:
+          - generic [ref=f48e319]: "[ 07 ]"
+          - generic [ref=f48e320]: SENSORY ATELIER
+        - heading "오감으로 몰입하는 위케티 감각 스튜디오" [level=2] [ref=f48e321]
+        - paragraph [ref=f48e322]: 빛의 굴절, 개인화된 각인, 온열과 소리의 공명, 공간 호스피탈리티, 그리고 오늘의 감정까지— 위케티가 제안하는 5가지 감각 리추얼을 인터랙티브 콘솔로 직접 경험해보세요.
+      - tablist [ref=f48e323]:
+        - tab "01 COLOR LAB 오로라 수색 조색" [selected] [ref=f48e324] [cursor=pointer]:
+          - generic [ref=f48e325]: "01"
+          - generic [ref=f48e326]: COLOR LAB
+          - generic [ref=f48e327]: 오로라 수색 조색
+        - tab "02 ATELIER 비스포크 틴 각인" [ref=f48e328] [cursor=pointer]:
+          - generic [ref=f48e329]: "02"
+          - generic [ref=f48e330]: ATELIER
+          - generic [ref=f48e331]: 비스포크 틴 각인
+        - tab "03 SOUND & HEAT 180초 온열 & 사운드" [ref=f48e332] [cursor=pointer]:
+          - generic [ref=f48e333]: "03"
+          - generic [ref=f48e334]: SOUND & HEAT
+          - generic [ref=f48e335]: 180초 온열 & 사운드
+        - tab "04 SPACE 공간 웰니스 큐레이션" [ref=f48e336] [cursor=pointer]:
+          - generic [ref=f48e337]: "04"
+          - generic [ref=f48e338]: SPACE
+          - generic [ref=f48e339]: 공간 웰니스 큐레이션
+        - tab "05 EMOTION DIAL 24H 감정 다이얼" [ref=f48e340] [cursor=pointer]:
+          - generic [ref=f48e341]: "05"
+          - generic [ref=f48e342]: EMOTION DIAL
+          - generic [ref=f48e343]: 24H 감정 다이얼
+      - generic [ref=f48e346]:
+        - generic [ref=f48e347]:
+          - generic [ref=f48e348]: AURORA SPECTRUM LAB
+          - generic [ref=f48e349]:
+            - generic [ref=f48e350]: "[ 이미지 영역 ]"
+            - generic [ref=f48e351]: 블루멜로우 & 시럽 산도 반응3단 오로라 수색 조색 비주얼
+          - generic [ref=f48e353]: pH 7.0 (로열 블루)
+        - generic [ref=f48e354]:
+          - generic [ref=f48e355]:
+            - generic [ref=f48e356]: 01 · VISUAL COLOR LAB
+            - generic [ref=f48e357]: 01 / 05
+          - heading "탄산수와 시럽의 산도로 피어나는 3단 오로라 수색" [level=4] [ref=f48e358]
+          - paragraph [ref=f48e359]: 블루멜로우 플라워의 천연 안토시아닌이 레몬 시럽(구연산)의 산도와 반응하여 밤하늘의 로열 블루에서 새벽녘 바이올렛, 그리고 노을빛 핑크로 피어납니다. 나만의 잔 속에 물드는 환상적인 시각적 리추얼을 완성해보세요.
+          - generic [ref=f48e360]:
+            - generic [ref=f48e361] [cursor=pointer]: 수색 단계 직접 선택 (pH Color Shift)
+            - generic [ref=f48e362]:
+              - button "pH 7.0 로열 블루" [ref=f48e363] [cursor=pointer]
+              - button "pH 5.0 던 바이올렛" [ref=f48e365] [cursor=pointer]
+              - button "pH 3.0 오로라 핑크" [ref=f48e367] [cursor=pointer]
+            - generic [ref=f48e369]:
+              - generic [ref=f48e370]:
+                - generic [ref=f48e371]: 산도 미세 조절
+                - generic [ref=f48e372]: pH 3.0 ∼ 7.0
+              - slider [ref=f48e373] [cursor=pointer]: "7"
+            - generic [ref=f48e374]:
+              - strong [ref=f48e375]: "황금 블렌딩 비율:"
+              - text: 코디얼 원액 30ml + 탄산수 120ml (TDS 144ppm 최적 밸런스)
+          - generic [ref=f48e376]:
+            - generic [ref=f48e377]:
+              - generic [ref=f48e378]: 오로라 믹솔로지 시그니처 팩 (10포)
+              - generic [ref=f48e379]: 블루멜로우티 + 레몬 시럽 + 오로라 글라스 + 유리 머들러 풀세트
+              - generic [ref=f48e380]: 39,000원
+            - generic [ref=f48e381]:
+              - button "도감 보기 ↓" [ref=f48e382] [cursor=pointer]
+              - button "바로 담기 (39,000원)" [ref=f48e383] [cursor=pointer]
+    - generic [ref=f48e385]:
+      - generic [ref=f48e386]:
+        - generic [ref=f48e387]:
+          - generic [ref=f48e388]: "[ 08 ]"
+          - generic [ref=f48e389]: SHOWROOM & NOTICE
+        - heading "오프라인 리추얼 쇼룸 & 공지사항" [level=2] [ref=f48e390]
+        - paragraph [ref=f48e391]: 오프라인 프라이빗 쇼룸 소식과 전국 티 세션 일정을 전해드립니다.
+      - generic [ref=f48e392]:
+        - generic [ref=f48e393]:
+          - generic [ref=f48e394]:
+            - generic [ref=f48e395]:
+              - generic [ref=f48e396]: 세미나
+              - paragraph [ref=f48e397]: "[북촌 쇼룸] 번아웃 회복을 위한 180초 마인드풀 티 클래스"
+            - generic [ref=f48e398]: 2026-09-28
+          - generic [ref=f48e399]:
+            - generic [ref=f48e400]:
+              - generic [ref=f48e401]: 이벤트
+              - paragraph [ref=f48e402]: "[성수 팝업] 3단 오로라 수색 감상 & VIP 시음 바우처 증정 이벤트"
+            - generic [ref=f48e403]: 2026-09-15
+          - generic [ref=f48e404]:
+            - generic [ref=f48e405]:
+              - generic [ref=f48e406]: 공지사항
+              - paragraph [ref=f48e407]: "[신규 제휴] 기업 탕비실 웰니스 거치대 번들 0원 렌탈 신청 접수"
+            - generic [ref=f48e408]: 2026-08-30
+        - generic [ref=f48e409]:
+          - generic [ref=f48e410]:
+            - heading "Private Ritual Room" [level=3] [ref=f48e411]
+            - paragraph [ref=f48e412]: 서울 종로구 북촌로 42 WICKETA 리추얼 하우스 도심의 소음이 완벽히 차단된 프라이빗 룸에서 1:1 티 소믈리에의 맞춤 큐레이션을 경험하세요.
+            - generic [ref=f48e413]: "[ 쇼룸 이미지 영역 ]"
+          - button "쇼룸 방문 및 견적 신청하기 →" [ref=f48e414] [cursor=pointer]
+  - contentinfo [ref=f48e415]:
+    - generic [ref=f48e416]:
+      - generic [ref=f48e417]:
+        - generic [ref=f48e418]:
+          - strong [ref=f48e420]: (주)위케티 인터내셔널
+          - generic [ref=f48e421]: ·
+          - generic [ref=f48e422]: 대표 박위케
+          - generic [ref=f48e423]: ·
+          - generic [ref=f48e424]: 사업자등록번호 739-81-01940
+          - generic [ref=f48e425]: ·
+          - generic [ref=f48e426]: 통신판매 2026-서울종로-0562호
+          - generic [ref=f48e427]: ·
+          - generic [ref=f48e428]: 서울 종로구 북촌로 42 WICKETA 타워 4층
+        - generic [ref=f48e429]:
+          - generic [ref=f48e430]:
+            - strong [ref=f48e431]: CS
+            - text: 02-1800-4320 (평일 09:30~17:30)
+          - generic [ref=f48e432]: ·
+          - generic [ref=f48e433]: order@wicketa.com
+      - generic [ref=f48e434]:
+        - generic [ref=f48e435]:
+          - link "이용약관" [ref=f48e436] [cursor=pointer]:
+            - /url: "#hero-section"
+          - generic [ref=f48e437]: "|"
+          - link "개인정보처리방침" [ref=f48e438] [cursor=pointer]:
+            - /url: "#hero-section"
+          - generic [ref=f48e439]: "|"
+          - link "B2B 제휴안내" [ref=f48e440] [cursor=pointer]:
+            - /url: "#flagship-section"
+          - generic [ref=f48e441]: "|"
+          - generic [ref=f48e442]: 에스크로 구매안전서비스 가입
+        - generic [ref=f48e443]:
+          - link "Instagram" [ref=f48e444] [cursor=pointer]:
+            - /url: https://instagram.com
+          - link "KakaoTalk" [ref=f48e445] [cursor=pointer]:
+            - /url: https://pf.kakao.com
+          - generic [ref=f48e446]: "|"
+          - generic [ref=f48e447]: © WICKETA Corp. All Rights Reserved.
+  - complementary "빠른 실행 메뉴" [ref=f48e448]:
+    - button "맨 위로" [ref=f48e449] [cursor=pointer]:
+      - generic [ref=f48e450]: ↑
+    - button "🛍 장바구니 · 견적" [ref=f48e451] [cursor=pointer]:
+      - generic [ref=f48e452]: 🛍
+      - generic [ref=f48e453]: 장바구니 · 견적

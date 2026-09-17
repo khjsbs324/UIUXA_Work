@@ -1,0 +1,721 @@
+- generic [ref=f19e4]:
+  - generic [ref=f19e11]:
+    - generic [ref=f19e12]:
+      - generic [ref=f19e13]: UIUXA
+      - generic [ref=f19e14]:
+        - button "받은 편지함" [ref=f19e17] [cursor=pointer]
+        - link [ref=f19e21] [cursor=pointer]:
+          - /url: https://support.discord.com
+          - button "도움말" [ref=f19e22]
+    - generic [ref=f19e26]:
+      - generic [ref=f19e27]:
+        - navigation "서버 사이드바" [ref=f19e28]:
+          - tree [ref=f19e29]:
+            - generic [ref=f19e30]:
+              - treeitem "다이렉트 메시지 다이렉트 메시지" [level=1] [ref=f19e109] [cursor=pointer]:
+                - generic [ref=f19e110]: 다이렉트 메시지
+                - group "다이렉트 메시지" [ref=f19e114]:
+                  - generic [ref=f19e116]:
+                    - generic [ref=f19e120]:
+                      - treeitem "Midjourney Bot, 읽지 않은 메시지 2개" [level=2] [ref=f19e122]
+                      - generic:
+                        - generic [aria-hidden]: "2"
+                    - generic [ref=f19e124]: Midjourney Bot
+              - group "서버" [ref=f19e127]:
+                - generic [ref=f19e128]:
+                  - treeitem "UIUXA" [level=1] [selected] [ref=f19e138] [cursor=pointer]
+                  - generic [ref=f19e140]: UIUXA
+                - generic [ref=f19e141]:
+                  - treeitem "SBS김정훈팀장님의 서버" [level=1] [ref=f19e151] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=f19e153]: S김정훈팀장님의서버
+                  - generic [ref=f19e154]: SBS김정훈팀장님의 서버
+                - generic [ref=f19e155]:
+                  - treeitem "숨김배그" [level=1] [ref=f19e165] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=f19e167]: 숨김배그
+                  - generic [ref=f19e168]: 숨김배그
+                - generic [ref=f19e169]:
+                  - treeitem "김도밥" [level=1] [ref=f19e179] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=f19e181]: 김도밥
+                  - generic [ref=f19e182]: 김도밥
+                - generic [ref=f19e183]:
+                  - generic [ref=f19e188]:
+                    - treeitem "멘션 119개, Midjourney, 음성 통화가 활성화" [level=1] [ref=f19e193] [cursor=pointer]
+                    - generic: "119"
+                  - generic [ref=f19e195]:
+                    - generic:
+                      - generic:
+                        - img "인증됨"
+                        - generic:
+                          - generic:
+                            - generic: 커뮤니티 서버
+                            - generic: 인증됨
+                            - generic: 누구나 이 서버에 참가할 수 있어요.
+                          - generic:
+                            - generic: 레벨 3
+                            - generic: 부스트 251번
+                        - generic: Midjourney
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - img "mantou1212"
+              - treeitem "서버 추가하기" [level=1] [ref=f19e202] [cursor=pointer]
+              - treeitem "찾기" [level=1] [ref=f19e213] [cursor=pointer]
+              - treeitem "앱 다운로드" [level=1] [ref=f19e224] [cursor=pointer]
+        - navigation "UIUXA (서버)" [ref=f19e227]:
+          - generic [ref=f19e230]:
+            - button "UIUXA, 서버 활동" [ref=f19e231] [cursor=pointer]:
+              - heading "UIUXA" [level=2] [ref=f19e233]
+            - button "서버에 초대하기" [ref=f19e238] [cursor=pointer]
+          - heading "채널" [level=2] [ref=f19e243]
+          - list "채널" [ref=f19e245]:
+            - listitem [ref=f19e247]:
+              - generic [ref=f19e248]:
+                - button "이벤트"
+                - generic [aria-hidden] [ref=f19e253] [cursor=pointer]: 이벤트
+            - listitem [ref=f19e254]:
+              - generic [ref=f19e255]:
+                - button "서버 부스트"
+                - generic [aria-hidden] [ref=f19e260] [cursor=pointer]: 서버 부스트
+            - listitem [ref=f19e262]:
+              - generic [ref=f19e263] [cursor=pointer]:
+                - button "정보 (카테고리)" [expanded] [ref=f19e264]:
+                  - heading "정보" [level=3] [ref=f19e265]
+                - generic [ref=f19e269]:
+                  - button "채널 만들기" [ref=f19e270]
+                  - generic [ref=f19e273]: 채널 만들기
+            - listitem [ref=f19e274]:
+              - link "강의준비 (채팅 채널)" [ref=f19e277] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550041524023336981
+                - generic [ref=f19e278]:
+                  - img "텍스트 icon" [ref=f19e279]
+                  - generic [ref=f19e282]: 텍스트
+                  - generic [aria-hidden] [ref=f19e283]: 강의준비
+                  - generic:
+                    - generic [ref=f19e284]: 채널로 초대하기
+                    - generic [ref=f19e285]: 채널 편집
+            - listitem [ref=f19e286]:
+              - link "에이전트 (채팅 채널)" [ref=f19e289] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550049388406116372
+                - generic [ref=f19e290]:
+                  - img "텍스트 icon" [ref=f19e291]
+                  - generic [ref=f19e294]: 텍스트
+                  - generic [aria-hidden] [ref=f19e295]: 에이전트
+                  - generic:
+                    - generic [ref=f19e296]: 채널로 초대하기
+                    - generic [ref=f19e297]: 채널 편집
+            - listitem [ref=f19e298]:
+              - link "공지 (채팅 채널)" [ref=f19e301] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550041524023336982
+                - generic [ref=f19e302]:
+                  - img "텍스트 icon" [ref=f19e303]
+                  - generic [ref=f19e306]: 텍스트
+                  - generic [aria-hidden] [ref=f19e307]: 공지
+                  - generic:
+                    - generic [ref=f19e308]: 채널로 초대하기
+                    - generic [ref=f19e309]: 채널 편집
+            - listitem [ref=f19e310]:
+              - link "자료 (채팅 채널)" [ref=f19e313] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550041524023336983
+                - generic [ref=f19e314]:
+                  - img "텍스트 icon" [ref=f19e315]
+                  - generic [ref=f19e318]: 텍스트
+                  - generic [aria-hidden] [ref=f19e319]: 자료
+                  - generic:
+                    - generic [ref=f19e320]: 채널로 초대하기
+                    - generic [ref=f19e321]: 채널 편집
+            - listitem [ref=f19e322]:
+              - generic [ref=f19e323] [cursor=pointer]:
+                - button "채팅 채널 (카테고리)" [expanded] [ref=f19e324]:
+                  - heading "채팅 채널" [level=3] [ref=f19e325]
+                - generic [ref=f19e329]:
+                  - button "채널 만들기" [ref=f19e330]
+                  - generic [ref=f19e333]: 채널 만들기
+            - listitem [ref=f19e334]:
+              - link "단체 (채팅 채널)" [ref=f19e337] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550041524023336985
+                - generic [ref=f19e338]:
+                  - img "텍스트 icon" [ref=f19e339]
+                  - generic [ref=f19e342]: 텍스트
+                  - generic [aria-hidden] [ref=f19e343]: 단체
+                  - generic:
+                    - generic [ref=f19e344]: 채널로 초대하기
+                    - generic [ref=f19e345]: 채널 편집
+            - listitem [ref=f19e346]:
+              - link "강민경 (채팅 채널), 비공개 채널(잠김)" [ref=f19e349] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550041524023336986
+                - generic [ref=f19e350]:
+                  - img "텍스트 (제한) icon" [ref=f19e351]
+                  - generic [ref=f19e355]: 텍스트 (제한)
+                  - generic [aria-hidden] [ref=f19e356]: 강민경
+                  - generic:
+                    - generic [ref=f19e357]: 채널로 초대하기
+                    - generic [ref=f19e358]: 채널 편집
+            - listitem [ref=f19e359]:
+              - link "박주연 (채팅 채널), 비공개 채널(잠김)" [ref=f19e362] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550042859443593337
+                - generic [ref=f19e363]:
+                  - img "텍스트 (제한) icon" [ref=f19e364]
+                  - generic [ref=f19e368]: 텍스트 (제한)
+                  - generic [aria-hidden] [ref=f19e369]: 박주연
+                  - generic:
+                    - generic [ref=f19e370]: 채널로 초대하기
+                    - generic [ref=f19e371]: 채널 편집
+            - listitem [ref=f19e372]:
+              - link "박찬미 (채팅 채널), 비공개 채널(잠김)" [ref=f19e375] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550041524023336987
+                - generic [ref=f19e376]:
+                  - img "텍스트 (제한) icon" [ref=f19e377]
+                  - generic [ref=f19e381]: 텍스트 (제한)
+                  - generic [aria-hidden] [ref=f19e382]: 박찬미
+                  - generic:
+                    - generic [ref=f19e383]: 채널로 초대하기
+                    - generic [ref=f19e384]: 채널 편집
+            - listitem [ref=f19e385]:
+              - link "이은경 (채팅 채널), 비공개 채널(잠김)" [ref=f19e388] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550043079048958013
+                - generic [ref=f19e389]:
+                  - img "텍스트 (제한) icon" [ref=f19e390]
+                  - generic [ref=f19e394]: 텍스트 (제한)
+                  - generic [aria-hidden] [ref=f19e395]: 이은경
+                  - generic:
+                    - generic [ref=f19e396]: 채널로 초대하기
+                    - generic [ref=f19e397]: 채널 편집
+            - listitem [ref=f19e398]:
+              - link "이은수 (채팅 채널), 비공개 채널(잠김)" [ref=f19e401] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550043114926768159
+                - generic [ref=f19e402]:
+                  - img "텍스트 (제한) icon" [ref=f19e403]
+                  - generic [ref=f19e407]: 텍스트 (제한)
+                  - generic [aria-hidden] [ref=f19e408]: 이은수
+                  - generic:
+                    - generic [ref=f19e409]: 채널로 초대하기
+                    - generic [ref=f19e410]: 채널 편집
+            - listitem [ref=f19e411]:
+              - link "이지희 (채팅 채널), 비공개 채널(잠김)" [ref=f19e414] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550043163035701369
+                - generic [ref=f19e415]:
+                  - img "텍스트 (제한) icon" [ref=f19e416]
+                  - generic [ref=f19e420]: 텍스트 (제한)
+                  - generic [aria-hidden] [ref=f19e421]: 이지희
+                  - generic:
+                    - generic [ref=f19e422]: 채널로 초대하기
+                    - generic [ref=f19e423]: 채널 편집
+            - listitem [ref=f19e424]:
+              - link "임연우 (채팅 채널), 비공개 채널(잠김)" [ref=f19e427] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550043253410373652
+                - generic [ref=f19e428]:
+                  - img "텍스트 (제한) icon" [ref=f19e429]
+                  - generic [ref=f19e433]: 텍스트 (제한)
+                  - generic [aria-hidden] [ref=f19e434]: 임연우
+                  - generic:
+                    - generic [ref=f19e435]: 채널로 초대하기
+                    - generic [ref=f19e436]: 채널 편집
+            - listitem [ref=f19e437]:
+              - link "최지혜 (채팅 채널), 비공개 채널(잠김)" [ref=f19e440] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550043359240790026
+                - generic [ref=f19e441]:
+                  - img "텍스트 (제한) icon" [ref=f19e442]
+                  - generic [ref=f19e446]: 텍스트 (제한)
+                  - generic [aria-hidden] [ref=f19e447]: 최지혜
+                  - generic:
+                    - generic [ref=f19e448]: 채널로 초대하기
+                    - generic [ref=f19e449]: 채널 편집
+            - listitem [ref=f19e450]:
+              - link "허지민 (채팅 채널), 비공개 채널(잠김)" [ref=f19e453] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550043482377420800
+                - generic [ref=f19e454]:
+                  - img "텍스트 (제한) icon" [ref=f19e455]
+                  - generic [ref=f19e459]: 텍스트 (제한)
+                  - generic [aria-hidden] [ref=f19e460]: 허지민
+                  - generic:
+                    - generic [ref=f19e461]: 채널로 초대하기
+                    - generic [ref=f19e462]: 채널 편집
+            - listitem [ref=f19e463]:
+              - generic [ref=f19e464] [cursor=pointer]:
+                - button "포트폴리오 (카테고리)" [expanded] [ref=f19e465]:
+                  - heading "포트폴리오" [level=3] [ref=f19e466]
+                - generic [ref=f19e470]:
+                  - button "채널 만들기" [ref=f19e471]
+                  - generic [ref=f19e474]: 채널 만들기
+            - listitem [ref=f19e475]:
+              - link "강민경 (채팅 채널), 비공개 채널(잠김)" [ref=f19e478] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550062820702560296
+                - generic [ref=f19e479]:
+                  - img "텍스트 (제한) icon" [ref=f19e480]
+                  - generic [ref=f19e484]: 텍스트 (제한)
+                  - generic [aria-hidden] [ref=f19e485]: 강민경
+                  - generic:
+                    - generic [ref=f19e486]: 채널로 초대하기
+                    - generic [ref=f19e487]: 채널 편집
+            - listitem [ref=f19e488]:
+              - link "박주연 (채팅 채널), 비공개 채널(잠김)" [ref=f19e491] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550062872690950156
+                - generic [ref=f19e492]:
+                  - img "텍스트 (제한) icon" [ref=f19e493]
+                  - generic [ref=f19e497]: 텍스트 (제한)
+                  - generic [aria-hidden] [ref=f19e498]: 박주연
+                  - generic:
+                    - generic [ref=f19e499]: 채널로 초대하기
+                    - generic [ref=f19e500]: 채널 편집
+            - listitem [ref=f19e501]:
+              - link "박찬미 (채팅 채널), 비공개 채널(잠김)" [ref=f19e504] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550063460606410792
+                - generic [ref=f19e505]:
+                  - img "텍스트 (제한) icon" [ref=f19e506]
+                  - generic [ref=f19e510]: 텍스트 (제한)
+                  - generic [aria-hidden] [ref=f19e511]: 박찬미
+                  - generic:
+                    - generic [ref=f19e512]: 채널로 초대하기
+                    - generic [ref=f19e513]: 채널 편집
+            - listitem [ref=f19e514]:
+              - link "이은경 (채팅 채널), 비공개 채널(잠김)" [ref=f19e517] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550063572220903434
+                - generic [ref=f19e518]:
+                  - img "텍스트 (제한) icon" [ref=f19e519]
+                  - generic [ref=f19e523]: 텍스트 (제한)
+                  - generic [aria-hidden] [ref=f19e524]: 이은경
+                  - generic:
+                    - generic [ref=f19e525]: 채널로 초대하기
+                    - generic [ref=f19e526]: 채널 편집
+            - listitem [ref=f19e527]:
+              - link "이은수 (채팅 채널), 비공개 채널(잠김)" [ref=f19e530] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550063617108480060
+                - generic [ref=f19e531]:
+                  - img "텍스트 (제한) icon" [ref=f19e532]
+                  - generic [ref=f19e536]: 텍스트 (제한)
+                  - generic [aria-hidden] [ref=f19e537]: 이은수
+                  - generic:
+                    - generic [ref=f19e538]: 채널로 초대하기
+                    - generic [ref=f19e539]: 채널 편집
+            - listitem [ref=f19e540]:
+              - link "이지희 (채팅 채널), 비공개 채널(잠김)" [ref=f19e543] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550063659798110238
+                - generic [ref=f19e544]:
+                  - img "텍스트 (제한) icon" [ref=f19e545]
+                  - generic [ref=f19e549]: 텍스트 (제한)
+                  - generic [aria-hidden] [ref=f19e550]: 이지희
+                  - generic:
+                    - generic [ref=f19e551]: 채널로 초대하기
+                    - generic [ref=f19e552]: 채널 편집
+            - listitem [ref=f19e553]:
+              - link "임연우 (채팅 채널), 비공개 채널(잠김)" [ref=f19e556] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550063704765239386
+                - generic [ref=f19e557]:
+                  - img "텍스트 (제한) icon" [ref=f19e558]
+                  - generic [ref=f19e562]: 텍스트 (제한)
+                  - generic [aria-hidden] [ref=f19e563]: 임연우
+                  - generic [ref=f19e564]:
+                    - button "채널로 초대하기" [ref=f19e566]
+                    - generic [ref=f19e570]: 채널로 초대하기
+                    - button "채널 편집" [ref=f19e572]
+                    - generic [ref=f19e575]: 채널 편집
+            - listitem [ref=f19e576]:
+              - link "최지혜 (채팅 채널), 비공개 채널(잠김)" [ref=f19e579] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550063752001355877
+                - generic [ref=f19e580]:
+                  - img "텍스트 (제한) icon" [ref=f19e581]
+                  - generic [ref=f19e585]: 텍스트 (제한)
+                  - generic [aria-hidden] [ref=f19e586]: 최지혜
+                  - generic:
+                    - generic [ref=f19e587]: 채널로 초대하기
+                    - generic [ref=f19e588]: 채널 편집
+            - listitem [ref=f19e589]:
+              - link "허지민 (채팅 채널), 비공개 채널(잠김)" [ref=f19e592] [cursor=pointer]:
+                - /url: /channels/1550041523226411038/1550063822536966255
+                - generic [ref=f19e593]:
+                  - img "텍스트 (제한) icon" [ref=f19e594]
+                  - generic [ref=f19e598]: 텍스트 (제한)
+                  - generic [aria-hidden] [ref=f19e599]: 허지민
+                  - generic:
+                    - generic [ref=f19e600]: 채널로 초대하기
+                    - generic [ref=f19e601]: 채널 편집
+            - listitem [ref=f19e602]:
+              - generic [ref=f19e603] [cursor=pointer]:
+                - button "음성 채널 (카테고리)" [expanded] [ref=f19e604]:
+                  - heading "음성 채널" [level=3] [ref=f19e605]
+                - generic [ref=f19e609]:
+                  - button "채널 만들기" [ref=f19e610]
+                  - generic [ref=f19e613]: 채널 만들기
+            - listitem [ref=f19e614]:
+              - button "⛔⛔ (음성 채널)" [ref=f19e618] [cursor=pointer]:
+                - generic [ref=f19e619]:
+                  - img "음성 icon" [ref=f19e620]
+                  - generic [ref=f19e624]: 음성
+                  - generic [aria-hidden] [ref=f19e625]: ⛔⛔
+                  - generic:
+                    - generic [ref=f19e626]: 채팅 열기
+                    - generic [ref=f19e627]: 음성으로 초대하기
+                    - generic [ref=f19e628]: 채널 편집
+        - separator "Resize Sidebar" [ref=f19e75]
+        - region "사용자 상태 및 설정" [ref=f19e76]:
+          - generic [ref=f19e629]:
+            - generic [ref=f19e630] [cursor=pointer]:
+              - button "프로필 및 상태 관리"
+              - generic [ref=f19e633]:
+                - generic [ref=f19e634]: 김혜지
+                - generic [ref=f19e638]:
+                  - generic: gimhyeji3907
+                  - generic: 오프라인 표시
+            - generic [ref=f19e639]:
+              - generic [ref=f19e640]:
+                - switch "음소거" [checked] [ref=f19e641] [cursor=pointer]
+                - generic [ref=f19e662]: 음소거 해제
+                - button "입력 옵션" [ref=f19e663] [cursor=pointer]
+              - generic [ref=f19e667]:
+                - switch "헤드셋 음소거" [ref=f19e668] [cursor=pointer]
+                - button "출력 옵션" [ref=f19e680] [cursor=pointer]
+              - button "사용자 설정" [ref=f19e684] [cursor=pointer]
+      - generic [ref=f19e694]:
+        - region "채널 헤더" [ref=f19e696]:
+          - generic [ref=f19e697]:
+            - generic [ref=f19e698]:
+              - generic [ref=f19e703]: 채팅 채널
+              - 'heading "UIUXA: 임연우" [level=1] [ref=f19e705]':
+                - generic [ref=f19e706]: "UIUXA:"
+                - text: 임연우
+            - generic [ref=f19e707]:
+              - button "스레드" [ref=f19e708] [cursor=pointer]
+              - button "알림 설정" [ref=f19e711] [cursor=pointer]
+              - button "고정된 메시지" [ref=f19e714] [cursor=pointer]
+              - button "멤버 목록 표시하기" [ref=f19e717] [cursor=pointer]
+              - generic [ref=f19e722]:
+                - combobox "UIUXA 검색" [ref=f19e723]
+                - button [aria-hidden] [ref=f19e725]
+        - main "임연우 (채널)" [ref=f19e732]:
+          - heading "임연우 채팅" [level=2] [ref=f19e734]
+          - group [ref=f19e736]:
+            - list "임연우의 메시지" [ref=f19e738]:
+              - generic [ref=f19e739]:
+                - heading [level=3] [aria-hidden] [ref=f19e744]: "#임연우에 오신 걸 환영합니다!"
+                - generic [ref=f19e745]:
+                  - strong [ref=f19e746]: 비공개
+                  - text: "채널 #임연우의 시작이에요."
+                - generic [ref=f19e747]:
+                  - button "멤버 또는 역할 추가" [ref=f19e748] [cursor=pointer]
+                  - button "채널 편집" [ref=f19e754] [cursor=pointer]
+                - generic [ref=f19e761]:
+                  - img "김혜지" [ref=f19e762]
+                  - generic [ref=f19e763]: 김혜지
+                  - generic [ref=f19e764]: (나만 이 채널을 볼 수 있어요)
+              - separator "2026년 9월 17일"
+              - listitem [ref=f19e1087]:
+                - article [ref=f19e1533]:
+                  - generic [ref=f19e1089]:
+                    - img [aria-hidden] [ref=f19e1090] [cursor=pointer]
+                    - heading [level=3] [ref=f19e1091]:
+                      - button "김혜지" [ref=f19e1093]
+                      - generic [ref=f19e1553]:
+                        - time [ref=f19e1555]:
+                          - generic [aria-hidden] [ref=f19e1556]: —
+                          - text: 오후 6:10
+                        - generic [ref=f19e1557]: 2026년 9월 17일 목요일 오후 6:10
+                  - generic [ref=f19e1095]:
+                    - generic [ref=f19e1097]:
+                      - generic [ref=f19e1098]:
+                        - code [ref=f19e1101]:
+                          - generic [ref=f19e1102]: <!DOCTYPE html>
+                          - generic [ref=f19e1103]: <html lang="ko">
+                          - generic [ref=f19e1104]: <head>
+                          - generic [ref=f19e1105]: <meta charset="UTF-8">
+                          - generic [ref=f19e1106]: <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                          - generic [ref=f19e1107]: <title>
+                          - text: SEUMIM 통합 마스터 와이어프레임 스튜디오 (Master Interactive Wireframe)
+                          - generic [ref=f19e1108]: </title>
+                          - text: ... (10KB 남음)
+                        - group "일반 텍스트 파일 미리 보기 컨트롤" [ref=f19e1109]:
+                          - generic [ref=f19e1110]:
+                            - button "확장 (614줄 초과)" [ref=f19e1111] [cursor=pointer]
+                            - generic [ref=f19e1116]: 확장 (614줄 초과)
+                          - generic [ref=f19e1117]:
+                            - generic [ref=f19e1118]:
+                              - generic [ref=f19e1119]: 와이어프레임_시안1.html
+                              - generic [ref=f19e1120]: 와이어프레임_시안1.html (60KB)
+                            - generic [ref=f19e1121]: 60KB
+                          - button "언어 변경" [ref=f19e1122] [cursor=pointer]
+                          - button "파일 전체 보기" [ref=f19e1125] [cursor=pointer]
+                          - button "기타" [ref=f19e1128] [cursor=pointer]
+                      - generic [ref=f19e1131]:
+                        - button "첨부 파일 수정" [ref=f19e1132] [cursor=pointer]
+                        - generic [ref=f19e1135]: 첨부 파일 수정
+                        - button "메시지 첨부 파일 제거" [ref=f19e1136] [cursor=pointer]
+                        - generic [ref=f19e1140]: 삭제
+                    - generic [ref=f19e1142]:
+                      - generic [ref=f19e1143]:
+                        - code [ref=f19e1146]:
+                          - generic [ref=f19e1147]: <!DOCTYPE html>
+                          - generic [ref=f19e1148]: <html lang="ko">
+                          - generic [ref=f19e1149]: <head>
+                          - generic [ref=f19e1150]: <meta charset="UTF-8">
+                          - generic [ref=f19e1151]: <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                          - generic [ref=f19e1152]: <title>
+                          - text: SEUMIM (스밈) - 0.1mm 에르고 맞춤 코어웨어 & 체형 교정 플랫폼
+                          - generic [ref=f19e1153]: </title>
+                          - text: ... (4KB 남음)
+                        - group "일반 텍스트 파일 미리 보기 컨트롤" [ref=f19e1154]:
+                          - generic [ref=f19e1155]:
+                            - button "확장 (746줄 초과)" [ref=f19e1156] [cursor=pointer]
+                            - generic [ref=f19e1161]: 확장 (746줄 초과)
+                          - generic [ref=f19e1162]:
+                            - generic [ref=f19e1163]:
+                              - generic [ref=f19e1164]: 와이어프레임_시안2.html
+                              - generic [ref=f19e1165]: 와이어프레임_시안2.html (54KB)
+                            - generic [ref=f19e1166]: 54KB
+                          - button "언어 변경" [ref=f19e1167] [cursor=pointer]
+                          - button "파일 전체 보기" [ref=f19e1170] [cursor=pointer]
+                          - button "기타" [ref=f19e1173] [cursor=pointer]
+                      - generic [ref=f19e1176]:
+                        - button "첨부 파일 수정" [ref=f19e1177] [cursor=pointer]
+                        - generic [ref=f19e1180]: 첨부 파일 수정
+                        - button "메시지 첨부 파일 제거" [ref=f19e1181] [cursor=pointer]
+                        - generic [ref=f19e1185]: 삭제
+                    - generic [ref=f19e1187]:
+                      - generic [ref=f19e1188]:
+                        - code [ref=f19e1191]:
+                          - generic [ref=f19e1192]: <!DOCTYPE html>
+                          - generic [ref=f19e1193]: <html lang="ko">
+                          - generic [ref=f19e1194]: <head>
+                          - generic [ref=f19e1195]: <meta charset="UTF-8">
+                          - generic [ref=f19e1196]: <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                          - generic [ref=f19e1197]: <title>
+                          - text: SEUMIM (스밈) - 0.1mm 에르고 맞춤 코어웨어 & 체형 교정 플랫폼 (와이어프레임_병합)
+                          - generic [ref=f19e1198]: </title>
+                        - group "일반 텍스트 파일 미리 보기 컨트롤" [ref=f19e1199]:
+                          - generic [ref=f19e1200]:
+                            - button "확장 (688줄)" [ref=f19e1201] [cursor=pointer]
+                            - generic [ref=f19e1206]: 확장 (688줄)
+                          - generic [ref=f19e1207]:
+                            - generic [ref=f19e1208]:
+                              - generic [ref=f19e1209]: 와이어프레임_시안3.html
+                              - generic [ref=f19e1210]: 와이어프레임_시안3.html (48KB)
+                            - generic [ref=f19e1211]: 48KB
+                          - button "언어 변경" [ref=f19e1212] [cursor=pointer]
+                          - button "파일 전체 보기" [ref=f19e1215] [cursor=pointer]
+                          - button "기타" [ref=f19e1218] [cursor=pointer]
+                      - generic [ref=f19e1221]:
+                        - button "첨부 파일 수정" [ref=f19e1222] [cursor=pointer]
+                        - generic [ref=f19e1225]: 첨부 파일 수정
+                        - button "메시지 첨부 파일 제거" [ref=f19e1226] [cursor=pointer]
+                        - generic [ref=f19e1230]: 삭제
+                    - generic [ref=f19e1232]:
+                      - generic [ref=f19e1233]:
+                        - code [ref=f19e1236]:
+                          - generic [ref=f19e1237]: <!DOCTYPE html>
+                          - generic [ref=f19e1238]: <html lang="ko">
+                          - generic [ref=f19e1239]: <head>
+                          - generic [ref=f19e1240]: <meta charset="UTF-8">
+                          - generic [ref=f19e1241]: <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                          - generic [ref=f19e1242]: <title>
+                          - text: SEUMIM (스밈) - 0.1mm 에르고 테크 웰니스 체형 교정 플랫폼 (와이어프레임_병합)
+                          - generic [ref=f19e1243]: </title>
+                          - text: ... (58KB 남음)
+                        - group "일반 텍스트 파일 미리 보기 컨트롤" [ref=f19e1244]:
+                          - generic [ref=f19e1245]:
+                            - button "확장 (1,087줄 초과)" [ref=f19e1246] [cursor=pointer]
+                            - generic [ref=f19e1251]: 확장 (1,087줄 초과)
+                          - generic [ref=f19e1252]:
+                            - generic [ref=f19e1253]:
+                              - generic [ref=f19e1254]: 와이어프레임_시안4.html
+                              - generic [ref=f19e1255]: 와이어프레임_시안4.html (108KB)
+                            - generic [ref=f19e1256]: 108KB
+                          - button "언어 변경" [ref=f19e1257] [cursor=pointer]
+                          - button "파일 전체 보기" [ref=f19e1260] [cursor=pointer]
+                          - button "기타" [ref=f19e1263] [cursor=pointer]
+                      - generic [ref=f19e1266]:
+                        - button "첨부 파일 수정" [ref=f19e1267] [cursor=pointer]
+                        - generic [ref=f19e1270]: 첨부 파일 수정
+                        - button "메시지 첨부 파일 제거" [ref=f19e1271] [cursor=pointer]
+                        - generic [ref=f19e1275]: 삭제
+                    - generic [ref=f19e1277]:
+                      - generic [ref=f19e1278]:
+                        - code [ref=f19e1281]:
+                          - generic [ref=f19e1282]: <!DOCTYPE html>
+                          - generic [ref=f19e1283]: <html lang="ko">
+                          - generic [ref=f19e1284]: <head>
+                          - generic [ref=f19e1285]: <meta charset="UTF-8">
+                          - generic [ref=f19e1286]: <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                          - generic [ref=f19e1287]: <title>
+                          - text: SEUMIM (스밈) - 0.1mm 에르고 테크 웰니스 체형 교정 플랫폼 (와이어프레임_병합)
+                          - generic [ref=f19e1288]: </title>
+                          - text: ... (89KB 남음)
+                        - group "일반 텍스트 파일 미리 보기 컨트롤" [ref=f19e1289]:
+                          - generic [ref=f19e1290]:
+                            - button "확장 (1,309줄 초과)" [ref=f19e1291] [cursor=pointer]
+                            - generic [ref=f19e1296]: 확장 (1,309줄 초과)
+                          - generic [ref=f19e1297]:
+                            - generic [ref=f19e1298]:
+                              - generic [ref=f19e1299]: 와이어프레임_서브_브랜드1.html
+                              - generic [ref=f19e1300]: 와이어프레임_서브_브랜드1.html (139KB)
+                            - generic [ref=f19e1301]: 139KB
+                          - button "언어 변경" [ref=f19e1302] [cursor=pointer]
+                          - button "파일 전체 보기" [ref=f19e1305] [cursor=pointer]
+                          - button "기타" [ref=f19e1308] [cursor=pointer]
+                      - generic [ref=f19e1311]:
+                        - button "첨부 파일 수정" [ref=f19e1312] [cursor=pointer]
+                        - generic [ref=f19e1315]: 첨부 파일 수정
+                        - button "메시지 첨부 파일 제거" [ref=f19e1316] [cursor=pointer]
+                        - generic [ref=f19e1320]: 삭제
+                    - generic [ref=f19e1322]:
+                      - generic [ref=f19e1323]:
+                        - code [ref=f19e1326]:
+                          - generic [ref=f19e1327]: <!DOCTYPE html>
+                          - generic [ref=f19e1328]: <html lang="ko">
+                          - generic [ref=f19e1329]: <head>
+                          - generic [ref=f19e1330]: <meta charset="UTF-8">
+                          - generic [ref=f19e1331]: <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                          - generic [ref=f19e1332]: <title>
+                          - text: SEUMIM (스밈) - 0.1mm 에르고 테크 웰니스 체형 교정 플랫폼 (와이어프레임_병합)
+                          - generic [ref=f19e1333]: </title>
+                          - text: ... (140KB 남음)
+                        - group "일반 텍스트 파일 미리 보기 컨트롤" [ref=f19e1334]:
+                          - generic [ref=f19e1335]:
+                            - button "확장 (1,499줄 초과)" [ref=f19e1336] [cursor=pointer]
+                            - generic [ref=f19e1341]: 확장 (1,499줄 초과)
+                          - generic [ref=f19e1342]:
+                            - generic [ref=f19e1343]:
+                              - generic [ref=f19e1344]: 와이어프레임_서브_브랜드2.html
+                              - generic [ref=f19e1345]: 와이어프레임_서브_브랜드2.html (190KB)
+                            - generic [ref=f19e1346]: 190KB
+                          - button "언어 변경" [ref=f19e1347] [cursor=pointer]
+                          - button "파일 전체 보기" [ref=f19e1350] [cursor=pointer]
+                          - button "기타" [ref=f19e1353] [cursor=pointer]
+                      - generic [ref=f19e1356]:
+                        - button "첨부 파일 수정" [ref=f19e1357] [cursor=pointer]
+                        - generic [ref=f19e1360]: 첨부 파일 수정
+                        - button "메시지 첨부 파일 제거" [ref=f19e1361] [cursor=pointer]
+                        - generic [ref=f19e1365]: 삭제
+                    - generic [ref=f19e1367]:
+                      - generic [ref=f19e1368]:
+                        - code [ref=f19e1371]:
+                          - generic [ref=f19e1372]: <!DOCTYPE html>
+                          - generic [ref=f19e1373]: <html lang="ko">
+                          - generic [ref=f19e1374]: <head>
+                          - generic [ref=f19e1375]: <meta charset="UTF-8">
+                          - generic [ref=f19e1376]: <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                          - generic [ref=f19e1377]: <title>
+                          - text: SEUMIM (스밈) - 0.1mm 에르고 테크 웰니스 체형 교정 플랫폼 (와이어프레임_병합)
+                          - generic [ref=f19e1378]: </title>
+                          - text: ... (180KB 남음)
+                        - group "일반 텍스트 파일 미리 보기 컨트롤" [ref=f19e1379]:
+                          - generic [ref=f19e1380]:
+                            - button "확장 (1,483줄 초과)" [ref=f19e1381] [cursor=pointer]
+                            - generic [ref=f19e1386]: 확장 (1,483줄 초과)
+                          - generic [ref=f19e1387]:
+                            - generic [ref=f19e1388]:
+                              - generic [ref=f19e1389]: 와이어프레임_서브_브랜드3.html
+                              - generic [ref=f19e1390]: 와이어프레임_서브_브랜드3.html (230KB)
+                            - generic [ref=f19e1391]: 230KB
+                          - button "언어 변경" [ref=f19e1392] [cursor=pointer]
+                          - button "파일 전체 보기" [ref=f19e1395] [cursor=pointer]
+                          - button "기타" [ref=f19e1398] [cursor=pointer]
+                      - generic [ref=f19e1401]:
+                        - button "첨부 파일 수정" [ref=f19e1402] [cursor=pointer]
+                        - generic [ref=f19e1405]: 첨부 파일 수정
+                        - button "메시지 첨부 파일 제거" [ref=f19e1406] [cursor=pointer]
+                        - generic [ref=f19e1410]: 삭제
+                    - generic [ref=f19e1412]:
+                      - generic [ref=f19e1413]:
+                        - code [ref=f19e1416]:
+                          - generic [ref=f19e1417]: <!doctype html>
+                          - generic [ref=f19e1418]: <html lang="ko">
+                          - generic [ref=f19e1419]: <head>
+                          - generic [ref=f19e1420]: <meta charset="utf-8">
+                          - generic [ref=f19e1421]: <meta name="viewport" content="width=device-width, initial-scale=1">
+                          - generic [ref=f19e1422]: <title>
+                          - text: SEUMIM 스밈 — 정적 디자인 스타일 실험
+                          - generic [ref=f19e1423]: </title>
+                        - group "일반 텍스트 파일 미리 보기 컨트롤" [ref=f19e1424]:
+                          - generic [ref=f19e1425]:
+                            - button "확장 (403줄)" [ref=f19e1426] [cursor=pointer]
+                            - generic [ref=f19e1431]: 확장 (403줄)
+                          - generic [ref=f19e1432]:
+                            - generic [ref=f19e1433]:
+                              - generic [ref=f19e1434]: 강사_제작예시.html
+                              - generic [ref=f19e1435]: 강사_제작예시.html (29KB)
+                            - generic [ref=f19e1436]: 29KB
+                          - button "언어 변경" [ref=f19e1437] [cursor=pointer]
+                          - button "파일 전체 보기" [ref=f19e1440] [cursor=pointer]
+                          - button "기타" [ref=f19e1443] [cursor=pointer]
+                      - generic [ref=f19e1446]:
+                        - button "첨부 파일 수정" [ref=f19e1447] [cursor=pointer]
+                        - generic [ref=f19e1450]: 첨부 파일 수정
+                        - button "메시지 첨부 파일 제거" [ref=f19e1451] [cursor=pointer]
+                        - generic [ref=f19e1455]: 삭제
+                    - generic [ref=f19e1457]:
+                      - generic [ref=f19e1458]:
+                        - code [ref=f19e1535]:
+                          - generic [ref=f19e1536]: <!DOCTYPE html>
+                          - generic [ref=f19e1537]: <html lang="ko">
+                          - generic [ref=f19e1538]: <head>
+                          - generic [ref=f19e1539]: <meta charset="UTF-8">
+                          - generic [ref=f19e1540]: <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                          - generic [ref=f19e1541]: <title>
+                          - text: SEUMIM (스밈) - 디자인 분석 와이어프레임 (Design Analysis Wireframe)
+                          - generic [ref=f19e1542]: </title>
+                          - text: ... (188KB 남음)
+                        - group "일반 텍스트 파일 미리 보기 컨트롤" [ref=f19e1464]:
+                          - generic [ref=f19e1543]:
+                            - button "확장 (1,427줄 초과)" [ref=f19e1544] [cursor=pointer]
+                            - generic [ref=f19e1549]: 확장 (1,427줄 초과)
+                          - generic [ref=f19e1465]:
+                            - generic [ref=f19e1466]:
+                              - generic [ref=f19e1467]: 웹디자인_메인_시안1.html
+                              - generic [ref=f19e1468]: 웹디자인_메인_시안1.html (238KB)
+                            - generic [ref=f19e1469]: 238KB
+                          - button "언어 변경" [ref=f19e1470] [cursor=pointer]
+                          - button "파일 전체 보기" [ref=f19e1550] [cursor=pointer]
+                          - button "기타" [ref=f19e1473] [cursor=pointer]
+                      - generic [ref=f19e1476]:
+                        - button "첨부 파일 수정" [ref=f19e1477] [cursor=pointer]
+                        - generic [ref=f19e1480]: 첨부 파일 수정
+                        - button "메시지 첨부 파일 제거" [ref=f19e1481] [cursor=pointer]
+                        - generic [ref=f19e1485]: 삭제
+                    - generic [ref=f19e1487]:
+                      - generic [ref=f19e1488]:
+                        - code [ref=f19e1491]:
+                          - generic [ref=f19e1492]: <!DOCTYPE html>
+                          - generic [ref=f19e1493]: <html lang="ko">
+                          - generic [ref=f19e1494]: <head>
+                          - generic [ref=f19e1495]: <meta charset="UTF-8">
+                          - generic [ref=f19e1496]: <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                          - generic [ref=f19e1497]: <title>
+                          - text: SEUMIM (스밈) - 기본 와이어프레임 (Low-Fidelity Wireframe System)
+                          - generic [ref=f19e1498]: </title>
+                          - text: ... (231KB 남음)
+                        - group "일반 텍스트 파일 미리 보기 컨트롤" [ref=f19e1499]:
+                          - generic [ref=f19e1500]:
+                            - button "확장 (1,427줄 초과)" [ref=f19e1501] [cursor=pointer]
+                            - generic [ref=f19e1506]: 확장 (1,427줄 초과)
+                          - generic [ref=f19e1507]:
+                            - generic [ref=f19e1508]:
+                              - generic [ref=f19e1509]: 웹디자인_메인_시안1-1.html
+                              - generic [ref=f19e1510]: 웹디자인_메인_시안1-1.html (281KB)
+                            - generic [ref=f19e1511]: 281KB
+                          - button "언어 변경" [ref=f19e1512] [cursor=pointer]
+                          - button "파일 전체 보기" [ref=f19e1515] [cursor=pointer]
+                          - button "기타" [ref=f19e1518] [cursor=pointer]
+                      - generic [ref=f19e1521]:
+                        - button "첨부 파일 수정" [ref=f19e1522] [cursor=pointer]
+                        - generic [ref=f19e1525]: 첨부 파일 수정
+                        - button "메시지 첨부 파일 제거" [ref=f19e1526] [cursor=pointer]
+                        - generic [ref=f19e1530]: 삭제
+          - generic [ref=f19e770]:
+            - button "더 많은 메시지 옵션" [expanded] [ref=f19e772] [cursor=pointer]
+            - generic [ref=f19e777]:
+              - generic [aria-hidden]: "#임연우에 메시지 보내기"
+              - textbox "#임연우에 메시지 보내기" [ref=f19e778]
+            - generic [ref=f19e780]:
+              - generic [ref=f19e781]:
+                - button "선물 보내기" [ref=f19e782] [cursor=pointer]
+                - generic [ref=f19e798]: 친구를 업그레이드하세요! Nitro의 멋진 채팅 특전을 선물하세요.
+              - button "GIF 선택기 열기" [ref=f19e800] [cursor=pointer]
+              - generic [ref=f19e810]: GIF 보내기
+              - button "스티커 선택기 열기" [ref=f19e812] [cursor=pointer]
+              - button "이모지 추가" [ref=f19e822] [cursor=pointer]
+              - button "앱" [ref=f19e827] [cursor=pointer]
+  - menu "채널 동작" [active] [ref=f19e1559]:
+    - generic [ref=f19e1560]:
+      - menuitem "파일 업로드" [ref=f19e1561] [cursor=pointer]
+      - menuitem "스레드 만들기" [ref=f19e1569] [cursor=pointer]
+      - menuitem "투표 만들기" [ref=f19e1576] [cursor=pointer]
+      - menuitem "앱 사용" [ref=f19e1583] [cursor=pointer]

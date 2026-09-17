@@ -1,0 +1,760 @@
+- generic [ref=f17e11]:
+  - generic [ref=f17e12]:
+    - generic [ref=f17e13]: UIUXA
+    - generic [ref=f17e17]:
+      - button "받은 편지함" [ref=f17e20] [cursor=pointer]
+      - link [ref=f17e24] [cursor=pointer]:
+        - /url: https://support.discord.com
+        - button "도움말" [ref=f17e25]
+  - generic [ref=f17e29]:
+    - generic [ref=f17e30]:
+      - navigation "서버 사이드바" [ref=f17e31]:
+        - tree [ref=f17e32]:
+          - generic [ref=f17e33]:
+            - treeitem "다이렉트 메시지 다이렉트 메시지" [level=1] [ref=f17e42] [cursor=pointer]:
+              - generic [ref=f17e43]: 다이렉트 메시지
+              - group "다이렉트 메시지" [ref=f17e47]:
+                - generic [ref=f17e49]:
+                  - generic [ref=f17e53]:
+                    - treeitem "Midjourney Bot, 읽지 않은 메시지 2개" [level=2] [ref=f17e55]
+                    - generic:
+                      - generic [aria-hidden]: "2"
+                  - generic [ref=f17e57]: Midjourney Bot
+            - group "서버" [ref=f17e60]:
+              - generic [ref=f17e61]:
+                - treeitem "UIUXA" [level=1] [selected] [ref=f17e71] [cursor=pointer]
+                - generic [ref=f17e73]: UIUXA
+              - generic [ref=f17e74]:
+                - treeitem "SBS김정훈팀장님의 서버" [level=1] [ref=f17e84] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f17e86]: S김정훈팀장님의서버
+                - generic [ref=f17e87]: SBS김정훈팀장님의 서버
+              - generic [ref=f17e88]:
+                - treeitem "숨김배그" [level=1] [ref=f17e98] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f17e100]: 숨김배그
+                - generic [ref=f17e101]: 숨김배그
+              - generic [ref=f17e102]:
+                - treeitem "김도밥" [level=1] [ref=f17e112] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f17e114]: 김도밥
+                - generic [ref=f17e115]: 김도밥
+              - generic [ref=f17e116]:
+                - generic [ref=f17e121]:
+                  - treeitem "멘션 119개, Midjourney, 음성 통화가 활성화" [level=1] [ref=f17e126] [cursor=pointer]
+                  - generic: "119"
+                - generic [ref=f17e128]:
+                  - generic:
+                    - generic:
+                      - img "인증됨"
+                      - generic:
+                        - generic:
+                          - generic: 커뮤니티 서버
+                          - generic: 인증됨
+                          - generic: 누구나 이 서버에 참가할 수 있어요.
+                        - generic:
+                          - generic: 레벨 3
+                          - generic: 부스트 251번
+                      - generic: Midjourney
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img "mantou1212"
+            - treeitem "서버 추가하기" [level=1] [ref=f17e135] [cursor=pointer]
+            - treeitem "찾기" [level=1] [ref=f17e146] [cursor=pointer]
+            - treeitem "앱 다운로드" [level=1] [ref=f17e157] [cursor=pointer]
+      - navigation "UIUXA (서버)" [ref=f17e161]:
+        - generic [ref=f17e164]:
+          - button "UIUXA, 서버 활동" [ref=f17e165] [cursor=pointer]:
+            - heading "UIUXA" [level=2] [ref=f17e167]
+          - button "서버에 초대하기" [ref=f17e172] [cursor=pointer]
+        - heading "채널" [level=2] [ref=f17e177]
+        - list "채널" [ref=f17e179]:
+          - listitem [ref=f17e181]:
+            - generic [ref=f17e182]:
+              - button "이벤트"
+              - generic [aria-hidden] [ref=f17e187] [cursor=pointer]: 이벤트
+          - listitem [ref=f17e188]:
+            - generic [ref=f17e189]:
+              - button "서버 부스트"
+              - generic [aria-hidden] [ref=f17e194] [cursor=pointer]: 서버 부스트
+          - listitem [ref=f17e196]:
+            - generic [ref=f17e197] [cursor=pointer]:
+              - button "정보 (카테고리)" [expanded] [ref=f17e198]:
+                - heading "정보" [level=3] [ref=f17e199]
+              - generic [ref=f17e203]:
+                - button "채널 만들기" [ref=f17e204]
+                - generic [ref=f17e207]: 채널 만들기
+          - listitem [ref=f17e208]:
+            - link "강의준비 (채팅 채널)" [ref=f17e211] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550041524023336981
+              - generic [ref=f17e212]:
+                - img "텍스트 icon" [ref=f17e213]
+                - generic [ref=f17e216]: 텍스트
+                - generic [aria-hidden] [ref=f17e217]: 강의준비
+                - generic:
+                  - generic [ref=f17e218]: 채널로 초대하기
+                  - generic [ref=f17e219]: 채널 편집
+          - listitem [ref=f17e220]:
+            - link "에이전트 (채팅 채널)" [ref=f17e223] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550049388406116372
+              - generic [ref=f17e224]:
+                - img "텍스트 icon" [ref=f17e225]
+                - generic [ref=f17e228]: 텍스트
+                - generic [aria-hidden] [ref=f17e229]: 에이전트
+                - generic:
+                  - generic [ref=f17e230]: 채널로 초대하기
+                  - generic [ref=f17e231]: 채널 편집
+          - listitem [ref=f17e232]:
+            - link "공지 (채팅 채널)" [ref=f17e235] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550041524023336982
+              - generic [ref=f17e236]:
+                - img "텍스트 icon" [ref=f17e237]
+                - generic [ref=f17e240]: 텍스트
+                - generic [aria-hidden] [ref=f17e241]: 공지
+                - generic:
+                  - generic [ref=f17e242]: 채널로 초대하기
+                  - generic [ref=f17e243]: 채널 편집
+          - listitem [ref=f17e244]:
+            - link "자료 (채팅 채널)" [ref=f17e247] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550041524023336983
+              - generic [ref=f17e248]:
+                - img "텍스트 icon" [ref=f17e249]
+                - generic [ref=f17e252]: 텍스트
+                - generic [aria-hidden] [ref=f17e253]: 자료
+                - generic:
+                  - generic [ref=f17e254]: 채널로 초대하기
+                  - generic [ref=f17e255]: 채널 편집
+          - listitem [ref=f17e256]:
+            - generic [ref=f17e257] [cursor=pointer]:
+              - button "채팅 채널 (카테고리)" [expanded] [ref=f17e258]:
+                - heading "채팅 채널" [level=3] [ref=f17e259]
+              - generic [ref=f17e263]:
+                - button "채널 만들기" [ref=f17e264]
+                - generic [ref=f17e267]: 채널 만들기
+          - listitem [ref=f17e268]:
+            - link "단체 (채팅 채널)" [ref=f17e271] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550041524023336985
+              - generic [ref=f17e272]:
+                - img "텍스트 icon" [ref=f17e273]
+                - generic [ref=f17e276]: 텍스트
+                - generic [aria-hidden] [ref=f17e277]: 단체
+                - generic:
+                  - generic [ref=f17e278]: 채널로 초대하기
+                  - generic [ref=f17e279]: 채널 편집
+          - listitem [ref=f17e280]:
+            - link "강민경 (채팅 채널), 비공개 채널(잠김)" [ref=f17e283] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550041524023336986
+              - generic [ref=f17e284]:
+                - img "텍스트 (제한) icon" [ref=f17e285]
+                - generic [ref=f17e289]: 텍스트 (제한)
+                - generic [aria-hidden] [ref=f17e290]: 강민경
+                - generic:
+                  - generic [ref=f17e291]: 채널로 초대하기
+                  - generic [ref=f17e292]: 채널 편집
+          - listitem [ref=f17e293]:
+            - link "박주연 (채팅 채널), 비공개 채널(잠김)" [ref=f17e296] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550042859443593337
+              - generic [ref=f17e297]:
+                - img "텍스트 (제한) icon" [ref=f17e298]
+                - generic [ref=f17e302]: 텍스트 (제한)
+                - generic [aria-hidden] [ref=f17e303]: 박주연
+                - generic:
+                  - generic [ref=f17e304]: 채널로 초대하기
+                  - generic [ref=f17e305]: 채널 편집
+          - listitem [ref=f17e306]:
+            - link "박찬미 (채팅 채널), 비공개 채널(잠김)" [ref=f17e309] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550041524023336987
+              - generic [ref=f17e310]:
+                - img "텍스트 (제한) icon" [ref=f17e311]
+                - generic [ref=f17e315]: 텍스트 (제한)
+                - generic [aria-hidden] [ref=f17e316]: 박찬미
+                - generic:
+                  - generic [ref=f17e317]: 채널로 초대하기
+                  - generic [ref=f17e318]: 채널 편집
+          - listitem [ref=f17e319]:
+            - link "이은경 (채팅 채널), 비공개 채널(잠김)" [ref=f17e322] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550043079048958013
+              - generic [ref=f17e323]:
+                - img "텍스트 (제한) icon" [ref=f17e324]
+                - generic [ref=f17e328]: 텍스트 (제한)
+                - generic [aria-hidden] [ref=f17e329]: 이은경
+                - generic:
+                  - generic [ref=f17e330]: 채널로 초대하기
+                  - generic [ref=f17e331]: 채널 편집
+          - listitem [ref=f17e332]:
+            - link "이은수 (채팅 채널), 비공개 채널(잠김)" [ref=f17e335] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550043114926768159
+              - generic [ref=f17e336]:
+                - img "텍스트 (제한) icon" [ref=f17e337]
+                - generic [ref=f17e341]: 텍스트 (제한)
+                - generic [aria-hidden] [ref=f17e342]: 이은수
+                - generic:
+                  - generic [ref=f17e343]: 채널로 초대하기
+                  - generic [ref=f17e344]: 채널 편집
+          - listitem [ref=f17e345]:
+            - link "이지희 (채팅 채널), 비공개 채널(잠김)" [ref=f17e348] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550043163035701369
+              - generic [ref=f17e349]:
+                - img "텍스트 (제한) icon" [ref=f17e350]
+                - generic [ref=f17e354]: 텍스트 (제한)
+                - generic [aria-hidden] [ref=f17e355]: 이지희
+                - generic:
+                  - generic [ref=f17e356]: 채널로 초대하기
+                  - generic [ref=f17e357]: 채널 편집
+          - listitem [ref=f17e358]:
+            - link "임연우 (채팅 채널), 비공개 채널(잠김)" [ref=f17e361] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550043253410373652
+              - generic [ref=f17e362]:
+                - img "텍스트 (제한) icon" [ref=f17e363]
+                - generic [ref=f17e367]: 텍스트 (제한)
+                - generic [aria-hidden] [ref=f17e368]: 임연우
+                - generic:
+                  - generic [ref=f17e369]: 채널로 초대하기
+                  - generic [ref=f17e370]: 채널 편집
+          - listitem [ref=f17e371]:
+            - link "최지혜 (채팅 채널), 비공개 채널(잠김)" [ref=f17e374] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550043359240790026
+              - generic [ref=f17e375]:
+                - img "텍스트 (제한) icon" [ref=f17e376]
+                - generic [ref=f17e380]: 텍스트 (제한)
+                - generic [aria-hidden] [ref=f17e381]: 최지혜
+                - generic:
+                  - generic [ref=f17e382]: 채널로 초대하기
+                  - generic [ref=f17e383]: 채널 편집
+          - listitem [ref=f17e384]:
+            - link "허지민 (채팅 채널), 비공개 채널(잠김)" [ref=f17e387] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550043482377420800
+              - generic [ref=f17e388]:
+                - img "텍스트 (제한) icon" [ref=f17e389]
+                - generic [ref=f17e393]: 텍스트 (제한)
+                - generic [aria-hidden] [ref=f17e394]: 허지민
+                - generic:
+                  - generic [ref=f17e395]: 채널로 초대하기
+                  - generic [ref=f17e396]: 채널 편집
+          - listitem [ref=f17e397]:
+            - generic [ref=f17e398] [cursor=pointer]:
+              - button "포트폴리오 (카테고리)" [expanded] [ref=f17e399]:
+                - heading "포트폴리오" [level=3] [ref=f17e400]
+              - generic [ref=f17e404]:
+                - button "채널 만들기" [ref=f17e405]
+                - generic [ref=f17e408]: 채널 만들기
+          - listitem [ref=f17e409]:
+            - link "강민경 (채팅 채널), 비공개 채널(잠김)" [ref=f17e412] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550062820702560296
+              - generic [ref=f17e413]:
+                - img "텍스트 (제한) icon" [ref=f17e414]
+                - generic [ref=f17e418]: 텍스트 (제한)
+                - generic [aria-hidden] [ref=f17e419]: 강민경
+                - generic:
+                  - generic [ref=f17e420]: 채널로 초대하기
+                  - generic [ref=f17e421]: 채널 편집
+          - listitem [ref=f17e422]:
+            - link "박주연 (채팅 채널), 비공개 채널(잠김)" [ref=f17e425] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550062872690950156
+              - generic [ref=f17e426]:
+                - img "텍스트 (제한) icon" [ref=f17e427]
+                - generic [ref=f17e431]: 텍스트 (제한)
+                - generic [aria-hidden] [ref=f17e432]: 박주연
+                - generic:
+                  - generic [ref=f17e433]: 채널로 초대하기
+                  - generic [ref=f17e434]: 채널 편집
+          - listitem [ref=f17e435]:
+            - link "박찬미 (채팅 채널), 비공개 채널(잠김)" [ref=f17e438] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550063460606410792
+              - generic [ref=f17e439]:
+                - img "텍스트 (제한) icon" [ref=f17e440]
+                - generic [ref=f17e444]: 텍스트 (제한)
+                - generic [aria-hidden] [ref=f17e445]: 박찬미
+                - generic:
+                  - generic [ref=f17e446]: 채널로 초대하기
+                  - generic [ref=f17e447]: 채널 편집
+          - listitem [ref=f17e448]:
+            - link "이은경 (채팅 채널), 비공개 채널(잠김)" [ref=f17e451] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550063572220903434
+              - generic [ref=f17e452]:
+                - img "텍스트 (제한) icon" [ref=f17e453]
+                - generic [ref=f17e457]: 텍스트 (제한)
+                - generic [aria-hidden] [ref=f17e458]: 이은경
+                - generic:
+                  - generic [ref=f17e459]: 채널로 초대하기
+                  - generic [ref=f17e460]: 채널 편집
+          - listitem [ref=f17e461]:
+            - link "이은수 (채팅 채널), 비공개 채널(잠김)" [ref=f17e464] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550063617108480060
+              - generic [ref=f17e465]:
+                - img "텍스트 (제한) icon" [ref=f17e466]
+                - generic [ref=f17e470]: 텍스트 (제한)
+                - generic [aria-hidden] [ref=f17e471]: 이은수
+                - generic [ref=f17e472]:
+                  - button "채널로 초대하기" [ref=f17e474]
+                  - generic [ref=f17e478]: 채널로 초대하기
+                  - button "채널 편집" [ref=f17e480]
+                  - generic [ref=f17e483]: 채널 편집
+          - listitem [ref=f17e484]:
+            - link "이지희 (채팅 채널), 비공개 채널(잠김)" [ref=f17e487] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550063659798110238
+              - generic [ref=f17e488]:
+                - img "텍스트 (제한) icon" [ref=f17e489]
+                - generic [ref=f17e493]: 텍스트 (제한)
+                - generic [aria-hidden] [ref=f17e494]: 이지희
+                - generic:
+                  - generic [ref=f17e495]: 채널로 초대하기
+                  - generic [ref=f17e496]: 채널 편집
+          - listitem [ref=f17e497]:
+            - link "임연우 (채팅 채널), 비공개 채널(잠김)" [ref=f17e500] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550063704765239386
+              - generic [ref=f17e501]:
+                - img "텍스트 (제한) icon" [ref=f17e502]
+                - generic [ref=f17e506]: 텍스트 (제한)
+                - generic [aria-hidden] [ref=f17e507]: 임연우
+                - generic:
+                  - generic [ref=f17e508]: 채널로 초대하기
+                  - generic [ref=f17e509]: 채널 편집
+          - listitem [ref=f17e510]:
+            - link "최지혜 (채팅 채널), 비공개 채널(잠김)" [ref=f17e513] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550063752001355877
+              - generic [ref=f17e514]:
+                - img "텍스트 (제한) icon" [ref=f17e515]
+                - generic [ref=f17e519]: 텍스트 (제한)
+                - generic [aria-hidden] [ref=f17e520]: 최지혜
+                - generic:
+                  - generic [ref=f17e521]: 채널로 초대하기
+                  - generic [ref=f17e522]: 채널 편집
+          - listitem [ref=f17e523]:
+            - link "허지민 (채팅 채널), 비공개 채널(잠김)" [ref=f17e526] [cursor=pointer]:
+              - /url: /channels/1550041523226411038/1550063822536966255
+              - generic [ref=f17e527]:
+                - img "텍스트 (제한) icon" [ref=f17e528]
+                - generic [ref=f17e532]: 텍스트 (제한)
+                - generic [aria-hidden] [ref=f17e533]: 허지민
+                - generic:
+                  - generic [ref=f17e534]: 채널로 초대하기
+                  - generic [ref=f17e535]: 채널 편집
+          - listitem [ref=f17e536]:
+            - generic [ref=f17e537] [cursor=pointer]:
+              - button "음성 채널 (카테고리)" [expanded] [ref=f17e538]:
+                - heading "음성 채널" [level=3] [ref=f17e539]
+              - generic [ref=f17e543]:
+                - button "채널 만들기" [ref=f17e544]
+                - generic [ref=f17e547]: 채널 만들기
+          - listitem [ref=f17e548]:
+            - button "⛔⛔ (음성 채널)" [ref=f17e552] [cursor=pointer]:
+              - generic [ref=f17e553]:
+                - img "음성 icon" [ref=f17e554]
+                - generic [ref=f17e558]: 음성
+                - generic [aria-hidden] [ref=f17e559]: ⛔⛔
+                - generic:
+                  - generic [ref=f17e560]: 채팅 열기
+                  - generic [ref=f17e561]: 음성으로 초대하기
+                  - generic [ref=f17e562]: 채널 편집
+      - separator "Resize Sidebar" [ref=f17e563]
+      - region "사용자 상태 및 설정" [ref=f17e564]:
+        - generic [ref=f17e565]:
+          - generic [ref=f17e566] [cursor=pointer]:
+            - button "프로필 및 상태 관리"
+            - generic [ref=f17e569]:
+              - generic [ref=f17e570]: 김혜지
+              - generic [ref=f17e574]:
+                - generic: gimhyeji3907
+                - generic: 오프라인 표시
+          - generic [ref=f17e575]:
+            - generic [ref=f17e576]:
+              - switch "음소거" [checked] [ref=f17e577] [cursor=pointer]
+              - generic [ref=f17e598]: 음소거 해제
+              - button "입력 옵션" [ref=f17e599] [cursor=pointer]
+            - generic [ref=f17e603]:
+              - switch "헤드셋 음소거" [ref=f17e604] [cursor=pointer]
+              - button "출력 옵션" [ref=f17e616] [cursor=pointer]
+            - button "사용자 설정" [ref=f17e620] [cursor=pointer]
+    - generic [ref=f17e631]:
+      - region "채널 헤더" [ref=f17e633]:
+        - generic [ref=f17e634]:
+          - generic [ref=f17e635]:
+            - generic [ref=f17e640]: 채팅 채널
+            - 'heading "UIUXA: 이은수" [level=1] [ref=f17e642]':
+              - generic [ref=f17e643]: "UIUXA:"
+              - text: 이은수
+          - generic [ref=f17e644]:
+            - button "스레드" [ref=f17e645] [cursor=pointer]
+            - button "알림 설정" [ref=f17e648] [cursor=pointer]
+            - button "고정된 메시지" [ref=f17e651] [cursor=pointer]
+            - button "멤버 목록 표시하기" [ref=f17e654] [cursor=pointer]
+            - generic [ref=f17e659]:
+              - combobox "UIUXA 검색" [ref=f17e660]
+              - button [aria-hidden] [ref=f17e662]
+      - main "이은수 (채널)" [ref=f17e669]:
+        - heading "이은수 채팅" [level=2] [ref=f17e671]
+        - group [ref=f17e673]:
+          - list "이은수의 메시지" [ref=f17e675]:
+            - generic [ref=f17e676]:
+              - heading [level=3] [aria-hidden] [ref=f17e681]: "#이은수에 오신 걸 환영합니다!"
+              - generic [ref=f17e682]:
+                - strong [ref=f17e683]: 비공개
+                - text: "채널 #이은수의 시작이에요."
+              - generic [ref=f17e684]:
+                - button "멤버 또는 역할 추가" [ref=f17e685] [cursor=pointer]
+                - button "채널 편집" [ref=f17e691] [cursor=pointer]
+              - generic [ref=f17e698]:
+                - img "김혜지" [ref=f17e699]
+                - generic [ref=f17e700]: 김혜지
+                - generic [ref=f17e701]: (나만 이 채널을 볼 수 있어요)
+            - separator "2026년 9월 17일"
+            - listitem [ref=f17e1024]:
+              - article [ref=f17e1025]:
+                - generic [ref=f17e1026]:
+                  - img [aria-hidden] [ref=f17e1027] [cursor=pointer]
+                  - heading [level=3] [ref=f17e1028]:
+                    - button "김혜지" [ref=f17e1030]
+                    - generic [ref=f17e1495]:
+                      - time [ref=f17e1497]:
+                        - generic [aria-hidden] [ref=f17e1498]: —
+                        - text: 오후 6:07
+                      - generic [ref=f17e1499]: 2026년 9월 17일 목요일 오후 6:07
+                - generic [ref=f17e1032]:
+                  - generic [ref=f17e1034]:
+                    - generic [ref=f17e1035]:
+                      - code [ref=f17e1038]:
+                        - generic [ref=f17e1039]: <!DOCTYPE html>
+                        - generic [ref=f17e1040]: <html lang="ko">
+                        - generic [ref=f17e1041]: <head>
+                        - generic [ref=f17e1042]: <meta charset="UTF-8">
+                        - generic [ref=f17e1043]: <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        - generic [ref=f17e1044]: <title>
+                        - text: 사단(士團) — 조선 암행어사 마패 헤리티지 향수 브랜드 최종 마스터 와이어프레임
+                        - generic [ref=f17e1045]: </title>
+                        - text: ... (12KB 남음)
+                      - group "일반 텍스트 파일 미리 보기 컨트롤" [ref=f17e1046]:
+                        - generic [ref=f17e1047]:
+                          - button "확장 (1,359줄 초과)" [ref=f17e1048] [cursor=pointer]
+                          - generic [ref=f17e1053]: 확장 (1,359줄 초과)
+                        - generic [ref=f17e1054]:
+                          - generic [ref=f17e1055]:
+                            - generic [ref=f17e1056]: 와이어프레임_시안1.html
+                            - generic [ref=f17e1057]: 와이어프레임_시안1.html (62KB)
+                          - generic [ref=f17e1058]: 62KB
+                        - button "언어 변경" [ref=f17e1059] [cursor=pointer]
+                        - button "파일 전체 보기" [ref=f17e1062] [cursor=pointer]
+                        - button "기타" [ref=f17e1065] [cursor=pointer]
+                    - generic [ref=f17e1068]:
+                      - button "첨부 파일 수정" [ref=f17e1069] [cursor=pointer]
+                      - generic [ref=f17e1072]: 첨부 파일 수정
+                      - button "메시지 첨부 파일 제거" [ref=f17e1073] [cursor=pointer]
+                      - generic [ref=f17e1077]: 삭제
+                  - generic [ref=f17e1079]:
+                    - generic [ref=f17e1080]:
+                      - code [ref=f17e1083]:
+                        - generic [ref=f17e1084]: <!DOCTYPE html>
+                        - generic [ref=f17e1085]: <html lang="ko">
+                        - generic [ref=f17e1086]: <head>
+                        - generic [ref=f17e1087]: <meta charset="UTF-8">
+                        - generic [ref=f17e1088]: <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        - generic [ref=f17e1089]: <title>
+                        - text: 사단(士團) — 조선 암행어사 마패 헤리티지 & 커스텀 레이어링 하우스 최종 와이어프레임
+                        - generic [ref=f17e1090]: </title>
+                        - text: ... (14KB 남음)
+                      - group "일반 텍스트 파일 미리 보기 컨트롤" [ref=f17e1091]:
+                        - generic [ref=f17e1092]:
+                          - button "확장 (635줄 초과)" [ref=f17e1093] [cursor=pointer]
+                          - generic [ref=f17e1098]: 확장 (635줄 초과)
+                        - generic [ref=f17e1099]:
+                          - generic [ref=f17e1100]:
+                            - generic [ref=f17e1101]: 와이어프레임_시안2.html
+                            - generic [ref=f17e1102]: 와이어프레임_시안2.html (64KB)
+                          - generic [ref=f17e1103]: 64KB
+                        - button "언어 변경" [ref=f17e1104] [cursor=pointer]
+                        - button "파일 전체 보기" [ref=f17e1107] [cursor=pointer]
+                        - button "기타" [ref=f17e1110] [cursor=pointer]
+                    - generic [ref=f17e1113]:
+                      - button "첨부 파일 수정" [ref=f17e1114] [cursor=pointer]
+                      - generic [ref=f17e1117]: 첨부 파일 수정
+                      - button "메시지 첨부 파일 제거" [ref=f17e1118] [cursor=pointer]
+                      - generic [ref=f17e1122]: 삭제
+                  - generic [ref=f17e1124]:
+                    - generic [ref=f17e1125]:
+                      - code [ref=f17e1128]:
+                        - generic [ref=f17e1129]: <!DOCTYPE html>
+                        - generic [ref=f17e1130]: <html lang="ko">
+                        - generic [ref=f17e1131]: <head>
+                        - generic [ref=f17e1132]: <meta charset="UTF-8">
+                        - generic [ref=f17e1133]: <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        - generic [ref=f17e1134]: <title>
+                        - text: 사단(士團) — 조선 암행어사 마패 헤리티지 & 커스텀 레이어링 하우스
+                        - generic [ref=f17e1135]: </title>
+                        - text: ... (13KB 남음)
+                      - group "일반 텍스트 파일 미리 보기 컨트롤" [ref=f17e1136]:
+                        - generic [ref=f17e1137]:
+                          - button "확장 (661줄 초과)" [ref=f17e1138] [cursor=pointer]
+                          - generic [ref=f17e1143]: 확장 (661줄 초과)
+                        - generic [ref=f17e1144]:
+                          - generic [ref=f17e1145]:
+                            - generic [ref=f17e1146]: 와이어프레임_시안3.html
+                            - generic [ref=f17e1147]: 와이어프레임_시안3.html (63KB)
+                          - generic [ref=f17e1148]: 63KB
+                        - button "언어 변경" [ref=f17e1149] [cursor=pointer]
+                        - button "파일 전체 보기" [ref=f17e1152] [cursor=pointer]
+                        - button "기타" [ref=f17e1155] [cursor=pointer]
+                    - generic [ref=f17e1158]:
+                      - button "첨부 파일 수정" [ref=f17e1159] [cursor=pointer]
+                      - generic [ref=f17e1162]: 첨부 파일 수정
+                      - button "메시지 첨부 파일 제거" [ref=f17e1163] [cursor=pointer]
+                      - generic [ref=f17e1167]: 삭제
+                  - generic [ref=f17e1169]:
+                    - generic [ref=f17e1170]:
+                      - code [ref=f17e1173]:
+                        - generic [ref=f17e1174]: <!DOCTYPE html>
+                        - generic [ref=f17e1175]: <html lang="ko">
+                        - generic [ref=f17e1176]: <head>
+                        - generic [ref=f17e1177]: <meta charset="UTF-8">
+                        - generic [ref=f17e1178]: <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        - generic [ref=f17e1179]: <title>
+                        - text: 사단(士團) — 조선 암행어사 마패 헤리티지 & 커스텀 레이어링 하우스
+                        - generic [ref=f17e1180]: </title>
+                        - text: ... (58KB 남음)
+                      - group "일반 텍스트 파일 미리 보기 컨트롤" [ref=f17e1181]:
+                        - generic [ref=f17e1182]:
+                          - button "확장 (696줄 초과)" [ref=f17e1183] [cursor=pointer]
+                          - generic [ref=f17e1188]: 확장 (696줄 초과)
+                        - generic [ref=f17e1189]:
+                          - generic [ref=f17e1190]:
+                            - generic [ref=f17e1191]: 와이어프레임_시안4.html
+                            - generic [ref=f17e1192]: 와이어프레임_시안4.html (108KB)
+                          - generic [ref=f17e1193]: 108KB
+                        - button "언어 변경" [ref=f17e1194] [cursor=pointer]
+                        - button "파일 전체 보기" [ref=f17e1197] [cursor=pointer]
+                        - button "기타" [ref=f17e1200] [cursor=pointer]
+                    - generic [ref=f17e1203]:
+                      - button "첨부 파일 수정" [ref=f17e1204] [cursor=pointer]
+                      - generic [ref=f17e1207]: 첨부 파일 수정
+                      - button "메시지 첨부 파일 제거" [ref=f17e1208] [cursor=pointer]
+                      - generic [ref=f17e1212]: 삭제
+                  - generic [ref=f17e1214]:
+                    - generic [ref=f17e1215]:
+                      - code [ref=f17e1218]:
+                        - generic [ref=f17e1219]: <!DOCTYPE html>
+                        - generic [ref=f17e1220]: <html lang="ko">
+                        - generic [ref=f17e1221]: <head>
+                        - generic [ref=f17e1222]: <meta charset="UTF-8">
+                        - generic [ref=f17e1223]: <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        - generic [ref=f17e1224]: <title>
+                        - text: 사단(士團) — 조선 암행어사 마패 헤리티지 & 커스텀 레이어링 하우스
+                        - generic [ref=f17e1225]: </title>
+                        - text: ... (152KB 남음)
+                      - group "일반 텍스트 파일 미리 보기 컨트롤" [ref=f17e1226]:
+                        - generic [ref=f17e1227]:
+                          - button "확장 (1,004줄 초과)" [ref=f17e1228] [cursor=pointer]
+                          - generic [ref=f17e1233]: 확장 (1,004줄 초과)
+                        - generic [ref=f17e1234]:
+                          - generic [ref=f17e1235]:
+                            - generic [ref=f17e1236]: 와이어프레임_시안5.html
+                            - generic [ref=f17e1237]: 와이어프레임_시안5.html (202KB)
+                          - generic [ref=f17e1238]: 202KB
+                        - button "언어 변경" [ref=f17e1239] [cursor=pointer]
+                        - button "파일 전체 보기" [ref=f17e1242] [cursor=pointer]
+                        - button "기타" [ref=f17e1245] [cursor=pointer]
+                    - generic [ref=f17e1248]:
+                      - button "첨부 파일 수정" [ref=f17e1249] [cursor=pointer]
+                      - generic [ref=f17e1252]: 첨부 파일 수정
+                      - button "메시지 첨부 파일 제거" [ref=f17e1253] [cursor=pointer]
+                      - generic [ref=f17e1257]: 삭제
+                  - generic [ref=f17e1259]:
+                    - generic [ref=f17e1260]:
+                      - code [ref=f17e1263]:
+                        - generic [ref=f17e1264]: <!DOCTYPE html>
+                        - generic [ref=f17e1265]: <html lang="ko">
+                        - generic [ref=f17e1266]: <head>
+                        - generic [ref=f17e1267]: <meta charset="UTF-8">
+                        - generic [ref=f17e1268]: <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        - generic [ref=f17e1269]: <title>
+                        - text: 사단(士團) — 조선 암행어사 마패 헤리티지 & 커스텀 레이어링 하우스
+                        - generic [ref=f17e1270]: </title>
+                        - text: ... (18KB 남음)
+                      - group "일반 텍스트 파일 미리 보기 컨트롤" [ref=f17e1271]:
+                        - generic [ref=f17e1272]:
+                          - button "확장 (593줄 초과)" [ref=f17e1273] [cursor=pointer]
+                          - generic [ref=f17e1278]: 확장 (593줄 초과)
+                        - generic [ref=f17e1279]:
+                          - generic [ref=f17e1280]:
+                            - generic [ref=f17e1281]: 와이어프레임_시안6.html
+                            - generic [ref=f17e1282]: 와이어프레임_시안6.html (68KB)
+                          - generic [ref=f17e1283]: 68KB
+                        - button "언어 변경" [ref=f17e1284] [cursor=pointer]
+                        - button "파일 전체 보기" [ref=f17e1287] [cursor=pointer]
+                        - button "기타" [ref=f17e1290] [cursor=pointer]
+                    - generic [ref=f17e1293]:
+                      - button "첨부 파일 수정" [ref=f17e1294] [cursor=pointer]
+                      - generic [ref=f17e1297]: 첨부 파일 수정
+                      - button "메시지 첨부 파일 제거" [ref=f17e1298] [cursor=pointer]
+                      - generic [ref=f17e1302]: 삭제
+                  - generic [ref=f17e1304]:
+                    - generic [ref=f17e1305]:
+                      - code [ref=f17e1308]:
+                        - generic [ref=f17e1309]: <!DOCTYPE html>
+                        - generic [ref=f17e1310]: <html lang="ko">
+                        - generic [ref=f17e1311]: <head>
+                        - generic [ref=f17e1312]: <meta charset="UTF-8">
+                        - generic [ref=f17e1313]: <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        - generic [ref=f17e1314]: <title>
+                        - text: 밀도(MILDO) — 조선 암행어사 마패 헤리티지 & 커스텀 레이어링 하우스
+                        - generic [ref=f17e1315]: </title>
+                        - text: ... (171KB 남음)
+                      - group "일반 텍스트 파일 미리 보기 컨트롤" [ref=f17e1316]:
+                        - generic [ref=f17e1317]:
+                          - button "확장 (1,004줄 초과)" [ref=f17e1318] [cursor=pointer]
+                          - generic [ref=f17e1323]: 확장 (1,004줄 초과)
+                        - generic [ref=f17e1324]:
+                          - generic [ref=f17e1325]:
+                            - generic [ref=f17e1326]: 와이어프레임_시안7_최종.html
+                            - generic [ref=f17e1327]: 와이어프레임_시안7_최종.html (221KB)
+                          - generic [ref=f17e1328]: 221KB
+                        - button "언어 변경" [ref=f17e1329] [cursor=pointer]
+                        - button "파일 전체 보기" [ref=f17e1332] [cursor=pointer]
+                        - button "기타" [ref=f17e1335] [cursor=pointer]
+                    - generic [ref=f17e1338]:
+                      - button "첨부 파일 수정" [ref=f17e1339] [cursor=pointer]
+                      - generic [ref=f17e1342]: 첨부 파일 수정
+                      - button "메시지 첨부 파일 제거" [ref=f17e1343] [cursor=pointer]
+                      - generic [ref=f17e1347]: 삭제
+                  - generic [ref=f17e1349]:
+                    - generic [ref=f17e1350]:
+                      - code [ref=f17e1353]:
+                        - generic [ref=f17e1354]: <!DOCTYPE html>
+                        - generic [ref=f17e1355]: <html lang="ko">
+                        - generic [ref=f17e1356]: <head>
+                        - generic [ref=f17e1357]: <meta charset="UTF-8">
+                        - generic [ref=f17e1358]: <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        - generic [ref=f17e1359]: <title>
+                        - text: 사단(士團) — 브랜드 소개 | 조선 암행어사 마패 헤리티지 & 커스텀 레이어링 하우스
+                        - generic [ref=f17e1360]: </title>
+                      - group "일반 텍스트 파일 미리 보기 컨트롤" [ref=f17e1361]:
+                        - generic [ref=f17e1362]:
+                          - button "확장 (472줄)" [ref=f17e1363] [cursor=pointer]
+                          - generic [ref=f17e1368]: 확장 (472줄)
+                        - generic [ref=f17e1369]:
+                          - generic [ref=f17e1370]:
+                            - generic [ref=f17e1371]: 와이어프레임_브랜드소개1.html
+                            - generic [ref=f17e1372]: 와이어프레임_브랜드소개1.html (37KB)
+                          - generic [ref=f17e1373]: 37KB
+                        - button "언어 변경" [ref=f17e1374] [cursor=pointer]
+                        - button "파일 전체 보기" [ref=f17e1377] [cursor=pointer]
+                        - button "기타" [ref=f17e1380] [cursor=pointer]
+                    - generic [ref=f17e1383]:
+                      - button "첨부 파일 수정" [ref=f17e1384] [cursor=pointer]
+                      - generic [ref=f17e1387]: 첨부 파일 수정
+                      - button "메시지 첨부 파일 제거" [ref=f17e1388] [cursor=pointer]
+                      - generic [ref=f17e1392]: 삭제
+                  - generic [ref=f17e1394]:
+                    - generic [ref=f17e1395]:
+                      - code [ref=f17e1398]:
+                        - generic [ref=f17e1399]: <!DOCTYPE html>
+                        - generic [ref=f17e1400]: <html lang="ko">
+                        - generic [ref=f17e1401]: <head>
+                        - generic [ref=f17e1402]: <meta charset="UTF-8">
+                        - generic [ref=f17e1403]: <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        - generic [ref=f17e1404]: <title>
+                        - text: 사단(士團) — 브랜드 소개 | 조선 암행어사 마패 헤리티지 & 커스텀 레이어링 하우스
+                        - generic [ref=f17e1405]: </title>
+                      - group "일반 텍스트 파일 미리 보기 컨트롤" [ref=f17e1406]:
+                        - generic [ref=f17e1407]:
+                          - button "확장 (481줄)" [ref=f17e1408] [cursor=pointer]
+                          - generic [ref=f17e1413]: 확장 (481줄)
+                        - generic [ref=f17e1414]:
+                          - generic [ref=f17e1415]:
+                            - generic [ref=f17e1416]: 와이어프레임_브랜드소개2.html
+                            - generic [ref=f17e1417]: 와이어프레임_브랜드소개2.html (37KB)
+                          - generic [ref=f17e1418]: 37KB
+                        - button "언어 변경" [ref=f17e1419] [cursor=pointer]
+                        - button "파일 전체 보기" [ref=f17e1422] [cursor=pointer]
+                        - button "기타" [ref=f17e1425] [cursor=pointer]
+                    - generic [ref=f17e1428]:
+                      - button "첨부 파일 수정" [ref=f17e1429] [cursor=pointer]
+                      - generic [ref=f17e1432]: 첨부 파일 수정
+                      - button "메시지 첨부 파일 제거" [ref=f17e1433] [cursor=pointer]
+                      - generic [ref=f17e1437]: 삭제
+                  - generic [ref=f17e1439]:
+                    - generic [ref=f17e1440]:
+                      - code [ref=f17e1443]:
+                        - generic [ref=f17e1444]: <!DOCTYPE html>
+                        - generic [ref=f17e1445]: <html lang="ko">
+                        - generic [ref=f17e1446]: <head>
+                        - generic [ref=f17e1447]: <meta charset="UTF-8">
+                        - generic [ref=f17e1448]: <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        - generic [ref=f17e1449]: <title>
+                        - text: 사단(士團) — 브랜드 소개 | 조선 암행어사 마패 헤리티지 & 커스텀 레이어링 하우스
+                        - generic [ref=f17e1450]: </title>
+                        - text: ... (57KB 남음)
+                      - group "일반 텍스트 파일 미리 보기 컨트롤" [ref=f17e1451]:
+                        - generic [ref=f17e1452]:
+                          - button "확장 (687줄 초과)" [ref=f17e1453] [cursor=pointer]
+                          - generic [ref=f17e1458]: 확장 (687줄 초과)
+                        - generic [ref=f17e1459]:
+                          - generic [ref=f17e1460]:
+                            - generic [ref=f17e1461]: 와이어프레임_브랜드소개3.html
+                            - generic [ref=f17e1462]: 와이어프레임_브랜드소개3.html (107KB)
+                          - generic [ref=f17e1463]: 107KB
+                        - button "언어 변경" [ref=f17e1464] [cursor=pointer]
+                        - button "파일 전체 보기" [ref=f17e1467] [cursor=pointer]
+                        - button "기타" [ref=f17e1470] [cursor=pointer]
+                    - generic [ref=f17e1473]:
+                      - button "첨부 파일 수정" [ref=f17e1474] [cursor=pointer]
+                      - generic [ref=f17e1477]: 첨부 파일 수정
+                      - button "메시지 첨부 파일 제거" [ref=f17e1478] [cursor=pointer]
+                      - generic [ref=f17e1482]: 삭제
+        - generic [ref=f17e706]:
+          - list [ref=f17e1532]:
+            - listitem [ref=f17e1533]:
+              - generic [ref=f17e1534]:
+                - generic [ref=f17e1537]: 와이어프레임_카테고리1.html
+                - generic "첨부 유틸리티 업로드" [ref=f17e1538]:
+                  - generic [ref=f17e1539]:
+                    - button "스포일러 포함" [ref=f17e1540] [cursor=pointer]
+                    - generic [ref=f17e1544]: 스포일러 포함
+                    - button "첨부 파일 수정" [ref=f17e1545] [cursor=pointer]
+                    - generic [ref=f17e1548]: 첨부 파일 수정
+                    - button "첨부 파일 제거" [ref=f17e1549] [cursor=pointer]
+                    - generic [ref=f17e1553]: 첨부 파일 제거
+            - listitem [ref=f17e1554]:
+              - generic [ref=f17e1555]:
+                - generic [ref=f17e1558]: 와이어프레임_카테고리2.html
+                - generic "첨부 유틸리티 업로드" [ref=f17e1559]:
+                  - generic [ref=f17e1560]:
+                    - button "스포일러 포함" [ref=f17e1561] [cursor=pointer]
+                    - generic [ref=f17e1565]: 스포일러 포함
+                    - button "첨부 파일 수정" [ref=f17e1566] [cursor=pointer]
+                    - generic [ref=f17e1569]: 첨부 파일 수정
+                    - button "첨부 파일 제거" [ref=f17e1570] [cursor=pointer]
+                    - generic [ref=f17e1574]: 첨부 파일 제거
+            - listitem [ref=f17e1575]:
+              - generic [ref=f17e1576]:
+                - generic [ref=f17e1579]: 와이어프레임_카테고리3.html
+                - generic "첨부 유틸리티 업로드" [ref=f17e1580]:
+                  - generic [ref=f17e1581]:
+                    - button "스포일러 포함" [ref=f17e1582] [cursor=pointer]
+                    - generic [ref=f17e1586]: 스포일러 포함
+                    - button "첨부 파일 수정" [ref=f17e1587] [cursor=pointer]
+                    - generic [ref=f17e1590]: 첨부 파일 수정
+                    - button "첨부 파일 제거" [ref=f17e1591] [cursor=pointer]
+                    - generic [ref=f17e1595]: 첨부 파일 제거
+            - listitem [ref=f17e1596]:
+              - generic [ref=f17e1597]:
+                - generic [ref=f17e1600]: 강사_제작예시.html
+                - generic "첨부 유틸리티 업로드" [ref=f17e1601]:
+                  - generic [ref=f17e1602]:
+                    - button "스포일러 포함" [ref=f17e1603] [cursor=pointer]
+                    - generic [ref=f17e1607]: 스포일러 포함
+                    - button "첨부 파일 수정" [ref=f17e1608] [cursor=pointer]
+                    - generic [ref=f17e1611]: 첨부 파일 수정
+                    - button "첨부 파일 제거" [ref=f17e1612] [cursor=pointer]
+                    - generic [ref=f17e1616]: 첨부 파일 제거
+          - generic [ref=f17e707]:
+            - button "더 많은 메시지 옵션" [ref=f17e709] [cursor=pointer]
+            - generic [ref=f17e714]:
+              - generic [aria-hidden]: "#이은수에 메시지 보내기"
+              - textbox "#이은수에 메시지 보내기" [active] [ref=f17e715]
+            - generic [ref=f17e717]:
+              - generic [ref=f17e718]:
+                - button "선물 보내기" [ref=f17e719] [cursor=pointer]
+                - generic [ref=f17e735]: 친구를 업그레이드하세요! Nitro의 멋진 채팅 특전을 선물하세요.
+              - button "GIF 선택기 열기" [ref=f17e737] [cursor=pointer]
+              - generic [ref=f17e747]: GIF 보내기
+              - button "스티커 선택기 열기" [ref=f17e749] [cursor=pointer]
+              - button "이모지 추가" [ref=f17e759] [cursor=pointer]
+              - button "앱" [ref=f17e764] [cursor=pointer]

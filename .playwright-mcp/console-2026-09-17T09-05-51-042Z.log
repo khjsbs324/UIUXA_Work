@@ -1,0 +1,420 @@
+[     174ms] [LOG] [FAST CONNECT] wss://gateway.discord.gg/?encoding=json&v=9&compress=zlib-stream, encoding: json, version: 9 @ https://discord.com/channels/1550041523226411038/1550063617108480060:28
+[     249ms] [INFO] %c[libdiscore] 
+font-weight: bold;
+color: purple;
+ [experiment_manager] Loaded experiments from cache @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[     290ms] [LOG] %c[ProcessUtilsElectron] 
+font-weight: bold;
+color: purple;
+ setMemoryInformation not available. @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[     385ms] [LOG] %c[default] 
+font-weight: bold;
+color: purple;
+ [BUILD INFO] Release Channel: stable, Build Number: 614181, Version Hash: 9cd5ac96bdeb925f3eabb47661399865ad12bbdf @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[     389ms] [LOG] AppCrashedFatalReport: getLastCrash not supported. @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[     441ms] [INFO] %c[libdiscore] 
+font-weight: bold;
+color: purple;
+ The answer for life the universe and everything is: 42 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[     502ms] [LOG] [FAST CONNECT] sending identify @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[     937ms] [INFO] %c[GatewaySocket] 
+font-weight: bold;
+color: purple;
+ [CONNECT] wss://gateway.discord.gg, encoding: json, version: 9, compression: zlib-stream @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[     938ms] [LOG] %c[GatewaySocket] 
+font-weight: bold;
+color: purple;
+ [FAST CONNECT] successfully took over websocket, state: {open: true, identify: true, gateway: wss://gateway.discord.gg/?encoding=json&v=9&compress=zlib-stream, messages: 0} @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[     938ms] [INFO] %c[GatewaySocket] 
+font-weight: bold;
+color: purple;
+ [CONNECTED] wss://gateway.discord.gg/?encoding=json&v=9&compress=zlib-stream in 0 ms @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[    1190ms] [INFO] %c[GatewaySocket] 
+font-weight: bold;
+color: purple;
+ [READY] took 253ms, as 165d40c034252dc31c1c9b0a5c143ac5 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[    1197ms] [LOG] %c[Flux] 
+font-weight: bold;
+color: purple;
+ Dispatching CONNECTION_OPEN @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[    1201ms] [LOG] %c[DatabaseManager] 
+font-weight: bold;
+color: purple;
+ removing database (user: 709071822766735481, database: undefined) @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[    1211ms] [LOG] %c[MessageActionCreators] 
+font-weight: bold;
+color: purple;
+ Fetching messages for 1550063617108480060 between undefined and undefined. jump={"jumpType":"ANIMATED"} @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[    1221ms] [INFO] %c[DCF] 
+font-weight: bold;
+color: purple;
+ Daily cap in effect, suppressing fatigable content until tomorrow {shown_dcs: 3} @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[    1357ms] [INFO] %c[GatewaySocket] 
+font-weight: bold;
+color: purple;
+ [READY_SUPPLEMENTAL] took 420ms @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[    1363ms] [WARNING] [scriptCost] retained URL count exceeded maxUrls (1000); evicting lowest-cost entries. @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[    1499ms] [LOG] %c[MessageActionCreators] 
+font-weight: bold;
+color: purple;
+ Fetched 0 messages for 1550063617108480060 isBefore:false isAfter:false @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[    1500ms] [INFO] %c[ChannelMessages] 
+font-weight: bold;
+color: purple;
+ loadComplete: resetting state for channelId=1550063617108480060, sending.length=0 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[    3459ms] [INFO] %c[OverlayKeybindExperimentManager] 
+font-weight: bold;
+color: purple;
+ Experiments initializing... @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[    3464ms] [INFO] %c[OverlayKeybindExperimentManager] 
+font-weight: bold;
+color: purple;
+ Experiments initialized @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[    3490ms] [INFO] %c[LibDaveManager] 
+font-weight: bold;
+color: purple;
+ DAVE loaded @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[    3490ms] [INFO] %c[LibDaveManager] 
+font-weight: bold;
+color: purple;
+ Successfully initialized DAVE @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[    3490ms] [INFO] %c[MediaEngineWebRTC] 
+font-weight: bold;
+color: purple;
+ Successfully initialized DAVE, version: 1 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[    3837ms] [INFO] %c[SignalHelpers.web] 
+font-weight: bold;
+color: purple;
+ signalAllAcceptedCredentials {rpId: discord.com, encodedUserId: MPMD-4wmT1MJ1yEQ5EAAeQ, allAcceptedCredentialIds: Array(0)} @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   13470ms] [INFO] %c[libdiscore] 
+font-weight: bold;
+color: purple;
+ [BlockedDomainsStore] Successfully fetched blocked domains @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   79835ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ webp conversion skipped for upload2: unsupported_format @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   79835ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ webp conversion skipped for upload3: unsupported_format @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   79835ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ webp conversion skipped for upload4: unsupported_format @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   79835ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ webp conversion skipped for upload5: unsupported_format @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   79835ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ webp conversion skipped for upload6: unsupported_format @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   79835ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ webp conversion skipped for upload7: unsupported_format @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   79835ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ webp conversion skipped for upload8: unsupported_format @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   79835ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ webp conversion skipped for upload9: unsupported_format @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   79835ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ webp conversion skipped for upload10: unsupported_format @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   79835ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ webp conversion skipped for upload11: unsupported_format @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   79836ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Requesting upload url for upload2 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   79837ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Requesting upload url for upload3 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   79837ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Requesting upload url for upload4 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   79838ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Requesting upload url for upload5 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   79838ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Requesting upload url for upload6 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   79839ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Requesting upload url for upload7 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   79840ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Requesting upload url for upload8 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   79840ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Requesting upload url for upload9 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   79841ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Requesting upload url for upload10 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   79841ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Requesting upload url for upload11 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   80126ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Uploading upload5 filename=와이어프레임_시안4.html @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   80126ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Attempting to upload attachment with resumeFrom: 0 and attempts: 1 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   80131ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Uploading upload6 filename=와이어프레임_시안5.html @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   80131ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Attempting to upload attachment with resumeFrom: 0 and attempts: 1 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   80140ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Uploading upload10 filename=와이어프레임_브랜드소개2.html @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   80140ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Attempting to upload attachment with resumeFrom: 0 and attempts: 1 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   80141ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Uploading upload9 filename=와이어프레임_브랜드소개1.html @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   80141ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Attempting to upload attachment with resumeFrom: 0 and attempts: 1 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   80142ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Uploading upload11 filename=와이어프레임_브랜드소개3.html @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   80143ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Attempting to upload attachment with resumeFrom: 0 and attempts: 1 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   80145ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Uploading upload7 filename=와이어프레임_시안6.html @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   80145ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Attempting to upload attachment with resumeFrom: 0 and attempts: 1 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   80150ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Uploading upload4 filename=와이어프레임_시안3.html @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   80150ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Attempting to upload attachment with resumeFrom: 0 and attempts: 1 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   80151ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Uploading upload3 filename=와이어프레임_시안2.html @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   80151ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Attempting to upload attachment with resumeFrom: 0 and attempts: 1 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   80165ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Uploading upload8 filename=와이어프레임_시안7_최종.html @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   80166ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Attempting to upload attachment with resumeFrom: 0 and attempts: 1 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   80170ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Uploading upload2 filename=와이어프레임_시안1.html @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   80170ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Attempting to upload attachment with resumeFrom: 0 and attempts: 1 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   81653ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Upload complete for upload10 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   82767ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Upload complete for upload9 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   82891ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Upload complete for upload6 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   82917ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Upload complete for upload7 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   82918ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Upload complete for upload2 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   82941ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Upload complete for upload4 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   82954ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Upload complete for upload3 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   83129ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Upload complete for upload11 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   83143ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Upload complete for upload5 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   83435ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Upload complete for upload8 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   87644ms] [LOG] %c[UploaderBase.tsx] 
+font-weight: bold;
+color: purple;
+ setUploadingTextForUI - total content: 963814 bytes and 10 attachments for Uploader22 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   87647ms] [LOG] %c[UploaderBase.tsx] 
+font-weight: bold;
+color: purple;
+ _handleComplete for Uploader22 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   87647ms] [INFO] %c[MessageQueue] 
+font-weight: bold;
+color: purple;
+ Queueing message to be sent LogId:3442 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   87647ms] [LOG] %c[MessageQueue] 
+font-weight: bold;
+color: purple;
+ Draining message from queue LogId:3442 QueueLength: 0 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   87647ms] [LOG] %c[MessageQueue] 
+font-weight: bold;
+color: purple;
+ Draining Message Queue with:  0 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[   89541ms] [LOG] %c[MessageQueue] 
+font-weight: bold;
+color: purple;
+ Finished draining message from queue LogId:3442 QueueLength: 0 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[  121074ms] [WARNING] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ webp conversion skipped for upload26: too big @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[  121078ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Requesting upload url for upload26 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[  121079ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ webp conversion skipped for upload23: unsupported_format @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[  121079ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ webp conversion skipped for upload24: unsupported_format @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[  121079ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ webp conversion skipped for upload25: unsupported_format @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[  121079ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Requesting upload url for upload23 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[  121080ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Requesting upload url for upload24 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[  121080ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Requesting upload url for upload25 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[  121364ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Uploading upload23 filename=와이어프레임_카테고리1.html @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[  121364ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Attempting to upload attachment with resumeFrom: 0 and attempts: 1 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[  121369ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Uploading upload25 filename=와이어프레임_카테고리3.html @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[  121369ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Attempting to upload attachment with resumeFrom: 0 and attempts: 1 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[  121379ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Uploading upload24 filename=와이어프레임_카테고리2.html @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[  121379ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Attempting to upload attachment with resumeFrom: 0 and attempts: 1 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[  121380ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Uploading upload26 filename=강사_제작예시.html @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[  121380ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Attempting to upload attachment with resumeFrom: 0 and attempts: 1 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[  122858ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Upload complete for upload23 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[  123323ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Upload complete for upload24 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[  123402ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Upload complete for upload25 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[  125377ms] [LOG] %c[CloudUpload.tsx] 
+font-weight: bold;
+color: purple;
+ Upload complete for upload26 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[  136590ms] [LOG] %c[UploaderBase.tsx] 
+font-weight: bold;
+color: purple;
+ setUploadingTextForUI - total content: 10337788 bytes and 4 attachments for Uploader31 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[  136592ms] [LOG] %c[UploaderBase.tsx] 
+font-weight: bold;
+color: purple;
+ _handleComplete for Uploader31 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[  136592ms] [INFO] %c[MessageQueue] 
+font-weight: bold;
+color: purple;
+ Queueing message to be sent LogId:3012 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[  136592ms] [LOG] %c[MessageQueue] 
+font-weight: bold;
+color: purple;
+ Draining message from queue LogId:3012 QueueLength: 0 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[  136592ms] [LOG] %c[MessageQueue] 
+font-weight: bold;
+color: purple;
+ Draining Message Queue with:  0 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464
+[  137786ms] [LOG] %c[MessageQueue] 
+font-weight: bold;
+color: purple;
+ Finished draining message from queue LogId:3012 QueueLength: 0 @ https://discord.com/assets/556707.bb1a25f3c212ce8f.js:464

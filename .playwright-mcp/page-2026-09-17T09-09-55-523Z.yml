@@ -1,0 +1,47 @@
+- generic [ref=f19e5]:
+  - generic [ref=f19e11]:
+    - generic [ref=f19e14]:
+      - button "받은 편지함" [ref=f19e17] [cursor=pointer]
+      - link [ref=f19e21] [cursor=pointer]:
+        - /url: https://support.discord.com
+        - button "도움말" [ref=f19e22]
+    - generic [ref=f19e26]:
+      - generic [ref=f19e27]:
+        - navigation "서버 사이드바" [ref=f19e28]:
+          - tree [ref=f19e29]:
+            - generic [ref=f19e30]:
+              - group "서버"
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - treeitem "서버 추가하기" [level=1]
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - treeitem "찾기" [level=1]
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - treeitem "앱 다운로드" [level=1]
+        - status [ref=f19e32]
+        - separator "Resize Sidebar" [ref=f19e75]
+        - region "사용자 상태 및 설정" [ref=f19e76]
+      - status [ref=f19e78]
+  - generic [ref=f19e84]:
+    - generic [ref=f19e86]:
+      - generic [ref=f19e87]: 알고 계셨나요?
+      - generic [ref=f19e88]: 이모지를 반응으로 쓰려면 이모지 이름 앞에 더하기 기호를 입력하세요.
+    - generic [ref=f19e89]:
+      - generic [ref=f19e90]: 연결하는 데 문제가 있나요? 저희에게 알려주세요!
+      - generic [ref=f19e91]:
+        - link "Twitter를 통해 알려주세요" [ref=f19e92] [cursor=pointer]:
+          - /url: https://twitter.com/discord_support
+        - link "서버 상태" [ref=f19e95] [cursor=pointer]:
+          - /url: https://discordstatus.com
