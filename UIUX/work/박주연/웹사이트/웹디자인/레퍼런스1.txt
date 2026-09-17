@@ -1,0 +1,14 @@
+[메인페이지]
+https://abib.com/
+
+깔끔한 느낌의 상단바, 크고 시원한 배너 이미지, 폰트와 버튼(마지막 페이지), 전체적인 여백과 사진 배치
+
+[서브페이지]
+https://nume.co.kr/product/list.html?cate_no=71
+
+카테고리 버튼, 4열
+
+[브랜드페이지]
+https://feev.co.kr/shopinfo/brand.html
+
+이미지 배치
